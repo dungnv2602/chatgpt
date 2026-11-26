@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.1.0",
+  "scope": "on_changed",
+  "run_id": "45456236271",
+  "run_number": 675,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+  "attempt": 1,
+  "branch": "gpt",
+  "commit_sha": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+  "event": "push",
+  "workflow": "STE Lint Changed Documentation",
+  "runner_os": "Linux",
+  "execution_mode": "incremental",
+  "baseline_sha": "2d99f8228644c2c25c957f4dbd195325d620d6d2",
+  "generated_at_utc": "2026-11-24T18:10:35.347093+00:00",
+  "status": "Passed",
+  "linter_source_sha": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+  "runtime": {
+    "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
+    "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
+  },
+  "files_evaluated": [
+    "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md"
+  ],
+  "files_evaluated_count": 1,
+  "files_failed": 0,
+  "failed_files": [],
+  "files_with_findings": 0,
+  "total_findings": 0,
+  "hard_findings": 0,
+  "advisory_findings": 0,
+  "findings_by_rule": {},
+  "records": [
+    {
+      "violations": [],
+      "count": 0,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 2850,
+      "per_100_words": 0.0,
+      "path": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
+      "exit_code": 0
+    }
+  ],
+  "findings": [],
+  "new_findings": 0,
+  "recurring_findings": 0,
+  "resolved_findings": [],
+  "checks": [
+    {
+      "name": "Wrapper shell syntax",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Python report tooling compilation",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Lint report regression tests",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.359s\n\nOK\n"
+    },
+    {
+      "name": "Markdown anchor regression tests",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "name": "STE linter self-test",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "selftest OK\n"
+    },
+    {
+      "name": "Markdown links and heading anchors",
+      "status": "Skipped",
+      "exit_code": null,
+      "output": "Not required for this incremental run."
+    }
+  ],
+  "failed_checks": []
+}

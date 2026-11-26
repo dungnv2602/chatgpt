@@ -1,0 +1,80 @@
+Find lint baseline and select execution mode	Set up job	﻿2026-11-24T11:16:26.1273959Z Current runner version: '2.338.2'
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1300738Z ##[group]Runner Image Provisioner
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1301740Z Hosted Compute Agent
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1302348Z Version: 20261111.635
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1303027Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1303820Z Build Date: 2026-11-11T01:49:01Z
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1304510Z Worker ID: {8186b81a-88cb-4d35-8035-c6f314204865}
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1305713Z Region: eastus
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1306318Z Cloud: Azure
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1306917Z ##[endgroup]
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1308449Z ##[group]Operating System
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1309108Z Ubuntu
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1309745Z 26.04.1
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1310255Z LTS
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1310755Z ##[endgroup]
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1311375Z ##[group]Runner Image
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1312015Z Image: ubuntu-26.04
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1312656Z Version: 20261116.202.1
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1313731Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1315773Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1316850Z ##[endgroup]
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1318079Z ##[group]GITHUB_TOKEN Permissions
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1320627Z Contents: read
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1321304Z Metadata: read
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1321873Z ##[endgroup]
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1324036Z Secret source: Actions
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1325036Z Cache mode: write
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1326235Z Prepare workflow directory
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1655092Z Prepare all required actions
+Find lint baseline and select execution mode	Set up job	2026-11-24T11:16:26.1759409Z Complete job name: Find lint baseline and select execution mode
+Find lint baseline and select execution mode	Find the latest complete lint baseline	﻿2026-11-24T11:16:26.2895844Z ##[group]Run set -euo pipefail
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2896758Z ^[[36;1mset -euo pipefail^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2897720Z ^[[36;1mecho "proceed=true" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2898651Z ^[[36;1mencoded=$(gh api \^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2899783Z ^[[36;1m  "repos/$GITHUB_REPOSITORY/contents/reports/lint_reports/on_changed/latest-lint-report.json?ref=$GITHUB_REF_NAME" \^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2901113Z ^[[36;1m  --jq '.content' 2>/dev/null || true)^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2901839Z ^[[36;1mif [[ -z "$encoded" ]]; then^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2902625Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2903346Z ^[[36;1m  exit 0^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2903880Z ^[[36;1mfi^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2904793Z ^[[36;1mbaseline_report=$(printf '%s' "$encoded" | tr -d '\n' | base64 --decode 2>/dev/null || true)^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2906121Z ^[[36;1mif [[ -z "$baseline_report" ]] || ! jq -e '^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2906972Z ^[[36;1m  . as $report |^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2907639Z ^[[36;1m  $report.scope == "on_changed" and^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2908622Z ^[[36;1m  ($report.status == "Passed" or $report.status == "Failed") and^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2909812Z ^[[36;1m  ($report.execution_mode == "full-audit-fallback" or $report.execution_mode == "incremental") and^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2911041Z ^[[36;1m  ($report.commit_sha | type == "string" and test("^[0-9a-f]{40}$")) and^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2911979Z ^[[36;1m  ($report.checks | type == "array") and^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2912867Z ^[[36;1m  (["Wrapper shell syntax", "Python report tooling compilation",^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2913910Z ^[[36;1m    "Lint report regression tests", "Markdown anchor regression tests",^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2914815Z ^[[36;1m    "STE linter self-test"][] as $name |^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2915891Z ^[[36;1m    any($report.checks[]; .name == $name and .status == "Passed")) and^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2916895Z ^[[36;1m  (if $report.execution_mode == "full-audit-fallback"^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2917982Z ^[[36;1m   then any($report.checks[]; .name == "Markdown links and heading anchors" and .status == "Passed")^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2918967Z ^[[36;1m   else true end)^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2919706Z ^[[36;1m' <<< "$baseline_report" >/dev/null; then^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2920719Z ^[[36;1m  echo "::warning::No complete tooling-valid lint baseline exists. Run one full audit."^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2922012Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2922717Z ^[[36;1m  exit 0^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2923226Z ^[[36;1mfi^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2923958Z ^[[36;1mbaseline_sha=$(jq -r '.commit_sha' <<< "$baseline_report")^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2924803Z ^[[36;1mcompare_status=$(gh api \^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2925888Z ^[[36;1m  "repos/$GITHUB_REPOSITORY/compare/$baseline_sha...$GITHUB_SHA" \^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2926836Z ^[[36;1m  --jq '.status' 2>/dev/null || true)^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2927723Z ^[[36;1mif [[ "$compare_status" != "ahead" && "$compare_status" != "identical" ]]; then^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2929019Z ^[[36;1m  echo "::warning::The lint baseline commit is missing or is not an ancestor. Run a full audit."^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2930061Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2930778Z ^[[36;1m  exit 0^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2931322Z ^[[36;1mfi^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2931943Z ^[[36;1mecho "base_sha=$baseline_sha" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.2932867Z ^[[36;1mecho "full_audit=false" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.3356375Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.3357584Z env:
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.3362404Z   GH_TOKEN: ***
+Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-24T11:16:26.3362992Z ##[endgroup]
+Find lint baseline and select execution mode	Complete job	﻿2026-11-24T11:16:27.4022183Z Evaluate and set job outputs
+Find lint baseline and select execution mode	Complete job	2026-11-24T11:16:27.4034648Z Set output 'proceed'
+Find lint baseline and select execution mode	Complete job	2026-11-24T11:16:27.4038085Z Set output 'base_sha'
+Find lint baseline and select execution mode	Complete job	2026-11-24T11:16:27.4039981Z Set output 'full_audit'
+Find lint baseline and select execution mode	Complete job	2026-11-24T11:16:27.4042210Z Cleaning up orphan processes

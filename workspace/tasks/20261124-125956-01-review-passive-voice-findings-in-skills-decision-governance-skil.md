@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-125956-01
 - **Created:** 2026-11-24 12:59 UTC
-- **Updated:** 2026-11-24 16:28 UTC
+- **Updated:** 2026-11-25 02:39 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -102,3 +102,7 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 | `lint-50567c7971d82a5d8b54420a` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
 | `lint-7b5a481ca6d089fd1b1dedf0` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
 | `lint-2d396573c9ffec67f6ef5943` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
+| `lint-c36782537305a07bdb58d06c` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45534135323-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323) |
+| `lint-1cb7ea75d4eb018776bb77e4` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45534135323-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323) |
+| `lint-ca3d08a0a95c039f5e31b693` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45534135323-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323) |
+| `lint-dda122e1893dc39b76ae7e74` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45534135323-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323) |

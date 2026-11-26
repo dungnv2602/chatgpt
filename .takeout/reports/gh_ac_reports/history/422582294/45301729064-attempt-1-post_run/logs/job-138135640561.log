@@ -1,0 +1,463 @@
+process-image-takeout	UNKNOWN STEP	﻿2026-11-24T01:00:49.0557350Z Current runner version: '2.338.2'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0606663Z ##[group]Runner Image Provisioner
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0608126Z Hosted Compute Agent
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0609193Z Version: 20261111.635
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0610547Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0611863Z Build Date: 2026-11-11T01:49:01Z
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0613342Z Worker ID: {077f14f2-939f-48af-bc94-cea2da828cf2}
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0614651Z Region: westus2
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0615702Z Cloud: Azure
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0616765Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0619370Z ##[group]Operating System
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0621370Z Ubuntu
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0622252Z 26.04.1
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0623662Z LTS
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0624622Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0625590Z ##[group]Runner Image
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0626961Z Image: ubuntu-26.04
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0628003Z Version: 20261116.202.1
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0630601Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0633505Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0635421Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0637505Z ##[group]GITHUB_TOKEN Permissions
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0640879Z Contents: write
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0641910Z Metadata: read
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0642939Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0646204Z Secret source: Actions
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0647818Z Cache mode: write
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.0649424Z Prepare workflow directory
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.1071231Z Prepare all required actions
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.1118981Z Getting action download info
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.4142254Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.6277716Z Complete job name: process-image-takeout
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7191681Z ##[group]Run actions/checkout@v7.0.1
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7192601Z with:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7193031Z   ref: gpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7193487Z   fetch-depth: 0
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7193951Z   persist-credentials: true
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7194480Z   repository: dungnv2602/chatgpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7198384Z   token: [REDACTED]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7198835Z   ssh-strict: true
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7199285Z   ssh-user: git
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7199715Z   clean: true
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7200316Z   sparse-checkout-cone-mode: true
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7200860Z   fetch-tags: false
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7201323Z   show-progress: true
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7201782Z   lfs: false
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7202217Z   submodules: false
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7202689Z   set-safe-directory: true
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7203209Z   allow-unsafe-pr-checkout: false
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:49.7203977Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0759933Z Syncing repository: dungnv2602/chatgpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0767257Z ##[group]Getting Git version info
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0769194Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0772069Z [command]/usr/bin/git version
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0773677Z git version 2.56.1
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0777715Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0785958Z Temporarily overriding HOME='/home/runner/work/_temp/1f1b337d-fec3-47fa-b159-068ef920a273' before making global git config changes
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0790374Z Adding repository directory to the temporary git global config as a safe directory
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0792980Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0951727Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.0988207Z ##[group]Determining repository object format
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.3874435Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.3876675Z ##[group]Initializing the repository
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.3878458Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4118677Z hint: Using 'master' as the name for the initial branch. This default branch name
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4121450Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4124756Z hint: to use in all of your new repositories, which will suppress this warning,
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4126716Z hint: call:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4128065Z hint:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4129361Z hint: 	git config --global init.defaultBranch <name>
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4131502Z hint:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4133068Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4135270Z hint: 'development'. The just-created branch can be renamed via this command:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4137026Z hint:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4138349Z hint: 	git branch -m <name>
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4139516Z hint:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4141614Z hint: Disable this message with "git config set advice.defaultBranchName false"
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4146360Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4149808Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4482837Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4485241Z ##[group]Disabling automatic garbage collection
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4488030Z [command]/usr/bin/git config --local gc.auto 0
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4496335Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4498990Z ##[group]Setting up auth
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4500858Z Removing SSH command configuration
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4503838Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.4523522Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5013940Z Removing HTTP extra header
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5019973Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5067911Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5641189Z Removing includeIf entries pointing to credentials config files
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5644792Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5652274Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5807331Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5863533Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path /home/runner/work/_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5905894Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5954832Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.5997956Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.6036694Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.6039542Z ##[group]Fetching the repository
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:50.6046434Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9752554Z From https://github.com/dungnv2602/chatgpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9754018Z  * [new branch]        gpt        -> origin/gpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9755141Z  * [new branch]        main       -> origin/main
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9758553Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9759842Z ##[group]Determining the checkout info
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9771093Z [command]/usr/bin/git branch --list --remote origin/gpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9813019Z   origin/gpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9823223Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9825573Z [command]/usr/bin/git sparse-checkout disable
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9913233Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9985328Z ##[group]Checking out the ref
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:57.9986465Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0068522Z Updating files:  97% (478/488)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0111042Z Updating files:  98% (479/488)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0122584Z Updating files:  99% (484/488)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0135515Z Updating files: 100% (488/488)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0196708Z Updating files: 100% (488/488), done.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0211054Z Switched to a new branch 'gpt'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0236254Z branch 'gpt' set up to track 'origin/gpt'.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0277646Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0477277Z [command]/usr/bin/git log -1 --format=%H
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0507928Z 4afaa2c2211858b0455eaf29c523b32eb16e012c
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0821627Z ##[group]Run sudo apt-get update
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0822204Z ^[[36;1msudo apt-get update^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0822765Z ^[[36;1msudo apt-get install --yes webp python3-yaml^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0872780Z shell: /usr/bin/bash -e {0}
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.0873106Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.2362581Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.2973852Z Get:6 https://packages.microsoft.com/ubuntu/26.04/prod resolute InRelease [3964 B]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.3231658Z Hit:2 http://azure.archive.ubuntu.com/ubuntu resolute InRelease
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.3388762Z Get:3 http://azure.archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.3631367Z Get:4 http://azure.archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.3741527Z Get:7 https://packages.microsoft.com/ubuntu/26.04/prod resolute/main amd64 Packages [186 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.3994028Z Get:5 http://azure.archive.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.4111369Z Get:8 https://packages.microsoft.com/ubuntu/26.04/prod resolute/main arm64 Packages [173 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.5088670Z Get:9 http://azure.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 Packages [914 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.5777018Z Get:10 http://azure.archive.ubuntu.com/ubuntu resolute-updates/main Translation-en [201 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.5811089Z Get:11 http://azure.archive.ubuntu.com/ubuntu resolute-updates/universe amd64v3 Packages [394 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.5881408Z Get:12 http://azure.archive.ubuntu.com/ubuntu resolute-updates/universe Translation-en [124 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.5911609Z Get:13 http://azure.archive.ubuntu.com/ubuntu resolute-updates/restricted amd64v3 Packages [640 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.5931368Z Get:14 http://azure.archive.ubuntu.com/ubuntu resolute-updates/restricted Translation-en [132 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.6162914Z Get:15 http://azure.archive.ubuntu.com/ubuntu resolute-security/main amd64v3 Packages [753 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.6220612Z Get:16 http://azure.archive.ubuntu.com/ubuntu resolute-security/main Translation-en [162 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.6280983Z Get:17 http://azure.archive.ubuntu.com/ubuntu resolute-security/universe amd64v3 Packages [224 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.6341032Z Get:18 http://azure.archive.ubuntu.com/ubuntu resolute-security/universe Translation-en [73.2 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.6754945Z Get:19 http://azure.archive.ubuntu.com/ubuntu resolute-security/restricted amd64v3 Packages [618 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:00:59.6868214Z Get:20 http://azure.archive.ubuntu.com/ubuntu resolute-security/restricted Translation-en [128 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:02.0915303Z Fetched 5139 kB in 1s (5776 kB/s)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:02.7918250Z Reading package lists...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:02.8282694Z Reading package lists...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:02.9920419Z Building dependency tree...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:02.9929194Z Reading state information...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.0253812Z python3-yaml is already the newest version (6.0.3-1build1).
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.0254686Z python3-yaml set to manually installed.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.0825603Z Solving dependencies...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.1691973Z The following additional packages will be installed:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.1697908Z   libgif7 libglut3.12 libopengl0
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.1892905Z The following NEW packages will be installed:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.1900547Z   libgif7 libglut3.12 libopengl0 webp
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.2116149Z 0 upgraded, 4 newly installed, 0 to remove and 57 not upgraded.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.2117331Z Need to get 275 kB of archives.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.2118079Z After this operation, 1051 kB of additional disk space will be used.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.2118948Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.4439986Z Get:2 http://azure.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 libgif7 amd64 5.2.2-1ubuntu3.2 [34.9 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.5160743Z Get:3 http://azure.archive.ubuntu.com/ubuntu resolute/universe amd64v3 libglut3.12 amd64 3.4.0-6 [102 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.5917593Z Get:4 http://azure.archive.ubuntu.com/ubuntu resolute/main amd64v3 libopengl0 amd64 1.7.0-3 [32.8 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:03.6631714Z Get:5 http://azure.archive.ubuntu.com/ubuntu resolute/universe amd64v3 webp amd64 1.5.0-0.1build1 [105 kB]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0001288Z Fetched 275 kB in 0s (590 kB/s)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0291440Z Selecting previously unselected package libgif7:amd64.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0660534Z (Reading database ... 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0661463Z (Reading database ... 5%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0662071Z (Reading database ... 10%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0662686Z (Reading database ... 15%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0663087Z (Reading database ... 20%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0663472Z (Reading database ... 25%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0663849Z (Reading database ... 30%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0664228Z (Reading database ... 35%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0664612Z (Reading database ... 40%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0665023Z (Reading database ... 45%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.0665413Z (Reading database ... 50%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.1036212Z (Reading database ... 55%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.1538127Z (Reading database ... 60%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.2023382Z (Reading database ... 65%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.2528671Z (Reading database ... 70%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.3188638Z (Reading database ... 75%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.3948018Z (Reading database ... 80%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.5469801Z (Reading database ... 85%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.6894256Z (Reading database ... 90%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.8551262Z (Reading database ... 95%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.8561092Z (Reading database ... 100%
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.8561803Z (Reading database ... 214296 files and directories currently installed.)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.8587168Z Preparing to unpack .../libgif7_5.2.2-1ubuntu3.2_amd64v3.deb ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.8631013Z Unpacking libgif7:amd64 (5.2.2-1ubuntu3.2) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.8887380Z Selecting previously unselected package libglut3.12:amd64.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.9028495Z Preparing to unpack .../libglut3.12_3.4.0-6_amd64v3.deb ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.9038032Z Unpacking libglut3.12:amd64 (3.4.0-6) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.9298061Z Selecting previously unselected package libopengl0:amd64.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.9436574Z Preparing to unpack .../libopengl0_1.7.0-3_amd64v3.deb ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.9444532Z Unpacking libopengl0:amd64 (1.7.0-3) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.9695935Z Selecting previously unselected package webp.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.9836860Z Preparing to unpack .../webp_1.5.0-0.1build1_amd64v3.deb ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:04.9847823Z Unpacking webp (1.5.0-0.1build1) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.0409589Z Setting up libopengl0:amd64 (1.7.0-3) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.0442634Z Setting up libglut3.12:amd64 (3.4.0-6) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.0470407Z Setting up libgif7:amd64 (5.2.2-1ubuntu3.2) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.0493770Z Setting up webp (1.5.0-0.1build1) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.0519454Z Processing triggers for man-db (2.13.1-1build1) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.0548077Z Not building database; man-db/auto-update is not 'true'.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.0561881Z Processing triggers for libc-bin (2.43-2ubuntu2.7) ...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7683523Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7684321Z Running kernel seems to be up-to-date.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7684913Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7685146Z Restarting services...
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7788452Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7789450Z Service restarts being deferred:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7790742Z  systemctl restart hosted-compute-agent.service
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7791145Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7801140Z No containers need to be restarted.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7801575Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7801888Z No user sessions are running outdated binaries.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7802339Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:05.7802743Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.7390501Z ##[group]Run python3 -m py_compile \
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.7390896Z ^[[36;1mpython3 -m py_compile \^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.7391246Z ^[[36;1m  skills/the-worker/scripts/process_takeout.py \^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.7391682Z ^[[36;1m  skills/the-worker/scripts/verify_published_manifest.py^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.7425904Z shell: /usr/bin/bash -e {0}
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.7426172Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8162793Z ##[group]Run python3 -m unittest discover \
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8163177Z ^[[36;1mpython3 -m unittest discover \^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8163513Z ^[[36;1m  -s skills/the-worker/scripts \^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8163852Z ^[[36;1m  -p 'test_process_takeout_unittest.py' \^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8164164Z ^[[36;1m  -v^[[0m
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8198054Z shell: /usr/bin/bash -e {0}
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8198314Z ##[endgroup]
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8973210Z test_generation_hash_mismatch_does_not_fail_published_storage_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_generation_hash_mismatch_does_not_fail_published_storage_verification) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8976349Z test_github_url_must_match_exact_published_path (test_process_takeout_unittest.PublishedManifestVerificationTests.test_github_url_must_match_exact_published_path) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8979422Z test_legacy_webp_is_checked_but_original_mapping_remains_not_verifiable (test_process_takeout_unittest.PublishedManifestVerificationTests.test_legacy_webp_is_checked_but_original_mapping_remains_not_verifiable) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8982679Z test_missing_published_attempt_link_fails_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_missing_published_attempt_link_fails_verification) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8985598Z test_missing_published_conversation_record_fails_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_missing_published_conversation_record_fails_verification) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8988625Z test_missing_published_inventory_link_fails_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_missing_published_inventory_link_fails_verification) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8991668Z test_missing_published_inventory_section_fails_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_missing_published_inventory_section_fails_verification) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.8994536Z test_published_conversation_mapping_mismatch_fails_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_conversation_mapping_mismatch_fails_verification) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.9001209Z test_published_daily_readme_and_attempt_links_are_verified (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_daily_readme_and_attempt_links_are_verified) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.9003777Z test_published_original_and_webp_are_verified (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_original_and_webp_are_verified) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.9012285Z test_published_original_hash_mismatch_fails (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_original_hash_mismatch_fails) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.9015327Z test_published_partial_conversation_without_gap_details_fails (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_partial_conversation_without_gap_details_fails) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:06.9018222Z test_published_webp_hash_mismatch_fails (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_webp_hash_mismatch_fails) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:07.0179904Z test_animated_png_fails_and_stays_in_takeout (test_process_takeout_unittest.TakeoutProcessorTests.test_animated_png_fails_and_stays_in_takeout) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:07.1442258Z test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps (test_process_takeout_unittest.TakeoutProcessorTests.test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:07.3304773Z test_attempt_output_upload_updates_attempt_record_and_readme (test_process_takeout_unittest.TakeoutProcessorTests.test_attempt_output_upload_updates_attempt_record_and_readme) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:07.5360412Z test_bulk_staging_preserves_each_original_filename (test_process_takeout_unittest.TakeoutProcessorTests.test_bulk_staging_preserves_each_original_filename) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:07.6800432Z test_conversation_mapping_mismatch_fails_before_staging (test_process_takeout_unittest.TakeoutProcessorTests.test_conversation_mapping_mismatch_fails_before_staging) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:07.7996069Z test_destination_collision_fails_without_overwrite (test_process_takeout_unittest.TakeoutProcessorTests.test_destination_collision_fails_without_overwrite) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:07.9232509Z test_drawing_generation_identity_must_match_attempt_record (test_process_takeout_unittest.TakeoutProcessorTests.test_drawing_generation_identity_must_match_attempt_record) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:08.0520057Z test_drawing_session_upload_without_attempt_metadata_is_rejected (test_process_takeout_unittest.TakeoutProcessorTests.test_drawing_session_upload_without_attempt_metadata_is_rejected) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:08.2008969Z test_duplicate_output_id_fails_before_relocation (test_process_takeout_unittest.TakeoutProcessorTests.test_duplicate_output_id_fails_before_relocation) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:08.2892244Z test_empty_handoff_is_noop_and_leaves_uploads_untouched (test_process_takeout_unittest.TakeoutProcessorTests.test_empty_handoff_is_noop_and_leaves_uploads_untouched) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:08.4082909Z test_existing_manifest_duplicate_output_id_blocks_new_upload (test_process_takeout_unittest.TakeoutProcessorTests.test_existing_manifest_duplicate_output_id_blocks_new_upload) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:08.5744287Z test_existing_webp_staging_tree_is_reserved_not_scanned_as_intake (test_process_takeout_unittest.TakeoutProcessorTests.test_existing_webp_staging_tree_is_reserved_not_scanned_as_intake) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:08.8931961Z test_failed_batch_retains_successful_staging_and_retry_uses_next_attempt (test_process_takeout_unittest.TakeoutProcessorTests.test_failed_batch_retains_successful_staging_and_retry_uses_next_attempt) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:09.0076118Z test_generation_hash_matches_uploaded_original_and_is_reported (test_process_takeout_unittest.TakeoutProcessorTests.test_generation_hash_matches_uploaded_original_and_is_reported) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:09.1239036Z test_generation_hash_mismatch_is_a_review_flag_not_a_batch_rejection (test_process_takeout_unittest.TakeoutProcessorTests.test_generation_hash_mismatch_is_a_review_flag_not_a_batch_rejection) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:09.2420652Z test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids (test_process_takeout_unittest.TakeoutProcessorTests.test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:10.2629818Z test_invalid_handoff_metadata_fields_fail_before_relocation (test_process_takeout_unittest.TakeoutProcessorTests.test_invalid_handoff_metadata_fields_fail_before_relocation) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:10.3520590Z test_invalid_unhashable_handoff_status_is_reported_safely (test_process_takeout_unittest.TakeoutProcessorTests.test_invalid_unhashable_handoff_status_is_reported_safely) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:10.4666098Z test_malformed_partial_conversation_record_fails_closed (test_process_takeout_unittest.TakeoutProcessorTests.test_malformed_partial_conversation_record_fails_closed) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:10.5802357Z test_missing_conversation_record_fails_before_staging_or_relocation (test_process_takeout_unittest.TakeoutProcessorTests.test_missing_conversation_record_fails_before_staging_or_relocation) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:10.6945272Z test_missing_existing_webp_link_blocks_upload_and_rolls_back (test_process_takeout_unittest.TakeoutProcessorTests.test_missing_existing_webp_link_blocks_upload_and_rolls_back) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:10.7793408Z test_non_mapping_handoff_is_rejected_not_silently_ignored (test_process_takeout_unittest.TakeoutProcessorTests.test_non_mapping_handoff_is_rejected_not_silently_ignored) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:10.8632061Z test_not_ready_handoff_is_noop (test_process_takeout_unittest.TakeoutProcessorTests.test_not_ready_handoff_is_noop) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:10.9817437Z test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload (test_process_takeout_unittest.TakeoutProcessorTests.test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.1024627Z test_png_links_in_drawing_records_are_rejected (test_process_takeout_unittest.TakeoutProcessorTests.test_png_links_in_drawing_records_are_rejected) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.2246691Z test_session_manifest_backfills_legacy_webps_conservatively (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_backfills_legacy_webps_conservatively) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.3464321Z test_session_manifest_preserves_existing_rows_and_adds_new_columns (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_preserves_existing_rows_and_adds_new_columns) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.4675844Z test_session_manifest_uses_a_matching_legacy_original_master_when_present (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_uses_a_matching_legacy_original_master_when_present) ... FAIL
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.6171091Z test_success_moves_byte_identical_master_creates_webp_and_archives_reports (test_process_takeout_unittest.TakeoutProcessorTests.test_success_moves_byte_identical_master_creates_webp_and_archives_reports) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7350491Z test_unlisted_image_fails_without_moving_sources_or_clearing_handoff (test_process_takeout_unittest.TakeoutProcessorTests.test_unlisted_image_fails_without_moving_sources_or_clearing_handoff) ... ok
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7352054Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7354658Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7356053Z FAIL: test_published_daily_readme_and_attempt_links_are_verified (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_daily_readme_and_attempt_links_are_verified)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7357428Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7358018Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7359221Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 1292, in test_published_daily_readme_and_attempt_links_are_verified
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7360626Z     self.assertEqual(error, "")
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7361024Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7361678Z AssertionError: 'Published attempt record identity does no[40 chars].png' != ''
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7362660Z - Published attempt record identity does not match the conversation mapping: source.png
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7363259Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7363265Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7363452Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7364747Z FAIL: test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps (test_process_takeout_unittest.TakeoutProcessorTests.test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7366462Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7367032Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7368215Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 676, in test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7369552Z     self.assertEqual(result.returncode, 0, result.stderr)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7370123Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7371807Z AssertionError: 1 != 0 : Takeout batch batch-attempt-six-eleven failed: upload-six.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-06.md.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7373151Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7373156Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7373346Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7374686Z FAIL: test_attempt_output_upload_updates_attempt_record_and_readme (test_process_takeout_unittest.TakeoutProcessorTests.test_attempt_output_upload_updates_attempt_record_and_readme)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7376383Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7377001Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7378283Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 270, in test_attempt_output_upload_updates_attempt_record_and_readme
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7379663Z     self.assertEqual(result.returncode, 0, result.stderr)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7380581Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7382046Z AssertionError: 1 != 0 : Takeout batch batch-session-link failed: portrait.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7383344Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7383360Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7383557Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7384928Z FAIL: test_conversation_mapping_mismatch_fails_before_staging (test_process_takeout_unittest.TakeoutProcessorTests.test_conversation_mapping_mismatch_fails_before_staging)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7386276Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7386842Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7388005Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 401, in test_conversation_mapping_mismatch_fails_before_staging
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7389289Z     self.assertNotEqual(result.returncode, 0)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7389761Z     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7390466Z AssertionError: 0 == 0
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7390668Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7390836Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7392004Z FAIL: test_duplicate_output_id_fails_before_relocation (test_process_takeout_unittest.TakeoutProcessorTests.test_duplicate_output_id_fails_before_relocation)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7393283Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7393925Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7395164Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 914, in test_duplicate_output_id_fails_before_relocation
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7396706Z     self.assertIn("Duplicate output_id", report)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7397276Z     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7403275Z AssertionError: 'Duplicate output_id' not found in "# Takeout Processing — batch-duplicate-output-id\n\n- Batch: batch-duplicate-output-id\n- Attempt: attempt-001\n- Status: FAILED\n- Items: 2\n- Generated: 2026-11-24T01:01:08+00:00\n\n## Verification checks\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\n- Batch was not marked successful; sources were restored to takeout and converted WebPs were retained in staging where rollback succeeded.\n\n## Errors and warnings\n- first.png: conversation_record has no exact image mapping row for attempt 'Not applicable', asset ID 'Not applicable', and generation ID 'A001-O01'.\n"
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7407538Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7407757Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7409076Z FAIL: test_existing_manifest_duplicate_output_id_blocks_new_upload (test_process_takeout_unittest.TakeoutProcessorTests.test_existing_manifest_duplicate_output_id_blocks_new_upload)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7410815Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7441432Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7442965Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 850, in test_existing_manifest_duplicate_output_id_blocks_new_upload
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7444487Z     self.assertIn("Duplicate output_id", report)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7445476Z     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7450579Z AssertionError: 'Duplicate output_id' not found in '# Takeout Processing — batch-existing-output-id\n\n- Batch: batch-existing-output-id\n- Attempt: attempt-001\n- Status: FAILED\n- Items: 1\n- Generated: 2026-11-24T01:01:08+00:00\n\n## Verification checks\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\n- Batch was not marked successful; sources were restored to takeout and converted WebPs were retained in staging where rollback succeeded.\n\n## Errors and warnings\n- new.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.\n'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7454634Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7454857Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7456297Z FAIL: test_generation_hash_matches_uploaded_original_and_is_reported (test_process_takeout_unittest.TakeoutProcessorTests.test_generation_hash_matches_uploaded_original_and_is_reported)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7457888Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7458489Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7459783Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 1159, in test_generation_hash_matches_uploaded_original_and_is_reported
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7461544Z     self.assertEqual(result.returncode, 0, result.stderr)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7462137Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7463772Z AssertionError: 1 != 0 : Takeout batch batch-hash-match failed: unchanged.png: conversation_record has no exact image mapping row for attempt 'Not applicable', asset ID 'Not applicable', and generation ID 'A001-O01'.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7465123Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7465129Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7465311Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7466818Z FAIL: test_generation_hash_mismatch_is_a_review_flag_not_a_batch_rejection (test_process_takeout_unittest.TakeoutProcessorTests.test_generation_hash_mismatch_is_a_review_flag_not_a_batch_rejection)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7468330Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7468915Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7470363Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 1194, in test_generation_hash_mismatch_is_a_review_flag_not_a_batch_rejection
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7471789Z     self.assertEqual(result.returncode, 0, result.stderr)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7472344Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7473868Z AssertionError: 1 != 0 : Takeout batch batch-hash-mismatch failed: mismatch.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7486660Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7486675Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7486865Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7488824Z FAIL: test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids (test_process_takeout_unittest.TakeoutProcessorTests.test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7491028Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7491758Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7493428Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 885, in test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7495266Z     self.assertEqual(result.returncode, 0, result.stderr)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7495854Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7497562Z AssertionError: 1 != 0 : Takeout batch batch-identical-outputs failed: output-one.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7498845Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7498851Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7499039Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7500517Z FAIL: test_missing_existing_webp_link_blocks_upload_and_rolls_back (test_process_takeout_unittest.TakeoutProcessorTests.test_missing_existing_webp_link_blocks_upload_and_rolls_back)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7501951Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7502324Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7503062Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 776, in test_missing_existing_webp_link_blocks_upload_and_rolls_back
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7503907Z     self.assertIn("missing or unsafe WebP asset", report)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7504255Z     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7507203Z AssertionError: 'missing or unsafe WebP asset' not found in '# Takeout Processing — batch-stale-webp-link\n\n- Batch: batch-stale-webp-link\n- Attempt: attempt-001\n- Status: FAILED\n- Items: 1\n- Generated: 2026-11-24T01:01:10+00:00\n\n## Verification checks\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\n- Batch was not marked successful; sources were restored to takeout and converted WebPs were retained in staging where rollback succeeded.\n\n## Errors and warnings\n- new.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.\n'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7509518Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7509647Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7511122Z FAIL: test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload (test_process_takeout_unittest.TakeoutProcessorTests.test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7512108Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7512461Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7513257Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 1108, in test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7514148Z     self.assertIn("Original master has no same-stem WebP", report)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7514533Z     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7517377Z AssertionError: 'Original master has no same-stem WebP' not found in '# Takeout Processing — batch-orphan-master\n\n- Batch: batch-orphan-master\n- Attempt: attempt-001\n- Status: FAILED\n- Items: 1\n- Generated: 2026-11-24T01:01:10+00:00\n\n## Verification checks\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\n- Batch was not marked successful; sources were restored to takeout and converted WebPs were retained in staging where rollback succeeded.\n\n## Errors and warnings\n- new.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.\n'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7519859Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7519974Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7521335Z FAIL: test_png_links_in_drawing_records_are_rejected (test_process_takeout_unittest.TakeoutProcessorTests.test_png_links_in_drawing_records_are_rejected)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7522270Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7522644Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7523504Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 813, in test_png_links_in_drawing_records_are_rejected
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7524248Z     self.assertIn("link only top-level WebP", report)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7524610Z     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7527336Z AssertionError: 'link only top-level WebP' not found in '# Takeout Processing — batch-png-link\n\n- Batch: batch-png-link\n- Attempt: attempt-001\n- Status: FAILED\n- Items: 1\n- Generated: 2026-11-24T01:01:11+00:00\n\n## Verification checks\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\n- Batch was not marked successful; sources were restored to takeout and converted WebPs were retained in staging where rollback succeeded.\n\n## Errors and warnings\n- new.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.\n'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7529535Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7529649Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7530740Z FAIL: test_session_manifest_backfills_legacy_webps_conservatively (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_backfills_legacy_webps_conservatively)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7531608Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7531957Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7532673Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 996, in test_session_manifest_backfills_legacy_webps_conservatively
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7533450Z     self.assertEqual(result.returncode, 0, result.stderr)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7533797Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7534610Z AssertionError: 1 != 0 : Takeout batch batch-legacy-manifest failed: new.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7535339Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7535343Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7535461Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7536296Z FAIL: test_session_manifest_preserves_existing_rows_and_adds_new_columns (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_preserves_existing_rows_and_adds_new_columns)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7537149Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7537490Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7538225Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 1138, in test_session_manifest_preserves_existing_rows_and_adds_new_columns
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7539026Z     self.assertEqual(result.returncode, 0, result.stderr)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7539506Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7541065Z AssertionError: 1 != 0 : Takeout batch batch-manifest-migration failed: fresh.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7541822Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7541826Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7541947Z ======================================================================
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7542842Z FAIL: test_session_manifest_uses_a_matching_legacy_original_master_when_present (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_uses_a_matching_legacy_original_master_when_present)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7543741Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7544079Z Traceback (most recent call last):
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7544835Z   File "/home/runner/work/chatgpt/chatgpt/skills/the-worker/scripts/test_process_takeout_unittest.py", line 1055, in test_session_manifest_uses_a_matching_legacy_original_master_when_present
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7545664Z     self.assertEqual(result.returncode, 0, result.stderr)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7546170Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7547050Z AssertionError: 1 != 0 : Takeout batch batch-legacy-original-manifest failed: new.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7547805Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7547809Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7547947Z ----------------------------------------------------------------------
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7548270Z Ran 43 tests in 4.838s
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7548411Z 
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7548501Z FAILED (failures=15)
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7560410Z ##[error]Process completed with exit code 1.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.7746512Z Post job cleanup.
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.8773178Z [command]/usr/bin/git version
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.8841487Z git version 2.56.1
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.8959064Z Temporarily overriding HOME='/home/runner/work/_temp/606fef4a-1467-4fd1-9404-1098127b0d10' before making global git config changes
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.8960089Z Adding repository directory to the temporary git global config as a safe directory
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.8981810Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.9025169Z Removing SSH command configuration
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.9025891Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.9146198Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.9891173Z Removing HTTP extra header
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.9915171Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:11.9992001Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0532710Z Removing includeIf entries pointing to credentials config files
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0551022Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0564696Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0571130Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0595694Z includeif.gitdir:/github/workspace/.git.path
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0610975Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0634463Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0641465Z /home/runner/work/_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0651391Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-b6648e3b\-fd12\-40c3\-aebd\-3f50ba81b5f5\.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0718810Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0743626Z /home/runner/work/_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0755914Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-b6648e3b\-fd12\-40c3\-aebd\-3f50ba81b5f5\.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0803026Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0832431Z /github/runner_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0851237Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-b6648e3b\-fd12\-40c3\-aebd\-3f50ba81b5f5\.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0882643Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0911187Z /github/runner_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0931128Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-b6648e3b\-fd12\-40c3\-aebd\-3f50ba81b5f5\.config
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.0964802Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.1284800Z Removing credentials config '/home/runner/work/_temp/git-credentials-b6648e3b-fd12-40c3-aebd-3f50ba81b5f5.config'
+process-image-takeout	UNKNOWN STEP	2026-11-24T01:01:12.1452007Z Cleaning up orphan processes

@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45311750665",
+    "number": 246,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311750665",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "f25fde06a3688d7526f0de85824aee65d3a34c70",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-24T02:21:20Z",
+    "run_started_at": "2026-11-24T02:21:20Z",
+    "updated_at": "2026-11-24T02:23:42Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "docs(worker): clarify takeout metadata allowlist"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-24T06:17:24Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "138169073689",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "failure"
+    }
+  },
+  "classification": {
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "checkout_or_action_download",
+    "categories": [
+      "checkout_or_action_download"
+    ],
+    "issues": [
+      {
+        "category": "checkout_or_action_download",
+        "job_id": "138168964188",
+        "job_name": "validate-document-standards",
+        "step_number": 5,
+        "step_name": "Validate the document type catalog",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "validate-document-standards\tUNKNOWN STEP\t2026-11-24T02:21:41.6149543Z ERROR: 1 Markdown file(s) are not covered by the catalog: images/takeout/history/2026-11-20-001/attempt-001/verification-report.md."
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "138168964188",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-24T02:21:30Z",
+      "completed_at": "2026-11-24T02:21:44Z",
+      "runner_name": "GitHub Actions 1000001916",
+      "runner_id": 1000001916,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:21:31Z",
+          "completed_at": "2026-11-24T02:21:32Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:21:32Z",
+          "completed_at": "2026-11-24T02:21:40Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:21:40Z",
+          "completed_at": "2026-11-24T02:21:40Z"
+        },
+        {
+          "number": 4,
+          "name": "Run catalog validator regression tests",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:21:40Z",
+          "completed_at": "2026-11-24T02:21:41Z"
+        },
+        {
+          "number": 5,
+          "name": "Validate the document type catalog",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-24T02:21:41Z",
+          "completed_at": "2026-11-24T02:21:41Z"
+        },
+        {
+          "number": 9,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-24T02:21:41Z",
+          "completed_at": "2026-11-24T02:21:41Z"
+        },
+        {
+          "number": 10,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:21:41Z",
+          "completed_at": "2026-11-24T02:21:41Z"
+        },
+        {
+          "number": 11,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:21:41Z",
+          "completed_at": "2026-11-24T02:21:41Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 31807,
+        "path": "logs/job-138168964188.log",
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-24T02:21:41.6149543Z ERROR: 1 Markdown file(s) are not covered by the catalog: images/takeout/history/2026-11-20-001/attempt-001/verification-report.md.",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-24T02:21:41.6151361Z Catalog validation failed: 1 error(s), 33 document type(s), 73 reference(s).",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-24T02:21:41.6213567Z ##[error]Process completed with exit code 1."
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "138168964188",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-24T02:21:30Z",
+      "completed_at": "2026-11-24T02:21:44Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311750665/job/138168964188",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "138168964188",
+      "job_id": "138168964188",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "138168964188",
+      "job_id": "138168964188",
+      "path": ".github",
+      "start_line": 14,
+      "end_line": 14,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45311750665-attempt-1-post_run"
+}

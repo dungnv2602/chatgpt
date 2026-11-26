@@ -1,0 +1,384 @@
+Lint changed Markdown files and publish detailed evidence	Set up job	﻿2026-11-24T15:35:33.9652086Z Current runner version: '2.338.2'
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9671390Z ##[group]Runner Image Provisioner
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9672096Z Hosted Compute Agent
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9672589Z Version: 20261111.635
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9673048Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9673909Z Build Date: 2026-11-11T01:49:01Z
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9674472Z Worker ID: {05d7cae1-75bb-493a-814c-aca396c15057}
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9675024Z Region: us-west-2
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9675445Z Cloud: AWS
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9675826Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9676796Z ##[group]Operating System
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9677267Z Ubuntu
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9677629Z 26.04.1
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9678009Z LTS
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9678374Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9678754Z ##[group]Runner Image
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9679256Z Image: ubuntu-26.04
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9679664Z Version: 20261116.88.1
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9680503Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.88/images/ubuntu/Ubuntu2604-Readme.md
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9681900Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.88
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9682735Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9683711Z ##[group]GITHUB_TOKEN Permissions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9685372Z Contents: write
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9685787Z Metadata: read
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9686227Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9687847Z Secret source: Actions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9688597Z Cache mode: write
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9689103Z Prepare workflow directory
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9919742Z Prepare all required actions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:33.9956802Z Getting action download info
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:34.3699079Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:36.0618621Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-24T15:35:36.3470856Z Complete job name: Lint changed Markdown files and publish detailed evidence
+Lint changed Markdown files and publish detailed evidence	Check out current commit	﻿2026-11-24T15:35:36.4085649Z ##[group]Run actions/checkout@v4
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4086208Z with:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4086483Z   fetch-depth: 1
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4086840Z   repository: dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4089049Z   token: [REDACTED]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4089387Z   ssh-strict: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4089659Z   ssh-user: git
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4089930Z   persist-credentials: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4090235Z   clean: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4090532Z   sparse-checkout-cone-mode: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4090825Z   fetch-tags: false
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4091115Z   show-progress: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4091401Z   lfs: false
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4091692Z   submodules: false
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4091976Z   set-safe-directory: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4092269Z   allow-unsafe-pr-checkout: false
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:36.4092722Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7650630Z Syncing repository: dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7652210Z ##[group]Getting Git version info
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7652682Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7653425Z [command]/usr/bin/git version
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7668449Z git version 2.56.1
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7684790Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7692039Z Temporarily overriding HOME='/home/runner/work/_temp/65e86870-03dd-4538-92d0-30fc9e89d1a5' before making global git config changes
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7693068Z Adding repository directory to the temporary git global config as a safe directory
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7696135Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7786042Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7791258Z ##[group]Initializing the repository
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.7795636Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8587185Z hint: Using 'master' as the name for the initial branch. This default branch name
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8587824Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8588794Z hint: to use in all of your new repositories, which will suppress this warning,
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8589254Z hint: call:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8589522Z hint:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8589940Z hint: 	git config --global init.defaultBranch <name>
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8590259Z hint:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8590614Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8591102Z hint: 'development'. The just-created branch can be renamed via this command:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8591487Z hint:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8591757Z hint: 	git branch -m <name>
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8592024Z hint:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8592355Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8624047Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8632366Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8699843Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8704205Z ##[group]Disabling automatic garbage collection
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8705195Z [command]/usr/bin/git config --local gc.auto 0
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8725575Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8726223Z ##[group]Setting up auth
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8731305Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:38.8753274Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:39.2594794Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:39.2620015Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:39.2805266Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:39.2835764Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:39.3024857Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:39.3039617Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:39.3040181Z ##[group]Fetching the repository
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:39.3045667Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fd068b52a7e050826f5d83975f4820f1ebb8522e:refs/remotes/origin/gpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4701022Z From https://github.com/dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4701546Z  * [new ref]         fd068b52a7e050826f5d83975f4820f1ebb8522e -> origin/gpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4705080Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4705639Z ##[group]Determining the checkout info
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4707326Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4712751Z [command]/usr/bin/git sparse-checkout disable
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4777236Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4799930Z ##[group]Checking out the ref
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:47.4803076Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:48.3712196Z Switched to a new branch 'gpt'
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:48.3721080Z branch 'gpt' set up to track 'origin/gpt'.
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:48.3753329Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:48.3803295Z [command]/usr/bin/git log -1 --format=%H
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-24T15:35:48.3822901Z fd068b52a7e050826f5d83975f4820f1ebb8522e
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	﻿2026-11-24T15:35:48.4004156Z ##[group]Run set -euo pipefail
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4004668Z ^[[36;1mset -euo pipefail^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4004992Z ^[[36;1mif [[ "$BASE_SHA" == "$GITHUB_SHA" ]]; then^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4005333Z ^[[36;1m  echo "full_audit=false" >> "$GITHUB_OUTPUT"^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4005685Z ^[[36;1melif git fetch --no-tags --depth=1 origin "$BASE_SHA"; then^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4006057Z ^[[36;1m  echo "full_audit=false" >> "$GITHUB_OUTPUT"^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4006498Z ^[[36;1melse^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4006804Z ^[[36;1m  echo "::warning::Could not fetch the baseline commit. Run a full audit."^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4007248Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4007514Z ^[[36;1mfi^[[0m
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4029585Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4029996Z env:
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4030263Z   BASE_SHA: e1c3f1804604e0b66d31437ded12e5711f199f96
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.4030567Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.7790936Z From https://github.com/dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Fetch only the successful baseline commit	2026-11-24T15:35:48.7791564Z  * branch            e1c3f1804604e0b66d31437ded12e5711f199f96 -> FETCH_HEAD
+Lint changed Markdown files and publish detailed evidence	Set up Python	﻿2026-11-24T15:35:48.7889884Z ##[group]Run actions/setup-python@v5
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.7890192Z with:
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.7890445Z   python-version: 3.x
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.7890678Z   check-latest: false
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.7892440Z   token: [REDACTED]
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.7892698Z   update-environment: true
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.7892994Z   allow-prereleases: false
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.7893242Z   freethreaded: false
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.7893463Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:48.8920127Z ##[group]Installed versions
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:49.4909452Z (node:2363) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:49.4910549Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:49.4928406Z Successfully set up CPython (3.15.2)
+Lint changed Markdown files and publish detailed evidence	Set up Python	2026-11-24T15:35:49.4929455Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	﻿2026-11-24T15:35:49.5059440Z ##[group]Run set -uo pipefail
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5059966Z ^[[36;1mset -uo pipefail^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5060360Z ^[[36;1mmkdir -p .lint-report-records^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5060753Z ^[[36;1mfailed=0^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5061050Z ^[[36;1mrun_check() {^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5061350Z ^[[36;1m  name="$1"^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5061676Z ^[[36;1m  shift^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5062090Z ^[[36;1m  output=".lint-report-records/$name.log"^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5062523Z ^[[36;1m  status=0^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5062851Z ^[[36;1m  "$@" > "$output" 2>&1 || status=$?^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5063222Z ^[[36;1m  key="$name"_exit^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5063945Z ^[[36;1m  printf '%s=%s\n' "$key" "$status" >> "$GITHUB_OUTPUT"^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5064458Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5064920Z ^[[36;1m}^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5065413Z ^[[36;1mrun_check wrapper_syntax bash -n skills/asd-ste100/scripts/ste-lint-repository.sh^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5066065Z ^[[36;1mrun_check python_compile python3 -m py_compile \^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5066684Z ^[[36;1m  skills/asd-ste100/scripts/generate_lint_report.py \^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5067238Z ^[[36;1m  skills/asd-ste100/scripts/check_markdown_anchors.py^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5067912Z ^[[36;1mrun_check report_tests python3 skills/asd-ste100/scripts/test_generate_lint_report.py^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5068681Z ^[[36;1mrun_check anchor_tests python3 skills/asd-ste100/scripts/test_check_markdown_anchors.py^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5069460Z ^[[36;1mrun_check linter_selftest python3 skills/asd-ste100/scripts/ste-lint.py --selftest^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5070077Z ^[[36;1mecho "failed=$failed" >> "$GITHUB_OUTPUT"^[[0m
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5720942Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5721364Z env:
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5721643Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5722059Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5722447Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5722787Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5723155Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5723642Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-24T15:35:49.5723993Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	﻿2026-11-24T15:35:54.7790486Z ##[group]Run set -euo pipefail
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7790800Z ^[[36;1mset -euo pipefail^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7791183Z ^[[36;1mgit diff --name-only --diff-filter=ACMR "$BASE_SHA" "$GITHUB_SHA" -- '*.md' |^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7791895Z ^[[36;1m  grep -vE '^(archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/))' \^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7792565Z ^[[36;1m  > .lint-report-records/changed-files.txt || true^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7792861Z ^[[36;1m{^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7793064Z ^[[36;1m  echo "files<<EOF"^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7793365Z ^[[36;1m  cat .lint-report-records/changed-files.txt^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7793867Z ^[[36;1m  echo "EOF"^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7794123Z ^[[36;1m} >> "$GITHUB_OUTPUT"^[[0m
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7812682Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7813704Z env:
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7813984Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7814528Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7814902Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7815269Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7815600Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7815936Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7816280Z   BASE_SHA: e1c3f1804604e0b66d31437ded12e5711f199f96
+Lint changed Markdown files and publish detailed evidence	Find Markdown files changed since the last successful run	2026-11-24T15:35:54.7816568Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	﻿2026-11-24T15:35:54.7923996Z ##[group]Run set -uo pipefail
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7924337Z ^[[36;1mset -uo pipefail^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7924586Z ^[[36;1mfailed=0^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7924828Z ^[[36;1mwhile IFS= read -r file; do^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7925114Z ^[[36;1m  [[ -z "$file" ]] && continue^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7925427Z ^[[36;1m  key=$(printf '%s' "$file" | sha256sum | cut -d' ' -f1)^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7925761Z ^[[36;1m  output=".lint-report-records/$key.json"^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7926091Z ^[[36;1m  raw="$output.raw"^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7926327Z ^[[36;1m  status=0^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7926798Z ^[[36;1m  bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7927341Z ^[[36;1m  if jq -e '.violations | type == "array"' "$raw" >/dev/null 2>&1; then^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7927758Z ^[[36;1m    jq --arg path "$file" --argjson exit_code "$status" \^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7928152Z ^[[36;1m      '. + {path:$path, exit_code:$exit_code}' "$raw" > "$output"^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7928545Z ^[[36;1m  else^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7928813Z ^[[36;1m    python3 - "$file" "$status" "$raw" "$output" <<'PY'^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7929128Z ^[[36;1mimport json, pathlib, sys^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7929422Z ^[[36;1mpath, exit_code, raw_path, output_path = sys.argv[1:]^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7929850Z ^[[36;1mraw = pathlib.Path(raw_path).read_text(encoding="utf-8", errors="replace")^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7930202Z ^[[36;1mpayload = {^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7930427Z ^[[36;1m    "path": path,^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7930721Z ^[[36;1m    "exit_code": int(exit_code) if int(exit_code) else 2,^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7931081Z ^[[36;1m    "capture_error": raw,^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7931640Z ^[[36;1m    "violations": [],^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7931876Z ^[[36;1m}^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7932114Z ^[[36;1mpathlib.Path(output_path).write_text(^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7932457Z ^[[36;1m    json.dumps(payload, ensure_ascii=False, indent=2) + "\n",^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7932767Z ^[[36;1m    encoding="utf-8",^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7933027Z ^[[36;1m)^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7933225Z ^[[36;1mPY^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7933611Z ^[[36;1m    failed=1^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7933867Z ^[[36;1m  fi^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7934082Z ^[[36;1m  rm -f "$raw"^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7934374Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7934650Z ^[[36;1mdone <<< "$CHANGED_FILES"^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7935025Z ^[[36;1mecho "failed=$failed" >> "$GITHUB_OUTPUT"^[[0m
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7950502Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7950861Z env:
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7951154Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7951520Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7951910Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7952246Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7952592Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7952937Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7953351Z   CHANGED_FILES: workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
+Lint changed Markdown files and publish detailed evidence	Run STE linter on changed Markdown files	2026-11-24T15:35:54.7953998Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	﻿2026-11-24T15:35:54.9544446Z ##[group]Run set -euo pipefail
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9544916Z ^[[36;1mset -euo pipefail^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9545197Z ^[[36;1mmode="incremental"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9545458Z ^[[36;1mbaseline="$BASE_SHA"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9545769Z ^[[36;1mif [[ "$FULL_AUDIT" == "true" || "$FETCH_FALLBACK" == "true" ]]; then^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9546130Z ^[[36;1m  mode="full-audit-fallback"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9546397Z ^[[36;1m  baseline=""^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9546637Z ^[[36;1mfi^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9546861Z ^[[36;1mpython3 - <<'PY'^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9547106Z ^[[36;1mimport json, os, pathlib^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9547379Z ^[[36;1mroot = pathlib.Path(".lint-report-records")^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9547681Z ^[[36;1mchecks = []^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9547925Z ^[[36;1mfor key, label in (^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9548232Z ^[[36;1m    ("WRAPPER_EXIT", "Wrapper shell syntax"),^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9548565Z ^[[36;1m    ("PYTHON_EXIT", "Python report tooling compilation"),^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9548916Z ^[[36;1m    ("REPORT_TEST_EXIT", "Lint report regression tests"),^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9549382Z ^[[36;1m    ("ANCHOR_TEST_EXIT", "Markdown anchor regression tests"),^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9549715Z ^[[36;1m    ("SELFTEST_EXIT", "STE linter self-test"),^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9550014Z ^[[36;1m):^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9550243Z ^[[36;1m    raw = os.environ.get(key, "")^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9550541Z ^[[36;1m    exit_code = int(raw) if raw.isdigit() else 2^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9550854Z ^[[36;1m    log_names = {^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9551122Z ^[[36;1m        "WRAPPER_EXIT": "wrapper_syntax.log",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9551461Z ^[[36;1m        "PYTHON_EXIT": "python_compile.log",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9551764Z ^[[36;1m        "REPORT_TEST_EXIT": "report_tests.log",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9552064Z ^[[36;1m        "ANCHOR_TEST_EXIT": "anchor_tests.log",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9552387Z ^[[36;1m        "SELFTEST_EXIT": "linter_selftest.log",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9552701Z ^[[36;1m    }^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9552938Z ^[[36;1m    log = root / log_names[key]^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9553200Z ^[[36;1m    checks.append({^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9553435Z ^[[36;1m        "name": label,^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9553964Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9554277Z ^[[36;1m        "exit_code": exit_code,^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9554718Z ^[[36;1m        "output": log.read_text(encoding="utf-8", errors="replace") if log.exists() else "No output captured.",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9555121Z ^[[36;1m    })^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9555393Z ^[[36;1manchor_outcome = os.environ.get("ANCHOR_OUTCOME", "skipped")^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9555788Z ^[[36;1manchor_raw = os.environ.get("ANCHOR_EXIT", "")^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9556085Z ^[[36;1mif anchor_outcome == "skipped":^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9556385Z ^[[36;1m    checks.append({^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9556659Z ^[[36;1m        "name": "Markdown links and heading anchors",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9556961Z ^[[36;1m        "status": "Skipped", "exit_code": None,^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9557329Z ^[[36;1m        "output": "Not required for this incremental run.",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9557721Z ^[[36;1m    })^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9557930Z ^[[36;1melse:^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9558210Z ^[[36;1m    exit_code = int(anchor_raw) if anchor_raw.isdigit() else 2^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9558547Z ^[[36;1m    path = root / "anchor-check.log"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9558879Z ^[[36;1m    checks.append({^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9559153Z ^[[36;1m        "name": "Markdown links and heading anchors",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9559483Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9559789Z ^[[36;1m        "exit_code": exit_code,^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9560202Z ^[[36;1m        "output": path.read_text(encoding="utf-8", errors="replace") if path.exists() else "No output captured.",^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9560635Z ^[[36;1m    })^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9560917Z ^[[36;1mpathlib.Path(".lint-report-checks.json").write_text(^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9561485Z ^[[36;1m    json.dumps(checks, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9561923Z ^[[36;1m)^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9562178Z ^[[36;1mPY^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9562522Z ^[[36;1mstatus="Passed"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9562948Z ^[[36;1mif [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9563431Z ^[[36;1mif [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9564318Z ^[[36;1mhistory_dir="reports/lint_reports/on_changed/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9564833Z ^[[36;1mpython3 skills/asd-ste100/scripts/generate_lint_report.py \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9565266Z ^[[36;1m  --scope on_changed --records-dir .lint-report-records \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9565585Z ^[[36;1m  --output-dir "$history_dir" \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9565888Z ^[[36;1m  --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9566328Z ^[[36;1m  --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9566847Z ^[[36;1m  --attempt "$GITHUB_RUN_ATTEMPT" --branch "$GITHUB_REF_NAME" \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9567293Z ^[[36;1m  --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9567657Z ^[[36;1m  --mode "$mode" --baseline "$baseline" --status "$status" \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9567991Z ^[[36;1m  --checks-file .lint-report-checks.json \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9568424Z ^[[36;1m  --previous-report reports/lint_reports/on_changed/latest-lint-report.json \^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9568818Z ^[[36;1m  --linter-source-sha "$(git rev-parse HEAD)"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9569143Z ^[[36;1mgit config user.name "github-actions[bot]"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9569529Z ^[[36;1mgit config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9569927Z ^[[36;1mgit add reports/lint_reports/on_changed^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9570248Z ^[[36;1mif ! git diff --cached --quiet; then^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9570572Z ^[[36;1m  git commit -m "Publish changed-document lint evidence"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9570912Z ^[[36;1m  git pull --rebase origin gpt^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9571188Z ^[[36;1m  git push origin "HEAD:gpt"^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9571434Z ^[[36;1mfi^[[0m
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9590700Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9591090Z env:
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9591363Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9591720Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9592112Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9592476Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9592811Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9593156Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9593638Z   BASE_SHA: e1c3f1804604e0b66d31437ded12e5711f199f96
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9593994Z   FULL_AUDIT: false
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9594337Z   FETCH_FALLBACK: false
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9594571Z   TOOLING_FAILED: 0
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9594801Z   WRAPPER_EXIT: 0
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9595018Z   PYTHON_EXIT: 0
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9595265Z   REPORT_TEST_EXIT: 0
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9595486Z   ANCHOR_TEST_EXIT: 0
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9595693Z   SELFTEST_EXIT: 0
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9595935Z   ANCHOR_OUTCOME: skipped
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9596162Z   ANCHOR_EXIT: 
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9596417Z   FULL_FAILED: 
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9596621Z   CHANGED_FAILED: 1
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:54.9596820Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.3450775Z [gpt a28ecd2] Publish changed-document lint evidence
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.3451407Z  6 files changed, 773 insertions(+), 581 deletions(-)
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.3451835Z  create mode 100644 reports/lint_reports/on_changed/history/45427179335-attempt-1/integrity.json
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.3452321Z  create mode 100644 reports/lint_reports/on_changed/history/45427179335-attempt-1/report.json
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.3453075Z  create mode 100644 reports/lint_reports/on_changed/history/45427179335-attempt-1/report.md
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.7388318Z From https://github.com/dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.7388980Z  * branch            gpt        -> FETCH_HEAD
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.7389375Z    fd068b5..57f447f  gpt        -> origin/gpt
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.7657925Z Rebasing (1/1)
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:55.7658315Z Successfully rebased and updated refs/heads/gpt.
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:57.4862408Z To https://github.com/dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:57.4863426Z  ! [remote rejected] HEAD -> gpt (cannot lock ref 'refs/heads/gpt': is at f3d11e25cdcc4335102725e51a5e4a20d1921753 but expected 57f447f0addbba195df7885080224aee4e3319dc)
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:57.4864510Z error: failed to push some refs to 'https://github.com/dungnv2602/chatgpt'
+Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-24T15:35:57.4886866Z ##[error]Process completed with exit code 1.
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	﻿2026-11-24T15:35:57.4934475Z ##[group]Run if [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || ( "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ) ]]; then
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4935258Z ^[[36;1mif [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || ( "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ) ]]; then^[[0m
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4935903Z ^[[36;1m  echo "::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md."^[[0m
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4936408Z ^[[36;1m  exit 1^[[0m
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4936631Z ^[[36;1mfi^[[0m
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4953983Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4954372Z env:
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4954633Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4955038Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4955405Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4955856Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4956338Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4956696Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4957000Z   TOOLING_FAILED: 0
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4957216Z   FULL_FAILED: 
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4957441Z   CHANGED_FAILED: 1
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4957699Z   ANCHOR_OUTCOME: skipped
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4957928Z   ANCHOR_EXIT: 
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.4958148Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.5003199Z ##[error]Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-24T15:35:57.5005278Z ##[error]Process completed with exit code 1.
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	﻿2026-11-24T15:35:57.5095504Z Post job cleanup.
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.5745849Z [command]/usr/bin/git version
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.5778355Z git version 2.56.1
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.5804041Z Temporarily overriding HOME='/home/runner/work/_temp/d44c15c3-544f-42d0-a01b-f271e7a7b6f1' before making global git config changes
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.5805086Z Adding repository directory to the temporary git global config as a safe directory
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.5808226Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.5839564Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.5867569Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.6059030Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.6087881Z http.https://github.com/.extraheader
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.6094090Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.6113736Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.6316821Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-24T15:35:57.6342140Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint changed Markdown files and publish detailed evidence	Complete job	﻿2026-11-24T15:35:57.6643940Z Cleaning up orphan processes
+Lint changed Markdown files and publish detailed evidence	Complete job	2026-11-24T15:35:57.6921473Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

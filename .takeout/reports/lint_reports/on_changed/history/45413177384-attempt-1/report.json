@@ -1,0 +1,514 @@
+{
+  "schema_version": "1.1.0",
+  "scope": "on_changed",
+  "run_id": "45413177384",
+  "run_number": 628,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45413177384",
+  "attempt": 1,
+  "branch": "gpt",
+  "commit_sha": "65ddb5d5dcba8f955fba76292884bb71004217ff",
+  "event": "push",
+  "workflow": "STE Lint Changed Documentation",
+  "runner_os": "Linux",
+  "execution_mode": "incremental",
+  "baseline_sha": "b1e6ca640cfebc29f917d60c15f9ae42496e5600",
+  "generated_at_utc": "2026-11-24T14:22:15.677305+00:00",
+  "status": "Passed",
+  "linter_source_sha": "65ddb5d5dcba8f955fba76292884bb71004217ff",
+  "runtime": {
+    "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
+    "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
+  },
+  "files_evaluated": [
+    "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md"
+  ],
+  "files_evaluated_count": 1,
+  "files_failed": 0,
+  "failed_files": [],
+  "files_with_findings": 1,
+  "total_findings": 4,
+  "hard_findings": 0,
+  "advisory_findings": 4,
+  "findings_by_rule": {
+    "passive-voice": 4
+  },
+  "records": [
+    {
+      "violations": [
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 34,
+          "col": 64,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is required",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 47,
+          "col": 41,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was made",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 111,
+          "col": 44,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are implemented",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 160,
+          "col": 67,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are committed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        }
+      ],
+      "count": 4,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 1227,
+      "per_100_words": 0.3,
+      "path": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "exit_code": 0
+    }
+  ],
+  "findings": [
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 34,
+      "col": 64,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "fbe6150d9b5e8dab3b1e43a3",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 47,
+      "col": 41,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was made",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8d3ad3a1e3838d879ee9b85a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 111,
+      "col": 44,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are implemented",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e871aaaf906a610ac0db5605",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 160,
+      "col": 67,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are committed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "2eafa78f211213b12b14d4d5",
+      "comparison": "new"
+    }
+  ],
+  "new_findings": 4,
+  "recurring_findings": 0,
+  "resolved_findings": [
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 28,
+      "col": 139,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was found",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "521a3f31bc54ec727caae5b1",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 33,
+      "col": 453,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "being uploaded",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bcb83f45ddf38808e5512023",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 37,
+      "col": 304,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8aaaeb4dae872360fad1cb7e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 39,
+      "col": 264,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are preserved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bd13d200f2cd36d327625082",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 48,
+      "col": 276,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8aaaeb4dae872360fad1cb7e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 49,
+      "col": 207,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is read",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a41ef6bbf64045f943d2af47",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 51,
+      "col": 139,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8aaaeb4dae872360fad1cb7e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 53,
+      "col": 358,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8aaaeb4dae872360fad1cb7e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 55,
+      "col": 336,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8aaaeb4dae872360fad1cb7e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 60,
+      "col": 482,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "35 words",
+      "message": "Sentence has 35 words (cap 25). Split it.",
+      "fingerprint": "8e6ebb9019d53b6c90f1902c",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 61,
+      "col": 546,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are skipped",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "199f2603ee3fb1c3abd18ce6",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 68,
+      "col": 144,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "ea92de1fbbfc0e6cafa24f7b",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 94,
+      "col": 268,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has run",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "028b84870f82ee2f98dcbf3b",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 96,
+      "col": 169,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are catalogued",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bb8de6bc648079b20917fbff",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 107,
+      "col": 263,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is published",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "305641bf283ed85e29efe674",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 119,
+      "col": 251,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are covered",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "195a2fd68103c17c8542eb26",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 154,
+      "col": 39,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "were reviewed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "0c06b4bea825bbb8305e2205",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 159,
+      "col": 448,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has been approved",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "5bfc1af36a470f1f001188ee",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 159,
+      "col": 452,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been approved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "c8520603dffa16dea8ea3dc4",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 160,
+      "col": 136,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are established",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6046357fc6d15e771a97e487",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 162,
+      "col": 131,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is established",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f99656c38dfabd9bba499a0e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 162,
+      "col": 206,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is planned",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "2d052b2c33e7ba911021d0e1",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 163,
+      "col": 199,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is planned",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "2d052b2c33e7ba911021d0e1",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 165,
+      "col": 262,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is uploaded",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "95aef61741aad14590481dc3",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 175,
+      "col": 230,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is justified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "446871a6fecc2890373b2df1",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 183,
+      "col": 129,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was found",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "521a3f31bc54ec727caae5b1",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 195,
+      "col": 138,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was reconstructed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "d8738c991b456b6b6a7cdd80",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 198,
+      "col": 203,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are superseded",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "32702bd5a2c5ca60292eca3a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 207,
+      "col": 57,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "9a67866b9f0335cac5eb0d64",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 211,
+      "col": 189,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was warranted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "7e6ec02ac376dc4e638ffc6d",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 219,
+      "col": 32,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is added",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "d5a3d56f7803c8bd7fe2f5bb",
+      "comparison": "resolved"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Wrapper shell syntax",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Python report tooling compilation",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Lint report regression tests",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.355s\n\nOK\n"
+    },
+    {
+      "name": "Markdown anchor regression tests",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "name": "STE linter self-test",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "selftest OK\n"
+    },
+    {
+      "name": "Markdown links and heading anchors",
+      "status": "Skipped",
+      "exit_code": null,
+      "output": "Not required for this incremental run."
+    }
+  ],
+  "failed_checks": []
+}

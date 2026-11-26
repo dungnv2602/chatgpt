@@ -1,0 +1,228 @@
+validate-document-standards	UNKNOWN STEP	﻿2026-11-24T00:54:16.1702193Z Current runner version: '2.338.2'
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1841325Z ##[group]Runner Image Provisioner
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1842822Z Hosted Compute Agent
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1843871Z Version: 20261111.635
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1845980Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1847461Z Build Date: 2026-11-11T01:49:01Z
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1848822Z Worker ID: {716a453f-780e-495d-8180-efd6a7d4b0ba}
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1850143Z Region: eastus
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1851157Z Cloud: Azure
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1852302Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1870928Z ##[group]Operating System
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1888110Z Ubuntu
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1904889Z 26.04.1
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1906112Z LTS
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1907261Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1908636Z ##[group]Runner Image
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1909858Z Image: ubuntu-26.04
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1911116Z Version: 20261116.202.1
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1913605Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1917016Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1918974Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1921191Z ##[group]GITHUB_TOKEN Permissions
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1940516Z Contents: read
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1941708Z Metadata: read
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1965325Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1968684Z Secret source: Actions
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1970402Z Cache mode: write
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.1971854Z Prepare workflow directory
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.3221408Z Prepare all required actions
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.3366987Z Getting action download info
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.5552747Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.7115504Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:16.9675411Z Complete job name: validate-document-standards
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1113031Z ##[group]Run actions/checkout@v7.0.1
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1114733Z with:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1115532Z   ref: gpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1116311Z   fetch-depth: 1
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1117162Z   repository: dungnv2602/chatgpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1135227Z   token: [REDACTED]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1136154Z   ssh-strict: true
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1137002Z   ssh-user: git
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1137877Z   persist-credentials: true
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1138811Z   clean: true
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1139666Z   sparse-checkout-cone-mode: true
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1140659Z   fetch-tags: false
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1141499Z   show-progress: true
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1142337Z   lfs: false
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1143121Z   submodules: false
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1143970Z   set-safe-directory: true
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1145080Z   allow-unsafe-pr-checkout: false
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.1146527Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5537161Z Syncing repository: dungnv2602/chatgpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5545802Z ##[group]Getting Git version info
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5548765Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5568373Z [command]/usr/bin/git version
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5654837Z git version 2.56.1
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5758466Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5768783Z Temporarily overriding HOME='/home/runner/work/_temp/4d4eede8-acba-4465-a61f-fe4c8d05e138' before making global git config changes
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5772890Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5776703Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5846852Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.5867117Z ##[group]Determining repository object format
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.7941510Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.7945493Z ##[group]Initializing the repository
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.7949329Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.7984295Z hint: Using 'master' as the name for the initial branch. This default branch name
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.7991572Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.7999071Z hint: to use in all of your new repositories, which will suppress this warning,
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8002753Z hint: call:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8003608Z hint:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8004929Z hint: 	git config --global init.defaultBranch <name>
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8006883Z hint:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8008858Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8012141Z hint: 'development'. The just-created branch can be renamed via this command:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8014755Z hint:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8016263Z hint: 	git branch -m <name>
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8017768Z hint:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8019906Z hint: Disable this message with "git config set advice.defaultBranchName false"
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8047140Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8052252Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8139690Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8143388Z ##[group]Disabling automatic garbage collection
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8147054Z [command]/usr/bin/git config --local gc.auto 0
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8196505Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8201470Z ##[group]Setting up auth
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8205563Z Removing SSH command configuration
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8211138Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8265849Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8827019Z Removing HTTP extra header
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8834188Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.8894944Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9204025Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9209411Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9252017Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9570240Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9632442Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path /home/runner/work/_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9691842Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9729288Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9788815Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9820179Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9823932Z ##[group]Fetching the repository
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:17.9829995Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/gpt*:refs/remotes/origin/gpt* +refs/tags/gpt*:refs/tags/gpt*
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6651475Z From https://github.com/dungnv2602/chatgpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6677361Z  * [new branch]      gpt        -> origin/gpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6708730Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6709973Z ##[group]Determining the checkout info
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6710990Z [command]/usr/bin/git branch --list --remote origin/gpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6779186Z   origin/gpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6811139Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6811757Z [command]/usr/bin/git sparse-checkout disable
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.6895430Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.7008432Z ##[group]Checking out the ref
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:21.7009434Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5326429Z Switched to a new branch 'gpt'
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5376175Z branch 'gpt' set up to track 'origin/gpt'.
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5396103Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5473685Z [command]/usr/bin/git log -1 --format=%H
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5516363Z a2a2fe57984f8fb8340adf2ccd56307c90c2598f
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5878956Z ##[group]Run actions/setup-python@v5
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5879397Z with:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5879661Z   python-version: 3.x
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5879981Z   check-latest: false
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5883220Z   token: [REDACTED]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5883521Z   update-environment: true
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5883854Z   allow-prereleases: false
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5884172Z   freethreaded: false
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.5884626Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.7666321Z ##[group]Installed versions
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.7947790Z (node:2192) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.7951109Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.7953207Z Successfully set up CPython (3.15.2)
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.7955031Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8237471Z ##[group]Run python -m unittest discover \
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8238200Z ^[[36;1mpython -m unittest discover \^[[0m
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8238842Z ^[[36;1m  -s skills/document-standards/scripts \^[[0m
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8239493Z ^[[36;1m  -p 'test_validate_catalog.py' \^[[0m
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8240014Z ^[[36;1m  -v^[[0m
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8337034Z shell: /usr/bin/bash -e {0}
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8337646Z env:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8338317Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8339464Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8520970Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8521935Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8522697Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8523535Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:22.8524154Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6485988Z test_coverage_pattern_must_match_a_current_document (test_validate_catalog.CatalogValidatorTests.test_coverage_pattern_must_match_a_current_document) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6488988Z test_coverage_pattern_rejects_path_traversal (test_validate_catalog.CatalogValidatorTests.test_coverage_pattern_rejects_path_traversal) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6515788Z test_directory_reference_is_rejected (test_validate_catalog.CatalogValidatorTests.test_directory_reference_is_rejected) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6557079Z test_double_star_covers_nested_markdown (test_validate_catalog.CatalogValidatorTests.test_double_star_covers_nested_markdown) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6601601Z test_duplicate_document_type_fails (test_validate_catalog.CatalogValidatorTests.test_duplicate_document_type_fails) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6637267Z test_embedded_contract_requires_owner_and_live_record (test_validate_catalog.CatalogValidatorTests.test_embedded_contract_requires_owner_and_live_record) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6698322Z test_generator_owned_requires_python_authority (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_python_authority) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6753123Z test_generator_owned_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_regression_test_reference) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6812616Z test_github_and_consolidated_report_roots_are_allowed (test_validate_catalog.CatalogValidatorTests.test_github_and_consolidated_report_roots_are_allowed) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6836180Z test_malformed_inventory_row_fails (test_validate_catalog.CatalogValidatorTests.test_malformed_inventory_row_fails) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6889240Z test_master_and_archive_markdown_are_excluded_from_coverage (test_validate_catalog.CatalogValidatorTests.test_master_and_archive_markdown_are_excluded_from_coverage) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6925640Z test_misplaced_named_template_is_detected_without_catalog_row (test_validate_catalog.CatalogValidatorTests.test_misplaced_named_template_is_detected_without_catalog_row) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6965188Z test_missing_canonical_path_fails (test_validate_catalog.CatalogValidatorTests.test_missing_canonical_path_fails) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.6999259Z test_missing_markdown_coverage_section_fails (test_validate_catalog.CatalogValidatorTests.test_missing_markdown_coverage_section_fails) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7038613Z test_path_traversal_is_rejected (test_validate_catalog.CatalogValidatorTests.test_path_traversal_is_rejected) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7081322Z test_project_and_workspace_template_locations_are_allowed (test_validate_catalog.CatalogValidatorTests.test_project_and_workspace_template_locations_are_allowed) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7121996Z test_reserved_coverage_pattern_allows_new_family_before_first_record (test_validate_catalog.CatalogValidatorTests.test_reserved_coverage_pattern_allows_new_family_before_first_record) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7166258Z test_reserved_coverage_pattern_must_activate_with_first_record (test_validate_catalog.CatalogValidatorTests.test_reserved_coverage_pattern_must_activate_with_first_record) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7209922Z test_reserved_coverage_pattern_passes_after_activation (test_validate_catalog.CatalogValidatorTests.test_reserved_coverage_pattern_passes_after_activation) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7249057Z test_schema_class_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_schema_class_requires_regression_test_reference) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7290485Z test_single_star_does_not_cross_directory (test_validate_catalog.CatalogValidatorTests.test_single_star_does_not_cross_directory) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7331494Z test_skill_template_must_live_in_assets (test_validate_catalog.CatalogValidatorTests.test_skill_template_must_live_in_assets) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7369681Z test_template_class_requires_named_template (test_validate_catalog.CatalogValidatorTests.test_template_class_requires_named_template) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7409927Z test_uncovered_markdown_document_fails (test_validate_catalog.CatalogValidatorTests.test_uncovered_markdown_document_fails) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7450076Z test_unknown_coverage_status_fails (test_validate_catalog.CatalogValidatorTests.test_unknown_coverage_status_fails) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7489337Z test_unknown_document_class_fails (test_validate_catalog.CatalogValidatorTests.test_unknown_document_class_fails) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7528140Z test_valid_catalog_accepts_all_document_classes (test_validate_catalog.CatalogValidatorTests.test_valid_catalog_accepts_all_document_classes) ... ok
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7529541Z 
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7530510Z ----------------------------------------------------------------------
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7531371Z Ran 27 tests in 0.123s
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7532121Z 
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7534061Z OK
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7788494Z ##[group]Run python skills/document-standards/scripts/validate_catalog.py --root .
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7789442Z ^[[36;1mpython skills/document-standards/scripts/validate_catalog.py --root .^[[0m
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7830997Z shell: /usr/bin/bash -e {0}
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7831395Z env:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7831812Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7832840Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7833666Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7834637Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7835410Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7836144Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.7836746Z ##[endgroup]
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.8538160Z ERROR: Line 106: Markdown coverage pattern matches no in-scope document: 'reports/lint_reports/latest-lint-report.md'.
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.8539903Z ERROR: Line 108: Markdown coverage pattern matches no in-scope document: 'reports/lint_reports/on_*/latest-lint-report.md'.
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.8541721Z ERROR: Line 109: Markdown coverage pattern matches no in-scope document: 'reports/lint_reports/on_*/history/**/*.md'.
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.8543254Z Catalog validation failed: 3 error(s), 33 document type(s), 73 reference(s).
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.8592463Z ##[error]Process completed with exit code 1.
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.8777121Z Post job cleanup.
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:23.9975855Z [command]/usr/bin/git version
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0056644Z git version 2.56.1
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0099853Z Temporarily overriding HOME='/home/runner/work/_temp/4dbb414c-f95b-4a2b-b22e-f0686f589547' before making global git config changes
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0101351Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0187172Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0189541Z Removing SSH command configuration
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0190682Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0276312Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0946352Z Removing HTTP extra header
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.0953163Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1017956Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1582644Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1583617Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1584776Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1585944Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1586957Z includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1587604Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1591114Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1622073Z /home/runner/work/_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1632780Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-8660e282\-aec0\-4d98\-af4e\-ffec80743d95\.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1680464Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1720257Z /home/runner/work/_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1730153Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-8660e282\-aec0\-4d98\-af4e\-ffec80743d95\.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1773274Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1805746Z /github/runner_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1811160Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-8660e282\-aec0\-4d98\-af4e\-ffec80743d95\.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1852327Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1882385Z /github/runner_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1891232Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-8660e282\-aec0\-4d98\-af4e\-ffec80743d95\.config
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.1933892Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.2254199Z Removing credentials config '/home/runner/work/_temp/git-credentials-8660e282-aec0-4d98-af4e-ffec80743d95.config'
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.2463957Z Cleaning up orphan processes
+validate-document-standards	UNKNOWN STEP	2026-11-24T00:54:24.2919039Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

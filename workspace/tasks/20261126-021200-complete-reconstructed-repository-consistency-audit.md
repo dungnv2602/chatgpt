@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 05:10 UTC
+- **Updated:** 2026-11-26 02:12 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -58,23 +58,22 @@ Complete the active-file audit of the reconstructed repository. Identify and rep
 
 ## 7. Current State
 
-Task created and selected as current execution; the board was updated. The processor, verifier, and tests are under `.agent/skills/the-worker/scripts/`. The intake contract uses operational `images/takeout/` paths, while the relocated repository documentation is under `.takeout/images/README-1.md` and `README-2.md`. The workflow uses the reconstructed script locations. The remote tree currently has no tracked `images/` root or active `HANDOFF.yml`; the processor treats a missing hand-off as a no-op, so no intake batch is currently available. Hosted validation has not been run.
+Task created and selected as current execution; the board was updated. The processor, verifier, and tests are under `.agent/skills/the-worker/scripts/`. The intake contract uses operational `images/takeout/` paths, while the relocated repository documentation is under `.takeout/images/README-1.md` and `README-2.md`. The workflow uses the reconstructed script locations. Hosted validation has not been run.
 
 ## 8. Remaining Work
 
-- Determine the exact scope and disposition of missing task-board record links without restoring files or reading archive contents.
-- Audit remaining workflow path assumptions, triggers, permissions, exclusions, and script callers.
-- Review remaining active scripts and their dependency contracts.
-- Trace task-board record links only within approved active paths; retain the unresolved record-location question.
+- Complete a wider active README and skill cross-reference audit.
+- Check the Document Type Catalog path coverage assumptions against relocated skills.
+- Read back all repaired paths and catalog changes.
+- Audit other workflow path assumptions, triggers, permissions, and exclusions.
 - Validate using available remote evidence; local execution and hosted CI remain unavailable.
 
 ## 9. Next Actions
 
-1. Review the latest queued GitHub Actions runs and inspect post-repair results.
-2. Audit remaining active workflows, script callers, dependencies, and path assumptions.
-3. Resolve the one stale archive-retention index entry if an exact prior record can be recovered; otherwise record it as unresolved.
-4. Determine the disposition of the remaining 72 task-board links without fabricating records.
-5. Read back changed files, update the register, and report verification.
+1. Inspect processor, verifier, test, workflow, and hand-off contracts and compare paths.
+2. Identify actionable mismatch clusters and repair in bounded steps.
+3. Audit active README and skill references, then scripts and workflows.
+4. Read back changed files, update the register, and report verification.
 
 ## 10. References
 
@@ -159,94 +158,3 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Finding:** Initialization policy, central report README, and central image README still carried unprefixed reconstructed report/archive/project paths. Document Standards Skill examples also referenced the old novel-template root.
 - **Repair:** Updated these references to `.takeout/reports/`, `.archive/reports/`, `area/drawing/`, and `area/novel/`. Repaired the active initialization policy and project-template example.
 - **Verification:** Read back the modified references. This is targeted static verification; no validator or hosted workflow run occurred.
-
-
-### 2026-11-26 — Worker and image-script reference cleanup
-
-- **Finding:** Final targeted inspection identified malformed archive spacing in Worker boundaries and extra whitespace in image-script command paths, plus plural-root terminology that conflicted with the reconstructed `area/novel/` root.
-- **Repair:** Normalized archive references, corrected command path spacing, and updated the novel-root wording.
-- **Verification:** Read back both references after edits. Script execution and CI remain unavailable under the remote-only workflow.
-
-
-### 2026-11-26 — Validator fixture review and inventory-count correction
-
-- **Review:** Read the Document Standards catalog validator and regression-test file in full. Fixture paths and reconstructed root assumptions appear internally consistent on static inspection, but the suite has not been run; correctness is not established by readback alone.
-- **Finding:** The catalog's last-inventory summary claimed 1,114 in-scope Markdown files from an earlier commit. A fresh recursive tree read at `6dcc28feb94ba0fe91ad4385bff12474ba37b233` showed 676 tree entries and 242 Markdown files outside root `master/` and `.archive/`.
-- **Repair:** Updated the catalog's audit-summary paragraph to record the new tree-size observation and explicitly distinguish it from coverage validation. The earlier count is no longer presented as current.
-- **Verification:** Remote readback of the validator, test fixture, catalog, and current tree; no script execution, CI, or full rule-to-file coverage validation. The audit remains In Progress.
-
-
-### 2026-11-26 — Image processor and publication verifier contract correction
-
-- **Finding:** The processor, verifier, and test fixtures still used legacy `drawings/` and `novels/` paths. The reconstructed workflow and intake documentation use `area/drawing/` and `area/novel/`. The processor's component checks also incorrectly treated `area/drawing` as one path component, so a superficial string remapping alone would have introduced validation defects.
-- **Repair:** Remapped legacy paths in the processor, publication verifier, and regression fixtures; corrected component-wise root validation, drawing date/session destination shape, conversation-record root checks, and the drawing record expectation. Updated image processing guidance.
-- **Verification:** Remote readback and targeted static path checks confirmed that the three scripts/test files no longer contain the legacy roots and that the processor's path checks reflect the actual path components. Tests and hosted Actions were not executed. Further contract checks remain.
-
-
-### 2026-11-26 03:31 UTC — Image-pipeline path-index defects repaired
-
-- **Finding:** The reconstructed image processor still indexed the drawing destination as though `area/drawing` were one path component. It wrote the wrong `manifest_path` into conversion reports. The publication verifier had the same invalid component assumption and rejected every valid reconstructed drawing WebP path before checking published links.
-- **Repair:** Changed both processor report paths to use the date at path component index 2. Updated the publication verifier to validate the five-component `area/drawing/YYYY-MM-DD/images/file.webp` shape, read the date and filename from their correct components, and derive the session-relative link correctly. Added a regression assertion for the exact drawing manifest path in the processor test.
-- **Verification:** Retrieved all three changed files after their commits. Read back both processor report-path sites, the verifier path guard, and the new test assertion. Inspected each commit's changed-path metadata. Tests and hosted Actions were not run.
-- **Commits:** `1fcfc601864e5ee784c261578f433d535b19a6c5`, `6845bde3134028a96f64502535048f4e4bec4dff`, `52ae30426904d72c0ac7fb5f7d4ea4caa8bc7e5b`.
-- **Additional observation:** The current branch tree contains no tracked `images/` root or `images/takeout/HANDOFF.yml`. The processor explicitly returns a no-op when the hand-off is absent. No intake files or directories were restored or created because that would change operational state beyond the evidence-supported code repair.
-- **Next:** Continue the active README/skill navigation audit and the remaining workflow/script caller review.
-
-
-### 2026-11-26 03:50 UTC — Active navigation links repaired; task-board record gap identified
-
-- **Audit scope:** Statically checked local Markdown link targets in 44 active navigation sources: skill definitions, initialization files, active README files, and the task board. The check resolved relative paths against the current branch tree. It did not validate heading anchors or external URLs.
-- **Findings and repairs:** Corrected the session-start policy link, Romantic Storyteller Drawing Skill and initialization links, drawing-pattern history links, report archive link, workspace report/archive links and path references, and novel README links to the relocated `.takeout/images/` and `.agent/skills/` locations. All six changed files were fetched after their commits; the same static link check found no remaining broken local links in those six files.
-- **Commits:** `166228460bc6b1c80a7e81957a1349917a053f33`, `2e6f3362556b456194fdc120f027bf902fe0b70e`, `b25a64226c54ed2b5a57fe7c4d7cdeb9984418e1`, `d8b827434fa31eff5c89da444353e792354a5a55`, `51b716381de437707e7e5a29ae5d0a1d73bbbee4`, `a9de30509fb8800c595915fa97c494cd32b435b6`.
-- **Separate finding:** The task board contains 153 links to 152 unique task records. The current `workspace/tasks/` directory contains only two task records and `.gitkeep`, leaving 150 linked task paths absent from that active directory. The workspace root has no alternate active task-record directory. No missing record was recreated, no board row was deleted, and no archive contents were read. The correct disposition needs evidence of the records' intended locations or a user decision.
-- **Next:** Continue the cross-reference scan of all remaining skill reference Markdown files. Keep the task-board record gap open.
-
-
-### 2026-11-26 04:00 UTC — Skill reference cross-link audit and repair
-
-- **Audit scope:** Read and checked local Markdown link targets across all 81 Markdown files under `.agent/skills/`, including skill definitions, references, templates, examples, and navigation files. The scan checked repository-relative path resolution. It did not validate heading anchors, external URLs, or non-Markdown path strings.
-- **Findings:** Found stale links from Drawing references to the Worker skill, from pattern indexes to the former `drawings/` root, from Novel Production Workflow references to the former project path depth, and from image-provenance guidance to the former `.github/` path depth.
-- **Repair:** Updated five files: `archive-and-delivery.md`, `patterns/failure-patterns.md`, `patterns/successful-patterns.md`, `novel-production-workflow.md`, and `image-provenance-and-webp.md`. Kept source prompt records and attempts in their current `area/drawing/` locations. Did not recreate old `drawings/` files.
-- **Verification:** Fetched all five changed files after their commits. Rechecked each local Markdown link. Internal skill targets resolved, and external targets resolved to previously confirmed current files. A template placeholder `{run_url}` was excluded as an intentional unresolved token. No repository tests or hosted Actions were run.
-- **Commits:** `e43bd45797193ee01cd200d56752cc068bf953bd`, `718e05790c46e815d828427bbc5acc4a13b041f8`, `c3341e96e578d25941489ca2e1fe53b8dec8b881`, `f88f39776b5499a53cf58e82505d633deeb29d9f`, `e9a158a10a15f5c865da4feff79e68564b91bab7`.
-- **Next:** Audit the Document Type Catalog's active/reserved/optional path rules against the reconstructed tree. The 150 missing task-board record targets remain unresolved.
-
-
-### 2026-11-26 04:20 UTC — Document Type Catalog coverage repaired
-
-- **Finding:** The catalog pointed to the old `.agent/skills/INITIALIZATION_POLICY.md` location, claimed an untracked image hand-off file was the current draft example, and omitted 15 active Markdown paths from its coverage rules: two PDF guides, three Skill Creator agent instructions, and ten Theme Factory theme files. The old path rule was the only Active rule with zero matches.
-- **Repair:** Bumped the catalog to version 1.16; corrected the initialization policy path; added explicit coverage rules for the PDF guides, Skill Creator agents, and Theme Factory themes; added corresponding inventory entries; and clarified that no active image hand-off file is tracked in the reconstructed tree. Updated the inventory note to record the current 246-file observation and static simulation result.
-- **Static verification:** Enumerated 246 Markdown files in the active roots `.agent/`, `.takeout/`, `area/`, `workspace/`, and `.github/` (zero Markdown files under `.github/`; no root-level Markdown files). Simulated the validator's path-pattern matcher against 62 rules: zero uncovered files, zero Active rules without matches, zero Reserved rules with matches, and all Optional rules remained Generator-owned. Active-root canonical references resolved. Exact `.archive/README.md` and `master/Images.md` authorities were not inspected; they remain subject to the validator's exact-file check.
-- **Limitations:** The actual validator and its regression suite were not executed. No hosted workflow run was polled. The catalog's novel field-contract and representative-record content was read back; this was a path-coverage audit, not a semantic audit of all 246 Markdown files.
-- **Commits:** `da45e65b6ebc2362e5182b4fc05973c38885bfe6`, `2a691f9d8f5143fcf5dc5ba79326b4e766b414c8`.
-- **Next:** Audit remaining workflow triggers, permissions, exclusions, and script callers. Keep the 150 missing task-board record links open.
-
-
-### 2026-11-26 04:40 UTC — Document Type Catalog coverage audit
-
-- **Scope:** Compared all active Markdown paths from the current branch tree (excluding root `master/` and `.archive/`) against the catalog's 62 path rules. The recursive API trees for the active roots were complete and untruncated.
-- **Result:** 257 Markdown files; zero uncovered files; zero Active rules without matches; zero Reserved rules with matches; zero Optional rules assigned to a non-Generator-owned class; zero missing exact authority paths. All 62 rules parsed and matched according to the validator's documented glob semantics.
-- **Repair:** Updated the catalog inventory header from version 1.16 / 246 files to version 1.17 / 257 files, with the exact source commit and simulation limitations. Commit: `5eea2cba5d5e75c7ffaf11c22d652968e6c02e32`. Read back the updated header.
-- **Validator review:** Read the complete validator and all 403 lines of its regression suite. The fixtures consistently use reconstructed roots (`.agent/skills/`, `.takeout/reports/`, `area/novel/`, `images/`, `workspace/`). Workflow invocation and test-discovery paths resolve to current files. The actual Python validator and tests remain unexecuted; static tree simulation is not a substitute.
-- **Task-board follow-up:** Current branch tree metadata confirms 150 of 152 unique task-board target paths are absent from `workspace/tasks/`. The `.archive/task/` tree contains one file and none of the 150 missing basenames. No archive contents were read. The historical records cannot be mapped to another active location using available path metadata; board rows remain unchanged.
-- **Next:** Complete workflow trigger, permissions, exclusion, and script-caller review. Audit remaining scripts and dependency contracts.
-
-
-### 2026-11-26 05:05 UTC — Reconstructed paths repaired in STE lint tooling
-
-- **Finding:** The anchor checker still excluded legacy roots (`archive/`, `lint_reports/`, `drawings/history/`, `novels/templates/`, and `skills/...`) and its archive-anchor bypass still used `archive/`. The repository lint wrapper invoked `skills/asd-ste100/scripts/ste-lint.py`, which does not exist in the reconstructed tree. Its baseline and synonym-rotation exemption cases also used legacy `skills/` and `images/` paths.
-- **Repair:** Updated anchor-checker exclusions and archive checks to `.archive/`, `.takeout/reports/lint_reports/`, `area/drawing/history/`, `area/novel/templates/`, and `.agent/skills/...`. Updated the wrapper invocation and surviving baseline/exemption paths to the active locations. Removed obsolete conversation-mode/session-archiving baseline entries rather than transferring their thresholds to the different Worker skill.
-- **Verification:** Read back both changed scripts. Checked every retained baseline path against the branch tree; all exist. Static scan found no remaining legacy root references in the anchor checker or wrapper. No shell/Python execution was performed.
-- **Commits:** `fc3527af0d90e61e5ef1f0395490c8a7d9ef754e`, `0d150a5dfdad5e5b5deaca4d2ebffa7a288fde9b`, `bcc20408fc645d79e3e201f05d4f98502761cde2`, `a2221d32c3e0e07abb2fa4c8ce078b7b8ec632d4`.
-- **Next:** Continue workflow caller/dependency audit and check other active scripts for path assumptions.
-
-
-### 2026-11-26 05:10 UTC — Hosted failure analysis and exact record relocation
-
-- **Hosted evidence:** Inspected run logs from `Validate Document Standards`, `STE Lint Changed Documentation`, and `GitHub Actions Diagnostics`. Failures were: (1) `test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent` because `workspace/TASK_TEMPLATE.md` still linked to the legacy `../../reports/triage/ledger.json`; (2) archive-retention test `test_unsafe_paths_rejected` incorrectly classified the valid file path `.archive/reports/x.md` as unsafe; (3) diagnostics failed closed because the central Ledger file was missing; (4) the Markdown anchor check reported 193 unresolved targets/anchors, including known missing task links and stale active paths.
-- **Repairs:** Corrected the canonical task-template Ledger link. Removed the valid archive file path from the unsafe-path test's invalid fixture list; production validation rules were not weakened. Fixed heading slug cleanup so underscores inside code spans are preserved, and added regression tests for underscore and plus-sign anchors. Repaired active novel/workspace links to reconstructed roots.
-- **Ledger recovery:** Located the exact version 1.4.0 Ledger at legacy `reports/triage/ledger.json` in commit `5ef8258d8e42888b64c7f78feb5f9a08260bf332`. Restored the exact 561,051-character blob at `.takeout/reports/triage/ledger.json` (content SHA unchanged; commit `09adcb027c31dd20b2e61da23488be532d623e17`). This is a canonical-path relocation, not a clean reset. Updated triage README recovery guidance. Ingestion/migration awaits the diagnostics workflow.
-- **Archive relocation:** The prior committed tree at `5cdb81d16becbb86f6e5270d493f1b1ff6210bcb` contained 49 task archive files and 16 report archive files under legacy roots. Relocated all 65 missing blobs to `.archive/task/` and `.archive/reports/` using exact existing blob SHAs, preserving bytes and leaving legacy paths absent. Commit `538293819ffa473fef66ff1eb1182432cf59350d`. The 55-entry retention index now has 54 exact files present; one task entry (`20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md`) has no source blob in the prior archive tree or current tree and remains unresolved. The 11 unindexed archived task files were also preserved.
-- **Active task recovery:** The prior committed tree contained 78 task records still linked in the current Proposed board section but missing from the current active directory. Restored those exact blobs to their canonical `workspace/tasks/` paths in commit `a59386e658ff9ed294b8789c9526d8520df6f1c9`. This reduced missing board targets from 150 to 72. The remaining 72 Proposed task paths are absent from the prior snapshot and current tree; representative path-history lookups returned no committed versions. Their contents were not fabricated, and board rows were left unchanged.
-- **Current verification:** Read-back confirmed the task template, test fixture, slug tests, novel/workspace link repairs, Ledger file, and relocated paths. Git tree comparison confirms 67 files under `.archive/task/` and `.archive/reports/` including placeholders, 81 files under `workspace/tasks/`, 54/55 retention targets present, and 72 board targets still missing. New Actions runs are queued/pending with no jobs yet; no post-repair hosted result is available.
-- **Next:** Inspect queued run outcomes; continue remaining workflow/script audit; investigate the single stale retention entry and 72 missing task records without inventing data.

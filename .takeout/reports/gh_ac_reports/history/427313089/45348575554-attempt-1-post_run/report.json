@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45348575554",
+    "number": 273,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45348575554",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "4b242af19758d2c629b182163825a088ae7d8627",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-24T07:30:54Z",
+    "run_started_at": "2026-11-24T07:30:54Z",
+    "updated_at": "2026-11-24T07:30:59Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Document lint task eligibility across all severities"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-24T08:07:14Z",
+    "completeness": "Incomplete",
+    "reporter_job": {
+      "id": "138289086611",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "failure"
+    }
+  },
+  "classification": {
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "validation_or_test",
+    "categories": [
+      "validation_or_test"
+    ],
+    "issues": [
+      {
+        "category": "validation_or_test",
+        "job_id": "138289072339",
+        "job_name": "validate-document-standards",
+        "step_number": null,
+        "step_name": null,
+        "blocking": true,
+        "confidence": "medium",
+        "message": "Job conclusion: failure"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "138289072339",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-24T07:30:55Z",
+      "completed_at": "2026-11-24T07:30:57Z",
+      "runner_name": "",
+      "runner_id": 0,
+      "runner_group_name": "",
+      "runner_group_id": 0,
+      "steps": [],
+      "log_capture": {
+        "available": false,
+        "truncated": false,
+        "bytes": 29,
+        "path": "logs/job-138289072339.log",
+        "error": "log not found: 138289072339\n",
+        "marker_lines": []
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "138289072339",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-24T07:30:55Z",
+      "completed_at": "2026-11-24T07:30:57Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45348575554/job/138289072339",
+      "app": "GitHub Actions",
+      "annotations_count": 1
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "138289072339",
+      "job_id": "138289072339",
+      "path": ".github",
+      "start_line": 1,
+      "end_line": 1,
+      "level": "failure",
+      "title": "",
+      "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "138289072339",
+      "message": "log not found: 138289072339\n"
+    }
+  ],
+  "history_path": "history/427313089/45348575554-attempt-1-post_run"
+}
