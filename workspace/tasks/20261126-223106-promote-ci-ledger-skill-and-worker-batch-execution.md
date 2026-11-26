@@ -61,19 +61,18 @@ Promote CI Ledger finding governance, intake, identity, task generation, lifecyc
 
 ## 7. Current State
 
-Implementation is approved and in progress. Baseline and task-activated documentation standards were retrieved.
+The new CI Ledger skill and Worker batch-execution procedure are committed. The triage README, skill index, and document catalog were updated. Task-board indexing was reconciled. Read-back verification is in progress.
 
 ## 8. Remaining Work
 
-- Implement skill and Worker procedure.
-- Update README, indexes, and catalog.
-- Commit and read back all changed paths.
+- Verify all changed paths and the task board.
+- Check links and policy consistency.
 
 ## 9. Next Actions
 
-1. Write the CI Ledger skill and reconcile triage README policy.
-2. Update The Worker, skill index, and document-type catalog.
-3. Read back and verify all changes and commits.
+1. Verify the final board and changed-file read-back.
+2. Record verification and commit references.
+3. Update the discussion register.
 
 ## 10. References
 
