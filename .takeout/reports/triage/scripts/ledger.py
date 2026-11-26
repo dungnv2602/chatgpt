@@ -687,7 +687,7 @@ def upsert_task_board_row(root, task):
     if priority == "P0":
         current_heading = next((i for i, line in enumerate(lines) if line == "## Current Execution"), None)
         if current_heading is not None:
-            pointer = "[\" + task_id + " — " + title + "\"](tasks/" + filename + ")"
+            pointer = "[" + task_id + " — " + title + "](tasks/" + filename + ")"
             pointer_index = next((i for i in range(current_heading + 1, next((j for j in range(current_heading + 1, len(lines)) if lines[j].startswith("## ")), len(lines))) if lines[i].strip()), current_heading + 1)
             if pointer_index >= len(lines) or lines[pointer_index] != pointer:
                 if pointer_index < len(lines) and lines[pointer_index].startswith("["):
