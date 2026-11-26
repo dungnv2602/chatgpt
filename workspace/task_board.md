@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-[20261126-142112-04 — Review synonym-rotation findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md)
+[20261126-090154 — Review CI Ledger regression-test failures in Document Standards](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md)
 
 ## Proposed
 
@@ -28,7 +28,7 @@ _No tasks._
 | 20261126-142112-01 | Review semicolon findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-01-review-semicolon-findings-in-workspace-draft-draft-0002-phase-aw.md) |
 | 20261126-142112 | Review passive-voice findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-review-passive-voice-findings-in-workspace-draft-draft-0002-phas.md) |
 | 20261126-124129 | Repair Markdown link and heading-anchor linting | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:55 UTC | [Task record](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
-| 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 12:43 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
+| 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 12:56 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
 | 20261126-101512-01 | Resolve misclassified test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:53 UTC | [Task record](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md) |
 | 20261126-101512 | Resolve misclassified task-board test fixture errors in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:44 UTC | [Task record](tasks/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md) |
 

@@ -11,7 +11,7 @@
 - **Origin:** User
 - **Approval:** Approved
 - **Governing ADR(s):** ADR-0003 governs the approved Option 3 artifact-layout work only. The error-only retention and Ledger task-linkage remediation remains separately user-approved grandfathered scope.
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger group:** `ci-020528f498f632ac`
