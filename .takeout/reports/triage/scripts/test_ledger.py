@@ -763,6 +763,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("      - '!workspace/tasks/**'", lint_changed)
         self.assertIn("      - '!workspace/task_board.md'", lint_changed)
         self.assertIn("Ingest centralized CI issues", sweep)
+        self.assertIn("      - name: Publish diagnostic backfill and Worker tasks\n        if: always()", sweep)
         ignored = sweep.split("paths-ignore:", 1)[1].split("concurrency:", 1)[0]
         self.assertIn(".archive/reports/**", ignored)
         self.assertNotIn(".github/archive-retention-index.json", ignored)
