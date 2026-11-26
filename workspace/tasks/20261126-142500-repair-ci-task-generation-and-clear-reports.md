@@ -88,22 +88,31 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`.
 - **Next:** Final static audit of workflow trigger/finalizer coverage and report publication scope; update task and discussion register.
 
+
+### 2026-11-26 — final static audit checkpoint
+
+- **Action:** Reviewed the push-driven diagnostics sweep, source workflow diagnostics finalizers in the changed-doc and full-doc lint workflows, and the document-standards validator finalizer. Confirmed finalizer jobs use `if: always()`, share the serialized report-writer concurrency group, and stage the refactored report/Ledger/task paths. Publication is non-blocking for the source workflow and push-driven sweep handles completed-run backfill.
+- **Result:** Static pipeline repairs completed in this checkpoint: canonical task-board writer/fixture alignment; pagination URL correction and regression coverage; clean-start watermark correction; task-record rollback when board publication fails and regression coverage. Commits are recorded above and readback verified in this task. No tests or hosted validation performed.
+- **References:** `.github/workflows/ste-lint-changed.yml`; `.github/workflows/ste-lint-full-docs.yml`; `.github/workflows/validate-document-standards.yml`; `.github/workflows/gh-actions-diagnostics.yml`; `.takeout/reports/gh_ac_reports/actions/capture/action.yml`.
+- **Next:** Wait for naturally available hosted evidence under existing restrictions; keep task In Progress until report ingestion and task handoff are verified.
+
 ## 7. Current State
 
 Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
 ## 8. Remaining Work
 
-- Continue static workflow/report ingestion audit and readback after task-board, pagination, reset-watermark, and task-publication rollback repairs.
-- Confirm clean reset tree and empty active report indexes/Ledger.
-- Leave first complete tooling-valid lint audits to seed the fresh period; do not poll CI or claim hosted validation.
+- Hosted validation and live task handoff remain unverified; no tests, scripts, CI dispatch, or polling are authorized within this task's current execution boundary.
+- The clean-start period has a valid watermark; two post-reset pre-finalizer captures remain in the active Actions index and pending queue. They are new-period evidence, not old data.
+- The lint indexes are empty and the Ledger findings are empty; lint baselines remain unseeded.
+- Leave first complete tooling-valid lint audits to seed the fresh period. Do not claim end-to-end task publication or completion.
 
 ## 9. Next Actions
 
-1. Audit remaining ingestion/publication handoff risks statically.
-2. Verify reset paths and active index/Ledger state by remote readback.
-3. Review diagnostics workflow triggering to ensure fresh-period baseline reports can be produced.
-4. Commit confirmed repairs and document verification limitations.
+1. Allow fresh-period source workflow reports to arrive naturally; do not dispatch or poll.
+2. Review a naturally available complete post-run report and resulting Ledger/task handoff when authorized by the user's current CI policy.
+3. Verify the resulting task board and task_refs through remote readback.
+4. Close only after the required hosted evidence is observed.
 
 ## 10. References
 
