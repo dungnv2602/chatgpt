@@ -20,14 +20,14 @@ The normal Action accepts static PNG, JPG, and JPEG files. It rejects unsupporte
 
 The Worker owns image inspection, provenance, processing, original preservation, and publication verification. The Action uses:
 
-- Processor: [`process_takeout.py`](../skills/the-worker/scripts/process_takeout.py).
-- Workflow: [`convert-images-to-webp.yml`](../.github/workflows/convert-images-to-webp.yml).
-- Canonical hand-off and operating procedure: [Image Takeout](takeout/README.md).
+- Processor: [`process_takeout.py`](../../.agent/skills/the-worker/scripts/process_takeout.py).
+- Workflow: [`convert-images-to-webp.yml`](../../.github/workflows/convert-images-to-webp.yml).
+- Canonical hand-off and operating procedure: [Image Takeout](../../images/takeout/README.md).
 
 Use Image Takeout for the `HANDOFF.yml` schema, conversion profiles, staging and retry behavior, reports, manifest updates, and published-blob checks. Do not duplicate those procedures here.
 
-Drawing attempt records and daily indexes link to verified WebP delivery files. Original masters remain preserved separately. See the [Drawing archive and delivery rules](../skills/drawing/references/archive-and-delivery.md) for session-specific records.
+Drawing attempt records and daily indexes link to verified WebP delivery files. Original masters remain preserved separately. See the [Drawing archive and delivery rules](../../.agent/skills/drawing/references/archive-and-delivery.md) for session-specific records.
 
 ## Documentation standard
 
-Apply the repository [ASD-STE100 writing policy](../skills/asd-ste100/references/repository-writing-policy.md) when you revise this README.
+Apply the repository [ASD-STE100 writing policy](../../.agent/skills/asd-ste100/references/repository-writing-policy.md) when you revise this README.
