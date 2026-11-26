@@ -91,17 +91,17 @@ class TakeoutProcessorTests(unittest.TestCase):
             item = dict(raw_item)
             destination = item.get(
                 "destination_dir",
-                "novels/Novel-02/assets/illustrations/ARC-001/SCN-001",
+                "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001",
             )
             if destination == "images/unclassified":
                 normalized.append(item)
                 continue
             parts = destination.split("/")
-            is_drawing = len(parts) == 3 and parts[0] == "drawings" and parts[2] == "images"
+            is_drawing = len(parts) == 3 and parts[0] == "area/drawing" and parts[2] == "images"
             session_date = parts[1] if is_drawing else "2026-11-19"
             record_path = item.get(
                 "conversation_record",
-                f"drawings/history/{session_date}-conversation-integrity.md",
+                f"area/drawing/history/{session_date}-conversation-integrity.md",
             )
             item["conversation_record"] = record_path
             item["asset_id"] = item.get("asset_id", "ILL-%03d" % index)
@@ -117,7 +117,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             )
 
             if is_drawing and item.get("attempt") not in (None, ""):
-                attempt_path = self.root / "drawings" / session_date / f"attempt-{attempt}.md"
+                attempt_path = self.root / "area/drawing" / session_date / f"attempt-{attempt}.md"
                 if attempt_path.is_file():
                     existing = attempt_path.read_text(encoding="utf-8")
                     identity_lines = []
@@ -201,7 +201,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 f'    title: "{item.get("title", "Shared Discovery")}"',
                 (
                     "    destination_dir: "
-                    f'"{item.get("destination_dir", "novels/Novel-02/assets/illustrations/ARC-001/SCN-001")}"'
+                    f'"{item.get("destination_dir", "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001")}"'
                 ),
                 f'    conversation_record: "{item["conversation_record"]}"',
             ])
@@ -237,7 +237,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         result = self.run_processor()
         self.assertEqual(result.returncode, 0, result.stderr)
 
-        destination = self.root / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001"
+        destination = self.root / "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001"
         self.assertEqual((destination / "original/ILL-001-mapped-output.png").read_bytes(), mapped_bytes)
         self.assertTrue((destination / "ILL-001-mapped-output.webp").read_bytes().startswith(b"RIFF"))
         self.assertFalse((self.inbox / "mapped.png").exists())
@@ -337,7 +337,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual((self.inbox / "broken.png").read_bytes(), unknown_bytes)
         self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
         self.assertTrue((self.inbox / "webp/batch-unclassified-failure/attempt-001/mapped.png.webp").is_file())
-        self.assertFalse((self.root / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-mapped-output.png").exists())
+        self.assertFalse((self.root / "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-mapped-output.png").exists())
         report = self.inbox / "history/batch-unclassified-failure/attempt-001"
         with (report / "conversion-report.csv").open(encoding="utf-8") as handle:
             rows = {row["source_filename"]: row for row in csv.DictReader(handle)}
@@ -377,7 +377,7 @@ class TakeoutProcessorTests(unittest.TestCase):
 
         destination = (
             self.root
-            / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001"
+            / "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001"
         )
         master = destination / "original/ILL-001-shared-discovery.PNG"
         webp = destination / "ILL-001-shared-discovery.webp"
@@ -409,7 +409,7 @@ class TakeoutProcessorTests(unittest.TestCase):
 
 
     def test_attempt_output_upload_updates_attempt_record_and_readme(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         attempt_record = session / "attempt-01.md"
         attempt_record.write_text(
@@ -434,7 +434,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                     "source": "portrait.png",
                     "asset_id": "",
                     "title": "Partial Portrait",
-                    "destination_dir": "drawings/2026-11-19/images",
+                    "destination_dir": "area/drawing/2026-11-19/images",
                     "attempt": "1",
                     "output_id": "A01-O01",
                     "prompt_id": "P01",
@@ -447,7 +447,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                     "source": "portrait-alt.png",
                     "asset_id": "",
                     "title": "Partial Portrait Alternative",
-                    "destination_dir": "drawings/2026-11-19/images",
+                    "destination_dir": "area/drawing/2026-11-19/images",
                     "attempt": "1",
                     "output_id": "A01-O02",
                     "approval_status": "Not recorded",
@@ -554,7 +554,7 @@ class TakeoutProcessorTests(unittest.TestCase):
     def test_missing_conversation_record_fails_before_staging_or_relocation(self):
         (self.inbox / "no-conversation.png").write_bytes(b"preserve-this-original")
         self.manifest({"source": "no-conversation.png"}, batch="batch-no-conversation")
-        record = self.root / "drawings/history/2026-11-19-conversation-integrity.md"
+        record = self.root / "area/drawing/history/2026-11-19-conversation-integrity.md"
         record.unlink()
         handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
 
@@ -566,7 +566,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         staged = self.inbox / "webp/batch-no-conversation/attempt-001"
         self.assertFalse(list(staged.glob("*.webp")) if staged.exists() else [])
         self.assertFalse(
-            (self.root / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png").exists()
+            (self.root / "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png").exists()
         )
         report = (
             self.inbox / "history/batch-no-conversation/attempt-001/verification-report.md"
@@ -576,7 +576,7 @@ class TakeoutProcessorTests(unittest.TestCase):
     def test_malformed_partial_conversation_record_fails_closed(self):
         (self.inbox / "incomplete-record.png").write_bytes(b"preserve-this-original")
         self.manifest({"source": "incomplete-record.png"}, batch="batch-incomplete-record")
-        record = self.root / "drawings/history/2026-11-19-conversation-integrity.md"
+        record = self.root / "area/drawing/history/2026-11-19-conversation-integrity.md"
         content = record.read_text(encoding="utf-8")
         content = content.replace(
             "- **Basis:** The current test case parameters supplied to manifest_many.\n",
@@ -598,7 +598,7 @@ class TakeoutProcessorTests(unittest.TestCase):
     def test_conversation_mapping_mismatch_fails_before_staging(self):
         (self.inbox / "wrong-mapping.png").write_bytes(b"preserve-this-original")
         self.manifest({"source": "wrong-mapping.png"}, batch="batch-wrong-mapping")
-        record = self.root / "drawings/history/2026-11-19-conversation-integrity.md"
+        record = self.root / "area/drawing/history/2026-11-19-conversation-integrity.md"
         content = record.read_text(encoding="utf-8")
         mapping_rows = [
             line for line in content.splitlines()
@@ -627,7 +627,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("has no exact image mapping row", report)
 
     def test_drawing_generation_identity_must_match_attempt_record(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         attempt = session / "attempt-01.md"
         attempt.write_text(
@@ -645,7 +645,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             [{
                 "source": "mismatched-output.png",
                 "title": "Mismatched Output",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
             }],
             batch="batch-attempt-identity",
@@ -690,7 +690,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         destination = (
             self.root
-            / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001"
+            / "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001"
         )
         self.assertTrue((destination / "ILL-001-morning-window.webp").is_file())
         self.assertTrue((destination / "ILL-002-evening-window.webp").is_file())
@@ -737,7 +737,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertTrue((self.inbox / "good.png").is_file())
         self.assertTrue((self.inbox / "broken.jpg").is_file())
         self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), original_handoff)
-        self.assertFalse((self.root / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-good-image.webp").exists())
+        self.assertFalse((self.root / "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-good-image.webp").exists())
 
         # Correct the batch, retaining the failed attempt as an inspectable record.
         (self.inbox / "broken.jpg").unlink()
@@ -856,7 +856,7 @@ class TakeoutProcessorTests(unittest.TestCase):
 
 
     def test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         (session / "attempt-06.md").write_text("# Attempt 06\n", encoding="utf-8")
         (session / "attempt-11.md").write_text("# Attempt 11\n", encoding="utf-8")
@@ -878,14 +878,14 @@ class TakeoutProcessorTests(unittest.TestCase):
                     "source": "upload-six.png",
                     "asset_id": "",
                     "title": "Attempt 06 Additional Image",
-                    "destination_dir": "drawings/2026-11-19/images",
+                    "destination_dir": "area/drawing/2026-11-19/images",
                     "attempt": "06",
                 },
                 {
                     "source": "upload-eleven.png",
                     "asset_id": "",
                     "title": "Attempt 11 Additional Image",
-                    "destination_dir": "drawings/2026-11-19/images",
+                    "destination_dir": "area/drawing/2026-11-19/images",
                     "attempt": "11",
                 },
             ],
@@ -923,7 +923,7 @@ class TakeoutProcessorTests(unittest.TestCase):
 
 
     def test_drawing_session_upload_without_attempt_metadata_is_rejected(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         (session / "README.md").write_text(
             "# Drawing session\n\n"
@@ -936,7 +936,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             [{
                 "source": "missing-attempt.png",
                 "title": "Missing Attempt",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
             }],
             batch="batch-missing-attempt",
         )
@@ -953,7 +953,7 @@ class TakeoutProcessorTests(unittest.TestCase):
 
 
     def test_missing_existing_webp_link_blocks_upload_and_rolls_back(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         (session / "attempt-01.md").write_text(
             "# Attempt 01\n\n## Repository images\n\n"
@@ -975,7 +975,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             [{
                 "source": "new.png",
                 "title": "New Output",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
             }],
             batch="batch-stale-webp-link",
@@ -996,7 +996,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("missing or unsafe WebP asset", report)
 
     def test_png_links_in_drawing_records_are_rejected(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         (session / "attempt-01.md").write_text(
             "# Attempt 01\n\n## Repository images\n\n"
@@ -1018,7 +1018,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             [{
                 "source": "new.png",
                 "title": "New Output",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
             }],
             batch="batch-png-link",
@@ -1033,7 +1033,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("link only top-level WebP", report)
 
     def test_existing_manifest_duplicate_output_id_blocks_new_upload(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
         (session / "README.md").write_text(
@@ -1045,7 +1045,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         )
         (session / "manifest.csv").write_text(
             "session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status,attempt,output_id,webp_path\n"
-            "2026-11-19,prior-image,prior.png,,Not recorded,https://example.invalid/prior,old-sha,Not verifiable,01,A001-O01,drawings/2026-11-19/images/prior.webp\n",
+            "2026-11-19,prior-image,prior.png,,Not recorded,https://example.invalid/prior,old-sha,Not verifiable,01,A001-O01,area/drawing/2026-11-19/images/prior.webp\n",
             encoding="utf-8",
         )
         (self.inbox / "new.png").write_bytes(b"new-generated-original")
@@ -1053,7 +1053,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             [{
                 "source": "new.png",
                 "title": "New Output",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
                 "output_id": "A001-O01",
             }],
@@ -1070,7 +1070,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("Duplicate output_id", report)
 
     def test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
         readme = session / "README.md"
@@ -1089,13 +1089,13 @@ class TakeoutProcessorTests(unittest.TestCase):
                 {
                     "source": "output-one.png",
                     "title": "Output One",
-                    "destination_dir": "drawings/2026-11-19/images",
+                    "destination_dir": "area/drawing/2026-11-19/images",
                     "attempt": "1",
                 },
                 {
                     "source": "output-two.png",
                     "title": "Output Two",
-                    "destination_dir": "drawings/2026-11-19/images",
+                    "destination_dir": "area/drawing/2026-11-19/images",
                     "attempt": "1",
                 },
             ],
@@ -1183,7 +1183,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("top level", report)
 
     def test_session_manifest_backfills_legacy_webps_conservatively(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         image_dir = session / "images"
         image_dir.mkdir(parents=True)
         attempt_record = session / "attempt-01.md"
@@ -1207,7 +1207,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 "source": "new.png",
                 "asset_id": "",
                 "title": "New Output",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
             }],
             batch="batch-legacy-manifest",
@@ -1239,7 +1239,7 @@ class TakeoutProcessorTests(unittest.TestCase):
 
 
     def test_session_manifest_uses_a_matching_legacy_original_master_when_present(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         image_dir = session / "images"
         original_dir = image_dir / "original"
         original_dir.mkdir(parents=True)
@@ -1266,7 +1266,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             [{
                 "source": "new.png",
                 "title": "New Output",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
             }],
             batch="batch-legacy-original-manifest",
@@ -1277,7 +1277,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         with (session / "manifest.csv").open(encoding="utf-8", newline="") as handle:
             rows = list(csv.DictReader(handle))
         legacy = next(row for row in rows if row["webp_path"].endswith("/legacy.webp"))
-        expected_master = "drawings/2026-11-19/images/original/legacy.png"
+        expected_master = "area/drawing/2026-11-19/images/original/legacy.png"
         self.assertEqual(legacy["original_path"], expected_master)
         self.assertEqual(legacy["filename"], expected_master)
         self.assertEqual(legacy["sha256"], hashlib.sha256(legacy_original).hexdigest())
@@ -1287,7 +1287,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(legacy["mapping_status"], "Corroborated")
 
     def test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         image_dir = session / "images"
         original_dir = image_dir / "original"
         original_dir.mkdir(parents=True)
@@ -1306,7 +1306,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             [{
                 "source": "new.png",
                 "title": "New Output",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
             }],
             batch="batch-orphan-master",
@@ -1328,7 +1328,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("Original master has no same-stem WebP", report)
 
     def test_session_manifest_preserves_existing_rows_and_adds_new_columns(self):
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
         (session / "README.md").write_text(
@@ -1349,7 +1349,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 "source": "fresh.png",
                 "asset_id": "",
                 "title": "Fresh Output",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
             }],
             batch="batch-manifest-migration",
@@ -1389,7 +1389,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         original = b"different-original-bytes"
         (self.inbox / "mismatch.png").write_bytes(original)
         wrong = "0" * 64
-        session = self.root / "drawings/2026-11-19"
+        session = self.root / "area/drawing/2026-11-19"
         session.mkdir(parents=True)
         (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
         (session / "README.md").write_text(
@@ -1404,7 +1404,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 "source": "mismatch.png",
                 "asset_id": "",
                 "title": "Mismatch Review",
-                "destination_dir": "drawings/2026-11-19/images",
+                "destination_dir": "area/drawing/2026-11-19/images",
                 "attempt": "1",
                 "expected_sha256": wrong,
             },
@@ -1438,8 +1438,8 @@ class PublishedManifestVerificationTests(unittest.TestCase):
             + b"WEBP" + self.webp_payload
         )
         self.original_bytes = b"unchanged-original-master"
-        self.webp_path = "drawings/2026-11-19/images/result.webp"
-        self.original_path = "drawings/2026-11-19/images/original/result.png"
+        self.webp_path = "area/drawing/2026-11-19/images/result.webp"
+        self.original_path = "area/drawing/2026-11-19/images/original/result.png"
         self.row = {
             "image_id": "A01-O01",
             "attempt": "01",
@@ -1447,7 +1447,7 @@ class PublishedManifestVerificationTests(unittest.TestCase):
             "asset_id": "ILL-001",
             "source_asset_id": "native-asset-01",
             "native_generation_id": "native-generation-01",
-            "conversation_record": "drawings/history/2026-11-19-conversation-integrity.md",
+            "conversation_record": "area/drawing/history/2026-11-19-conversation-integrity.md",
             "conversation_coverage": "Partial",
             "github_url": github_blob_url(self.webp_path, self.repository, self.branch),
             "webp_path": self.webp_path,
@@ -1460,7 +1460,7 @@ class PublishedManifestVerificationTests(unittest.TestCase):
         self.blobs = {
             self.webp_path: self.webp_bytes,
             self.original_path: self.original_bytes,
-            "drawings/2026-11-19/README.md": (
+            "area/drawing/2026-11-19/README.md": (
                 "# Drawing session\n\n"
                 "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
                 "|---|---|---|---|---|---|\n"
@@ -1468,14 +1468,14 @@ class PublishedManifestVerificationTests(unittest.TestCase):
                 "\n## Image inventory — 1 WebP delivery files + 1 original master (2 files total)\n\n"
                 "- [result.webp](images/result.webp)\n"
             ).encode("utf-8"),
-            "drawings/2026-11-19/attempt-01.md": (
+            "area/drawing/2026-11-19/attempt-01.md": (
                 "# Attempt 01\n\n"
                 "- **Asset ID:** " + chr(96) + "native-asset-01" + chr(96) + "\n"
                 "- **Generation ID:** " + chr(96) + "native-generation-01" + chr(96) + "\n\n"
                 "## Repository images\n\n"
                 "- [result.webp](images/result.webp)\n"
             ).encode("utf-8"),
-            "drawings/history/2026-11-19-conversation-integrity.md": (
+            "area/drawing/history/2026-11-19-conversation-integrity.md": (
                 "# Conversation Integrity — 2026-11-19\n\n"
                 "## Integrity policy\n\nPartial test fixture.\n\n"
                 "## Chronological record\n\nFixture event.\n\n"
@@ -1512,12 +1512,12 @@ class PublishedManifestVerificationTests(unittest.TestCase):
         self.assertEqual(error, "")
 
     def test_missing_published_conversation_record_fails_verification(self):
-        self.blobs.pop("drawings/history/2026-11-19-conversation-integrity.md")
+        self.blobs.pop("area/drawing/history/2026-11-19-conversation-integrity.md")
         error = verify_session_links(self.row, lambda path: self.blobs.get(path))
         self.assertIn("conversation-integrity record is missing", error)
 
     def test_published_conversation_mapping_mismatch_fails_verification(self):
-        path = "drawings/history/2026-11-19-conversation-integrity.md"
+        path = "area/drawing/history/2026-11-19-conversation-integrity.md"
         self.blobs[path] = self.blobs[path].replace(
             b"| source.png | 01 | native-asset-01 | native-generation-01 |",
             b"| source.png | 01 | native-asset-01 | another-generation |",
@@ -1526,7 +1526,7 @@ class PublishedManifestVerificationTests(unittest.TestCase):
         self.assertIn("no exact source mapping", error)
 
     def test_published_partial_conversation_without_gap_details_fails(self):
-        path = "drawings/history/2026-11-19-conversation-integrity.md"
+        path = "area/drawing/history/2026-11-19-conversation-integrity.md"
         self.blobs[path] = self.blobs[path].replace(
             b"- **Basis:** The test fixture fields.\n", b""
         )
@@ -1534,14 +1534,14 @@ class PublishedManifestVerificationTests(unittest.TestCase):
         self.assertIn("does not document its gaps", error)
 
     def test_missing_published_attempt_link_fails_verification(self):
-        self.blobs["drawings/2026-11-19/attempt-01.md"] = (
+        self.blobs["area/drawing/2026-11-19/attempt-01.md"] = (
             b"# Attempt 01\n\n## Repository images\n\n- [other.webp](images/other.webp)\n"
         )
         error = verify_session_links(self.row, lambda path: self.blobs.get(path))
         self.assertIn("attempt record does not link", error)
 
     def test_missing_published_inventory_link_fails_verification(self):
-        self.blobs["drawings/2026-11-19/README.md"] = (
+        self.blobs["area/drawing/2026-11-19/README.md"] = (
             "# Drawing session\n\n"
             "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
             "|---|---|---|---|---|---|\n"
@@ -1552,7 +1552,7 @@ class PublishedManifestVerificationTests(unittest.TestCase):
         self.assertIn("inventory does not link", error)
 
     def test_missing_published_inventory_section_fails_verification(self):
-        self.blobs["drawings/2026-11-19/README.md"] = (
+        self.blobs["area/drawing/2026-11-19/README.md"] = (
             "# Drawing session\n"
         ).encode("utf-8")
         error = verify_session_links(self.row, lambda path: self.blobs.get(path))
