@@ -1,6 +1,6 @@
 # Discussion Register
 
-## Current Step
+## Current Step\n\n- **2026-11-26 09:10 UTC:** User established a P0-first rule for Ledger-generated tasks. Task `20261126-090154` promoted from P2 Proposed to P0 In Progress, approval recorded, and moved ahead of task `20261126-142500`. Hosted report/job log identified a Proposed-section fixture mismatch. Commit `ec3ba4d` corrected newline literals in the fixture isolation patch; latest validation remains unconfirmed. The Ledger triage guide now records the P0 override.
 
 - **2026-11-26:** CI failures inspected for [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md); fixture/test repairs committed, including follow-up fixture and writer corrections. Await follow-up validation and report handoff evidence. Task remains In Progress.
 
