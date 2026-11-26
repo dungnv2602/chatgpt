@@ -26,7 +26,7 @@ When the user says `/start`:
 5. Retrieve and read `.agent/skills/github-actions/SKILL.md` from branch `gpt`.
 6. Retrieve and read `.agent/skills/document-standards/SKILL.md` from branch `gpt`. This is a foundational skill. Load its catalog and specific canonical assets only when the task requires them.
 7. Verify that every required path was retrieved and read. Maintain the per-conversation verified-load ledger below.
-7. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Review CI only when the user asks or the current task depends on a specific workflow.
+8. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Review CI only when the user asks or the current task depends on a specific workflow.
 
 Do not load Agent Skill Authoring during ordinary foundational initialization. Load it only when its task-specific activation conditions apply. Document Standards is foundational; load its skill definition during initialization and retrieve its catalog entries, templates, schemas, and validator details when the task requires them. The Worker's archive and media references remain task-triggered components.
 
@@ -198,7 +198,7 @@ Never claim a commit or verification that did not occur.
 
 #### 9. Technical writing standard
 
-This protocol is operational documentation. Apply Strict mode from the repository [ASD-STE100 policy](asd-ste100/references/repository-writing-policy.md) when you revise it.
+This protocol is operational documentation. Apply Strict mode from the repository [ASD-STE100 policy](.agent/skills/asd-ste100/references/repository-writing-policy.md) when you revise it.
 
 ### Session and specialist execution order
 
