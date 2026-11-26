@@ -1,6 +1,6 @@
 ## Current Step
 
-Initialize the repository session and inspect the recovery actions, deletion history, and task-board records. User requests reversal of restorations made without permission and a task board containing only DRAFT-0002 and repository reconstruction.
+Inspect the task board, the two requested task records, and the exact recovery/deletion commits. Identify which restored paths can be reversed without changing unrelated work or violating archive controls.
 
 ## Open Discussions
 - **2026-11-26 — Task-board record links:** **Resolved:** The final broken task-board link used a truncated filename (`...repo.md`); the actual tracked task file ends in `...re.md`. The link was corrected. The diagnostics publish subsequently added further generated tasks; all 288 unique task-board targets now resolve. [Audit task](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
