@@ -9,10 +9,9 @@ on:
       - STE Lint Changed Documentation
       - STE Lint Full Technical Documentation
       - Validate Document Standards
+      - Send Email on Notification Tag
     types:
       - completed
-    branches:
-      - gpt
   push:
     branches:
       - gpt
