@@ -104,8 +104,13 @@ class TakeoutProcessorTests(unittest.TestCase):
                 normalized.append(item)
                 continue
             parts = destination.split("/")
-            is_drawing = len(parts) == 3 and parts[0] == "area/drawing" and parts[2] == "images"
-            session_date = parts[1] if is_drawing else "2026-11-19"
+            is_drawing = (
+                len(parts) == 4
+                and parts[0] == "area"
+                and parts[1] == "drawing"
+                and parts[3] == "images"
+            )
+            session_date = parts[2] if is_drawing else "2026-11-19"
             record_path = item.get(
                 "conversation_record",
                 f"area/drawing/history/{session_date}-conversation-integrity.md",
