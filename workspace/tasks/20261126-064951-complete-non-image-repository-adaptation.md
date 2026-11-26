@@ -79,22 +79,20 @@ Complete the remaining repository adaptation after the image workstream. Audit t
 
 ## 7. Current State
 
-The image-related adaptation was completed and archived in task `20261126-055004`. The broader repository audit is in progress. The first pass found and repaired stale non-image paths in Document Standards workflow filters, the ASD-STE100 writing policy, report navigation, Agent Skill Authoring, Document Standards, and Decision Governance. README relative links resolve across active README files except for the protected archived ADR index. Other non-image instructions and path references still require review.
+The image-related adaptation was completed and archived in task `20261126-055004`. This task covers the remaining non-image scope. The tracked tree contains 674 files and 282 Markdown files, with 273 Markdown files outside `master/` and `.archive/`. The audit reviewed all 20 active `SKILL.md` definitions, key skill references, all GitHub Actions workflows, the non-image report and catalog scripts, workspace guides and templates, report navigation, and the active novel navigation documents. It repaired stale paths in the ASD-STE100 skill, Agent Skill Authoring, and a Drawing-to-Worker reference. The Document Type Catalog inventory count now matches the audited tree. Active README links resolve except for two dead links in the protected archived ADR index. The user instructed that the archived index remain unchanged. Historical path mentions and proposal snapshots were preserved.
 
 ## 8. Remaining Work
 
-- Complete the final static review of active repository instructions and path references.
-- Obtain user direction on the archived ADR index's two dead file links if a reference-only correction is desired.
-- Keep the task open until the remaining link boundary is resolved or explicitly accepted.
+- Complete final read-back and closeout of the non-image adaptation.
+- Preserve the two dead links in `.archive/adr/README.md` as instructed. Record this as an accepted, intentionally unresolved archive-reference issue.
+- Keep tests and workflow execution skipped.
 - Do not run tests or workflows.
 
 ## 9. Next Actions
 
-1. Review tracked-tree paths and identify active non-image entry points and workflows.
-2. Read the canonical repository policies and relevant workflow/script files before editing.
-3. Trace each suspect path or link to its actual target.
-4. Apply minimal repairs and verify exact changed files.
-5. Update task progress and the workspace board/register.
+1. Read back all files changed during the final audit.
+2. Record the archived ADR index decision and remaining limitations.
+3. Complete task closeout using the existing archive and retention rules.
 
 ## 10. References
 
@@ -122,6 +120,16 @@ The image-related adaptation was completed and archived in task `20261126-055004
 ## 12. Handoff Instructions
 
 Continue on branch `gpt`. The image workstream is complete and is not part of this task. Focus on non-image workflows, README files, navigation, and cross-references affected by the refactor. Do not assume every old-looking path is wrong: inspect its intended scope and actual target. Do not restore deleted files. Do not create root `README.md`. Do not change archived records. Do not run tests or dispatch workflows unless the user later changes that instruction.
+
+### 2026-11-26 07:09 UTC
+
+- **Action:** Continued the non-image audit after the user instructed that the archived ADR index must remain unchanged.
+- **Result:** Preserved `.archive/adr/README.md`. Corrected the remaining stale operational references in `.agent/skills/asd-ste100/SKILL.md`, `.agent/skills/agent-skill-authoring/SKILL.md`, and `.agent/skills/drawing/references/series-continuity-and-iteration.md`. Refreshed the Document Type Catalog inventory to 273 Markdown files outside `master/` and `.archive/`, based on a recursive tree audit at commit `5a12b7315ca72e26fea94e2315d70b8165afa54f`.
+- **Audit scope:** Reviewed all 20 `SKILL.md` definitions, targeted skill references, all seven GitHub Actions workflows, relevant report/catalog scripts, workspace guides and templates, report navigation, and active novel navigation documents. Checked workflow path references against the tracked tree. Active README links resolve except for the two user-declined archived ADR links.
+- **Preserved:** Historical references in `.agent/INITIALIZATION_POLICY.md`; pre-refactor path descriptions in in-review Draft records; image-specific workflow and processing material already completed under the related task.
+- **Commits:** `f7d38e70535b3918f978e1fd769f7e42d9fd1692`, `cc53ba4a7c74d7c7a957d514450556d2429283df`, `5fc32f2c06f77facedbed7c7cfab609ec8137d8e`, `2e2f3e1cae27d826722221327d1af6c6fd70e594`.
+- **Verification:** Read back all four final changed files. Static workflow path review found no other missing literal repository paths. Tests, validators, linter, and workflow dispatch remain intentionally skipped.
+- **Next:** Final closeout and archive verification.
 
 ## 13. Ledger Findings
 
