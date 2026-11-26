@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Promote user-approved DRAFT-0005 revision 1 to ADR-0004. Complete provisional ADR read-back and rationale comparison; after acceptance, create the implementation task before changing task/Ledger implementation files.
+Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-01 — task folder templates and Worker lifecycle. Preserve the deferred hosted-results-review boundary.
 
 ## Open Discussions
 

@@ -16,8 +16,9 @@ related_adrs:
   - "ADR-0003"
 supersedes: []
 superseded_by: null
-implementation_status: "not-started"
-implementation_tasks: []
+implementation_status: "in-progress"
+implementation_tasks:
+  - "20261126-232913"
 review_triggers:
   - "A recurrence cannot be linked to its prior finding or remediation."
   - "A Ledger ingestion error is reported as success or an incomplete capture is consumed."
