@@ -109,6 +109,30 @@ Store each task in `workspace/tasks/<task-id>/task.md`. Every task folder contai
 
 Option 1 has the lowest migration cost but fails the required physical containment. Option 2 provides containment but keeps the rejected hosted-validation gate. Option 3 has the highest initial cost and is the only option that satisfies both task-folder structure and commit-based CI remediation completion while preserving the user's results-review boundary.
 
+## Assessment Basis and Evidence Limits
+
+- **Scope of comparison:** Flat task notes with linked child notes; task folders with validation-gated CI subtasks; task folders with commit-complete CI subtasks and separate validation metadata.
+- **Method:** Static inspection of the task generator, schema, regression tests, Worker, CI Ledger and GitHub Actions skills, board, templates, archive conventions, and related decision records at the reviewed branch commit.
+- **Evidence classes:** The flat-file paths, validation gate, finding retirement, ingestion error handling, incomplete-capture handling, and board update behavior are repository facts. The task-folder hierarchy and commit-based completion rule are user-approved requirements. Improved lifecycle clarity and recurrence traceability are architectural inferences.
+- **Confidence:** High for the identified code and policy mismatches because the owning files were inspected. Moderate for migration and runtime behavior until the hosted regression suite validates the implementation.
+- **Limits:** No tests were run during Draft assessment. No production recurrence was replayed. No hosted CI results were inspected. Nested archive cleanup compatibility remains to be demonstrated. Do not treat static inspection as runtime validation.
+
+## Risks and Safeguards
+
+| Risk | Impact | Safeguard | Residual exposure |
+|---|---|---|---|
+| Parent closes while a required child remains open | High | Worker closeout enumerates every required child and blocks parent Done until all are Done | An omitted child registration can still hide work |
+| CI subtask marked Done without a real commit | High | Verify commit existence on intended branch, read back changed files, and record SHA plus summary | Later history rewrite requires separate authorization |
+| Hosted validation is confused with remediation completion | High | Keep validation metadata separate from task/subtask status and label both explicitly | Consumers may still conflate the fields |
+| Recurrence loses prior finding identity | High | Retain terminal finding identity and resolution history; append new task references on recurrence | Ledger identity history grows; evidence retention must remain bounded |
+| Partial ingestion appears successful | High | Surface structured errors, return non-zero, and leave failed reports retryable while publishing safe partial progress | Failed reports require a later retry |
+| Incomplete capture is consumed | High | Do not mark incomplete or pre-finalizer captures processed | Such entries may be reconsidered on subsequent sweeps |
+| Missing or unsafe indexed report path is accepted | High | Validate identifiers, reject traversal, and fail closed on missing indexed complete reports | Index producer remains a trust boundary |
+| New task displaces Worker-selected Current Execution | Medium | Preserve a valid current task and delegate selection to Worker priority-and-age rules | Concurrent publisher races still require regression coverage |
+| Generated task bypasses decision governance | High | Keep tasks Proposed while Governing ADR(s) is Pending; require accepted ADR linkage before Ready/In Progress | Work may wait for a new Draft/ADR |
+| Folder archive breaks retention or legacy discovery | High | Archive complete folders, index the parent task record, and retain a backward-compatible reader for historical flat archives | Hosted retention regression must confirm nested-path behavior |
+| Active-task migration loses history or links | High | Preserve task IDs and content, migrate only active records, update relative links, and read back every destination | External references outside the repository may remain stale |
+
 ## Decision Outcome
 
 **Chosen option: Option 3 — Task folders with commit-complete CI subtasks and separate validation metadata.**
