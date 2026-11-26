@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-050911-118
 - **Created:** 2026-11-26 05:09 UTC
-- **Updated:** 2026-11-26 05:09 UTC
+- **Updated:** 2026-11-26 05:18 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -91,6 +91,6 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-5efbda4d1f757c605b1da5a3` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) |
-| `lint-976f180d206c7bf876f46fd7` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) |
-| `lint-b6e95df7029eb4462c9ecbcc` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) |
+| `lint-5efbda4d1f757c605b1da5a3` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) · [report](../../.takeout/reports/lint_reports/on_repo/history/45757816039-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757816039) · [report](../../.takeout/reports/lint_reports/on_changed/history/45759941485-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45759941485) |
+| `lint-976f180d206c7bf876f46fd7` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) · [report](../../.takeout/reports/lint_reports/on_repo/history/45757816039-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757816039) · [report](../../.takeout/reports/lint_reports/on_changed/history/45759941485-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45759941485) |
+| `lint-b6e95df7029eb4462c9ecbcc` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) · [report](../../.takeout/reports/lint_reports/on_repo/history/45757816039-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757816039) · [report](../../.takeout/reports/lint_reports/on_changed/history/45759941485-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45759941485) |
