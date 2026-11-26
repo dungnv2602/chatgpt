@@ -1,10 +1,12 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T08:11:00Z",
+  "updated_at_utc": "2026-11-26T08:45:56Z",
   "findings": [],
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-26T08:11:00Z",
-    "processed_reports": [],
+    "processed_reports": [
+      ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-pre_finalizer/report.json"
+    ],
     "lint_baseline_scopes": {
       "on_changed": false,
       "on_repo": false
