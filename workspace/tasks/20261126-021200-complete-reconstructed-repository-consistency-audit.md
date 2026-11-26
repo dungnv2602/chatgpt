@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 02:12 UTC
+- **Updated:** 2026-11-26 05:25 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -158,3 +158,14 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Finding:** Initialization policy, central report README, and central image README still carried unprefixed reconstructed report/archive/project paths. Document Standards Skill examples also referenced the old novel-template root.
 - **Repair:** Updated these references to `.takeout/reports/`, `.archive/reports/`, `area/drawing/`, and `area/novel/`. Repaired the active initialization policy and project-template example.
 - **Verification:** Read back the modified references. This is targeted static verification; no validator or hosted workflow run occurred.
+
+
+### 2026-11-26 05:25 UTC — Full pre-deletion data recovery; previous missing-record count superseded
+
+- **Root cause confirmed:** Branch-specific Git history shows commit `36d0236ca5b49067b6108e5aa29194cfb56794b6` (`delete`) removed 300 tracked files and 568,927 lines. Its direct parent `53dd5e7b0bfba0d26e7e10952704cffdcc6e2b6f` contains the complete pre-deletion canonical data tree. Earlier path-history checks that omitted `sha=gpt` were incomplete; the 72 task records were in fact committed on `gpt` and deleted by that commit.
+- **Recovery:** Restored all 1,311 missing canonical blobs from the direct parent tree and updated 14 existing blobs to the exact pre-deletion versions: 1,238 `.takeout/reports/` files, 72 `workspace/tasks/` files, one `.archive/task/` file, 13 updated active task records, and the canonical Ledger. Kept post-deletion report outputs and all audit/code changes that already existed in the current tree. No legacy `archive/` directories were recreated. Commit: `99de4ef7d7a4f43499d838b299731ba5218d17ab`.
+- **Ledger:** The restored canonical Ledger now matches the exact pre-deletion parent blob (`50cc56829ed682d32862e577ea0c5c3142538116`), schema 1.4.0, updated 2026-11-25T07:14:03Z, 557 findings, 293 processed reports, and 152 distinct task references. It supersedes the earlier older version-1.4.0 blob restored from commit `5ef825...`.
+- **Verification:** Full current tree readback (untruncated) confirms 51 `.archive/task/` files, 17 `.archive/reports/` files, 1,344 `.takeout/reports/` files, and 153 `workspace/tasks/` files. All 55 archive-retention index paths exist. All 1,311 canonical paths missing from the pre-deletion parent snapshot have been restored. All task/archive blobs under `.archive/task/`, `.archive/reports/`, and `workspace/tasks/` now match the parent snapshot exactly. All 152 unique task-board targets resolve except one orphan: `workspace/tasks/20261124-104408-01-review-present-perfect-findings-in-workspace-draft-draft-0001-repo.md`. It has no blob in the parent tree, current tree, or branch-specific path history. Board row left unchanged.
+- **Correction to 05:10 findings:** The earlier statement that 72 task records and one retention target had no recoverable source was superseded by branch-specific history and the direct pre-deletion parent tree. Those records are now restored. Only the single orphan task-board link remains unresolved.
+- **Hosted validation:** Actions runs are still queued/pending with no jobs returned; the recovery commit should trigger a fresh diagnostics run. Runtime test results remain unavailable.
+- **Next:** Inspect post-recovery Actions runs; finish the remaining workflow and script dependency audit; determine whether the orphan board row has any authoritative record outside Git history.
