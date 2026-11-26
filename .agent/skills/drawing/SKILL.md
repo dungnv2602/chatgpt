@@ -35,7 +35,7 @@ Load this skill and its required references when:
 - The user requests drawing work that requires this workflow.
 - The user activates the novelist role. Drawing is a prerequisite for the novelist workflow.
 
-For `start a drawing session`, follow the cue and dependency procedure in `.agent/skills/SESSION_START.md`. If foundational initialization has not passed in the current conversation, complete it first. Reuse all verified foundational files.
+For `start a drawing session`, follow the cue and dependency procedure in `.agent/SESSION_START.md`. If foundational initialization has not passed in the current conversation, complete it first. Reuse all verified foundational files.
 
 Check the per-conversation verified-load ledger before retrieving this skill or either required reference. If a path is already verified, reuse it. Load `references/style-guide.md` and `references/image-editing-protocol.md` once per conversation, not once per drawing session or role. Load other Drawing references only when their documented task triggers apply. Moving from Drawing to Novelist, or back to Drawing, does not justify reloading files already verified.
 
