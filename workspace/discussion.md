@@ -2,14 +2,12 @@
 
 ## Current Step
 
-_No active step._
+- **2026-11-26 14:58 UTC:** Execute current task [20261126-142112-04 — Review synonym-rotation findings in DRAFT-0002](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md). The hosted report [45843115356](https://github.com/dungnv2602/chatgpt/actions/runs/45843115356) found one remaining use of "validates" in the comparative matrix. Replace it with the established "checks" wording, preserve the other revision 4 edits, and read back the Draft and task record.
 
 ## Open Discussions
 
-- **2026-11-26 14:46 UTC:** Error-only Actions report filtering is implemented in the reporter and shared with Ledger ingestion, but its regression suite and end-to-end hosted task handoff are not verified. The approved task [20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) remains Paused pending P0 work. The latest captured source run [45821860845](https://github.com/dungnv2602/chatgpt/actions/runs/45821860845) failed in the CI Ledger regression step. Do not claim the error-only reporter tests passed.
-
-- **2026-11-26 14:55 UTC:** DRAFT-0002 revision 4 remains in review. Its wording remediation is committed in [c3ef2c4](https://github.com/dungnv2602/chatgpt/commit/c3ef2c4dc0635033c5cebaef0b7624af3b2fccb6). Five associated P0 task records now link the commit. Hosted lint validation remains pending.
-- **2026-11-26 14:55 UTC:** Four new P0 tasks cover style findings in workspace/draft/README.md and workspace/task_board.md. The task board selects 20261126-143747 as current execution.
+- **2026-11-26 14:58 UTC:** DRAFT-0002 revision 4 remains in review. Its wording corrections preserve the proposal's scope and pending approval. Hosted lint run 45843115356 passed task_board.md and draft/README.md but failed DRAFT-0002 on one synonym-rotation finding.
+- **2026-11-26 14:46 UTC:** Error-only Actions report filtering is implemented in the reporter and shared with Ledger ingestion, but its regression suite and end-to-end hosted task handoff are not verified. The approved task 20261126-142500 remains Paused pending P0 work. The latest captured source run [45821860845](https://github.com/dungnv2602/chatgpt/actions/runs/45821860845) failed in the CI Ledger regression step. Do not claim the error-only reporter tests passed.
 - **2026-11-26 13:46 UTC:** P0 remediation remains open for Markdown link/anchor validation, CI Ledger regression failures, and Validate Document Standards checkout and publication failures. The catalog P0 task 20261126-124305 is closed and archived. See the task board for the complete active queue.
 
 ## Reports
