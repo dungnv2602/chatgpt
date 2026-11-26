@@ -6,13 +6,13 @@ The Worker owns shared intake, original-byte preservation, WebP conversion, publ
 
 - Retained non-novel drawing outputs: drawings/YYYY-MM-DD/images/.
 - Novel illustrations: novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/.
-- Other retained image assets: the destination declared in .takeout/images/HANDOFF.yml.
+- Other retained image assets: the destination declared in images/takeout/HANDOFF.yml.
 
 Store each retained output separately. Use attempt-XX.webp for one image and numbered suffixes for multiple outputs. Link only exact assets whose path and provenance have been verified. Do not migrate existing assets.
 
 ## Shared intake
 
-All new retained uploads enter through the flat images/takeout/ intake. Follow the Worker's image provenance and WebP procedure and the Image Takeout guide.
+All new retained uploads enter through the flat images/takeout/ intake. Follow the Worker's [image provenance and WebP procedure](../the-worker/references/image-provenance-and-webp.md) and [Image Takeout guide](../../../../.takeout/images/README-2.md).
 
 For a non-novel drawing output, include the attempt number in the hand-off and set the destination to drawings/YYYY-MM-DD/images/. The processor requires this field before it updates the attempt record, daily index, or session manifest. Do not move or convert uploaded files manually.
 
