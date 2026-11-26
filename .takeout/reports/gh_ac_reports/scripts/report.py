@@ -677,7 +677,7 @@ def prune_invalid_history(root):
     removed = 0
     if history_root.is_dir():
         for report_path in sorted(history_root.glob("*/*/report.json")):
-            report = read_json(report_path)
+            report = json.loads(report_path.read_text(encoding="utf-8"))
             folder = report_path.parent
             expected = folder.relative_to(root).as_posix()
             if report.get("history_path") != expected or not report_is_retained(report):

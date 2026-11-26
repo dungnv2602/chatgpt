@@ -26,6 +26,7 @@ This directory is the review surface for actionable GitHub Actions execution fai
 - The diagnostics workflow listens for completed source workflows and runs the post-run sweep. Pending IDs discovered by an earlier push-triggered sweep are retried after the source workflow completes.
 - A report is persisted only when classification contains at least one independent error: a failed job/step, a timeout, an action-required outcome, or a classified workflow-startup/configuration failure.
 - Ordinary success, cancellation-only, skipped, neutral, and other issue-free outcomes are handled without report history.
+- Every diagnostics sweep prunes legacy history outside this retention contract and rebuilds the root and per-workflow indexes/latest pointers from retained reports. Pending run IDs are preserved for completion-time capture.
 - A cancelled run is retained only when it contains an independent completed job or step failure. Cancellation and downstream status-propagation failures do not qualify.
 - A successful run with an independently failed non-blocking step is an error report and is retained.
 - Manual requests can select older runs, but cannot override the error-only retention rule. A successful or cancellation-only run is never forced into report history.
@@ -36,7 +37,7 @@ This directory is the review surface for actionable GitHub Actions execution fai
 The report preserves the source conclusion reported by GitHub. Report-generation success does not mean that the source workflow succeeded.
 
 - failure: GitHub reports failure.
-- cancelled: GitHub reports cancellation. Cancellation alone does not create a report for new runs. A cancelled run with an independent classified failure is captured; cancellation and known downstream status-propagation steps do not create issues. Existing historical cancellation-only captures remain immutable.
+- cancelled: GitHub reports cancellation. Cancellation alone does not create a report for new runs. A cancelled run with an independent classified failure is captured; cancellation and known downstream status-propagation steps do not create issues. Historical cancellation-only captures are removed by the retention sweep.
 - timed_out: GitHub reports a timeout.
 - action_required: GitHub reports an action-required state.
 - skipped and neutral remain non-failure outcomes.
@@ -69,7 +70,7 @@ Detailed lint findings, per-file metrics, fingerprints, and baselines remain in 
 
 ## Integrity and history
 
-Report captures are append-only. A later post_run capture does not rewrite pre_finalizer evidence. SHA-256 values in integrity.json cover report.md, report.json, and every captured log.
+Each retained post-run error capture is immutable. The retention sweep removes pre-finalizer captures and any success-only, cancellation-only, or otherwise issue-free records, then rebuilds indexes and latest pointers. A later post-run capture does not rewrite a retained report. SHA-256 values in integrity.json cover report.md, report.json, and every captured log.
 
 Index latest pointers advance by source run time, attempt, and capture-stage precedence. Older captures cannot replace newer pointers. Generated reports are machine-owned.
 
@@ -81,7 +82,7 @@ All source-workflow finalizers and the push-driven sweep use the same repository
 
 ## Reporter self-monitoring
 
-The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting. Explicit backfill requests remain an operator override and may preserve a successful run when its evidence is specifically needed.
+The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting. Explicit backfill requests do not override the error-only retention rule; successful and cancellation-only runs are never retained.
 
 If a diagnostics run fails before GitHub exposes job steps or a log URL, record an evidence gap and leave pending IDs unchanged. Do not infer a source-workflow defect from an empty job record. Allow a later eligible `gpt` push to trigger another sweep; do not dispatch or poll the failed diagnostics run.
 

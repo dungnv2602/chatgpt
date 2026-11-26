@@ -192,15 +192,15 @@ class LedgerTests(unittest.TestCase):
     def test_task_board_renderer_fails_closed_when_status_table_is_missing(self):
         board_path = self.root / "workspace" / "task_board.md"
         board = board_path.read_text(encoding="utf-8")
-        proposed_start = board.index("## Proposed\n") + len("## Proposed\n")
-        ready_start = board.index("## Ready\n", proposed_start)
-        board = board[:proposed_start] + board[ready_start:]
+        in_progress_start = board.index("## In Progress\n")
+        blocked_start = board.index("## Blocked\n", in_progress_start)
+        board = board[:in_progress_start] + board[blocked_start:]
         board_path.write_text(board, encoding="utf-8")
         task_path = self.root / "workspace" / "tasks" / "test-proposed-task.md"
         task_content = (
             "# Task: Proposed renderer test\n\n"
             "- **ID:** test-proposed-task\n"
-            "- **Priority:** P3\n"
+            "- **Priority:** P0\n"
             "- **Status:** Proposed\n"
             "- **Origin:** Assistant\n"
             "- **Updated:** 2026-11-24 08:10 UTC\n"
@@ -254,11 +254,11 @@ class LedgerTests(unittest.TestCase):
         task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
-        self.assertIn("- **Priority:** P3", task_text)
+        self.assertIn("- **Priority:** P0", task_text)
         self.assertIn("lint-a1b2c3d4e5f6", task_text)
         self.assertIn("lint-b2c3d4e5f6a7", task_text)
 
-    def test_low_confidence_actions_findings_remain_ledger_only(self):
+    def test_low_confidence_actions_findings_create_tasks(self):
         issue = {
             "category": "step_failure", "job_name": "build", "step_name": "optional check",
             "confidence": "low", "blocking": False,
@@ -270,8 +270,8 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(findings), 1)
         self.assertEqual(findings[0]["source_family"], "github_actions")
         self.assertEqual(findings[0]["severity"], "low")
-        self.assertEqual(findings[0]["task_refs"], [])
-        self.assertEqual(result["tasks_created"], 0)
+        self.assertEqual(len(findings[0]["task_refs"]), 1)
+        self.assertEqual(result["tasks_created"], 1)
 
     def test_lint_new_run_increments_occurrence_and_tracks_dates(self):
         self.add_lint("on_changed","100","2026-11-23T07:10:00Z")
@@ -433,7 +433,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("\\[follow\\]", task)
         self.assertIn("untrusted evidence", task)
 
-    def test_low_severity_advisory_findings_create_p3_tasks(self):
+    def test_low_severity_advisory_findings_create_p0_tasks(self):
         self.add_lint("on_changed", "212", "2026-11-23T07:50:00Z", level="advisory")
         result = LEDGER.ingest(self.root, now="2026-11-23T07:51:00Z")
         finding = self.read_ledger()["findings"][0]
@@ -443,7 +443,7 @@ class LedgerTests(unittest.TestCase):
         task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
-        self.assertIn("- **Priority:** P3", task_text)
+        self.assertIn("- **Priority:** P0", task_text)
         self.assertIn("lint-", task_text)
 
     def test_resolved_finding_reopens_and_preserves_resolution_history(self):
@@ -494,7 +494,7 @@ class LedgerTests(unittest.TestCase):
         issues = [
             {"category":"cancelled","job_name":"Build","step_name":"Tests","blocking":True,"confidence":"high","message":"Cancelled"},
             {"category":"skipped","job_name":"Build","step_name":"Tests","blocking":False,"confidence":"high","message":"Skipped"},
-            {"category":"validation_or_test","job_name":None,"step_name":None,"blocking":True,"confidence":"low","message":"GitHub reported a failed run, but no failed job or step was available."},
+            {"category":"validation_or_test","job_name":None,"step_name":None,"blocking":True,"confidence":"low","message":"Step conclusion: failure"},
             {"category":"validation_or_test","job_name":"Build","step_name":"Preserve lint failure as workflow conclusion","blocking":True,"confidence":"medium","message":"Changed-document lint failed."},
         ]
         self.add_actions("500","2026-11-23T07:30:00Z",issues,stage="pre_finalizer")
@@ -555,7 +555,7 @@ class LedgerTests(unittest.TestCase):
         task_text = task_files[0].read_text(encoding="utf-8")
         self.assertIn("lint-a1b2c3d4e5f6", task_text)
         self.assertIn("lint-b2c3d4e5f6a7", task_text)
-        self.assertIn("- **Priority:** P3", task_text)
+        self.assertIn("- **Priority:** P0", task_text)
 
         self.add_lint("on_repo", "901", "2026-11-23T07:10:00Z", fingerprint="a1b2c3d4e5f6")
         LEDGER.ingest(self.root, now="2026-11-23T07:11:00Z")
@@ -804,7 +804,8 @@ class LedgerTests(unittest.TestCase):
         lint_changed = (root / ".github/workflows/ste-lint-changed.yml").read_text(encoding="utf-8")
         self.assertIn("Update central CI issue ledger", action)
         self.assertIn("python3 -m py_compile .takeout/reports/gh_ac_reports/scripts/report.py .takeout/reports/triage/scripts/ledger.py", action)
-        self.assertIn("python3 .takeout/reports/gh_ac_reports/scripts/report.py", action)
+        self.assertNotIn("python3 .takeout/reports/gh_ac_reports/scripts/report.py", action)
+        self.assertIn('run: python3 .takeout/reports/gh_ac_reports/scripts/report.py --mode sweep --repo "$GITHUB_REPOSITORY"', sweep)
         self.assertIn("python3 .takeout/reports/triage/scripts/ledger.py", action)
         self.assertNotIn("python3 reports/", action)
         self.assertNotIn("-s reports/", action)

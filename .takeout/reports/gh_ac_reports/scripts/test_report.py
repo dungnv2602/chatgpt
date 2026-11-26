@@ -311,6 +311,25 @@ class RetryPolicyTests(unittest.TestCase):
             pending = root / "requests" / "pending"
             pending.mkdir(parents=True)
             (pending / "request-100.json").write_text(json.dumps({"run_id":"100"}), encoding="utf-8")
+            history = root / "history" / "55" / "100-attempt-1-post_run"
+            history.mkdir(parents=True)
+            incomplete_report = {
+                "source_run": {
+                    "id":"100","number":100,"attempt":1,"workflow_id":55,
+                    "workflow_name":"Example","status":"completed","conclusion":"failure",
+                    "created_at":"2026-11-23T06:00:00Z",
+                },
+                "capture":{
+                    "stage":"post_run","captured_at_utc":"2026-11-23T06:01:00Z",
+                    "completeness":"Incomplete",
+                },
+                "classification":{
+                    "primary_category":"validation_or_test","issues":[{"category":"validation_or_test"}],
+                },
+                "history_path":"history/55/100-attempt-1-post_run",
+            }
+            (history / "report.json").write_text(json.dumps(incomplete_report), encoding="utf-8")
+            (history / "report.md").write_text("# Incomplete evidence", encoding="utf-8")
             index = {
                 "schema_version":"1.0.0","sweep_watermark_utc":"2026-11-23T06:00:00Z",
                 "pending_run_ids":[],"exhausted_run_ids":[],
