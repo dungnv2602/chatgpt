@@ -466,12 +466,12 @@ class LedgerTests(unittest.TestCase):
     def test_task_generation_leaves_exactly_one_active_current_execution(self):
         old_path = self.root / "workspace" / "tasks" / "20261123-070000-existing-task.md"
         old_path.write_text(
-            "# Task: Existing active task\\n\\n"
-            "- **ID:** 20261123-070000\\n"
-            "- **Status:** In Progress\\n"
-            "- **Priority:** P0\\n"
-            "- **Current execution:** Yes\\n"
-            "- **Ledger group:** ci-ffffffffffffffff\\n",
+            "# Task: Existing active task\n\n"
+            "- **ID:** 20261123-070000\n"
+            "- **Status:** In Progress\n"
+            "- **Priority:** P0\n"
+            "- **Current execution:** Yes\n"
+            "- **Ledger group:** ci-ffffffffffffffff\n",
             encoding="utf-8",
         )
         issue = {"category":"validation_or_test","job_name":"Build","step_name":"Run tests",

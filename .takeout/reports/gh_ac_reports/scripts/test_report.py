@@ -303,7 +303,10 @@ class HistoricalRetentionTests(unittest.TestCase):
                     "classification": {
                         "state": conclusion, "projected_conclusion": "failure" if stage == "pre_finalizer" else None,
                         "primary_category": "validation_or_test" if has_issue else None,
-                        "issues": ([{"category": "validation_or_test"}] if has_issue else []),
+                        "issues": ([{
+                            "category": "validation_or_test", "job_name": "Build",
+                            "step_name": "Run unit tests", "message": "ERROR: assertion mismatch",
+                        }] if has_issue else []),
                     },
                     "history_path": "history/55/" + folder.name,
                 }
@@ -384,7 +387,10 @@ class RetryPolicyTests(unittest.TestCase):
                 },
                 "classification":{
                     "projected_conclusion":None,"primary_category":"validation_or_test",
-                    "issues":[{"category":"validation_or_test"}],
+                    "issues":[{
+                        "category":"validation_or_test","job_name":"Build",
+                        "step_name":"Run unit tests","message":"ERROR: assertion mismatch",
+                    }],
                 },
                 "history_path":"history/55/100-attempt-1-post_run",
             }
