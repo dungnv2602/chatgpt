@@ -1713,7 +1713,7 @@ def main() -> int:
         rows = []
         for item in prepared:
             rows.append({
-                "source_filename": item["name"], "source_path": f"images/takeout/{item['name']}",
+                "source_filename": item["name"], "source_path": f".takeout/images/{item['name']}",
                 "title": item["title"], "asset_id": item["asset_id"],
                 "source_asset_id": item.get("source_asset_id", ""), "attempt": item["attempt"],
                 "destination_dir": item["directory"].relative_to(root).as_posix(),
