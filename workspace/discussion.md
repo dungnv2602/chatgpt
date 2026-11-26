@@ -2,7 +2,7 @@
 
 ## Current Step
 
-**2026-11-27:** `/start` initialization and approved repository changes: assess and implement CI Ledger skill promotion and Worker-owned CI-generated P0 batch execution policy.
+**2026-11-27:** Complete baseline initialization; retrieve task-activated standards and authoring skills, then inspect existing Worker and Ledger structures before consolidating CI P0 batch policy and promoting the Ledger into a task-activated skill.
 
 ## Open Discussions
 
