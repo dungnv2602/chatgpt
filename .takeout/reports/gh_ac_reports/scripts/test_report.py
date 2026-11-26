@@ -253,6 +253,40 @@ class RetryPolicyTests(unittest.TestCase):
             self.assertEqual(updated["pending_run_ids"], ["100"])
 
 
+class RenderedPathTests(unittest.TestCase):
+    def test_lint_report_links_use_reconstructed_takeout_root(self):
+        report = {
+            "source_run": {
+                "workflow_name":"Example lint workflow",
+                "workflow_path":".github/workflows/ste-lint-changed.yml",
+                "id":"100","attempt":1,"number":100,
+                "run_url":"https://example.invalid/actions/runs/100",
+                "branch":"gpt","head_sha":"abc123","event":"push","actor":"tester",
+                "created_at":"2026-11-23T06:00:00Z","status":"completed","conclusion":"failure",
+            },
+            "capture":{
+                "stage":"post_run","completeness":"Complete",
+                "captured_at_utc":"2026-11-23T06:01:00Z","reporter_job":None,
+            },
+            "classification":{
+                "state":"failure","primary_category":"validation_or_test",
+                "projected_conclusion":"failure","categories":["validation_or_test"],"issues":[],
+            },
+            "jobs":[],"annotations":[],"artifacts":[],"capture_errors":[],
+        }
+        expected = {
+            ".github/workflows/ste-lint-changed.yml":
+                "https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_changed/latest-lint-report.md",
+            ".github/workflows/ste-lint-full-docs.yml":
+                "https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_repo/latest-lint-report.md",
+        }
+        for workflow_path, link in expected.items():
+            report["source_run"]["workflow_path"] = workflow_path
+            rendered = REPORT.render_markdown(report)
+            self.assertIn(link, rendered)
+            self.assertNotIn("blob/gpt/reports/lint_reports/", rendered)
+
+
 class AnnotationPaginationTests(unittest.TestCase):
     @patch.object(REPORT, "api_get", return_value=[{"path": "docs/example.md", "message": "A check annotation"}])
     def test_annotations_endpoint_accepts_top_level_array(self, mocked_api):
