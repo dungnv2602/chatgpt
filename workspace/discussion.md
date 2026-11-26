@@ -41,3 +41,6 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 
 - **2026-11-26 — Image-processing contract reconstruction repair:** Found stale `drawings/` and `novels/` paths in the takeout processor, publication verifier, and regression fixtures, including component-validation logic incompatible with reconstructed roots. Remapped path contracts to `area/drawing/` and `area/novel/`, corrected date/session component checks, and updated image processing guidance. Remote readback and static checks performed; tests/CI remain unrun.
+
+
+- **2026-11-26 — Session startup:** User invoked `/start`. Revalidated `.agent/SESSION_START.md` on branch `gpt`; foundational retrieval is starting before continuation of task `20261126-021200`.
