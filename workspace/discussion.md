@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 15:42 UTC:** Inspect the remaining linked evidence and latest progress for P0 task 20261126-090154, then isolate the still-open Ledger findings and approved implementation requirements. Keep the separate P0 publication task 20261126-145133 open until a naturally triggered post-fix hosted run confirms publication. Do not touch Drafts or perform unrelated artifact-layout work.
+- **2026-11-26 15:44 UTC:** Verify the already completed hosted runs 45823761313 (Document Standards) and 45823761330 (Diagnostics), including the exact regression-test and Ledger-retirement results. Then reconcile the four linked findings and three historical occurrences against the indexed task archives. Do not dispatch or poll workflows.
 
 ## Open Discussions
 
