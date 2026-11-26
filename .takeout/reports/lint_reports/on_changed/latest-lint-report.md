@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#740](https://github.com/dungnv2602/chatgpt/actions/runs/45748488080)
-- **Run ID / attempt:** 45748488080 / 1
+- **Run:** [#741](https://github.com/dungnv2602/chatgpt/actions/runs/45748668614)
+- **Run ID / attempt:** 45748668614 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 663afdf6cc2e778f5b3dc43844129108a89c7985
+- **Branch / commit:** gpt / 08056e783e3a99149d96baa04e138a25eb2dcf8d
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 663afdf6cc2e778f5b3dc43844129108a89c7985
-- **Generated (UTC):** 2026-11-26T03:23:33.904867+00:00
+- **Linter source SHA:** 08056e783e3a99149d96baa04e138a25eb2dcf8d
+- **Generated (UTC):** 2026-11-26T03:24:56.614207+00:00
 
 ## 1. Executive summary
 
@@ -259,7 +259,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.327s
+Ran 4 tests in 0.352s
 
 OK
 ~~~
@@ -292,7 +292,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 241 active Markdown files (250 available as link targets) and 635 local Markdown links.
+Scanned 243 active Markdown files (252 available as link targets) and 635 local Markdown links.
 Found 231 unresolved local Markdown targets or anchors.
 .agent/SESSION_START.md: missing Markdown file: .agent/skills/asd-ste100/references/repository-writing-policy.md
 .agent/skills/drawing/references/archive-and-delivery.md: missing Markdown file: ../the-worker/references/image-provenance-and-webp.md
