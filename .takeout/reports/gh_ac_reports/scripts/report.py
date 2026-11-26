@@ -721,9 +721,9 @@ def collect_runs_between(repo, start_utc, end_utc, errors, depth=0):
         return []
     query_range = str(start_utc) + ".." + str(end_utc)
     endpoint = "/repos/" + repo + "/actions/runs?" + urlencode({
-        "created": query_range, "per_page": 100, "page": 1,
+        "created": query_range, "per_page": 100,
     })
-    first = api_get(repo, endpoint, errors, "run_sweep")
+    first = api_get(repo, endpoint + "&page=1", errors, "run_sweep")
     if not isinstance(first, dict) or not isinstance(first.get("workflow_runs"), list):
         errors.append({"source": "run_sweep", "message": "The run-list endpoint did not return workflow_runs."})
         return []
