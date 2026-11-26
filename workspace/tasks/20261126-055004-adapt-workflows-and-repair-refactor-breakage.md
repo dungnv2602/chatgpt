@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-055004
 - **Created:** 2026-11-26 05:50 UTC
-- **Updated:** 2026-11-26 06:27 UTC
+- **Updated:** 2026-11-26 06:28 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -173,3 +173,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **References:** `workspace/README.md`, `workspace/task_board.md`, `workspace/discussion.md`, `workspace/adr/README.md`, `.takeout/images/README-1.md`, `.takeout/images/README-2.md`, `area/novel/README.md`, `area/novel/WORKFLOW.md`, `.github/workflows/convert-images-to-webp.yml`, `.agent/skills/the-worker/scripts/process_takeout.py`, `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py`.
 - **Validation limits:** No local test execution, manual workflow dispatch, or CI polling was performed. No full-repository audit was performed.
 - **Next:** Await user direction on hosted regression validation.
+
+### 2026-11-26 06:28 UTC
+
+- **Action:** Recorded the remaining validation gate after the final path corrections.
+- **Result:** Static path and link verification is complete for the scoped files. The hosted regression suite remains unexecuted pending explicit user authorization; the task stays In Progress.
+- **References:** `.github/workflows/convert-images-to-webp.yml`, `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py`, `.agent/skills/github-actions/SKILL.md`.
+- **Next:** Await the user's decision on whether to dispatch the hosted regression workflow.
