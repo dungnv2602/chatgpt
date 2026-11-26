@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-[20261126-090154 — Review CI Ledger regression-test failures in Document Standards](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md)
+[20261126-170259-03 — Review long-sentence findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md](tasks/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md)
 
 ## Proposed
 
@@ -17,6 +17,10 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
+| 20261126-170259-03 | Review long-sentence findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 17:02 UTC | [Task record](tasks/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md) |
+| 20261126-170259-02 | Review semicolon findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 17:02 UTC | [Task record](tasks/20261126-170259-02-review-semicolon-findings-in-workspace-adr-0003-canonical-github.md) |
+| 20261126-170259-01 | Review passive-voice findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 17:02 UTC | [Task record](tasks/20261126-170259-01-review-passive-voice-findings-in-workspace-adr-0003-canonical-gi.md) |
+| 20261126-170259 | Review synonym-rotation findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 17:02 UTC | [Task record](tasks/20261126-170259-review-synonym-rotation-findings-in-workspace-adr-0003-canonical.md) |
 | 20261126-145133 | Review publication\_or\_push failures in STE Lint Changed Documentation / Lint changed Markdown files and publish detailed | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 15:18 UTC | [Task record](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md) |
 | 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 16:57 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
 
