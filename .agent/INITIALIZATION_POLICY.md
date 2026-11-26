@@ -41,7 +41,7 @@ A specialist-role request does not change or satisfy the `/start` cue. It does n
 - Do not run a CI snapshot or repair unrelated workflow failures before handling a prompt.
 - After `/start` baseline initialization, run the mandatory CI Ledger-generated P0 batch before accepting the user's substantive prompt.
 - Send the pre-batch wait notice in Default Mode and Condensed Mode. Do not suppress it under the Condensed Mode single-link rule.
-- Stop before hosted CI results review. Do not poll, dispatch, rerun, or inspect hosted results until the user triggers results review, unless a task requires validation to proceed.
+- Stop before hosted CI results review. Do not poll, dispatch, rerun, or inspect hosted results until the user triggers results review.
 - After the batch ends, tell the user: "Ready to take your prompt."
 - Review CI only when the user asks or the current task changes or depends on a specific validation workflow.
 - Never wait for or poll CI. Never run the linter or CI workflows locally. Let GitHub Actions execute validation.
