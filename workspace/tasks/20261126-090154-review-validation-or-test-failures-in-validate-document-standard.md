@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 12:43 UTC
+- **Updated:** 2026-11-26 12:56 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -50,6 +50,15 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **User override (2026-11-26):** All Ledger-generated tasks that demand attention are to be raised to P0 and resolved before other work. This task is approved and active under that override.
 
 ## 6. Progress Log
+
+### 2026-11-26 12:56 UTC
+
+- **Action:** Completed the shared eligibility implementation, historical lint-tooling replay, archive restoration, and first full operational reconciliation.
+- **Result:** The reporter and Ledger call the same shared Actions independent-error predicate. Reporter retention permits incomplete post-run error captures for retry; Ledger ingestion requires complete evidence. The four historical failed lint-tooling reports were reprocessed with the current failed report into one stable finding, six occurrences, and one P0 task reference. Both baseline scopes were unset during the replay; the subsequent tooling-valid full audit seeded on_changed without importing its unbaselined lint findings. All 30 current Actions index paths and all 14 lint index paths match the Ledger's processed-report paths. All current open findings have non-empty task_refs. Exactly one active task has Current execution: Yes, and the board pointer selects 20261126-124129.
+- **Hosted evidence:** Diagnostics [45823182229](https://github.com/dungnv2602/chatgpt/actions/runs/45823182229) passed reporter/Ledger tests; Document Standards [45823182083](https://github.com/dungnv2602/chatgpt/actions/runs/45823182083) passed catalog coverage for archive/adr; Diagnostics [45823761330](https://github.com/dungnv2602/chatgpt/actions/runs/45823761330) passed after restoring the ADR-0001 linked task; Document Standards [45823761313](https://github.com/dungnv2602/chatgpt/actions/runs/45823761313) passed with both archive families. Lint [45823761243](https://github.com/dungnv2602/chatgpt/actions/runs/45823761243) had overall conclusion Failed due STE findings, but its Markdown links/heading anchors tooling check passed with zero unresolved links.
+- **Outstanding:** Verify archive-retired finding/task links for the three historical Actions occurrences not represented in the current open-finding occurrence totals. Verify new hosted validation for documentation commit a93492d. Do not declare the contract complete until the archived-task reconciliation and all relevant hosted checks pass.
+- **References:** shared eligibility module; reporter and Ledger scripts/tests; archive/adr and archive/tasks; catalog v1.18; Ledger finding lint-tooling-2c26d8bc14fd4d4bbe314234; commit a93492d.
+
 
 ### 2026-11-26 09:01 UTC
 
@@ -139,25 +148,33 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **Next:** Implement the shared reporter/Ledger eligibility and baseline-aware lint tooling behavior before beginning artifact migration.
 
 ## 7. Current State
-The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. ADR-0003 is accepted and linked to this task for the artifact-layout work. DRAFT-0004 was deleted after accepted-record read-back. No artifact-layout cleanup has been performed.
+
+The reporter and Ledger share one independent Actions-error eligibility predicate. Reporter retention preserves incomplete post-run error captures for retry; Ledger ingestion requires complete evidence. Cancellation-only categories and workflow-result propagation steps are excluded by the shared predicate.
+
+Failed lint report-tooling checks create stable task-eligible findings independently of baseline state. Lint findings from reports with failed or incomplete tooling checks remain excluded, and unbaselined lint findings are never taskified. The Ledger generator enforces one Current Execution task and synchronizes the task-board pointer.
+
+The current Actions index contains 30 complete post-run reports; the lint indexes contain 14 reports. All 44 indexed report paths match Ledger processed-report paths. The current open Ledger findings all have non-empty task_refs. The lint tooling finding lint-tooling-2c26d8bc14fd4d4bbe314234 has six occurrences and one P0 task reference to 20261126-124129. The on_changed baseline is seeded by a tooling-valid full audit; on_repo remains unseeded. No unbaselined lint findings were imported.
+
+Exactly one active task has Current execution: Yes, and the board pointer selects 20261126-124129. ADR-0001, ADR-0002, and ADR-0001's linked implementation task have been restored unchanged under archive/adr/ and archive/tasks/. DRAFT-0002's original links resolve. Catalog version 1.18 covers both permanent archive families. ADR-0003 remains accepted; its separate Option 3 artifact-layout migration has not started.
+
+Three historical Actions occurrences are not included in the current open-finding occurrence totals; verify their terminal findings are represented by archived Done task records before closing this task.
 
 ## 8. Remaining Work
-- Align reporter retention with the Ledger's independent-issue eligibility rules. Ensure every retained report produces at least one eligible finding.
-- Preserve incomplete-capture retry behavior while ensuring incomplete error reports receive task linkage.
-- Create stable, deduplicated Ledger findings for failed lint tooling checks when a baseline is not yet available. Do not taskify all pre-baseline lint findings.
-- Remove the three propagation-only Actions reports and their processed-report references after the eligibility correction.
-- Reconcile task-generation metadata so only one task file has `Current execution: Yes`.
-- Implement accepted ADR-0003 Option 3 after the shared eligibility, lint tooling, baseline, and task-selection corrections. Do not modify canonical report JSON or captured logs. Remove only the derived artifacts in ADR-0003 scope.
-- Verify all changes through naturally triggered hosted CI. Do not dispatch or poll.
+
+- Reconcile the three historical Actions occurrences outside the current open-finding totals against archived terminal findings and their immutable task records.
+- Verify the new hosted Diagnostics, Document Standards, and lint outcomes after documentation commit a93492d.
+- Resolve/retire the lint-tooling and catalog-coverage findings only after their fix commits and successful relevant validation are recorded.
+- Keep exactly one active Current Execution task and ensure the board pointer selects it.
+- Implement accepted ADR-0003 Option 3 only after the error-only retention and Ledger task-linkage contract is complete. Preserve canonical JSON/log bytes and evidence paths.
 
 ## 9. Next Actions
-1. Implement one shared eligibility predicate for reporter retention and Ledger ingestion. Preserve incomplete-capture retry behavior and cancellation/propagation exclusions.
-2. Add independent lint tooling-check observations that remain task-eligible without a baseline. Never taskify unbaselined lint findings.
-3. Correct the DRAFT-0002 broken governance link without restoring the absent historical ADR file. Reprocess the four indexed failed-tooling reports and verify one stable finding/task identity.
-4. Reconcile propagation-only Actions reports and processed-report references against the shared eligibility predicate. Preserve genuine error evidence and stable finding/task references.
-5. Enforce exactly one Current Execution task across active task files and the board pointer. Keep P0-before-non-P0 ordering.
-6. Implement ADR-0003 Option 3 and satisfy all six Confirmation criteria. Preserve canonical JSON/log bytes and evidence paths.
-7. Verify through naturally triggered hosted CI. Do not dispatch or poll.
+
+1. Audit archived Done task records to account for the three historical Actions occurrences absent from the current open Ledger findings.
+2. Verify naturally triggered hosted checks for documentation commit a93492d.
+3. Confirm every retained Actions report maps to an open or archived terminal finding with a P0 task reference.
+4. Confirm every lint-tooling failure is task-eligible, stable, deduplicated, and never accompanied by imported unbaselined lint findings.
+5. Verify the one Current Execution marker and board pointer.
+6. Implement ADR-0003 Option 3 only after the error-only retention and Ledger contract passes its full operational checks.
 
 ## 10. References
 
@@ -165,10 +182,11 @@ The current history contains 29 complete post-run Actions reports. Twenty-six re
 - The exact report paths and run URLs are listed under Ledger Findings.
 
 ## 11. Verification
-- **Check:** Active report inventory, reporter retention predicate, Ledger eligibility, processed-report state, and duplicate artifact layout.
-- **Method:** Remote readback of all 29 indexed report JSON files, history and by-workflow directory listings, central Ledger, lint report metadata, and source functions.
-- **Result:** Confirmed 26 independent test-error reports and three propagation-only reports. Confirmed three failed lint tooling-check reports without task linkage. Identified 40 derived or redundant report artifacts. Confirmed the root index already stores the latest-report pointer.
-- **Limitations:** No repository tests were run locally. No new hosted validation result is claimed. Artifact-layout changes remain blocked until DRAFT-0004 and its ADR receive approval.
+
+- **Check:** Shared Actions eligibility, error-only reporter retention, baseline-aware lint tooling observations, task linkage, processed-report parity, and single Current Execution.
+- **Method:** Inspected hosted Diagnostics runs 45822163403, 45823182229, and 45823761330; hosted Document Standards runs 45823182083 and 45823761313; lint report 45823761243; reporter/Ledger source, tests, indexes, and Ledger state.
+- **Result:** Reporter regression suite: 37 passed. Ledger regression suite: 47 passed. Diagnostic workflow checks: 7 passed. The four historical failed lint-tooling reports plus two subsequent failed checks deduplicated into one finding with six occurrences and one P0 task. Both baselines were unset during historical replay; on_changed was later seeded by a tooling-valid full audit. All 44 indexed report paths match processed paths. All current open findings have task_refs. Exactly one active task is selected.
+- **Limitations:** Three historical Actions occurrences require archived task verification. Lint report 45823761243 concluded Failed because of STE findings although its tooling checks passed. Hosted validation after documentation commit a93492d is pending. The overall contract is not yet declared complete.
 
 ## 12. Handoff Instructions
 
