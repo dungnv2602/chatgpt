@@ -1,6 +1,6 @@
 ## Current Step
 
-_No active step._
+- **2026-11-26 — Foundational initialization:** Reconcile session-start references with the relocated `.agent/skills/` paths, retrieve required foundational files from branch `gpt`, and verify the register entry.
 
 ## Open Discussions
 
