@@ -68,6 +68,7 @@ jobs:
         run: python3 .takeout/reports/triage/scripts/ledger.py --mode ingest
 
       - name: Publish diagnostic backfill and Worker tasks
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
