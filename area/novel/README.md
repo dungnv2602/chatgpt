@@ -89,7 +89,7 @@ Keep the Illustration Note and Illustration Prompt Record in the scene-local `il
 
 Each retained illustration has an unchanged PNG/JPEG master under `original/` and a separate WebP delivery file in the destination root. Do not place the master beside the WebP or link the master in the attempt index.
 
-All new uploads use the shared flat `images/takeout/` intake. The Worker owns inspection, provenance, processing, original preservation, and publication verification. Use the [Image Takeout procedure](../images/takeout/README.md) for the exact hand-off schema and processing steps. Use the [Drawing archive rules](../skills/drawing/references/archive-and-delivery.md) for attempt links and session-manifest requirements.
+All new uploads use the shared flat `images/takeout/` intake. The Worker owns inspection, provenance, processing, original preservation, and publication verification. Use the [Image Takeout procedure](../../.takeout/images/README-2.md) for the exact hand-off schema and processing steps. Use the [Drawing archive rules](../../.agent/skills/drawing/references/archive-and-delivery.md) for attempt links and session-manifest requirements.
 
 ## Document responsibilities
 
@@ -113,7 +113,7 @@ Higher-level documents summarize and link to lower-level records. They do not du
 3. **Approval:** promote only the scope the user approved. Update the novel summary, relevant records, decision history, and open questions.
 4. **Arc planning:** create arc.md when an arc has a clear purpose and meaningful progression.
 5. **Scene writing:** read parent continuity records. Write the full scene prose in scene.md. Update arc and novel indexes.
-6. **Illustration:** a specific scene-writing request includes at least one standalone illustration by default. Explicit prose-only instructions, planning/discussion tasks, and genuine safety or technical blockers are exceptions. Every generated image deliverable receives a scene-local prompt record and an Illustration Note. Follow the [Drawing operation selector](../skills/drawing/references/image-editing-protocol.md): use fresh generation for a new scene or variation; use a direct edit only when the user requests a change to a specific image and its exact source is available. Do not silently substitute one operation for the other.
+6. **Illustration:** a specific scene-writing request includes at least one standalone illustration by default. Explicit prose-only instructions, planning/discussion tasks, and genuine safety or technical blockers are exceptions. Every generated image deliverable receives a scene-local prompt record and an Illustration Note. Follow the [Drawing operation selector](../../.agent/skills/drawing/references/image-editing-protocol.md): use fresh generation for a new scene or variation; use a direct edit only when the user requests a change to a specific image and its exact source is available. Do not silently substitute one operation for the other.
 7. **Revision and completion:** check causality, agency, chronology, world rules, continuity, visual constraints, statuses, links, and read-back verification.
 
 The complete procedures, delivery matrix, approval rules, status definitions, and quality gates are in [WORKFLOW.md](WORKFLOW.md).
@@ -164,4 +164,4 @@ Any future change to the governing formats must update, together:
 
 ## Technical documentation standard
 
-Apply the repository [ASD-STE100 policy](../skills/asd-ste100/references/repository-writing-policy.md) when you revise this document. Use Strict mode for procedures. Preserve novel canon, approval scope, and narrative meaning.
+Apply the repository [ASD-STE100 policy](../../.agent/skills/asd-ste100/references/repository-writing-policy.md) when you revise this document. Use Strict mode for procedures. Preserve novel canon, approval scope, and narrative meaning.
