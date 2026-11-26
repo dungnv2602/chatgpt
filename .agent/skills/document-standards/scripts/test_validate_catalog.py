@@ -163,22 +163,22 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write(".github/scripts/cleanup-archive.py")
         self.write(".github/archive-retention-state.json")
         self.write(".github/workflows/ste-lint-full-docs.yml")
-        self.write(".takeout/reports/lint_ .takeout/reports/latest-lint-report.md")
-        self.write(".takeout/reports/gh_ac_ .takeout/reports/README.md")
+        self.write(".takeout/reports/lint_reports/latest-lint-report.md")
+        self.write(".takeout/reports/gh_ac_reports/README.md")
         self.write(".takeout/reports/triage/README.md")
         rows = [
             "| Archive state | Embedded contract | "
             "`.github/scripts/cleanup-archive.py` and `.github/archive-retention-state.json` | Script-owned state. |",
             "| Lint report | Embedded contract | "
-            "`.github/workflows/ste-lint-full-docs.yml` and `.takeout/reports/lint_ .takeout/reports/latest-lint-report.md` | Workflow-owned report. |",
+            "`.github/workflows/ste-lint-full-docs.yml` and `.takeout/reports/lint_reports/latest-lint-report.md` | Workflow-owned report. |",
             "| Workflow definition | Exempt | "
             "`.github/workflows/ste-lint-full-docs.yml` | External Actions schema. |",
         ]
         self.set_catalog(rows, [
-            "| `.takeout/reports/lint_ .takeout/reports/*.md` | Lightweight pattern | Active |"
-            "`.takeout/reports/lint_ .takeout/reports/latest-lint-report.md` | Lint fixture. |",
-            "| `.takeout/reports/gh_ac_ .takeout/reports/*.md` | Lightweight pattern | Active |"
-            "`.takeout/reports/gh_ac_ .takeout/reports/README.md` | Actions fixture. |",
+            "| `.takeout/reports/lint_reports/*.md` | Lightweight pattern | Active |"
+            "`.takeout/reports/lint_reports/latest-lint-report.md` | Lint fixture. |",
+            "| `.takeout/reports/gh_ac_reports/*.md` | Lightweight pattern | Active |"
+            "`.takeout/reports/gh_ac_reports/README.md` | Actions fixture. |",
             "| `.takeout/reports/triage/*.md` | Lightweight pattern | Active |"
             "`.takeout/reports/triage/README.md` | Ledger fixture. |",
         ])
@@ -254,7 +254,7 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_master_and_archive_markdown_are_excluded_from_coverage(self):
         self.set_catalog(self.valid_rows())
         self.write("master/new-reference.md")
-        self.write("archive/old-record.md")
+        self.write(".archive/old-record.md")
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
@@ -295,7 +295,7 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def test_optional_generator_output_pattern_allows_empty_family_after_reset(self):
         self.set_catalog(self.valid_rows(), [
-            "| `.takeout/reports/lint_ .takeout/reports/on_*/history/**/*.md` | Generator-owned | Optional | "
+            "| `.takeout/reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Optional | "
             "`.agent/skills/example/generator.py` and `.agent/skills/example/test_generator.py` | "
             "Generated lint history may be empty immediately after a clean reset. |",
         ])
@@ -303,9 +303,9 @@ class CatalogValidatorTests(unittest.TestCase):
         self.assertEqual(errors, [])
 
     def test_optional_generator_output_pattern_covers_files_when_present(self):
-        self.write(".takeout/reports/lint_ .takeout/reports/on_changed/history/run-1/report.md")
+        self.write(".takeout/reports/lint_reports/on_changed/history/run-1/report.md")
         self.set_catalog(self.valid_rows(), [
-            "| `.takeout/reports/lint_ .takeout/reports/on_*/history/**/*.md` | Generator-owned | Optional | "
+            "| `.takeout/reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Optional | "
             "`.agent/skills/example/generator.py` and `.agent/skills/example/test_generator.py` | "
             "Generated lint history may be empty immediately after a clean reset. |",
         ])
@@ -391,7 +391,7 @@ class CatalogValidatorTests(unittest.TestCase):
         rows = self.valid_rows()
         rows[0] = (
             "| Example template | Template required | "
-            "`.agent/skills/../archive/template.md` | Unsafe. |"
+            "`.agent/skills/../.archive/template.md` | Unsafe. |"
         )
         self.set_catalog(rows)
         errors, _, _ = validate_catalog(self.root, self.catalog)
