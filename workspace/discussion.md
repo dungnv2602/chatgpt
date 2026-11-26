@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 14:50 UTC:** User explicitly authorized clean-start reset instead of restoring deleted files or continuing remediation against the old backlog. Reset completed in commit `c9f4f6d`; generated active reports and snapshots cleared, indexes/Ledger reinitialized and baselines unseeded. Added `workflow_dispatch` entry point to diagnostics sweep in commit `9c4387f`. No tests or CI were manually run or polled. Active task: [20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md).
+- **2026-11-26 08:11 UTC:** User authorized clearing stale pre-reset data from the Actions report index and Ledger. Both reinitialized empty in commits 874c45e and 54e9025. Next: static trace of task-generation/report-ingestion defects, no tests or CI.
 
 ## Open Discussions
 
