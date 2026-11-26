@@ -7,16 +7,16 @@ on:
     paths:
       - '**.md'
       - '!reports/**'
-      - '!archive/**'
+      - '!.archive/**'
       - '!workspace/tasks/**'
       - '!workspace/task_board.md'
       - '!workspace/discussion.md'
-      - '!novels/**'
-      - '!drawings/**'
+      - '!area/novel/**'
+      - '!area/drawing/**'
       - '!master/**'
-      - '!skills/romantic-storyteller-visual-artist/**'
-      - '!skills/prompt-master/**'
-      - '!skills/asd-ste100/**'
+      - '!.agent/skills/romantic-storyteller-visual-artist/**'
+      - '!.agent/skills/prompt-master/**'
+      - '!.agent/skills/asd-ste100/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -43,7 +43,7 @@ jobs:
           set -euo pipefail
           echo "proceed=true" >> "$GITHUB_OUTPUT"
           encoded=$(gh api \
-            "repos/$GITHUB_REPOSITORY/contents/reports/lint_reports/on_changed/latest-lint-report.json?ref=$GITHUB_REF_NAME" \
+            "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/lint_reports/on_changed/latest-lint-report.json?ref=$GITHUB_REF_NAME" \
             --jq '.content' 2>/dev/null || true)
           if [[ -z "$encoded" ]]; then
             echo "full_audit=true" >> "$GITHUB_OUTPUT"
@@ -138,13 +138,13 @@ jobs:
             printf '%s=%s\n' "$key" "$status" >> "$GITHUB_OUTPUT"
             if [[ "$status" -ne 0 ]]; then failed=1; fi
           }
-          run_check wrapper_syntax bash -n skills/asd-ste100/scripts/ste-lint-repository.sh
+          run_check wrapper_syntax bash -n .agent/skills/asd-ste100/scripts/ste-lint-repository.sh
           run_check python_compile python3 -m py_compile \
-            skills/asd-ste100/scripts/generate_lint_report.py \
-            skills/asd-ste100/scripts/check_markdown_anchors.py
-          run_check report_tests python3 skills/asd-ste100/scripts/test_generate_lint_report.py
-          run_check anchor_tests python3 skills/asd-ste100/scripts/test_check_markdown_anchors.py
-          run_check linter_selftest python3 skills/asd-ste100/scripts/ste-lint.py --selftest
+            .agent/skills/asd-ste100/scripts/generate_lint_report.py \
+            .agent/skills/asd-ste100/scripts/check_markdown_anchors.py
+          run_check report_tests python3 .agent/skills/asd-ste100/scripts/test_generate_lint_report.py
+          run_check anchor_tests python3 .agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py
+          run_check linter_selftest python3 .agent/skills/asd-ste100/scripts/ste-lint.py --selftest
           echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
       - name: Check active Markdown file links and heading anchors
@@ -154,7 +154,7 @@ jobs:
         run: |
           set -uo pipefail
           status=0
-          python3 skills/asd-ste100/scripts/check_markdown_anchors.py \
+          python3 .agent/skills/asd-ste100/scripts/check_markdown_anchors.py \
             > .lint-report-records/anchor-check.log 2>&1 || status=$?
           echo "exit_code=$status" >> "$GITHUB_OUTPUT"
 
@@ -165,7 +165,7 @@ jobs:
         run: |
           set -uo pipefail
           git ls-files -- '*.md' |
-            grep -vE '^(archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
+            grep -vE '^(.archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
             > .lint-report-records/evaluated-files.txt || true
           failed=0
           while IFS= read -r file; do
@@ -174,7 +174,7 @@ jobs:
             output=".lint-report-records/$key.json"
             raw="$output.raw"
             status=0
-            bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?
+            bash .agent/skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?
             if jq -e '.violations | type == "array"' "$raw" >/dev/null 2>&1; then
               jq --arg path "$file" --argjson exit_code "$status" \
                 '. + {path:$path, exit_code:$exit_code}' "$raw" > "$output"
@@ -210,7 +210,7 @@ jobs:
         run: |
           set -euo pipefail
           git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$GITHUB_SHA" -- '*.md' |
-            grep -vE '^(archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/))' \
+            grep -vE '^(.archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/))' \
             > .lint-report-records/changed-files.txt || true
           {
             echo "files<<EOF"
@@ -233,7 +233,7 @@ jobs:
             output=".lint-report-records/$key.json"
             raw="$output.raw"
             status=0
-            bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?
+            bash .agent/skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?
             if jq -e '.violations | type == "array"' "$raw" >/dev/null 2>&1; then
               jq --arg path "$file" --argjson exit_code "$status" \
                 '. + {path:$path, exit_code:$exit_code}' "$raw" > "$output"
@@ -336,8 +336,8 @@ jobs:
           status="Passed"
           if [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi
           if [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi
-          history_dir="reports/lint_reports/on_changed/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
-          python3 skills/asd-ste100/scripts/generate_lint_report.py \
+          history_dir=".takeout/reports/lint_reports/on_changed/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
+          python3 .agent/skills/asd-ste100/scripts/generate_lint_report.py \
             --scope on_changed --records-dir .lint-report-records \
             --output-dir "$history_dir" \
             --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \
@@ -346,11 +346,11 @@ jobs:
             --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
             --mode "$mode" --baseline "$baseline" --status "$status" \
             --checks-file .lint-report-checks.json \
-            --previous-report reports/lint_reports/on_changed/latest-lint-report.json \
+            --previous-report .takeout/reports/lint_reports/on_changed/latest-lint-report.json \
             --linter-source-sha "$(git rev-parse HEAD)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/lint_reports/on_changed
+          git add .takeout/reports/lint_reports/on_changed
           if ! git diff --cached --quiet; then
             git commit -m "Publish changed-document lint evidence"
             git pull --rebase origin gpt
@@ -368,7 +368,7 @@ jobs:
           ANCHOR_EXIT: ${{ steps.anchors.outputs.exit_code }}
         run: |
           if [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || ( "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ) ]]; then
-            echo "::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md."
+            echo "::error::Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md."
             exit 1
           fi
 
@@ -396,4 +396,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./reports/gh_ac_reports/actions/capture
+        uses: ./.takeout/reports/gh_ac_reports/actions/capture
