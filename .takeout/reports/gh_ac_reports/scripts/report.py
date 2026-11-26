@@ -598,8 +598,23 @@ def index_record(report):
     }
 
 
+def verify_integrity_manifest(target):
+    """Verify that the manifest covers every retained file with its current SHA-256."""
+    manifest = json.loads((target / "integrity.json").read_text(encoding="utf-8"))
+    actual = {
+        path.relative_to(target).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(target.rglob("*"))
+        if path.is_file() and path.name != "integrity.json"
+    }
+    if manifest.get("schema_version") != SCHEMA_VERSION:
+        raise ValueError("Unsupported integrity manifest schema in " + str(target))
+    if manifest.get("file_count") != len(actual) or manifest.get("files") != actual:
+        raise ValueError("Integrity manifest does not match retained evidence in " + str(target))
+    return len(actual)
+
+
 def write_integrity_manifest(target, captured_at_utc):
-    """Hash canonical report JSON and captured logs, excluding the manifest itself."""
+    """Hash and verify canonical report JSON and captured logs."""
     files = {
         path.relative_to(target).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
         for path in sorted(target.rglob("*"))
@@ -611,6 +626,8 @@ def write_integrity_manifest(target, captured_at_utc):
         "file_count": len(files),
         "files": files,
     })
+    verify_integrity_manifest(target)
+    return len(files)
 
 
 def update_indexes(root, report):
@@ -675,6 +692,7 @@ def prune_invalid_history(root):
     retained_reports = []
     removed = 0
     migrated = 0
+    verified = 0
     if history_root.is_dir():
         for report_path in sorted(history_root.glob("*/*/report.json")):
             report = json.loads(report_path.read_text(encoding="utf-8"))
@@ -690,6 +708,7 @@ def prune_invalid_history(root):
                 markdown_path.unlink()
                 migrated += 1
             write_integrity_manifest(folder, report["capture"]["captured_at_utc"])
+            verified += 1
 
     index = load_index(root)
     records = [index_record(report) for report in retained_reports]
@@ -709,7 +728,10 @@ def prune_invalid_history(root):
         for child in history_root.iterdir():
             if child.is_dir() and not any(child.iterdir()):
                 child.rmdir()
-    return {"removed": removed, "retained": len(retained_reports), "migrated_markdown": migrated}
+    return {
+        "removed": removed, "retained": len(retained_reports),
+        "migrated_markdown": migrated, "verified_integrity": verified,
+    }
 
 
 def render_report(root, history_path):
@@ -836,7 +858,10 @@ def collect_runs_since(repo, watermark, scan_started, errors):
 
 
 def run_sweep(repo, root):
-    prune_invalid_history(root)
+    layout = prune_invalid_history(root)
+    print("History layout verified: " + str(layout["verified_integrity"]) +
+          " integrity manifests. Removed " + str(layout["migrated_markdown"]) +
+          " stored Markdown views and retained " + str(layout["retained"]) + " reports.")
     index = load_index(root)
     started = utc_now()
     watermark = index.get("sweep_watermark_utc") or BOOTSTRAP_WATERMARK
