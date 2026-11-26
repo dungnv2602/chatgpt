@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** CI failures inspected for [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md); fixture/test repairs committed. Await follow-up validation and report handoff evidence. Task remains In Progress.
+- **2026-11-26:** CI failures inspected for [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md); fixture/test repairs committed, including a follow-up mixed-newline correction. Await follow-up validation and report handoff evidence. Task remains In Progress.
 
 ## Open Discussions
 
@@ -16,3 +16,5 @@
 - **2026-11-26 07:12 UTC:** Task [20261126-064951](../.archive/task/20261126-064951-complete-non-image-repository-adaptation.md) completed and archived. The user instructed that `.archive/adr/README.md` remain unchanged, so its two dead links remain an accepted unresolved limitation. The archive was read back, its exact path and timestamp were registered in `.github/archive-retention-index.json`, the active task record was deleted, and the task board was moved to Historical. No tests or workflows were manually dispatched. Automatic push-triggered workflow status was not inspected or polled.
 - **2026-11-26 07:09 UTC:** The archived ADR index's two dead links remain unchanged by user direction. All active README relative links resolve. Reviewed all seven GitHub Actions workflows and relevant operational scripts for repository path references. Read back the four files changed in the final audit. No tests, validators, linter, or workflows were run.
 - **2026-11-26 07:04 UTC:** Read back all 14 changed files. All active README relative links resolve. No tests, validators, linter, or workflows were run. The root `README.md` remains absent.
+
+- **2026-11-26:** Runs 570 and 890 confirmed the escaped-newline normalization guard was too restrictive for mixed newline content. Normalization now runs whenever escaped newline sequences exist. Commit `252168c`. CI validation pending.
