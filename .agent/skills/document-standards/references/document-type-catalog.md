@@ -1,7 +1,7 @@
 # Document Type Catalog
 
-**Catalog version:** 1.15  
-**Last full inventory audit:** A complete recursive tree audit was previously performed at commit `1a5c8380036dac0132216635951f95a971ceee25`. A later reconstructed-branch tree read at `6dcc28feb94ba0fe91ad4385bff12474ba37b233` returned 676 entries and 242 Markdown documents outside root `master/` and `.archive/`; this supersedes the earlier inventory count as a current tree-size observation, but it is not a coverage validation. The validator and regression tests have not been executed, so the current rule-to-file coverage and semantic review remain unverified.
+**Catalog version:** 1.16  
+**Last full inventory audit:** A complete recursive tree audit was previously performed at commit `1a5c8380036dac0132216635951f95a971ceee25`. An active-root inventory at commit `30fa7d776c2a3c8bc1ec9e666cc7fc277f18c160` counted 246 Markdown files outside root `master/` and `.archive/`. This is a current tree-size observation, not a full content audit. Static rule-to-file simulation is recorded separately; the validator and regression tests have not been executed.
 **Source branch:** `gpt`
 
 This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Skill-owned copy-ready templates belong in the owning skill's `assets/` directory. Explanatory references belong in `references/`. Project-level templates may use the owning project's designated template directory.
@@ -53,7 +53,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Workspace navigation index | Embedded contract | `workspace/README.md`, `.takeout/reports/README.md`, and report-family README files | Workspace README points to task navigation, lint evidence, and workflow diagnostics. Each report guide owns scope navigation and review order. These are live navigation and operating-contract documents. Do not create a separate copy template. |
 | Conversation Mode discussion register | Embedded contract | `.agent/skills/the-worker/SKILL.md`, `.agent/skills/the-worker/references/conversation-mode.md`, and `workspace/discussion.md` | The Worker owns the fixed headings, ordering, pre-step brief, open discussions, and success-report rules in both modes. |
 | Image asset storage and WebP delivery | Embedded contract | `.takeout/images/README-1.md` and `.agent/skills/the-worker/SKILL.md` | The Worker owns the shared archive, image-provenance, intake, and WebP procedures. One live README defines image storage, original-master retention, WebP derivatives, takeout, and report locations. Do not create a separate template. |
-| Image takeout hand-off | Schema required | `.agent/skills/the-worker/scripts/process_takeout.py` and `.takeout/images/README-2.md` | The processor validates the YAML contract. `images/takeout/HANDOFF.yml` is the current draft example. `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py` covers readiness, exact intake coverage, missing attempt metadata, malformed top-level data, duplicate output IDs, rollback, and hashes. |
+| Image takeout hand-off | Schema required | `.agent/skills/the-worker/scripts/process_takeout.py` and `.takeout/images/README-2.md` | The processor validates the YAML contract when a batch is prepared. No active hand-off file is tracked in the reconstructed tree. The regression suite covers readiness, exact intake coverage, missing attempt metadata, malformed top-level data, duplicate output IDs, rollback, and hashes. |
 | Drawing-session manifest | Generator-owned | `.agent/skills/the-worker/scripts/process_takeout.py` (`MANIFEST_FIELDS`) and `.agent/skills/the-worker/scripts/verify_published_manifest.py` | The processor defines columns, preserves existing columns, and adds missing fields. The publisher validates verification columns and published values. `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py` covers legacy rows, missing columns, duplicate IDs, hashes, and publication links. |
 | Conversion report | Generator-owned | `.agent/skills/the-worker/scripts/process_takeout.py` | Defines conversion CSV fields. |
 
@@ -64,7 +64,10 @@ Do not create a second template when an owning workflow already defines the requ
 
 | Agent Skill definition | Template required | `.agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Copy-ready `SKILL.md` template now exists. |
 | Prompt framework templates | Template required when needed | `.agent/skills/prompt-master/assets/prompt-templates.md` | Copy-ready prompt architectures for specific AI tools. Load only the relevant template. |
-| Skill index and activation files | Embedded contract | `.agent/skills/README.md`, `.agent/SESSION_START.md`, `.agent/skills/INITIALIZATION_POLICY.md` | Each has a distinct ownership role. Do not force one generic index template. |
+| Skill index and activation files | Embedded contract | `.agent/skills/README.md`, `.agent/SESSION_START.md`, `.agent/INITIALIZATION_POLICY.md` | Each has a distinct ownership role. Do not force one generic index template. |
+| PDF processing guides | Lightweight pattern | `.agent/skills/pdf/FORMS.md` and `.agent/skills/pdf/REFERENCE.md` | The PDF Skill links these focused form-filling and advanced processing references. Preserve their subject-specific structures. |
+| Skill Creator agent instructions | Embedded contract | `.agent/skills/skill-creator/SKILL.md` and `.agent/skills/agent-skill-authoring/SKILL.md` | Specialized role prompts support the Skill Creator workflow. Preserve each agent's bounded responsibilities. |
+| Theme definitions | Lightweight pattern | `.agent/skills/theme-factory/themes/arctic-frost.md` | Theme files define named palettes and font pairings. Preserve each theme's values and structure. |
 | GitHub Actions workflows | Exempt | `.github/workflows/validate-document-standards.yml` | Follow GitHub's workflow schema. |
 
 | Document type | Class | Current canonical format | Inventory finding / next action |
@@ -115,8 +118,12 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `.takeout/reports/lint_reports/on_*/latest-lint-report.md` | Generator-owned | Optional | `.agent/skills/asd-ste100/scripts/generate_lint_report.py` and `.agent/skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated latest report for each lint scope. A scope may be empty after reset. |
 | `.takeout/reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Optional | `.agent/skills/asd-ste100/scripts/generate_lint_report.py` and `.agent/skills/asd-ste100/scripts/test_generate_lint_report.py` | Immutable per-run lint reports. The family may be empty until a post-reset lint run. |
 | `.agent/skills/README.md` | Embedded contract | Active | `.agent/skills/README.md` and `.agent/SESSION_START.md` | Skill index and activation hierarchy. |
-| `.agent/skills/INITIALIZATION_POLICY.md` | Embedded contract | Active | `.agent/skills/INITIALIZATION_POLICY.md` and `.agent/SESSION_START.md` | Initialization source hierarchy and conditional loading rules. |
-| `.agent/SESSION_START.md` | Embedded contract | Active | `.agent/SESSION_START.md` and `.agent/skills/INITIALIZATION_POLICY.md` | Explicit initialization cues and foundational load sequence. |
+| `.agent/INITIALIZATION_POLICY.md` | Embedded contract | Active | `.agent/INITIALIZATION_POLICY.md` and `.agent/SESSION_START.md` | Initialization source hierarchy and conditional loading rules. |
+| `.agent/SESSION_START.md` | Embedded contract | Active | `.agent/SESSION_START.md` and `.agent/INITIALIZATION_POLICY.md` | Explicit initialization cues and foundational load sequence. |
+| `.agent/skills/pdf/FORMS.md` | Lightweight pattern | Active | `.agent/skills/pdf/SKILL.md` | PDF form-filling instructions for the PDF skill. |
+| `.agent/skills/pdf/REFERENCE.md` | Lightweight pattern | Active | `.agent/skills/pdf/SKILL.md` | Extended PDF library and command reference. |
+| `.agent/skills/skill-creator/agents/*.md` | Embedded contract | Active | `.agent/skills/skill-creator/SKILL.md` and `.agent/skills/agent-skill-authoring/SKILL.md` | Role-specific agent instructions used by the Skill Creator workflow. |
+| `.agent/skills/theme-factory/themes/*.md` | Lightweight pattern | Active | `.agent/skills/theme-factory/SKILL.md` | Named theme specifications; preserve their color palettes and typography pairings. |
 | `.agent/skills/*/SKILL.md` | Template required | Active | `.agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Every Agent Skill definition uses the canonical skill template for new definitions and material rewrites. |
 | `.agent/skills/*/README.md` | Lightweight pattern | Active | `.agent/skills/README.md` and `.agent/skills/asd-ste100/references/repository-writing-policy.md` | Skill-specific navigation and technical documentation. Use type-specific headings. No universal README template. |
 | `.agent/skills/*/CHANGELOG.md` | Lightweight pattern | Active | `.agent/skills/philosophy-religion-asceticism/CHANGELOG.md` | Concise version headings and change bullets. |
