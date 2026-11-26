@@ -4,7 +4,7 @@ This folder stores proposals that require a user decision.
 
 ## Files
 
-- [DRAFT_TEMPLATE.md](../DRAFT_TEMPLATE.md) — canonical template for new proposals (Version 1.2; requires detailed, evidence-qualified assessments of every viable option).
+- [DRAFT_TEMPLATE.md](../DRAFT_TEMPLATE.md) — canonical template for new proposals (Version 1.2). It requires detailed, evidence-qualified assessments of every viable option.
 - DRAFT-*.md — one record for each distinct proposal.
 
 ## Current Drafts
@@ -16,11 +16,11 @@ This folder stores proposals that require a user decision.
 
 1. Create one Draft for each decision that may change repository structure, policy, architecture, workflow, or long-lived practice.
 2. Use a unique DRAFT-NNNN ID. Do not reuse an ID.
-3. Record the problem, scope, goals/non-goals, explicit decision drivers, assessment basis, every materially viable option, comparative assessment, recommendation, consequences, risks, affected files, implementation outline, user questions, and source/evidence register.
+3. Record the problem, scope, goals and non-goals, decision drivers, and assessment basis. Include every materially viable option, comparative assessment, recommendation, consequences, risks, affected files, implementation outline, user questions, and source/evidence register.
 4. Assess every viable option in comparable depth. Include the current approach/no-change option when viable and materially distinct variants when their trade-offs differ. For each option, cover its operating model, repository/environment fit, concrete strengths, neutral trade-offs, weaknesses, implementation/migration cost, dependencies, operational burden, risks/safeguards, evidence/confidence, and limitations/unknowns.
-5. Compare options against the same decision drivers in a qualitative matrix when multiple viable options exist. Explain the decisive differences and why the recommendation is preferable to the strongest alternative. Do not invent numeric scores or force a matrix when only one option is genuinely viable; explain why alternatives are infeasible.
+5. Compare options against the same decision drivers in a qualitative matrix when multiple viable options exist. Explain the decisive differences and why the recommendation is preferable to the strongest alternative. Do not invent numeric scores or force a matrix when only one option is genuinely viable. Explain why alternatives are infeasible.
 6. Preserve evidence provenance. Identify source versions, dates, commits, hosts, samples, test protocols, and untested scenarios where applicable. Separate repository facts, external claims, tests/benchmarks, inferences, and hypotheses. State what the evidence does not establish.
-7. Complete the Draft quality gate in the canonical template and decision-governance skill. Do not present an option list that has not been assessed or a recommendation that is not traceable to the criteria and evidence.
+7. Complete the Draft quality gate in the canonical template and decision-governance skill. Assess every option before you present the list. Link the recommendation to the criteria and evidence.
 8. Link the Draft in the matching workspace/discussion.md Open Discussion item.
 9. Set its status to in-review when you present it to the user.
 10. Revise the same Draft when the user requests changes. Record each meaningful revision.
