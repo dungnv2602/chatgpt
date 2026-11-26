@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-064951
 - **Created:** 2026-11-26 06:49:51 UTC
-- **Updated:** 2026-11-26 06:49:51 UTC
+- **Updated:** 2026-11-26 07:00:44 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -79,15 +79,13 @@ Complete the remaining repository adaptation after the image workstream. Audit t
 
 ## 7. Current State
 
-The image-related adaptation was completed and archived in task `20261126-055004`. The broader repository audit was not completed. This task is now active. The tracked tree includes skills, GitHub Actions workflows, archive-retention tooling, takeout reports, drawing and novel projects, master documents, and workspace records. Their non-image references have not yet been fully audited.
+The image-related adaptation was completed and archived in task `20261126-055004`. The broader repository audit is in progress. The first pass found and repaired stale non-image paths in Document Standards workflow filters, the ASD-STE100 writing policy, report navigation, Agent Skill Authoring, Document Standards, and Decision Governance. README relative links resolve across active README files except for the protected archived ADR index. Other non-image instructions and path references still require review.
 
 ## 8. Remaining Work
 
-- Inventory non-image tracked paths and repository roots.
-- Audit non-image GitHub Actions workflows and scripts.
-- Audit active README files and Markdown links.
-- Audit skill instructions and project workflows for stale non-image paths.
-- Repair confirmed defects and read back each change.
+- Continue the non-image path audit across skill references, project instructions, and workspace records.
+- Resolve or document any additional stale paths and broken links.
+- Verify all changed files by exact-path read-back.
 - Record static verification and limitations. Tests remain skipped.
 
 ## 9. Next Actions
@@ -131,3 +129,12 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
+
+
+### 2026-11-26 07:00:44 UTC
+
+- **Action:** Completed the first non-image path and navigation audit, then repaired confirmed stale references.
+- **Result:** Removed obsolete root `images/` path filters from the Document Standards workflow. Updated the ASD-STE100 writing policy to use `.agent/skills/asd-ste100/`. Corrected the lint-report guide's shared-generator path and compatibility-copy location. Updated Agent Skill Authoring, Document Standards, and Decision Governance instructions to use current repository paths. Refreshed the catalog's tree inventory count and replaced a reference to a missing legacy task record with an explicit absence note.
+- **References:** `.github/workflows/validate-document-standards.yml`; `.agent/skills/asd-ste100/references/repository-writing-policy.md`; `.takeout/reports/lint_reports/README.md`; `.takeout/reports/lint_reports/on_repo/README.md`; `.agent/skills/document-standards/references/document-type-catalog.md`; `.agent/skills/agent-skill-authoring/SKILL.md`; `.agent/skills/document-standards/SKILL.md`; `.agent/skills/decision-governance/SKILL.md`.
+- **Commits:** `1f6b5a9a47c2d41cccc18a75e2d0e0c36eada0cf`, `bcb548b39ad91b1c6d63cdcafb78c080df403713`, `37edb0ef40e4f0cbafc69a1f07ae7b5446260184`, `4723823ab3fac22e2352d1d86ba3bd26866b2cb3`, `f21e9fe85c7aea9d5e9923859f60ce0f8d301a58`, `949ea8ad1d774ce9026aac553e894ce9b344f468`, `dd9daa50a17376801d6b7204839bab3e6e6f9d65`, `d61fb0f0a4d12d47932c2054af037473c5b6b99d`.
+- **Next:** Continue the remaining non-image skill and project-reference audit. Do not run tests or workflows.
