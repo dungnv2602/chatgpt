@@ -20,7 +20,7 @@ Each scope also maintains:
 - `latest-lint-report.md` and `latest-lint-report.json`: latest completed report, including failures.
 - `index.json`: run locator and summary metrics. Read it before opening historical reports.
 
-The root `latest-lint-report.md` remains a compatibility copy of the latest repository-wide report. Scope-specific reports are canonical. Historical run folders are append-only. Older runs cannot move a latest pointer backward.
+The family-level `latest-lint-report.md` remains a compatibility copy of the latest repository-wide report. Scope-specific reports are canonical. Historical run folders are append-only. Older runs cannot move a latest pointer backward.
 
 ## Review order
 
