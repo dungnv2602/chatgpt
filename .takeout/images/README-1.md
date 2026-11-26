@@ -22,7 +22,7 @@ The Worker owns image inspection, provenance, processing, original preservation,
 
 - Processor: [`process_takeout.py`](../../.agent/skills/the-worker/scripts/process_takeout.py).
 - Workflow: [`convert-images-to-webp.yml`](../../.github/workflows/convert-images-to-webp.yml).
-- Canonical hand-off and operating procedure: [Image Takeout](../../images/takeout/README.md).
+- Canonical hand-off and operating procedure: [Image Takeout](README-2.md).
 
 Use Image Takeout for the `HANDOFF.yml` schema, conversion profiles, staging and retry behavior, reports, manifest updates, and published-blob checks. Do not duplicate those procedures here.
 
