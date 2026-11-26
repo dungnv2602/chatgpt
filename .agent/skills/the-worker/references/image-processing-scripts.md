@@ -4,7 +4,7 @@ The Worker owns the image-intake and publication-verification tools. The scripts
 
 ## Files
 
-- `.agent/skills/the-worker/scripts/process_takeout.py` — checks one `images/takeout/` hand-off. It checks destination safety and source identity. It converts PNG and JPEG files to WebP. It stages the full batch before relocation. It updates drawing-session records and manifests. It writes success or failure reports and handles rollback.
+- `.agent/skills/the-worker/scripts/process_takeout.py` — checks one `.takeout/images/` hand-off. It checks destination safety and source identity. It converts PNG and JPEG files to WebP. It stages the full batch before relocation. It updates drawing-session records and manifests. It writes success or failure reports and handles rollback.
 - `.agent/skills/the-worker/scripts/verify_published_manifest.py` — reads the pushed Git ref. It checks published master and WebP blobs, checksums, canonical WebP URLs, and drawing-session links. It then updates or checks manifest status.
 - `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py` — tests the processor and publication verifier. It imports the verifier from this directory. It runs the processor by its sibling path. Keep all three files together.
 
@@ -62,7 +62,7 @@ python3 .agent/skills/the-worker/scripts/verify_published_manifest.py \
 
 ## Operating rules
 
-1. Treat `images/takeout/HANDOFF.yml` as the explicit batch contract. The scripts do not infer image content, project membership, prompt association, or native generation IDs.
+1. Treat `.takeout/images/HANDOFF.yml` as the explicit batch contract. The scripts do not infer image content, project membership, prompt association, or native generation IDs.
 2. Keep original PNG and JPEG masters byte-identical. Store WebP derivatives separately.
 3. Use `area/novel/` for novel-scene assets. The processor accepts reconstructed project roots.
 4. Store drawing-session outputs under `area/drawing/YYYY-MM-DD/images/`. Include an explicit attempt number. The processor uses it to reconcile the attempt record, README, and manifest.
