@@ -1,6 +1,6 @@
 ## Current Step
 
-Inspect the task board, the two requested task records, and the exact recovery/deletion commits. Identify which restored paths can be reversed without changing unrelated work or violating archive controls.
+Trace the recovery commit against its immediate parent and current gpt tree. Isolate only restored paths that remain unchanged, identify the DRAFT-0002 task record, and prepare the two-entry board cleanup. [DRAFT-0002 task](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md) · [Repository reconstruction task](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md)
 
 ## Open Discussions
 - **2026-11-26 — Task-board record links:** **Resolved:** The final broken task-board link used a truncated filename (`...repo.md`); the actual tracked task file ends in `...re.md`. The link was corrected. The diagnostics publish subsequently added further generated tasks; all 288 unique task-board targets now resolve. [Audit task](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
