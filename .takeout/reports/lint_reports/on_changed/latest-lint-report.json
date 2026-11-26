@@ -1,567 +1,665 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45566151970",
-  "run_number": 699,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45566151970",
+  "run_id": "45743786132",
+  "run_number": 709,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45743786132",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "c259604f5c331c12fa98215f244df66a5dc3fc6c",
+  "commit_sha": "c91c7dedd734c09c21ab765c169aadc83dc408e9",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "20e90a6b97317cb7c0c689dac9864baac3d64207",
-  "generated_at_utc": "2026-11-25T07:13:06.911788+00:00",
+  "baseline_sha": "c259604f5c331c12fa98215f244df66a5dc3fc6c",
+  "generated_at_utc": "2026-11-26T02:40:09.213897+00:00",
   "status": "Failed",
-  "linter_source_sha": "c259604f5c331c12fa98215f244df66a5dc3fc6c",
+  "linter_source_sha": "c91c7dedd734c09c21ab765c169aadc83dc408e9",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
-    "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
+    ".agent/skills/skill-creator/agents/grader.md",
+    ".agent/skills/skill-creator/agents/analyzer.md",
+    ".agent/skills/the-worker/references/image-provenance-and-webp.md",
+    ".agent/skills/drawing/SKILL.md",
+    ".agent/skills/doc-coauthoring/SKILL.md",
+    ".agent/skills/the-worker/assets/session-brief-template.md",
+    ".agent/INITIALIZATION_POLICY.md",
+    ".agent/skills/internal-comms/SKILL.md",
+    ".agent/skills/drawing/references/archive-and-delivery.md",
+    ".agent/skills/grilling/SKILL.md",
+    ".agent/skills/internal-comms/examples/3p-updates.md",
+    ".agent/skills/drawing/README.md",
+    ".agent/skills/theme-factory/themes/midnight-galaxy.md",
+    ".agent/skills/skill-creator/SKILL.md",
+    ".agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md",
+    ".agent/skills/drawing/references/patterns/README.md",
+    ".agent/skills/xlsx/SKILL.md",
+    ".takeout/images/README-2.md",
+    ".agent/skills/theme-factory/themes/sunset-boulevard.md",
+    ".agent/skills/drawing/references/patterns/successful-patterns.md",
+    ".agent/skills/define-goal/SKILL.md",
+    ".agent/skills/drawing/references/generation-recovery-and-provenance.md",
+    ".agent/skills/internal-comms/examples/faq-answers.md",
+    ".agent/skills/README.md",
+    ".agent/skills/drawing/references/style-guide.md",
+    ".agent/skills/github-actions/SKILL.md",
+    ".agent/skills/drawing/assets/attempt-template.md",
+    ".agent/skills/theme-factory/themes/ocean-depths.md",
+    ".agent/SESSION_START.md",
+    ".agent/skills/theme-factory/themes/modern-minimalist.md",
+    ".agent/skills/the-worker/assets/session-summary-template.md",
+    ".agent/skills/the-worker/SKILL.md",
+    ".agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
+    ".agent/skills/philosophy-religion-asceticism/references/source-standards.md",
+    ".agent/skills/philosophy-religion-asceticism/SKILL.md",
+    ".agent/skills/internal-comms/examples/general-comms.md",
+    ".agent/skills/pdf/REFERENCE.md",
+    ".agent/skills/decision-governance/SKILL.md",
+    ".agent/skills/asd-ste100/references/writing-rules.md",
+    ".agent/skills/drawing/references/series-continuity-and-iteration.md",
+    ".agent/skills/document-standards/references/document-type-catalog.md",
+    ".agent/skills/the-worker/references/archive-records-and-image-prompts.md",
+    ".agent/skills/drawing/references/image-editing-protocol.md",
+    ".agent/skills/agent-skill-authoring/SKILL.md",
+    ".agent/skills/philosophy-religion-asceticism/README.md",
+    ".takeout/images/README-1.md",
+    ".agent/skills/theme-factory/themes/golden-hour.md",
+    ".agent/skills/the-worker/references/conversation-mode.md",
+    ".agent/skills/internal-comms/examples/company-newsletter.md",
+    ".agent/skills/skill-creator/agents/comparator.md",
     "workspace/task_board.md",
-    "workspace/draft/README.md"
+    ".agent/skills/theme-factory/themes/desert-rose.md",
+    ".agent/skills/asd-ste100/README.md",
+    ".agent/skills/the-worker/references/image-processing-scripts.md",
+    ".agent/skills/document-standards/SKILL.md",
+    ".agent/skills/migrate-to-rust/SKILL.md",
+    ".agent/skills/theme-factory/themes/forest-canopy.md",
+    ".agent/skills/skill-creator/references/schemas.md",
+    ".agent/skills/pdf/FORMS.md",
+    ".agent/skills/theme-factory/themes/arctic-frost.md",
+    ".agent/skills/pdf/SKILL.md",
+    ".agent/skills/drawing/references/prompt-fidelity.md",
+    ".agent/skills/theme-factory/themes/botanical-garden.md",
+    ".agent/skills/philosophy-religion-asceticism/references/research-method.md",
+    ".agent/skills/philosophy-religion-asceticism/CHANGELOG.md",
+    ".agent/skills/drawing/references/patterns/failure-patterns.md",
+    ".agent/skills/drawing/assets/daily-index-template.md",
+    ".agent/skills/theme-factory/themes/tech-innovation.md",
+    ".agent/skills/the-worker/references/drawing-session-closeout.md",
+    ".agent/skills/philosophy-religion-asceticism/references/answer-patterns.md",
+    ".agent/skills/drawing/assets/pattern-entry-templates.md",
+    ".agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
+    ".agent/skills/asd-ste100/SKILL.md",
+    ".agent/skills/asd-ste100/assets/lint-report-template.md",
+    ".agent/skills/discernment-nudge/SKILL.md",
+    ".agent/skills/asd-ste100/references/repository-writing-policy.md",
+    ".agent/skills/theme-factory/SKILL.md",
+    ".agent/skills/the-worker/assets/conversation-integrity-template.md"
   ],
-  "files_evaluated_count": 3,
-  "files_failed": 2,
+  "files_evaluated_count": 78,
+  "files_failed": 78,
   "failed_files": [
-    "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-    "workspace/draft/README.md"
+    ".agent/skills/skill-creator/agents/grader.md",
+    ".agent/skills/skill-creator/agents/analyzer.md",
+    ".agent/skills/the-worker/references/image-provenance-and-webp.md",
+    ".agent/skills/drawing/SKILL.md",
+    ".agent/skills/doc-coauthoring/SKILL.md",
+    ".agent/skills/the-worker/assets/session-brief-template.md",
+    ".agent/INITIALIZATION_POLICY.md",
+    ".agent/skills/internal-comms/SKILL.md",
+    ".agent/skills/drawing/references/archive-and-delivery.md",
+    ".agent/skills/grilling/SKILL.md",
+    ".agent/skills/internal-comms/examples/3p-updates.md",
+    ".agent/skills/drawing/README.md",
+    ".agent/skills/theme-factory/themes/midnight-galaxy.md",
+    ".agent/skills/skill-creator/SKILL.md",
+    ".agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md",
+    ".agent/skills/drawing/references/patterns/README.md",
+    ".agent/skills/xlsx/SKILL.md",
+    ".takeout/images/README-2.md",
+    ".agent/skills/theme-factory/themes/sunset-boulevard.md",
+    ".agent/skills/drawing/references/patterns/successful-patterns.md",
+    ".agent/skills/define-goal/SKILL.md",
+    ".agent/skills/drawing/references/generation-recovery-and-provenance.md",
+    ".agent/skills/internal-comms/examples/faq-answers.md",
+    ".agent/skills/README.md",
+    ".agent/skills/drawing/references/style-guide.md",
+    ".agent/skills/github-actions/SKILL.md",
+    ".agent/skills/drawing/assets/attempt-template.md",
+    ".agent/skills/theme-factory/themes/ocean-depths.md",
+    ".agent/SESSION_START.md",
+    ".agent/skills/theme-factory/themes/modern-minimalist.md",
+    ".agent/skills/the-worker/assets/session-summary-template.md",
+    ".agent/skills/the-worker/SKILL.md",
+    ".agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
+    ".agent/skills/philosophy-religion-asceticism/references/source-standards.md",
+    ".agent/skills/philosophy-religion-asceticism/SKILL.md",
+    ".agent/skills/internal-comms/examples/general-comms.md",
+    ".agent/skills/pdf/REFERENCE.md",
+    ".agent/skills/decision-governance/SKILL.md",
+    ".agent/skills/asd-ste100/references/writing-rules.md",
+    ".agent/skills/drawing/references/series-continuity-and-iteration.md",
+    ".agent/skills/document-standards/references/document-type-catalog.md",
+    ".agent/skills/the-worker/references/archive-records-and-image-prompts.md",
+    ".agent/skills/drawing/references/image-editing-protocol.md",
+    ".agent/skills/agent-skill-authoring/SKILL.md",
+    ".agent/skills/philosophy-religion-asceticism/README.md",
+    ".takeout/images/README-1.md",
+    ".agent/skills/theme-factory/themes/golden-hour.md",
+    ".agent/skills/the-worker/references/conversation-mode.md",
+    ".agent/skills/internal-comms/examples/company-newsletter.md",
+    ".agent/skills/skill-creator/agents/comparator.md",
+    "workspace/task_board.md",
+    ".agent/skills/theme-factory/themes/desert-rose.md",
+    ".agent/skills/asd-ste100/README.md",
+    ".agent/skills/the-worker/references/image-processing-scripts.md",
+    ".agent/skills/document-standards/SKILL.md",
+    ".agent/skills/migrate-to-rust/SKILL.md",
+    ".agent/skills/theme-factory/themes/forest-canopy.md",
+    ".agent/skills/skill-creator/references/schemas.md",
+    ".agent/skills/pdf/FORMS.md",
+    ".agent/skills/theme-factory/themes/arctic-frost.md",
+    ".agent/skills/pdf/SKILL.md",
+    ".agent/skills/drawing/references/prompt-fidelity.md",
+    ".agent/skills/theme-factory/themes/botanical-garden.md",
+    ".agent/skills/philosophy-religion-asceticism/references/research-method.md",
+    ".agent/skills/philosophy-religion-asceticism/CHANGELOG.md",
+    ".agent/skills/drawing/references/patterns/failure-patterns.md",
+    ".agent/skills/drawing/assets/daily-index-template.md",
+    ".agent/skills/theme-factory/themes/tech-innovation.md",
+    ".agent/skills/the-worker/references/drawing-session-closeout.md",
+    ".agent/skills/philosophy-religion-asceticism/references/answer-patterns.md",
+    ".agent/skills/drawing/assets/pattern-entry-templates.md",
+    ".agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
+    ".agent/skills/asd-ste100/SKILL.md",
+    ".agent/skills/asd-ste100/assets/lint-report-template.md",
+    ".agent/skills/discernment-nudge/SKILL.md",
+    ".agent/skills/asd-ste100/references/repository-writing-policy.md",
+    ".agent/skills/theme-factory/SKILL.md",
+    ".agent/skills/the-worker/assets/conversation-integrity-template.md"
   ],
-  "files_with_findings": 2,
-  "total_findings": 54,
-  "hard_findings": 26,
-  "advisory_findings": 28,
-  "findings_by_rule": {
-    "passive-voice": 25,
-    "present-perfect": 3,
-    "long-sentence": 9,
-    "synonym-rotation": 5,
-    "semicolon": 12
-  },
+  "files_with_findings": 0,
+  "total_findings": 0,
+  "hard_findings": 0,
+  "advisory_findings": 0,
+  "findings_by_rule": {},
   "records": [
     {
-      "violations": [
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 36,
-          "col": 10,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is recommended",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 38,
-          "col": 332,
-          "rule": "present-perfect",
-          "level": "advisory",
-          "match": "has approved",
-          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 38,
-          "col": 388,
-          "rule": "present-perfect",
-          "level": "advisory",
-          "match": "have reached",
-          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 158,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "35 words",
-          "message": "Sentence has 35 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 169,
-          "col": 21,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Validated",
-          "message": "'validate' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 179,
-          "col": 143,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was created",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 181,
-          "col": 62,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are observed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 183,
-          "col": 69,
-          "rule": "present-perfect",
-          "level": "advisory",
-          "match": "has tested",
-          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 184,
-          "col": 120,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "were read",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 184,
-          "col": 223,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been tested",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 206,
-          "col": 177,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 208,
-          "col": 43,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is fragmented",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 210,
-          "col": 53,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been measured",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 235,
-          "col": 53,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "27 words",
-          "message": "Sentence has 27 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 261,
-          "col": 171,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 292,
-          "col": 60,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "26 words",
-          "message": "Sentence has 26 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 295,
-          "col": 388,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been piloted",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 296,
-          "col": 52,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been tested",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 313,
-          "col": 90,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is unsupported",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 325,
-          "col": 178,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "26 words",
-          "message": "Sentence has 26 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 346,
-          "col": 218,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is stored",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 458,
-          "col": 36,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 482,
-          "col": 251,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is configured",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 502,
-          "col": 30,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is Done",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 503,
-          "col": 52,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are resolved",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 504,
-          "col": 22,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are classified",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 541,
-          "col": 4,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Check",
-          "message": "'check' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 585,
-          "col": 23,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is treated",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 586,
-          "col": 94,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "remove",
-          "message": "'remove' and 'delete' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 598,
-          "col": 63,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 610,
-          "col": 53,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are supported",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 611,
-          "col": 217,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 613,
-          "col": 256,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 640,
-          "col": 93,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Verify",
-          "message": "'verify' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 670,
-          "col": 104,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is created",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 678,
-          "col": 4,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "35 words",
-          "message": "Sentence has 35 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 678,
-          "col": 107,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 678,
-          "col": 166,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 678,
-          "col": 212,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is created",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 680,
-          "col": 4,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "34 words",
-          "message": "Sentence has 34 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 694,
-          "col": 48,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "28 words",
-          "message": "Sentence has 28 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 694,
-          "col": 90,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 694,
-          "col": 122,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 700,
-          "col": 45,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 707,
-          "col": 246,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 708,
-          "col": 194,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 711,
-          "col": 155,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 711,
-          "col": 240,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are created",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 712,
-          "col": 91,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Fixed",
-          "message": "'fix' and 'correct' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-          "line": 718,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "34 words",
-          "message": "Sentence has 34 words (cap 25). Split it."
-        }
-      ],
-      "count": 50,
-      "hard_count": 23,
-      "baseline": 0,
-      "words": 9822,
-      "per_100_words": 0.5,
-      "path": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
-      "exit_code": 1
+      "path": ".agent/skills/skill-creator/agents/grader.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
     },
     {
-      "violations": [],
-      "count": 0,
-      "hard_count": 0,
-      "baseline": 0,
-      "words": 2212,
-      "per_100_words": 0.0,
+      "path": ".agent/skills/skill-creator/agents/analyzer.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/references/image-provenance-and-webp.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/doc-coauthoring/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/assets/session-brief-template.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/INITIALIZATION_POLICY.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/internal-comms/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/archive-and-delivery.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/grilling/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/internal-comms/examples/3p-updates.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/README.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/midnight-galaxy.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/skill-creator/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/patterns/README.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/xlsx/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".takeout/images/README-2.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/sunset-boulevard.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/patterns/successful-patterns.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/define-goal/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/generation-recovery-and-provenance.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/internal-comms/examples/faq-answers.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/README.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/style-guide.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/github-actions/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/assets/attempt-template.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/ocean-depths.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/SESSION_START.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/modern-minimalist.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/assets/session-summary-template.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/philosophy-religion-asceticism/references/source-standards.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/philosophy-religion-asceticism/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/internal-comms/examples/general-comms.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/pdf/REFERENCE.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/decision-governance/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/asd-ste100/references/writing-rules.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/series-continuity-and-iteration.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/document-standards/references/document-type-catalog.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/references/archive-records-and-image-prompts.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/image-editing-protocol.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/agent-skill-authoring/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/philosophy-religion-asceticism/README.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".takeout/images/README-1.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/golden-hour.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/references/conversation-mode.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/internal-comms/examples/company-newsletter.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/skill-creator/agents/comparator.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
       "path": "workspace/task_board.md",
-      "exit_code": 0
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
     },
     {
-      "violations": [
-        {
-          "file": "workspace/draft/README.md",
-          "line": 7,
-          "col": 96,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/README.md",
-          "line": 19,
-          "col": 4,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "28 words",
-          "message": "Sentence has 28 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/README.md",
-          "line": 21,
-          "col": 305,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/README.md",
-          "line": 23,
-          "col": 136,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been assessed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        }
-      ],
-      "count": 4,
-      "hard_count": 3,
-      "baseline": 0,
-      "words": 665,
-      "per_100_words": 0.6,
-      "path": "workspace/draft/README.md",
-      "exit_code": 1
+      "path": ".agent/skills/theme-factory/themes/desert-rose.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/asd-ste100/README.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/references/image-processing-scripts.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/document-standards/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/migrate-to-rust/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/forest-canopy.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/skill-creator/references/schemas.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/pdf/FORMS.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/arctic-frost.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/pdf/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/prompt-fidelity.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/botanical-garden.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/philosophy-religion-asceticism/references/research-method.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/philosophy-religion-asceticism/CHANGELOG.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/references/patterns/failure-patterns.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/assets/daily-index-template.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/themes/tech-innovation.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/references/drawing-session-closeout.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/philosophy-religion-asceticism/references/answer-patterns.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/drawing/assets/pattern-entry-templates.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/asd-ste100/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/asd-ste100/assets/lint-report-template.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/discernment-nudge/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/asd-ste100/references/repository-writing-policy.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/theme-factory/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/assets/conversation-integrity-template.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
     }
   ],
-  "findings": [
+  "findings": [],
+  "new_findings": 0,
+  "recurring_findings": 0,
+  "resolved_findings": [
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
       "line": 36,
@@ -571,7 +669,7 @@
       "match": "is recommended",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "a737104c50ceb40f303a4a01",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -582,7 +680,7 @@
       "match": "has approved",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "63b66afb8b84b4750380eace",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -593,7 +691,7 @@
       "match": "have reached",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "e18acfaf818e2c30f6ca30e9",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -604,7 +702,7 @@
       "match": "35 words",
       "message": "Sentence has 35 words (cap 25). Split it.",
       "fingerprint": "2a27149bc363daa6f4a3a38e",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -615,7 +713,7 @@
       "match": "Validated",
       "message": "'validate' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "34fd4b4fc86f7c4829f49935",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -626,7 +724,7 @@
       "match": "was created",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "8fab87c9578c4937b0124edf",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -637,7 +735,7 @@
       "match": "are observed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "7c3c1ace5ec3d5c53c98a4df",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -648,7 +746,7 @@
       "match": "has tested",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "1614dc41c4b7be8e66e6f0d4",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -659,7 +757,7 @@
       "match": "were read",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "2e23d59621877db75c28ce78",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -670,7 +768,7 @@
       "match": "been tested",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "2bc5f6f2f61d2bd47030e11b",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -681,7 +779,7 @@
       "match": "are required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ff8dedd324f39ede5ee75f82",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -692,7 +790,7 @@
       "match": "is fragmented",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ae6b75fe50ddf475f002c2af",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -703,7 +801,7 @@
       "match": "been measured",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "e6a0a6a3cb10281e485f4ced",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -714,7 +812,7 @@
       "match": "27 words",
       "message": "Sentence has 27 words (cap 25). Split it.",
       "fingerprint": "e0805effa50f8c2d06788a7e",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -725,7 +823,7 @@
       "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "deb50ff287f5e69a8ed3d45a",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -736,7 +834,7 @@
       "match": "26 words",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "fingerprint": "8e84e07883201687e9d6dbbf",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -747,7 +845,7 @@
       "match": "been piloted",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "84a34fb70b809525fcff26b9",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -758,7 +856,7 @@
       "match": "been tested",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "2bc5f6f2f61d2bd47030e11b",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -769,7 +867,7 @@
       "match": "is unsupported",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "cd8c27dadbc8cbf2ffa0ea4b",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -780,7 +878,7 @@
       "match": "26 words",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "fingerprint": "8e84e07883201687e9d6dbbf",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -791,7 +889,7 @@
       "match": "is stored",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "a27c714d52cff462c278171d",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -802,7 +900,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -813,7 +911,7 @@
       "match": "is configured",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "a484bb1a5b40074d480f3f91",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -824,7 +922,7 @@
       "match": "is Done",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "0de287d1c4eae57b62d477b2",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -835,7 +933,7 @@
       "match": "are resolved",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "cbf03a5bdfbefc8d301bac6f",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -846,7 +944,7 @@
       "match": "are classified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ba2af3047b1dbc7bfdba2dd0",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -857,7 +955,7 @@
       "match": "Check",
       "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "93b3c8314ad783839cf934a4",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -868,7 +966,7 @@
       "match": "is treated",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ebe3a0eaf57219e6e13da654",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -879,7 +977,7 @@
       "match": "remove",
       "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
       "fingerprint": "b1897a649c20569be1ac0618",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -890,7 +988,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -901,7 +999,7 @@
       "match": "are supported",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "1e8f06c794753d0da4c374f5",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -912,7 +1010,7 @@
       "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "deb50ff287f5e69a8ed3d45a",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -923,7 +1021,7 @@
       "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "deb50ff287f5e69a8ed3d45a",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -934,7 +1032,7 @@
       "match": "Verify",
       "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "316a7cc78530dc52ed55aeb6",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -945,7 +1043,7 @@
       "match": "is created",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "cda7ec14df291f440000a085",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -956,7 +1054,7 @@
       "match": "35 words",
       "message": "Sentence has 35 words (cap 25). Split it.",
       "fingerprint": "2a27149bc363daa6f4a3a38e",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -967,7 +1065,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -978,7 +1076,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -989,7 +1087,7 @@
       "match": "is created",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "cda7ec14df291f440000a085",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1000,7 +1098,7 @@
       "match": "34 words",
       "message": "Sentence has 34 words (cap 25). Split it.",
       "fingerprint": "ee090e362481d6ce86016eb8",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1011,7 +1109,7 @@
       "match": "28 words",
       "message": "Sentence has 28 words (cap 25). Split it.",
       "fingerprint": "5c278ad2f255230faa055f76",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1022,7 +1120,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1033,7 +1131,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1044,7 +1142,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1055,7 +1153,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1066,7 +1164,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1077,7 +1175,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "28ee61d5eaadf9744f6bf805",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1088,7 +1186,7 @@
       "match": "are created",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "dd5a9425158b41b001c9b936",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1099,7 +1197,7 @@
       "match": "Fixed",
       "message": "'fix' and 'correct' name the same action. Pick one and use it every time.",
       "fingerprint": "c6bfceae059912f8aadd9e2e",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -1110,7 +1208,7 @@
       "match": "34 words",
       "message": "Sentence has 34 words (cap 25). Split it.",
       "fingerprint": "ee090e362481d6ce86016eb8",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/README.md",
@@ -1121,7 +1219,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "388932780643d2141e1a4492",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/README.md",
@@ -1132,7 +1230,7 @@
       "match": "28 words",
       "message": "Sentence has 28 words (cap 25). Split it.",
       "fingerprint": "fa0ad26c0f4696b24c6e471f",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/README.md",
@@ -1143,7 +1241,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "388932780643d2141e1a4492",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/README.md",
@@ -1154,2672 +1252,6 @@
       "match": "been assessed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "23958065d6cbd83c298c65e2",
-      "comparison": "new"
-    }
-  ],
-  "new_findings": 54,
-  "recurring_findings": 0,
-  "resolved_findings": [
-    {
-      "file": "skills/skill-creator/agents/grader.md",
-      "line": 43,
-      "col": 25,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "f6b0cd4515b63f0d695cd984",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/grader.md",
-      "line": 50,
-      "col": 34,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were filled",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "eda68c8e5f0024bbf44478a5",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/grader.md",
-      "line": 55,
-      "col": 53,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is justified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "6d8513652396223c46db7c53",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/grader.md",
-      "line": 204,
-      "col": 30,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "e47fae0d3214443b275d83bf",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/company-newsletter.md",
-      "line": 2,
-      "col": 9,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being asked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "674f8c6b10c2692aba1d6872",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/company-newsletter.md",
-      "line": 5,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "38 words",
-      "message": "Sentence has 38 words (cap 25). Split it.",
-      "fingerprint": "962ad33b16c74cce9136544c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/company-newsletter.md",
-      "line": 5,
-      "col": 245,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "have happened",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "e21a631576722f4ba88c9a40",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/company-newsletter.md",
-      "line": 21,
-      "col": 418,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are highlighted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a5c77894421daf1d053502ce",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 53,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "42 words",
-      "message": "Sentence has 42 words (cap 25). Split it.",
-      "fingerprint": "633ed34d5a9f1f808fb3863d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 74,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "38 words",
-      "message": "Sentence has 38 words (cap 25). Split it.",
-      "fingerprint": "d1f4e4a17700e4fddf56e470",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 76,
-      "col": 18,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "d0326226d8f30a067ce6965d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 76,
-      "col": 76,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "d1786a470e3e35ea435e593b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 92,
-      "col": 179,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is scanned",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "3fe66375b59c3b0c8018b635",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 114,
-      "col": 51,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are detected",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "bbe9290d6bdb305c9943d943",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 118,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "4df56657f6044a9e3d88ab1e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 163,
-      "col": 10,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Validate",
-      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "bc0b3a7638b2e3238d494397",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 168,
-      "col": 99,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Fix",
-      "message": "'fix' and 'correct' name the same action. Pick one and use it every time.",
-      "fingerprint": "31453b7d73f9081ba7fc7aa1",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 174,
-      "col": 23,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is scanned",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "3fe66375b59c3b0c8018b635",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 210,
-      "col": 50,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "begins",
-      "message": "'begin' and 'start' name the same action. Pick one and use it every time.",
-      "fingerprint": "d9abe8c3f4f7d6196dda74a6",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 260,
-      "col": 39,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were detected",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "bcb3c4f45b7f95b1cf8ceddc",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/FORMS.md",
-      "line": 291,
-      "col": 9,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is mispositioned",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1c58d1ff24fa595261572915",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/theme-factory/themes/tech-innovation.md",
-      "line": 3,
-      "col": 63,
-      "rule": "marketing-adjective",
-      "level": "advisory-free",
-      "match": "cutting-edge",
-      "message": "Marketing adjective. Delete, or replace with the measurement that earns the claim.",
-      "fingerprint": "80634a765c13460d206a2ec7",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/faq-answers.md",
-      "line": 2,
-      "col": 55,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being asked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "9a56fa884d51cd2867afa899",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/faq-answers.md",
-      "line": 2,
-      "col": 225,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "34 words",
-      "message": "Sentence has 34 words (cap 25). Split it.",
-      "fingerprint": "49cf594e46f6ead99fc2a24e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/faq-answers.md",
-      "line": 4,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "7982191c1f28db7fbe5c2969",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/faq-answers.md",
-      "line": 7,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "7982191c1f28db7fbe5c2969",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/faq-answers.md",
-      "line": 12,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "49 words",
-      "message": "Sentence has 49 words (cap 25). Split it.",
-      "fingerprint": "3a87e9c439a250becbc034ed",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/faq-answers.md",
-      "line": 12,
-      "col": 20,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being asked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "9a56fa884d51cd2867afa899",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/faq-answers.md",
-      "line": 12,
-      "col": 130,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being asked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "9a56fa884d51cd2867afa899",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/theme-factory/SKILL.md",
-      "line": 3,
-      "col": 218,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has been",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "88d72e2d65542550249f0c15",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/theme-factory/SKILL.md",
-      "line": 23,
-      "col": 33,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Display",
-      "message": "'display' and 'show' name the same action. Pick one and use it every time.",
-      "fingerprint": "90937deb6d9e203b4956d892",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/theme-factory/SKILL.md",
-      "line": 23,
-      "col": 159,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "a9118ae923ba3eb2ca0eed95",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/theme-factory/SKILL.md",
-      "line": 26,
-      "col": 38,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has been chosen",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "fc51630c87430edc3e5ee859",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/theme-factory/SKILL.md",
-      "line": 45,
-      "col": 12,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is defined",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "cc0e98e90677694b95ddacea",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/theme-factory/SKILL.md",
-      "line": 52,
-      "col": 25,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is selected",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "9161559ebd704659b72aab24",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/grilling/SKILL.md",
-      "line": 28,
-      "col": 48,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "35 words",
-      "message": "Sentence has 35 words (cap 25). Split it.",
-      "fingerprint": "183863e52e0f6f06bf48dfcc",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/grilling/SKILL.md",
-      "line": 28,
-      "col": 193,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "ae6b7313f526901b623e262b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/grilling/SKILL.md",
-      "line": 28,
-      "col": 255,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "52a7f2689aea71be1612b603",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/grilling/SKILL.md",
-      "line": 28,
-      "col": 397,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "ae6b7313f526901b623e262b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/grilling/SKILL.md",
-      "line": 30,
-      "col": 13,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is done",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f0bdde4343f717a6d95280b9",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/grilling/SKILL.md",
-      "line": 30,
-      "col": 166,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "have reached",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "23f0857cbab27efe737d08c9",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/3p-updates.md",
-      "line": 2,
-      "col": 9,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being asked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "006084ecedd2b0f60f2a319e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/3p-updates.md",
-      "line": 4,
-      "col": 141,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "0592d6c63ea607b94a7d508d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/3p-updates.md",
-      "line": 7,
-      "col": 28,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has accomplished",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "1991d3b341dea71d1160d82e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 4,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "88 words",
-      "message": "Sentence has 88 words (cap 25). Split it.",
-      "fingerprint": "0a714b41c7716d9a6f1cab5e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 12,
-      "col": 59,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "64 words",
-      "message": "Sentence has 64 words (cap 25). Split it.",
-      "fingerprint": "66a0d61a227ac0548adbfcf7",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 27,
-      "col": 42,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "46 words",
-      "message": "Sentence has 46 words (cap 25). Split it.",
-      "fingerprint": "09532e58e58d4dfe8bdc79d6",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 38,
-      "col": 9,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verifying",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "8148fcf71c05d754866b31ae",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 52,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "7edd5e29457880d740b445be",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 55,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "edaa7ec5be833cea16777df0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 58,
-      "col": 42,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "50d12d368bab862dde7d9298",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 59,
-      "col": 39,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "edaa7ec5be833cea16777df0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 66,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "0d46bb8bc736d2592d84c9ee",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 75,
-      "col": 47,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "2732bbda68c4918a25cee5d7",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 76,
-      "col": 8,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "50d12d368bab862dde7d9298",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 81,
-      "col": 15,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "40 words",
-      "message": "Sentence has 40 words (cap 25). Split it.",
-      "fingerprint": "bc449f6a09bfcee41f17a7e1",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 83,
-      "col": 24,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been invited",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "ef2a5302c79e63f003738349",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 84,
-      "col": 34,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "edaa7ec5be833cea16777df0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 89,
-      "col": 51,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "50d12d368bab862dde7d9298",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 101,
-      "col": 54,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "41 words",
-      "message": "Sentence has 41 words (cap 25). Split it.",
-      "fingerprint": "d4a15d9b253d6b8336214e0f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 106,
-      "col": 27,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "50d12d368bab862dde7d9298",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 117,
-      "col": 35,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "0d46bb8bc736d2592d84c9ee",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 121,
-      "col": 65,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "40 words",
-      "message": "Sentence has 40 words (cap 25). Split it.",
-      "fingerprint": "bc449f6a09bfcee41f17a7e1",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 130,
-      "col": 36,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "50d12d368bab862dde7d9298",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 136,
-      "col": 16,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "32 words",
-      "message": "Sentence has 32 words (cap 25). Split it.",
-      "fingerprint": "fb1aa964536ca9c2e2071ce0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 141,
-      "col": 39,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "2732bbda68c4918a25cee5d7",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 156,
-      "col": 9,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are weighed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "09860b573750eb72110a818f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 167,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "33 words",
-      "message": "Sentence has 33 words (cap 25). Split it.",
-      "fingerprint": "b8df8fc4deef715436cbed14",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 171,
-      "col": 34,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "50d12d368bab862dde7d9298",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/discernment-nudge/SKILL.md",
-      "line": 205,
-      "col": 17,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "50d12d368bab862dde7d9298",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/SKILL.md",
-      "line": 3,
-      "col": 136,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "6fb7073d863c9fbc89ee070c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/analyzer.md",
-      "line": 45,
-      "col": 17,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were used",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "963c77d99b7e75e0a3bf0b37",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/analyzer.md",
-      "line": 81,
-      "col": 27,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "modify",
-      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
-      "fingerprint": "73a20e38cbfda82326a10620",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/analyzer.md",
-      "line": 161,
-      "col": 61,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "have changed",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "a070d81ff2293e36967921ba",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/analyzer.md",
-      "line": 200,
-      "col": 37,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being benchmarked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8a779742e2e23efbc4881142",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/pdf/SKILL.md",
-      "line": 3,
-      "col": 84,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "41 words",
-      "message": "Sentence has 41 words (cap 25). Split it.",
-      "fingerprint": "80f948c0d409822bd1502a79",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 51,
-      "col": 3,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Check",
-      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "c9464aa336f93a9a8d49a570",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 56,
-      "col": 24,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are answered",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f058f8435b29176017e90d21",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 59,
-      "col": 36,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being used",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "e10d64cbb238674d2f93ba0f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 65,
-      "col": 53,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "get",
-      "message": "'get' and 'fetch' name the same action. Pick one and use it every time.",
-      "fingerprint": "c09611be7b0f6df8558b3632",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 72,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "9319ee289b0fe44d84643a21",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 72,
-      "col": 22,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are detected",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "aacb3f77deb9a088671cd4ae",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 86,
-      "col": 42,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being learned",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "cee3981022d4e3499944c77e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 94,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "32 words",
-      "message": "Sentence has 32 words (cap 25). Split it.",
-      "fingerprint": "70b1172296ab0a28aeb9fe21",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 97,
-      "col": 20,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has been gathered",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "63238be79dd0f680047ad702",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 97,
-      "col": 24,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been gathered",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f3183f25b8780ed21113c300",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 130,
-      "col": 18,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is agreed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "65720f031e47f176970ebc0e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 150,
-      "col": 1,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Confirm",
-      "message": "'confirm' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "6a6fbd0d92479d7d01d8ae93",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 150,
-      "col": 22,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has been created",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "8cdb21ea190546014c9be542",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 150,
-      "col": 26,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been created",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "27597883b1f70487be501033",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 156,
-      "col": 20,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "begin",
-      "message": "'begin' and 'start' name the same action. Pick one and use it every time.",
-      "fingerprint": "9cc2456ea1ec0364078faf6b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 200,
-      "col": 40,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has been drafted",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "97ebea75b5ec66e6e650944b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 200,
-      "col": 44,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been drafted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8c0e9f5d680b69e4b6921173",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 202,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "295b724e21d2dc85c8f7ce1f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 211,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "37fccb416c5a2c73a2b08580",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 213,
-      "col": 35,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is satisfied",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "3c0ab4824ebf0184fa850617",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 219,
-      "col": 14,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is done",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a369cd14e91a6c55c8078a9e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 233,
-      "col": 21,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are drafted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f849879f47683f3042f9aa04",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 234,
-      "col": 23,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are drafted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f849879f47683f3042f9aa04",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 312,
-      "col": 30,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "correct",
-      "message": "'correct' and 'fix' name the same action. Pick one and use it every time.",
-      "fingerprint": "1ee1d09f44673180016e2f67",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 336,
-      "col": 18,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has passed",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "19bc6ba8838ee66ff59dc7b6",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 342,
-      "col": 50,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is done",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a369cd14e91a6c55c8078a9e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 346,
-      "col": 84,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was developed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "5f77ec29406067038b3f0fbd",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/doc-coauthoring/SKILL.md",
-      "line": 348,
-      "col": 30,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is received",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "6de4f19737e8127fa123c9f5",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 3,
-      "col": 100,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "37 words",
-      "message": "Sentence has 37 words (cap 25). Split it.",
-      "fingerprint": "cfd51398e7020a0fbdafe7ba",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 16,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "36 words",
-      "message": "Sentence has 36 words (cap 25). Split it.",
-      "fingerprint": "67edb283ba2426229ffbdd5b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 16,
-      "col": 182,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "change",
-      "message": "'change' and 'modify' name the same action. Pick one and use it every time.",
-      "fingerprint": "6089f9e6b2cd3054930b07d3",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 18,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "83321e7be691a44356abf397",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 22,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "83321e7be691a44356abf397",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 22,
-      "col": 213,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "83321e7be691a44356abf397",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 26,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "50e95484d402557c91868acc",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 28,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "35 words",
-      "message": "Sentence has 35 words (cap 25). Split it.",
-      "fingerprint": "1a4238764ac29c270955f2ad",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 28,
-      "col": 22,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is done",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7638fc0a5fbb6cceca5a3ffd",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 34,
-      "col": 105,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "41 words",
-      "message": "Sentence has 41 words (cap 25). Split it.",
-      "fingerprint": "90b7c0eac3e2ee5b205b348c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 39,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "931b8db7add7b3535eb82fe4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 41,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "b3b51b275e9ef2296ec3dd01",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 54,
-      "col": 35,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "7a3d7648e3a631037e76cf6d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 60,
-      "col": 1,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Check",
-      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "bd108e08bd9bf096790dc153",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 67,
-      "col": 398,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "32 words",
-      "message": "Sentence has 32 words (cap 25). Split it.",
-      "fingerprint": "0a0fc1886c1048efdc236f0b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 67,
-      "col": 467,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "display",
-      "message": "'display' and 'show' name the same action. Pick one and use it every time.",
-      "fingerprint": "b5b2e581ff9ad306cac93f39",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 67,
-      "col": 592,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "33 words",
-      "message": "Sentence has 33 words (cap 25). Split it.",
-      "fingerprint": "b7656fbcfb79ae5ac950a8de",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 96,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "33 words",
-      "message": "Sentence has 33 words (cap 25). Split it.",
-      "fingerprint": "b7656fbcfb79ae5ac950a8de",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 96,
-      "col": 32,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "b26e853d0378999b28835ede",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 171,
-      "col": 190,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Launch",
-      "message": "'launch' and 'start' name the same action. Pick one and use it every time.",
-      "fingerprint": "c8837f28e78344d9ce3dae88",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 203,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "b3b51b275e9ef2296ec3dd01",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 223,
-      "col": 15,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are done",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "aa754f9c434238c7ca7024d3",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 225,
-      "col": 386,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "81a0eb0a3166d8b6ad5e3282",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 234,
-      "col": 106,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "83321e7be691a44356abf397",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 249,
-      "col": 57,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "b26e853d0378999b28835ede",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 256,
-      "col": 29,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was given",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7f9cc5be406601f9334d0a9f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 259,
-      "col": 33,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was run",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "073227ab82a9e051ae64eb07",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 294,
-      "col": 68,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has reviewed",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "39027c43abde57eb08780deb",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 298,
-      "col": 38,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "32 words",
-      "message": "Sentence has 32 words (cap 25). Split it.",
-      "fingerprint": "0a0fc1886c1048efdc236f0b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 298,
-      "col": 522,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "50e95484d402557c91868acc",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 300,
-      "col": 78,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "52 words",
-      "message": "Sentence has 52 words (cap 25). Split it.",
-      "fingerprint": "5442f1f21a2b76c5f0d49f1a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 302,
-      "col": 255,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "39 words",
-      "message": "Sentence has 39 words (cap 25). Split it.",
-      "fingerprint": "2e7431350f9b2729b3a6b971",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 302,
-      "col": 485,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "40 words",
-      "message": "Sentence has 40 words (cap 25). Split it.",
-      "fingerprint": "bc0db0a6aca974542651f79d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 304,
-      "col": 50,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "931b8db7add7b3535eb82fe4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 306,
-      "col": 138,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "b26e853d0378999b28835ede",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 313,
-      "col": 214,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "83321e7be691a44356abf397",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 327,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "285c7910fd39a83bb1401a2b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 348,
-      "col": 429,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "81a0eb0a3166d8b6ad5e3282",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 356,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "931b8db7add7b3535eb82fe4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 356,
-      "col": 187,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "35 words",
-      "message": "Sentence has 35 words (cap 25). Split it.",
-      "fingerprint": "1a4238764ac29c270955f2ad",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 394,
-      "col": 56,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "37 words",
-      "message": "Sentence has 37 words (cap 25). Split it.",
-      "fingerprint": "cfd51398e7020a0fbdafe7ba",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 394,
-      "col": 362,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "50e95484d402557c91868acc",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 398,
-      "col": 228,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "47 words",
-      "message": "Sentence has 47 words (cap 25). Split it.",
-      "fingerprint": "4ba45f4babc708e638969a97",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 424,
-      "col": 206,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "33 words",
-      "message": "Sentence has 33 words (cap 25). Split it.",
-      "fingerprint": "b7656fbcfb79ae5ac950a8de",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 426,
-      "col": 264,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "34 words",
-      "message": "Sentence has 34 words (cap 25). Split it.",
-      "fingerprint": "cccbdcfa7cc6ce04982ee106",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 451,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "66 words",
-      "message": "Sentence has 66 words (cap 25). Split it.",
-      "fingerprint": "b13f3ee36e07d9b3e730917b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 454,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "35 words",
-      "message": "Sentence has 35 words (cap 25). Split it.",
-      "fingerprint": "1a4238764ac29c270955f2ad",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 480,
-      "col": 33,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are satisfied",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "9b5eb6649d3441bc6d4564c7",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/SKILL.md",
-      "line": 483,
-      "col": 93,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "931b8db7add7b3535eb82fe4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 3,
-      "col": 14,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "38 words",
-      "message": "Sentence has 38 words (cap 25). Split it.",
-      "fingerprint": "3c3b8526ec42c8236337ec34",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 3,
-      "col": 303,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "4b3d24f9aed9b98b70670a67",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 17,
-      "col": 6,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "36d1e3a66695e9ccae667cb7",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 31,
-      "col": 41,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checks",
-      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "7ffb6feff2099d48d0f7cbae",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 39,
-      "col": 125,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are sharpened",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "53fe342999b284bfb8bd5229",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 45,
-      "col": 6,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "36d1e3a66695e9ccae667cb7",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 58,
-      "col": 46,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is done",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "95854f6562674ce44ac99933",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 66,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "38 words",
-      "message": "Sentence has 38 words (cap 25). Split it.",
-      "fingerprint": "3c3b8526ec42c8236337ec34",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 66,
-      "col": 130,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "d5e7ea11f84d519e58dae002",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 70,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "34 words",
-      "message": "Sentence has 34 words (cap 25). Split it.",
-      "fingerprint": "02027dda3d9662b4af3db321",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/define-goal/SKILL.md",
-      "line": 82,
-      "col": 51,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "fix",
-      "message": "'fix' and 'repair' name the same action. Pick one and use it every time.",
-      "fingerprint": "d10340e745766e580d758131",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/references/schemas.md",
-      "line": 76,
-      "col": 35,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being improved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "b2f957f961ac90f2b5e25347",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/references/schemas.md",
-      "line": 79,
-      "col": 46,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was derived",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "fc77b5ae02889cc12a032af8",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/references/schemas.md",
-      "line": 291,
-      "col": 37,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was run",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "07fb28aa8827a903ec8ce46f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 7,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "55 words",
-      "message": "Sentence has 55 words (cap 25). Split it.",
-      "fingerprint": "a662b736df433f7da92e66fc",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 12,
-      "col": 57,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "36 words",
-      "message": "Sentence has 36 words (cap 25). Split it.",
-      "fingerprint": "e2295110305762ff8e335a91",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 31,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "39 words",
-      "message": "Sentence has 39 words (cap 25). Split it.",
-      "fingerprint": "7028a07f9a3fb5f858d31275",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 36,
-      "col": 5,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is granted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "d383e306464baf7b95b09904",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 37,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "43 words",
-      "message": "Sentence has 43 words (cap 25). Split it.",
-      "fingerprint": "b88d92a5c0e5e167cff4ad82",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 42,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "40 words",
-      "message": "Sentence has 40 words (cap 25). Split it.",
-      "fingerprint": "78e0abedeafeb317479e2a5b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 43,
-      "col": 26,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checks",
-      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "57d64593c4bd12d2d0efd0ce",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 46,
-      "col": 45,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "0d7124ea47427cfe3b990b70",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 47,
-      "col": 22,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is exhausted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "467939dfbb29b044552a4f11",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 56,
-      "col": 40,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "0bb9a329b75fa24f68895375",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 60,
-      "col": 20,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are measured",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "95972905cbdd013afe6ad4d3",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 62,
-      "col": 73,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is rendered",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "4f992062ac109aed75870bc0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 102,
-      "col": 58,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "4c2241f7419e1cf7fc294279",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 107,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "3f2ed706861e681ceff6a9f4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 107,
-      "col": 7,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Confirm",
-      "message": "'confirm' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "1f3f76c2dc2193679fdec0b3",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 110,
-      "col": 19,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "0d7124ea47427cfe3b990b70",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 119,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "fbc4aa5d66dc3fafe7ac3cde",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 155,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "252237a4f0aa1d04ceb61fc9",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 159,
-      "col": 24,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is reached",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "88add639cbc69b3d060a35f9",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 169,
-      "col": 68,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "repair",
-      "message": "'repair' and 'fix' name the same action. Pick one and use it every time.",
-      "fingerprint": "2f192b17ca60a110bed2f049",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/SKILL.md",
-      "line": 176,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "fbc4aa5d66dc3fafe7ac3cde",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/internal-comms/examples/general-comms.md",
-      "line": 2,
-      "col": 11,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being asked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f5182f6e401a8e0cd0a281d7",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/comparator.md",
-      "line": 9,
-      "col": 15,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is based",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "6c4d2de7a2ac7b8671c78576",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/comparator.md",
-      "line": 17,
-      "col": 50,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was executed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "fc725ae1310f6770f082b7d3",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/comparator.md",
-      "line": 48,
-      "col": 38,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is organized",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1a4e8dde9b444c0c6a259329",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/comparator.md",
-      "line": 70,
-      "col": 17,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are provided",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "06e2447aaf67b0f70bd1d6f4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/comparator.md",
-      "line": 172,
-      "col": 20,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were provided",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "2b87728a994a74cda45b6f17",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/skill-creator/agents/comparator.md",
-      "line": 200,
-      "col": 67,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "c0fa64514011ccf40bcaa205",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 3,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "8941f6e0f48e87a46cae1089",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 49,
-      "col": 49,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is isolated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "97b200de091b786e8d3ac8e0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 72,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "88e99411d9c8e38d261735a0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 86,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "4dcee79a954a878bd5a8ea33",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 96,
-      "col": 26,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "e95dbe9e5215964e3cded5ab",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 97,
-      "col": 34,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "repair",
-      "message": "'repair' and 'fix' name the same action. Pick one and use it every time.",
-      "fingerprint": "c51b0ce42e3586600dd045b8",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 98,
-      "col": 5,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "613ef8f7b5298e0c6db14dc0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 112,
-      "col": 9,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "e95dbe9e5215964e3cded5ab",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 124,
-      "col": 102,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "0ec9ec46610bc293be0f4026",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 124,
-      "col": 129,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "0ec9ec46610bc293be0f4026",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 147,
-      "col": 28,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is grounded",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f44a8b2b9d31a4c738017b9c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 170,
-      "col": 7,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "confirming",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "48f91bb35f25b0197e2d1854",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
-      "line": 220,
-      "col": 22,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is enforced",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c40e0a110415686139157e67",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 3,
-      "col": 90,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "50 words",
-      "message": "Sentence has 50 words (cap 25). Split it.",
-      "fingerprint": "f01d015c0294a320ea718e21",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 3,
-      "col": 297,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 3,
-      "col": 363,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 3,
-      "col": 406,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "ccb49c9369554c45dc85cff9",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 3,
-      "col": 776,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "2c5761d0e7f57eb14fa5f2f4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 3,
-      "col": 953,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is involved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "d7c3da4cab34766bbeb18c4a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 13,
-      "col": 80,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 16,
-      "col": 42,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are preinstalled",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "2c1023f6d06e7f043fe8aae6",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 16,
-      "col": 91,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 23,
-      "col": 79,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 26,
-      "col": 246,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 27,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "2c5761d0e7f57eb14fa5f2f4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 27,
-      "col": 207,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were asked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f3aa2c4d7e06ebf371e77816",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 40,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "40 words",
-      "message": "Sentence has 40 words (cap 25). Split it.",
-      "fingerprint": "011da665a0c2ff74a6b74755",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 44,
-      "col": 8,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "2c5761d0e7f57eb14fa5f2f4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 44,
-      "col": 71,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was recalculated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "189dece9ba87f307d9a452d3",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 55,
-      "col": 40,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 58,
-      "col": 80,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is listed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "036f999f6b29928b3dbfe0a2",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 66,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "2c5761d0e7f57eb14fa5f2f4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 67,
-      "col": 81,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "eaf247ebd4907c600853b68a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 68,
-      "col": 17,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is reported",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "afb595bdfd38499714786a9c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 68,
-      "col": 148,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "repair",
-      "message": "'repair' and 'fix' name the same action. Pick one and use it every time.",
-      "fingerprint": "78a832da081777bd2e464819",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 72,
-      "col": 100,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 75,
-      "col": 116,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is read",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f474913920113893681a698c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 78,
-      "col": 160,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 79,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "35 words",
-      "message": "Sentence has 35 words (cap 25). Split it.",
-      "fingerprint": "aad8f9ccd5b6288ae3de1a6f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 79,
-      "col": 167,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are saved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "ef7c6ddf0f899365fab978af",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 80,
-      "col": 37,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is flattened",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "115b0065fd7574ef88e08839",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 80,
-      "col": 90,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 82,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "43 words",
-      "message": "Sentence has 43 words (cap 25). Split it.",
-      "fingerprint": "dad26d2d8ae1bd2000776a97",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 89,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "36 words",
-      "message": "Sentence has 36 words (cap 25). Split it.",
-      "fingerprint": "34d7440bbd271044262654bf",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 93,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "ccb49c9369554c45dc85cff9",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 95,
-      "col": 68,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "809718d1498aea4fb5551b4b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/xlsx/SKILL.md",
-      "line": 98,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "39 words",
-      "message": "Sentence has 39 words (cap 25). Split it.",
-      "fingerprint": "3c6294d2724d449d03904c6d",
       "comparison": "resolved"
     }
   ],
@@ -3840,7 +1272,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.293s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.255s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
