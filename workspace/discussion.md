@@ -2,7 +2,7 @@
 
 ## Current Step
 
-**2026-11-27:** Complete baseline initialization; retrieve task-activated standards and authoring skills, then inspect existing Worker and Ledger structures before consolidating CI P0 batch policy and promoting the Ledger into a task-activated skill.
+**2026-11-27:** Consolidate the CI Ledger operational policy into a new task-activated skill, keep the triage README as a concise data contract, and add Worker-owned batch orchestration for CI-generated P0 tasks. Update catalog/index references and read back each commit.
 
 ## Open Discussions
 
