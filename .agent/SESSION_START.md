@@ -23,8 +23,16 @@ When the user says `/start`:
 2. Retrieve and read `.agent/skills/the-worker/SKILL.md` from branch `gpt`.
 3. Retrieve and read `.agent/skills/the-worker/references/conversation-mode.md`. This is a mandatory component of The Worker.
 4. Verify the two baseline components and record them in the per-conversation verified-load ledger below.
-5. Activate domain skills only when the task requires them, using the activation rules below.
-6. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Review CI only when the user asks or the current task depends on a specific workflow.
+5. Activate the CI Ledger and GitHub Actions skills for the mandatory startup batch. Activate other domain skills only when the tasks require them.
+6. Before you inspect or execute CI-generated P0 tasks, send the user this notice in every conversation mode:
+
+   **CI P0 batch execution starting.** I’m processing all eligible CI-generated P0 tasks before taking your prompt. Please wait until I confirm that I’m ready.
+
+7. Use The Worker's batch procedure to identify and execute every eligible CI Ledger-generated P0 task. Do not process the user's substantive prompt until the batch ends.
+8. Execute eligible tasks sequentially. Respect each task's scope, dependencies, decision governance, safety, access, and destructive-action restrictions. Record blocked tasks and continue with independent eligible tasks.
+9. After all eligible remediation commits are complete, stop before hosted CI results review. Do not poll, dispatch, rerun, or inspect hosted CI results until the user explicitly triggers results review, unless a task requires validation to proceed.
+10. After the batch ends, tell the user: **Ready to take your prompt.** State any remaining blockers. Do not claim hosted validation or task closeout.
+11. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Use existing Ledger records for batch selection. Review hosted CI results only under the rule in step 9.
 
 Baseline initialization is The Worker and its mandatory Conversation Mode reference only. Load ASD-STE100 when revising technical or skill documentation. Load GitHub Actions when CI or workflow work activates it. Load Document Standards when document-format governance or a recurring document/structured-record task activates it. Load Agent Skill Authoring only when skill creation or maintenance activates it. Retrieve supporting references only when needed. The Worker's archive and media references remain task-triggered components.
 
@@ -36,7 +44,8 @@ Do not run a CI preflight after cue-triggered skill loading. Initialization is c
 
 After `/start` passes, load domain skills only as the task requires:
 
-- **GitHub Actions:** CI diagnostics, workflow changes, CI-generated remediation, recurrence-prevention, and validation procedure.
+- **CI Ledger:** Mandatory during every `/start` for the CI-generated P0 batch. Retrieve `.agent/skills/ci-ledger/SKILL.md` before batch selection.
+- **GitHub Actions:** Mandatory during every `/start` for technical CI remediation. Retrieve `.agent/skills/github-actions/SKILL.md` before batch execution. It also governs CI diagnostics, workflow changes, recurrence prevention, and validation procedure.
 - **Document Standards:** creating, moving, materially revising, or validating recurring documents or structured records.
 - **ASD-STE100:** skill or technical-document authoring/revision, including when a domain skill requires its writing standard.
 - **Agent Skill Authoring:** skill creation, revision, integration, or validation.
