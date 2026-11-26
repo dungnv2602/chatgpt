@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 11:46 UTC** Create provisional ADR-0001 for approved DRAFT-0004 revision 1, Option 3. Update Draft and ADR indexes and activate the reserved ADR path rule in the same commit. Read back all promotion files. Do not change report artifacts. Active task: [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md). Draft: [DRAFT-0004](draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md).
+- **2026-11-26 11:50 UTC** Complete provisional ADR-0001 before acceptance. Add the Draft's comparative matrix, explicit risk/safeguard register, and evidence provenance. Remove premature implementation-task linkage and correct the task's ADR-ID handoff. Read back all affected records. Do not change report artifacts. Active task: [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md). Draft provenance: DRAFT-0004 revision 1.
 
 ## Open Discussions
 
