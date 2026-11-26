@@ -805,11 +805,11 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
     subtask_content = render_worker_ci_subtask(root, task_id, title, group_id, findings, timestamp)
     subtask_index_path = task_folder / "subtasks" / "README.md"
     subtask_index = (
-        "# Subtasks — " + task_id + "\\n\\n"
-        "Parent: [task.md](../task.md)\\n\\n"
-        "- [CI remediation — " + markdown_cell(title) + "](01-ci-remediation.md) — Proposed\\n\\n"
+        "# Subtasks — " + task_id + "\n\n"
+        "Parent: [task.md](../task.md)\n\n"
+        "- [CI remediation — " + markdown_cell(title) + "](01-ci-remediation.md) — Proposed\n\n"
         "The parent remains Proposed until Worker review. Parent Done requires every required subtask Done. "
-        "CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.\\n"
+        "CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.\n"
     )
     try:
         atomic_write_text(task_path, content)
