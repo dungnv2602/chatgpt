@@ -163,7 +163,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("- **Standing instruction:**", task_files[0].read_text(encoding="utf-8"))
         self.assertNotIn("[Preserve relevant user clarifications", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(f"| {finding['task_refs'][0]} |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
-        self.assertIn("| Pending | [Task record]", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
+        self.assertIn("| Pending user approval | Pending |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
         second = LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
         self.assertFalse(second["changed"])
         self.assertEqual(self.read_ledger()["findings"][0]["occurrence_count"],1)
