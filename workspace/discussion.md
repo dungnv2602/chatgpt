@@ -11,6 +11,8 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 ## Reports
 
+- **2026-11-26 — Report/archive reference alignment:** Updated active GitHub Actions skill and report/archive documentation to reconstructed `.takeout/reports/` and `.archive/` paths. Read-back confirmed targeted references. Workflow runtime was unchanged; hosted validation was not run.
+
 - **2026-11-26 — Audit task started:** Created task `20261126-021200`, set it as current execution on the task board, and preliminarily traced image processor/verifier and workflow paths. Contract remains rooted at `images/takeout/`; relocated scripts are under `.agent/skills/the-worker/scripts/`. Further audit is underway. [Task record](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
 - **2026-11-26 — Image-document reference repair:** Updated relocated `.takeout/images/README-1.md` links and references in drawing/provenance docs to `.agent/skills/` and `.takeout/images/README-2.md`. No operational destinations changed. Hosted validation not run.
