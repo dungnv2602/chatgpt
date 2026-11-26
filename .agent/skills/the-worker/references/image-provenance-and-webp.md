@@ -2,7 +2,7 @@
 
 The Worker owns shared image intake, original-byte preservation, WebP processing, publication, and provenance checks.
 
-Use the [Image Takeout procedure](../../../images/takeout/README.md) for the exact hand-off schema, supported formats, conversion profiles, staging, retries, reports, and processor behavior. Use the [Drawing archive rules](../../drawing/references/archive-and-delivery.md) for drawing-session output records, manifest fields, and delivery links. This reference defines the shared Worker requirements without duplicating those detailed contracts.
+Use the [Image Takeout procedure](../../../../images/takeout/README.md) for the exact hand-off schema, supported formats, conversion profiles, staging, retries, reports, and processor behavior. Use the [Drawing archive rules](../../drawing/references/archive-and-delivery.md) for drawing-session output records, manifest fields, and delivery links. This reference defines the shared Worker requirements without duplicating those detailed contracts.
 
 ## Generation and source evidence
 
