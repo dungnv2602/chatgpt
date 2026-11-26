@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 15:40 UTC:** Inspect the active task board, workspace operating rules, report-family index, CI diagnostics guide, and triage Ledger. Identify only active P0 tasks, their approval state, linked findings, and exact remediation scope. Do not inspect or modify Drafts unless a P0 task directly requires it.
+- **2026-11-26 15:42 UTC:** Inspect the remaining linked evidence and latest progress for P0 task 20261126-090154, then isolate the still-open Ledger findings and approved implementation requirements. Keep the separate P0 publication task 20261126-145133 open until a naturally triggered post-fix hosted run confirms publication. Do not touch Drafts or perform unrelated artifact-layout work.
 
 ## Open Discussions
 
