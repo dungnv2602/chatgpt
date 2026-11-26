@@ -1,7 +1,7 @@
 # Document Type Catalog
 
 **Catalog version:** 1.18
-**Latest tree inventory:** A recursive tree audit of branch `gpt` at commit `f46280655f7f0ba32430c6805ebd0abb30ca2c44` counted 294 Markdown files outside root `master/` and `.archive/`, including the permanent `archive/adr/` records. This is an inventory count only. Catalog coverage simulation, the validator, and regression tests were not run for this inventory.
+**Latest tree inventory:** A recursive tree audit of branch `gpt` at commit `315615e944ed55925a6aa72c59fd6401bdcc912b` counted 297 Markdown files outside root `master/` and `.archive/`, including the permanent `archive/adr/` records. This is an inventory count only. Catalog coverage simulation, the validator, and regression tests were not run for this inventory.
 **Source branch:** `gpt`
 
 This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Skill-owned copy-ready templates belong in the owning skill's `assets/` directory. Explanatory references belong in `references/`. Project-level templates may use the owning project's designated template directory.
@@ -146,6 +146,7 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/adr/README.md` | Embedded contract | Active | `.agent/skills/decision-governance/SKILL.md` and `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
 | `workspace/adr/????-*.md` | Template required | Active | `workspace/ADR_TEMPLATE.md` | Global four-digit ADR records. ADR-0001 and ADR-0002 are restored immutable historical records under `archive/adr/`. ADR-0003 is the current accepted ADR. ADR-0004 is the next available ID. Provisional promotion-pending records are non-authoritative and must pass the completeness/read-back gate before acceptance. Only accepted records govern implementation tasks. |
 | `archive/adr/*.md` | Embedded contract | Active | `archive/adr/README.md` and `.agent/skills/decision-governance/SKILL.md` | Permanent immutable archive of accepted ADRs. These records are retained as decision history and are not eligible for routine archive cleanup. |
+| `archive/tasks/*.md` | Template required | Active | `workspace/TASK_TEMPLATE.md` | Permanent archived task records linked by accepted decisions. Preserve their immutable historical state and cross-links. |
 
 ## Validation coverage limits
 
