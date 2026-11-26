@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 04:20 UTC
+- **Updated:** 2026-11-26 04:40 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -70,9 +70,9 @@ Task created and selected as current execution; the board was updated. The proce
 
 ## 9. Next Actions
 
-1. Inspect processor, verifier, test, workflow, and hand-off contracts and compare paths.
-2. Identify actionable mismatch clusters and repair in bounded steps.
-3. Audit active README and skill references, then scripts and workflows.
+1. Finish the workflow trigger/permission/exclusion audit and verify script paths/callers.
+2. Review active scripts for dependency, path, and scope assumptions.
+3. Decide whether the task-board record gap can be resolved from active-path metadata without archive-content reads.
 4. Read back changed files, update the register, and report verification.
 
 ## 10. References
@@ -219,3 +219,13 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Limitations:** The actual validator and its regression suite were not executed. No hosted workflow run was polled. The catalog's novel field-contract and representative-record content was read back; this was a path-coverage audit, not a semantic audit of all 246 Markdown files.
 - **Commits:** `da45e65b6ebc2362e5182b4fc05973c38885bfe6`, `2a691f9d8f5143fcf5dc5ba79326b4e766b414c8`.
 - **Next:** Audit remaining workflow triggers, permissions, exclusions, and script callers. Keep the 150 missing task-board record links open.
+
+
+### 2026-11-26 04:40 UTC — Document Type Catalog coverage audit
+
+- **Scope:** Compared all active Markdown paths from the current branch tree (excluding root `master/` and `.archive/`) against the catalog's 62 path rules. The recursive API trees for the active roots were complete and untruncated.
+- **Result:** 257 Markdown files; zero uncovered files; zero Active rules without matches; zero Reserved rules with matches; zero Optional rules assigned to a non-Generator-owned class; zero missing exact authority paths. All 62 rules parsed and matched according to the validator's documented glob semantics.
+- **Repair:** Updated the catalog inventory header from version 1.16 / 246 files to version 1.17 / 257 files, with the exact source commit and simulation limitations. Commit: `5eea2cba5d5e75c7ffaf11c22d652968e6c02e32`. Read back the updated header.
+- **Validator review:** Read the complete validator and all 403 lines of its regression suite. The fixtures consistently use reconstructed roots (`.agent/skills/`, `.takeout/reports/`, `area/novel/`, `images/`, `workspace/`). Workflow invocation and test-discovery paths resolve to current files. The actual Python validator and tests remain unexecuted; static tree simulation is not a substitute.
+- **Task-board follow-up:** Current branch tree metadata confirms 150 of 152 unique task-board target paths are absent from `workspace/tasks/`. The `.archive/task/` tree contains one file and none of the 150 missing basenames. No archive contents were read. The historical records cannot be mapped to another active location using available path metadata; board rows remain unchanged.
+- **Next:** Complete workflow trigger, permissions, exclusion, and script-caller review. Audit remaining scripts and dependency contracts.
