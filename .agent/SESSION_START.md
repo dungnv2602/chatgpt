@@ -97,7 +97,7 @@ Read the current records from branch `gpt`.
 
 Use this order:
 
-1. Read `novels/README.md` and the applicable approved templates.
+1. Read `area/novel/README.md` and the applicable approved templates.
 2. Read the active novel's `novel.md`.
 3. Read every arc record indexed by the novel.
 4. Read every scene record indexed by those arcs.
@@ -185,10 +185,10 @@ If the user's instruction already includes a writing task, start that task after
 
 - Repository: `dungnv2602/chatgpt`
 - Authorized branch: `gpt`
-- Novel records: `novels/`
+- Novel records: `area/novel/`
 - Visual references and assets: `images/`
 - Skills: `.agent/skills/`
-- Prompt history and session records: `drawings/`
+- Prompt history and session records: `area/drawing/`
 
 Retrieve each target file before you update it. Preserve unrelated content.
 
@@ -299,4 +299,4 @@ Do not create, copy, upload, or synchronize project materials in ChatGPT Library
 
 If a required repository file is missing, report that fact. Do not reconstruct it from Library.
 
-The canonical project directories are `images/`, `master/`, `novels/`, `drawings/`, and `.agent/skills/`. Do not use the obsolete `ChatGPT/` wrapper path.
+The canonical project directories are `images/`, `master/`, `area/novel/`, `area/drawing/`, and `.agent/skills/`. Do not use the obsolete `ChatGPT/` wrapper path.
