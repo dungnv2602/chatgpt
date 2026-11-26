@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45827698966
+# Validate Document Standards — run 45831497498
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45827698966 / 1 |
-| Run number | 626 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45827698966 |
+| Run / attempt | 45831497498 / 1 |
+| Run number | 627 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45831497498 |
 | Branch | gpt |
-| Commit | 1833d0712252f101348eef49828f0ae6cf260e71 |
-| Event | push |
+| Commit | 7d1e9ab7a1b57cf16cf9770426419132ab052e1b |
+| Event | workflow_dispatch |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-26T13:17:25Z |
+| Created (UTC) | 2026-11-26T13:40:51Z |
 | Status at capture | completed |
 | Observed conclusion | failure |
 | Projected conclusion | Not calculated |
 | Reporter job | completed / success |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-26T13:21:04Z |
+| Captured (UTC) | 2026-11-26T13:42:49Z |
 
 ## Executive summary
 
@@ -45,20 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 139936004964 | validate-document-standards | completed | failure | 9 | logs/job-139936004964.log |
+| 139949149577 | validate-document-standards | completed | failure | 9 | logs/job-139949149577.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 139936004964 | 6 | Validate the document type catalog | Blocking | medium | 2026-11-26T13:17:34.7352039Z ERROR: Line 148: unsafe or excluded Markdown coverage pattern ' .archive/adr/*.md'. |
+| validation_or_test | 139949149577 | 6 | Validate the document type catalog | Blocking | medium | 2026-11-26T13:41:03.3798268Z ERROR: Line 148: unsafe or excluded Markdown coverage pattern ' .archive/adr/*.md'. |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 139936004964 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 139936004964 | failure | .github | 15 |  | Process completed with exit code 1. |
+| 139949149577 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 139949149577 | failure | .github | 15 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -68,7 +68,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 139936004964 | validate-document-standards | logs/job-139936004964.log | 48025 | False | validate-document-standards	Validate the document type catalog	2026-11-26T13:17:34.7352039Z ERROR: Line 148: unsafe or excluded Markdown coverage pattern ' .archive/adr/*.md'., validate-document-standards	Validate the document type catalog	2026-11-26T13:17:34.7353420Z ERROR: Line 149: unsafe or excluded Markdown coverage pattern ' .archive/task/*.md'., validate-document-standards	Validate the document type catalog	2026-11-26T13:17:34.7354475Z Catalog validation failed: 2 error(s), 18 document type(s), 28 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-26T13:17:34.7402340Z ##[error]Process completed with exit code 1. |
+| 139949149577 | validate-document-standards | logs/job-139949149577.log | 48023 | False | validate-document-standards	Validate the document type catalog	2026-11-26T13:41:03.3798268Z ERROR: Line 148: unsafe or excluded Markdown coverage pattern ' .archive/adr/*.md'., validate-document-standards	Validate the document type catalog	2026-11-26T13:41:03.3799546Z ERROR: Line 149: unsafe or excluded Markdown coverage pattern ' .archive/task/*.md'., validate-document-standards	Validate the document type catalog	2026-11-26T13:41:03.3800573Z Catalog validation failed: 2 error(s), 18 document type(s), 28 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-26T13:41:03.3857460Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 

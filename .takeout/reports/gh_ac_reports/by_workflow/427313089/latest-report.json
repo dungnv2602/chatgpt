@@ -1,31 +1,31 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45827698966",
-    "number": 626,
+    "id": "45831497498",
+    "number": 627,
     "attempt": 1,
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
     "workflow_path": ".github/workflows/validate-document-standards.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45827698966",
-    "event": "push",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45831497498",
+    "event": "workflow_dispatch",
     "branch": "gpt",
-    "head_sha": "1833d0712252f101348eef49828f0ae6cf260e71",
+    "head_sha": "7d1e9ab7a1b57cf16cf9770426419132ab052e1b",
     "status": "completed",
     "conclusion": "failure",
-    "created_at": "2026-11-26T13:17:25Z",
-    "run_started_at": "2026-11-26T13:17:25Z",
-    "updated_at": "2026-11-26T13:18:26Z",
+    "created_at": "2026-11-26T13:40:51Z",
+    "run_started_at": "2026-11-26T13:40:51Z",
+    "updated_at": "2026-11-26T13:41:23Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Move legacy archive into .archive and repair references"
+    "head_commit_message": "Publish GitHub Actions diagnostics and CI issue ledger"
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-26T13:21:04Z",
+    "captured_at_utc": "2026-11-26T13:42:49Z",
     "completeness": "Complete",
     "reporter_job": {
-      "id": "139936106581",
+      "id": "139949266956",
       "name": "Capture GH Actions diagnostics",
       "status": "completed",
       "conclusion": "success"
@@ -42,26 +42,26 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "139936004964",
+        "job_id": "139949149577",
         "job_name": "validate-document-standards",
         "step_number": 6,
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "2026-11-26T13:17:34.7352039Z ERROR: Line 148: unsafe or excluded Markdown coverage pattern ' .archive/adr/*.md'."
+        "message": "2026-11-26T13:41:03.3798268Z ERROR: Line 148: unsafe or excluded Markdown coverage pattern ' .archive/adr/*.md'."
       }
     ]
   },
   "jobs": [
     {
-      "id": "139936004964",
+      "id": "139949149577",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-26T13:17:27Z",
-      "completed_at": "2026-11-26T13:17:36Z",
-      "runner_name": "GitHub Actions 1000003282",
-      "runner_id": 1000003282,
+      "started_at": "2026-11-26T13:40:55Z",
+      "completed_at": "2026-11-26T13:41:06Z",
+      "runner_name": "GitHub Actions 1000003290",
+      "runner_id": 1000003290,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,106 +70,106 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T13:17:28Z",
-          "completed_at": "2026-11-26T13:17:28Z"
+          "started_at": "2026-11-26T13:40:56Z",
+          "completed_at": "2026-11-26T13:40:57Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T13:17:28Z",
-          "completed_at": "2026-11-26T13:17:33Z"
+          "started_at": "2026-11-26T13:40:57Z",
+          "completed_at": "2026-11-26T13:41:02Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T13:17:33Z",
-          "completed_at": "2026-11-26T13:17:33Z"
+          "started_at": "2026-11-26T13:41:02Z",
+          "completed_at": "2026-11-26T13:41:02Z"
         },
         {
           "number": 4,
           "name": "Run CI Ledger regression tests",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T13:17:33Z",
-          "completed_at": "2026-11-26T13:17:34Z"
+          "started_at": "2026-11-26T13:41:02Z",
+          "completed_at": "2026-11-26T13:41:03Z"
         },
         {
           "number": 5,
           "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T13:17:34Z",
-          "completed_at": "2026-11-26T13:17:34Z"
+          "started_at": "2026-11-26T13:41:03Z",
+          "completed_at": "2026-11-26T13:41:03Z"
         },
         {
           "number": 6,
           "name": "Validate the document type catalog",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-26T13:17:34Z",
-          "completed_at": "2026-11-26T13:17:34Z"
+          "started_at": "2026-11-26T13:41:03Z",
+          "completed_at": "2026-11-26T13:41:03Z"
         },
         {
           "number": 11,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-26T13:17:34Z",
-          "completed_at": "2026-11-26T13:17:34Z"
+          "started_at": "2026-11-26T13:41:03Z",
+          "completed_at": "2026-11-26T13:41:03Z"
         },
         {
           "number": 12,
           "name": "Post Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T13:17:34Z",
-          "completed_at": "2026-11-26T13:17:34Z"
+          "started_at": "2026-11-26T13:41:03Z",
+          "completed_at": "2026-11-26T13:41:03Z"
         },
         {
           "number": 13,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T13:17:34Z",
-          "completed_at": "2026-11-26T13:17:34Z"
+          "started_at": "2026-11-26T13:41:03Z",
+          "completed_at": "2026-11-26T13:41:03Z"
         }
       ],
       "log_capture": {
         "available": true,
         "truncated": false,
-        "bytes": 48025,
-        "path": "logs/job-139936004964.log",
+        "bytes": 48023,
+        "path": "logs/job-139949149577.log",
         "error": null,
         "marker_lines": [
-          "validate-document-standards\tValidate the document type catalog\t2026-11-26T13:17:34.7352039Z ERROR: Line 148: unsafe or excluded Markdown coverage pattern ' .archive/adr/*.md'.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-26T13:17:34.7353420Z ERROR: Line 149: unsafe or excluded Markdown coverage pattern ' .archive/task/*.md'.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-26T13:17:34.7354475Z Catalog validation failed: 2 error(s), 18 document type(s), 28 reference(s).",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-26T13:17:34.7402340Z ##[error]Process completed with exit code 1."
+          "validate-document-standards\tValidate the document type catalog\t2026-11-26T13:41:03.3798268Z ERROR: Line 148: unsafe or excluded Markdown coverage pattern ' .archive/adr/*.md'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-26T13:41:03.3799546Z ERROR: Line 149: unsafe or excluded Markdown coverage pattern ' .archive/task/*.md'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-26T13:41:03.3800573Z Catalog validation failed: 2 error(s), 18 document type(s), 28 reference(s).",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-26T13:41:03.3857460Z ##[error]Process completed with exit code 1."
         ]
       }
     }
   ],
   "check_runs": [
     {
-      "id": "139936004964",
+      "id": "139949149577",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-26T13:17:27Z",
-      "completed_at": "2026-11-26T13:17:36Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45827698966/job/139936004964",
+      "started_at": "2026-11-26T13:40:55Z",
+      "completed_at": "2026-11-26T13:41:06Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45831497498/job/139949149577",
       "app": "GitHub Actions",
       "annotations_count": 2
     }
   ],
   "annotations": [
     {
-      "check_run_id": "139936004964",
-      "job_id": "139936004964",
+      "check_run_id": "139949149577",
+      "job_id": "139949149577",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -179,8 +179,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "139936004964",
-      "job_id": "139936004964",
+      "check_run_id": "139949149577",
+      "job_id": "139949149577",
       "path": ".github",
       "start_line": 15,
       "end_line": 15,
@@ -192,5 +192,5 @@
   ],
   "artifacts": [],
   "capture_errors": [],
-  "history_path": "history/427313089/45827698966-attempt-1-post_run"
+  "history_path": "history/427313089/45831497498-attempt-1-post_run"
 }
