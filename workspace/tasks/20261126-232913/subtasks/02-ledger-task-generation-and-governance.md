@@ -6,7 +6,7 @@
 - **ID:** 20261126-232913-02
 - **Parent Task ID:** 20261126-232913
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -14,7 +14,7 @@
 - **Dependencies:** 20261126-232913-01
 - **Required:** Yes
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-26 23:31 UTC
+- **Updated:** 2026-11-26 23:42 UTC
 
 ## 1. Objective
 Make Ledger-generated task folders, CI subtasks, task refs, task discovery, board links, and governance states consistent.
@@ -36,14 +36,14 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 - Do not weaken existing checks or inspect hosted results before explicit user trigger.
 
 ## 5. Progress Log
-### 2026-11-26 23:31 UTC
-- **Action:** Registered this implementation subtask and its acceptance criteria.
-- **Result:** Ready; no implementation changes for this subtask yet.
-- **References:** ADR-0004 and parent task folder.
-- **Next:** Execute after dependencies are complete.
+### 2026-11-26 23:42 UTC
+- **Action:** Reworked the Ledger generator to create Proposed parent task folders and typed CI remediation subtasks, use stable parent Task IDs in task_refs, read folder and legacy flat active tasks, and preserve the existing Worker Current Execution selection.
+- **Result:** Generator and related regression assertions updated. Static read-back completed; tests have not been run.
+- **References:** .takeout/reports/triage/scripts/ledger.py; .takeout/reports/triage/scripts/test_ledger.py; workspace/TASK_TEMPLATE.md; workspace/SUBTASK_TEMPLATE.md; commits 2a22aaa1a37f2b89a79c8c649a6a60185ce3f3cc and 32c6b5cbcf870106efef6a7161f3d2bfa6a02fea.
+- **Next:** Finish the generator regression coverage, then implement commit-based resolution and recurrence retention.
 
 ## 6. Current State
-Ready; implementation has not started.
+In Progress. Parent-folder and CI-subtask generation, Proposed governance state, folder discovery, board path, and current-task preservation have been implemented. Regression tests are updated but unrun.
 
 ## 7. Evidence
 - **Commit SHA:** Not applicable yet.
