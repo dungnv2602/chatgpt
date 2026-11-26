@@ -13,6 +13,7 @@ LEDGER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(LEDGER)
 SCHEMA_SOURCE = SCRIPT.parents[1] / "ledger-schema.json"
 TASK_TEMPLATE_SOURCE = SCRIPT.parents[4] / "workspace" / "TASK_TEMPLATE.md"
+SUBTASK_TEMPLATE_SOURCE = SCRIPT.parents[4] / "workspace" / "SUBTASK_TEMPLATE.md"
 TASK_BOARD_SOURCE = SCRIPT.parents[4] / "workspace" / "task_board.md"
 
 class LedgerTests(unittest.TestCase):
@@ -25,6 +26,7 @@ class LedgerTests(unittest.TestCase):
         workspace = self.root / "workspace"
         (workspace / "tasks").mkdir(parents=True)
         shutil.copyfile(TASK_TEMPLATE_SOURCE, workspace / "TASK_TEMPLATE.md")
+        shutil.copyfile(SUBTASK_TEMPLATE_SOURCE, workspace / "SUBTASK_TEMPLATE.md")
         board_copy = workspace / "task_board.md"
         shutil.copyfile(TASK_BOARD_SOURCE, board_copy)
         board_text = board_copy.read_text(encoding="utf-8")
@@ -171,7 +173,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(finding["occurrence_count"],1)
         self.assertEqual(len(finding["task_refs"]), 1)
         self.assertEqual(len(finding["evidence"]),2)
-        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        task_files = list((self.root / "workspace" / "tasks").glob("*/task.md"))
         self.assertEqual(len(task_files), 1)
         self.assertIn("- **Priority:** P0", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Status:** In Progress", task_files[0].read_text(encoding="utf-8"))
@@ -197,14 +199,16 @@ class LedgerTests(unittest.TestCase):
         self.add_lint("on_changed", "109", "2026-11-23T07:09:00Z", level="advisory")
         LEDGER.ingest(self.root, now="2026-11-23T07:10:00Z")
         board = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
-        active_start = board.index("## In Progress")
-        blocked_start = board.index("## Blocked", active_start)
-        historical_start = board.index("## Historical", blocked_start)
-        active_section = board[active_start:blocked_start]
-        historical_section = board[historical_start:]
-        self.assertIn("| 20261123-071000 |", active_section)
-        self.assertNotIn("| 20261123-071000 |", historical_section)
-        self.assertIn("[20261123-071000 —", board.split("## Current Execution", 1)[1].split("## ", 1)[0])
+        proposed_start = board.index("## Proposed")
+        ready_start = board.index("## Ready", proposed_start)
+        in_progress_start = board.index("## In Progress", ready_start)
+        proposed_section = board[proposed_start:ready_start]
+        in_progress_section = board[in_progress_start:board.index("## Blocked", in_progress_start)]
+        self.assertIn("| 20261123-071000 |", proposed_section)
+        self.assertNotIn("| 20261123-071000 |", in_progress_section)
+        current_section = board.split("## Current Execution", 1)[1].split("\n## ", 1)[0]
+        self.assertNotIn("20261123-071000", current_section)
+        self.assertIn("_No task selected._", current_section)
 
     def test_task_board_renderer_fails_closed_when_status_table_is_missing(self):
         board_path = self.root / "workspace" / "task_board.md"
@@ -232,20 +236,22 @@ class LedgerTests(unittest.TestCase):
     def test_new_task_record_is_rolled_back_when_board_publication_fails(self):
         board_path = self.root / "workspace" / "task_board.md"
         board = board_path.read_text(encoding="utf-8")
-        in_progress_start = board.index("## In Progress\n")
-        blocked_start = board.index("## Blocked\n", in_progress_start)
-        board = board[:in_progress_start] + board[blocked_start:]
+        proposed_start = board.index("## Proposed\n")
+        ready_start = board.index("## Ready\n", proposed_start)
+        board = board[:proposed_start] + board[ready_start:]
         board_path.write_text(board, encoding="utf-8")
         finding = {
             "finding_id": "test-finding", "source_family": "lint", "category": "test",
             "severity": "medium", "status": "open", "task_group": "ci-0123456789abcdef",
-            "evidence": [{"note": "docs/example.md"}], "task_refs": [],
+            "evidence": [{"report_path":".takeout/reports/lint_reports/on_changed/history/1-attempt-1/report.json",
+                          "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:1:1"}],
+            "task_refs": [],
         }
         with self.assertRaises(LEDGER.LedgerError):
             LEDGER.create_or_update_worker_task(
                 self.root, finding["task_group"], [finding], "2026-11-26T08:12:00Z", {}
             )
-        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*.md")), [])
+        self.assertEqual(list((self.root / "workspace" / "tasks").iterdir()), [])
         self.assertNotIn("test-finding", board_path.read_text(encoding="utf-8"))
 
     def test_all_lint_severities_create_and_reuse_grouped_tasks(self):
@@ -463,7 +469,7 @@ class LedgerTests(unittest.TestCase):
         self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_changed"])
         self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_repo"])
 
-    def test_task_generation_leaves_exactly_one_active_current_execution(self):
+    def test_task_generation_preserves_worker_current_execution(self):
         old_path = self.root / "workspace" / "tasks" / "20261123-070000-existing-task.md"
         old_path.write_text(
             "# Task: Existing active task\n\n"
@@ -478,11 +484,20 @@ class LedgerTests(unittest.TestCase):
                  "blocking":True,"confidence":"high","message":"ERROR: assertion mismatch"}
         self.add_actions("210","2026-11-23T07:41:00Z",[issue])
         LEDGER.ingest(self.root)
-        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
-        current = [path for path in task_files if "- **Current execution:** Yes" in path.read_text(encoding="utf-8")]
+        task_files = list((self.root / "workspace" / "tasks").glob("*/task.md"))
+        current = [path for path in [old_path, *task_files] if "- **Current execution:** Yes" in path.read_text(encoding="utf-8")]
         self.assertEqual(len(current),1)
-        self.assertNotEqual(LEDGER.task_metadata(current[0].read_text(encoding="utf-8"),"ID"),"20261123-070000")
-        self.assertIn("- **Current execution:** No",old_path.read_text(encoding="utf-8"))
+        self.assertEqual(LEDGER.task_metadata(current[0].read_text(encoding="utf-8"),"ID"),"20261123-070000")
+        self.assertIn("- **Current execution:** Yes",old_path.read_text(encoding="utf-8"))
+        generated = next(path for path in task_files if path != old_path)
+        generated_text = generated.read_text(encoding="utf-8")
+        self.assertIn("- **Status:** Proposed",generated_text)
+        self.assertIn("- **Approval:** Pending — Worker review required",generated_text)
+        self.assertIn("- **Current execution:** No",generated_text)
+        board = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
+        current_section = board.split("## Current Execution",1)[1].split("\n## ",1)[0]
+        self.assertIn("20261123-070000",current_section)
+        self.assertNotIn(generated.parent.name, current_section)
 
     def test_actions_repeat_observation_increments_once_per_run(self):
         issue = {"category":"validation_or_test","job_name":"Build","step_name":"Unit tests","blocking":True,"confidence":"medium","message":"Assertion mismatch"}
@@ -761,80 +776,41 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("960-attempt-1/report.json", finding["evidence"][0]["report_path"])
         self.assertIn("967-attempt-1/report.json", finding["evidence"][-1]["report_path"])
 
-    def test_terminal_finding_is_retired_after_linked_task_is_archived_done(self):
+    def test_terminal_finding_identity_is_retained_after_task_archive(self):
         finding_id = "lint-1234567890abcdef"
         task_id = "20261123-090000"
-        archive_path = ".archive/task/20261123-090000-example.md"
-        task_file = self.root / archive_path
-        task_file.parent.mkdir(parents=True)
-        task_file.write_text(
-            "# Task: Example\n\n## Metadata\n\n"
-            "- **ID:** " + task_id + "\n- **Status:** Done\n- **Archived:** Yes\n\n"
-            "## 13. Ledger Findings\n\n"
-            "| Finding ID | Severity | Diagnostic | Evidence |\n|---|---|---|---|\n"
-            "| " + chr(96) + finding_id + chr(96) + " | medium | fixed | report |\n",
-            encoding="utf-8",
-        )
-        index = self.root / ".github" / "archive-retention-index.json"
-        index.parent.mkdir(parents=True)
-        index.write_text(json.dumps({"schema_version":1,"unindexed_records":"preserve","records":[
-            {"path":archive_path,"archived_at_utc":"2026-11-23T09:00:00Z"}
-        ]}), encoding="utf-8")
-        ledger = {"findings":[{"finding_id":finding_id,"status":"resolved","task_refs":[task_id]}]}
-        retired = LEDGER.retire_completed_task_findings(self.root, ledger)
-        self.assertEqual(retired, [finding_id])
-        self.assertEqual(ledger["findings"], [])
+        finding = {
+            "finding_id":finding_id,"task_group":"ci-0123456789abcdef","source_family":"lint",
+            "category":"rule","title":"A finding","status":"resolved","severity":"low","owner":None,
+            "first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
+            "occurrence_count":1,"evidence":[{"report_path":".takeout/reports/lint_reports/on_changed/history/1-attempt-1/report.json",
+                "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:1:1"}],
+            "resolution":{"fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z"},
+            "resolution_history":[],"duplicate_of":None,"accepted_risk":None,"task_refs":[task_id],
+        }
+        self.write_ledger(findings=[finding])
+        LEDGER.ingest(self.root, now="2026-11-23T09:00:00Z")
+        retained = self.read_ledger()["findings"]
+        self.assertEqual(len(retained),1)
+        self.assertEqual(retained[0]["finding_id"],finding_id)
+        self.assertEqual(retained[0]["task_refs"],[task_id])
 
-    def test_grouped_task_waits_until_every_finding_is_terminal(self):
-        task_id = "20261123-090002"
-        archive_path = ".archive/task/20261123-090002-example.md"
+    def test_archive_presence_does_not_remove_any_terminal_finding(self):
         first = "lint-1234567890abcdef"
         second = "lint-fedcba0987654321"
-        task_file = self.root / archive_path
-        task_file.parent.mkdir(parents=True)
-        task_file.write_text(
-            "# Task: Example\n\n## Metadata\n\n"
-            "- **ID:** " + task_id + "\n- **Status:** Done\n- **Archived:** Yes\n\n"
-            "## 13. Ledger Findings\n\n"
-            "| Finding ID | Severity | Diagnostic | Evidence |\n|---|---|---|---|\n"
-            "| " + chr(96) + first + chr(96) + " | medium | fixed | report |\n"
-            "| " + chr(96) + second + chr(96) + " | medium | still open | report |\n",
-            encoding="utf-8",
-        )
-        index = self.root / ".github" / "archive-retention-index.json"
-        index.parent.mkdir(parents=True)
-        index.write_text(json.dumps({"schema_version":1,"unindexed_records":"preserve","records":[
-            {"path":archive_path,"archived_at_utc":"2026-11-23T09:00:00Z"}
-        ]}), encoding="utf-8")
         ledger = {"findings":[
-            {"finding_id":first,"status":"resolved","task_refs":[task_id]},
-            {"finding_id":second,"status":"open","task_refs":[task_id]},
+            {"finding_id":first,"status":"resolved","task_refs":["20261123-090002"]},
+            {"finding_id":second,"status":"open","task_refs":["20261123-090002"]},
         ]}
-        self.assertEqual(LEDGER.retire_completed_task_findings(self.root, ledger), [])
-        self.assertEqual(len(ledger["findings"]), 2)
+        self.assertFalse(hasattr(LEDGER,"retire_completed_task_findings"))
+        self.assertEqual({item["finding_id"] for item in ledger["findings"]},{first,second})
 
-    def test_open_or_cancelled_task_never_retires_a_finding(self):
+    def test_archived_cancelled_task_does_not_change_ledger_identity(self):
         finding_id = "lint-1234567890abcdef"
-        task_id = "20261123-090001"
-        archive_path = ".archive/task/20261123-090001-example.md"
-        task_file = self.root / archive_path
-        task_file.parent.mkdir(parents=True)
-        task_file.write_text(
-            "# Task: Example\n\n## Metadata\n\n"
-            "- **ID:** " + task_id + "\n- **Status:** Cancelled\n- **Archived:** Yes\n\n"
-            "## 13. Ledger Findings\n\n"
-            "| Finding ID | Severity | Diagnostic | Evidence |\n|---|---|---|---|\n"
-            "| " + chr(96) + finding_id + chr(96) + " | medium | not fixed | report |\n",
-            encoding="utf-8",
-        )
-        index = self.root / ".github" / "archive-retention-index.json"
-        index.parent.mkdir(parents=True)
-        index.write_text(json.dumps({"schema_version":1,"unindexed_records":"preserve","records":[
-            {"path":archive_path,"archived_at_utc":"2026-11-23T09:00:00Z"}
-        ]}), encoding="utf-8")
-        ledger = {"findings":[{"finding_id":finding_id,"status":"open","task_refs":[task_id]}]}
-        self.assertEqual(LEDGER.retire_completed_task_findings(self.root, ledger), [])
-        self.assertEqual(len(ledger["findings"]), 1)
+        finding = {"finding_id":finding_id,"status":"open","task_refs":["20261123-090001"]}
+        ledger = {"findings":[finding]}
+        self.assertEqual(ledger["findings"][0]["finding_id"],finding_id)
+        self.assertFalse(hasattr(LEDGER,"retire_completed_task_findings"))
 
     def test_false_positive_requires_a_closure_note(self):
         finding = {"finding_id":"finding-1","status":"false_positive"}
@@ -868,12 +844,15 @@ class LedgerTests(unittest.TestCase):
             {"finding_id":"finding-2","status":"duplicate","duplicate_of":"finding-1"},
         ]})
 
-    def test_resolved_status_requires_fix_and_successful_validation(self):
+    def test_resolved_status_requires_fix_commit_but_not_hosted_validation(self):
         finding = {
             "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"rule","title":"A finding",
             "status":"resolved","severity":"low","first_seen_utc":"2026-11-23T07:00:00Z",
-            "last_seen_utc":"2026-11-23T07:00:00Z","occurrence_count":1,"evidence":[],"resolution":None,
+            "last_seen_utc":"2026-11-23T07:00:00Z","occurrence_count":1,"evidence":[],
+            "resolution":{"fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z"},
         }
+        LEDGER.validate_semantics({"findings":[finding]})
+        finding["resolution"]={"resolved_at_utc":"2026-11-23T07:15:00Z"}
         with self.assertRaises(LEDGER.LedgerError):
             LEDGER.validate_semantics({"findings":[finding]})
 
@@ -954,8 +933,11 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("latest-lint-report.json", lint_changed)
         self.assertNotIn("last successful lint baseline", lint_changed)
         self.assertIn("lint_baseline_ready", (root / ".takeout/reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
-        self.assertIn("retire_completed_task_findings", (root / ".takeout/reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
-        self.assertIn("findings_retired", (root / ".takeout/reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
+        ledger_source = (root / ".takeout/reports/triage/scripts/ledger.py").read_text(encoding="utf-8")
+        self.assertIn("def render_worker_ci_subtask", ledger_source)
+        self.assertIn("Proposed task folders", ledger_source)
+        self.assertNotIn("retire_completed_task_findings", ledger_source)
+        self.assertNotIn("findings_retired", ledger_source)
 
     def test_atomic_write_replaces_file_without_temp_remnants(self):
         path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
