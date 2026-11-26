@@ -1,14 +1,14 @@
-# Validate Document Standards — run 45757269515
+# STE Lint Full Technical Documentation — run 45757269291
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | Validate Document Standards |
-| Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45757269515 / 1 |
-| Run number | 488 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45757269515 |
+| Workflow | STE Lint Full Technical Documentation |
+| Workflow path | .github/workflows/ste-lint-full-docs.yml |
+| Run / attempt | 45757269291 / 1 |
+| Run number | 200 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45757269291 |
 | Branch | gpt |
 | Commit | 1c85e8833d59ced6a33f5ee80ab1e518459444ac |
 | Event | push |
@@ -20,24 +20,24 @@
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-26T04:47:25Z |
+| Captured (UTC) | 2026-11-26T04:48:05Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
 | State | in_progress |
-| Primary category | validation_or_test |
-| Jobs | 1 |
-| Steps | 9 |
+| Primary category | step_or_job_failure |
+| Jobs | 2 |
+| Steps | 12 |
 | Issues | 1 |
-| Annotations | 2 |
+| Annotations | 4 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 2 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+step_or_job_failure The parent run is still in progress. The projected conclusion is provisional.
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -45,20 +45,23 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 139698840715 | validate-document-standards | completed | failure | 9 | logs/job-139698840715.log |
+| 139698980818 | Validate target branch and reject superseded push runs | completed | success | 3 | logs/job-139698980818.log |
+| 139699002646 | Full audit and publish detailed evidence | completed | failure | 9 | logs/job-139699002646.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 139698840715 | 4 | Run CI Ledger regression tests | Blocking | medium | Step conclusion: failure |
+| step_or_job_failure | 139699002646 | 6 | Set workflow result from audit and tooling outcomes | Blocking | low | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 139698840715 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 139698840715 | failure | .github | 65 |  | Process completed with exit code 1. |
+| 139698980818 | warning | .github | 35 |  | Could not identify the latest push run. Continue with validation. |
+| 139699002646 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 139699002646 | failure | .github | 20 |  | Process completed with exit code 1. |
+| 139699002646 | failure | .github | 19 |  | The full audit found lint or validation failures. See .takeout/reports/lint_reports/on_repo/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -68,7 +71,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 139698840715 | validate-document-standards | logs/job-139698840715.log | 82 | False |  |
+| 139698980818 | Validate target branch and reject superseded push runs | logs/job-139698980818.log | 82 | False |  |
+| 139699002646 | Full audit and publish detailed evidence | logs/job-139699002646.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -76,11 +80,12 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45757269515 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45757269291 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45757269291 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
-No separate lint report applies to this workflow.
+[Repository-wide lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_repo/latest-lint-report.md)
 
 ## Integrity
 
