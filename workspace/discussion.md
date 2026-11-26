@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 15:00 UTC:** Close the validated style/link P0 groups by recording evidence-backed terminal states in the Ledger, archiving the task records and required report artifacts, updating the report-family and retention indexes, and reconciling the task board. Scope: DRAFT-0002 tasks 20261126-142112 through 20261126-142112-04, task-board task 20261126-143747, README tasks 20261126-143747-01 through -03, and Markdown-link task 20261126-124129. Use report 45844123288 for DRAFT-0002, task_board.md, and link/anchor checks. Use the per-file PASS for draft/README.md in report 45843115356, and document that the overall report failed only on DRAFT-0002 at that time.
+- **2026-11-26 15:38 UTC:** Resolve the repository's active P0 tasks only. Follow the CI-generated task queue and its evidence; do not create unrelated assessments or draft work. First identify the active P0 task records and their required remediation, then implement, validate, archive, and reconcile each task as its acceptance criteria require.
 
 ## Open Discussions
 
