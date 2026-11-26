@@ -8,9 +8,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Proposed
 
-| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
-|---|---|---:|---|---|---|---|---|---|
-| 20261126-090154 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P2 | Proposed | Assistant | Pending user approval | Pending | 2026-11-26 09:01 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
+_No tasks._
 
 ## Ready
 
@@ -20,7 +18,8 @@ _No tasks._
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-090154 | P0: Repair Ledger regression test fixture | P0 | In Progress | User | Approved | — | 2026-11-26 09:10 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |\n| 20261126-142500 | Repair CI task generation and clear active reports | P1 | In Progress | User | Approved | — | 2026-11-26 | [Task record](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) |
+| 20261126-090154 | P0: Repair Ledger regression test fixture | P0 | In Progress | User | Approved | — | 2026-11-26 09:10 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
+| 20261126-142500 | Repair CI task generation and clear active reports | P1 | In Progress | User | Approved | — | 2026-11-26 | [Task record](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) |
 
 ## Blocked
 
