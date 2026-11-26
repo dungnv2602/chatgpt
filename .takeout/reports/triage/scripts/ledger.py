@@ -714,7 +714,7 @@ def upsert_task_board_row(root, task):
             raise LedgerError("Task board table is missing or malformed under " + heading)
         else:
             lines.insert(header_index + 2, row)
-    new_board = "\\n".join(lines) + "\\n"
+    new_board = "\n".join(lines) + "\n"
     if new_board == board:
         return False
     atomic_write_text(board_path, new_board)
