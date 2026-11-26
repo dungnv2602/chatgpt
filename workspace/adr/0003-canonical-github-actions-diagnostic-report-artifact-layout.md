@@ -77,13 +77,13 @@ The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR recor
 - **Implementation and migration cost:** No implementation cost. Future report captures continue to write the same copies.
 - **Dependencies and operational burden:** Retains all current scripts, templates, indexes, and documentation. Operators must understand which copy is canonical.
 - **Risks and safeguards:** Copies can become stale. Rebuilding indexes mitigates drift but does not remove duplication.
-- **Evidence and confidence:** The inventory at `f310d092` confirms the file types and counts. The inventory provides high confidence for that snapshot.
-- **Limitations and unknowns:** The review did not measure the full byte cost. This option does not address repository growth.
+- **Evidence and confidence:** The inventory at `f310d092` confirms the file types and counts. The inventory gives high confidence for that snapshot.
+- **Limitations and unknowns:** The review did not measure the full byte cost. This option leaves repository growth unaddressed.
 
 ### Option 2 — Remove latest copies only
 
 - **Description and operating model:** Keep per-run Markdown and JSON, integrity manifests, logs, the central index, and per-workflow indexes. Remove the root and per-workflow latest-report copies.
-- **Repository and environment fit:** This change minimally alters the existing layout. It keeps stored Markdown and workflow-specific navigation.
+- **Repository and environment fit:** This change minimally changes the existing layout. It keeps stored Markdown and workflow-specific navigation.
 - **Good — strengths:** Removes eight latest-report copies while retaining stored Markdown and workflow navigation.
 - **Neutral — trade-offs:** Operators use the central index for the latest report. Workflow indexes remain available.
 - **Bad — weaknesses:** The assessment snapshot retains 29 per-run Markdown renderings and three per-workflow indexes. The layout still keeps several views of the same report data.
@@ -130,7 +130,7 @@ The matrix summarizes the same six decision drivers for all materially viable op
 | Discoverability | Strong. Several navigation views exist. | Strong. The root and workflow indexes remain. | Strong. The root index has workflow IDs and the latest pointer. | Moderate. The index links to external artifacts. |
 | Human readability | Strong. The repository stores Markdown files. | Strong. Option 2 retains per-run Markdown. | Moderate. The generator renders Markdown on demand. | Moderate. Operators retrieve artifacts. |
 | Consistency and maintenance | Weak. Several copies must stay synchronized. | Moderate. Workflow indexes still duplicate the root index. | Strong. One report source and one index remain. | Weak. Repository metadata and external artifact state must stay synchronized. |
-| Migration and rollback risk | Strong. No migration is needed. | Moderate. Remove latest copies and update references. | Moderate. Remove derived files and regenerate integrity manifests. | Weak. Change storage, access, retention, and recovery. |
+| Migration and rollback risk | Strong. Operators need no migration. | Moderate. Remove latest copies and update references. | Moderate. Remove derived files and regenerate integrity manifests. | Weak. Change storage, access, retention, and recovery. |
 
 ## Decision Outcome
 
@@ -151,8 +151,8 @@ The decision depends on the assumption that no required external consumer relies
 
 ### Confirmation
 
-- [x] Every retained history folder contains canonical `report.json`, `integrity.json`, and captured logs. Migration did not change report JSON or log content hashes. Each regenerated integrity manifest matches the retained files. Diagnostics run 45858706596 validated all 28 manifests. The task copied 12 report folders and read back their JSON, manifest, and log files byte-for-byte.
-- [x] The generator no longer writes per-run Markdown, root latest-report copies, or per-workflow indexes/latest copies. The central index remains valid and its latest pointer selects the correct report after capture, pruning, and backfill. The active index now contains 16 reports, and its latest pointer resolves to the canonical report JSON. Diagnostics run 45858706596 passed the hosted reporter tests.
+- [x] Every retained history folder contains canonical `report.json`, `integrity.json`, and captured logs. Migration did not change report JSON or log content hashes. Each regenerated integrity manifest matches the retained files. Diagnostics run 45858706596 confirmed all 28 manifests. The task copied 12 report folders and read back their JSON, manifest, and log files byte-for-byte.
+- [x] The generator no longer writes per-run Markdown, root latest-report copies, or per-workflow indexes/latest copies. The central index remains valid, and its latest pointer selects the correct report after capture, pruning, and backfill. The active index now contains 16 reports, and its latest pointer resolves to the canonical report JSON. Diagnostics run 45858706596 passed the hosted reporter tests.
 - [x] The on-demand Markdown renderer produces a readable report from canonical JSON, with regression tests for representative reports and missing or invalid input. Diagnostics run 45858706596 passed the end-to-end renderer tests and the missing or invalid input tests.
 - [ ] Search the entire repository for required references to removed paths and migrate any remaining consumers. Confirm that Ledger and task evidence paths still resolve to unchanged report JSON history paths. Targeted consumer review covered the report guide, generator, tests, Ledger, diagnostics workflow, Document Type Catalog, and task evidence. The Worker had not yet completed a repository-wide reference search.
 - [x] The migration removes only derived artifacts. A changed-path review shows that the migration did not alter or remove canonical report JSON or captured logs. Git blob comparisons show that all 57 pre-migration report JSON and log files remained byte-identical. Later task evidence archival copied files exactly and preserved the original integrity manifests.
@@ -198,7 +198,7 @@ The decision depends on the assumption that no required external consumer relies
 |---|---|---|---|---|
 | An external consumer uses a removed path. | Unknown / High | The repository inventory does not cover external integrations. | Search all repository references. Ask the user about any known external consumer before migration. | External use may remain unknown. |
 | The Markdown renderer fails. | Low / Medium | The current generator already has a renderer and template. The assessment did not test an on-demand CLI command. | Keep the template. Add regression tests that render representative reports from JSON and cover missing or invalid input. | A future template change can still break rendering. |
-| An integrity manifest no longer matches retained files. | Medium / High | Current manifests include the Markdown file. | Regenerate each manifest for canonical JSON and logs. Verify every hash after migration. | A faulty migration could still omit a file. |
+| An integrity manifest no longer matches retained files. | Medium / High | Current manifests include the Markdown file. | Regenerate each manifest for canonical JSON and logs. Confirm every hash after migration. | A faulty migration could still omit a file. |
 | A task or Ledger link targets a removed Markdown file. | Low / High | Current Ledger evidence links target report JSON. The assessment did not search all other references. | Search task, Ledger, README, and workflow references before removal. Preserve all JSON history paths. | External links may remain. |
 | The root latest pointer becomes stale. | Low / High | The index is rebuilt from retained reports. | Test latest-pointer ordering after capture, pruning, and backfill. | A future index bug could select the wrong report. |
 | A migration removes original evidence by mistake. | Low / Critical | The cleanup affects many history folders. | Remove only derived files. Compare report JSON and log hashes before and after. Review changed-path metadata. | A human must still review the changes. |
