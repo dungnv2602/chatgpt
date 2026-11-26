@@ -34,27 +34,7 @@ Follow the [GitHub Actions skill](../github-actions/SKILL.md). CI is not an init
 
 Use `.takeout/reports/gh_ac_reports/README.md` for workflow evidence and `.takeout/reports/lint_reports/README.md` for lint findings. Do not run repository scripts locally or poll CI.
 
-### Batch execution for CI-generated P0 tasks
-
-Treat CI-generated P0 tasks as an autonomous batch-remediation directive once they are identified and authorized under the user's standing instructions:
-
-1. Execute remediation for all outstanding eligible P0 tasks generated from CI as a batch. Do not stop after one task or wait for its hosted validation result before moving to the next task.
-2. Do not request routine input or approval for in-scope, reversible remediation covered by the user's standing authorization. Continue independent work if an exceptional blocker affects one task.
-3. Commit each fix and maintain task records and board state as required. Keep validation requirements and safety, permissions, workflow guarantees, and scope boundaries intact.
-4. Once the remediation fixes for all outstanding P0 tasks are committed, stop the remediation phase and report the batch completion. Do not initiate a results-review phase, CI polling, reruns, or result checking unless the user subsequently triggers that phase.
-5. Do not claim that fixes are validated or tasks closed merely because the remediation commits are complete. Hosted results review and task closeout remain separate phases; tasks stay open pending the required validation and closeout.
-
-### User-directed CI failure follow-through
-
-When the user asks to fix a CI failure, treat the request as an execution instruction, not a request for diagnosis alone.
-
-1. Inspect the exact run, failed job and step, annotations, logs, and structured report evidence. Distinguish the source workflow's conclusion from non-blocking diagnostics or publication failures.
-2. Trace the failure to the responsible file, rule, script, test, or workflow condition. Read its owner instructions and canonical validation contract before editing.
-3. When the cause falls within the user's requested scope, check that the user or standing approval permits the change. Make the change in the active task. Do not stop at a root-cause diagnosis when the cause needs action. Keep tests, coverage, permissions, lint rules, and workflow guarantees intact.
-4. If separate approval is necessary or the request exceeds scope, state the precise boundary and leave a tracked handoff. Do not present a diagnosis as task completion.
-5. Before each meaningful work step, publish and read back the Current Step brief. Keep the task record, task board, and discussion register aligned. Log the root cause, changes, commits, and actual verification result.
-6. Read back every changed path and inspect the commit's changed-path metadata. Use the relevant hosted workflow as the validation authority.
-7. Do not poll, dispatch, or rerun CI unless the user asks or the task explicitly requires it. When results become naturally available, record each check as passed, failed, pending, skipped, or unavailable. Never infer success from an unrelated green check or from the absence of a diagnostic report.
+CI failure remediation, including autonomous execution of CI-generated P0 batches, is governed by the [GitHub Actions skill](../github-actions/SKILL.md). The Worker retains task selection, progress records, board and task maintenance, and closeout.
 
 Mark a CI task complete only after you commit the source change, read back the repository files, and inspect the relevant hosted validation result. If hosted validation remains pending, report the change you committed and keep the task open for verification.
 
