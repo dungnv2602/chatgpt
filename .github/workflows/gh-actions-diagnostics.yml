@@ -1,6 +1,7 @@
 name: GitHub Actions Diagnostics
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - gpt
