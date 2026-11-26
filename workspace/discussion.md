@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 17:04 UTC:** Pause ADR-0003 wording changes pending user approval. STE Lint Changed run 45864180906 reports 46 findings across accepted rationale, option comparisons, risks, and evidence text. Decision governance permits the Worker to edit only lifecycle metadata, task links, review history, and Confirmation evidence on an accepted ADR. Do not rewrite the remaining sections without explicit approval.
+- **2026-11-27 04:54 ICT:** Foundational initialization started after the explicit `/start` cue. Startup notice recorded before skill retrieval.
 
 ## Open Discussions
 
@@ -16,4 +16,3 @@
 - **2026-11-26 17:02 UTC:** STE Lint Changed run [45864180906](https://github.com/dungnv2602/chatgpt/actions/runs/45864180906) reported 46 findings across ADR-0003. The Ledger grouped them into four P0 tasks. Diagnostics run 45864180758 and Validate Document Standards run 45864180724 passed.
 - **2026-11-26 16:43 UTC:** Diagnostics run [45861355013](https://github.com/dungnv2602/chatgpt/actions/runs/45861355013) passed and retired one terminal Ledger finding after the indexed task archive push.
 - **2026-11-26 16:31 UTC:** STE Lint Changed run [45859253550](https://github.com/dungnv2602/chatgpt/actions/runs/45859253550) passed. Its report has zero new findings and marks fingerprint `e2e4500a529bb5cf3751722a` resolved. The publication step succeeded.
-
