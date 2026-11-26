@@ -12,9 +12,7 @@ _No tasks._
 
 ## Ready
 
-| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
-|---|---|---:|---|---|---|---|---|---|
-| 20261126-223106 | Promote CI Ledger skill and Worker P0 batch execution policy | P1 | In Progress | User | Approved | — | 2026-11-26 22:31 UTC | [Task record](tasks/20261126-223106-promote-ci-ledger-skill-and-worker-batch-execution.md) |
+_No tasks._
 
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
