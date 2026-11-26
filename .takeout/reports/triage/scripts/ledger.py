@@ -724,11 +724,18 @@ def upsert_task_board_row(root, task):
 def create_or_update_worker_task(root, group_id, findings, timestamp, active_tasks):
     task = active_tasks.get(group_id)
     if task:
-        content, modified = update_task_findings(task["content"], findings, timestamp)
+        original_content = task["content"]
+        content, modified = update_task_findings(original_content, findings, timestamp)
         if modified:
             atomic_write_text(task["path"], content)
             task["content"] = content
-        board_changed = upsert_task_board_row(root, task)
+        try:
+            board_changed = upsert_task_board_row(root, task)
+        except Exception:
+            if modified:
+                atomic_write_text(task["path"], original_content)
+                task["content"] = original_content
+            raise
         return task["id"], False, modified or board_changed
     title = task_title_for_group(findings)
     task_id = task_id_for(root, timestamp)
@@ -737,7 +744,11 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
     content = render_worker_task(root, task_id, title, group_id, findings, timestamp)
     atomic_write_text(task_path, content)
     task = {"id": task_id, "path": task_path, "content": content}
-    upsert_task_board_row(root, task)
+    try:
+        upsert_task_board_row(root, task)
+    except Exception:
+        task_path.unlink(missing_ok=True)
+        raise
     active_tasks[group_id] = task
     return task_id, True, True
 
