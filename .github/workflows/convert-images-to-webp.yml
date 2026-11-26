@@ -10,8 +10,8 @@ on:
       - 'images/takeout/*'
       - '!images/takeout/HANDOFF.yml'
       - '!images/takeout/README.md'
-      - 'drawings/history/*-conversation-integrity.md'
-      - 'novels/**/conversation-integrity.md'
+      - 'area/drawing/history/*-conversation-integrity.md'
+      - 'area/novel/**/conversation-integrity.md'
       - 'images/**/conversation-integrity.md'
       # Maintenance changes do not launch a batch against the live intake.
   workflow_dispatch: {}
@@ -77,9 +77,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # Include only working-tree changes created by the takeout processor.
-          git add -A -- images/ drawings/
-          if [[ -d novels/ ]]; then
-            git add -A -- novels/
+          git add -A -- images/ area/drawing/
+          if [[ -d area/novel/ ]]; then
+            git add -A -- area/novel/
           fi
           if git diff --cached --quiet; then
             echo "No takeout processing changes to publish."
@@ -137,8 +137,8 @@ jobs:
             --git-ref origin/gpt \
             --branch gpt
 
-          if ! git diff --quiet -- drawings/; then
-            git add -A -- drawings/
+          if ! git diff --quiet -- area/drawing/; then
+            git add -A -- area/drawing/
             git commit -m "chore(drawings): verify published image manifests"
 
             max_attempts=5
