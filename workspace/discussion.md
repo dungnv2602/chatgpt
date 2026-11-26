@@ -2,9 +2,11 @@
 
 ## Current Step
 
-- **2026-11-26 15:46 UTC:** Reconcile the three historical Actions occurrences against the exact archived P0 task and retention-index entry. Verify the four active findings' fix commits and successful hosted validation, then update only their terminal Ledger state and the owning task record. Preserve immutable reports and archived task records.
+- **2026-11-26 15:48 UTC:** Implement the accepted ADR-0003 Option 3 artifact-layout migration, now that the error-only reporter/Ledger contract has passed hosted validation and the four linked findings plus historical archive reconciliation are complete. Preserve canonical report JSON, integrity manifests, logs, and evidence paths. Do not modify DRAFT-0002 or other unapproved drafts.
 
 ## Open Discussions
+
+- **2026-11-26 15:46 UTC:** The shared error-only reporter/Ledger contract is hosted-validated: Diagnostics run 45823761330 passed 37 reporter and 47 Ledger tests; Document Standards run 45823761313 passed 47 Ledger and 33 catalog tests. Four findings in P0 task 20261126-090154 are resolved. Three historical Actions occurrences map to archived task 20261126-101512-01; the separate run 45788718679 maps to archived task 20261126-101512. Remaining active P0 scope: accepted ADR-0003 Option 3 migration and post-fix hosted validation for STE Lint publication task 20261126-145133.
 
 - **2026-11-26 15:00 UTC:** DRAFT-0002 revision 4 remains in review. Its wording corrections passed hosted lint. The decision and implementation scope remain unapproved.
 - **2026-11-26 14:46 UTC:** Error-only Actions report filtering is implemented in the reporter and shared with Ledger ingestion, but its regression suite and end-to-end hosted task handoff are not verified. The approved task 20261126-142500 remains Paused pending P0 work. The latest captured source run [45821860845](https://github.com/dungnv2602/chatgpt/actions/runs/45821860845) failed in the CI Ledger regression step. Do not claim the error-only reporter tests passed.

@@ -86,6 +86,10 @@ Change the schema, template, collector, generator, regression tests, workflow in
 
 All source-workflow finalizers and the push-driven sweep use the same repository-wide concurrency group with `cancel-in-progress: false` and `queue: max`. GitHub runs one writer at a time and retains up to 100 pending writers instead of replacing the previous pending writer. Requests beyond that platform limit can still be cancelled. Dependent workflow jobs acquire the group sequentially, so no job holds the writer group while waiting for another writer. If a publication still fails, the next sweep can backfill completed runs; do not resolve concurrent index conflicts by discarding immutable captures.
 
+## Changed-document evidence publication retries
+
+The changed-document lint workflow uses up to five push attempts. Before each attempt, it fetches `gpt` and rebases its report commit onto the latest branch. A rebase conflict stops publication and leaves source reports unchanged. After a failed push, the job fetches `gpt` again. It retries only when the remote branch advanced. A failed push with an unchanged remote branch stops immediately. The workflow reports failure after five unsuccessful attempts. It never drops immutable report evidence to resolve a conflict.
+
 ## Reporter self-monitoring
 
 The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting. Explicit backfill requests do not override the error-only retention rule; successful and cancellation-only runs are never retained.

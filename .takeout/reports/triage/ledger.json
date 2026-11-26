@@ -1,13 +1,13 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T15:38:55Z",
+  "updated_at_utc": "2026-11-26T15:46:00Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.ledgertests.test_actions_identity_uses_work",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T09:01:17Z",
@@ -50,7 +50,16 @@
           "observation_id": "github_actions:427313089:45792129692:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "33bba62b5587d2fc0a1642e8f359a4d3bf95c9e7",
+        "resolved_at_utc": "2026-11-26T15:46:00Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823761313",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T12:53:57Z"
+        },
+        "note": "Shared independent-error eligibility now governs reporter retention and Ledger ingestion. Hosted Diagnostics run 45823761330 also passed 37 reporter tests and 47 Ledger tests."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -64,7 +73,7 @@
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_ledger (unittest.loader._failedtest.test_ledger) ... error",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T10:13:20Z",
@@ -79,7 +88,16 @@
           "observation_id": "github_actions:427313089:45789951589:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "33bba62b5587d2fc0a1642e8f359a4d3bf95c9e7",
+        "resolved_at_utc": "2026-11-26T15:46:00Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823761313",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T12:53:57Z"
+        },
+        "note": "Added the shared eligibility module import path to both consumers. The hosted Validate Document Standards run verified the Ledger module imports and all 47 regression tests pass."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -93,7 +111,7 @@
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> traceback (most recent call last):",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T10:13:37Z",
@@ -136,7 +154,16 @@
           "observation_id": "github_actions:427313089:45821860845:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "50a74da5943f3d0799dd0d8ef77be121e3cb86b4",
+        "resolved_at_utc": "2026-11-26T15:46:00Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823761313",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T12:53:57Z"
+        },
+        "note": "Corrected the escaped-newline task fixture. The cumulative fixture and retention corrections include 21f2726, 01c2cff, cfaade94, 1d1923f, 43bcec8, ec3ba4d, and 50a74da; hosted validation passed all 47 Ledger tests."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -150,7 +177,7 @@
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.ledgertests.test_processed_ac",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T10:15:11Z",
@@ -165,7 +192,16 @@
           "observation_id": "github_actions:427313089:45798838831:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "43bcec8f6ccb5c8491389705d3e2e43b7619ae18",
+        "resolved_at_utc": "2026-11-26T15:46:00Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823761313",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T12:53:57Z"
+        },
+        "note": "Made the stale-history fixture directory creation idempotent. The production processed-report pruning guard was added in 01c2cff; hosted validation passed all 47 Ledger tests."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
