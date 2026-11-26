@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27 04:55 ICT:** Resume approved P0 task [20261126-170259-03](tasks/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md): inspect its long-sentence finding and governing decision constraints, then determine authorized remediation.
+- **2026-11-27 05:15 ICT:** Assess the CI-error follow-through and batch-execution rules across The Worker and GitHub Actions skill. Determine ownership and move or consolidate the rule if its placement is wrong.
 
 ## Open Discussions
 
