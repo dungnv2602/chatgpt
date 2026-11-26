@@ -51,8 +51,9 @@ on:
 # Commits on gpt are cumulative: the newest run checks the combined tree,
 # including earlier commits. The diagnostics job still preserves any completed
 # failure evidence from a superseded run before its own cancellation where possible.
+# Supersede only older push validations for this branch. Manual runs are independent.
 concurrency:
-  group: document-standards-${{ github.ref }}
+  group: document-standards-${{ github.ref }}-${{ github.event_name == 'push' && 'push' || github.run_id }}
   cancel-in-progress: true
 
 permissions: {}
