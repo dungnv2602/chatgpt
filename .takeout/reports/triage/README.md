@@ -14,7 +14,7 @@ The Ledger is the Worker's event-driven active backlog for distinct lint and Git
 
 ## Ingestion and publication
 
-The generator reads report paths only from the published lint and Actions indexes. It does not scan report history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports and handles archived-task retirement. Both use the non-cancelling `gh-ac-report-writer` concurrency group with `queue: max`, retaining up to 100 pending writers while one writer runs.
+The generator reads report paths only from the published lint and Actions indexes. It does not scan report history directories or modify source reports. Its `--root` value is the repository root. Active report references are repository-relative under `.takeout/reports/`; archived evidence references use `.archive/reports/`. Legacy `reports/` and `archive/reports/` references are normalized during migration. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports and handles archived-task retirement. Both use the non-cancelling `gh-ac-report-writer` concurrency group with `queue: max`, retaining up to 100 pending writers while one writer runs.
 
 The caller's diagnostics jobs remain job-level `continue-on-error: true` so diagnostic reporting cannot change the source workflow result. Individual composite-action steps do not suppress failures. Every shared-writer block uses `cancel-in-progress: false` and `queue: max`. Jobs that hand off to diagnostics do so sequentially and release the group before the dependent job starts; no publisher holds the group while waiting for another writer.
 
@@ -95,13 +95,15 @@ A manual request is consumed into `requests/processed/` after one capture result
 
 Normal report rollover does not clear the Ledger or import old findings. It preserves open-finding evidence and processed state while removing old report periods from active indexes. Historical backfill requires a separate approved task.
 
+If `ledger.json` is missing, ingestion fails closed. Restore the exact prior Ledger state or obtain explicit user authorization for a clean-start reset; the generator never creates an empty Ledger automatically.
+
 A full clean-start reset is allowed only after an explicit user instruction. It removes active generated report payloads and all prior `.archive/reports/**` content, resets the three report indexes to an empty reporting period, replaces the Ledger with no findings and no processed paths, and marks both lint baselines unseeded. It also removes report entries from the shared archive-retention index. It preserves scripts, schemas, templates, workflow definitions, operating guides, task archives, task-retention entries, and unrelated tasks.
 
 The first complete tooling-valid full audit in each lint scope after reset establishes the new baseline without task creation. Do not backfill or taskify the prior reporting period.
 
 ## Canonical schema and tests
 
-- Schema: `ledger-schema.json` (version `1.4.0`).
+- Schema: `ledger-schema.json` (version `1.5.0`).
 - Generator: `scripts/ledger.py`.
 - Regression tests: `scripts/test_ledger.py`.
 - Hosted execution: GitHub Actions. Do not run repository scripts locally.
