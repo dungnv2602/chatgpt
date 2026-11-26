@@ -20,12 +20,16 @@ This directory is the review surface for actionable GitHub Actions execution fai
 - latest-gh-ac-report.md and latest-gh-ac-report.json point to the newest capture.
 - requests/pending/<request-name>.json requests a backfill for one exact run. The JSON must contain a numeric run_id. A processed request moves to requests/processed/.
 
-## Capture stages
+## Capture policy
 
-- pre_finalizer is attempted by the local composite action after the source jobs finish. The parent workflow is still in progress. It writes a report only when the finished jobs contain a classified issue or projected actionable failure. Ordinary success and cancellation-only outcomes are skipped. The report records the observed status, finished source jobs, and a projected conclusion. It does not invent a final conclusion.
-- post_run is captured by the push-driven sweep after GitHub marks the source run completed. It records the actual conclusion. It is a separate immutable capture. It does not overwrite pre_finalizer evidence.
-
-The sweep stores pending run IDs for queued, running, or incomplete captures. It checks pending IDs during a later sweep. It also discovers runs created since the bootstrap watermark, including tag and scheduled runs. Completed ordinary successes and cancellation-only outcomes are marked handled without writing report history. A successful run with a classified non-blocking failed step is captured. A cancelled run is captured only when it contains an independent actionable issue. A request file can force a capture for one exact older run, including a successful run.
+- Only completed source runs are eligible for capture. In-progress, queued, pending, and other unfinished states are never written to report history.
+- The diagnostics workflow listens for completed source workflows and runs the post-run sweep. Pending IDs discovered by an earlier push-triggered sweep are retried after the source workflow completes.
+- A report is persisted only when classification contains at least one independent error: a failed job/step, a timeout, an action-required outcome, or a classified workflow-startup/configuration failure.
+- Ordinary success, cancellation-only, skipped, neutral, and other issue-free outcomes are handled without report history.
+- A cancelled run is retained only when it contains an independent completed job or step failure. Cancellation and downstream status-propagation failures do not qualify.
+- A successful run with an independently failed non-blocking step is an error report and is retained.
+- Manual requests can select older runs, but cannot override the error-only retention rule. A successful or cancellation-only run is never forced into report history.
+- Each retained Actions report is ingested into the Ledger. Every independent finding is task-eligible regardless of confidence-derived severity; stable finding and remediation-group identities deduplicate recurring errors and reuse active tasks.
 
 ## Failure classification
 
