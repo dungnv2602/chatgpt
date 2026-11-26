@@ -22,7 +22,7 @@ related_adrs:
 
 Adopt the useful planning and evidence-capture mechanisms from Planning with Files selectively. Do not install or copy its complete system.
 
-This Draft recommends Option 3 because it adds explicit phases, observable phase exits, and one current Next Step inside the existing task record. The Progress Log remains the only chronological activity log. The Worker creates a separate findings note only when research evidence is too extensive or complex to remain clear in the task record.
+I recommend Option 3 because it adds explicit phases, verifiable phase exits, and one current Next Step inside the existing task record. The current Progress Log remains the only chronological activity log. The Worker creates a separate findings note only when research evidence is too extensive or complex to keep clear in the task record.
 
 Keep the task record as the sole authority for task scope, approval, status, phase state, current action, progress, verification, and handoff. Treat a findings note as supporting evidence only. Separate planning depth (Lightweight, Phased, Research-led) from execution mode. Use Serial by default. Use Parallel only with explicit authorization.
 
@@ -40,7 +40,7 @@ Planning with Files presents a persistent three-file model:
 
 Its current skill also defines plan selection, session recovery, phase validation, task isolation, worker ownership, error handling, context-injection hooks, and optional completion gates.
 
-I re-checked the external source against GitHub on 2026-11-25. Its current `master` head remains `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`, committed 2026-11-23 11:57:02 UTC. The latest release is v3.29.1, published 2026-11-23 09:26:21 UTC. The head commit changes README sponsor material. It does not change the planning mechanisms that this Draft reviews. The canonical skill at that revision has blob SHA `e95f7dc8c5864a89ca51e2d40de45b2de82c0622`.
+I checked the external source against GitHub on 2026-11-25. Its current `master` head remains `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`, committed 2026-11-23 11:57:02 UTC. The latest release is v3.29.1, published 2026-11-23 09:26:21 UTC. The head commit changes README sponsor material. The planning mechanisms I reviewed for this Draft match the prior source snapshot. The canonical skill at that revision has blob SHA `e95f7dc8c5864a89ca51e2d40de45b2de82c0622`.
 
 The current system includes more than three Markdown files. It uses task-specific `.planning/<id>` directories and explicit `PLAN_ID` and `PWF_PLAN_ROOT` selectors. It also uses an active-plan pointer for sequential switching, a plan resolver, phase-format checks, plan attestation, and host-specific lifecycle integrations. The canonical skill uses prompt/tool hooks to provide plan context. It offers opt-in autonomous and gated modes. Integration behavior differs by host. The hooks do not form one portable contract.
 
@@ -115,7 +115,7 @@ The repository does not need another task-status system. It needs a clearer exec
 
 ## Assessment Basis and Evidence Limits
 
-This Draft assesses the options against this repository's actual operating model, not a hypothetical local coding-agent checkout. The decision criteria are:
+I assess the options against this repository's actual operating model, not a hypothetical local coding-agent checkout. The decision criteria are:
 
 - **Runtime fit:** Can the option operate through the existing ChatGPT and GitHub connector workflow without assuming a local project filesystem, shell, or unsupported lifecycle hook?
 - **Authority integrity:** Does it preserve one authoritative record for task scope, approval, status, and progress?
@@ -124,7 +124,7 @@ This Draft assesses the options against this repository's actual operating model
 - **Safety and approval:** Does it keep external content untrusted and prevent planning or validation artifacts from acting as approval?
 - **Proportionality and maintenance:** Is the recurring benefit worth its template, documentation, renderer, validation, and operator cost?
 
-The matrix below uses qualitative ratings. **Strong** means the option naturally satisfies the criterion in this repository. **Moderate** means the option can satisfy the criterion with additional manual controls or constraints. **Partial** means the option supports only a limited part of the criterion. **Weak** means the core mechanism is unavailable or conflicts with the repository's existing authority model. Cost ratings describe expected adoption and maintenance burden, not measured labor.
+The matrix below uses qualitative ratings. **Strong** means the option naturally satisfies the criterion in this repository. **Moderate** means it can satisfy the criterion with additional manual controls or constraints. **Partial** means the option meets only a limited part of the criterion. **Weak** means the core mechanism is unavailable or conflicts with the repository's existing authority model. Cost ratings describe expected adoption and maintenance burden, not measured labor.
 
 ### External evidence boundary
 
@@ -146,9 +146,9 @@ Security claims also require precise interpretation. The external SHA-256 attest
 
 - **Description:** Retain the current Version 1.3 task record, Progress Log, task board, discussion register, recovery sequence, and handoff rules. Continue recording planning and research in the existing task sections without adding a formal phase model or a new evidence-record type.
 - **Good:**
-  - It has the lowest implementation and maintenance cost. It requires no changes to the task template, Worker, catalog, archive, renderer, or tests.
+  - It has the lowest implementation and maintenance cost. This option needs no changes to the task template, Worker, catalog, archive, renderer, or tests.
   - It preserves the current single task record as the source for scope, approval, status, progress, verification, and handoff.
-  - It already fits the GitHub-only repository workflow and current task history. It requires no migration or compatibility layer.
+  - It is already compatible with the GitHub-only repository workflow and current task history. The repository needs no migration or compatibility layer.
   - It avoids process overhead for short lookups, one-file edits, and single-stage verification work.
 - **Neutral:**
   - The Worker can still capture research in Progress Log entries and References. The current system does not prohibit detailed evidence. It leaves the structure to the task author.
@@ -163,13 +163,13 @@ Security claims also require precise interpretation. The external SHA-256 attest
 
 ### Option 2 — Adopt Planning with Files' three-file model directly
 
-- **Description:** Adopt the external system substantially as designed. Create a task-specific directory with `task_plan.md`, `findings.md`, and `progress.md`. Use named plan directories and selectors. Install its scripts. Configure compatible host lifecycle hooks for context injection, attestation, and optional completion gating. This option does more than copy three templates. The current external release couples the files to a resolver, state markers, host adapters, and runtime behavior.
+- **Description:** Adopt the external system substantially as designed. Create a task-specific directory with `task_plan.md`, `findings.md`, and `progress.md`. Use named plan directories and selectors. Install its scripts. Configure compatible host lifecycle hooks for context injection, attestation, and optional completion gating. This is more than copying three templates. The current external release couples them to a resolver, state markers, host adapters, and runtime behavior.
 - **Good:**
   - The separation is clear: task_plan.md owns phases and the immediate Next Step, findings.md owns research and decisions, and progress.md owns chronological activity.
   - Named plan directories, explicit selectors, and a resolver can isolate unrelated tasks. A pinned PLAN_ID is a binding rather than a hint, and an invalid explicit selector fails closed instead of silently switching to another plan.
   - The one-plan-owner rule and separate worker ledgers give a concrete collaboration model. They reduce the chance that multiple workers overwrite shared planning state.
   - On compatible hosts, lifecycle hooks can re-surface selected plan context automatically. Phase markers and scripts make some structural errors easier to detect than prose-only instructions.
-  - The project extends beyond its initial templates. It documents host-specific behavior, attestation, recovery boundaries, and guardrails for autonomous or gated operation. A direct adopter could benefit from that integrated system rather than designing each mechanism separately.
+  - The project now extends beyond its initial templates. It documents host-specific behavior, attestation, recovery boundaries, and guardrails for autonomous or gated operation. A direct adopter could benefit from that integrated system rather than designing each mechanism separately.
 - **Neutral:**
   - This option is not inherently better or worse for every agent. Its advantages depend on a host that exposes the required file, shell, environment, and lifecycle capabilities. The external README documents multiple integrations, but the hook capability and enforcement level differ by host.
   - The benchmark is evidence that structured plans can improve measured re-orientation in some tested host scenarios. It is not proof that this exact repository would gain the same number of turns or improve task correctness.
@@ -178,13 +178,13 @@ Security claims also require precise interpretation. The external SHA-256 attest
 - **Bad:**
   - A second plan file would duplicate the objective, scope, requirements, decisions, current state, and next actions already owned by the repository task record. A separate progress.md would duplicate the existing Progress Log. A separate findings.md would introduce a second evidence location unless its authority and link rules were carefully constrained.
   - A separate plan selector or active-plan pointer would compete with the Worker's current execution pointer and task board. The repository would need new rules for reconciling the task board, task record, active plan, and archive state.
-  - The current project workspace is GitHub, accessed through repository tools. This session does not expose the local filesystem, Bash/PowerShell execution, or the prompt/tool/Stop lifecycle hooks that the external implementation requires. GitHub Actions can inspect committed files. It cannot inject a plan into each ChatGPT turn or control the end of the live conversation.
-  - The external README says that Git ignores planning files by default. That approach suits local working memory. However, it conflicts with this repository's requirement to keep project state and durable evidence in GitHub. The repository would need an explicit synchronization and archive policy to adopt it.
+  - The current project workspace is GitHub, accessed through repository tools. This session does not expose the local filesystem, Bash/PowerShell execution, or the prompt/tool/Stop lifecycle hooks required by the external implementation. GitHub Actions can check committed files, but it cannot inject a plan into each ChatGPT turn or control the end of the live conversation.
+  - The external README ignores planning files by default. That approach suits local working memory. However, this repository requires project state and durable evidence to live in GitHub. Adopters would need an explicit synchronization and archive policy.
   - A hook that re-injects externally sourced plan content creates a prompt-injection boundary. Delimiters reduce ambiguity but do not make the content trusted. The external attestation is not a user approval mechanism and does not protect against a writer that can replace both the plan and the digest.
   - The templates-only variant still creates a parallel source for scope, decisions, and chronological progress. It also loses the automatic recovery and enforcement mechanisms that motivate the full system.
   - The full implementation adds plan directories, scripts, host adapters, tests, state files, and lifecycle integrations. These would substantially increase the maintenance and recovery surface. Host-specific differences would require their own support and verification.
-- **Evaluation evidence and limits:** The external Test 5 reports 77/77 passing task test suites across all seven tested methods. In the forced recovery subset, it reports 5.0 mean stage-two turns for Planning with Files. However, the report says that its authors did not re-run the current file-only recovery behavior under that protocol. The test used Claude Code and v3.4.0, not the current v3.29.1 release or ChatGPT. It did not evaluate multi-day work, other IDEs, long-horizon drift, or an external task corpus. These findings support investigation of durable plans. They do not justify copying the architecture here or promising the same recovery gain.
-- **Fit and when it is preferable:** This option would be strongest if the repository moved to a compatible local coding-agent host. It would also require the repository to make per-task plan files, rather than the current task record, the primary execution authority. It does not fit the present GitHub-only ChatGPT workflow.
+- **Evaluation evidence and limits:** The external Test 5 reports 77/77 passing task test suites across all seven tested methods. In the forced recovery subset, it reports 5.0 mean stage-two turns for Planning with Files. It also states that researchers did not re-run the current file-only recovery behavior under that protocol. The test used Claude Code and v3.4.0, not the current v3.29.1 release or ChatGPT. It did not evaluate multi-day work, other IDEs, long-horizon drift, or an external task corpus. These findings support investigation of durable plans. They do not justify copying the architecture here or promising the same recovery gain.
+- **Fit and when it is preferable:** This option would fit best if the repository adopted a compatible local coding-agent host. It would also need per-task plan files to become the primary execution authority. The current task record would no longer own execution state. The option does not fit the present GitHub-only ChatGPT workflow.
 - **Cost and residual risk:** Very high adoption and maintenance cost. Without a deliberate authority migration and supported host runtime, duplicate state and partially functioning hooks would create more risk than value.
 
 ### Option 3 — Integrate planning into the task record and add optional research notes
@@ -192,7 +192,7 @@ Security claims also require precise interpretation. The external SHA-256 attest
 - **Description:** Extend the existing task record with a structured Execution Plan. Use named phases and exit criteria only for work that needs them. Keep exactly one current Next Step in that plan and retain the existing Progress Log as the only chronological activity history. Create a task findings note only when evidence volume or complexity warrants a separate record.
 - **Good:**
   - It directly addresses the documented gaps without creating a second source of task authority. The task record continues to own scope, approval, task status, phase status, current action, progress, verification, and handoff.
-  - The existing recovery process already selects and reads the task record from GitHub. Adding a phase and one Next Step to that record exposes the active work state at the same recovery point. It does not depend on local hooks.
+  - The existing recovery process already selects and reads the task record from GitHub. Adding a phase and one Next Step makes the active work state available at that same recovery point. It does not depend on local hooks.
   - Lightweight tasks remain lightweight. They record a planning level and one immediate action but do not acquire artificial phases or an empty findings note.
   - Research-led work gains a repeatable way to retain exact source locators, source versions, evidence classifications, confidence rationale, limitations, contradictions, and unresolved questions. The task record links and summarizes the note but remains authoritative.
   - A single owner can keep the task record, board, discussion register, and final handoff consistent. Independent parallel work can use separate task records and explicitly assigned output paths rather than concurrent edits to one shared plan.
@@ -206,9 +206,9 @@ Security claims also require precise interpretation. The external SHA-256 attest
   - The Worker, task template, focused reference, and Ledger renderer/tests must change together. If maintainers omit one owner, manually created and Ledger-generated tasks may have different structures.
   - Phase updates and evidence capture require disciplined checkpointing. A stale plan can mislead a new session until the Worker compares repository state with the latest Progress Log.
   - Human-assessed exit criteria can be marked complete incorrectly. A structural test can catch missing fields but cannot prove semantic completion.
-  - Research notes can grow into an unmaintained parallel knowledge base if the Worker sets the creation threshold too low. They can also grow if the Worker fails to define their status and authority.
+  - Research notes can become an unmaintained parallel knowledge base. This risk increases when authors set a low creation threshold or leave note status and authority unclear.
 - **Fit and when it is preferable:** Strongest fit for the current repository. It improves planning and evidence quality while preserving the task's existing authority and the GitHub-only operating model. It is preferable when complex multi-stage or research-led tasks occur often enough to justify a modest template and maintenance cost.
-- **Cost and residual risk:** Moderate one-time implementation cost spans the Worker, template, catalog, archive guide, and Ledger renderer/tests. Ongoing cost is low for lightweight tasks and moderate for phased or research-led tasks. The residual risks are procedural drift and incorrect semantic assessment. The pilot and evidence rules aim to expose these risks before general adoption.
+- **Cost and residual risk:** Moderate one-time implementation cost across the Worker, template, catalog, archive guide, and Ledger renderer/tests. Ongoing cost is low for lightweight tasks and moderate for phased or research-led tasks. The residual risks are procedural drift and incorrect semantic assessment. The pilot and evidence rules should expose these risks before general adoption.
 
 ### Option 4 — Build a repository-specific hook and script framework
 
@@ -228,8 +228,8 @@ Security claims also require precise interpretation. The external SHA-256 attest
   - A custom framework creates scripts, test suites, permissions, runtime compatibility, error handling, documentation, and security boundaries that the repository must maintain.
   - A validator can create false confidence. Passing phase-format checks cannot establish that the objective was met, that evidence supports the result, or that the user approved the change.
   - Runtime context injection can repeatedly surface untrusted content. Hashing or delimiter framing does not convert external instructions into trusted instructions or replace repository approval controls.
-  - A Stop gate can prolong an unproductive run or turn a soft procedural expectation into a runtime failure. This can happen when the gate lacks explicit caps, stall detection, host capability handling, or safe fallback behavior.
-- **Fit and when it is preferable:** The CI-validation subset may work if the Option 3 pilot finds errors a hosted check can prevent. The live-hook subset does not fit the current operating environment. Do not add either subset pre-emptively.
+  - A Stop gate can prolong an unproductive run. It can also turn a soft procedural expectation into a runtime failure. Set explicit caps, detect stalls, handle host capabilities, and provide safe fallbacks.
+- **Fit and when it is preferable:** The CI-validation subset may become viable if the Option 3 pilot reveals repeated structural errors. A hosted check must reliably prevent those errors. The current environment cannot support live hooks. Do not add either subset pre-emptively.
 - **Cost and residual risk:** High to very high, depending on whether the implementation is a narrow hosted validator or a full lifecycle system. A hosted validator would still leave semantic verification and live recovery manual. A runtime framework would add ongoing platform and security maintenance.
 
 
@@ -238,7 +238,7 @@ Security claims also require precise interpretation. The external SHA-256 attest
 | Criterion | Option 1: Current workflow | Option 2: Direct three-file system | Option 3: Task-integrated plan | Option 4: Custom automation |
 |---|---|---|---|---|
 | Fit with current ChatGPT/GitHub workflow | **Strong** | **Weak** — assumes local files and host hooks | **Strong** | **Partial** — hosted checks only |
-| Single task-authority integrity | **Strong** | **Weak** unless the repository redesigns the task model | **Strong** | **Moderate** if automation inspects, but does not own, task state |
+| Single task-authority integrity | **Strong** | **Weak** unless the repository redesigns the task model | **Strong** | **Moderate** if automation validates, but does not own, task state |
 | Phase structure and exit criteria | **Weak** — prose only | **Strong** on supported hosts | **Strong** with explicit Worker checkpoints | **Partial** — can validate structure, not completion |
 | Research evidence capture | **Moderate** — task prose and links | **Strong** — dedicated findings file | **Strong when triggered** — optional evidence note | **Partial** — metadata checks do not synthesize evidence |
 | Recovery after context loss | **Moderate** — manual repository recovery | **Strong on compatible hosts**, but current file-only benchmark is not measured | **Moderate to strong** — same task record, manual re-read | **Partial** — CI cannot re-inject live context |
@@ -280,7 +280,7 @@ Use planning in proportion to task complexity.
 |---|---|---|
 | Lightweight | One narrow lookup, small edit, or single verification activity | Existing task sections, planning level, and one Next Step. No phase list or findings note |
 | Phased | Work has multiple dependent stages, coordinated deliverables, multiple related files or workflows, work likely to span sessions, material risk, or an external approval gate | Execution Plan with named phases, objectives, exit criteria, phase status, and one Next Step |
-| Research-led | Evidence from several sources or substantial comparative analysis to support a decision or implementation | Phased plan plus a findings note only when the Worker cannot keep evidence concise and auditable in the task record |
+| Research-led | Research-led work requires evidence from several sources or substantial comparative analysis to support a decision or implementation | Phased plan plus a findings note only when evidence cannot remain concise and auditable in the task record |
 
 Serial execution is the default. **Parallel is an execution mode, not a planning level.** Parallel execution requires explicit user authorization, separate work ownership, defined output paths, dependencies, and acceptance criteria. One orchestrator remains responsible for shared task state and indexes.
 
@@ -317,7 +317,7 @@ Each phase records:
 
 Use two to seven phases. Prefer three to seven when the work has enough distinct stages. Do not force artificial phases onto a Lightweight task.
 
-Keep no more than one phase in_progress unless the user explicitly authorizes parallel execution. If an external condition prevents progress, set the task to the existing Blocked status. Do not mark the active phase complete merely because an external condition stops the work.
+Keep no more than one phase in_progress unless the user explicitly authorizes parallel execution. If an external condition prevents progress, set the task to the existing Blocked status. Do not mark the active phase complete merely because an external condition blocks progress.
 
 A phase becomes complete only after its exit criteria pass. Link the evidence in the Progress Log or the findings note. Phase status is not task status.
 
@@ -460,7 +460,7 @@ Do not hide an unresolved failure. Keep it in Open Discussions when it needs use
 
 Keep the Worker's existing one-current-task default.
 
-The Worker or designated orchestrator owns the authoritative task record. This owner also maintains its phase plan and Next Step, the task board, the discussion register, and the final handoff.
+The Worker or designated orchestrator owns the authoritative task record. That owner also manages its phase plan and Next Step, the task board, the discussion register, and the final handoff.
 
 A delegated worker may own a clearly scoped output or evidence file. It must report its result to the orchestrator. It must not independently rewrite shared planning sections or task indexes.
 
@@ -512,9 +512,9 @@ The CI Ledger remains the source of truth for CI finding lifecycle and evidence 
 - **Positive:** Complex tasks gain explicit phases, measurable exit conditions, and one immediate action inside the existing authoritative task record.
 - **Positive:** A new session can recover phase, current action, blockers, and linked evidence through the same GitHub task record the Worker already reads.
 - **Positive:** Research-heavy tasks preserve source versions, classifications, confidence, and limitations without requiring every task to create extra files.
-- **Positive:** The task board, discussion register, and CI Ledger keep their existing responsibilities. The design does not require a local filesystem or runtime hook.
+- **Positive:** The task board, discussion register, and CI Ledger keep their existing responsibilities. The repository needs no local filesystem or runtime hook.
 - **Neutral:** The task template and Worker instructions become longer. Detailed phases remain conditional. Lightweight tasks retain a small structure.
-- **Neutral:** Phase management remains procedural. The Worker must update the plan at defined checkpoints. The design does not provide automatic per-turn injection.
+- **Neutral:** Phase management remains procedural. The Worker must update the plan at defined checkpoints, and the system does not inject context automatically on each turn.
 - **Neutral:** A findings note creates an additional file for selected tasks. It must be linked, archived, and retained with its task.
 - **Negative:** The implementation spans the Worker, focused reference, task template, optional findings template and index, archive guide, catalog, and CI Ledger renderer/tests. These changes require coordinated review and hosted validation.
 - **Negative:** Phased tasks require checkpoint updates. If the Worker does not reconcile the plan with repository state, the Execution Plan can become stale.
@@ -527,16 +527,16 @@ The CI Ledger remains the source of truth for CI finding lifecycle and evidence 
 |---|---|---|---|
 | The Execution Plan duplicates the Progress Log or other task sections | Medium / Medium | The plan owns current phase and Next Step. The Progress Log owns chronology. Remaining Work owns unresolved requirements and blockers. | Authors may still repeat information unless reviewed at checkpoints. |
 | Phases become artificial overhead | Medium / Medium | Use explicit complexity triggers and keep Lightweight tasks phase-free. Tool-call count is a prompt to assess complexity, not a hard threshold. | Classification still requires judgment. |
-| A Worker may mark a phase complete without adequate evidence | Medium / High | Give every phase observable exit criteria and link verification in the Progress Log or findings note. Keep semantic review separate from structural validation. | A reviewer can still misinterpret weak evidence. |
+| The Worker marks a phase complete without adequate evidence | Medium / High | Give every phase observable exit criteria and link verification in the Progress Log or findings note. Keep semantic review separate from structural validation. | A reviewer can still misinterpret weak evidence. |
 | The current Next Step becomes stale or conflicts with Following Actions | Medium / High | Maintain exactly one current Next Step. Make Following Actions optional and subordinate. Reconcile the pointer with Current State and repository state at each checkpoint. | A skipped checkpoint can leave a stale pointer until recovery detects it. |
 | A findings note becomes a second source of task authority | Medium / High | The task record owns status, scope, and approval. The findings note records evidence only. | A stale note can still mislead until reconciled. |
-| The Worker creates too many findings notes or abandons them | Medium / Medium | Set narrow creation triggers, prohibit empty notes, archive notes with their task, and register exact paths under the existing retention policy. | Research value may expire under the existing retention period unless maintainers move it to an approved durable reference. |
+| Workers create findings notes too often or abandon them | Medium / Medium | Define narrow creation triggers. Prohibit empty notes. Archive each note with its task. Register exact paths under the existing retention policy. | Research value may expire under the existing retention period unless moved to an approved durable reference. |
 | Concurrent workers overwrite shared task state | Medium / High | Serial execution is default. Parallel work needs user authorization, separate task IDs or isolated output files, and one orchestrator for shared indexes. | Concurrent writes can still conflict and require serialized reconciliation. |
 | Ledger-generated tasks diverge from manually created tasks | Medium / High | Update the Ledger renderer, regression tests, and operator guide in the same implementation task as the task-template revision. | Hosted validation may expose untested formatting assumptions. |
 | Archive or retention handling omits a findings note | Medium / Medium | Update the archive contract. Read back both the task archive and findings archive before deleting active copies. Register exact paths and the UTC timestamp. | A failed multi-file closeout still requires manual recovery. |
-| Workers treat external content as trusted instruction | Medium / High | Treat source material and findings as untrusted data. Keep user instructions and repository policy authoritative. Do not add automatic content injection. | Prompt injection cannot be eliminated by Markdown formatting alone. |
+| A Worker treats external content as trusted instruction | Medium / High | Treat source material and findings as untrusted data. Keep user instructions and repository policy authoritative. Do not add automatic content injection. | Prompt injection cannot be eliminated by Markdown formatting alone. |
 | A future validator creates false confidence | Medium / Medium | Describe validation as structural only. Require evidence for semantic phase exits and retain normal task acceptance and user approval. | Structural checks cannot evaluate every meaning-dependent condition. |
-| Workers treat external benchmark figures as repository guarantees | Medium / Medium | Record source versions, host, sample limits, and untested scenarios. Evaluate this design with the repository's three-task pilot. | The pilot is small and cannot prove every long-term benefit. |
+| A Worker treats external benchmark figures as repository guarantees | Medium / Medium | Record source versions, host, sample limits, and untested scenarios. Evaluate this design with the repository's three-task pilot. | The pilot is small and cannot prove every long-term benefit. |
 
 ## Repository Impact
 
@@ -551,7 +551,7 @@ The CI Ledger remains the source of truth for CI finding lifecycle and evidence 
 | Archive contract | Define closeout for task findings notes under the existing task archive and retention policy. | `.archive/README.md` | This Draft |
 | Document catalog | Register the new template and optional task-note family. | `skills/document-standards/references/document-type-catalog.md` | This Draft |
 | CI Ledger renderer | Update exact template replacements for the new task structure. | `reports/triage/scripts/ledger.py` | This Draft |
-| CI Ledger regression tests | Inspect generated tasks for the current template structure and valid phase placeholders. | `reports/triage/scripts/test_ledger.py` | This Draft |
+| CI Ledger regression tests | Check generated tasks for the current template structure and valid phase placeholders. | `reports/triage/scripts/test_ledger.py` | This Draft |
 | CI Ledger operator guide | Document any renderer or generated task handoff changes. | `reports/triage/README.md` | This Draft |
 | Task board | Keep its current index structure. Do not add a phase column. | `workspace/task_board.md` | No structural change |
 | Discussion register | Keep the existing three-section contract. | `workspace/discussion.md` | No structural change |
@@ -609,10 +609,10 @@ Run the pilot only after the accepted ADR, implementation task, coordinated repo
 
 The pilot passes only when all these criteria pass:
 
-1. **Planning selection:** All three tasks use the suitable planning level. The lightweight task has no artificial phases or findings note.
+1. **Planning selection:** All three tasks select the intended planning level. The lightweight task has no artificial phases or findings note.
 2. **Single action pointer:** Each task has exactly one clear, executable Next Step. Following Actions, Remaining Work, and historical Progress Log entries do not contradict it.
 3. **Phase evidence:** Every phase in the phased and research-led tasks has a stated objective and measurable exit criteria. Each phase marked `complete` links to evidence in the Progress Log or findings note.
-4. **Repository-only recovery:** A fresh Worker session can recover each task from the repository alone. It can identify the planning level, current phase or its not-applicable state, Next Step, blockers, and relevant evidence. The target is 3 of 3 tasks without conversation history.
+4. **Repository-only recovery:** A fresh Worker session can recover each task from the repository alone. It must identify the planning level, current phase or not-applicable state, Next Step, blockers, and relevant evidence. Pass target: 3 of 3 tasks without conversation history.
 5. **Research traceability:** The research-led task's findings note records exact source locators, evidence classifications, confidence rationale, limitations, and unresolved questions. Every material external claim links to its source.
 6. **Authority and ownership:** No task contains conflicting status authority, duplicate progress histories, or more than one `in_progress` phase unless the user approved parallel work.
 7. **Findings-note lifecycle:** The pilot creates a findings note only for the research-led case unless another task meets the documented trigger. The research note archives with its task, both archive entries use the exact paths and UTC timestamp, and both remain under the existing retention policy.
@@ -629,9 +629,9 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 
 ## Questions for the User
 
-1. Do you approve **Option 3** and the full scope in revision 4? The scope includes Task Template 1.4, Worker and focused reference updates, and an optional findings-note format and lifecycle. It also includes Document Type Catalog changes, coordinated CI Ledger renderer/tests, and the three-task pilot.
+1. Do you approve **Option 3** and the full scope in revision 4? The scope includes Task Template 1.4 and Worker/reference updates. It also includes an optional findings-note format and lifecycle. It covers catalog changes, coordinated Ledger renderer/tests, and the three-task pilot?
 2. Do you accept the revised distinction between three planning levels (Lightweight, Phased, Research-led) and execution mode? Use Serial by default. Parallel execution requires explicit authorization.
-3. Do you agree to exclude live hooks, automatic context injection, plan attestation, and Stop gates from this proposal? Use a separate Draft for these items only if a compatible runtime exists and measured need emerges.
+3. Do you agree to exclude live hooks, automatic context injection, plan attestation, and Stop gates from this proposal? Create a separate Draft only if a compatible runtime and measured need emerge.
 
 ## Review and Approval
 
@@ -647,8 +647,7 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 |---|---|---|---|
 | 2026-11-24 | 1 | Initial proposal based on Planning with Files and current Worker integration review. | Superseded by revision 2. |
 | 2026-11-24 | 2 | Linked the proposal to accepted ADR-0001 and targeted Task Template 1.4. Established one authoritative Next Step and reconciled Following Actions. Revised research checkpoints and findings-note closeout. Defined a measurable three-task pilot and addressed the Draft's recorded lint findings. | User approved preparation of revision 2 only. Decision approval remains pending. |
-| 2026-11-25 | 3 | Expanded all four option assessments. Added repository-fit criteria and a comparative matrix. Refreshed the external source snapshot and disclosed benchmark, version, and host limitations. Separated planning level from execution mode. Restored a detailed, staged Option 3 operating design. | User requested detailed assessments of every available option. Approval of revision 3 and its scope is pending. |
-| 2026-11-26 | 4 | Applied STE wording corrections for five P0 lint groups. Preserved the decision scope, option assessments, evidence claims, and recommendation. | No user decision recorded. Decision approval remains pending. |
+| 2026-11-25 | 3 | Expanded all four option assessments and added repository-fit criteria and a comparative matrix. Refreshed the external source snapshot and disclosed benchmark, version, and host limitations. Separated planning level from execution mode. Restored a detailed, staged Option 3 operating design. | User requested detailed assessments of every available option. Approval of revision 3 and its scope is pending. |
 | 2026-11-26 | 4 | Revised wording for STE style and readability. Preserved the proposal's options, evidence, scope, and pending decision. | User review remains pending. |
 
 ## References
@@ -663,7 +662,7 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 - External security policy: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/SECURITY.md
 - External resolver and validation: [resolve-plan-dir.sh](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/scripts/resolve-plan-dir.sh), [check-complete.sh](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/scripts/check-complete.sh)
 - Current Worker: `skills/the-worker/SKILL.md`
-- Current task template: `workspace/TASK_TEMPLATE.md` (Version 1.3 at Draft revision time, proposed target Version 1.4).
+- Worker Conversation Mode: `skills/the-worker/references/conversation-mode.md`
 - Current task template: `workspace/TASK_TEMPLATE.md` (Version 1.3 at Draft revision time). Proposed target: Version 1.4.
 - Workspace navigation: `workspace/README.md`
 - Task renderer and tests: `reports/triage/scripts/ledger.py` and `reports/triage/scripts/test_ledger.py`
