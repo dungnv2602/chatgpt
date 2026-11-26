@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T12:27:13Z",
+  "updated_at_utc": "2026-11-26T12:28:02Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -294,6 +294,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45816537286-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45816764437-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45817273521-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45819716980-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json"
     ],
