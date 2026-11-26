@@ -2,11 +2,12 @@
 
 ## Current Step
 
-- **2026-11-26:** Apply style-only edits to [DRAFT-0002](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md) revision 4. Resolve the 36 task-linked findings across five P0 tasks. Preserve all options, evidence, scope, and pending user approval. Update the draft index and revision history, then use event-driven lint and document validation.
+- **2026-11-26 14:50 UTC:** Record the DRAFT-0002 revision 4 source commit and read-back in its five approved P0 task records: [20261126-142112](tasks/20261126-142112-review-passive-voice-findings-in-workspace-draft-draft-0002-phas.md), [20261126-142112-01](tasks/20261126-142112-01-review-semicolon-findings-in-workspace-draft-draft-0002-phase-aw.md), [20261126-142112-02](tasks/20261126-142112-02-review-long-sentence-findings-in-workspace-draft-draft-0002-phas.md), [20261126-142112-03](tasks/20261126-142112-03-review-present-perfect-findings-in-workspace-draft-draft-0002-ph.md), and [20261126-142112-04](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md). Reconcile the task board's current-execution pointer with the task records and newly generated P0 handoffs. Keep hosted validation pending until a naturally completed result is available.
 
 ## Open Discussions
 
-- **2026-11-26 13:46 UTC:** P0 remediation remains open for Markdown link/anchor validation, CI Ledger regression failures, and Validate Document Standards checkout and publication failures. Five additional approved P0 finding groups now target DRAFT-0002. The catalog P0 task 20261126-124305 is closed and archived. See the task board for the complete active queue.
+- **2026-11-26 14:50 UTC:** DRAFT-0002 revision 4 remains in review. The decision and implementation scope are not approved. The five style-remediation tasks require hosted validation before closeout. New P0 handoffs also exist for workspace/draft/README.md and workspace/task_board.md.
+- **2026-11-26 13:46 UTC:** P0 remediation remains open for Markdown link/anchor validation, CI Ledger regression failures, and Validate Document Standards checkout and publication failures. The catalog P0 task 20261126-124305 is closed and archived. See the task board for the complete active queue.
 
 ## Reports
 
