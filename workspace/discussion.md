@@ -13,3 +13,8 @@
 ## Reports
 
 _No reports._
+
+
+## Startup Notice — 2026-11-26
+
+- **2026-11-26:** Foundational initialization triggered by `/start`. Loading required foundational skills. Current work continues the outstanding P0 remediation. No CI snapshot or unrelated workflow repair is initiated during startup.
