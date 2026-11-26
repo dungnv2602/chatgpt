@@ -524,9 +524,9 @@ def render_markdown(report):
         coverage = "One or more evidence sources were unavailable. This report is Incomplete.\n\n" + coverage
     path = run["workflow_path"].lower()
     if "ste-lint-changed" in path:
-        lint = "[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)"
+        lint = "[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_changed/latest-lint-report.md)"
     elif "ste-lint-full-docs" in path:
-        lint = "[Repository-wide lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_repo/latest-lint-report.md)"
+        lint = "[Repository-wide lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_repo/latest-lint-report.md)"
     else:
         lint = "No separate lint report applies to this workflow."
     values = {
