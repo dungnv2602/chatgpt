@@ -1,6 +1,6 @@
 ## Current Step
 
-Audit remaining GitHub Actions workflow triggers, permissions, exclusions, and script callers against the reconstructed repository paths. Trace each workflow to its actual scripts and report destinations before editing. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
+Complete the GitHub Actions trigger, permission, exclusion, and script-caller review. Then audit remaining active scripts and dependencies. The Document Type Catalog has 62 rules covering all 257 active Markdown files in the current tree; the validator/tests have not been executed. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
 ## Open Discussions
 - **2026-11-26 — Task-board record links:** `workspace/task_board.md` has 150 task-record links whose targets are absent from the active `workspace/tasks/` directory. The workspace root has no alternate active task-record directory. Archived contents were not inspected. The records' intended relocated paths or the correct disposition of these board rows must be established before changing the index. [Audit task](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
@@ -12,8 +12,8 @@ Audit remaining GitHub Actions workflow triggers, permissions, exclusions, and s
 
 ## Reports
 
-- **2026-11-26 — Document Type Catalog coverage repair:** Corrected the initialization-policy path, added coverage for PDF guides, Skill Creator agent instructions, and Theme Factory themes, and removed the false claim that an image hand-off file is currently tracked. Static simulation matched all 246 in-scope Markdown files with 62 rules; no uncovered paths or Active/Reserved status errors. Actual validator/tests were not run; `.archive/README.md` and `master/Images.md` were not inspected.
+- **2026-11-26 — Document Type Catalog coverage audit:** Compared 257 active Markdown files with all 62 catalog path rules. No uncovered files, Active/Reserved status errors, Optional-class violations, or missing exact authorities were found. Updated catalog inventory to version 1.17 and 257 files. This was a remote tree simulation, not validator execution; tests and hosted Actions remain unrun. [Catalog commit](https://github.com/dungnv2602/chatgpt/commit/5eea2cba5d5e75c7ffaf11c22d652968e6c02e32). [Task record](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
+
+- **2026-11-26 — Task-board target investigation:** 150 of 152 unique task-board record links are absent from `workspace/tasks/`. The current `.archive/task/` tree has one file and no matching missing basenames. Only tree metadata was inspected; archive contents were not read. The records cannot be mapped elsewhere from current path metadata, so the board remains unchanged.
 
 - **2026-11-26 — Skill reference cross-link repair:** Repaired five skill references to the relocated Worker, drawing-history, novel-workflow, and GitHub Actions paths. Checked local Markdown link resolution across all 81 skill Markdown files. Changed files were read back. Heading anchors, external URLs, and non-Markdown path strings were not exhaustively checked. Tests and hosted Actions remain unrun.
-
-- **2026-11-26 — Reconstructed navigation-link repair:** Fixed six active initialization, skill, drawing-pattern, report, workspace, and novel navigation files to target the current `.agent/`, `.takeout/`, `.archive/`, and `area/drawing/` paths. Read-back and local target checks passed for all six files. Heading anchors and external links were not checked.
