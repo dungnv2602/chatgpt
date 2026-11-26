@@ -17,7 +17,7 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-162137 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 16:30 UTC | [Task record](tasks/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md) |
+| 20261126-162137 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 16:37 UTC | [Task record](tasks/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md) |
 | 20261126-145133 | Review publication\_or\_push failures in STE Lint Changed Documentation / Lint changed Markdown files and publish detailed | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 15:18 UTC | [Task record](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md) |
 | 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 15:24 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
 
