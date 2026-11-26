@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45821860845
+# Validate Document Standards — run 45822163306
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45821860845 / 1 |
-| Run number | 621 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45821860845 |
+| Run / attempt | 45822163306 / 1 |
+| Run number | 622 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45822163306 |
 | Branch | gpt |
-| Commit | 9d20a6989a6adde069964fccd301d0eb2b2a579e |
+| Commit | 50a74da5943f3d0799dd0d8ef77be121e3cb86b4 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-26T12:40:31Z |
+| Created (UTC) | 2026-11-26T12:42:28Z |
 | Status at capture | completed |
 | Observed conclusion | failure |
 | Projected conclusion | Not calculated |
-| Reporter job | completed / failure |
+| Reporter job | completed / success |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-26T12:43:00Z |
+| Captured (UTC) | 2026-11-26T12:49:17Z |
 
 ## Executive summary
 
@@ -45,20 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 139915873455 | validate-document-standards | completed | failure | 9 | logs/job-139915873455.log |
+| 139916921529 | validate-document-standards | completed | failure | 9 | logs/job-139916921529.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 139915873455 | 4 | Run CI Ledger regression tests | Blocking | medium | 2026-11-26T12:40:42.1389848Z Traceback (most recent call last): |
+| validation_or_test | 139916921529 | 6 | Validate the document type catalog | Blocking | medium | 2026-11-26T12:42:39.6649394Z ERROR: 3 Markdown file(s) are not covered by the catalog: archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md, archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md, archive/adr/README.md. |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 139915873455 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 139915873455 | failure | .github | 73 |  | Process completed with exit code 1. |
+| 139916921529 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 139916921529 | failure | .github | 14 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -68,7 +68,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 139915873455 | validate-document-standards | logs/job-139915873455.log | 36569 | False | validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:40:42.1389848Z Traceback (most recent call last):, validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:40:42.1400421Z FAILED (failures=1), validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:40:42.1569407Z ##[error]Process completed with exit code 1. |
+| 139916921529 | validate-document-standards | logs/job-139916921529.log | 47746 | False | validate-document-standards	Validate the document type catalog	2026-11-26T12:42:39.6649394Z ERROR: 3 Markdown file(s) are not covered by the catalog: archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md, archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md, archive/adr/README.md., validate-document-standards	Validate the document type catalog	2026-11-26T12:42:39.6651348Z Catalog validation failed: 1 error(s), 18 document type(s), 28 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-26T12:42:39.6717076Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
