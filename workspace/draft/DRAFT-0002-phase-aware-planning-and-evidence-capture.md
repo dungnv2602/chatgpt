@@ -229,7 +229,7 @@ Security claims also require precise interpretation. The external SHA-256 attest
   - A validator can create false confidence. Passing phase-format checks cannot establish that the objective was met, that evidence supports the result, or that the user approved the change.
   - Runtime context injection can repeatedly surface untrusted content. Hashing or delimiter framing does not convert external instructions into trusted instructions or replace repository approval controls.
   - A Stop gate can prolong an unproductive run. It can also turn a soft procedural expectation into a runtime failure. Set explicit caps, detect stalls, handle host capabilities, and provide safe fallbacks.
-- **Fit and when it is preferable:** The CI-validation subset may become viable if the Option 3 pilot reveals repeated structural errors. A hosted check must reliably prevent those errors. The current environment cannot support live hooks. Do not add either subset pre-emptively.
+- **Fit and when it is preferable:** The CI structural-check subset may become viable if the Option 3 pilot reveals repeated structural errors. A hosted check must reliably prevent those errors. The current environment cannot support live hooks. Do not add either subset pre-emptively.
 - **Cost and residual risk:** High to very high, depending on whether the implementation is a narrow hosted validator or a full lifecycle system. A hosted validator would still leave semantic verification and live recovery manual. A runtime framework would add ongoing platform and security maintenance.
 
 
@@ -239,7 +239,7 @@ Security claims also require precise interpretation. The external SHA-256 attest
 |---|---|---|---|---|
 | Fit with current ChatGPT/GitHub workflow | **Strong** | **Weak** — assumes local files and host hooks | **Strong** | **Partial** — hosted checks only |
 | Single task-authority integrity | **Strong** | **Weak** unless the repository redesigns the task model | **Strong** | **Moderate** if automation validates, but does not own, task state |
-| Phase structure and exit criteria | **Weak** — prose only | **Strong** on supported hosts | **Strong** with explicit Worker checkpoints | **Partial** — can validate structure, not completion |
+| Phase structure and exit criteria | **Weak** — prose only | **Strong** on supported hosts | **Strong** with explicit Worker checkpoints | **Partial** — can check structure, not completion |
 | Research evidence capture | **Moderate** — task prose and links | **Strong** — dedicated findings file | **Strong when triggered** — optional evidence note | **Partial** — metadata checks do not synthesize evidence |
 | Recovery after context loss | **Moderate** — manual repository recovery | **Strong on compatible hosts**, but current file-only benchmark is not measured | **Moderate to strong** — same task record, manual re-read | **Partial** — CI cannot re-inject live context |
 | Independent task isolation | **Moderate** — distinct task records | **Strong** — named plan directories and selectors | **Moderate to strong** — separate task records and output ownership | **Partial** — depends on design |
