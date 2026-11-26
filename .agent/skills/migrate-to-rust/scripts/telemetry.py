@@ -6,7 +6,7 @@ Before/After codebase censuses (LOC, modularity, comment/doc density, cognitive
 complexity, legacy memory hazards vs. Rust unsafe blocks), logs test/parity
 self-healing iterations and PGO benchmark staircases, computes the 8-dimension
 Executive Scorecard from measured values, and renders a self-contained HTML
-infographic from references/infographic_template.html.
+infographic from assets/infographic_template.html.
 """
 
 import argparse
@@ -1065,7 +1065,7 @@ def cmd_render_infographic(args: argparse.Namespace) -> None:
   save_telemetry(tpath, data)
 
   script_dir = Path(__file__).parent.resolve()
-  default_tpl = script_dir.parent / "references" / "infographic_template.html"
+  default_tpl = script_dir.parent / "assets" / "infographic_template.html"
   tpl_path = Path(args.template) if args.template else default_tpl
 
   if not tpl_path.exists():

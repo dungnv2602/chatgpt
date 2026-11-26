@@ -213,4 +213,4 @@ for each step:
 -   **Engineering Standards, Blueprint Spec, PGO & Telemetry Recipes**:
     [references/pgo_and_telemetry_guide.md](references/pgo_and_telemetry_guide.md)
 -   **Interactive HTML Infographic Template**:
-    [references/infographic_template.html](references/infographic_template.html)
+    [assets/infographic_template.html](assets/infographic_template.html)
