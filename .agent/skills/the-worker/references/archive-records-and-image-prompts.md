@@ -18,7 +18,7 @@ Use the canonical template at `../assets/conversation-integrity-template.md`. Pr
 
 Each retained image output must also appear in the `Image source mapping` table in its conversation-integrity record. Use the exact takeout filename and source/platform Asset ID recorded in its attempt note. This source Asset ID is distinct from the optional repository asset_id. Record a native Generation ID when the tool exposed one; otherwise use the internal Output ID recorded for that output. Do not reconstruct either value from a filename or timestamp. Use `Not applicable` only when a field genuinely does not apply.
 
-For drawing-session assets, save the record as `drawings/history/YYYY-MM-DD-conversation-integrity.md`. The takeout processor checks the record date, coverage declaration, gap notes, exact source mapping, and referenced attempt note's generation/output identity before it stages or relocates an original. A partial record is valid only when unavailable material and editorial summaries are clearly labelled. It does not establish a complete transcript.
+For drawing-session assets, save the record as `area/drawing/history/YYYY-MM-DD-conversation-integrity.md`. The takeout processor checks the record date, coverage declaration, gap notes, exact source mapping, and referenced attempt note's generation/output identity before it stages or relocates an original. A partial record is valid only when unavailable material and editorial summaries are clearly labelled. It does not establish a complete transcript.
 
 ## 5. File 2: Session summary
 
@@ -44,10 +44,10 @@ This is the operational history of image generation and editing.
 Every distinct drawing session starts with a user-defined visual direction.
 This opening brief is the sole creative authority for that session. It applies to day-drawing and novel-illustration sessions. No repository-wide image index, historical prompt, previous portrait, character sheet, stored image, or old project convention dictates the new session. Use one only when the user explicitly adopts it.
 
-- For non-novels/day drawing, archive the brief as
-  `drawings/YYYY-MM-DD/session-[NN]-brief.md`.
+- For non-area/novel/day drawing, archive the brief as
+  `area/drawing/YYYY-MM-DD/session-[NN]-brief.md`.
 - For a named novel scene, archive it as
-  `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
+  `area/novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
 - Create and commit the brief before the first image prompt for that session.
   Read it back and verify it.
 - Preserve the user's opening direction faithfully. Record specified, locked,
@@ -106,12 +106,12 @@ context do not resolve it. Day-drawing sessions may mark this field
 
 ### Daily folder and one-note-per-attempt format for non-novel drawing work
 
-For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `drawings/`. Each image-generation or image-edit attempt is its own Markdown note.
+For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `area/drawing/`. Each image-generation or image-edit attempt is its own Markdown note.
 
-**Exception for novel scenes:** The scene-local prompt record under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that attempt there. Do not duplicate it in the daily `drawings/` folder.
+**Exception for novel scenes:** The scene-local prompt record under `area/novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that attempt there. Do not duplicate it in the daily `area/drawing/` folder.
 
 ```text
-drawings/
+area/drawing/
   YYYY-MM-DD/
     README.md              # daily index and status overview
     session-01-brief.md    # authoritative direction for this drawing session
@@ -130,16 +130,16 @@ drawings/
 - **Verify before committing:** Read back the complete daily `README.md`. Verify that it contains one attempt-index table, one header row, and one separator row. Verify that every numbered attempt appears exactly once in ascending order. Verify that no blank line interrupts the table. Verify that the final attempt row belongs to the same table. Do not mark the index update complete until the table meets all listed conditions.
 - **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected). Do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
 - Use the canonical attempt template at `../../drawing/assets/attempt-template.md`. It separates record status, generation status, and user decision. The fields below define the required evidence and interpretation for those template fields. Keep each attempt record self-contained.
-- Session-level conversation-integrity and summary records remain at `drawings/YYYY-MM-DD-conversation-integrity.md` and `drawings/YYYY-MM-DD-summary.md` unless the user changes that convention.
+- Session-level conversation-integrity and summary records remain at `area/drawing/YYYY-MM-DD-conversation-integrity.md` and `area/drawing/YYYY-MM-DD-summary.md` unless the user changes that convention.
 - Existing legacy `YYYY-MM-DD-image-prompts.md` files remain historical records. Do not delete or rewrite them during adoption unless the user explicitly requests migration. For a day already in progress, create the daily folder and separate notes for its attempts. Preserve the legacy file as-is.
 
 ### Mandatory pre-attempt rule
 
 **Commit the session brief and authored prompt in their authoritative locations before the first image-generation or image-edit attempt.**
 
-For non-novel work, use the session brief and attempt notes under `drawings/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`.
+For non-novel work, use the session brief and attempt notes under `area/drawing/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `area/novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`.
 
-This rule applies to successful, exploratory, and revision attempts. Never generate first and archive later. Never duplicate a novel-scene prompt in the root `drawings/` history.
+This rule applies to successful, exploratory, and revision attempts. Never generate first and archive later. Never duplicate a novel-scene prompt in the root `area/drawing/` history.
 
 Before drafting the next prompt:
 1. Read the authoritative session-opening brief first. If it does not exist,
@@ -250,7 +250,7 @@ The Worker owns the attempt-record commit, output and provenance capture, reposi
 ### Daily attempt ledger
 
 Do not create a separate cross-session success catalogue. For each
-non-novel drawing date, maintain `drawings/YYYY-MM-DD/README.md` as the
+non-novel drawing date, maintain `area/drawing/YYYY-MM-DD/README.md` as the
 navigation ledger for that date's attempts. It must contain one contiguous
 Markdown table with exactly six fields:
 
