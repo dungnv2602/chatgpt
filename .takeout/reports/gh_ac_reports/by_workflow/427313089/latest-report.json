@@ -1,31 +1,31 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45767693432",
-    "number": 537,
+    "id": "45767892272",
+    "number": 539,
     "attempt": 1,
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
     "workflow_path": ".github/workflows/validate-document-standards.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45767693432",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45767892272",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "e0dc9ce55b4d58fffac8a423e0d9828aaad81875",
+    "head_sha": "8c03fe02de09313c3054269e4058728dc7a79e93",
     "status": "in_progress",
     "conclusion": null,
-    "created_at": "2026-11-26T06:22:03Z",
-    "run_started_at": "2026-11-26T06:22:03Z",
-    "updated_at": "2026-11-26T06:23:43Z",
+    "created_at": "2026-11-26T06:23:45Z",
+    "run_started_at": "2026-11-26T06:23:45Z",
+    "updated_at": "2026-11-26T06:24:59Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Preserve Worker workspace boundary while updating image root"
+    "head_commit_message": "Remove obsolete reference-index path wording"
   },
   "capture": {
     "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-26T06:23:55Z",
+    "captured_at_utc": "2026-11-26T06:25:18Z",
     "completeness": "Incomplete",
     "reporter_job": {
-      "id": "139732816057",
+      "id": "139733350622",
       "name": "Capture GH Actions diagnostics",
       "status": "in_progress",
       "conclusion": null
@@ -42,7 +42,7 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "139732740974",
+        "job_id": "139733230587",
         "job_name": "validate-document-standards",
         "step_number": 4,
         "step_name": "Run CI Ledger regression tests",
@@ -54,14 +54,14 @@
   },
   "jobs": [
     {
-      "id": "139732740974",
+      "id": "139733230587",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-26T06:22:44Z",
-      "completed_at": "2026-11-26T06:22:54Z",
-      "runner_name": "GitHub Actions 1000002974",
-      "runner_id": 1000002974,
+      "started_at": "2026-11-26T06:24:02Z",
+      "completed_at": "2026-11-26T06:24:19Z",
+      "runner_name": "GitHub Actions 1000002980",
+      "runner_id": 1000002980,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,101 +70,101 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T06:22:45Z",
-          "completed_at": "2026-11-26T06:22:45Z"
+          "started_at": "2026-11-26T06:24:03Z",
+          "completed_at": "2026-11-26T06:24:04Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T06:22:45Z",
-          "completed_at": "2026-11-26T06:22:50Z"
+          "started_at": "2026-11-26T06:24:04Z",
+          "completed_at": "2026-11-26T06:24:13Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T06:22:50Z",
-          "completed_at": "2026-11-26T06:22:50Z"
+          "started_at": "2026-11-26T06:24:13Z",
+          "completed_at": "2026-11-26T06:24:14Z"
         },
         {
           "number": 4,
           "name": "Run CI Ledger regression tests",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-26T06:22:50Z",
-          "completed_at": "2026-11-26T06:22:51Z"
+          "started_at": "2026-11-26T06:24:14Z",
+          "completed_at": "2026-11-26T06:24:16Z"
         },
         {
           "number": 5,
           "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-26T06:22:51Z",
-          "completed_at": "2026-11-26T06:22:51Z"
+          "started_at": "2026-11-26T06:24:16Z",
+          "completed_at": "2026-11-26T06:24:16Z"
         },
         {
           "number": 6,
           "name": "Validate the document type catalog",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-26T06:22:51Z",
-          "completed_at": "2026-11-26T06:22:51Z"
+          "started_at": "2026-11-26T06:24:16Z",
+          "completed_at": "2026-11-26T06:24:16Z"
         },
         {
           "number": 11,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-26T06:22:51Z",
-          "completed_at": "2026-11-26T06:22:51Z"
+          "started_at": "2026-11-26T06:24:16Z",
+          "completed_at": "2026-11-26T06:24:16Z"
         },
         {
           "number": 12,
           "name": "Post Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T06:22:51Z",
-          "completed_at": "2026-11-26T06:22:52Z"
+          "started_at": "2026-11-26T06:24:16Z",
+          "completed_at": "2026-11-26T06:24:16Z"
         },
         {
           "number": 13,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T06:22:52Z",
-          "completed_at": "2026-11-26T06:22:52Z"
+          "started_at": "2026-11-26T06:24:16Z",
+          "completed_at": "2026-11-26T06:24:16Z"
         }
       ],
       "log_capture": {
         "available": false,
         "truncated": false,
         "bytes": 82,
-        "path": "logs/job-139732740974.log",
-        "error": "run 45767693432 is still in progress; logs will be available when it is complete\n",
+        "path": "logs/job-139733230587.log",
+        "error": "run 45767892272 is still in progress; logs will be available when it is complete\n",
         "marker_lines": []
       }
     }
   ],
   "check_runs": [
     {
-      "id": "139732740974",
+      "id": "139733230587",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-26T06:22:44Z",
-      "completed_at": "2026-11-26T06:22:54Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45767693432/job/139732740974",
+      "started_at": "2026-11-26T06:24:02Z",
+      "completed_at": "2026-11-26T06:24:19Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45767892272/job/139733230587",
       "app": "GitHub Actions",
       "annotations_count": 2
     }
   ],
   "annotations": [
     {
-      "check_run_id": "139732740974",
-      "job_id": "139732740974",
+      "check_run_id": "139733230587",
+      "job_id": "139733230587",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -174,8 +174,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "139732740974",
-      "job_id": "139732740974",
+      "check_run_id": "139733230587",
+      "job_id": "139733230587",
       "path": ".github",
       "start_line": 424,
       "end_line": 424,
@@ -189,9 +189,9 @@
   "capture_errors": [
     {
       "source": "job_log",
-      "job_id": "139732740974",
-      "message": "run 45767693432 is still in progress; logs will be available when it is complete\n"
+      "job_id": "139733230587",
+      "message": "run 45767892272 is still in progress; logs will be available when it is complete\n"
     }
   ],
-  "history_path": "history/427313089/45767693432-attempt-1-pre_finalizer"
+  "history_path": "history/427313089/45767892272-attempt-1-pre_finalizer"
 }
