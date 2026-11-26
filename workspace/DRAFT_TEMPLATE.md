@@ -165,5 +165,5 @@ Draft lifecycle:
 - Do not use promoted as a Draft status.
 - On successful promotion, delete this source file after the accepted ADR passes the completeness and read-back checks.
 - If deletion fails after acceptance, keep this file temporarily. Set resulting_adr, promotion_cleanup_pending, and cleanup_reason. Add it to Promotion Cleanup Pending, not Current Drafts.
-- Do not create an archive/draft/ folder or a Promoted Drafts index.
+- Do not create an `.archive/draft/` folder or a Promoted Drafts index.
 -->
