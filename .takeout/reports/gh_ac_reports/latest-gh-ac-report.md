@@ -1,26 +1,26 @@
-# STE Lint Changed Documentation — run 45756856341
+# Validate Document Standards — run 45757269515
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | STE Lint Changed Documentation |
-| Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45756856341 / 1 |
-| Run number | 753 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45756856341 |
+| Workflow | Validate Document Standards |
+| Workflow path | .github/workflows/validate-document-standards.yml |
+| Run / attempt | 45757269515 / 1 |
+| Run number | 488 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45757269515 |
 | Branch | gpt |
-| Commit | 5eea2cba5d5e75c7ffaf11c22d652968e6c02e32 |
+| Commit | 1c85e8833d59ced6a33f5ee80ab1e518459444ac |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-26T04:42:01Z |
+| Created (UTC) | 2026-11-26T04:45:58Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-26T04:43:24Z |
+| Captured (UTC) | 2026-11-26T04:47:25Z |
 
 ## Executive summary
 
@@ -28,12 +28,12 @@
 | --- | --- |
 | State | in_progress |
 | Primary category | validation_or_test |
-| Jobs | 2 |
-| Steps | 17 |
+| Jobs | 1 |
+| Steps | 9 |
 | Issues | 1 |
-| Annotations | 4 |
+| Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 1 |
 
 ## Failure classification
 
@@ -45,23 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 139697396847 | Find lint baseline and select execution mode | completed | success | 3 | logs/job-139697396847.log |
-| 139697425292 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-139697425292.log |
+| 139698840715 | validate-document-standards | completed | failure | 9 | logs/job-139698840715.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 139697425292 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 139698840715 | 4 | Run CI Ledger regression tests | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 139697396847 | warning | .github | 46 |  | No complete tooling-valid lint baseline exists. Run one full audit. |
-| 139697425292 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 139697425292 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 139697425292 | failure | .github | 20 |  | Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md. |
+| 139698840715 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 139698840715 | failure | .github | 65 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -71,8 +68,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 139697396847 | Find lint baseline and select execution mode | logs/job-139697396847.log | 82 | False |  |
-| 139697425292 | Lint changed Markdown files and publish detailed evidence | logs/job-139697425292.log | 82 | False |  |
+| 139698840715 | validate-document-standards | logs/job-139698840715.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -80,12 +76,11 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45756856341 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45756856341 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45757269515 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
-[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_changed/latest-lint-report.md)
+No separate lint report applies to this workflow.
 
 ## Integrity
 
