@@ -2,11 +2,12 @@
 
 ## Current Step
 
-- **2026-11-26 14:50 UTC:** Record the DRAFT-0002 revision 4 source commit and read-back in its five approved P0 task records: [20261126-142112](tasks/20261126-142112-review-passive-voice-findings-in-workspace-draft-draft-0002-phas.md), [20261126-142112-01](tasks/20261126-142112-01-review-semicolon-findings-in-workspace-draft-draft-0002-phase-aw.md), [20261126-142112-02](tasks/20261126-142112-02-review-long-sentence-findings-in-workspace-draft-draft-0002-phas.md), [20261126-142112-03](tasks/20261126-142112-03-review-present-perfect-findings-in-workspace-draft-draft-0002-ph.md), and [20261126-142112-04](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md). Reconcile the task board's current-execution pointer with the task records and newly generated P0 handoffs. Keep hosted validation pending until a naturally completed result is available.
+- **2026-11-26 14:55 UTC:** Execute current task [20261126-143747 — Review synonym-rotation findings in workspace/task_board.md](tasks/20261126-143747-review-synonym-rotation-findings-in-workspace-task-board-md.md). Inspect its exact report and Ledger evidence, identify the stable synonym choice, make the narrow task-board edit, and read back the result. Preserve task IDs, approvals, priorities, status, and links.
 
 ## Open Discussions
 
-- **2026-11-26 14:50 UTC:** DRAFT-0002 revision 4 remains in review. The decision and implementation scope are not approved. The five style-remediation tasks require hosted validation before closeout. New P0 handoffs also exist for workspace/draft/README.md and workspace/task_board.md.
+- **2026-11-26 14:55 UTC:** DRAFT-0002 revision 4 remains in review. Its wording remediation is committed in [c3ef2c4](https://github.com/dungnv2602/chatgpt/commit/c3ef2c4dc0635033c5cebaef0b7624af3b2fccb6). Five associated P0 task records now link the commit. Hosted lint validation remains pending.
+- **2026-11-26 14:55 UTC:** Four new P0 tasks cover style findings in workspace/draft/README.md and workspace/task_board.md. The task board selects 20261126-143747 as current execution.
 - **2026-11-26 13:46 UTC:** P0 remediation remains open for Markdown link/anchor validation, CI Ledger regression failures, and Validate Document Standards checkout and publication failures. The catalog P0 task 20261126-124305 is closed and archived. See the task board for the complete active queue.
 
 ## Reports
