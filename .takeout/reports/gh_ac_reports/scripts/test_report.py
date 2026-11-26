@@ -349,23 +349,49 @@ class HistoricalRetentionTests(unittest.TestCase):
 
 
 class OnDemandRenderingTests(unittest.TestCase):
-    def test_render_report_reads_canonical_json_without_creating_markdown(self):
+    def test_render_report_produces_markdown_from_canonical_json(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
-            folder = root / "history" / "55" / "100-attempt-1-post_run"
+            history_path = "history/55/100-attempt-1-post_run"
+            folder = root / history_path
             folder.mkdir(parents=True)
-            report = {"history_path": "history/55/100-attempt-1-post_run"}
+            report = {
+                "history_path": history_path,
+                "source_run": {
+                    "workflow_name": "Example workflow", "workflow_path": ".github/workflows/example.yml",
+                    "id": "100", "attempt": 1, "number": 100, "run_url": "https://example.invalid/100",
+                    "branch": "gpt", "head_sha": "abc123", "event": "push", "actor": "tester",
+                    "created_at": "2026-11-23T06:00:00Z", "status": "completed", "conclusion": "failure",
+                },
+                "capture": {
+                    "reporter_job": None, "stage": "post_run", "completeness": "Complete",
+                    "captured_at_utc": "2026-11-23T06:01:00Z",
+                },
+                "classification": {
+                    "projected_conclusion": None, "state": "failure",
+                    "primary_category": "validation_or_test", "categories": ["validation_or_test"],
+                    "issues": [],
+                },
+                "jobs": [], "annotations": [], "artifacts": [], "capture_errors": [],
+            }
             (folder / "report.json").write_text(json.dumps(report), encoding="utf-8")
-            with patch.object(REPORT, "render_markdown", return_value="# On demand") as renderer:
-                rendered = REPORT.render_report(root, report["history_path"])
-            self.assertEqual(rendered, "# On demand")
-            renderer.assert_called_once_with(report)
+            rendered = REPORT.render_report(root, history_path)
+            self.assertIn("Example workflow", rendered)
+            self.assertIn("validation_or_test", rendered)
             self.assertFalse((folder / "report.md").exists())
 
-    def test_render_report_rejects_path_traversal(self):
+    def test_render_report_rejects_missing_invalid_and_traversal_paths(self):
         with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            with self.assertRaises(FileNotFoundError):
+                REPORT.render_report(root, "history/55/missing")
+            folder = root / "history" / "55" / "broken"
+            folder.mkdir(parents=True)
+            (folder / "report.json").write_text("{invalid", encoding="utf-8")
+            with self.assertRaises(json.JSONDecodeError):
+                REPORT.render_report(root, "history/55/broken")
             with self.assertRaises(ValueError):
-                REPORT.render_report(Path(temp), "../outside")
+                REPORT.render_report(root, "../outside")
 
 
 class RetryPolicyTests(unittest.TestCase):
