@@ -147,3 +147,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
+
+
+### 2026-11-26 — follow-up fixture correction from latest CI
+
+- **Action:** Inspected CI runs 570 and 890 on commit 225ab37. The Ledger suite still had eight errors: the fixture normalization guard only converted escaped newline sequences when the entire file had no real newline characters, but the canonical board fixture contained mixed representations. The diagnostics backfill failed on the same task-board Proposed section errors. Collector pagination test failure was addressed earlier.
+- **Repair:** Normalize literal escaped newline sequences whenever they occur in the copied board fixture, regardless of whether actual newlines also exist. Commit: 252168c.
+- **Verification:** Remote commit recorded; hosted validation of this change pending. Do not close task until CI passes and handoff is verified.
