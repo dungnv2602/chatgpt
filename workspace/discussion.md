@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 16:34 UTC:** Close P0 task 20261126-162137. Archive its exact lint evidence folder, record the verified fix and hosted result in the Ledger, prepare and verify the immutable Done task archive, update the retention index, delete the active record, and reconcile the board. Allow the natural Diagnostics sweep to retire the terminal finding.
+- **2026-11-26 16:41 UTC:** Create the immutable Done archive copy for P0 task 20261126-162137 with its archived evidence link. Read back the complete record and verify its commit. Then register the task archive, delete the active record, enforce the seven-entry history limit, and select the oldest remaining eligible P0 task.
 
 ## Open Discussions
 
