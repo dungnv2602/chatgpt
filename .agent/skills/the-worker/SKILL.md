@@ -77,7 +77,7 @@ This rule is mandatory because the user has not provided a local project workspa
 
 ## Approved repository workspace boundary
 
-**Standing default:** All repository file work must stay inside the reconstructed approved project directories: `area/`, `.agent/`, `.takeout/images/`, `.takeout/reports/`, `.archive/task/`, `.archive/reports/`, `workspace/`, and the narrowly authorized `.github/` workflow, scripts, and retention-index paths defined below. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
+**Standing default:** All repository file work must stay inside the reconstructed approved project directories: `.takeout/images/`, `area/`, `.agent/`, `.takeout/`, `.archive/`, `workspace/`, and the narrowly authorized `.github/` workflow, scripts, and retention-index paths defined below. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
 
 **Authorized archive-retention index exception:**
 
