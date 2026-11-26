@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-26 — Foundational initialization:** Reconcile session-start references with the relocated `.agent/skills/` paths, retrieve required foundational files from branch `gpt`, and verify the register entry.
+_No active step._
 
 ## Open Discussions
 
@@ -11,6 +11,8 @@
 - **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
 
 ## Reports
+
+- **2026-11-26 — Foundational initialization completed:** Adapted initialization to the relocated `.agent/` policy and `.agent/skills/` paths. Retrieved and read The Worker, mandatory Conversation Mode reference, ASD-STE100, GitHub Actions, and Document Standards from branch `gpt`. Corrected the startup-register verification wording. No legacy files were restored. Session-start procedure references to the former root `skills/` paths remain superseded by the relocated equivalents for this reconstructed layout.
 
 - **2026-11-25 07:13 UTC — Companion architecture Draft prepared:** Created DRAFT-0003 revision 1, completed its four-option assessment and comparative matrix, indexed it, and read back the Draft, index, and active task record from branch gpt. Recorded the DRAFT-0002 approval-state discrepancy without changing its status. No ADR or implementation was created.
 
