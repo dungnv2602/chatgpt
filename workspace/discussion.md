@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 08:11 UTC:** User authorized clearing stale pre-reset data from the Actions report index and Ledger. Both reinitialized empty in commits 874c45e and 54e9025. Next: static trace of task-generation/report-ingestion defects, no tests or CI.
+- **2026-11-26 08:11 UTC:** Stale Actions index and Ledger state cleared in commits 874c45e and 54e9025; both readback confirmed empty and baselines unseeded. Static audit found task-board writer schema mismatch. Next: trace board generation, Ledger task-rendering, and regression tests; fix writer to match current board structure without restoring removed files or running tests/CI.
 
 ## Open Discussions
 
