@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-124305
 - **Created:** 2026-11-26 12:43 UTC
-- **Updated:** 2026-11-26 12:49 UTC
+- **Updated:** 2026-11-26 12:56 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -46,6 +46,13 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **Approved:** Group findings by the stable remediation key.
 
 ## 6. Progress Log
+
+### 2026-11-26 12:56 UTC
+
+- **Action:** Verified the permanent archive coverage correction and the restored ADR-0001 linked task.
+- **Result:** Catalog version 1.18 covers archive/adr/*.md and archive/tasks/*.md. The validator accepts the archive root. Hosted Document Standards run 45823761313 passed after both archive families were present. The subsequent lint report 45823761243 confirmed zero unresolved local Markdown links and anchors; its overall Failed conclusion came from STE findings, not the tooling check.
+- **Next:** Keep this finding open only until the new post-restoration validation and final task reconciliation are read back.
+
 
 ### 2026-11-26 12:43 UTC
 
