@@ -497,6 +497,13 @@ class TakeoutProcessorTests(unittest.TestCase):
         )
         self.assertEqual({row["verification_status"] for row in manifest_rows}, {"Pending"})
         self.assertEqual({row["mapping_status"] for row in manifest_rows}, {"Corroborated"})
+        report_path = self.inbox / "history/batch-session-link/attempt-001/conversion-report.csv"
+        with report_path.open(encoding="utf-8", newline="") as handle:
+            report_rows = list(csv.DictReader(handle))
+        self.assertEqual(
+            {row["manifest_path"] for row in report_rows},
+            {"area/drawing/2026-11-19/manifest.csv"},
+        )
         self.assertIn(
             "## Image inventory — 2 WebP delivery files + 2 original masters (4 files total)",
             readme_text,
