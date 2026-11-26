@@ -51,6 +51,14 @@ Review and remediate the related CI findings listed below after approval. Preser
 
 ## 6. Progress Log
 
+### 2026-11-26 16:58 UTC
+
+- **Action:** Completed the ADR-0003 Option 3 implementation and mapped its six Confirmation criteria to current evidence.
+- **Result:** Five criteria are verified. The report generator writes only canonical JSON, integrity manifests, and logs; the central index is the sole index/latest pointer; Markdown renders on demand; canonical report/log bytes were preserved; hosted reporter, Ledger, Document Standards, and STE Lint workflows passed.
+- **Evidence:** Diagnostics runs 45858706596 and 45861355013; Validate Document Standards runs 45858726101 and 45861354992; STE Lint Changed run 45859253550. The original 28 report/log blobs matched the pre-migration tree. Twelve task-linked report folders are archived as exact copies.
+- **Open gate:** Confirmation criterion 4 requires a read-only repository-wide reference search. Targeted consumer review is complete, but the Worker scope requires explicit user authorization before a full repository-wide search.
+- **Next:** Obtain that authorization, complete the exact-path reference search, then update ADR confirmation and close this task.
+
 ### 2026-11-26 16:57 UTC
 
 - **Action:** Filed the 12 unique Actions report folders referenced by the four resolved Ledger findings.
@@ -180,24 +188,24 @@ Review and remediate the related CI findings listed below after approval. Preser
 
 The error-only reporter/Ledger contract is implemented and hosted-validated. Reporter retention and Ledger ingestion use the same independent-error predicate; incomplete captures remain retryable but are not ingested. Failed lint tooling checks create stable tasks without importing unbaselined lint findings. The Ledger enforces one active Current Execution task and synchronizes its board pointer.
 
-The four linked Validate Document Standards findings are resolved with fix commits and successful hosted validation. The 47-test Ledger suite passed in both Validate Document Standards run 45823761313 and Diagnostics run 45823761330; the 37-test reporter suite also passed in Diagnostics. Three historical Actions occurrences are reconciled to archived Done task 20261126-101512-01, and the separate historical checkout-fixture occurrence is reconciled to archived Done task 20261126-101512. Both task archives and their report evidence are registered in the shared archive-retention index.
+The four linked Validate Document Standards findings are resolved with fix commits and successful hosted validation. Their 12 unique Actions report folders, integrity manifests, and captured logs are preserved in the report archive and registered. All four Ledger evidence paths and task links resolve to those archived JSON reports.
 
-The current Actions and lint indexes remain aligned with Ledger processed-report state. ADR-0003 is accepted. Its Option 3 artifact-layout migration is the remaining implementation scope of this task and has not started.
+ADR-0003 Option 3 is implemented. The generator writes canonical JSON, integrity manifests, and logs only; the central index is the only index/latest pointer; Markdown renders on demand; and the 28 original report/log blobs were preserved byte-for-byte. Five of six ADR Confirmation criteria are verified by hosted runs and changed-path evidence. Criterion 4 remains open pending explicit authorization for a read-only repository-wide reference search.
 
 ## 8. Remaining Work
 
-- Implement accepted ADR-0003 Option 3: retain canonical report JSON, integrity manifests, logs, and one central index; render Markdown views on demand; remove only the derived or redundant artifacts explicitly covered by the accepted decision.
-- Update reporter generation, consumers, workflow integration, schemas, tests, guides, and catalog coverage together. Preserve immutable evidence bytes and all active/archived report references.
-- Verify report indexes, latest pointers, Ledger processed paths, task references, archive-retention entries, and the one Current Execution task after migration.
-- Obtain successful hosted validation for every affected workflow before closing the task.
+- Obtain explicit user authorization for the read-only repository-wide reference search required by ADR-0003 Confirmation criterion 4.
+- Search only for the exact removed report paths and verify every required reference is either removed or migrated. Do not perform unrelated repository review.
+- After criterion 4 passes, update ADR-0003 implementation status and task acceptance evidence, then archive this task.
+- Allow the natural Diagnostics sweep after task archival to verify the remaining active report manifests and retire the four terminal linked findings.
 
 ## 9. Next Actions
 
-1. Read ADR-0003 Confirmation criteria and map them to the existing report generator, indexes, integrity manifests, and consumers.
-2. Implement the accepted Option 3 migration without changing canonical JSON or log payloads.
-3. Add or update regression coverage for on-demand Markdown rendering, index integrity, retention, and all consumer paths.
-4. Run the relevant local checks only where the Worker procedure permits, then rely on naturally triggered hosted validation.
-5. Reconcile the Ledger, task board, archive-retention index, and report indexes before task closeout.
+1. Obtain explicit user authorization for a read-only search across tracked repository files for the removed report paths.
+2. Complete that exact-path reference search and record the result in ADR-0003.
+3. Update ADR-0003 to implementation complete only when all six Confirmation criteria pass.
+4. Archive this task with its report evidence already preserved under `.archive/reports/`.
+5. Allow the natural Diagnostics sweep to verify the remaining history and retire the four linked Ledger findings.
 
 ## 10. References
 
@@ -206,14 +214,25 @@ The current Actions and lint indexes remain aligned with Ledger processed-report
 
 ## 11. Verification
 
-- **Check:** Shared Actions eligibility, error-only reporter retention, baseline-aware lint tooling observations, task linkage, processed-report parity, task generation, and archive reconciliation.
-- **Method:** Hosted Validate Document Standards run 45823761313 and Diagnostics run 45823761330; exact archived task records; `.github/archive-retention-index.json`; central Ledger read-back.
-- **Result:** Document Standards passed 47 Ledger tests and 33 catalog tests. Diagnostics passed 37 reporter tests, 47 Ledger tests, and all seven diagnostic workflow checks. Four linked findings now have valid fix commits and successful validation records. Three historical Actions occurrences are represented by archived task 20261126-101512-01; the separate run 45788718679 is represented by archived task 20261126-101512. Both archives and report evidence are indexed.
-- **Limitations:** ADR-0003 Option 3 migration and its hosted validation remain outstanding. The separate STE Lint publication task 20261126-145133 still requires a successful post-fix hosted run.
+### ADR-0003 Confirmation Mapping
+
+| Criterion | Status | Task evidence |
+|---|---|---|
+| 1. Canonical JSON, integrity manifests, and logs retained with unchanged hashes | Verified | Diagnostics 45858706596 verified all 28 manifests. All 57 original report/log Git blobs were unchanged. Twelve archived folders were read back byte-for-byte. |
+| 2. No stored Markdown or duplicate latest/workflow indexes; central latest pointer remains valid | Verified | Active index has 16 reports. Its latest pointer resolves to report 45842593526. Reporter tests passed in Diagnostics 45858706596. |
+| 3. On-demand renderer and missing/invalid input regression coverage | Verified | End-to-end renderer and missing/invalid path tests passed in Diagnostics 45858706596. |
+| 4. Repository-wide reference search and consumer migration | Pending authorization | Targeted review covered the report guide, generator, tests, Ledger, diagnostics workflow, Document Type Catalog, and task evidence. Full read-only repository-wide search requires explicit user authorization. |
+| 5. Only derived artifacts removed; canonical JSON/logs unchanged | Verified | Git blob comparison confirmed all 57 original report/log files were byte-identical. Task evidence archival used exact copies. |
+| 6. Naturally triggered hosted validation passes | Verified | Diagnostics 45858706596 and 45861355013; Validate Document Standards 45858726101 and 45861354992; STE Lint Changed 45859253550 all passed. |
+
+- **Check:** ADR-0003 Confirmation criteria 1, 2, 3, 5, and 6; shared Actions eligibility; Ledger reconciliation; task/evidence archive integrity.
+- **Method:** Diagnostics runs 45858706596 and 45861355013; Validate Document Standards runs 45858726101 and 45861354992; STE Lint Changed run 45859253550; Git blob comparison of the 28 pre-migration report folders; exact read-back of 36 archived evidence files.
+- **Result:** Five of six ADR Confirmation criteria are verified. The report generator, central index, on-demand renderer, evidence preservation, and hosted validation pass. The four linked findings are resolved and their 12 report folders are archived. Task 20261126-162137 was closed and its finding automatically retired.
+- **Limitations:** Confirmation criterion 4 remains pending explicit authorization for a read-only repository-wide reference search. The final Diagnostics sweep after this task archive must verify the remaining active history and retire the four linked findings.
 
 ## 12. Handoff Instructions
 
-Treat this as P0, Approved, and In Progress. The error-only reporter/Ledger contract and four linked findings are verified. Continue with the accepted ADR-0003 Option 3 migration. Preserve canonical report JSON, integrity manifests, logs, and evidence paths. Do not touch DRAFT-0002 or other unapproved drafts. Do not poll or manually dispatch CI.
+Treat this as P0, Approved, and In Progress. ADR-0003 Option 3 is implemented and five of six Confirmation criteria are verified. Do not close until the authorized repository-wide reference search completes. Preserve canonical report JSON, integrity manifests, logs, and evidence paths. Do not touch DRAFT-0002 or other unapproved drafts. Do not poll or manually dispatch CI.
 
 ## 13. Ledger Findings
 
