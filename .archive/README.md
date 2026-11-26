@@ -39,7 +39,7 @@ The active CI issue Ledger is an operational backlog, not a permanent archive.
 1. Before closing a Ledger-generated task as Done, verify that every finding in its Ledger Findings section is terminal: resolved, accepted, false_positive, or duplicate. Each status must satisfy the Ledger schema's evidence requirements.
 2. Move report files needed for the historical handoff to .archive/reports/, preserving their relative paths. Update the task's evidence links to the new archive paths before writing its final archive copy.
 3. Archive the completed task and register its exact path in .github/archive-retention-index.json.
-4. The archive-task push triggers the normal diagnostics sweep. The Ledger reads only indexed task archives and removes the covered terminal findings from the active .takeout/.takeout/reports/triage/ledger.json. Findings remain active until that event-driven retirement runs.
+4. The archive-task push triggers the normal diagnostics sweep. The Ledger reads only indexed task archives and removes the covered terminal findings from the active .takeout/reports/triage/ledger.json. Findings remain active until that event-driven retirement runs.
 5. Do not manually delete resolved findings from the Ledger or run a periodic retirement scan. The archived task record and its report references preserve the audit trail.
 
 A task with any open or non-terminal finding must not be closed as Done. Cancelled tasks do not retire open findings.
@@ -64,7 +64,7 @@ The reset must:
 - Delete generated report payloads under active report history, workflow snapshots, latest pointers, and pending/processed request queues.
 - Delete all prior report-period content under .archive/reports/, including superseded-period snapshots.
 - Reset the GitHub Actions index and both lint-scope indexes to empty indexes with a new UTC watermark.
-- Replace .takeout/.takeout/reports/triage/ledger.json with an empty schema-valid Ledger, empty processed-report state, and unseeded lint baselines.
+- Replace .takeout/reports/triage/ledger.json with an empty schema-valid Ledger, empty processed-report state, and unseeded lint baselines.
 - Remove report-file entries from .github/archive-retention-index.json.
 - Preserve report scripts, schemas, templates, assets, operating guides, workflow definitions, .archive/tasks/, and the task retention entries.
 - Preserve unrelated task records. Any unapproved Ledger-generated proposals whose evidence is being deleted must be cancelled and archived before their active board rows are removed.
