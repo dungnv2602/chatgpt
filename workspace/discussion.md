@@ -1,9 +1,9 @@
 ## Current Step
 
-Inspect post-recovery GitHub Actions runs and finish the workflow/script dependency audit. Restored 1,311 canonical data blobs from the direct pre-deletion tree, including 1,238 report files and 72 task records. All 55 retention paths and 151/152 task-board targets now resolve; one orphan task target remains. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
+Inspect post-recovery GitHub Actions runs and finish the workflow/script dependency audit. Restored 1,311 canonical data blobs from the direct pre-deletion tree, including report histories and task records. All 55 retention paths and all 288 current task-board targets resolve. The catalog template placement repair awaits post-fix validation. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
 ## Open Discussions
-- **2026-11-26 — Task-board record links:** `workspace/task_board.md` now has 151 of 152 unique task-record targets resolving. Restored 78 records from the earlier snapshot, then recovered the remaining 72 from the direct parent of deletion commit `36d0236` using branch-specific Git history. One orphan target remains: `workspace/tasks/20261124-104408-01-review-present-perfect-findings-in-workspace-draft-draft-0001-repo.md`; it is absent from the parent tree, current tree, and branch-specific path history. Do not fabricate it or alter its board row without source evidence. [Audit task](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
+- **2026-11-26 — Task-board record links:** **Resolved:** The final broken task-board link used a truncated filename (`...repo.md`); the actual tracked task file ends in `...re.md`. The link was corrected. The diagnostics publish subsequently added further generated tasks; all 288 unique task-board targets now resolve. [Audit task](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
 
 - **2026-11-25 — DRAFT-0003 — Area, Project, and Task Architecture:** [Review DRAFT-0003 revision 1](draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md). The proposal recommends project folders with nested task folders, one global task board, task-local findings, project-level coordination, global Draft/ADR governance, and exact-file task archives. User review is required for the Area/Project/Task boundaries, task file split, selectors, resource promotion, and project closeout.
@@ -12,9 +12,9 @@ Inspect post-recovery GitHub Actions runs and finish the workflow/script depende
 
 ## Reports
 
-- **2026-11-26 — Pre-deletion data recovery:** Identified branch commit `36d0236` as the deletion source. Restored 1,311 missing canonical blobs from its direct parent and updated 14 data blobs to the parent versions. Restored 1,238 `.takeout/reports/` files, 72 task records, one archive task, and the exact parent Ledger; preserved newer report outputs and code changes. Verified all 55 retention paths and 151/152 task-board targets. [Recovery commit](https://github.com/dungnv2602/chatgpt/commit/99de4ef7d7a4f43499d838b299731ba5218d17ab). [Task record](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
+- **2026-11-26 — Task-board link resolution:** Corrected the sole stale link's truncated filename. All 288 unique task-board links now resolve to tracked files.
 
-- **2026-11-26 — Remaining task-board orphan:** One linked task file has no blob in the direct pre-deletion parent tree, current tree, or branch-specific path history. Left its board row unchanged; do not fabricate a record.
+- **2026-11-26 — Pre-deletion data recovery:** Identified branch commit `36d0236` as the deletion source. Restored 1,311 missing canonical blobs from its direct parent and updated 14 data blobs to the parent versions. Restored 1,238 `.takeout/reports/` files, 72 task records, one archive task, and the exact parent Ledger; preserved newer report outputs and code changes. Verified all 55 retention paths and 151/152 task-board targets. [Recovery commit](https://github.com/dungnv2602/chatgpt/commit/99de4ef7d7a4f43499d838b299731ba5218d17ab). [Task record](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
 - **2026-11-26 — Exact Ledger and archive relocation:** Restored the prior version 1.4.0 Ledger blob at `.takeout/reports/triage/ledger.json`; migrated state awaits the queued diagnostics sweep. Relocated 49 task and 16 report archive blobs from the historical `archive/` tree to `.archive/task/` and `.archive/reports/` by reusing exact blob SHAs; legacy roots were not recreated. The retention index has one unresolved task target.
 
