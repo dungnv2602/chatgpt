@@ -5,12 +5,12 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 10:53 UTC
+- **Updated:** 2026-11-26 11:10 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Governing ADR(s):** None — test-fixture repair; no architecture change
+- **Governing ADR(s):** None — implementation of the user-approved error-only retention and task-linkage policy. Artifact-layout changes are excluded pending DRAFT-0004 and an accepted ADR.
 - **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
@@ -62,23 +62,35 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **References:** `workspace/task_board.md`; commits `7866f69` and `a26451b`; report index pending run `45799154200`.
 - **Next:** Reconcile canonical report retention with Ledger eligibility, task linkage, and duplicate generated report artifacts. Preserve genuine unresolved error evidence.
 
+
+### 2026-11-26 11:10 UTC
+
+- **Action:** Audited the complete Actions report index, all active report folders, the Ledger, and the related lint reports.
+- **Result:** The Actions index contains 29 complete post-run reports. Twenty-six reports contain independent test failures and reconcile to six Ledger findings with three P0 tasks. Three reports are propagation-only: runs `45794610594`, `45794619503`, and `45804845399`. The reporter retains them because it checks only for a non-empty issue list. The Ledger ignores their propagation steps, so the reports have no finding or task. The prior pre-finalizer, success-only, and cancellation-only history cleanup is already reflected in the current tree.
+- **Result:** The reporter retention predicate does not check capture completeness or the Ledger's ignored categories and propagation steps. The Ledger separately requires complete captures. This creates a latent orphan-report path for incomplete captures and a confirmed mismatch for the three propagation-only reports.
+- **Result:** Three lint reports for runs `45794610594`, `45794619503`, and `45804845399` contain the same failed `Markdown links and heading anchors` check. The check reports a missing DRAFT-0002 link target at line 669. Both lint baseline scopes remain false. The Ledger consumes these reports as unusable baseline candidates and creates no finding or task. The 712/713 unbaselined lint findings must not become hundreds of tasks. The failed tooling check must create one stable, deduplicated task.
+- **Result:** The Actions history has 40 derived or redundant artifacts: 29 per-run Markdown renderings, two root latest copies, six per-workflow latest copies, and three per-workflow indexes. The root index already contains the latest-report pointer. Removing these files changes the report storage architecture, so no artifact-layout files will be deleted until DRAFT-0004 reaches accepted ADR status.
+- **References:** `.takeout/reports/gh_ac_reports/index.json`; `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/ledger.json`; lint reports for runs `45794610594`, `45794619503`, and `45804845399`; `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:669`.
+- **Next:** Prepare DRAFT-0004 for the canonical report artifact layout. Implement the already-approved eligibility and task-linkage corrections. Preserve original error evidence and do not alter report storage before ADR acceptance.
+
 ## 7. Current State
-
-The task remains P0, Approved, and In Progress. It is now the selected Current Execution task while `20261126-101512-01` awaits naturally triggered hosted validation.
-
-
-The Ledger recorded the findings and created this task handoff. Root cause, remediation, and validation have not been assessed.
+The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. No artifact-layout cleanup has been performed.
 
 ## 8. Remaining Work
-
-- Worker must inspect linked evidence and determine whether the findings share one remediation.
-- Remediation requires approval under the Worker rules.
-- No validation or resolution has been claimed.
+- Align reporter retention with the Ledger's independent-issue eligibility rules. Ensure every retained report produces at least one eligible finding.
+- Preserve incomplete-capture retry behavior while ensuring incomplete error reports receive task linkage.
+- Create stable, deduplicated Ledger findings for failed lint tooling checks when a baseline is not yet available. Do not taskify all pre-baseline lint findings.
+- Remove the three propagation-only Actions reports and their processed-report references after the eligibility correction.
+- Reconcile task-generation metadata so only one task file has `Current execution: Yes`.
+- Prepare DRAFT-0004 for the proposed report artifact layout. Do not remove report Markdown, latest copies, or per-workflow indexes until an ADR is accepted.
+- Verify all changes through naturally triggered hosted CI. Do not dispatch or poll.
 
 ## 9. Next Actions
-
-1. Inspect the linked report evidence and confirm the remediation scope.
-2. Request or record approval, then remediate and verify the findings.
+1. Complete the evidence-qualified DRAFT-0004 for the report artifact layout and present the exact revision for user review.
+2. Implement the approved error-only retention and Ledger eligibility contract with regression tests.
+3. Add failed-tooling-check observations and reprocess the three existing lint reports without taskifying their unbaselined lint findings.
+4. Rebuild the Actions index and Ledger references after removing propagation-only reports.
+5. Verify task generation, one Current Execution pointer, and hosted validation when naturally available.
 
 ## 10. References
 
@@ -86,11 +98,10 @@ The Ledger recorded the findings and created this task handoff. Root cause, reme
 - The exact report paths and run URLs are listed under Ledger Findings.
 
 ## 11. Verification
-
-- **Check:** Ledger schema and finding eligibility.
-- **Method:** Validated by the ingestion process before task publication.
-- **Result:** Task handoff generated from accepted ledger findings.
-- **Limitations:** This does not verify root cause or remediation.
+- **Check:** Active report inventory, reporter retention predicate, Ledger eligibility, processed-report state, and duplicate artifact layout.
+- **Method:** Remote readback of all 29 indexed report JSON files, history and by-workflow directory listings, central Ledger, lint report metadata, and source functions.
+- **Result:** Confirmed 26 independent test-error reports and three propagation-only reports. Confirmed three failed lint tooling-check reports without task linkage. Identified 40 derived or redundant report artifacts. Confirmed the root index already stores the latest-report pointer.
+- **Limitations:** No repository tests were run locally. No new hosted validation result is claimed. Artifact-layout changes remain blocked until DRAFT-0004 and its ADR receive approval.
 
 ## 12. Handoff Instructions
 
