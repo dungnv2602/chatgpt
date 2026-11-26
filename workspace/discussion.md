@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** Resolve P0 task [20261126-124129](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md). Correct the active Draft's archived ADR link, make the changed-document workflow run the Markdown link/anchor check on every push, add regression coverage, and verify the hosted check. Preserve separate STE lint findings.
+- **2026-11-26:** Resolve P0 task [20261126-124129](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md). Correct the active Draft's archived ADR link, make the changed-document workflow run the link/anchor check on every push. Use changed Markdown sources for incremental runs and all active sources for full audits. Add regression coverage and verify the hosted check. Preserve separate STE lint findings.
 
 ## Open Discussions
 
