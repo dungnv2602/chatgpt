@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#742](https://github.com/dungnv2602/chatgpt/actions/runs/45748952928)
-- **Run ID / attempt:** 45748952928 / 1
+- **Run:** [#745](https://github.com/dungnv2602/chatgpt/actions/runs/45750521112)
+- **Run ID / attempt:** 45750521112 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / c87281edc84cb9523aceff237f6ec55bc8be0720
+- **Branch / commit:** gpt / 51b716381de437707e7e5a29ae5d0a1d73bbbee4
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** c87281edc84cb9523aceff237f6ec55bc8be0720
-- **Generated (UTC):** 2026-11-26T03:27:50.910100+00:00
+- **Linter source SHA:** 51b716381de437707e7e5a29ae5d0a1d73bbbee4
+- **Generated (UTC):** 2026-11-26T03:43:53.668028+00:00
 
 ## 1. Executive summary
 
@@ -31,7 +31,7 @@
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -259,7 +259,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.369s
+Ran 4 tests in 0.243s
 
 OK
 ~~~
@@ -292,12 +292,9 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 244 active Markdown files (253 available as link targets) and 635 local Markdown links.
-Found 231 unresolved local Markdown targets or anchors.
-.agent/SESSION_START.md: missing Markdown file: .agent/skills/asd-ste100/references/repository-writing-policy.md
+Scanned 245 active Markdown files (254 available as link targets) and 635 local Markdown links.
+Found 224 unresolved local Markdown targets or anchors.
 .agent/skills/drawing/references/archive-and-delivery.md: missing Markdown file: ../the-worker/references/image-provenance-and-webp.md
-.agent/skills/drawing/references/patterns/README.md: missing Markdown file: ../../../../drawings/history/successful-prompts.md
-.agent/skills/drawing/references/patterns/README.md: missing Markdown file: ../../../../drawings/history/failed-prompts.md
 .agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/failed-prompts.md
 .agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/failed-prompts.md#fp-05--repeated-reversed-resting-roles-in-the-cozy-bedroom-sequence
 .agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-12-image-prompts.md#20--concise-reuse-of-successful-after-work-pose
@@ -324,13 +321,11 @@ Found 231 unresolved local Markdown targets or anchors.
 .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md: missing heading anchor: #step-d-log-every-test-run--self-healing-fix-test_heal-bucket
 .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md: missing heading anchor: #4-profile-guided-optimization-pgo-workflow-pgo_bench-bucket
 .agent/skills/prompt-master/assets/prompt-templates.md: missing heading anchor: #template-h--react--stop-conditions
-.agent/skills/romantic-storyteller-visual-artist/SKILL.md: missing Markdown file: ../SESSION_START.md#novelist-role-initialization
 .agent/skills/romantic-storyteller-visual-artist/references/novel-production-workflow.md: missing Markdown file: ../../../area/novel/WORKFLOW.md
 .agent/skills/romantic-storyteller-visual-artist/references/novel-production-workflow.md: missing Markdown file: ../../../area/novel/README.md
 .agent/skills/romantic-storyteller-visual-artist/references/novel-production-workflow.md: missing Markdown file: ../../../area/novel/WORKFLOW.md
 .archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
 .archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
-.takeout/reports/README.md: missing Markdown file: ../archive/README.md
 area/drawing/history/2026-11-12-conversation-integrity.md: missing Markdown file: ../images/webp/README.md
 area/drawing/history/2026-11-12-conversation-integrity.md: missing Markdown file: ../skills/drawing/SKILL.md
 area/drawing/history/2026-11-12-conversation-integrity.md: missing Markdown file: ../skills/session-archiving/SKILL.md
@@ -363,8 +358,6 @@ area/novel/README.md: missing Markdown file: ../skills/asd-ste100/references/rep
 area/novel/WORKFLOW.md: missing Markdown file: ../skills/romantic-storyteller-visual-artist/SKILL.md
 area/novel/WORKFLOW.md: missing Markdown file: ../skills/asd-ste100/references/repository-writing-policy.md
 area/novel/templates/scene-v1.md: missing Markdown file: relative-path
-workspace/README.md: missing Markdown file: ../reports/README.md
-workspace/README.md: missing Markdown file: ../archive/README.md
 workspace/adr/README.md: missing Markdown file: ../../archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md
 workspace/adr/README.md: missing Markdown file: ../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
