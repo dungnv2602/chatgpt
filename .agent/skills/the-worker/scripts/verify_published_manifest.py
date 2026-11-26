@@ -93,7 +93,7 @@ def verify_conversation_record(row: dict[str, str], session_date: str,
     if not source_filename:
         return ""  # Legacy manifest rows predate conversation-record enforcement.
 
-    expected_path = f"drawings/history/{session_date}-conversation-integrity.md"
+    expected_path = f"area/drawing/history/{session_date}-conversation-integrity.md"
     record_path = (row.get("conversation_record") or "").strip()
     if record_path != expected_path:
         return f"Conversation record path must be {expected_path} for {source_filename}."
@@ -196,12 +196,12 @@ def verify_session_links(row: dict[str, str], blob_reader: BlobReader) -> str:
     """Verify remote daily README inventory/table and attempt-note links."""
     webp_path = (row.get("webp_path") or "").strip()
     parts = Path(webp_path).parts
-    if len(parts) != 4 or parts[0] != "drawings" or parts[2] != "images":
+    if len(parts) != 4 or parts[0] != "area/drawing" or parts[2] != "images":
         return f"Drawing WebP path is not in a dated session images folder: {webp_path}"
     session_date = parts[1]
     relative_link = f"images/{parts[3]}"
 
-    readme_path = f"drawings/{session_date}/README.md"
+    readme_path = f"area/drawing/{session_date}/README.md"
     readme_bytes = blob_reader(readme_path)
     if readme_bytes is None:
         return f"Published daily README is missing: {readme_path}"
@@ -230,7 +230,7 @@ def verify_session_links(row: dict[str, str], blob_reader: BlobReader) -> str:
     if not attempt.isdigit() or not 1 <= int(attempt) <= 999:
         return f"Manifest has an invalid attempt value for {webp_path}: {attempt!r}"
     attempt_number = str(int(attempt)).zfill(2)
-    attempt_path = f"drawings/{session_date}/attempt-{attempt_number}.md"
+    attempt_path = f"area/drawing/{session_date}/attempt-{attempt_number}.md"
     attempt_bytes = blob_reader(attempt_path)
     if attempt_bytes is None:
         return f"Published attempt record is missing: {attempt_path}"
@@ -308,7 +308,7 @@ def main() -> int:
     args = parser.parse_args()
 
     root = Path(args.repo_root).resolve()
-    manifests = sorted((root / "drawings").glob("*/manifest.csv"))
+    manifests = sorted((root / "area/drawing").glob("*/manifest.csv"))
     if not manifests:
         print("No drawing session manifests found.")
         return 0
