@@ -1,9 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "sweep_watermark_utc": "2026-11-26T16:26:11Z",
+  "sweep_watermark_utc": "2026-11-26T16:27:02Z",
   "pending_run_ids": [
-    "45858726101",
-    "45858670455"
+    "45858726101"
   ],
   "runs": [
     {
