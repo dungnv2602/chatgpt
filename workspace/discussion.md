@@ -10,5 +10,7 @@ Audit relocated image-takeout contract and active README/skill/script references
 
 ## Reports
 
+- **2026-11-26 — Image-document reference repair:** Updated relocated `.takeout/images/README-1.md` links to `.agent/skills/` and existing intake documentation; corrected image-processing script command paths and the provenance reference to the intake README. Read-back exposed and corrected an initial path-formatting defect. Processor destination/path contract remains under investigation; no operational destinations changed. Hosted validation not run.
+
 - **2026-11-26 — Workflow path alignment audit:** Repairs to workflow paths and report/archive locations were read back. Hosted validation was not run.
 - **2026-11-26 — Active README/script contract review:** Initial findings show unresolved relocation mismatches in image intake paths and active references. Detailed scope and repair/validation outcomes will be reported at completion.
