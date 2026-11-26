@@ -2,6 +2,18 @@ name: GitHub Actions Diagnostics
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Archive Retention
+      - Convert Images to WebP
+      - Notification
+      - STE Lint Changed Documentation
+      - STE Lint Full Technical Documentation
+      - Validate Document Standards
+    types:
+      - completed
+    branches:
+      - gpt
   push:
     branches:
       - gpt
