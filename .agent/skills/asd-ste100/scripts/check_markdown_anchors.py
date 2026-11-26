@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import html
 import posixpath
 import re
@@ -54,6 +55,21 @@ def active_markdown(files: list[str]) -> list[str]:
         path for path in files
         if not path.startswith(EXCLUDED_PREFIXES)
     ]
+
+
+def select_active_sources(
+    active_files: list[str], requested_paths: list[str] | None = None
+) -> list[str]:
+    if requested_paths is None:
+        return list(active_files)
+    requested = {path for path in requested_paths if path}
+    invalid = sorted(requested - set(active_files))
+    if invalid:
+        raise ValueError(
+            "Source scope contains inactive or untracked Markdown paths: "
+            + ", ".join(invalid)
+        )
+    return [path for path in active_files if path in requested]
 
 
 def remove_fenced_blocks(text: str) -> str:
@@ -173,9 +189,30 @@ def resolve_markdown_target(
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--sources-file",
+        type=Path,
+        help="Check links only from these changed active Markdown sources.",
+    )
+    args = parser.parse_args()
+
     all_paths = set(tracked_paths())
     all_files = sorted(path for path in all_paths if path.lower().endswith(".md"))
     active_files = active_markdown(all_files)
+    try:
+        requested = None
+        if args.sources_file is not None:
+            requested = [
+                line.strip()
+                for line in args.sources_file.read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ]
+        sources = select_active_sources(active_files, requested)
+    except (OSError, ValueError) as exc:
+        print("Unable to select active Markdown sources: " + str(exc), file=sys.stderr)
+        return 2
+
     file_set = set(all_files)
     anchors_by_file = {}
     issues = []
@@ -187,7 +224,7 @@ def main() -> int:
         text = Path(source).read_text(encoding="utf-8")
         anchors_by_file[source] = heading_anchors(text)
 
-    for source in active_files:
+    for source in sources:
         text = Path(source).read_text(encoding="utf-8")
         for target in link_targets(text):
             parsed = urlsplit(target)
@@ -205,8 +242,9 @@ def main() -> int:
                 if fragment not in anchors_by_file[destination]:
                     issues.append((source, target, "missing heading anchor"))
 
+    scope = "all active" if requested is None else "changed"
     print(
-        f"Scanned {len(active_files)} active Markdown files "
+        f"Scanned {len(sources)} {scope} Markdown sources "
         f"({len(all_files)} available as link targets) and "
         f"{links_checked} local Markdown links."
     )

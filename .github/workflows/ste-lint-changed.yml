@@ -152,13 +152,25 @@ jobs:
 
       - name: Check active Markdown file links and heading anchors
         id: anchors
-        if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true'
         shell: bash
+        env:
+          BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
+          FULL_AUDIT: ${{ needs.preflight.outputs.full_audit }}
+          FETCH_FALLBACK: ${{ steps.fetch_baseline.outputs.full_audit }}
         run: |
           set -uo pipefail
           status=0
-          python3 .agent/skills/asd-ste100/scripts/check_markdown_anchors.py \
-            > .lint-report-records/anchor-check.log 2>&1 || status=$?
+          if [[ "$FULL_AUDIT" == "true" || "$FETCH_FALLBACK" == "true" ]]; then
+            python3 .agent/skills/asd-ste100/scripts/check_markdown_anchors.py \
+              > .lint-report-records/anchor-check.log 2>&1 || status=$?
+          else
+            git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$GITHUB_SHA" -- '*.md' |
+              grep -vE '^(\.archive/|\.takeout/reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|\.agent/skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
+              > .lint-report-records/anchor-sources.txt || true
+            python3 .agent/skills/asd-ste100/scripts/check_markdown_anchors.py \
+              --sources-file .lint-report-records/anchor-sources.txt \
+              > .lint-report-records/anchor-check.log 2>&1 || status=$?
+          fi
           echo "exit_code=$status" >> "$GITHUB_OUTPUT"
 
       - name: Run full technical-document lint

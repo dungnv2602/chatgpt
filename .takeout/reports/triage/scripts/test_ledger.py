@@ -928,6 +928,12 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("      - '!workspace/task_board.md'", standards)
         self.assertIn("      - '!workspace/tasks/**'", lint_changed)
         self.assertIn("      - '!workspace/task_board.md'", lint_changed)
+        anchor_step = lint_changed.split(
+            "      - name: Check active Markdown file links and heading anchors", 1
+        )[1].split("      - name: Run full technical-document lint", 1)[0]
+        self.assertNotIn("        if:", anchor_step)
+        self.assertIn("--sources-file", anchor_step)
+        self.assertIn("FULL_AUDIT", anchor_step)
         self.assertIn("Ingest centralized CI issues", sweep)
         self.assertIn("      - name: Publish diagnostic backfill and Worker tasks\n        if: always()", sweep)
         ignored = sweep.split("paths-ignore:", 1)[1].split("concurrency:", 1)[0]

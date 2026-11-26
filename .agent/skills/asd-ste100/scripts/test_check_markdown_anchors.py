@@ -47,6 +47,29 @@ class MarkdownAnchorTests(unittest.TestCase):
             "docs/missing.md",
         )
 
+
+    def test_incremental_scope_selects_only_requested_active_sources(self):
+        files = [
+            "docs/first.md",
+            "docs/second.md",
+            ".archive/adr/old.md",
+            "workspace/tasks/task.md",
+        ]
+        active = MODULE.active_markdown(files)
+        self.assertEqual(
+            MODULE.select_active_sources(active, ["docs/second.md"]),
+            ["docs/second.md"],
+        )
+
+    def test_incremental_scope_rejects_inactive_or_untracked_sources(self):
+        active = MODULE.active_markdown(
+            ["docs/first.md", ".archive/adr/old.md", "workspace/tasks/task.md"]
+        )
+        for path in (".archive/adr/old.md", "docs/missing.md"):
+            with self.subTest(path=path):
+                with self.assertRaisesRegex(ValueError, "inactive or untracked"):
+                    MODULE.select_active_sources(active, [path])
+
     def test_heading_slug_preserves_underscores_inside_code_spans(self):
         anchors = MODULE.heading_anchors("### Step D: Log Every Test Run & Self-Healing Fix (`test_heal` Bucket)")
         self.assertIn("step-d-log-every-test-run--self-healing-fix-test_heal-bucket", anchors)
