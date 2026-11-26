@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-143747
 - **Created:** 2026-11-26 14:37 UTC
-- **Updated:** 2026-11-26 14:39 UTC
+- **Updated:** 2026-11-26 14:55 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -54,19 +54,26 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** .takeout/reports/triage/ledger.json and the evidence links below.
 - **Next:** Inspect evidence, remediate, and verify before starting non-P0 work.
 
+### 2026-11-26 14:55 UTC
+
+- **Action:** Inspected reports 45840589283 and 45841101397. Both identify "Validate" in the canonical workflow name as conflicting with "check" in the title of task 20261126-124129.
+- **Result:** Kept the official "Validate Document Standards" workflow name. Renamed task 20261126-124129 to "Repair Markdown link and heading-anchor linting" in the board and task record. Commit [c163f4f](https://github.com/dungnv2602/chatgpt/commit/c163f4f642b5faf3c398f45e2a0805ae126f5382) preserves the task ID, P0 priority, approval, status, and link target. Read-back confirmed both titles. Hosted lint validation remains pending.
+- **References:** [Report 45840589283](https://github.com/dungnv2602/chatgpt/actions/runs/45840589283), [report 45841101397](https://github.com/dungnv2602/chatgpt/actions/runs/45841101397), [commit c163f4f](https://github.com/dungnv2602/chatgpt/commit/c163f4f642b5faf3c398f45e2a0805ae126f5382).
+- **Next:** Review the next event-driven lint report for the task-board synonym finding. Resolve this task only after successful relevant validation.
+
 ## 7. Current State
 
-The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.
+The task-board title no longer uses 'check' alongside the official 'Validate Document Standards' workflow name. Commit c163f4f contains the title correction. Hosted validation remains pending.
 
 ## 8. Remaining Work
 
-- Inspect linked evidence, remediate, and validate.
-- No validation or resolution is claimed until evidence is recorded.
+- Review the next event-driven lint report for the task-board synonym finding.
+- Resolve the finding only after successful relevant validation is recorded.
 
 ## 9. Next Actions
 
-1. Inspect linked reports and diagnostics.
-2. Remediate and verify under the standing P0 approval.
+1. Review the next event-driven lint report.
+2. If the finding is absent, record validation and close the task through the archive lifecycle.
 
 ## 10. References
 
@@ -77,8 +84,8 @@ The Ledger recorded findings. Root cause, remediation, and validation remain to 
 
 - **Check:** Ledger schema and finding eligibility.
 - **Method:** Validated by the ingestion process before task publication.
-- **Result:** Task handoff generated from accepted ledger findings.
-- **Limitations:** This does not verify root cause or remediation.
+- **Result:** Task handoff generated from accepted ledger findings. The source title correction is committed and read back.
+- **Limitations:** Hosted validation has not yet confirmed the finding's resolution.
 
 ## 12. Handoff Instructions
 
