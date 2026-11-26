@@ -2,7 +2,7 @@
 
 ## Current Step
 
-_No active step._
+**2026-11-27:** `/start` initialization and approved repository changes: assess and implement CI Ledger skill promotion and Worker-owned CI-generated P0 batch execution policy.
 
 ## Open Discussions
 
