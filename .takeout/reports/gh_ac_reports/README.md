@@ -1,6 +1,6 @@
 # GitHub Actions diagnostic reports
 
-This directory is the review surface for actionable GitHub Actions execution failures and operational exceptions. It complements the STE lint evidence in the separate `reports/lint_reports/` directory. Ordinary successful runs and cancellation-only runs are not persisted by default.
+This directory is the review surface for actionable GitHub Actions execution failures and operational exceptions. It complements the STE lint evidence in the separate `.takeout/reports/lint_reports/` directory. Ordinary successful runs and cancellation-only runs are not persisted by default.
 
 ## Review order
 
@@ -53,11 +53,11 @@ The collector redacts common token, authorization, password, and cloud-key patte
 
 ## Coverage on branch gpt
 
-Each source workflow runs a normal diagnostics job with job-level `continue-on-error: true`. That job checks out branch `gpt` and calls `reports/gh_ac_reports/actions/capture`, a local composite action. This keeps report generation outside the source validation result. The separate push-triggered sweep backfills completed runs and catches failures when the finalizer does not run. It does not rely on a default-branch observer or scheduled trigger.
+Each source workflow runs a normal diagnostics job with job-level `continue-on-error: true`. That job checks out branch `gpt` and calls `.takeout/reports/gh_ac_reports/actions/capture`, a local composite action. This keeps report generation outside the source validation result. The separate push-triggered sweep backfills completed runs and catches failures when the finalizer does not run. It does not rely on a default-branch observer or scheduled trigger.
 
 The repository default branch is main. GitHub only starts workflow_run and schedule observers when the workflow file exists on the default branch. This implementation does not change main. A workflow that fails before any job starts is discovered on a later gpt push or by a request file. Instant capture of that case needs a default-branch observer or an external GitHub App webhook.
 
-When a new workflow is added, append a normal job that needs the source jobs, uses `if: always()` and job-level `continue-on-error: true`, checks out `gpt`, and calls `./reports/gh_ac_reports/actions/capture`. The push sweep still backfills runs when the finalizer does not run.
+When a new workflow is added, append a normal job that needs the source jobs, uses `if: always()` and job-level `continue-on-error: true`, checks out `gpt`, and calls `./.takeout/reports/gh_ac_reports/actions/capture`. The push sweep still backfills runs when the finalizer does not run.
 
 ## Relationship to lint reports
 
@@ -83,7 +83,7 @@ If a diagnostics run fails before GitHub exposes job steps or a log URL, record 
 
 ## Resolution and archive
 
-The cross-family issue state is tracked in `reports/triage/ledger.json`. A finding is resolved only after its fix commit and successful relevant validation are recorded. The successful run URL and UTC timestamp are sufficient; a full successful-run diagnostic report is not required. Use a request file only when the successful run's detailed evidence is specifically needed. Resolved report files are moved to `archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `reports/` or a separate retention workflow.
+The cross-family issue state is tracked in `.takeout/reports/triage/ledger.json`. A finding is resolved only after its fix commit and successful relevant validation are recorded. The successful run URL and UTC timestamp are sufficient; a full successful-run diagnostic report is not required. Use a request file only when the successful run's detailed evidence is specifically needed. Resolved report files are moved to `.archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `reports/` or a separate retention workflow.
 
 
 ## Bounded retry and request handling
@@ -96,8 +96,8 @@ A complete capture is never rewritten or duplicated, even when a manual request 
 
 ## Reporting periods
 
-A clean-start reset requires explicit user authorization. It deletes active generated report payloads, workflow snapshots, latest pointers, request queues, and all previous `archive/reports/**` period snapshots. It resets the repository-wide index and request state to an empty reporting period with a new UTC watermark. It does not delete scripts, schemas, templates, assets, workflow definitions, operator guides, or task archives.
+A clean-start reset requires explicit user authorization. It deletes active generated report payloads, workflow snapshots, latest pointers, request queues, and all previous `.archive/reports/**` period snapshots. It resets the repository-wide index and request state to an empty reporting period with a new UTC watermark. It does not delete scripts, schemas, templates, assets, workflow definitions, operator guides, or task archives.
 
 The first report captures source runs created after the reset watermark. Do not carry pending runs or import old reports into the new period. Use the normal report indexes and immutable post-reset capture paths from then onward.
 
-Normal report rollover is different: it preserves open-finding evidence and does not clear the Ledger. See `reports/triage/README.md` for task-linked finding retirement and baseline seeding.
+Normal report rollover is different: it preserves open-finding evidence and does not clear the Ledger. See `.takeout/reports/triage/README.md` for task-linked finding retirement and baseline seeding.
