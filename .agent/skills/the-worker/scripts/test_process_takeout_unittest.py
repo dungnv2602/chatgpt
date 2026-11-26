@@ -48,12 +48,19 @@ class TakeoutProcessorTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
-        self.inbox = self.root / "images" / "takeout"
+        self.inbox = self.root / ".takeout" / "images"
         self.inbox.mkdir(parents=True)
-        (self.inbox / "README.md").write_text(
+        (self.inbox / "README-1.md").write_text(
+            "# Image Assets test fixture\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "README-2.md").write_text(
             "# Image Takeout test fixture\n",
             encoding="utf-8",
         )
+        (self.inbox / ".gitkeep").write_text("", encoding="utf-8")
+        (self.inbox / "original").mkdir()
+        (self.inbox / "webp").mkdir()
         self.bin_dir = self.root / "bin"
         self.bin_dir.mkdir()
         encoder = self.bin_dir / "cwebp"
@@ -93,7 +100,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 "destination_dir",
                 "area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001",
             )
-            if destination == "images/unclassified":
+            if destination == ".takeout/images/unclassified":
                 normalized.append(item)
                 continue
             parts = destination.split("/")
@@ -186,10 +193,10 @@ class TakeoutProcessorTests(unittest.TestCase):
         ]
         for item in normalized:
             rows.append(f'  - source: "{item["source"]}"')
-            if item.get("destination_dir") == "images/unclassified":
+            if item.get("destination_dir") == ".takeout/images/unclassified":
                 rows.extend([
                     f'    title: "{item.get("title", "Unclassified upload")}"',
-                    '    destination_dir: "images/unclassified"',
+                    '    destination_dir: ".takeout/images/unclassified"',
                 ])
                 for key in ("approval_status", "mapping_evidence"):
                     if key in item:
@@ -226,7 +233,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 {
                     "source": "unknown.png",
                     "title": "Unclassified upload",
-                    "destination_dir": "images/unclassified",
+                    "destination_dir": ".takeout/images/unclassified",
                     "approval_status": "Not recorded",
                     "mapping_evidence": "No exact provenance association is retained.",
                 },
@@ -261,7 +268,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         unknown_row = next(row for row in rows if row["source_filename"] == "unknown.png")
         self.assertEqual(
             unknown_row["webp_path"],
-            "images/takeout/webp/unclassified/attempt-001/unknown.png.webp",
+            ".takeout/images/webp/unclassified/attempt-001/unknown.png.webp",
         )
         self.assertEqual(unknown_row["source_sha256"], hashlib.sha256(unknown_bytes).hexdigest())
         verification = (report / "verification-report.md").read_text(encoding="utf-8")
@@ -278,7 +285,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 {
                     "source": "unknown.png",
                     "title": "Unclassified upload",
-                    "destination_dir": "images/unclassified",
+                    "destination_dir": ".takeout/images/unclassified",
                     "approval_status": "Not recorded",
                     "mapping_evidence": "No exact provenance association is retained.",
                 }
@@ -298,7 +305,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         with (report / "conversion-report.csv").open(encoding="utf-8") as handle:
             row = next(csv.DictReader(handle))
         self.assertEqual(row["status"], "CONVERTED_UNCLASSIFIED_NOT_RELOCATED")
-        self.assertEqual(row["webp_path"], "images/takeout/webp/unclassified/attempt-001/unknown.png.webp")
+        self.assertEqual(row["webp_path"], ".takeout/images/webp/unclassified/attempt-001/unknown.png.webp")
 
     def test_unclassified_conversion_failure_blocks_mapped_relocation(self):
         encoder = self.bin_dir / "cwebp"
@@ -323,7 +330,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 {
                     "source": "broken.png",
                     "title": "Unclassified upload",
-                    "destination_dir": "images/unclassified",
+                    "destination_dir": ".takeout/images/unclassified",
                     "mapping_evidence": "No exact provenance association is retained.",
                 },
             ],
@@ -350,7 +357,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         item = {
             "source": "unknown.png",
             "title": "Unclassified upload",
-            "destination_dir": "images/unclassified",
+            "destination_dir": ".takeout/images/unclassified",
             "mapping_evidence": "No exact provenance association is retained.",
         }
         self.manifest(item, batch="batch-unclassified-retry")
@@ -389,7 +396,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             "version: 1\nstatus: empty\nitems: []\n",
         )
         self.assertEqual(
-            (self.inbox / "README.md").read_text(encoding="utf-8"),
+            (self.inbox / "README-2.md").read_text(encoding="utf-8"),
             "# Image Takeout test fixture\n",
         )
 
@@ -403,7 +410,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertTrue(row["webp_sha256"])
         self.assertEqual(
             row["staging_webp_path"],
-            "images/takeout/webp/batch-test/attempt-001/IMG_001.PNG.webp",
+            ".takeout/images/webp/batch-test/attempt-001/IMG_001.PNG.webp",
         )
         self.assertFalse((self.inbox / "webp/batch-test/attempt-001").exists())
 
@@ -544,13 +551,13 @@ class TakeoutProcessorTests(unittest.TestCase):
         unexpected.write_text("not intake metadata", encoding="utf-8")
         self.manifest({"source": source.name}, batch="batch-unexpected-file")
         handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
-        readme_before = (self.inbox / "README.md").read_bytes()
+        readme_before = (self.inbox / "README-1.md").read_bytes()
 
         result = self.run_processor()
 
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(source.read_bytes(), b"preserve-this-source")
-        self.assertEqual((self.inbox / "README.md").read_bytes(), readme_before)
+        self.assertEqual((self.inbox / "README-1.md").read_bytes(), readme_before)
         self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
         report = (
             self.inbox
@@ -707,8 +714,8 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(
             {row["staging_webp_path"] for row in rows},
             {
-                "images/takeout/webp/batch-bulk/attempt-001/camera.png.webp",
-                "images/takeout/webp/batch-bulk/attempt-001/camera.jpg.webp",
+                ".takeout/images/webp/batch-bulk/attempt-001/camera.png.webp",
+                ".takeout/images/webp/batch-bulk/attempt-001/camera.jpg.webp",
             },
         )
         self.assertFalse((self.inbox / "webp/batch-bulk/attempt-001").exists())
@@ -777,16 +784,14 @@ class TakeoutProcessorTests(unittest.TestCase):
 
     def test_destination_collision_fails_without_overwrite(self):
         (self.inbox / "photo.jpg").write_bytes(b"original-upload")
-        directory = self.root / "images/references"
-        directory.mkdir(parents=True)
+        directory = self.inbox
         existing = directory / "original" / "shared-discovery.jpg"
-        existing.parent.mkdir(parents=True)
         existing.write_bytes(b"keep-this-file")
         self.manifest(
             {
                 "source": "photo.jpg",
                 "asset_id": "",
-                "destination_dir": "images/references",
+                "destination_dir": ".takeout/images",
             },
             batch="batch-collision",
         )
