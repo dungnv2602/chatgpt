@@ -2,11 +2,12 @@
 
 ## Current Step
 
-- **2026-11-26 05:48 UTC:** Inspect the Document Type Catalog, exact workspace navigation targets, and current branch state. Then create the approved task record and missing task index files without changing the proposed Area/Project/Task architecture.
+- **2026-11-26 05:51 UTC:** Audit the current workspace navigation and the relevant Worker, ASD-STE100, Document Standards, and GitHub Actions instructions for stale paths. Repair only verified references. Preserve the refactor and keep the root `README.md` absent.
+- **Active task:** [20261126055004 — Adapt repository workflows to the refactor](tasks/20261126055004-adapt-workflows-and-repair-refactor-breakage.md)
 
 ## Open Discussions
 
-- None.
+_No open discussions._
 
 ## Reports
 
