@@ -5,12 +5,12 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 11:29 UTC
+- **Updated:** 2026-11-26 11:45 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Governing ADR(s):** None — implementation of the user-approved error-only retention and task-linkage policy. Artifact-layout changes are excluded pending DRAFT-0004 and an accepted ADR.
+- **Governing ADR(s):** None — grandfathered remediation of the user-approved error-only retention and task-linkage policy. DRAFT-0004 / ADR-0003 governs only the separate report-artifact-layout decision.
 - **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
@@ -26,6 +26,9 @@ Automated CI Ledger capture: actionable findings were recorded during event-driv
 ## 2. Subsequent Instructions
 
 - **Standing instruction:** The user authorized Ledger-created task records and prefers event-driven ingestion, not periodic polling.
+
+- **2026-11-26 user approval:** The user approved execution of the task plan: use one shared eligibility predicate for reporter retention and Ledger ingestion, create a task for failed lint tooling checks when a baseline is unavailable without taskifying unbaselined lint findings, and enforce one Current Execution task.
+- **2026-11-26 decision approval:** The user stated, "I approved the draft 4 option 3." This approves DRAFT-0004 revision 1, Option 3. ADR promotion must pass the repository completeness and read-back gate before any artifact-layout migration.
 
 ## 3. Objective
 
@@ -89,8 +92,17 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **References:** `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/triage/scripts/ledger.py`.
 - **Next:** Align reporter and Ledger issue eligibility, task failed lint tooling checks without taskifying unbaselined lint findings, and enforce one Current Execution task.
 
+
+
+### 2026-11-26 11:45 UTC
+
+- **Action:** Recorded the user's explicit approval of the remediation plan and DRAFT-0004 revision 1, Option 3.
+- **Result:** Task `20261126-090154` remains P0, Approved, In Progress, and Current Execution. DRAFT-0004 is approved for ADR promotion. No artifact-layout migration has occurred. Promotion must complete the canonical rationale comparison and provisional ADR read-back before acceptance.
+- **References:** `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `workspace/ADR_TEMPLATE.md`; `.agent/skills/decision-governance/SKILL.md`.
+- **Next:** Promote the exact approved Draft revision to provisional ADR-0003 and complete the required comparison.
+
 ## 7. Current State
-The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. DRAFT-0004 revision 1 is in review. No artifact-layout cleanup has been performed.
+The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. DRAFT-0004 revision 1, Option 3, is approved by the user and is entering ADR promotion. No artifact-layout cleanup has been performed.
 
 ## 8. Remaining Work
 - Align reporter retention with the Ledger's independent-issue eligibility rules. Ensure every retained report produces at least one eligible finding.
@@ -102,11 +114,13 @@ The current history contains 29 complete post-run Actions reports. Twenty-six re
 - Verify all changes through naturally triggered hosted CI. Do not dispatch or poll.
 
 ## 9. Next Actions
-1. Complete the evidence-qualified DRAFT-0004 for the report artifact layout and present the exact revision for user review.
-2. Implement the approved error-only retention and Ledger eligibility contract with regression tests.
-3. Add failed-tooling-check observations and reprocess the three existing lint reports without taskifying their unbaselined lint findings.
-4. Rebuild the Actions index and Ledger references after removing propagation-only reports.
-5. Verify task generation, one Current Execution pointer, and hosted validation when naturally available.
+1. Promote DRAFT-0004 revision 1, Option 3, to accepted ADR-0003 after the full completeness and read-back gate. Do not migrate artifacts until acceptance.
+2. Implement the shared Actions eligibility predicate and reporter/Ledger consistency tests.
+3. Make failed lint tooling checks task-eligible without taskifying unbaselined lint findings. Deduplicate the existing failed-check observations.
+4. Reconcile propagation-only reports and their processed-report references against the shared eligibility predicate. Preserve genuine error evidence and stable finding/task references.
+5. Enforce exactly one Current Execution task and P0-before-non-P0 ordering.
+6. Execute the previously approved artifact-layout migration only after ADR-0003 acceptance and only within DRAFT-0004 Option 3 scope.
+7. Verify changes through naturally triggered hosted CI. Do not dispatch or poll.
 
 ## 10. References
 
