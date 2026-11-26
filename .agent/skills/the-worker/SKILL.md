@@ -57,7 +57,7 @@ The CI Ledger is part of The Worker. During event-driven report ingestion, it cr
 - Load `../decision-governance/SKILL.md` on demand when work involves Drafts, ADRs, or repository analysis. Keep it task-specific.
 - Use it for repository project work in Default Mode and Condensed Mode.
 - Do not load project skills automatically at the start of a new conversation.
-- Follow the explicit initialization cues in skills/SESSION_START.md.
+- Follow the explicit initialization cues in .agent/SESSION_START.md.
 - Treat workspace/task_board.md as the task index.
 - Treat each task file as the authoritative record for that task.
 - Follow the user's repository, branch, workspace, and approval restrictions.
@@ -68,7 +68,7 @@ The CI Ledger is part of The Worker. During event-driven report ingestion, it cr
 The repository on GitHub is the only project workspace. Do not assume that a local checkout or local execution environment exists.
 
 - Read, search, inspect, create, update, move, and delete repository files through the GitHub connector and GitHub APIs. Use exact paths and branch `gpt`.
-- The only archive-retention index exception is `.github/archive-retention-index.json`. Read or update it only to register the exact path and UTC archive timestamp of a task record during closeout. Never enumerate ` .archive/task/` to backfill the index.
+- The only archive-retention index exception is `.github/archive-retention-index.json`. Read or update it only to register the exact path and UTC archive timestamp of a task record during closeout. Never enumerate ` ..archive/task/` to backfill the index.
 - Never use local shell, Git, Python, container, filesystem, or similar execution tools to clone, pull, checkout, inspect, edit, test, build, or commit repository work.
 - Create commits and update refs through GitHub's remote APIs. Read back every changed path and check the resulting branch head.
 - Run repository scripts, tests, and validation only on GitHub-hosted Actions runners when an approved workflow invokes them. Inspect their results through GitHub Actions logs and artifacts. Do not reproduce them locally.
@@ -77,7 +77,7 @@ This rule is mandatory because the user has not provided a local project workspa
 
 ## Approved repository workspace boundary
 
-**Standing default:** All repository file work must stay inside the reconstructed approved project directories: `images/`, `area/`, `.agent/`, `.takeout/`, `. .archive/`, `workspace/`, and the narrowly authorized `.github/` workflow, scripts, and retention-index paths defined below. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
+**Standing default:** All repository file work must stay inside the reconstructed approved project directories: `images/`, `area/`, `.agent/`, `.takeout/`, `. ..archive/`, `workspace/`, and the narrowly authorized `.github/` workflow, scripts, and retention-index paths defined below. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
 
 **Authorized archive-retention index exception:**
 
@@ -122,8 +122,8 @@ This boundary applies to every future task and every tool call, not only archivi
 - workspace/draft/ contains proposals that need user review.
 - workspace/adr/ contains accepted ADRs awaiting implementation or confirmation.
 - workspace/analysis/ contains evidence-based repository analysis snapshots.
--  .archive/adr/ contains permanent, immutable ADRs after confirmation.
-- .archive/README.md defines archive retention.
+-  ..archive/adr/ contains permanent, immutable ADRs after confirmation.
+- ..archive/README.md defines archive retention.
 -  .archive/task/ contains completed or cancelled task records during retention.
 - Treat ` .archive/` as read-only after each record's initial archive write. You may read an exact archived record when a task requires its content. Do not perform broad archive scans or audits unless the user asks.
   - Create the final task record in ` .archive/task/` as the initial archive write.
