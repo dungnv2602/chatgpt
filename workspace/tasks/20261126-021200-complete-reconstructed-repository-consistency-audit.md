@@ -58,7 +58,7 @@ Complete the active-file audit of the reconstructed repository. Identify and rep
 
 ## 7. Current State
 
-The previous audit repaired several workflow path assumptions and targeted image-document references. Further README/script/skill consistency checks and processor-contract tracing remain. Hosted validation has not been run.
+Task created and selected as current execution; the board was updated. The intake processor and publication verifier are present under `.agent/skills/the-worker/scripts/`; the active workflow uses `images/takeout/`, `drawings/`, and `novels/` operational paths. The shared intake README exists at `images/takeout/README.md`, not at the legacy `.takeout/images` location. Hosted validation has not been run.
 
 ## 8. Remaining Work
 
@@ -100,3 +100,10 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
+
+### 2026-11-26 02:15 UTC — Task selected and contract traced preliminarily
+
+- **Action:** Created this task and updated the board to select it as In Progress. Inspected the processor/verifier source headers, image workflow trigger and permissions, canonical intake README existence, and Worker skill.
+- **Result:** Operational intake contract remains rooted at `images/takeout/`; scripts are relocated under `.agent/skills/the-worker/scripts/`. The prior docs reference fix appears consistent for canonical intake README. More thorough source/README/skill/Action audit remains.
+- **References:** `workspace/task_board.md`; `images/takeout/README.md`; `.agent/skills/the-worker/scripts/process_takeout.py`; `.agent/skills/the-worker/scripts/verify_published_manifest.py`; `.github/workflows/convert-images-to-webp.yml`.
+- **Next:** Continue contract tracing and audit other active README/script references.
