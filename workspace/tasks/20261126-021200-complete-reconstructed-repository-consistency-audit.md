@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 09:45 UTC
+- **Updated:** 2026-11-26 03:31 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -58,14 +58,14 @@ Complete the active-file audit of the reconstructed repository. Identify and rep
 
 ## 7. Current State
 
-Task created and selected as current execution; the board was updated. The processor, verifier, and tests are under `.agent/skills/the-worker/scripts/`. The intake contract uses operational `images/takeout/` paths, while the relocated repository documentation is under `.takeout/images/README-1.md` and `README-2.md`. The workflow uses the reconstructed script locations. Hosted validation has not been run.
+Task created and selected as current execution; the board was updated. The processor, verifier, and tests are under `.agent/skills/the-worker/scripts/`. The intake contract uses operational `images/takeout/` paths, while the relocated repository documentation is under `.takeout/images/README-1.md` and `README-2.md`. The workflow uses the reconstructed script locations. The remote tree currently has no tracked `images/` root or active `HANDOFF.yml`; the processor treats a missing hand-off as a no-op, so no intake batch is currently available. Hosted validation has not been run.
 
 ## 8. Remaining Work
 
 - Complete a wider active README and skill cross-reference audit.
 - Check the Document Type Catalog path coverage assumptions against relocated skills.
-- Read back all repaired paths and catalog changes.
-- Audit other workflow path assumptions, triggers, permissions, and exclusions.
+- Audit remaining workflow path assumptions, triggers, permissions, and exclusions.
+- Review remaining active scripts and caller/dependency contracts.
 - Validate using available remote evidence; local execution and hosted CI remain unavailable.
 
 ## 9. Next Actions
@@ -180,3 +180,13 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Finding:** The processor, verifier, and test fixtures still used legacy `drawings/` and `novels/` paths. The reconstructed workflow and intake documentation use `area/drawing/` and `area/novel/`. The processor's component checks also incorrectly treated `area/drawing` as one path component, so a superficial string remapping alone would have introduced validation defects.
 - **Repair:** Remapped legacy paths in the processor, publication verifier, and regression fixtures; corrected component-wise root validation, drawing date/session destination shape, conversation-record root checks, and the drawing record expectation. Updated image processing guidance.
 - **Verification:** Remote readback and targeted static path checks confirmed that the three scripts/test files no longer contain the legacy roots and that the processor's path checks reflect the actual path components. Tests and hosted Actions were not executed. Further contract checks remain.
+
+
+### 2026-11-26 03:31 UTC — Image-pipeline path-index defects repaired
+
+- **Finding:** The reconstructed image processor still indexed the drawing destination as though `area/drawing` were one path component. It wrote the wrong `manifest_path` into conversion reports. The publication verifier had the same invalid component assumption and rejected every valid reconstructed drawing WebP path before checking published links.
+- **Repair:** Changed both processor report paths to use the date at path component index 2. Updated the publication verifier to validate the five-component `area/drawing/YYYY-MM-DD/images/file.webp` shape, read the date and filename from their correct components, and derive the session-relative link correctly. Added a regression assertion for the exact drawing manifest path in the processor test.
+- **Verification:** Retrieved all three changed files after their commits. Read back both processor report-path sites, the verifier path guard, and the new test assertion. Inspected each commit's changed-path metadata. Tests and hosted Actions were not run.
+- **Commits:** `1fcfc601864e5ee784c261578f433d535b19a6c5`, `6845bde3134028a96f64502535048f4e4bec4dff`, `52ae30426904d72c0ac7fb5f7d4ea4caa8bc7e5b`.
+- **Additional observation:** The current branch tree contains no tracked `images/` root or `images/takeout/HANDOFF.yml`. The processor explicitly returns a no-op when the hand-off is absent. No intake files or directories were restored or created because that would change operational state beyond the evidence-supported code repair.
+- **Next:** Continue the active README/skill navigation audit and the remaining workflow/script caller review.
