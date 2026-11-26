@@ -32,7 +32,7 @@ When an image cannot be classified or mapped from retained evidence, preserve it
 
 Follow the [GitHub Actions skill](../github-actions/SKILL.md). CI is not an initialization gate and must not delay unrelated requests. Inspect it only when the user asks, a known failure blocks the task, or the current task changes or depends on a workflow.
 
-Use `.takeout/reports/gh_ac_reports/README.md` for workflow evidence and `.takeout/reports/lint_reports/README.md` for lint findings. Do not run repository scripts locally or poll CI.
+Use `.takeout/ .takeout/reports/gh_ac_ .takeout/reports/README.md` for workflow evidence and `.takeout/ .takeout/reports/lint_ .takeout/reports/README.md` for lint findings. Do not run repository scripts locally or poll CI.
 
 ### User-directed CI failure follow-through
 
@@ -68,7 +68,7 @@ The CI Ledger is part of The Worker. During event-driven report ingestion, it cr
 The repository on GitHub is the only project workspace. Do not assume that a local checkout or local execution environment exists.
 
 - Read, search, inspect, create, update, move, and delete repository files through the GitHub connector and GitHub APIs. Use exact paths and branch `gpt`.
-- The only archive-retention index exception is `.github/archive-retention-index.json`. Read or update it only to register the exact path and UTC archive timestamp of a task record during closeout. Never enumerate ` ..archive/task/` to backfill the index.
+- The only archive-retention index exception is `.github/archive-retention-index.json`. Read or update it only to register the exact path and UTC archive timestamp of a task record during closeout. Never enumerate ` .archive/task/` to backfill the index.
 - Never use local shell, Git, Python, container, filesystem, or similar execution tools to clone, pull, checkout, inspect, edit, test, build, or commit repository work.
 - Create commits and update refs through GitHub's remote APIs. Read back every changed path and check the resulting branch head.
 - Run repository scripts, tests, and validation only on GitHub-hosted Actions runners when an approved workflow invokes them. Inspect their results through GitHub Actions logs and artifacts. Do not reproduce them locally.
@@ -77,17 +77,17 @@ This rule is mandatory because the user has not provided a local project workspa
 
 ## Approved repository workspace boundary
 
-**Standing default:** All repository file work must stay inside the reconstructed approved project directories: `images/`, `area/`, `.agent/`, `.takeout/`, `. ..archive/`, `workspace/`, and the narrowly authorized `.github/` workflow, scripts, and retention-index paths defined below. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
+**Standing default:** All repository file work must stay inside the reconstructed approved project directories: `images/`, `area/`, `.agent/`, `.takeout/`, `. .archive/`, `workspace/`, and the narrowly authorized `.github/` workflow, scripts, and retention-index paths defined below. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
 
 **Authorized archive-retention index exception:**
 
-The user authorized exact read/write access to `.github/archive-retention-index.json` to register each archived task or resolved report file's exact path and individual UTC archive timestamp. Do not list or scan ` .archive/task/` or `archive/reports/` to backfill this index.
+The user authorized exact read/write access to `.github/archive-retention-index.json` to register each archived task or resolved report file's exact path and individual UTC archive timestamp. Do not list or scan `.archive/task/` or `.archive/ .takeout/reports/` to backfill this index.
 
 **Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These permissions do not authorize unrelated workflow changes.
 
 **Authorized GitHub Actions diagnostics scope:**
 
-On 23 November 2026, the user explicitly authorized creation of `reports/gh_ac_reports/`. The user also authorized changes to the six existing workflow files and `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
+On 23 November 2026, the user explicitly authorized creation of `.takeout/reports/gh_ac_ .takeout/reports/`. The user also authorized changes to the six existing workflow files and `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -96,10 +96,10 @@ This boundary applies to every future task and every tool call, not only archivi
   - `area/` — active area and project records
   - `area/novel/` — structured narrative records
   - `area/drawing/` — session records and prompt history
-  - `.agent/skills/` — reusable skills and supporting references
+  - `.agent/ .agent/skills/` — reusable skills and supporting references
   - `workspace/` — active task board and task records
-  - ` .archive/task/` and `.archive/reports/` — time-limited task and report archives
-  - `.takeout/reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
+  - `.archive/task/` and `. .archive/ .takeout/reports/` — time-limited task and report archives
+  - `.takeout/ .takeout/reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
   - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics and shared archive-retention scope or another user-authorized workflow change
   - `.github/scripts/cleanup-archive.py` and `.github/scripts/test_cleanup_archive.py` — shared 90-day exact-file archive retention and its regression tests
   - `.github/archive-retention-index.json` — exact task/report archive file paths and individual UTC timestamps
@@ -122,11 +122,11 @@ This boundary applies to every future task and every tool call, not only archivi
 - workspace/draft/ contains proposals that need user review.
 - workspace/adr/ contains accepted ADRs awaiting implementation or confirmation.
 - workspace/analysis/ contains evidence-based repository analysis snapshots.
--  ..archive/adr/ contains permanent, immutable ADRs after confirmation.
-- ..archive/README.md defines archive retention.
+-  .archive/adr/ contains permanent, immutable ADRs after confirmation.
+- .archive/README.md defines archive retention.
 -  .archive/task/ contains completed or cancelled task records during retention.
-- Treat ` .archive/` as read-only after each record's initial archive write. You may read an exact archived record when a task requires its content. Do not perform broad archive scans or audits unless the user asks.
-  - Create the final task record in ` .archive/task/` as the initial archive write.
+- Treat `.archive/` as read-only after each record's initial archive write. You may read an exact archived record when a task requires its content. Do not perform broad archive scans or audits unless the user asks.
+  - Create the final task record in `.archive/task/` as the initial archive write.
   - Read back that exact path and check its complete content.
   - After verification, never edit, replace, rename, move, or manually delete the archived record.
   - Update the active task board with a link to the archived record and the archival commit.
@@ -293,7 +293,7 @@ Before switching tasks or ending a conversation, write a complete handoff. Do no
 
 ## Decision governance
 
-The task-specific `skills/decision-governance/SKILL.md` owns Draft, ADR, and repository-analysis procedures. Load it when a task requires those procedures. Do not load it during foundational initialization.
+The task-specific `.agent/ .agent/skills/decision-governance/SKILL.md` owns Draft, ADR, and repository-analysis procedures. Load it when a task requires those procedures. Do not load it during foundational initialization.
 
 - Every new implementation task must link one or more accepted ADRs in `Governing ADR(s)`.
 - Map applicable ADR Confirmation criteria to task acceptance criteria.
@@ -329,7 +329,7 @@ Ask the user only when a genuine decision, missing requirement, or approval bloc
 
 ## Report triage and archive
 
-Use `reports/triage/ledger.json` as the active issue backlog for lint and GitHub Actions findings. The Ledger owns finding identity, severity, recurrence, bounded evidence references, finding lifecycle, and event-driven task linking. The Worker owns task prioritization, approval, execution, verification, and closeout.
+Use `.takeout/reports/triage/ledger.json` as the active issue backlog for lint and GitHub Actions findings. The Ledger owns finding identity, severity, recurrence, bounded evidence references, finding lifecycle, and event-driven task linking. The Worker owns task prioritization, approval, execution, verification, and closeout.
 
 ### Event-driven finding intake
 
@@ -344,15 +344,15 @@ The Ledger creates and updates tasks in the same report-ingestion run. Do not ad
 7. **Evidence bounds:** Keep at most five report references per finding: the first observation and the four most recent distinct report paths. Preserve cumulative occurrence count, first-seen and last-seen timestamps. Task records retain finding IDs and concise evidence links. Never copy complete logs or occurrence histories.
 8. **Resolution:** Do not set a finding to `resolved` until you record its fix commit, successful relevant hosted validation URL, and UTC timestamp. For `accepted`, record risk acceptance. For `false_positive`, add a closure note. For `duplicate`, provide a different valid finding ID. New evidence may reopen a resolved finding.
 9. **Closeout gate:** Before you archive a Ledger-generated task as Done, check that every finding in its Ledger Findings section has a terminal status. If any finding remains open or in progress, keep the task open. Do not close a grouped task partially.
-10. **Automatic Ledger retirement:** After you commit a Done task archive and add its path to `.github/archive-retention-index.json`, the resulting ` .archive/task/**` push triggers the diagnostics sweep. The Ledger reads only indexed task archive paths. It retires a task's findings when all linked tasks reach Done status and every finding in each task reaches a terminal status. The task archive and report archives preserve the audit trail. Do not manually delete Ledger entries.
+10. **Automatic Ledger retirement:** After you commit a Done task archive and add its path to `.github/archive-retention-index.json`, the resulting `.archive/task/**` push triggers the diagnostics sweep. The Ledger reads only indexed task archive paths. It retires a task's findings when all linked tasks reach Done status and every finding in each task reaches a terminal status. The task archive and report archives preserve the audit trail. Do not manually delete Ledger entries.
 
-The capture and sweep publishers use the shared non-cancelling `gh-ac-report-writer` concurrency group. They update report indexes, the Ledger, task files, the task board, and task references. The diagnostics sweep ignores Ledger-only and task-board-only publication to prevent recursive triggers. It must process ` .archive/task/**` because task archival triggers retirement of resolved findings. The scheduled archive cleanup writer uses the same group.
+The capture and sweep publishers use the shared non-cancelling `gh-ac-report-writer` concurrency group. They update report indexes, the Ledger, task files, the task board, and task references. The diagnostics sweep ignores Ledger-only and task-board-only publication to prevent recursive triggers. It must process `.archive/task/**` because task archival triggers retirement of resolved findings. The scheduled archive cleanup writer uses the same group.
 
 ### Explicit clean-start reset
 
 A full report reset is destructive and requires explicit user authorization. On approval:
 
-- Delete generated active report payloads, latest pointers, per-workflow snapshots, queued/processed request files, and all prior `archive/reports/**` content.
+- Delete generated active report payloads, latest pointers, per-workflow snapshots, queued/processed request files, and all prior `.archive/ .takeout/reports/**` content.
 - Reset the Actions and lint indexes and replace the Ledger with an empty, schema-valid state: no findings, no processed-report paths, and both lint baselines unseeded.
 - Delete report entries from the shared archive-retention index.
 - Preserve scripts, schemas, templates, assets, workflows, operating guides, task archives, task retention entries, and unrelated user tasks.
@@ -375,11 +375,11 @@ The Worker closes a task only after it archives the record and reconciles the ta
 When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence. For Ledger-generated tasks, require terminal status and valid resolution, accepted-risk, false-positive, or duplicate evidence for every linked finding. A grouped task with any non-terminal finding cannot close as Done.
-2. Before you prepare the archive copy, move any report files that the historical record needs to `archive/reports/`. Register each exact path and timestamp. Update the task's report links to the archive paths. Then prepare the final archive copy with status Done or Cancelled. Add its UTC archive timestamp in `YYYY-MM-DDTHH:MM:SSZ` format. Include complete verification and a final handoff. Set Archived to Yes only in that archive copy.
-3. Check whether ` .archive/task/<same-filename>` already exists. If it does, read it and compare its complete content with the prepared final record. Reuse it only when the content matches. Stop if the content differs. Never overwrite an existing archive record.
+2. Before you prepare the archive copy, move any report files that the historical record needs to `.archive/ .takeout/reports/`. Register each exact path and timestamp. Update the task's report links to the archive paths. Then prepare the final archive copy with status Done or Cancelled. Add its UTC archive timestamp in `YYYY-MM-DDTHH:MM:SSZ` format. Include complete verification and a final handoff. Set Archived to Yes only in that archive copy.
+3. Check whether `.archive/task/<same-filename>` already exists. If it does, read it and compare its complete content with the prepared final record. Reuse it only when the content matches. Stop if the content differs. Never overwrite an existing archive record.
 4. If the archive path does not exist, create it once. Preserve the task ID and filename. This is the only content write for that archive path.
 5. Read the exact archive path after the write. Compare its complete content with the prepared final record. Check the archive commit and changed-path metadata. If you reuse an existing copy, recover the original commit that introduced or contains that archive path from the task board or GitHub history. Never substitute a later board-update commit. Stop if the path is missing or the content differs.
-6. Add one entry to `.github/archive-retention-index.json` with the exact archive path and UTC archive timestamp from the verified record. Preserve all existing entries. Check the new entry. Do not enumerate ` .archive/task/` or backfill other records.
+6. Add one entry to `.github/archive-retention-index.json` with the exact archive path and UTC archive timestamp from the verified record. Preserve all existing entries. Check the new entry. Do not enumerate `.archive/task/` or backfill other records.
 7. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete indexed archived records.
 8. Only after archive read-back and retention-index verification succeed, delete the active record from `workspace/tasks/`. Keep the active record In Progress with Archived: No until this deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive copy without rewriting it.
 9. Update `workspace/task_board.md` in the same closeout pass:
@@ -391,7 +391,7 @@ When acceptance criteria are met:
 10. Retrieve the committed task board. Check that the closed task is absent from active sections and appears exactly once in Historical. Check its links to the archive path and archival commit. Check that Current Execution matches the selection rules.
 11. Check that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to check its content or recover board details. Do not change the archived record.
 12. Only after these checks, report the task as closed and provide the appropriate handoff.
-13. For a Done Ledger-generated task, allow the natural diagnostics sweep triggered by the committed ` .archive/task/**` path to retire its terminal findings from the active Ledger. Check the `findings_retired` result when the diagnostics sweep reports it. Do not poll, dispatch, or manually edit the Ledger. If retirement is not observed, record it as a handoff blocker and preserve the archived task and evidence.
+13. For a Done Ledger-generated task, allow the natural diagnostics sweep triggered by the committed `.archive/task/**` path to retire its terminal findings from the active Ledger. Check the `findings_retired` result when the diagnostics sweep reports it. Do not poll, dispatch, or manually edit the Ledger. If retirement is not observed, record it as a handoff blocker and preserve the archived task and evidence.
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
 
