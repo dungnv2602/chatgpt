@@ -63,7 +63,7 @@ For a one-off or exempt document, use a lightweight structure and record the rea
 - Skill-owned templates and static schemas belong in the owner's assets directory.
 - Explanatory policies and references belong in references.
 - Generators, processors, validators, and tests belong in scripts.
-- Project templates belong in the project's designated directory, such as novels/templates.
+- Project templates belong in the project's designated directory, such as `area/novel/templates/`.
 - Shared workspace templates remain in workspace.
 - Do not put copy-ready templates in references.
 
