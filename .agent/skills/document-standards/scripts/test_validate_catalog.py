@@ -258,6 +258,17 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
+    def test_permanent_adr_archive_records_are_covered(self):
+        self.write("archive/adr/README.md")
+        self.write("archive/adr/0001-historical-decision.md")
+        self.set_catalog(self.valid_rows(), [
+            "| `archive/adr/*.md` | Embedded contract | Active |"
+            "`archive/adr/README.md` and `.agent/skills/example/SKILL.md` | "
+            "Permanent accepted decision records. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
     def test_coverage_pattern_must_match_a_current_document(self):
         self.set_catalog(self.valid_rows())
         self.replace_coverage([

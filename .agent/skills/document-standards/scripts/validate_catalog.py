@@ -7,7 +7,7 @@ import re
 import sys
 from pathlib import Path
 
-ALLOWED_ROOTS = {".agent", ".github", ".takeout", "area", "images", "workspace", "master", ".archive"}
+ALLOWED_ROOTS = {".agent", ".github", ".takeout", "area", "archive", "images", "workspace", "master", ".archive"}
 KNOWN_CLASSES = {
     "Embedded contract",
     "Generator-owned",

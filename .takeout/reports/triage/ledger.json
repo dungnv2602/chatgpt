@@ -344,18 +344,14 @@
       ".takeout/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
-      ".takeout/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45808978869-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45814010116-attempt-1/report.json",
-      ".takeout/reports/lint_reports/on_changed/history/45814417490-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45816117222-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45816537286-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45816764437-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45817273521-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45819716980-attempt-1/report.json",
-      ".takeout/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
-      ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
-      ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json"
+      ".takeout/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json"
     ],
     "lint_baseline_scopes": {
       "on_changed": false,

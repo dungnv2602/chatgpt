@@ -1,7 +1,7 @@
 # Document Type Catalog
 
-**Catalog version:** 1.17
-**Latest tree inventory:** A recursive tree audit of branch `gpt` at commit `3e2a64bc91ff66f1e88b4231112aeb68dea48990` counted 277 Markdown files outside root `master/` and `.archive/`. This is an inventory count only. Catalog coverage simulation, the validator, and regression tests were not run for this inventory.
+**Catalog version:** 1.18
+**Latest tree inventory:** A recursive tree audit of branch `gpt` at commit `f46280655f7f0ba32430c6805ebd0abb30ca2c44` counted 294 Markdown files outside root `master/` and `.archive/`, including the permanent `archive/adr/` records. This is an inventory count only. Catalog coverage simulation, the validator, and regression tests were not run for this inventory.
 **Source branch:** `gpt`
 
 This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Skill-owned copy-ready templates belong in the owning skill's `assets/` directory. Explanatory references belong in `references/`. Project-level templates may use the owning project's designated template directory.
@@ -144,7 +144,8 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/draft/README.md` | Embedded contract | Active | `.agent/skills/decision-governance/SKILL.md` and `workspace/draft/README.md` | Draft folder navigation, status transitions, and promotion rules. |
 | `workspace/draft/DRAFT-*.md` | Template required | Active | `workspace/DRAFT_TEMPLATE.md` | One proposal record per decision. Delete the source after verified ADR promotion. Use Promotion Cleanup Pending only when deletion fails after acceptance. The first Draft is DRAFT-0001. |
 | `workspace/adr/README.md` | Embedded contract | Active | `.agent/skills/decision-governance/SKILL.md` and `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
-| `workspace/adr/????-*.md` | Template required | Active | `workspace/ADR_TEMPLATE.md` | Global four-digit ADR records. ADR-0001 and ADR-0002 are allocated historical IDs even though their records are absent from the current branch. Do not restore or reuse them. ADR-0003 is the next available ID. Provisional promotion-pending records are non-authoritative and must pass the completeness/read-back gate before acceptance. Only accepted records govern implementation tasks. |
+| `workspace/adr/????-*.md` | Template required | Active | `workspace/ADR_TEMPLATE.md` | Global four-digit ADR records. ADR-0001 and ADR-0002 are restored immutable historical records under `archive/adr/`. ADR-0003 is the current accepted ADR. ADR-0004 is the next available ID. Provisional promotion-pending records are non-authoritative and must pass the completeness/read-back gate before acceptance. Only accepted records govern implementation tasks. |
+| `archive/adr/*.md` | Embedded contract | Active | `archive/adr/README.md` and `.agent/skills/decision-governance/SKILL.md` | Permanent immutable archive of accepted ADRs. These records are retained as decision history and are not eligible for routine archive cleanup. |
 
 ## Validation coverage limits
 
