@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-142112-01
 - **Created:** 2026-11-26 14:21 UTC
-- **Updated:** 2026-11-26 14:21 UTC
+- **Updated:** 2026-11-26 14:50 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -54,14 +54,21 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** .takeout/reports/triage/ledger.json and the evidence links below.
 - **Next:** Inspect evidence, remediate, and verify before starting non-P0 work.
 
+### 2026-11-26 14:50 UTC
+
+- **Action:** Applied wording corrections to DRAFT-0002 revision 4 in commit [c3ef2c4](https://github.com/dungnv2602/chatgpt/commit/c3ef2c4dc0635033c5cebaef0b7624af3b2fccb6).
+- **Result:** The commit addresses the five grouped P0 finding classes across the same Draft. It preserves the proposal's options, evidence, recommendation, scope, and pending user approval. The Draft and its index were read back. Hosted lint validation remains pending.
+- **References:** [DRAFT-0002 remediation commit](https://github.com/dungnv2602/chatgpt/commit/c3ef2c4dc0635033c5cebaef0b7624af3b2fccb6), [source report](../../.takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json).
+- **Next:** Review the next event-driven lint report when available. Resolve this finding group only after the relevant validation passes. Do not poll CI.
+
 ## 7. Current State
 
-The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.
+The Ledger recorded this finding group. DRAFT-0002 revision 4 contains the remediation commit. Hosted validation remains pending.
 
 ## 8. Remaining Work
 
-- Inspect linked evidence, remediate, and validate.
-- No validation or resolution is claimed until evidence is recorded.
+- Review the next event-driven lint report for this finding group.
+- Resolve the group only after a successful relevant validation is recorded.
 
 ## 9. Next Actions
 
