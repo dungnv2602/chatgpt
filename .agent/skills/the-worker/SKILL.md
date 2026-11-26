@@ -98,7 +98,7 @@ This boundary applies to every future task and every tool call, not only archivi
   - `area/drawing/` — session records and prompt history
   - `.agent/skills/` — reusable skills and supporting references
   - `workspace/` — active task board and task records
-  - `.archive/task/` and `.  .archive/reports/` — time-limited task and report archives
+  - `.archive/task/` and `.archive/reports/` — time-limited task and report archives
   - `.takeout/reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
   - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics and shared archive-retention scope or another user-authorized workflow change
   - `.github/scripts/cleanup-archive.py` and `.github/scripts/test_cleanup_archive.py` — shared 90-day exact-file archive retention and its regression tests
@@ -122,11 +122,11 @@ This boundary applies to every future task and every tool call, not only archivi
 - workspace/draft/ contains proposals that need user review.
 - workspace/adr/ contains accepted ADRs awaiting implementation or confirmation.
 - workspace/analysis/ contains evidence-based repository analysis snapshots.
--  .archive/adr/ contains permanent, immutable ADRs after confirmation.
+- .archive/adr/ contains permanent, immutable ADRs after confirmation.
 - .archive/README.md defines archive retention.
--  .archive/task/ contains completed or cancelled task records during retention.
+- .archive/task/ contains completed or cancelled task records during retention.
 - Treat `.archive/` as read-only after each record's initial archive write. You may read an exact archived record when a task requires its content. Do not perform broad archive scans or audits unless the user asks.
-  - Create the final task record in `.archive/task/` as the initial archive write.
+- Create the final task record in `.archive/task/` as the initial archive write.
   - Read back that exact path and check its complete content.
   - After verification, never edit, replace, rename, move, or manually delete the archived record.
   - Update the active task board with a link to the archived record and the archival commit.
