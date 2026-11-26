@@ -165,7 +165,7 @@ jobs:
         run: |
           set -uo pipefail
           git ls-files -- '*.md' |
-            grep -vE '^(.archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
+            grep -vE '^(\.archive/|\.takeout/reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|\.agent/skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
             > .lint-report-records/evaluated-files.txt || true
           failed=0
           while IFS= read -r file; do
@@ -210,7 +210,7 @@ jobs:
         run: |
           set -euo pipefail
           git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$GITHUB_SHA" -- '*.md' |
-            grep -vE '^(.archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/))' \
+            grep -vE '^(\.archive/|\.takeout/reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|\.agent/skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
             > .lint-report-records/changed-files.txt || true
           {
             echo "files<<EOF"
