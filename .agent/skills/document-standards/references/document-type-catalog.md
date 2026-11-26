@@ -145,8 +145,6 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/draft/DRAFT-*.md` | Template required | Active | `workspace/DRAFT_TEMPLATE.md` | One proposal record per decision. Delete the source after verified ADR promotion. Use Promotion Cleanup Pending only when deletion fails after acceptance. The first Draft is DRAFT-0001. |
 | `workspace/adr/README.md` | Embedded contract | Active | `.agent/skills/decision-governance/SKILL.md` and `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
 | `workspace/adr/????-*.md` | Template required | Active | `workspace/ADR_TEMPLATE.md` | Global four-digit ADR records. ADR-0001 and ADR-0002 are restored immutable historical records under ` .archive/adr/`. ADR-0003 is the current accepted ADR. ADR-0004 is the next available ID. Provisional promotion-pending records are non-authoritative and must pass the completeness/read-back gate before acceptance. Only accepted records govern implementation tasks. |
-| ` .archive/adr/*.md` | Embedded contract | Active | ` .archive/adr/README.md` and `.agent/skills/decision-governance/SKILL.md` | Permanent immutable archive of accepted ADRs. These records are retained as decision history and are not eligible for routine archive cleanup. |
-| ` .archive/task/*.md` | Template required | Active | `workspace/TASK_TEMPLATE.md` | Permanent archived task records linked by accepted decisions. Preserve their immutable historical state and cross-links. |
 
 ## Validation coverage limits
 
