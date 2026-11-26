@@ -138,7 +138,7 @@ Active. When resuming a Paused session, make it Active and pause any other
 currently Active session.
 
 When the cue is given, close the current drawing session under discussion,
-whether Active or Paused, by following `skills/the-worker/references/drawing-session-closeout.md`.
+whether Active or Paused, by following `.agent/skills/the-worker/references/drawing-session-closeout.md`.
 If multiple open sessions could reasonably be the target, ask one concise
 question to identify the session before changing any record. Do not ask for a
 second approval once the target is clear. Do not generate another image as part
