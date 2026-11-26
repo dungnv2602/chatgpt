@@ -164,6 +164,16 @@ The entries below are historical. The current policy above takes precedence. A f
 
 ## Future revision log
 
+### Version 8 — Progressive baseline initialization
+
+- **Date:** 2026-11-27
+- **Requested change:** Keep `/start` working while reducing unnecessary skill retrieval. Make GitHub Actions domain-foundational, not universally loaded.
+- **Reason:** Baseline initialization should establish collaboration and continuity without loading domain skills that are not relevant to the current task.
+- **Behavioral impact:** `/start` loads The Worker and Conversation Mode only. CI, document governance, technical writing, and skill authoring load on demand. The GitHub Actions skill is task-activated and remains authoritative for CI work.
+- **Files modified:** `.agent/SESSION_START.md`, `.agent/INITIALIZATION_POLICY.md`, `.agent/skills/github-actions/SKILL.md`.
+- **Verification:** Committed read-back verification pending.
+- **Commit(s):** `764d771`, `f9a3e2f`, `11a5475`, `7bcb449`.
+
 Append a new entry whenever the initialization policy or its dependencies change.
 
 Use this template:
@@ -187,9 +197,9 @@ Use this template:
 - [ ] `/start` loads only The Worker and its mandatory Conversation Mode reference.
 - [ ] Domain skills activate only when the current task requires them.
 - [ ] Agent Skill Authoring loads only on demand.
-- [ ] Document Standards loads during foundational initialization; its catalog and specific assets load only when required.
+- [ ] Document Standards loads only when document governance activates.
 - [ ] The Worker's archive/media references load only when required.
-- [ ] ASD-STE100 loads during foundational initialization.
+- [ ] ASD-STE100 loads only when skill or technical documentation activates.
 - [ ] Skill and technical documentation use the approved writing mode.
 - [ ] Rewrites preserve meaning, facts, conditions, scope, and modality.
 - [ ] Only required files load.
