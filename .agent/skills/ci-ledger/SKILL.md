@@ -1,6 +1,6 @@
 ---
 name: ci-ledger
-description: Govern the CI Ledger's report intake, finding identity, eligibility, evidence, task handoff, status, resolution, retirement, and integrity. Use when ingesting or reconciling CI reports, managing Ledger findings or task links, changing Ledger schemas or generators, or updating Ledger policy.
+description: Govern the CI Ledger's report intake, finding identity, eligibility, evidence, task-folder handoff, status, commit-based resolution, recurrence retention, and integrity. Use when ingesting or reconciling CI reports, managing Ledger findings or task links, changing Ledger schemas or generators, or updating Ledger policy.
 metadata:
   project-role: task-specific
   format: agentskills
@@ -10,13 +10,13 @@ metadata:
 
 ## Purpose and activation
 
-The CI Ledger tracks distinct findings from lint reports and GitHub Actions diagnostics. It maintains finding state and evidence. It creates task handoffs and retires terminal findings.
+The CI Ledger tracks distinct findings from lint reports and GitHub Actions diagnostics. It maintains finding identity, state, evidence, resolution history, and stable parent-task links. It creates Proposed task folders with CI remediation subtasks and retains terminal finding identities for recurrence.
 
-Load this skill only when the task concerns Ledger ingestion, reconciliation, finding identity, eligibility, evidence, task generation or linkage, lifecycle, resolution, retirement, schema, generator, or Ledger policy. Do not load it during baseline initialization. A CI remediation task does not require this skill unless Ledger data or policy is part of the work.
+Load this skill only when the task concerns Ledger ingestion, reconciliation, finding identity, eligibility, evidence, task-folder generation or linkage, lifecycle, commit-based resolution, recurrence retention, schema, generator, or Ledger policy. Do not load it during baseline initialization. A CI remediation task does not require this skill unless Ledger data or policy is part of the work.
 
 ## Authority and scope
 
-- The Ledger owns finding governance, intake, identity, grouping, evidence, task generation and linkage, status, resolution, and retirement.
+- The Ledger owns finding governance, intake, identity, grouping, evidence, parent-task generation/linkage, status, commit-based resolution, recurrence history, and integrity. It never deletes terminal finding identities solely because a task was archived.
 - The Worker owns task selection, authorization checks, execution, task records, board, continuity, and closeout.
 - The GitHub Actions skill owns CI diagnosis, technical remediation, recurrence prevention, workflow operation, and validation boundaries.
 - The report indexes define which reports are available for ingestion.
@@ -45,7 +45,7 @@ Load this skill only when the task concerns Ledger ingestion, reconciliation, fi
 3. Keep the shared writer concurrency group non-cancelling and queued. Preserve the established `gh-ac-report-writer` contract.
 4. Publish report indexes, Ledger, task files, task board, and task links atomically through the existing commit/rebase/push flow.
 5. Ignore Ledger-only, task-board-only, discussion-only, and report-archive-only pushes during diagnostics sweeps. Follow the established archive-index trigger rules.
-6. Make ingestion and retirement idempotent. Do not introduce periodic scans.
+6. Make ingestion idempotent. Preserve terminal finding identities and resolution history; do not introduce retirement scans or periodic scans.
 
 Preserve the existing generator, schema, workflow, and publication architecture unless the user authorizes a specific change.
 
@@ -86,7 +86,7 @@ Terminal-state requirements:
 - `accepted`: an `accepted_risk` record.
 - `false_positive`: a non-empty closure note.
 - `duplicate`: a different existing finding ID in `duplicate_of`.
-- `resolved`: fix commit, successful relevant validation run URL, validation timestamp, and resolution timestamp.
+- `resolved`: verified intended-branch fix commit, commit SHA, remediation summary, and resolution timestamp. Hosted validation is optional separate metadata (`pending`, `passed`, `failed`, or `not_run`) and never gates remediation resolution.
 
 New evidence can reopen a resolved finding. Preserve its earlier resolution in `resolution_history`.
 
@@ -96,28 +96,26 @@ Task creation is part of report ingestion.
 
 1. Create tasks for each failed report-tooling check, each new lint finding after baseline comparison, and each independently classified Actions error finding. Do not create tasks for unbaselined lint findings or untracked recurring baseline findings.
 2. Group lint findings by source file and rule. Group Actions findings by workflow path, job, step, and category.
-3. Render tasks from `workspace/TASK_TEMPLATE.md`. Under the permanent P0 authorization, Ledger-generated tasks are Assistant-originated, P0, Approved, and In Progress. Set Current Execution to Yes for the selected task and No for other active tasks. Keep the board pointer synchronized.
-4. Set governing ADR metadata to `Pending — Worker review required before approval` when architecture review is required. Record the pending ADR state on the task and board.
+3. Render a parent folder from `workspace/TASK_TEMPLATE.md` and a typed CI remediation child from `workspace/SUBTASK_TEMPLATE.md`. Every parent folder contains `task.md` and `subtasks/README.md`. Ledger-generated tasks are Assistant-originated and P0 but remain Proposed with Approval pending and Governing ADR(s) Pending until Worker review. P0 priority does not authorize execution. Do not set Current Execution or replace the Worker's board pointer.
+4. Set governing ADR metadata to `Pending — Worker review required before approval` on generated implementation tasks. The Worker must link an accepted ADR and separately authorize execution before moving a task to Ready or In Progress.
 5. Reuse an active task for the same remediation group. Refresh its evidence rather than create duplicates.
-6. Record each task ID in the finding's `task_refs`. Record finding IDs, concise diagnostics, and report links in task records. Do not copy full logs or occurrence histories.
-7. Keep finding and task states distinct. Use `planned` when an eligible task is Ready, `fixing` during remediation, and `verifying` while validation is pending.
+6. Record each stable parent Task ID in the finding's `task_refs`; do not store subtask IDs in this field. Record finding IDs, concise diagnostics, and report links in the parent task.md. Do not copy full logs or occurrence histories.
+7. Keep finding, parent-task, CI-subtask, and hosted-validation states distinct. Findings remain non-terminal until the fix commit is verified. A CI remediation subtask becomes Done on the verified intended-branch commit plus recorded SHA and summary. Hosted validation may remain Pending or later be Failed without reopening the completed remediation.
 
 The permanent P0 authorization governs Ledger-generated task intake and remediation. It does not authorize destructive resets, restoring deleted files, weakening checks, bypassing safety, decision governance, or task-specific scope limits. The Worker applies these gates and executes eligible tasks. The GitHub Actions skill governs technical remediation. Follow the Worker's batch execution procedure.
 
-## Resolution and retirement
+## Resolution and recurrence retention
 
-Do not close a Ledger-generated task as Done while a linked finding is non-terminal.
+Do not close a CI remediation subtask as Done until its own commit-based acceptance criteria pass. Do not close a parent task until every required subtask is Done.
 
-1. Record a valid terminal state for every linked finding.
-2. Move evidence files required by the archived task to `.archive/reports/`. Update report-family indexes and task evidence links. Register each exact report path for retention.
-3. Archive the task as Done and register its exact archive path in `.github/archive-retention-index.json`. Read back the archive. Keep it immutable.
-4. The archived-task push and retention-index update trigger diagnostics sweeps. The Ledger reads only indexed task paths.
-5. Remove linked findings only when every finding in each archived Done task is terminal and every task in the finding's `task_refs` is archived Done.
-6. Do not manually delete findings or run retirement scans. Archived task and report records preserve the audit history.
+1. Verify the remediation commit exists on the intended branch. Record the full commit SHA, concise remediation summary, and UTC resolution timestamp. This is sufficient for a finding to become `resolved`.
+2. Store hosted validation separately as optional metadata. A Pending, Failed, or not-yet-reviewed hosted run does not keep the remediation subtask open and does not change its Done state.
+3. On a new observation after resolution, reopen the same finding identity, preserve the previous resolution in `resolution_history`, and increment occurrence count for the new observation.
+4. If the previous remediation task is no longer active, create a new parent task folder with a CI remediation subtask. Append the new parent Task ID to `task_refs`; preserve prior task references.
+5. Archive complete task folders under `.archive/task/<task-id>/`. Index the parent `task.md` and every child record by exact path. Historical flat archive files remain immutable and readable.
+6. Archiving a task never removes terminal findings, resolution history, or prior task references. Do not implement destructive finding retirement or retirement scans.
 
-Findings remain active when a task is Proposed, Ready, In Progress, Blocked, Paused, or Cancelled. They also remain active when an archived task is not Done or when any finding remains non-terminal.
-
-New evidence after archival can reopen a resolved finding and create a new task when no active remediation group exists.
+Finding status and task status remain distinct. A Proposed task does not mean remediation has started. A finding becomes resolved when the fix commit is recorded; hosted validation is independent. Later recurrence creates new remediation work without rewriting the previous Done record.
 
 ## Capture retry policy
 

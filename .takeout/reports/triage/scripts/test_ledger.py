@@ -603,6 +603,26 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("- **Priority:** P0", task_text)
         self.assertIn("lint-", task_text)
 
+    def test_resolution_schema_accepts_commit_only_and_separate_validation_metadata(self):
+        schema = json.loads((self.root / ".takeout" / "reports" / "triage" / "ledger-schema.json").read_text(encoding="utf-8"))
+        finding = {
+            "finding_id":"lint-a1b2c3d4e5f6","task_group":"ci-0123456789abcdef",
+            "source_family":"lint","category":"rule","title":"A finding","status":"resolved","severity":"low",
+            "owner":None,"first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
+            "occurrence_count":1,"evidence":[],
+            "resolution":{"fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z"},
+            "resolution_history":[],"duplicate_of":None,"accepted_risk":None,"task_refs":["20261123-090000"],
+        }
+        ledger = self.read_ledger()
+        ledger["schema_version"] = "1.6.0"
+        ledger["findings"] = [finding]
+        LEDGER.validate_schema(ledger, schema, "$ledger")
+        finding["resolution"]["validation"] = {
+            "status":"failed","run_url":"https://example.invalid/actions/runs/9",
+            "conclusion":"failure","validated_at_utc":"2026-11-23T07:14:00Z",
+        }
+        LEDGER.validate_schema(ledger, schema, "$ledger")
+
     def test_resolved_finding_reopens_and_preserves_resolution_history(self):
         self.add_lint("on_changed","300","2026-11-23T07:10:00Z")
         LEDGER.ingest(self.root)
