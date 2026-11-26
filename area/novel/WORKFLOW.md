@@ -105,7 +105,7 @@ Each retained illustration has two binary files beside one another. The original
 
 All user-uploaded images enter the single flat intake at `.takeout/images/`. This rule applies to novel and non-novel images. Incoming filenames may be arbitrary. The assistant inspects each image and determines its descriptive title and destination from the conversation and project records. The assistant then writes `.takeout/images/HANDOFF.yml`.
 
-A novel-illustration entry identifies its `ILL-NNN` ID, title, exact uploaded filename, and destination directory. The destination must be inside the appropriate novel asset library. Non-novel retained images use a destination under `.takeout/images/`.
+A novel-illustration entry identifies its `ILL-NNN` ID, title, exact uploaded filename, and destination directory. The destination must be inside the appropriate novel asset library. Non-novel retained images use the shared destination `.takeout/images`.
 
 The existing GitHub Action reads the hand-off. It does not infer image contents, IDs, or story destinations. It converts the supplied title to a slug. It prefixes the optional stable ID and converts PNG or JPEG to WebP.
 
