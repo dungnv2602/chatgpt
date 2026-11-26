@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T09:46:48Z",
+  "updated_at_utc": "2026-11-26T10:15:12Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -11,8 +11,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T09:01:17Z",
-      "last_seen_utc": "2026-11-26T09:01:53Z",
-      "occurrence_count": 8,
+      "last_seen_utc": "2026-11-26T10:13:33Z",
+      "occurrence_count": 11,
       "evidence": [
         {
           "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
@@ -22,32 +22,219 @@
           "observation_id": "github_actions:427313089:45785802198:1"
         },
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45786612277-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45786612277",
-          "observed_at_utc": "2026-11-26T09:01:41Z",
-          "note": "validate-document-standards / Run CI Ledger regression tests",
-          "observation_id": "github_actions:427313089:45786612277:1"
-        },
-        {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45787576604-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45787576604",
-          "observed_at_utc": "2026-11-26T09:01:45Z",
-          "note": "validate-document-standards / Run CI Ledger regression tests",
-          "observation_id": "github_actions:427313089:45787576604:1"
-        },
-        {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45787618873-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45787618873",
-          "observed_at_utc": "2026-11-26T09:01:50Z",
-          "note": "validate-document-standards / Run CI Ledger regression tests",
-          "observation_id": "github_actions:427313089:45787618873:1"
-        },
-        {
           "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45787937573",
           "observed_at_utc": "2026-11-26T09:01:53Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45787937573:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45790913652",
+          "observed_at_utc": "2026-11-26T10:13:25Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45790913652:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45791049057",
+          "observed_at_utc": "2026-11-26T10:13:29Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45791049057:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45792129692",
+          "observed_at_utc": "2026-11-26T10:13:33Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45792129692:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-090154"
+      ],
+      "task_group": "ci-020528f498f632ac"
+    },
+    {
+      "finding_id": "gha-f01eecfd82daeb1a6ae4008a",
+      "source_family": "github_actions",
+      "category": "checkout_or_action_download",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: checkout_or_action_download — validate-document-standards unknown step <timestamp> test_new_task_record_is_rolled_back_when_board_publication_fails ",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:12:57Z",
+      "last_seen_utc": "2026-11-26T10:12:57Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45788718679",
+          "observed_at_utc": "2026-11-26T10:12:57Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45788718679:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-101512"
+      ],
+      "task_group": "ci-0b5e8d727dc64d9b"
+    },
+    {
+      "finding_id": "gha-f0819737f55322e2610a7544",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_ledger (unittest.loader._failedtest.test_ledger) ... error",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:13:20Z",
+      "last_seen_utc": "2026-11-26T10:13:20Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45789951589",
+          "observed_at_utc": "2026-11-26T10:13:20Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45789951589:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-090154"
+      ],
+      "task_group": "ci-020528f498f632ac"
+    },
+    {
+      "finding_id": "gha-7993fcb8b815dfeed2652722",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> traceback (most recent call last):",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:13:37Z",
+      "last_seen_utc": "2026-11-26T10:15:02Z",
+      "occurrence_count": 9,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45792688463",
+          "observed_at_utc": "2026-11-26T10:13:37Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45792688463:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45794619449-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794619449",
+          "observed_at_utc": "2026-11-26T10:14:10Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45794619449:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794626105",
+          "observed_at_utc": "2026-11-26T10:14:21Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45794626105:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798032838",
+          "observed_at_utc": "2026-11-26T10:14:58Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45798032838:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798459536",
+          "observed_at_utc": "2026-11-26T10:15:02Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45798459536:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-090154"
+      ],
+      "task_group": "ci-020528f498f632ac"
+    },
+    {
+      "finding_id": "gha-15d782beac8f33417a598c93",
+      "source_family": "github_actions",
+      "category": "publication_or_push",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: publication_or_push — <timestamp> traceback (most recent call last):",
+      "status": "open",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:14:42Z",
+      "last_seen_utc": "2026-11-26T10:14:54Z",
+      "occurrence_count": 3,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45795455755",
+          "observed_at_utc": "2026-11-26T10:14:42Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45795455755:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45795725425",
+          "observed_at_utc": "2026-11-26T10:14:49Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45795725425:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45797455626",
+          "observed_at_utc": "2026-11-26T10:14:54Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45797455626:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-101512-01"
+      ],
+      "task_group": "ci-259011307849c0ca"
+    },
+    {
+      "finding_id": "gha-2d60ec5e9828ec1309dc2013",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.ledgertests.test_processed_ac",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:15:11Z",
+      "last_seen_utc": "2026-11-26T10:15:11Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798838831",
+          "observed_at_utc": "2026-11-26T10:15:11Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45798838831:1"
         }
       ],
       "resolution": null,
@@ -63,6 +250,8 @@
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-26T08:11:00Z",
     "processed_reports": [
+      ".takeout/reports/gh_ac_reports/history/424743410/45794610594-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/424743410/45794619503-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785842274-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45786440074-attempt-1-post_run/report.json",
@@ -71,6 +260,24 @@
       ".takeout/reports/gh_ac_reports/history/427313089/45787576604-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45787618873-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45792737046-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45793120530-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45793197760-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45794363579-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45794619449-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json"
     ],

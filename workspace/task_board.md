@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-[20261126-090154 — P0: Repair Ledger regression test fixture](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md)
+[20261126-101512-01 — Review publication\_or\_push failures in Validate Document Standards / validate-document-standards / Run CI Ledger regress](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md)
 
 ## Proposed
 
@@ -18,7 +18,9 @@ _No tasks._
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-090154 | P0: Repair Ledger regression test fixture | P0 | In Progress | User | Approved | — | 2026-11-26 09:10 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
+| 20261126-101512-01 | Review publication\_or\_push failures in Validate Document Standards / validate-document-standards / Run CI Ledger regress | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 10:15 UTC | [Task record](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md) |
+| 20261126-101512 | Review checkout\_or\_action\_download failures in Validate Document Standards / validate-document-standards / Run CI Ledger | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 10:15 UTC | [Task record](tasks/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md) |
+| 20261126-090154 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P0 | In Progress | User | Approved | — | 2026-11-26 10:15 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
 | 20261126-142500 | Repair CI task generation and clear active reports | P1 | In Progress | User | Approved | — | 2026-11-26 | [Task record](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) |
 
 ## Blocked

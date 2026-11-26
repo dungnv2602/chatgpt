@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45790913652",
+    "number": 580,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45790913652",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "91faaece7f88743e234ba374c956bef67646dbe9",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-26T09:19:34Z",
+    "run_started_at": "2026-11-26T09:19:34Z",
+    "updated_at": "2026-11-26T09:20:11Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Fix CI Ledger task pointer syntax error"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-26T10:13:25Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "139809512721",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "failure"
+    }
+  },
+  "classification": {
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "validation_or_test",
+    "categories": [
+      "validation_or_test"
+    ],
+    "issues": [
+      {
+        "category": "validation_or_test",
+        "job_id": "139809411914",
+        "job_name": "validate-document-standards",
+        "step_number": 4,
+        "step_name": "Run CI Ledger regression tests",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "2026-11-26T09:19:44.1833025Z test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.LedgerTests.test_actions_identity_uses_workflow_job_step_and_signature) ... ERROR"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "139809411914",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-26T09:19:36Z",
+      "completed_at": "2026-11-26T09:19:46Z",
+      "runner_name": "GitHub Actions 1000003121",
+      "runner_id": 1000003121,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:19:37Z",
+          "completed_at": "2026-11-26T09:19:38Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:19:38Z",
+          "completed_at": "2026-11-26T09:19:43Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:19:43Z",
+          "completed_at": "2026-11-26T09:19:43Z"
+        },
+        {
+          "number": 4,
+          "name": "Run CI Ledger regression tests",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-26T09:19:43Z",
+          "completed_at": "2026-11-26T09:19:44Z"
+        },
+        {
+          "number": 5,
+          "name": "Run catalog validator regression tests",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:19:44Z",
+          "completed_at": "2026-11-26T09:19:44Z"
+        },
+        {
+          "number": 6,
+          "name": "Validate the document type catalog",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:19:44Z",
+          "completed_at": "2026-11-26T09:19:44Z"
+        },
+        {
+          "number": 11,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:19:44Z",
+          "completed_at": "2026-11-26T09:19:44Z"
+        },
+        {
+          "number": 12,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:19:44Z",
+          "completed_at": "2026-11-26T09:19:44Z"
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:19:44Z",
+          "completed_at": "2026-11-26T09:19:44Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 92058,
+        "path": "logs/job-139809411914.log",
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.1833025Z test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.LedgerTests.test_actions_identity_uses_workflow_job_step_and_signature) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.1862138Z test_actions_repeat_observation_increments_once_per_run (test_ledger.LedgerTests.test_actions_repeat_observation_increments_once_per_run) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.1906741Z test_all_lint_severities_create_and_reuse_grouped_tasks (test_ledger.LedgerTests.test_all_lint_severities_create_and_reuse_grouped_tasks) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2052826Z test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation (test_ledger.LedgerTests.test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2207010Z test_evidence_is_bounded_but_occurrence_count_keeps_growing (test_ledger.LedgerTests.test_evidence_is_bounded_but_occurrence_count_keeps_growing) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2352461Z test_later_high_severity_finding_promotes_active_group_priority (test_ledger.LedgerTests.test_later_high_severity_finding_promotes_active_group_priority) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2405635Z test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent (test_ledger.LedgerTests.test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2433046Z test_lint_new_run_increments_occurrence_and_tracks_dates (test_ledger.LedgerTests.test_lint_new_run_increments_occurrence_and_tracks_dates) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2487438Z test_low_severity_advisory_findings_create_p3_tasks (test_ledger.LedgerTests.test_low_severity_advisory_findings_create_p3_tasks) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2552004Z test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities (test_ledger.LedgerTests.test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2653848Z test_recurring_untracked_lint_baseline_findings_do_not_create_tasks (test_ledger.LedgerTests.test_recurring_untracked_lint_baseline_findings_do_not_create_tasks) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2686319Z test_related_findings_reuse_one_active_task_across_ingestion_events (test_ledger.LedgerTests.test_related_findings_reuse_one_active_task_across_ingestion_events) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2713123Z test_resolved_finding_reopens_and_preserves_resolution_history (test_ledger.LedgerTests.test_resolved_finding_reopens_and_preserves_resolution_history) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2774772Z test_task_board_rows_stay_inside_their_status_section (test_ledger.LedgerTests.test_task_board_rows_stay_inside_their_status_section) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2821582Z test_untrusted_diagnostic_text_is_escaped_in_worker_task (test_ledger.LedgerTests.test_untrusted_diagnostic_text_is_escaped_in_worker_task) ... ERROR",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2827488Z ERROR: test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.LedgerTests.test_actions_identity_uses_workflow_job_step_and_signature)",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2830602Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2859105Z ERROR: test_actions_repeat_observation_increments_once_per_run (test_ledger.LedgerTests.test_actions_repeat_observation_increments_once_per_run)",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2861210Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:19:44.2883654Z ERROR: test_all_lint_severities_create_and_reuse_grouped_tasks (test_ledger.LedgerTests.test_all_lint_severities_create_and_reuse_grouped_tasks)"
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "139809411914",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-26T09:19:36Z",
+      "completed_at": "2026-11-26T09:19:46Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45790913652/job/139809411914",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "139809411914",
+      "job_id": "139809411914",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "139809411914",
+      "job_id": "139809411914",
+      "path": ".github",
+      "start_line": 410,
+      "end_line": 410,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45790913652-attempt-1-post_run"
+}
