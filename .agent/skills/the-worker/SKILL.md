@@ -48,7 +48,7 @@ When CI Ledger generates authorized P0 tasks, The Worker owns batch orchestratio
 4. Commit each coherent fix and update the task record and board. Record evidence and a checkpoint before switching tasks.
 5. Do not wait for validation of one task before continuing with other independent eligible tasks when the user's deferred-results-review instruction applies. Respect shared-file conflicts and dependencies.
 6. If one task is blocked by an exceptional gate, record the exact blocker. Continue with independent eligible tasks.
-7. After all eligible batch remediation commits are complete, stop. Do not poll, dispatch, rerun, or inspect hosted CI results until the user triggers the results-review phase, unless the task explicitly requires validation to proceed.
+7. After all eligible batch remediation commits are complete, stop. Do not poll, dispatch, rerun, or inspect hosted CI results until the user triggers the results-review phase.
 8. Keep tasks open until the deferred validation review and required closeout. Report committed remediation without claiming validation or completion.
 
 ### User notice and prompt gate
