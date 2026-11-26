@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 11:57 UTC** Correct the ADR sequence before acceptance. Historical references allocate ADR-0001 and ADR-0002, so replace the invalid provisional ADR-0001 with ADR-0003. Update Draft/ADR indexes, catalog coverage, discussion, and task references. Preserve the absent historical ADR archive path; do not restore it. Active task: [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
+- **2026-11-26 12:05 UTC** Verify the corrected provisional ADR-0003 against approved DRAFT-0004 revision 1 and the canonical ADR template. If the read-back passes, accept ADR-0003, read it back, then remove DRAFT-0004 and reconcile navigation. Do not alter report artifacts. Active task: [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
 
 ## Open Discussions
 

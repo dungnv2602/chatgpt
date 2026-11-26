@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 11:52 UTC
+- **Updated:** 2026-11-26 12:05 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -88,7 +88,7 @@ Review and remediate the related CI findings listed below after approval. Preser
 ### 2026-11-26 11:29 UTC
 
 - **Action:** Completed the DRAFT-0004 proposal and moved to the separately approved retention and Ledger task-linkage implementation.
-- **Result:** DRAFT-0004 revision 1, Option 3, is approved-for-adr. ADR-0001 is promotion-pending and non-authoritative. Its artifact-layout migration remains blocked until ADR-0001 passes the completeness/read-back gate and reaches accepted status. The next implementation step will not remove Markdown reports, latest copies, or per-workflow indexes.
+- **Result:** DRAFT-0004 revision 1, Option 3, is approved-for-adr. ADR-0003 is promotion-pending and non-authoritative. Its artifact-layout migration remains blocked until ADR-0003 passes the completeness/read-back gate and reaches accepted status. The next implementation step will not remove Markdown reports, latest copies, or per-workflow indexes.
 - **References:** `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/triage/scripts/ledger.py`.
 - **Next:** Align reporter and Ledger issue eligibility, task failed lint tooling checks without taskifying unbaselined lint findings, and enforce one Current Execution task.
 
@@ -99,14 +99,14 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **Action:** Recorded the user's explicit approval of the remediation plan and DRAFT-0004 revision 1, Option 3.
 - **Result:** Task `20261126-090154` remains P0, Approved, In Progress, and Current Execution. DRAFT-0004 is approved for ADR promotion. No artifact-layout migration has occurred. Promotion must complete the canonical rationale comparison and provisional ADR read-back before acceptance.
 - **References:** `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `workspace/ADR_TEMPLATE.md`; `.agent/skills/decision-governance/SKILL.md`.
-- **Next:** Complete the provisional ADR-0001 rationale comparison and read-back. Accept it only if every material Draft decision, risk, safeguard, evidence limit, migration requirement, and Confirmation criterion is represented.
+- **Next:** Complete the provisional ADR-0003 rationale comparison and read-back. Accept it only if every material Draft decision, risk, safeguard, evidence limit, migration requirement, and Confirmation criterion is represented.
 
 
 
 ### 2026-11-26 11:49 UTC
 
 - **Action:** Verified DRAFT-0004 revision 1, the canonical ADR template, the decision-governance promotion rules, and the global ADR path sequence. Created the provisional ADR record.
-- **Result:** The ADR directory contained only its README, and the catalog reserved the first ADR record path. ADR-0001 is therefore the next available ID. DRAFT-0004 is now marked approved-for-adr, and ADR-0001 is promotion-pending. The Draft and ADR indexes and catalog coverage are aligned. No report artifacts were changed. The provisional ADR remains non-authoritative until a full rationale comparison and read-back pass.
+- **Result:** The ADR directory contained only its README, and the catalog reserved the first ADR record path. ADR-0003 is therefore the next available ID. DRAFT-0004 is now marked approved-for-adr, and ADR-0003 is promotion-pending. The Draft and ADR indexes and catalog coverage are aligned. No report artifacts were changed. The provisional ADR remains non-authoritative until a full rationale comparison and read-back pass.
 - **References:** `workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md`; `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `workspace/draft/README.md`; `workspace/adr/README.md`; `.agent/skills/document-standards/references/document-type-catalog.md`.
 - **Next:** Read back the complete provisional ADR and compare every decision-bearing section with DRAFT-0004 revision 1. Accept only if no material omission remains.
 
@@ -114,10 +114,19 @@ Review and remediate the related CI findings listed below after approval. Preser
 
 ### 2026-11-26 11:52 UTC
 
-- **Action:** Compared provisional ADR-0001 with the complete approved DRAFT-0004 revision and the canonical ADR template.
-- **Result:** The initial provisional record omitted the Draft's comparative matrix, full risk/safeguard register, and detailed evidence register. It also listed this task in implementation metadata before ADR acceptance. Added the missing decision rationale and evidence, removed premature task linkage, and corrected stale ADR-0003 references in this task. ADR-0001 remains promotion-pending. No report artifacts changed.
+- **Action:** Compared provisional ADR-0003 with the complete approved DRAFT-0004 revision and the canonical ADR template.
+- **Result:** The initial provisional record omitted the Draft's comparative matrix, full risk/safeguard register, and detailed evidence register. It also listed this task in implementation metadata before ADR acceptance. Added the missing decision rationale and evidence, removed premature task linkage, and corrected stale ADR-0003 references in this task. ADR-0003 remains promotion-pending. No report artifacts changed.
 - **References:** `workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md`; `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `workspace/ADR_TEMPLATE.md`; `.agent/skills/decision-governance/SKILL.md`.
 - **Next:** Read back the complete corrected ADR and verify that its rationale, risks, evidence, scope, and Confirmation criteria match the approved Draft. Then decide whether it passes promotion.
+
+
+
+### 2026-11-26 12:05 UTC
+
+- **Action:** Corrected the provisional ADR number after historical references exposed an ID collision.
+- **Result:** ADR-0001 and ADR-0002 are allocated historical IDs even though their records are absent from the current branch. The invalid provisional ADR-0001 file was deleted. The approved DRAFT-0004 revision now points to provisional ADR-0003. The ADR README, Draft README, and catalog use ADR-0003. No historical archive record was restored and no report artifacts changed.
+- **References:** `workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md`; DRAFT-0002 references historical ADR-0001; Draft README references ADR-0002; commit `3a5c257ea7d9faf2214959119de77bde44593c51`.
+- **Next:** Read back the complete ADR-0003 and confirm the promotion gate before changing its status to accepted.
 
 ## 7. Current State
 The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. DRAFT-0004 revision 1, Option 3, is approved by the user and is entering ADR promotion. No artifact-layout cleanup has been performed.
@@ -137,7 +146,7 @@ The current history contains 29 complete post-run Actions reports. Twenty-six re
 3. Make failed lint tooling checks task-eligible without taskifying unbaselined lint findings. Deduplicate the existing failed-check observations.
 4. Reconcile propagation-only reports and their processed-report references against the shared eligibility predicate. Preserve genuine error evidence and stable finding/task references.
 5. Enforce exactly one Current Execution task and P0-before-non-P0 ordering.
-6. Execute the previously approved artifact-layout migration only after ADR-0001 acceptance and only within DRAFT-0004 Option 3 scope.
+6. Execute the previously approved artifact-layout migration only after ADR-0003 acceptance and only within DRAFT-0004 Option 3 scope.
 7. Verify changes through naturally triggered hosted CI. Do not dispatch or poll.
 
 ## 10. References

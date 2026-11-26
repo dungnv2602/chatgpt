@@ -17,7 +17,7 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-090154 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P0 | In Progress | User | Approved | — | 2026-11-26 11:15 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
+| 20261126-090154 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P0 | In Progress | User | Approved | — | 2026-11-26 12:05 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
 | 20261126-101512-01 | Correct misclassified test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:53 UTC | [Task record](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md) |
 | 20261126-101512 | Correct misclassified task-board test fixture errors in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:44 UTC | [Task record](tasks/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md) |
 
