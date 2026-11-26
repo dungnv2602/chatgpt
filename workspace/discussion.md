@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 14:35 UTC:** Inspect the active Draft's governing decision process, catalog class, canonical template, and exact lint source lines. Scope is the five approved P0 finding groups 20261126-142112 through 20261126-142112-04, all against DRAFT-0002. Confirm whether one semantics-preserving edit can resolve the grouped findings without changing the proposal's decisions or approval state.
+- **2026-11-26:** Apply style-only edits to [DRAFT-0002](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md) revision 4. Resolve the 36 task-linked findings across five P0 tasks. Preserve all options, evidence, scope, and pending user approval. Update the draft index and revision history, then use event-driven lint and document validation.
 
 ## Open Discussions
 
