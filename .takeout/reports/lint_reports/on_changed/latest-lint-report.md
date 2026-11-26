@@ -1,30 +1,30 @@
 # On Changed STE Lint Evidence Report
 
-- **Result:** Passed
+- **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#817](https://github.com/dungnv2602/chatgpt/actions/runs/45844123288)
-- **Run ID / attempt:** 45844123288 / 1
+- **Run:** [#818](https://github.com/dungnv2602/chatgpt/actions/runs/45857763911)
+- **Run ID / attempt:** 45857763911 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 52041ceb40792d0805ba4c2a9ca34d805441e3d4
+- **Branch / commit:** gpt / 0428feec031857cdac6347d74b171fe9f0fafb45
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 285355c083fbea124c356fb856b559ab38b88354
-- **Linter source SHA:** 52041ceb40792d0805ba4c2a9ca34d805441e3d4
-- **Generated (UTC):** 2026-11-26T14:57:47.461697+00:00
+- **Baseline SHA:** 52041ceb40792d0805ba4c2a9ca34d805441e3d4
+- **Linter source SHA:** 0428feec031857cdac6347d74b171fe9f0fafb45
+- **Generated (UTC):** 2026-11-26T16:21:19.862302+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 2 |
-| Files that failed | 0 |
-| Files with findings | 0 |
-| Total findings | 0 |
-| Hard findings | 0 |
+| Files that failed | 1 |
+| Files with findings | 1 |
+| Total findings | 1 |
+| Hard findings | 1 |
 | Advisory findings | 0 |
-| New findings | 0 |
+| New findings | 1 |
 | Recurring findings | 0 |
-| Resolved findings | 1 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -39,8 +39,8 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
+- .agent/skills/document-standards/references/document-type-catalog.md
 - workspace/task_board.md
-- workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
 
 ## 4. Per-file result matrix
 
@@ -48,14 +48,16 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| workspace/task_board.md | PASS | 0 | 0 | 0 | 449 | 0.0 | 0 |
-| workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | PASS | 0 | 0 | 0 | 9016 | 0.0 | 0 |
+| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 1 | 1 | 0 | 4598 | 0.0 | 1 |
+| workspace/task_board.md | PASS | 0 | 0 | 0 | 452 | 0.0 | 0 |
 
 ## 5. Findings by rule
 
 Counts include hard and advisory findings.
 
-No findings.
+| Rule | Findings |
+|---|---:|
+| semicolon | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -87,7 +89,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.265s
+Ran 4 tests in 0.302s
 
 OK
 ~~~
@@ -100,7 +102,7 @@ OK
 ~~~text
 .......
 ----------------------------------------------------------------------
-Ran 7 tests in 0.006s
+Ran 7 tests in 0.005s
 
 OK
 ~~~
@@ -120,7 +122,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 2 changed Markdown sources (333 available as link targets) and 20 local Markdown links.
+Scanned 2 changed Markdown sources (320 available as link targets) and 19 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -130,7 +132,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-None.
+- **semicolon** · .agent/skills/document-standards/references/document-type-catalog.md:123:145 · **new** · fingerprint: e2e4500a529bb5cf3751722a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ### Recurring findings
 
@@ -138,14 +143,29 @@ None.
 
 ### Resolved findings
 
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148 · **resolved** · fingerprint: 1ba75e66fd8777920c74a662
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validates
+None.
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
+
+### .agent/skills/document-standards/references/document-type-catalog.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 1
+- **Hard findings:** 1
+- **Baseline:** 0
+- **Words:** 4598
+- **Findings per 100 words:** 0.0
+
+#### Complete diagnostics
+
+- **semicolon** · .agent/skills/document-standards/references/document-type-catalog.md:123:145 · **new** · fingerprint: e2e4500a529bb5cf3751722a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
 
 ### workspace/task_board.md
 
@@ -154,20 +174,7 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 449
-- **Findings per 100 words:** 0.0
-
-No STE findings were recorded for this file.
-
-
-### workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 9016
+- **Words:** 452
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
