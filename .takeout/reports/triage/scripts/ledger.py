@@ -683,6 +683,17 @@ def upsert_task_board_row(root, task):
     adr_cell = ", ".join(adr_ids) if adr_ids else ("Pending" if governing_adrs.lower().startswith("pending") else "—")
     row = "| " + task_id + " | " + title + " | " + priority + " | " + status + " | " + origin + " | " + approval + " | " + markdown_cell(adr_cell) + " | " + updated + " | [Task record](tasks/" + filename + ") |"
     lines = board.splitlines()
+    # CI Ledger tasks are P0 and must always become the Current Execution pointer.
+    if priority == "P0":
+        current_heading = next((i for i, line in enumerate(lines) if line == "## Current Execution"), None)
+        if current_heading is not None:
+            pointer = "[\" + task_id + " — " + title + "\"](tasks/" + filename + ")"
+            pointer_index = next((i for i in range(current_heading + 1, next((j for j in range(current_heading + 1, len(lines)) if lines[j].startswith("## ")), len(lines))) if lines[i].strip()), current_heading + 1)
+            if pointer_index >= len(lines) or lines[pointer_index] != pointer:
+                if pointer_index < len(lines) and lines[pointer_index].startswith("["):
+                    lines[pointer_index] = pointer
+                else:
+                    lines.insert(current_heading + 1, pointer)
     old_index = next((i for i, line in enumerate(lines) if line.startswith("| " + task_id + " |")), None)
     if old_index is not None:
         old_section = next((line[3:] for line in reversed(lines[:old_index]) if line.startswith("## ")), "")
