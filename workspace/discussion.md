@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** Continue [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md): inspect remaining ingestion/publication consistency, reset state readback, and trigger coverage statically after pagination repair. No tests, scripts, dispatch, or polling.
+- **2026-11-26:** Continue [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md): readback-verify the clean-start watermark correction, then statically audit source-workflow trigger/finalizer coverage and publication consistency. No tests, scripts, dispatch, or polling.
 
 ## Open Discussions
 
