@@ -103,7 +103,7 @@ Use this order:
 4. Read every scene record indexed by those arcs.
 5. Include the latest scene and every incomplete or active scene.
 6. Read relevant illustration notes and image-prompt records when they affect continuity.
-7. Read `images/reference-index.md` when the novel uses established visual references. Do this before visual work involving Maya.
+7. For visual work involving Maya, inspect the exact reference images and project records that exist under the relevant `area/novel/` project and `.takeout/images/original/`. The former global `images/reference-index.md` is absent and must not be recreated.
 
 Follow links only within the approved repository workspace.
 
@@ -186,7 +186,7 @@ If the user's instruction already includes a writing task, start that task after
 - Repository: `dungnv2602/chatgpt`
 - Authorized branch: `gpt`
 - Novel records: `area/novel/`
-- Visual references and assets: `images/`
+- Shared visual references and assets: `.takeout/images/`. Project-specific assets remain under their `area/` project folders.
 - Skills: `.agent/skills/`
 - Prompt history and session records: `area/drawing/`
 
