@@ -4,7 +4,7 @@ This directory stores completed and cancelled task records and individually arch
 
 ## Structure
 
-- .archive/tasks/ stores immutable archived task records.
+-  .archive/task/ stores immutable archived task records.
 - .archive/reports/ stores individually archived CI report files, preserving their path below the report-family root.
 - .archive/adr/ stores permanent, immutable accepted Decision Records. ADRs are excluded from 90-day retention.
 - Keep task IDs and filenames unchanged.
@@ -66,7 +66,7 @@ The reset must:
 - Reset the GitHub Actions index and both lint-scope indexes to empty indexes with a new UTC watermark.
 - Replace .takeout/reports/triage/ledger.json with an empty schema-valid Ledger, empty processed-report state, and unseeded lint baselines.
 - Remove report-file entries from .github/archive-retention-index.json.
-- Preserve report scripts, schemas, templates, assets, operating guides, workflow definitions, .archive/tasks/, and the task retention entries.
+- Preserve report scripts, schemas, templates, assets, operating guides, workflow definitions,  .archive/task/, and the task retention entries.
 - Preserve unrelated task records. Any unapproved Ledger-generated proposals whose evidence is being deleted must be cancelled and archived before their active board rows are removed.
 - Do not bulk-import the old report history after the reset. The first complete tooling-valid full audit in each lint scope establishes its baseline without task creation. New and later actionable findings enter through normal event-driven ingestion.
 
@@ -76,7 +76,7 @@ This explicit reset is the only exception to the normal immutable report-period 
 
 GitHub Actions checks the shared retention index weekly. It retains each indexed file for at least 90 days from its UTC archive timestamp.
 
-- The index is .github/archive-retention-index.json. Entries reference one exact file under .archive/tasks/ or .archive/reports/.
+- The index is .github/archive-retention-index.json. Entries reference one exact file under  .archive/task/ or .archive/reports/.
 - The cleanup script reads the index only. It does not list, scan, or read either archive directory.
 - When an indexed file reaches 90 days, the workflow deletes only that exact path and removes its index entry.
 - Preserve .gitkeep. Never delete an unindexed record except during the explicit user-authorized clean-start reset described above.
