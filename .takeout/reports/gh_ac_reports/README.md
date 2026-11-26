@@ -83,7 +83,7 @@ If a diagnostics run fails before GitHub exposes job steps or a log URL, record 
 
 ## Resolution and archive
 
-The cross-family issue state is tracked in `.takeout/reports/triage/ledger.json`. A finding is resolved only after its fix commit and successful relevant validation are recorded. The successful run URL and UTC timestamp are sufficient; a full successful-run diagnostic report is not required. Use a request file only when the successful run's detailed evidence is specifically needed. Resolved report files are moved to `.archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `reports/` or a separate retention workflow.
+The cross-family issue state is tracked in `.takeout/reports/triage/ledger.json`. A finding is resolved only after its fix commit and successful relevant validation are recorded. The successful run URL and UTC timestamp are sufficient; a full successful-run diagnostic report is not required. Use a request file only when the successful run's detailed evidence is specifically needed. Resolved report files are moved to `.archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `.takeout/reports/` or a separate retention workflow.
 
 
 ## Bounded retry and request handling
