@@ -4,8 +4,8 @@ The Worker owns shared intake, original-byte preservation, WebP conversion, publ
 
 ## Asset destinations
 
-- Retained non-novel drawing outputs: drawings/YYYY-MM-DD/images/.
-- Novel illustrations: novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/.
+- Retained non-novel drawing outputs: area/drawing/YYYY-MM-DD/images/.
+- Novel illustrations: area/novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/.
 - Other retained image assets: the destination declared in images/takeout/HANDOFF.yml.
 
 Store each retained output separately. Use attempt-XX.webp for one image and numbered suffixes for multiple outputs. Link only exact assets whose path and provenance have been verified. Do not migrate existing assets.
@@ -14,9 +14,9 @@ Store each retained output separately. Use attempt-XX.webp for one image and num
 
 All new retained uploads enter through the flat images/takeout/ intake. Follow the Worker's [image provenance and WebP procedure](../the-worker/references/image-provenance-and-webp.md) and [Image Takeout guide](../../../../.takeout/images/README-2.md).
 
-For a non-novel drawing output, include the attempt number in the hand-off and set the destination to drawings/YYYY-MM-DD/images/. The processor requires this field before it updates the attempt record, daily index, or session manifest. Do not move or convert uploaded files manually.
+For a non-novel drawing output, include the attempt number in the hand-off and set the destination to area/drawing/YYYY-MM-DD/images/. The processor requires this field before it updates the attempt record, daily index, or session manifest. Do not move or convert uploaded files manually.
 
-The processor is skills/the-worker/scripts/process_takeout.py. The workflow is .github/workflows/convert-images-to-webp.yml. It preserves the original PNG/JPEG master and creates a separate WebP derivative.
+The processor is  .agent/skills/the-worker/scripts/process_takeout.py. The workflow is .github/workflows/convert-images-to-webp.yml. It preserves the original PNG/JPEG master and creates a separate WebP derivative.
 
 ## Generation provenance
 
