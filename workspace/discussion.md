@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 05:54 UTC:** Inspect the current image storage layout, image conversion workflow, processor paths, and provenance procedures. Establish the canonical destinations before changing any image-related references. Preserve existing assets and keep root `images/` absent.
+- **2026-11-26 06:00 UTC:** Adapt the image processor, tests, and GitHub Action to the verified `.takeout/images/` layout. Update related Worker and Drawing guides, session-start paths, and the Document Type Catalog. Preserve the deleted hand-off file and all existing image assets.
 - **Active task:** [20261126055004 — Adapt repository workflows to the refactor](tasks/20261126055004-adapt-workflows-and-repair-refactor-breakage.md)
 
 ## Open Discussions
