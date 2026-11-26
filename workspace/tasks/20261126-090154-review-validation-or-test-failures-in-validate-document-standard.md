@@ -161,3 +161,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Ledger test drift:** Updated obsolete P3 / ledger-only assertions to the permanent P0 task-generation policy; aligned the board rollback fixture with the In Progress section; aligned the publisher test with the current workflow split (sweep runs the reporter, composite action ingests the Ledger); adjusted the no-diagnostic workflow-level fixture to the classifier's generic-failure suppression rule.
 - **Documentation:** Updated the report guide to define the pruning contract and distinguish immutable retained error evidence from removable legacy/non-actionable captures.
 - **Next:** Re-run hosted validation from the corrected commit. Keep this task open until reporter and Ledger regression suites pass and report/index/Ledger reconciliation is repeated.
+
+
+### 2026-11-26 10:06 UTC
+
+- **Hosted validation:** Corrected commit `21f2726` triggered Diagnostics run 45798032857 and Validate Document Standards run 45798032838. Reporter tests found incomplete fixtures missing fields consumed by `index_record`; Ledger tests found one stale task-template assertion and board fixtures targeting the wrong status sections.
+- **Fixes:** Complete retained-report fixtures with the required index fields; keep the incomplete post-run fixture valid for retry; align the task-template assertion with the canonical template; make the renderer test remove the Proposed section and the generated-task rollback test remove the In Progress section.
+- **Next:** Verify the next naturally triggered hosted run. No local test run or hosted pass is claimed.

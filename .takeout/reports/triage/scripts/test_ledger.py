@@ -164,7 +164,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("../../.takeout/reports/triage/ledger.json", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Template version:** 1.3", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Governing ADR(s):** Pending — Worker review required before approval", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("1. Inspect every linked report and exact diagnostic before proposing a fix.", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("1. Inspect every linked report and exact diagnostic.", task_files[0].read_text(encoding="utf-8"))
         self.assertNotIn("[List agreed requirements and acceptance criteria.", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Standing instruction:**", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Standing approval:** CI Ledger-generated remediation is approved under the user's permanent P0 instruction.", task_files[0].read_text(encoding="utf-8"))

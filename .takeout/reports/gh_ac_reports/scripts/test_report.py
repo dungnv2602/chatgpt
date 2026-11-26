@@ -244,7 +244,8 @@ class HistoricalRetentionTests(unittest.TestCase):
                         "completeness": "Complete" if status == "completed" else "Incomplete",
                     },
                     "classification": {
-                        "state": conclusion, "primary_category": "validation_or_test" if has_issue else None,
+                        "state": conclusion, "projected_conclusion": "failure" if stage == "pre_finalizer" else None,
+                        "primary_category": "validation_or_test" if has_issue else None,
                         "issues": ([{"category": "validation_or_test"}] if has_issue else []),
                     },
                     "history_path": "history/55/" + folder.name,
@@ -316,7 +317,8 @@ class RetryPolicyTests(unittest.TestCase):
             incomplete_report = {
                 "source_run": {
                     "id":"100","number":100,"attempt":1,"workflow_id":55,
-                    "workflow_name":"Example","status":"completed","conclusion":"failure",
+                    "workflow_name":"Example","run_url":"https://example.invalid/100",
+                    "status":"completed","conclusion":"failure",
                     "created_at":"2026-11-23T06:00:00Z",
                 },
                 "capture":{
@@ -324,7 +326,8 @@ class RetryPolicyTests(unittest.TestCase):
                     "completeness":"Incomplete",
                 },
                 "classification":{
-                    "primary_category":"validation_or_test","issues":[{"category":"validation_or_test"}],
+                    "projected_conclusion":None,"primary_category":"validation_or_test",
+                    "issues":[{"category":"validation_or_test"}],
                 },
                 "history_path":"history/55/100-attempt-1-post_run",
             }
