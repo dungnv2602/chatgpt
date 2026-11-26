@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 09:10 UTC
+- **Updated:** 2026-11-26 09:30 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -99,3 +99,11 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** The captured failure was a fixture mismatch: the task-board fixture's Proposed section did not match the malformed-section condition intended by tests, causing the Ledger writer to raise `Task board has no section for status Proposed`. The P0 override authorizes remediation. Latest attempted fixture isolation commit `899e6a1` was itself flawed; corrected newline literals in `ec3ba4d`. Validation for the corrected commit remains unconfirmed at this checkpoint.
 - **References:** report `.takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json`; hosted job log; commits `899e6a1`, `ec3ba4d`.
 - **Next:** Verify naturally available hosted validation and repair any remaining fixture regression before resuming the older P1 task.
+
+
+### 2026-11-26 09:30 UTC
+
+- **Action:** Inspected the naturally captured hosted run 582 after the template-contract correction. Retrieved the completed regression-test job log.
+- **Result:** The 15 errors shared one remaining cause: the renderer expected the stale Decisions placeholder `[Record approved decisions and concise rationale.]`, while the canonical template includes the additional sentence `Mark unapproved ideas as Proposed.` Updated the renderer to match the canonical template. Added regression assertions that the generated task contains the approved P0 decision text and does not retain the stale placeholder. This is a second instance of template-contract drift; the new operating-guide procedure requires future failures to receive a preventive regression and workflow update in the same remediation.
+- **References:** Run 582: https://github.com/dungnv2602/chatgpt/actions/runs/45792129692; job 139813521101; commits `73b4046` and `a366786`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.takeout/reports/triage/README.md`.
+- **Next:** Inspect the naturally triggered hosted validation after both commits. Keep the P0 task open until all relevant tests pass; then continue exhaustive report-to-finding and finding-to-task reconciliation.
