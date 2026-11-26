@@ -92,7 +92,7 @@ On 23 November 2026, the user explicitly authorized creation of `.takeout/report
 This boundary applies to every future task and every tool call, not only archiving.
 
 - The only permitted workspace roots are:
-  - `images/` — images and visual references
+  - `.takeout/images/` — shared image intake and retained image assets
   - `area/` — active area and project records
   - `area/novel/` — structured narrative records
   - `area/drawing/` — session records and prompt history
