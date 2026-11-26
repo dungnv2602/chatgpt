@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 03:31 UTC
+- **Updated:** 2026-11-26 03:50 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -62,10 +62,10 @@ Task created and selected as current execution; the board was updated. The proce
 
 ## 8. Remaining Work
 
-- Complete a wider active README and skill cross-reference audit.
-- Check the Document Type Catalog path coverage assumptions against relocated skills.
-- Audit remaining workflow path assumptions, triggers, permissions, and exclusions.
-- Review remaining active scripts and caller/dependency contracts.
+- Complete the cross-reference scan of all active Markdown references under `.agent/skills/`.
+- Determine the exact scope and disposition of missing task-board record links without restoring files or reading archive contents.
+- Check the Document Type Catalog path-coverage rules against the reconstructed tree.
+- Audit remaining workflow path assumptions, triggers, permissions, exclusions, and script callers.
 - Validate using available remote evidence; local execution and hosted CI remain unavailable.
 
 ## 9. Next Actions
@@ -190,3 +190,12 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Commits:** `1fcfc601864e5ee784c261578f433d535b19a6c5`, `6845bde3134028a96f64502535048f4e4bec4dff`, `52ae30426904d72c0ac7fb5f7d4ea4caa8bc7e5b`.
 - **Additional observation:** The current branch tree contains no tracked `images/` root or `images/takeout/HANDOFF.yml`. The processor explicitly returns a no-op when the hand-off is absent. No intake files or directories were restored or created because that would change operational state beyond the evidence-supported code repair.
 - **Next:** Continue the active README/skill navigation audit and the remaining workflow/script caller review.
+
+
+### 2026-11-26 03:50 UTC — Active navigation links repaired; task-board record gap identified
+
+- **Audit scope:** Statically checked local Markdown link targets in 44 active navigation sources: skill definitions, initialization files, active README files, and the task board. The check resolved relative paths against the current branch tree. It did not validate heading anchors or external URLs.
+- **Findings and repairs:** Corrected the session-start policy link, Romantic Storyteller Drawing Skill and initialization links, drawing-pattern history links, report archive link, workspace report/archive links and path references, and novel README links to the relocated `.takeout/images/` and `.agent/skills/` locations. All six changed files were fetched after their commits; the same static link check found no remaining broken local links in those six files.
+- **Commits:** `166228460bc6b1c80a7e81957a1349917a053f33`, `2e6f3362556b456194fdc120f027bf902fe0b70e`, `b25a64226c54ed2b5a57fe7c4d7cdeb9984418e1`, `d8b827434fa31eff5c89da444353e792354a5a55`, `51b716381de437707e7e5a29ae5d0a1d73bbbee4`, `a9de30509fb8800c595915fa97c494cd32b435b6`.
+- **Separate finding:** The task board contains 153 links to 152 unique task records. The current `workspace/tasks/` directory contains only two task records and `.gitkeep`, leaving 150 linked task paths absent from that active directory. The workspace root has no alternate active task-record directory. No missing record was recreated, no board row was deleted, and no archive contents were read. The correct disposition needs evidence of the records' intended locations or a user decision.
+- **Next:** Continue the cross-reference scan of all remaining skill reference Markdown files. Keep the task-board record gap open.
