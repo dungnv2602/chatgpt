@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-[20261126-124129 — Fix lint tooling check: Markdown links and heading anchors](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md)
+[20261126-142112-04 — Review synonym-rotation findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md)
 
 ## Proposed
 
@@ -17,6 +17,11 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
+| 20261126-142112-04 | Review synonym-rotation findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md) |
+| 20261126-142112-03 | Review present-perfect findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-03-review-present-perfect-findings-in-workspace-draft-draft-0002-ph.md) |
+| 20261126-142112-02 | Review long-sentence findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-02-review-long-sentence-findings-in-workspace-draft-draft-0002-phas.md) |
+| 20261126-142112-01 | Review semicolon findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-01-review-semicolon-findings-in-workspace-draft-draft-0002-phase-aw.md) |
+| 20261126-142112 | Review passive-voice findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-review-passive-voice-findings-in-workspace-draft-draft-0002-phas.md) |
 | 20261126-124129 | Fix lint tooling check: Markdown links and heading anchors | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 13:58 UTC | [Task record](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 | 20261126-090154 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 12:43 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
 | 20261126-101512-01 | Resolve misclassified test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:53 UTC | [Task record](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md) |
