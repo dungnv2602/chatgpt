@@ -2,22 +2,22 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#715](https://github.com/dungnv2602/chatgpt/actions/runs/45744913427)
-- **Run ID / attempt:** 45744913427 / 1
+- **Run:** [#717](https://github.com/dungnv2602/chatgpt/actions/runs/45745304013)
+- **Run ID / attempt:** 45745304013 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 8bd3effd90a5cce8c3b1d4f802838bd844adef37
+- **Branch / commit:** gpt / 6eb9eee46168353e4ce5ef8c016b4295e3c628cf
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** c91c7dedd734c09c21ab765c169aadc83dc408e9
-- **Linter source SHA:** 8bd3effd90a5cce8c3b1d4f802838bd844adef37
-- **Generated (UTC):** 2026-11-26T02:50:49.707859+00:00
+- **Baseline SHA:** 8bd3effd90a5cce8c3b1d4f802838bd844adef37
+- **Linter source SHA:** 6eb9eee46168353e4ce5ef8c016b4295e3c628cf
+- **Generated (UTC):** 2026-11-26T02:55:27.466849+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 5 |
-| Files that failed | 5 |
+| Files evaluated | 1 |
+| Files that failed | 1 |
 | Files with findings | 0 |
 | Total findings | 0 |
 | Hard findings | 0 |
@@ -39,11 +39,7 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- .agent/skills/the-worker/references/image-provenance-and-webp.md
-- .agent/skills/drawing/references/archive-and-delivery.md
-- .agent/skills/document-standards/references/document-type-catalog.md
-- .takeout/images/README-1.md
-- workspace/task_board.md
+- .agent/skills/github-actions/SKILL.md
 
 ## 4. Per-file result matrix
 
@@ -51,11 +47,7 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/the-worker/references/image-provenance-and-webp.md | FAIL | 0 | 0 | 0 | 0 | 0 | 2 |
-| .agent/skills/drawing/references/archive-and-delivery.md | FAIL | 0 | 0 | 0 | 0 | 0 | 2 |
-| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 0 | 0 | 0 | 0 | 0 | 2 |
-| .takeout/images/README-1.md | FAIL | 0 | 0 | 0 | 0 | 0 | 2 |
-| workspace/task_board.md | FAIL | 0 | 0 | 0 | 0 | 0 | 2 |
+| .agent/skills/github-actions/SKILL.md | FAIL | 0 | 0 | 0 | 0 | 0 | 2 |
 
 ## 5. Findings by rule
 
@@ -93,7 +85,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.366s
+Ran 4 tests in 0.280s
 
 OK
 ~~~
@@ -149,83 +141,7 @@ None.
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### .agent/skills/the-worker/references/image-provenance-and-webp.md
-
-- **Result:** FAIL
-- **Exit code:** 2
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 0
-- **Findings per 100 words:** 0
-
-**Capture error:**
-
-~~~text
-python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory
-~~~
-
-No STE findings were recorded for this file.
-
-
-### .agent/skills/drawing/references/archive-and-delivery.md
-
-- **Result:** FAIL
-- **Exit code:** 2
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 0
-- **Findings per 100 words:** 0
-
-**Capture error:**
-
-~~~text
-python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory
-~~~
-
-No STE findings were recorded for this file.
-
-
-### .agent/skills/document-standards/references/document-type-catalog.md
-
-- **Result:** FAIL
-- **Exit code:** 2
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 0
-- **Findings per 100 words:** 0
-
-**Capture error:**
-
-~~~text
-python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory
-~~~
-
-No STE findings were recorded for this file.
-
-
-### .takeout/images/README-1.md
-
-- **Result:** FAIL
-- **Exit code:** 2
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 0
-- **Findings per 100 words:** 0
-
-**Capture error:**
-
-~~~text
-python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory
-~~~
-
-No STE findings were recorded for this file.
-
-
-### workspace/task_board.md
+### .agent/skills/github-actions/SKILL.md
 
 - **Result:** FAIL
 - **Exit code:** 2
