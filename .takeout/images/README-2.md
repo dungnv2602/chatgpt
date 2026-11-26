@@ -6,15 +6,15 @@ Images may belong to a novel, a drawing session, a visual-reference collection, 
 
 ## Upload rules
 
-- Upload each image directly to `images/takeout/`.
-- Keep the repository-owned `README.md` and `HANDOFF.yml` at the intake root. The processor treats only these exact regular files as metadata, not uploads; it rejects any other non-image file.
+- Upload each image directly to `.takeout/images/`.
+- Keep the repository-owned `README-1.md`, `README-2.md`, and `HANDOFF.yml` at the intake root. The processor also ignores the `.gitkeep` marker. It rejects any other non-image file.
 - Do not create upload subfolders.
 - Incoming filenames may use any name. The user does not need to rename them.
-- Do not place uploads in `history/` or `webp/`. The Action manages these reserved directories.
+- Do not place uploads in `history/`, `original/`, or `webp/`. The Action manages these reserved directories.
 - Keep one active batch in `HANDOFF.yml`.
 - The normal Action processes a batch only when `HANDOFF.yml` has `status: ready`.
 - List every top-level image in the hand-off exactly once.
-- Mark an unresolved item with `destination_dir: "images/unclassified"`. The normal processor converts it to WebP but does not relocate either file. It preserves the original in intake and retains the item in a residual Draft hand-off.
+- Mark an unresolved item with `destination_dir: ".takeout/images/unclassified"`. The normal processor converts it to WebP but does not relocate either file. It preserves the original in intake and retains the item in a residual Draft hand-off.
 - Do not create conversation records or provenance IDs to make an unclassified item pass validation.
 - The pipeline accepts static PNG, JPG, and JPEG files.
 - The pipeline rejects APNG, GIF, WebP, HEIC, AVIF, TIFF, BMP, and other formats. It does not flatten animated images.
@@ -23,9 +23,9 @@ Images may belong to a novel, a drawing session, a visual-reference collection, 
 
 An image may remain unclassified when its pixels or source mapping cannot be verified. Keep its original in the intake folder. Do not invent its source, attempt, prompt, asset ID, destination, or project membership.
 
-Mark the item with the exact destination `images/unclassified`. The normal Ready workflow converts the static PNG, JPG, or JPEG to WebP with the standard source-specific profile. It verifies the WebP container and checks that the source SHA-256 is unchanged. It stores the derivative under `images/takeout/webp/unclassified/attempt-NNN/`, appending `.webp` to the complete source filename.
+Mark the item with the exact destination `.takeout/images/unclassified`. The normal Ready workflow converts the static PNG, JPG, or JPEG to WebP with the standard source-specific profile. It verifies the WebP container and checks that the source SHA-256 is unchanged. It stores the derivative under `.takeout/ .takeout/images/webp/unclassified/attempt-NNN/`, appending `.webp` to the complete source filename.
 
-The normal workflow does not relocate either file. The original remains at the top level of `images/takeout/`. The derivative remains under the unclassified WebP staging directory. The item remains in the residual Draft hand-off. The processor does not create provenance, classify the image, or edit manifests, attempt records, or indexes.
+The normal workflow does not relocate either file. The original remains at the top level of `.takeout/images/`. The derivative remains under the unclassified WebP staging directory. The item remains in the residual Draft hand-off. The processor does not create provenance, classify the image, or edit manifests, attempt records, or indexes.
 
 There is no separate unclassified conversion workflow or filename allowlist. The same Ready hand-off and manual dispatch process handles mapped and unclassified images. If any conversion fails, no mapped original is relocated. Successful derivatives remain in their attempt directories for inspection. A retry uses a new unclassified attempt directory and does not overwrite earlier output.
 
@@ -96,7 +96,7 @@ Each item uses these fields:
 - Drawing-session items require an attempt plus a recorded Generation ID or internal Output ID. The processor checks this identity against the referenced attempt note. If source_asset_id is supplied, it must match the attempt note's Asset ID.
 - A Partial or Curated conversation record is accepted only when it identifies unavailable material and labels editorial summaries. It does not claim a complete transcript.
 
-Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or the reserved legacy path `images/scripts/` as a destination.
+Do not use `.takeout/images/`, `.takeout/ .takeout/images/webp/`, ` .takeout/images/webp/`, or the reserved legacy path ` .takeout/images/scripts/` as a destination.
 
 The Action rejects drawing-session uploads without an explicit attempt number. This rule prevents omissions from the session manifest and prompt records.
 
@@ -118,7 +118,7 @@ Attempt records and daily READMEs link only to the WebP file. The original maste
 Before relocation, the processor writes each WebP file to persistent staging:
 
 ```text
-images/takeout/webp/[batch-id]/attempt-NNN/
+.takeout/ .takeout/images/webp/[batch-id]/attempt-NNN/
 ```
 
 The staged filename preserves the exact incoming filename. It appends `.webp`.
@@ -132,9 +132,9 @@ This naming rule preserves the source extension. It also prevents collisions bet
 
 ## Processing and success conditions
 
-The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs when intake files or the hand-off change. You can also start it manually on branch `gpt`.
+The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs when new intake files or conversation-integrity records change. A hand-off change does not trigger a push run. You can also start it manually on branch `gpt`.
 
-The normal workflow processes a Ready hand-off as one transaction. It requires exact coverage of every top-level intake image. The repository-owned `README.md` and `HANDOFF.yml` are recognized metadata files and are not counted as uploads; any other non-image file is rejected. It validates each mapped item against its conversation-integrity record and, for drawing outputs, the referenced attempt note. It converts and relocates only provenance-mapped items. It also converts items whose exact destination is `images/unclassified`, but it never relocates those originals or derivatives. It stores those derivatives under `images/takeout/webp/unclassified/attempt-NNN/` and leaves the original files in intake. On success, it archives the complete original hand-off and reports, then leaves the unclassified entries in a residual Draft hand-off. Any validation or conversion failure preserves the Ready hand-off and all source files. The processor retains successful WebP outputs in their respective staging directories for inspection.
+The normal workflow processes a Ready hand-off as one transaction. It requires exact coverage of every top-level intake image. The repository-owned `README-1.md`, `README-2.md`, `.gitkeep`, and `HANDOFF.yml` are recognized metadata files and are not counted as uploads; any other non-image file is rejected. It validates each mapped item against its conversation-integrity record and, for drawing outputs, the referenced attempt note. It converts and relocates only provenance-mapped items. It also converts items whose exact destination is `.takeout/images/unclassified`, but it never relocates those originals or derivatives. It stores those derivatives under `.takeout/ .takeout/images/webp/unclassified/attempt-NNN/` and leaves the original files in intake. On success, it archives the complete original hand-off and reports, then leaves the unclassified entries in a residual Draft hand-off. Any validation or conversion failure preserves the Ready hand-off and all source files. The processor retains successful WebP outputs in their respective staging directories for inspection.
 
 A Ready-state change in `HANDOFF.yml` does not trigger a push run. Manually dispatch **Process Image Takeout and Create WebP Derivatives** on branch `gpt` after the Ready hand-off and processor changes are committed. This prevents a status-only push from starting an unreviewed batch.
 
@@ -186,7 +186,7 @@ A failed attempt does not clear the hand-off. Correct the hand-off and retry the
 The processor retains each attempt under:
 
 ```text
-images/takeout/history/
+.takeout/images/history/
 └── [batch-id]/
     └── attempt-001/
         ├── HANDOFF.yml
