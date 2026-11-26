@@ -395,6 +395,95 @@ class LedgerTests(unittest.TestCase):
         result = LEDGER.ingest(self.root)
         self.assertEqual(result["total_findings"],0)
 
+    def test_incomplete_actions_capture_is_not_ingested(self):
+        issue = {"category":"validation_or_test","job_name":"Build","step_name":"Run tests",
+                 "blocking":True,"confidence":"high","message":"ERROR: assertion mismatch"}
+        path = self.add_actions("206","2026-11-23T07:37:00Z",[issue],completeness="Incomplete")
+        result = LEDGER.ingest(self.root)
+        self.assertEqual(result["total_findings"],0)
+        self.assertEqual(result["reports_processed"],1)
+        self.assertIn(path,self.read_ledger()["ingestion_state"]["processed_reports"])
+
+    def test_failed_lint_tooling_check_creates_task_without_unbaselined_lint_findings(self):
+        path = self.add_lint("on_changed","207","2026-11-23T07:38:00Z",fingerprint="feedface1234")
+        report_path = self.root / path
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+        report["checks"][-1].update({
+            "status":"Failed","exit_code":1,
+            "output":"Found 1 unresolved local Markdown target. Missing Markdown file: ../../.archive/adr/0001.md",
+        })
+        report_path.write_text(json.dumps(report),encoding="utf-8")
+        ledger = self.read_ledger()
+        ledger["ingestion_state"]["lint_baseline_scopes"]["on_changed"] = False
+        (self.root / ".takeout" / "reports" / "triage" / "ledger.json").write_text(json.dumps(ledger),encoding="utf-8")
+        result = LEDGER.ingest(self.root)
+        updated = self.read_ledger()
+        self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_changed"])
+        self.assertEqual(len(updated["findings"]),1)
+        finding = updated["findings"][0]
+        self.assertEqual(finding["category"],"lint_tooling")
+        self.assertEqual(finding["source_family"],"lint")
+        self.assertEqual(len(finding["task_refs"]),1)
+        self.assertEqual(result["tasks_created"],1)
+        self.assertEqual(result["findings_created"],1)
+        task = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
+        self.assertIn("Fix lint tooling check: Markdown links and heading anchors",task)
+        self.assertIn("- **Priority:** P0",task)
+        self.assertIn("- **Approval:** Approved",task)
+        self.assertIn("- **Status:** In Progress",task)
+        self.assertIn("- **Current execution:** Yes",task)
+        self.assertNotIn("lint-feedface1234",task)
+
+    def test_repeated_lint_tooling_failures_share_one_finding_and_task_across_scopes(self):
+        paths = [
+            self.add_lint("on_changed","208","2026-11-23T07:39:00Z",fingerprint="aaaaaaaa1111"),
+            self.add_lint("on_repo","209","2026-11-23T07:40:00Z",fingerprint="bbbbbbbb2222",
+                          execution_mode="repository-wide"),
+        ]
+        for path in paths:
+            report_path = self.root / path
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            report["checks"][-1].update({
+                "status":"Failed","exit_code":1,
+                "output":"Found 1 unresolved local Markdown target. Missing Markdown file: ../../.archive/adr/0001.md",
+            })
+            report_path.write_text(json.dumps(report),encoding="utf-8")
+        ledger = self.read_ledger()
+        ledger["ingestion_state"]["lint_baseline_scopes"] = {"on_changed":False,"on_repo":False}
+        (self.root / ".takeout" / "reports" / "triage" / "ledger.json").write_text(json.dumps(ledger),encoding="utf-8")
+        result = LEDGER.ingest(self.root)
+        updated = self.read_ledger()
+        self.assertEqual(len(updated["findings"]),1)
+        finding = updated["findings"][0]
+        self.assertEqual(finding["category"],"lint_tooling")
+        self.assertEqual(finding["occurrence_count"],2)
+        self.assertEqual(len(finding["task_refs"]),1)
+        self.assertEqual(result["tasks_created"],1)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))),1)
+        self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_changed"])
+        self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_repo"])
+
+    def test_task_generation_leaves_exactly_one_active_current_execution(self):
+        old_path = self.root / "workspace" / "tasks" / "20261123-070000-existing-task.md"
+        old_path.write_text(
+            "# Task: Existing active task\\n\\n"
+            "- **ID:** 20261123-070000\\n"
+            "- **Status:** In Progress\\n"
+            "- **Priority:** P0\\n"
+            "- **Current execution:** Yes\\n"
+            "- **Ledger group:** ci-ffffffffffffffff\\n",
+            encoding="utf-8",
+        )
+        issue = {"category":"validation_or_test","job_name":"Build","step_name":"Run tests",
+                 "blocking":True,"confidence":"high","message":"ERROR: assertion mismatch"}
+        self.add_actions("210","2026-11-23T07:41:00Z",[issue])
+        LEDGER.ingest(self.root)
+        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        current = [path for path in task_files if "- **Current execution:** Yes" in path.read_text(encoding="utf-8")]
+        self.assertEqual(len(current),1)
+        self.assertNotEqual(LEDGER.task_metadata(current[0].read_text(encoding="utf-8"),"ID"),"20261123-070000")
+        self.assertIn("- **Current execution:** No",old_path.read_text(encoding="utf-8"))
+
     def test_actions_repeat_observation_increments_once_per_run(self):
         issue = {"category":"validation_or_test","job_name":"Build","step_name":"Unit tests","blocking":True,"confidence":"medium","message":"Assertion mismatch"}
         self.add_actions("201","2026-11-23T07:30:00Z",[issue])

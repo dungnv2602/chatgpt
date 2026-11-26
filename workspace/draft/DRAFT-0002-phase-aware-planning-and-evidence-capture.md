@@ -666,4 +666,4 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 - Workspace navigation: `workspace/README.md`
 - Task renderer and tests: `reports/triage/scripts/ledger.py` and `reports/triage/scripts/test_ledger.py`
 - Document Type Catalog: `skills/document-standards/references/document-type-catalog.md`
-- Related accepted decision: [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md). ADR-0001 governs the decision process and does not approve this proposal's substance or implementation.
+- Related accepted decision: [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md). ADR-0001 governs the decision process and does not approve this proposal's substance or implementation.

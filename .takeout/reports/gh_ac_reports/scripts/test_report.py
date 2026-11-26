@@ -184,6 +184,23 @@ class CapturePolicyTests(unittest.TestCase):
         }}
         self.assertFalse(REPORT.report_is_actionable(report))
 
+    def test_retention_uses_shared_independent_error_predicate_and_keeps_incomplete_retries(self):
+        report = {
+            "source_run":{"status":"completed"},
+            "capture":{"stage":"post_run","completeness":"Incomplete"},
+            "classification":{"issues":[{
+                "category":"validation_or_test","job_name":"Build","step_name":"Run tests",
+                "message":"ERROR: assertion mismatch",
+            }]},
+        }
+        self.assertTrue(REPORT.report_is_retained(report))
+        report["classification"]["issues"][0]["step_name"] = "Set workflow result from audit and tooling outcomes"
+        self.assertFalse(REPORT.report_is_retained(report))
+        report["classification"]["issues"][0].update({
+            "category":"cancelled","step_name":"Cancel remaining work","message":"Run cancelled.",
+        })
+        self.assertFalse(REPORT.report_is_retained(report))
+
     def test_capture_never_writes_an_in_progress_run(self):
         with tempfile.TemporaryDirectory() as temp:
             with patch.object(REPORT, "api_get", return_value={"run_attempt": 1, "status": "in_progress"}), \

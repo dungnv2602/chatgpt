@@ -20,6 +20,7 @@ LINT_BASELINE_CHECKS = (
     "Markdown anchor regression tests",
     "STE linter self-test",
 )
+LINT_TOOLING_CHECKS = LINT_BASELINE_CHECKS + ("Markdown links and heading anchors",)
 DIAGNOSTIC_MARKERS = re.compile(
     r"(?i)(remote rejected|cannot lock ref|error:|fatal:|failed to|exception|traceback|assertion)"
 )
@@ -580,6 +581,10 @@ def update_task_findings(content, findings, timestamp):
 def task_title_for_group(findings):
     first = findings[0]
     category = str(first.get("category") or "CI")
+    if category == "lint_tooling":
+        note = ((first.get("evidence") or [{}])[-1]).get("note") or ""
+        check_name = note.split(" · ", 1)[-1]
+        return ("Fix lint tooling check: " + check_name)[:120]
     if first.get("source_family") == "lint":
         note = ((first.get("evidence") or [{}])[-1]).get("note") or ""
         location = note.split(" · ", 1)[-1]
@@ -766,6 +771,60 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
     active_tasks[group_id] = task
     return task_id, True, True
 
+def enforce_single_current_execution(root, preferred_task_id=None):
+    """Keep one active task selected and synchronize metadata with the board pointer."""
+    folder = root / "workspace" / "tasks"
+    if not folder.is_dir():
+        return None
+    active = []
+    status_rank = {"In Progress": 0, "Blocked": 1, "Ready": 2, "Proposed": 3, "Paused": 4}
+    for path in sorted(folder.glob("*.md")):
+        content = path.read_text(encoding="utf-8")
+        task_id = task_metadata(content, "ID")
+        status = task_metadata(content, "Status")
+        if task_id and status in TASK_ACTIVE_STATUSES:
+            active.append({"id": task_id, "path": path, "content": content, "status": status})
+    selected = next((item for item in active if item["id"] == preferred_task_id), None)
+    if selected is None:
+        board_path = root / "workspace" / "task_board.md"
+        if board_path.is_file():
+            board = board_path.read_text(encoding="utf-8")
+            section = board.split("## Current Execution", 1)[-1].split("\n## ", 1)[0]
+            match = re.search(r"\(tasks/([^)]+)\)", section)
+            if match:
+                pointer_path = folder / Path(match.group(1))
+                pointer_id = task_metadata(pointer_path.read_text(encoding="utf-8"), "ID") if pointer_path.is_file() else ""
+                selected = next((item for item in active if item["id"] == pointer_id), None)
+    if selected is None:
+        selected = next(
+            (item for item in sorted(active, key=lambda row: (status_rank.get(row["status"], 9), row["id"]))
+             if task_metadata(item["content"], "Current execution") == "Yes"),
+            None,
+        )
+    if selected is None and active:
+        selected = sorted(active, key=lambda row: (status_rank.get(row["status"], 9), row["id"]))[0]
+    selected_id = selected["id"] if selected else None
+    for path in sorted(folder.glob("*.md")):
+        content = path.read_text(encoding="utf-8")
+        task_id = task_metadata(content, "ID")
+        status = task_metadata(content, "Status")
+        desired = "Yes" if selected_id and task_id == selected_id and status in TASK_ACTIVE_STATUSES else "No"
+        updated = re.sub(
+            r"(?m)^- \*\*Current execution:\*\* (?:Yes|No)$",
+            "- **Current execution:** " + desired,
+            content,
+            count=1,
+        )
+        if updated != content:
+            atomic_write_text(path, updated)
+    if selected:
+        selected_content = selected["path"].read_text(encoding="utf-8")
+        upsert_task_board_row(root, {
+            "id": selected_id, "path": selected["path"], "content": selected_content,
+        })
+    return selected_id
+
+
 def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reopened_ids):
     """Create or refresh tasks only for findings observed in this ingestion event."""
     active_tasks = parse_active_ledger_tasks(root)
@@ -793,10 +852,12 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reo
             continue
         grouped.setdefault(group_id, []).append(finding)
     counts = {"tasks_created": 0, "tasks_updated": 0, "findings_linked": 0, "changed": False}
+    selected_task_id = None
     for group_id, findings in grouped.items():
         task_id, created, task_changed = create_or_update_worker_task(
             root, group_id, findings, timestamp, active_tasks
         )
+        selected_task_id = task_id
         if created:
             counts["tasks_created"] += 1
         elif task_changed:
@@ -808,23 +869,63 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reo
                 counts["findings_linked"] += 1
                 counts["changed"] = True
         counts["changed"] = counts["changed"] or task_changed or created
+    enforce_single_current_execution(root, selected_task_id)
     return counts
 
 
+def lint_tooling_checks_passed(report):
+    """Require every report-tooling check to pass before trusting lint findings."""
+    checks = report.get("checks")
+    if not isinstance(checks, list):
+        return False
+    states = {item.get("name"): item.get("status") for item in checks if isinstance(item, dict)}
+    return all(states.get(name) == "Passed" for name in LINT_TOOLING_CHECKS)
+
+
+def lint_tooling_observations(report, report_path):
+    """Create stable findings for failed tooling checks, independently of lint baselines."""
+    if report.get("status") not in ("Passed", "Failed"):
+        return []
+    checks = report.get("checks")
+    if not isinstance(checks, list):
+        return []
+    scope = str(report.get("scope") or "unknown")
+    run_id, attempt = str(report.get("run_id") or ""), report.get("attempt", 1)
+    if not run_id or not isinstance(attempt, int):
+        raise LedgerError("Lint report has invalid run identity: " + report_path)
+    observed_at = report.get("generated_at_utc")
+    parse_time(observed_at)
+    result = {}
+    for check in checks:
+        if not isinstance(check, dict):
+            raise LedgerError("Lint tooling check must be an object: " + report_path)
+        name = str(check.get("name") or "")
+        if name not in LINT_TOOLING_CHECKS or check.get("status") != "Failed":
+            continue
+        identity = "lint-tooling-" + hashlib.sha256(name.encode("utf-8")).hexdigest()[:24]
+        observation_id = "lint_tooling:" + run_id + ":" + str(attempt)
+        result[identity] = {
+            "finding_id": identity,
+            "source_family": "lint",
+            "category": "lint_tooling",
+            "title": "Lint tooling check failed: " + name,
+            "severity": "high",
+            "task_group": task_group_key("lint_tooling", name),
+            "evidence": evidence_record(
+                report_path, observed_at, report.get("run_url"), observation_id, scope + " · " + name
+            ),
+        }
+    return list(result.values())
+
+
 def lint_baseline_ready(report, scope):
-    """Accept a full lint baseline only after capture and tooling checks pass."""
+    """Accept a full lint baseline only after every tooling check passes."""
     if report.get("scope") != scope or report.get("status") not in ("Passed", "Failed"):
         return False
     expected_mode = "repository-wide" if scope == "on_repo" else "full-audit-fallback"
     if report.get("execution_mode") != expected_mode or not report.get("commit_sha"):
         return False
-    checks = report.get("checks")
-    if not isinstance(checks, list):
-        return False
-    states = {item.get("name"): item.get("status") for item in checks if isinstance(item, dict)}
-    if not all(states.get(name) == "Passed" for name in LINT_BASELINE_CHECKS):
-        return False
-    return states.get("Markdown links and heading anchors") == "Passed"
+    return lint_tooling_checks_passed(report)
 
 
 def archived_task_index(root):
@@ -924,6 +1025,28 @@ def ingest(root, now=None):
                 scope = report.get("scope")
                 if scope not in ("on_changed", "on_repo"):
                     raise LedgerError("Lint report has an unsupported scope: " + report_path)
+                tooling_observations = lint_tooling_observations(report, report_path)
+                for observation in tooling_observations:
+                    result = upsert_finding(ledger, observation)
+                    if result == "created":
+                        counts["findings_created"] += 1
+                        task_candidates["created"].add(observation["finding_id"])
+                        changed = True
+                    elif result in ("updated", "reopened"):
+                        counts["findings_updated"] += 1
+                        task_candidates["updated"].add(observation["finding_id"])
+                        if result == "reopened":
+                            reopened_ids.add(observation["finding_id"])
+                        changed = True
+                    else:
+                        counts["findings_unchanged"] += 1
+                if not lint_tooling_checks_passed(report):
+                    state["processed_reports"].append(report_path)
+                    processed.add(report_path)
+                    counts["reports_processed"] += 1
+                    warnings.append("Skipped lint findings because report tooling checks failed or were incomplete: " + report_path)
+                    changed = True
+                    continue
                 if not state["lint_baseline_scopes"].get(scope):
                     if not lint_baseline_ready(report, scope):
                         # Reports are immutable. Consume this unusable baseline candidate
