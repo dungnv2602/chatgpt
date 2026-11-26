@@ -1,31 +1,39 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45745304013",
-  "run_number": 717,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45745304013",
+  "run_id": "45745878632",
+  "run_number": 725,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45745878632",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "6eb9eee46168353e4ce5ef8c016b4295e3c628cf",
+  "commit_sha": "faee88229d1ea297433a745329f114ab817614eb",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "8bd3effd90a5cce8c3b1d4f802838bd844adef37",
-  "generated_at_utc": "2026-11-26T02:55:27.466849+00:00",
+  "baseline_sha": "6eb9eee46168353e4ce5ef8c016b4295e3c628cf",
+  "generated_at_utc": "2026-11-26T03:02:04.407636+00:00",
   "status": "Failed",
-  "linter_source_sha": "6eb9eee46168353e4ce5ef8c016b4295e3c628cf",
+  "linter_source_sha": "faee88229d1ea297433a745329f114ab817614eb",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
-    ".agent/skills/github-actions/SKILL.md"
+    ".agent/skills/README.md",
+    ".agent/skills/github-actions/SKILL.md",
+    ".agent/SESSION_START.md",
+    ".agent/skills/the-worker/SKILL.md",
+    ".agent/skills/document-standards/references/document-type-catalog.md"
   ],
-  "files_evaluated_count": 1,
-  "files_failed": 1,
+  "files_evaluated_count": 5,
+  "files_failed": 5,
   "failed_files": [
-    ".agent/skills/github-actions/SKILL.md"
+    ".agent/skills/README.md",
+    ".agent/skills/github-actions/SKILL.md",
+    ".agent/SESSION_START.md",
+    ".agent/skills/the-worker/SKILL.md",
+    ".agent/skills/document-standards/references/document-type-catalog.md"
   ],
   "files_with_findings": 0,
   "total_findings": 0,
@@ -34,7 +42,31 @@
   "findings_by_rule": {},
   "records": [
     {
+      "path": ".agent/skills/README.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
       "path": ".agent/skills/github-actions/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/SESSION_START.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/the-worker/SKILL.md",
+      "exit_code": 2,
+      "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
+      "violations": []
+    },
+    {
+      "path": ".agent/skills/document-standards/references/document-type-catalog.md",
       "exit_code": 2,
       "capture_error": "python3: can't open file '/home/runner/work/chatgpt/chatgpt/skills/asd-ste100/scripts/ste-lint.py': [Errno 2] No such file or directory\n",
       "violations": []
@@ -61,7 +93,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.280s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.291s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
