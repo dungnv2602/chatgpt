@@ -129,3 +129,10 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Repair:** Migrated 55 exact retention-index entries to the reconstructed paths. Updated the cleanup script's validation/root/family checks, regression-test fixtures and archive/Worker/GitHub Actions documentation. Updated session-start references for `area/novel/` and `area/drawing/` and repaired the skills index's session-start link.
 - **Verification:** Read back index and script/test contents; compared every indexed path to the current remote tree. All 55 indexed records had existing exact paths. Read-back of updated paths occurred after commits.
 - **Limitation:** Tests were not run locally or on hosted Actions; catalog-wide validation and full cross-reference audit remain incomplete.
+
+
+### 2026-11-26 — Catalog and initialization navigation repair
+
+- **Finding:** The Document Type Catalog, session-start instructions, and skills index retained legacy novel, drawing, report, archive, and initialization paths.
+- **Repair:** Remapped catalog entries from `novels/` and `drawings/` to `area/novel/` and `area/drawing/`, report family paths to `.takeout/reports/`, archive paths to `.archive/`, and corrected the `.agent/SESSION_START.md` link. Updated session-start instructions and the skills index accordingly.
+- **Verification:** Remote readback confirmed mapped catalog entries and corrected report-family references. A further cleanup corrected nested path substitutions. Catalog validation and exhaustive cross-reference validation remain unverified.
