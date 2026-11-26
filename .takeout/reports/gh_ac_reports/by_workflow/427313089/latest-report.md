@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45798838831
+# Validate Document Standards — run 45821860845
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45798838831 / 1 |
-| Run number | 608 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45798838831 |
+| Run / attempt | 45821860845 / 1 |
+| Run number | 621 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45821860845 |
 | Branch | gpt |
-| Commit | 01c2cff6f33f7b75ae42d984b448312b806e0d9f |
+| Commit | 9d20a6989a6adde069964fccd301d0eb2b2a579e |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-26T10:10:30Z |
+| Created (UTC) | 2026-11-26T12:40:31Z |
 | Status at capture | completed |
 | Observed conclusion | failure |
 | Projected conclusion | Not calculated |
 | Reporter job | completed / failure |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-26T10:15:11Z |
+| Captured (UTC) | 2026-11-26T12:43:00Z |
 
 ## Executive summary
 
@@ -45,20 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 139837019100 | validate-document-standards | completed | failure | 9 | logs/job-139837019100.log |
+| 139915873455 | validate-document-standards | completed | failure | 9 | logs/job-139915873455.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 139837019100 | 4 | Run CI Ledger regression tests | Blocking | medium | 2026-11-26T10:11:46.8637725Z test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.LedgerTests.test_processed_actions_paths_are_pruned_when_removed_from_active_history) ... ERROR |
+| validation_or_test | 139915873455 | 4 | Run CI Ledger regression tests | Blocking | medium | 2026-11-26T12:40:42.1389848Z Traceback (most recent call last): |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 139837019100 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 139837019100 | failure | .github | 72 |  | Process completed with exit code 1. |
+| 139915873455 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 139915873455 | failure | .github | 73 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -68,7 +68,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 139837019100 | validate-document-standards | logs/job-139837019100.log | 36049 | False | validate-document-standards	Run CI Ledger regression tests	2026-11-26T10:11:46.8637725Z test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.LedgerTests.test_processed_actions_paths_are_pruned_when_removed_from_active_history) ... ERROR, validate-document-standards	Run CI Ledger regression tests	2026-11-26T10:11:46.9105436Z ERROR: test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.LedgerTests.test_processed_actions_paths_are_pruned_when_removed_from_active_history), validate-document-standards	Run CI Ledger regression tests	2026-11-26T10:11:46.9107470Z Traceback (most recent call last):, validate-document-standards	Run CI Ledger regression tests	2026-11-26T10:11:46.9122699Z FAILED (errors=1), validate-document-standards	Run CI Ledger regression tests	2026-11-26T10:11:46.9242022Z ##[error]Process completed with exit code 1. |
+| 139915873455 | validate-document-standards | logs/job-139915873455.log | 36569 | False | validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:40:42.1389848Z Traceback (most recent call last):, validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:40:42.1400421Z FAILED (failures=1), validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:40:42.1569407Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 

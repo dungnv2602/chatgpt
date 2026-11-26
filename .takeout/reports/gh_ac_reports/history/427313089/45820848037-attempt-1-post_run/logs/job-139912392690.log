@@ -1,0 +1,290 @@
+validate-document-standards	Set up job	﻿2026-11-26T12:34:08.1453566Z Current runner version: '2.338.2'
+validate-document-standards	Set up job	2026-11-26T12:34:08.1479976Z ##[group]Runner Image Provisioner
+validate-document-standards	Set up job	2026-11-26T12:34:08.1480946Z Hosted Compute Agent
+validate-document-standards	Set up job	2026-11-26T12:34:08.1481552Z Version: 20261111.635
+validate-document-standards	Set up job	2026-11-26T12:34:08.1482183Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+validate-document-standards	Set up job	2026-11-26T12:34:08.1482957Z Build Date: 2026-11-11T01:49:01Z
+validate-document-standards	Set up job	2026-11-26T12:34:08.1483673Z Worker ID: {0e3a538a-a83a-4d56-9846-8f207b118748}
+validate-document-standards	Set up job	2026-11-26T12:34:08.1484538Z Region: westus2
+validate-document-standards	Set up job	2026-11-26T12:34:08.1485150Z Cloud: Azure
+validate-document-standards	Set up job	2026-11-26T12:34:08.1485671Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-26T12:34:08.1487219Z ##[group]Operating System
+validate-document-standards	Set up job	2026-11-26T12:34:08.1487951Z Ubuntu
+validate-document-standards	Set up job	2026-11-26T12:34:08.1488455Z 26.04.1
+validate-document-standards	Set up job	2026-11-26T12:34:08.1489024Z LTS
+validate-document-standards	Set up job	2026-11-26T12:34:08.1489527Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-26T12:34:08.1490151Z ##[group]Runner Image
+validate-document-standards	Set up job	2026-11-26T12:34:08.1490808Z Image: ubuntu-26.04
+validate-document-standards	Set up job	2026-11-26T12:34:08.1491370Z Version: 20261116.202.1
+validate-document-standards	Set up job	2026-11-26T12:34:08.1492469Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+validate-document-standards	Set up job	2026-11-26T12:34:08.1494419Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+validate-document-standards	Set up job	2026-11-26T12:34:08.1495462Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-26T12:34:08.1496956Z ##[group]GITHUB_TOKEN Permissions
+validate-document-standards	Set up job	2026-11-26T12:34:08.1499091Z Contents: read
+validate-document-standards	Set up job	2026-11-26T12:34:08.1499708Z Metadata: read
+validate-document-standards	Set up job	2026-11-26T12:34:08.1500373Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-26T12:34:08.1502410Z Secret source: Actions
+validate-document-standards	Set up job	2026-11-26T12:34:08.1503534Z Cache mode: write
+validate-document-standards	Set up job	2026-11-26T12:34:08.1504516Z Prepare workflow directory
+validate-document-standards	Set up job	2026-11-26T12:34:08.1871460Z Prepare all required actions
+validate-document-standards	Set up job	2026-11-26T12:34:08.1943563Z Getting action download info
+validate-document-standards	Set up job	2026-11-26T12:34:08.5703514Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+validate-document-standards	Set up job	2026-11-26T12:34:08.6650398Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+validate-document-standards	Set up job	2026-11-26T12:34:08.8252135Z Complete job name: validate-document-standards
+validate-document-standards	Check out gpt	﻿2026-11-26T12:34:08.9137912Z ##[group]Run actions/checkout@v7.0.1
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9138876Z with:
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9139306Z   ref: gpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9139727Z   fetch-depth: 1
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9140188Z   repository: dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9144514Z   token: [REDACTED]
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9144955Z   ssh-strict: true
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9145393Z   ssh-user: git
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9145844Z   persist-credentials: true
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9146339Z   clean: true
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9146788Z   sparse-checkout-cone-mode: true
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9147311Z   fetch-tags: false
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9147762Z   show-progress: true
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9148212Z   lfs: false
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9148629Z   submodules: false
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9149085Z   set-safe-directory: true
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9149591Z   allow-unsafe-pr-checkout: false
+validate-document-standards	Check out gpt	2026-11-26T12:34:08.9150527Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1867395Z Syncing repository: dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1869359Z ##[group]Getting Git version info
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1870266Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1871340Z [command]/usr/bin/git version
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1895677Z git version 2.56.1
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1947378Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1955937Z Temporarily overriding HOME='/home/runner/work/_temp/67c95410-8c22-4b17-89cf-5f2a92d27768' before making global git config changes
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1966427Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.1968072Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.2015650Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.2018065Z ##[group]Determining repository object format
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5206511Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5207990Z ##[group]Initializing the repository
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5216593Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5329127Z hint: Using 'master' as the name for the initial branch. This default branch name
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5330718Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5331791Z hint: to use in all of your new repositories, which will suppress this warning,
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5332731Z hint: call:
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5333249Z hint:
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5333877Z hint: 	git config --global init.defaultBranch <name>
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5334897Z hint:
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5335597Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5336671Z hint: 'development'. The just-created branch can be renamed via this command:
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5337563Z hint:
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5338089Z hint: 	git branch -m <name>
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5338758Z hint:
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5339958Z hint: Disable this message with "git config set advice.defaultBranchName false"
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5341944Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5355527Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5421099Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5422423Z ##[group]Disabling automatic garbage collection
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5426336Z [command]/usr/bin/git config --local gc.auto 0
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5476480Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5477450Z ##[group]Setting up auth
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5478120Z Removing SSH command configuration
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5481493Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5538695Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5974292Z Removing HTTP extra header
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.5980284Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6022130Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6293283Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6299280Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6338047Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6614619Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6657310Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path /home/runner/work/_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6692997Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6731538Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6769403Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6801324Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6802106Z ##[group]Fetching the repository
+validate-document-standards	Check out gpt	2026-11-26T12:34:09.6808062Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/gpt*:refs/remotes/origin/gpt* +refs/tags/gpt*:refs/tags/gpt*
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8654702Z From https://github.com/dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8656131Z  * [new branch]      gpt        -> origin/gpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8688976Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8690894Z ##[group]Determining the checkout info
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8692613Z [command]/usr/bin/git branch --list --remote origin/gpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8709027Z   origin/gpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8723466Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8726715Z [command]/usr/bin/git sparse-checkout disable
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8790846Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8833933Z ##[group]Checking out the ref
+validate-document-standards	Check out gpt	2026-11-26T12:34:12.8840189Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+validate-document-standards	Check out gpt	2026-11-26T12:34:13.5655452Z Switched to a new branch 'gpt'
+validate-document-standards	Check out gpt	2026-11-26T12:34:13.5670381Z branch 'gpt' set up to track 'origin/gpt'.
+validate-document-standards	Check out gpt	2026-11-26T12:34:13.5726965Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T12:34:13.5789352Z [command]/usr/bin/git log -1 --format=%H
+validate-document-standards	Check out gpt	2026-11-26T12:34:13.5820566Z 33bba62b5587d2fc0a1642e8f359a4d3bf95c9e7
+validate-document-standards	Set up Python	﻿2026-11-26T12:34:13.6102801Z ##[group]Run actions/setup-python@v5
+validate-document-standards	Set up Python	2026-11-26T12:34:13.6103236Z with:
+validate-document-standards	Set up Python	2026-11-26T12:34:13.6103494Z   python-version: 3.x
+validate-document-standards	Set up Python	2026-11-26T12:34:13.6103792Z   check-latest: false
+validate-document-standards	Set up Python	2026-11-26T12:34:13.6107021Z   token: [REDACTED]
+validate-document-standards	Set up Python	2026-11-26T12:34:13.6107324Z   update-environment: true
+validate-document-standards	Set up Python	2026-11-26T12:34:13.6107621Z   allow-prereleases: false
+validate-document-standards	Set up Python	2026-11-26T12:34:13.6107916Z   freethreaded: false
+validate-document-standards	Set up Python	2026-11-26T12:34:13.6108178Z ##[endgroup]
+validate-document-standards	Set up Python	2026-11-26T12:34:13.7483285Z ##[group]Installed versions
+validate-document-standards	Set up Python	2026-11-26T12:34:13.7597986Z (node:2902) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate-document-standards	Set up Python	2026-11-26T12:34:13.7598853Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate-document-standards	Set up Python	2026-11-26T12:34:13.7599694Z Successfully set up CPython (3.15.2)
+validate-document-standards	Set up Python	2026-11-26T12:34:13.7600673Z ##[endgroup]
+validate-document-standards	Run CI Ledger regression tests	﻿2026-11-26T12:34:13.7900421Z ##[group]Run python -m unittest discover -s .takeout/reports/triage/scripts -p 'test_ledger.py' -v
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.7901821Z ^[[36;1mpython -m unittest discover -s .takeout/reports/triage/scripts -p 'test_ledger.py' -v^[[0m
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8132966Z shell: /usr/bin/bash -e {0}
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8133393Z env:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8133728Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8134503Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8135020Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8135462Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8136082Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8136660Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:13.8137134Z ##[endgroup]
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7458806Z test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.LedgerTests.test_actions_identity_uses_workflow_job_step_and_signature) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7536763Z test_actions_repeat_observation_increments_once_per_run (test_ledger.LedgerTests.test_actions_repeat_observation_increments_once_per_run) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7560079Z test_all_ledger_publishers_share_serialized_writer_group (test_ledger.LedgerTests.test_all_ledger_publishers_share_serialized_writer_group) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7640252Z test_all_lint_severities_create_and_reuse_grouped_tasks (test_ledger.LedgerTests.test_all_lint_severities_create_and_reuse_grouped_tasks) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7659520Z test_atomic_write_replaces_file_without_temp_remnants (test_ledger.LedgerTests.test_atomic_write_replaces_file_without_temp_remnants) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7698126Z test_bootstrap_migration_does_not_backfill_existing_reports (test_ledger.LedgerTests.test_bootstrap_migration_does_not_backfill_existing_reports) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7730002Z test_cancelled_only_report_creates_no_findings (test_ledger.LedgerTests.test_cancelled_only_report_creates_no_findings) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7775151Z test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation (test_ledger.LedgerTests.test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7812685Z test_curated_owner_severity_status_title_and_risk_are_preserved (test_ledger.LedgerTests.test_curated_owner_severity_status_title_and_risk_are_preserved) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7824921Z test_duplicate_status_requires_an_existing_target (test_ledger.LedgerTests.test_duplicate_status_requires_an_existing_target) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7923060Z test_evidence_is_bounded_but_occurrence_count_keeps_growing (test_ledger.LedgerTests.test_evidence_is_bounded_but_occurrence_count_keeps_growing) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7935067Z test_false_positive_requires_a_closure_note (test_ledger.LedgerTests.test_false_positive_requires_a_closure_note) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7969086Z test_first_full_lint_report_seeds_baseline_without_creating_findings (test_ledger.LedgerTests.test_first_full_lint_report_seeds_baseline_without_creating_findings) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.7987748Z test_grouped_task_waits_until_every_finding_is_terminal (test_ledger.LedgerTests.test_grouped_task_waits_until_every_finding_is_terminal) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8018476Z test_incomplete_lint_report_is_not_imported (test_ledger.LedgerTests.test_incomplete_lint_report_is_not_imported) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8072058Z test_invalid_lint_report_is_consumed_without_seeding_the_baseline (test_ledger.LedgerTests.test_invalid_lint_report_is_consumed_without_seeding_the_baseline) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8151733Z test_later_high_severity_finding_promotes_active_group_priority (test_ledger.LedgerTests.test_later_high_severity_finding_promotes_active_group_priority) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8165457Z test_legacy_report_paths_migrate_to_repository_relative_roots (test_ledger.LedgerTests.test_legacy_report_paths_migrate_to_repository_relative_roots) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8185581Z test_lint_baseline_requires_every_tooling_check_but_allows_lint_findings (test_ledger.LedgerTests.test_lint_baseline_requires_every_tooling_check_but_allows_lint_findings) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8256326Z test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent (test_ledger.LedgerTests.test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8326981Z test_lint_new_run_increments_occurrence_and_tracks_dates (test_ledger.LedgerTests.test_lint_new_run_increments_occurrence_and_tracks_dates) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8371554Z test_low_confidence_actions_error_always_creates_a_task (test_ledger.LedgerTests.test_low_confidence_actions_error_always_creates_a_task) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8415544Z test_low_confidence_actions_findings_create_tasks (test_ledger.LedgerTests.test_low_confidence_actions_findings_create_tasks) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8489419Z test_low_severity_advisory_findings_create_p0_tasks (test_ledger.LedgerTests.test_low_severity_advisory_findings_create_p0_tasks) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8506588Z test_malformed_index_fails_closed_without_changing_ledger (test_ledger.LedgerTests.test_malformed_index_fails_closed_without_changing_ledger) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8535338Z test_malformed_report_is_not_marked_processed (test_ledger.LedgerTests.test_malformed_report_is_not_marked_processed) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8642484Z test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities (test_ledger.LedgerTests.test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8655010Z test_missing_ledger_fails_closed_without_automatic_reset (test_ledger.LedgerTests.test_missing_ledger_fails_closed_without_automatic_reset) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8677612Z test_new_task_record_is_rolled_back_when_board_publication_fails (test_ledger.LedgerTests.test_new_task_record_is_rolled_back_when_board_publication_fails) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8716432Z test_non_defect_actions_and_pre_finalizer_reports_are_ignored (test_ledger.LedgerTests.test_non_defect_actions_and_pre_finalizer_reports_are_ignored) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8732593Z test_open_or_cancelled_task_never_retires_a_finding (test_ledger.LedgerTests.test_open_or_cancelled_task_never_retires_a_finding) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8751935Z test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.LedgerTests.test_processed_actions_paths_are_pruned_when_removed_from_active_history) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8815686Z test_recurring_untracked_lint_baseline_findings_do_not_create_tasks (test_ledger.LedgerTests.test_recurring_untracked_lint_baseline_findings_do_not_create_tasks) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8892879Z test_related_findings_reuse_one_active_task_across_ingestion_events (test_ledger.LedgerTests.test_related_findings_reuse_one_active_task_across_ingestion_events) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8970612Z test_resolved_finding_reopens_and_preserves_resolution_history (test_ledger.LedgerTests.test_resolved_finding_reopens_and_preserves_resolution_history) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.8982857Z test_resolved_status_requires_fix_and_successful_validation (test_ledger.LedgerTests.test_resolved_status_requires_fix_and_successful_validation) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9000889Z test_runner_command_echo_uses_actual_step_log_signature (test_ledger.LedgerTests.test_runner_command_echo_uses_actual_step_log_signature) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9017582Z test_task_board_renderer_fails_closed_when_status_table_is_missing (test_ledger.LedgerTests.test_task_board_renderer_fails_closed_when_status_table_is_missing) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9059928Z test_task_board_rows_stay_inside_their_status_section (test_ledger.LedgerTests.test_task_board_rows_stay_inside_their_status_section) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9077441Z test_terminal_finding_is_retired_after_linked_task_is_archived_done (test_ledger.LedgerTests.test_terminal_finding_is_retired_after_linked_task_is_archived_done) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9092147Z test_unsafe_actions_history_path_is_rejected (test_ledger.LedgerTests.test_unsafe_actions_history_path_is_rejected) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9135509Z test_untrusted_diagnostic_text_is_escaped_in_worker_task (test_ledger.LedgerTests.test_untrusted_diagnostic_text_is_escaped_in_worker_task) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9179317Z test_workflow_level_timeout_without_job_identity_creates_a_task (test_ledger.LedgerTests.test_workflow_level_timeout_without_job_identity_creates_a_task) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9180495Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9180769Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9181306Z Ran 43 tests in 0.195s
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9181538Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T12:34:14.9181658Z OK
+validate-document-standards	Run catalog validator regression tests	﻿2026-11-26T12:34:14.9332474Z ##[group]Run python -m unittest discover \
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9332870Z ^[[36;1mpython -m unittest discover \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9333216Z ^[[36;1m  -s .agent/skills/document-standards/scripts \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9333561Z ^[[36;1m  -p 'test_validate_catalog.py' \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9333839Z ^[[36;1m  -v^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9369455Z shell: /usr/bin/bash -e {0}
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9369717Z env:
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9369994Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9370441Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9370879Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9371276Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9371654Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9372032Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:14.9372354Z ##[endgroup]
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0221038Z test_coverage_pattern_must_match_a_current_document (test_validate_catalog.CatalogValidatorTests.test_coverage_pattern_must_match_a_current_document) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0266535Z test_coverage_pattern_rejects_path_traversal (test_validate_catalog.CatalogValidatorTests.test_coverage_pattern_rejects_path_traversal) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0312751Z test_directory_reference_is_rejected (test_validate_catalog.CatalogValidatorTests.test_directory_reference_is_rejected) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0360299Z test_double_star_covers_nested_markdown (test_validate_catalog.CatalogValidatorTests.test_double_star_covers_nested_markdown) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0404876Z test_duplicate_document_type_fails (test_validate_catalog.CatalogValidatorTests.test_duplicate_document_type_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0451650Z test_embedded_contract_requires_owner_and_live_record (test_validate_catalog.CatalogValidatorTests.test_embedded_contract_requires_owner_and_live_record) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0519153Z test_generator_owned_requires_python_authority (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_python_authority) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0588956Z test_generator_owned_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_regression_test_reference) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0688318Z test_github_and_consolidated_report_roots_are_allowed (test_validate_catalog.CatalogValidatorTests.test_github_and_consolidated_report_roots_are_allowed) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0759505Z test_malformed_inventory_row_fails (test_validate_catalog.CatalogValidatorTests.test_malformed_inventory_row_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0839214Z test_master_and_archive_markdown_are_excluded_from_coverage (test_validate_catalog.CatalogValidatorTests.test_master_and_archive_markdown_are_excluded_from_coverage) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0890077Z test_misplaced_named_template_is_detected_without_catalog_row (test_validate_catalog.CatalogValidatorTests.test_misplaced_named_template_is_detected_without_catalog_row) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0934943Z test_missing_canonical_path_fails (test_validate_catalog.CatalogValidatorTests.test_missing_canonical_path_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.0972934Z test_missing_markdown_coverage_section_fails (test_validate_catalog.CatalogValidatorTests.test_missing_markdown_coverage_section_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1019599Z test_optional_coverage_is_limited_to_generator_owned_outputs (test_validate_catalog.CatalogValidatorTests.test_optional_coverage_is_limited_to_generator_owned_outputs) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1066780Z test_optional_generator_output_pattern_allows_empty_family_after_reset (test_validate_catalog.CatalogValidatorTests.test_optional_generator_output_pattern_allows_empty_family_after_reset) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1120625Z test_optional_generator_output_pattern_covers_files_when_present (test_validate_catalog.CatalogValidatorTests.test_optional_generator_output_pattern_covers_files_when_present) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1170672Z test_optional_takeout_history_coverage_allows_empty_family (test_validate_catalog.CatalogValidatorTests.test_optional_takeout_history_coverage_allows_empty_family) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1233085Z test_optional_takeout_history_coverage_covers_nested_reports (test_validate_catalog.CatalogValidatorTests.test_optional_takeout_history_coverage_covers_nested_reports) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1280994Z test_path_traversal_is_rejected (test_validate_catalog.CatalogValidatorTests.test_path_traversal_is_rejected) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1329273Z test_project_and_workspace_template_locations_are_allowed (test_validate_catalog.CatalogValidatorTests.test_project_and_workspace_template_locations_are_allowed) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1374271Z test_reserved_coverage_pattern_allows_new_family_before_first_record (test_validate_catalog.CatalogValidatorTests.test_reserved_coverage_pattern_allows_new_family_before_first_record) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1421742Z test_reserved_coverage_pattern_must_activate_with_first_record (test_validate_catalog.CatalogValidatorTests.test_reserved_coverage_pattern_must_activate_with_first_record) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1469129Z test_reserved_coverage_pattern_passes_after_activation (test_validate_catalog.CatalogValidatorTests.test_reserved_coverage_pattern_passes_after_activation) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1513164Z test_schema_class_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_schema_class_requires_regression_test_reference) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1559315Z test_single_star_does_not_cross_directory (test_validate_catalog.CatalogValidatorTests.test_single_star_does_not_cross_directory) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1603831Z test_skill_template_must_live_in_assets (test_validate_catalog.CatalogValidatorTests.test_skill_template_must_live_in_assets) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1646787Z test_template_class_requires_named_template (test_validate_catalog.CatalogValidatorTests.test_template_class_requires_named_template) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1691875Z test_uncovered_markdown_document_fails (test_validate_catalog.CatalogValidatorTests.test_uncovered_markdown_document_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1736173Z test_unknown_coverage_status_fails (test_validate_catalog.CatalogValidatorTests.test_unknown_coverage_status_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1780371Z test_unknown_document_class_fails (test_validate_catalog.CatalogValidatorTests.test_unknown_document_class_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1824688Z test_valid_catalog_accepts_all_document_classes (test_validate_catalog.CatalogValidatorTests.test_valid_catalog_accepts_all_document_classes) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1826255Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1826512Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1827047Z Ran 32 tests in 0.166s
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1827268Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-26T12:34:15.1827404Z OK
+validate-document-standards	Validate the document type catalog	﻿2026-11-26T12:34:15.1961086Z ##[group]Run python .agent/skills/document-standards/scripts/validate_catalog.py --root .
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.1961774Z ^[[36;1mpython .agent/skills/document-standards/scripts/validate_catalog.py --root .^[[0m
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.1997390Z shell: /usr/bin/bash -e {0}
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.1997656Z env:
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.1997929Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.1998382Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.1998835Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.1999235Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.1999623Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.2000016Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.2000358Z ##[endgroup]
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.2790958Z ERROR: 3 Markdown file(s) are not covered by the catalog: archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md, archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md, archive/adr/README.md.
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.2792619Z Catalog validation failed: 1 error(s), 18 document type(s), 28 reference(s).
+validate-document-standards	Validate the document type catalog	2026-11-26T12:34:15.2850578Z ##[error]Process completed with exit code 1.
+validate-document-standards	Post Check out gpt	﻿2026-11-26T12:34:15.3004414Z Post job cleanup.
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.3872059Z [command]/usr/bin/git version
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.3920518Z git version 2.56.1
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.3962311Z Temporarily overriding HOME='/home/runner/work/_temp/16a955da-e544-439b-97a8-3c0a77b59ce9' before making global git config changes
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.3963785Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.3968301Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4005045Z Removing SSH command configuration
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4011906Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4052655Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4366640Z Removing HTTP extra header
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4386528Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4430681Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4854924Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4861243Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4892727Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4894029Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4895296Z includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4896242Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4903565Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4969843Z /home/runner/work/_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.4976243Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-e05acebb\-ce26\-41b5\-95ea\-ecffe6698f57\.config
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5012821Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5041678Z /home/runner/work/_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5051227Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-e05acebb\-ce26\-41b5\-95ea\-ecffe6698f57\.config
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5084754Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5108662Z /github/runner_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5118028Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-e05acebb\-ce26\-41b5\-95ea\-ecffe6698f57\.config
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5153945Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5179419Z /github/runner_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5188661Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-e05acebb\-ce26\-41b5\-95ea\-ecffe6698f57\.config
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5224400Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	Post Check out gpt	2026-11-26T12:34:15.5498193Z Removing credentials config '/home/runner/work/_temp/git-credentials-e05acebb-ce26-41b5-95ea-ecffe6698f57.config'
+validate-document-standards	Complete job	﻿2026-11-26T12:34:15.5641968Z Cleaning up orphan processes
+validate-document-standards	Complete job	2026-11-26T12:34:15.6054584Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

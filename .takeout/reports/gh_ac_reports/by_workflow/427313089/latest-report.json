@@ -1,31 +1,31 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45798838831",
-    "number": 608,
+    "id": "45821860845",
+    "number": 621,
     "attempt": 1,
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
     "workflow_path": ".github/workflows/validate-document-standards.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798838831",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45821860845",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "01c2cff6f33f7b75ae42d984b448312b806e0d9f",
+    "head_sha": "9d20a6989a6adde069964fccd301d0eb2b2a579e",
     "status": "completed",
     "conclusion": "failure",
-    "created_at": "2026-11-26T10:10:30Z",
-    "run_started_at": "2026-11-26T10:10:30Z",
-    "updated_at": "2026-11-26T10:12:09Z",
+    "created_at": "2026-11-26T12:40:31Z",
+    "run_started_at": "2026-11-26T12:40:31Z",
+    "updated_at": "2026-11-26T12:41:33Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "fix(ci-ledger): prune stale diagnostic processing references"
+    "head_commit_message": "Taskify lint tooling failures and enforce one current task"
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-26T10:15:11Z",
+    "captured_at_utc": "2026-11-26T12:43:00Z",
     "completeness": "Complete",
     "reporter_job": {
-      "id": "139837115102",
+      "id": "139915992148",
       "name": "Capture GH Actions diagnostics",
       "status": "completed",
       "conclusion": "failure"
@@ -42,26 +42,26 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "139837019100",
+        "job_id": "139915873455",
         "job_name": "validate-document-standards",
         "step_number": 4,
         "step_name": "Run CI Ledger regression tests",
         "blocking": true,
         "confidence": "medium",
-        "message": "2026-11-26T10:11:46.8637725Z test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.LedgerTests.test_processed_actions_paths_are_pruned_when_removed_from_active_history) ... ERROR"
+        "message": "2026-11-26T12:40:42.1389848Z Traceback (most recent call last):"
       }
     ]
   },
   "jobs": [
     {
-      "id": "139837019100",
+      "id": "139915873455",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-26T10:11:40Z",
-      "completed_at": "2026-11-26T10:11:48Z",
-      "runner_name": "GitHub Actions 1000003192",
-      "runner_id": 1000003192,
+      "started_at": "2026-11-26T12:40:34Z",
+      "completed_at": "2026-11-26T12:40:45Z",
+      "runner_name": "GitHub Actions 1000003259",
+      "runner_id": 1000003259,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,107 +70,105 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T10:11:40Z",
-          "completed_at": "2026-11-26T10:11:41Z"
+          "started_at": "2026-11-26T12:40:35Z",
+          "completed_at": "2026-11-26T12:40:36Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T10:11:41Z",
-          "completed_at": "2026-11-26T10:11:45Z"
+          "started_at": "2026-11-26T12:40:36Z",
+          "completed_at": "2026-11-26T12:40:41Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T10:11:45Z",
-          "completed_at": "2026-11-26T10:11:45Z"
+          "started_at": "2026-11-26T12:40:41Z",
+          "completed_at": "2026-11-26T12:40:41Z"
         },
         {
           "number": 4,
           "name": "Run CI Ledger regression tests",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-26T10:11:45Z",
-          "completed_at": "2026-11-26T10:11:46Z"
+          "started_at": "2026-11-26T12:40:41Z",
+          "completed_at": "2026-11-26T12:40:42Z"
         },
         {
           "number": 5,
           "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-26T10:11:46Z",
-          "completed_at": "2026-11-26T10:11:46Z"
+          "started_at": "2026-11-26T12:40:42Z",
+          "completed_at": "2026-11-26T12:40:42Z"
         },
         {
           "number": 6,
           "name": "Validate the document type catalog",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-26T10:11:46Z",
-          "completed_at": "2026-11-26T10:11:46Z"
+          "started_at": "2026-11-26T12:40:42Z",
+          "completed_at": "2026-11-26T12:40:42Z"
         },
         {
           "number": 11,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-26T10:11:46Z",
-          "completed_at": "2026-11-26T10:11:46Z"
+          "started_at": "2026-11-26T12:40:42Z",
+          "completed_at": "2026-11-26T12:40:42Z"
         },
         {
           "number": 12,
           "name": "Post Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T10:11:46Z",
-          "completed_at": "2026-11-26T10:11:47Z"
+          "started_at": "2026-11-26T12:40:42Z",
+          "completed_at": "2026-11-26T12:40:42Z"
         },
         {
           "number": 13,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T10:11:47Z",
-          "completed_at": "2026-11-26T10:11:47Z"
+          "started_at": "2026-11-26T12:40:42Z",
+          "completed_at": "2026-11-26T12:40:42Z"
         }
       ],
       "log_capture": {
         "available": true,
         "truncated": false,
-        "bytes": 36049,
-        "path": "logs/job-139837019100.log",
+        "bytes": 36569,
+        "path": "logs/job-139915873455.log",
         "error": null,
         "marker_lines": [
-          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T10:11:46.8637725Z test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.LedgerTests.test_processed_actions_paths_are_pruned_when_removed_from_active_history) ... ERROR",
-          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T10:11:46.9105436Z ERROR: test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.LedgerTests.test_processed_actions_paths_are_pruned_when_removed_from_active_history)",
-          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T10:11:46.9107470Z Traceback (most recent call last):",
-          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T10:11:46.9122699Z FAILED (errors=1)",
-          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T10:11:46.9242022Z ##[error]Process completed with exit code 1."
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T12:40:42.1389848Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T12:40:42.1400421Z FAILED (failures=1)",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T12:40:42.1569407Z ##[error]Process completed with exit code 1."
         ]
       }
     }
   ],
   "check_runs": [
     {
-      "id": "139837019100",
+      "id": "139915873455",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-26T10:11:40Z",
-      "completed_at": "2026-11-26T10:11:48Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798838831/job/139837019100",
+      "started_at": "2026-11-26T12:40:34Z",
+      "completed_at": "2026-11-26T12:40:45Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45821860845/job/139915873455",
       "app": "GitHub Actions",
       "annotations_count": 2
     }
   ],
   "annotations": [
     {
-      "check_run_id": "139837019100",
-      "job_id": "139837019100",
+      "check_run_id": "139915873455",
+      "job_id": "139915873455",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -180,11 +178,11 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "139837019100",
-      "job_id": "139837019100",
+      "check_run_id": "139915873455",
+      "job_id": "139915873455",
       "path": ".github",
-      "start_line": 72,
-      "end_line": 72,
+      "start_line": 73,
+      "end_line": 73,
       "level": "failure",
       "title": "",
       "message": "Process completed with exit code 1.",
@@ -193,5 +191,5 @@
   ],
   "artifacts": [],
   "capture_errors": [],
-  "history_path": "history/427313089/45798838831-attempt-1-post_run"
+  "history_path": "history/427313089/45821860845-attempt-1-post_run"
 }
