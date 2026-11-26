@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-[20261126-124305 — Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document](tasks/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md)
+[20261126-124129 — Resolve lint tooling issue: Markdown links and heading anchors](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md)
 
 ## Proposed
 
@@ -17,8 +17,7 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-124305 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 13:42 UTC | [Task record](tasks/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md) |
-| 20261126-124129 | Resolve lint tooling issue: Markdown links and heading anchors | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 12:50 UTC | [Task record](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
+| 20261126-124129 | Resolve lint tooling issue: Markdown links and heading anchors | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 13:58 UTC | [Task record](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 | 20261126-090154 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 12:43 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
 | 20261126-101512-01 | Resolve misclassified test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:53 UTC | [Task record](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md) |
 | 20261126-101512 | Resolve misclassified task-board test fixture errors in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:44 UTC | [Task record](tasks/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md) |
@@ -39,3 +38,4 @@ _No tasks._
 |---|---|---:|---|---|---|---|---|---|---|
 | 20261126-055004 | Adapt repository workflows to the refactor | P1 | Done | User | Approved | — | 2026-11-26 06:44 UTC | [Archived task](../.archive/task/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md) | [d610339](https://github.com/dungnv2602/chatgpt/commit/d610339cc90e5a97f0a15ca75ff7a2541ba8314e) |
 | 20261126-064951 | Complete the non-image repository adaptation | P1 | Done | User | Approved | — | 2026-11-26 07:12 UTC | [Archived task](../.archive/task/20261126-064951-complete-non-image-repository-adaptation.md) | [d9cb03a](https://github.com/dungnv2602/chatgpt/commit/d9cb03a61a783a9c7d47a6e36e92fba868ad8b0e) |
+| 20261126-124305 | Review validation\_or\_test failures in Validate Document Standards | P0 | Done | Assistant | Approved | Pending | 2026-11-26 13:57 UTC | [Archived task](../.archive/task/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md) | [04043bc](https://github.com/dungnv2602/chatgpt/commit/04043bc4ae35b66b433c8c3f04b69995ce08b9b7) |

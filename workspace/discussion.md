@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** Close P0 task [20261126-124305](tasks/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md). Record the catalog fix and successful hosted validation on commit `b41d486` (run [45832275652](https://github.com/dungnv2602/chatgpt/actions/runs/45832275652)), archive the task's exact report evidence, and reconcile the Ledger, board, and retention index. Do not close until every linked finding is terminal and the archive copy passes full read-back.
+- **2026-11-26:** Resolve P0 task [20261126-124129](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md). Correct the active Draft's archived ADR link, make the changed-document workflow run the Markdown link/anchor check on every push, add regression coverage, and verify the hosted check. Preserve separate STE lint findings.
 
 ## Open Discussions
 
@@ -12,4 +12,4 @@
 
 ## Reports
 
-_No reports._
+- **2026-11-26:** Closed catalog P0 task [20261126-124305](../.archive/task/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md). Archive commit [04043bc](https://github.com/dungnv2602/chatgpt/commit/04043bc4ae35b66b433c8c3f04b69995ce08b9b7). Hosted validation [45832275652](https://github.com/dungnv2602/chatgpt/actions/runs/45832275652) passed.
