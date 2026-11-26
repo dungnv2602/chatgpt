@@ -20,3 +20,5 @@
 - **2026-11-26:** Runs 570 and 890 confirmed the escaped-newline normalization guard was too restrictive for mixed newline content. Normalization now runs whenever escaped newline sequences exist. Commit `252168c`. CI validation pending.
 
 - **2026-11-26:** Run 891 still exposed a board-writer defect: the writer used escaped literal `\\n` join strings instead of actual newline separators, collapsing the generated board and breaking status-section lookup. Corrected in commit `8d92e78`. Await hosted validation.
+
+- **2026-11-26:** Confirmed runs 572 and 892 passed on commit `8d92e78`. Diagnostics capture then revealed two regression tests tied to a populated Proposed section in the shared board fixture; isolated those tests by clearing the Proposed section contents in their copied fixture, correcting newline literals in follow-up commit `ec3ba4d`. Runs 573/893 and 574/894 were still pending/in progress at last check. Await validation.
