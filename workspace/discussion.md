@@ -35,3 +35,6 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 
 - **2026-11-26 — Worker and image-script reference cleanup:** Targeted readback exposed malformed archive spacing and command path formatting, plus stale novel-root terminology. These were corrected and committed. Further auditing remains open.
+
+
+- **2026-11-26 — Validator and inventory audit follow-up:** Reviewed the validator and regression fixtures remotely. Updated the catalog summary to replace stale inventory counts with current tree observation (676 entries; 242 in-scope Markdown paths) and clearly disclose that coverage has not been validated. Tests and hosted CI remain unrun; audit is ongoing.
