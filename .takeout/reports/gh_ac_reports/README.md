@@ -61,7 +61,7 @@ When a new workflow is added, append a normal job that needs the source jobs, us
 
 ## Relationship to lint reports
 
-Detailed lint findings, per-file metrics, fingerprints, and baselines remain in reports/lint_reports. This report captures workflow, job, step, log, annotation, artifact, and publication context around a lint run. It links to the matching lint scope rather than duplicating its findings.
+Detailed lint findings, per-file metrics, fingerprints, and baselines remain in `.takeout/reports/lint_reports`. This report captures workflow, job, step, log, annotation, artifact, and publication context around a lint run. It links to the matching lint scope rather than duplicating its findings.
 
 ## Integrity and history
 
