@@ -13,7 +13,7 @@ This file records the repository's conditional initialization policy. Operationa
 - Mandatory Conversation Mode component: `.agent/skills/the-worker/references/conversation-mode.md`
 - Agent Skills format, loaded on demand: `.agent/skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `.agent/skills/asd-ste100/SKILL.md`
-- Foundational document governance: `.agent/skills/document-standards/SKILL.md`
+- Document governance, task-activated: `.agent/skills/document-standards/SKILL.md`
 - Canonical novelist procedure: the Novelist role initialization section in `.agent/SESSION_START.md`
 - Drawing tier: The Worker's archive/media references and `.agent/skills/drawing/SKILL.md`, loaded for a drawing session or novelist initialization
 
@@ -41,22 +41,27 @@ A specialist-role request does not change or satisfy the `/start` cue. It does n
 - Never wait for or poll CI. Never run the linter or CI workflows locally. Let GitHub Actions execute validation.
 - Treat the GitHub repository and branch `gpt` as the sole source of truth.
 
-## Foundational standards
+## Baseline and progressive loading
 
-Foundational initialization loads these skills:
+`/start` loads only:
 
-1. The Worker, including its mandatory Conversation Mode reference.
-2. ASD-STE100.
-3. GitHub Actions.
-4. Document Standards.
+1. The Worker.
+2. The Worker's mandatory Conversation Mode reference.
 
-Agent Skill Authoring remains on-demand. Document Standards is foundational because its template-first gate applies across repository document creation and material revision. Load its skill definition during initialization. Retrieve its catalog, templates, schemas, and validator details only when the task requires them.
+Load domain skills progressively when the task activates them:
+
+- ASD-STE100 for skill or technical documentation.
+- GitHub Actions for CI, workflow operations, CI-generated remediation, recurrence prevention, and validation procedure.
+- Document Standards for recurring document or structured-record governance.
+- Agent Skill Authoring for skill maintenance.
+
+Retrieve supporting catalogs, references, templates, and schemas only when required. This preserves the template-first and writing standards without loading unrelated skills at startup.
 
 The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load it only after foundational initialization passes. The Worker owns the archive/media procedures used by Drawing. A drawing-session or novelist request does not trigger foundational initialization. Its required references are `.agent/skills/drawing/references/style-guide.md` and `.agent/skills/drawing/references/image-editing-protocol.md`.
 
 Novelist initialization is tier 3. Load `.agent/skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
 
-Maintain a per-conversation verified-load ledger. Retrieve and read each required skill or reference once. Reuse it when entering a higher tier or returning to a prior tier. A new conversation starts a new ledger. Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the current file. Do not reload an entire tier to refresh one file.
+Maintain a per-conversation verified-load ledger for baseline and task-activated skills. Retrieve and read each file once. Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the current file. Do not reload unrelated files.
 
 The ASD-STE100 skill governs skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
 
@@ -179,7 +184,8 @@ Use this template:
 - [ ] The activation cues remain distinct.
 - [ ] Novelist initialization completes foundational initialization first.
 - [ ] Foundational initialization runs only once when the user gives both cues.
-- [ ] The Worker and its mandatory Conversation Mode reference load during foundational initialization.
+- [ ] `/start` loads only The Worker and its mandatory Conversation Mode reference.
+- [ ] Domain skills activate only when the current task requires them.
 - [ ] Agent Skill Authoring loads only on demand.
 - [ ] Document Standards loads during foundational initialization; its catalog and specific assets load only when required.
 - [ ] The Worker's archive/media references load only when required.
