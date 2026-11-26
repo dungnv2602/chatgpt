@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45821860683",
-  "run_number": 803,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45821860683",
+  "run_id": "45823182226",
+  "run_number": 804,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823182226",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "9d20a6989a6adde069964fccd301d0eb2b2a579e",
+  "commit_sha": "d4fd8ddbf936e151f2d3c3753e9193875fc3fde5",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-26T12:41:13.200045+00:00",
+  "generated_at_utc": "2026-11-26T12:49:49.848185+00:00",
   "status": "Failed",
-  "linter_source_sha": "9d20a6989a6adde069964fccd301d0eb2b2a579e",
+  "linter_source_sha": "d4fd8ddbf936e151f2d3c3753e9193875fc3fde5",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -155,12 +155,12 @@
     ".agent/skills/the-worker/assets/conversation-integrity-template.md"
   ],
   "files_with_findings": 68,
-  "total_findings": 771,
-  "hard_findings": 320,
-  "advisory_findings": 451,
+  "total_findings": 774,
+  "hard_findings": 322,
+  "advisory_findings": 452,
   "findings_by_rule": {
-    "synonym-rotation": 54,
-    "passive-voice": 396,
+    "synonym-rotation": 56,
+    "passive-voice": 397,
     "present-perfect": 55,
     "semicolon": 116,
     "long-sentence": 137,
@@ -4253,14 +4253,23 @@
           "col": 143,
           "rule": "passive-voice",
           "level": "advisory",
-          "match": "are allocated",
+          "match": "are restored",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": ".agent/skills/document-standards/references/document-type-catalog.md",
+          "line": 148,
+          "col": 188,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are retained",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 7,
+      "count": 8,
       "hard_count": 4,
       "baseline": 0,
-      "words": 4632,
+      "words": 4654,
       "per_100_words": 0.2,
       "path": ".agent/skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -5051,19 +5060,37 @@
       "violations": [
         {
           "file": "workspace/task_board.md",
-          "line": 32,
+          "line": 21,
+          "col": 38,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "check",
+          "message": "'check' and 'validate' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/task_board.md",
+          "line": 23,
+          "col": 24,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Correct",
+          "message": "'correct' and 'fix' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/task_board.md",
+          "line": 34,
           "col": 21,
           "rule": "synonym-rotation",
           "level": "advisory-free",
           "match": "Repair",
-          "message": "'repair' and 'correct' name the same action. Pick one and use it every time."
+          "message": "'repair' and 'fix' name the same action. Pick one and use it every time."
         }
       ],
-      "count": 1,
-      "hard_count": 1,
+      "count": 3,
+      "hard_count": 3,
       "baseline": 0,
-      "words": 246,
-      "per_100_words": 0.4,
+      "words": 291,
+      "per_100_words": 1.0,
       "path": "workspace/task_board.md",
       "exit_code": 1
     },
@@ -12482,10 +12509,21 @@
       "col": 143,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "are allocated",
+      "match": "are restored",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "d54e065531122bd43e42b93b",
-      "comparison": "recurring"
+      "fingerprint": "3d0eb996eb2ac7266bac89b6",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/document-standards/references/document-type-catalog.md",
+      "line": 148,
+      "col": 188,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are retained",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e1fbc1afe62a844787cdbdb0",
+      "comparison": "new"
     },
     {
       "file": ".agent/skills/the-worker/references/archive-records-and-image-prompts.md",
@@ -13325,14 +13363,36 @@
     },
     {
       "file": "workspace/task_board.md",
-      "line": 32,
+      "line": 21,
+      "col": 38,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "check",
+      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "f8874d55207a198913c99e59",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 23,
+      "col": 24,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Correct",
+      "message": "'correct' and 'fix' name the same action. Pick one and use it every time.",
+      "fingerprint": "f3da998ac0ab93f31587c635",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 34,
       "col": 21,
       "rule": "synonym-rotation",
       "level": "advisory-free",
       "match": "Repair",
-      "message": "'repair' and 'correct' name the same action. Pick one and use it every time.",
-      "fingerprint": "6d69ad27d49d36813c14b275",
-      "comparison": "recurring"
+      "message": "'repair' and 'fix' name the same action. Pick one and use it every time.",
+      "fingerprint": "7cb82e69e7844d17f868b2a2",
+      "comparison": "new"
     },
     {
       "file": ".agent/skills/asd-ste100/README.md",
@@ -16580,9 +16640,32 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 771,
-  "resolved_findings": [],
+  "new_findings": 5,
+  "recurring_findings": 769,
+  "resolved_findings": [
+    {
+      "file": ".agent/skills/document-standards/references/document-type-catalog.md",
+      "line": 147,
+      "col": 143,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are allocated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "d54e065531122bd43e42b93b",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 32,
+      "col": 21,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Repair",
+      "message": "'repair' and 'correct' name the same action. Pick one and use it every time.",
+      "fingerprint": "6d69ad27d49d36813c14b275",
+      "comparison": "resolved"
+    }
+  ],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -16600,13 +16683,13 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.265s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.364s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.005s\n\nOK\n"
+      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.008s\n\nOK\n"
     },
     {
       "name": "STE linter self-test",
@@ -16618,7 +16701,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Failed",
       "exit_code": 1,
-      "output": "Scanned 232 active Markdown files (310 available as link targets) and 347 local Markdown links.\nFound 2 unresolved local Markdown targets or anchors.\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\n"
+      "output": "Scanned 223 active Markdown files (304 available as link targets) and 349 local Markdown links.\nFound 2 unresolved local Markdown targets or anchors.\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\n"
     }
   ],
   "failed_checks": [

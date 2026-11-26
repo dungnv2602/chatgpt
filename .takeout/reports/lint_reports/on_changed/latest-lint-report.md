@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#803](https://github.com/dungnv2602/chatgpt/actions/runs/45821860683)
-- **Run ID / attempt:** 45821860683 / 1
+- **Run:** [#804](https://github.com/dungnv2602/chatgpt/actions/runs/45823182226)
+- **Run ID / attempt:** 45823182226 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 9d20a6989a6adde069964fccd301d0eb2b2a579e
+- **Branch / commit:** gpt / d4fd8ddbf936e151f2d3c3753e9193875fc3fde5
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 9d20a6989a6adde069964fccd301d0eb2b2a579e
-- **Generated (UTC):** 2026-11-26T12:41:13.200045+00:00
+- **Linter source SHA:** d4fd8ddbf936e151f2d3c3753e9193875fc3fde5
+- **Generated (UTC):** 2026-11-26T12:49:49.848185+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 92 |
 | Files that failed | 37 |
 | Files with findings | 68 |
-| Total findings | 771 |
-| Hard findings | 320 |
-| Advisory findings | 451 |
-| New findings | 0 |
-| Recurring findings | 771 |
-| Resolved findings | 0 |
+| Total findings | 774 |
+| Hard findings | 322 |
+| Advisory findings | 452 |
+| New findings | 5 |
+| Recurring findings | 769 |
+| Resolved findings | 2 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -184,7 +184,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/decision-governance/SKILL.md | FAIL | 9 | 5 | 0 | 2913 | 0.3 | 1 |
 | .agent/skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | .agent/skills/drawing/references/series-continuity-and-iteration.md | PASS | 9 | 0 | 9 | 3262 | 0.3 | 0 |
-| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 7 | 4 | 0 | 4632 | 0.2 | 1 |
+| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 8 | 4 | 0 | 4654 | 0.2 | 1 |
 | .agent/skills/the-worker/references/archive-records-and-image-prompts.md | FAIL | 28 | 3 | 0 | 3538 | 0.8 | 1 |
 | .agent/skills/drawing/references/image-editing-protocol.md | PASS | 2 | 1 | 4 | 474 | 0.4 | 0 |
 | .agent/skills/agent-skill-authoring/SKILL.md | PASS | 15 | 0 | 6 | 2260 | 0.7 | 0 |
@@ -194,7 +194,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/the-worker/references/conversation-mode.md | FAIL | 19 | 2 | 0 | 3185 | 0.6 | 1 |
 | .agent/skills/internal-comms/examples/company-newsletter.md | FAIL | 4 | 1 | 0 | 554 | 0.7 | 1 |
 | .agent/skills/skill-creator/agents/comparator.md | FAIL | 6 | 1 | 0 | 735 | 0.8 | 1 |
-| workspace/task_board.md | FAIL | 1 | 1 | 0 | 246 | 0.4 | 1 |
+| workspace/task_board.md | FAIL | 3 | 3 | 0 | 291 | 1.0 | 1 |
 | .agent/skills/theme-factory/themes/desert-rose.md | PASS | 0 | 0 | 0 | 68 | 0.0 | 0 |
 | workspace/analysis/README.md | PASS | 0 | 0 | 0 | 278 | 0.0 | 0 |
 | .agent/skills/asd-ste100/README.md | PASS | 2 | 0 | 0 | 1573 | 0.1 | 0 |
@@ -237,11 +237,11 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 396 |
+| passive-voice | 397 |
 | long-sentence | 137 |
 | semicolon | 116 |
+| synonym-rotation | 56 |
 | present-perfect | 55 |
-| synonym-rotation | 54 |
 | marketing-adjective | 6 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -276,7 +276,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.265s
+Ran 4 tests in 0.364s
 
 OK
 ~~~
@@ -289,7 +289,7 @@ OK
 ~~~text
 .....
 ----------------------------------------------------------------------
-Ran 5 tests in 0.005s
+Ran 5 tests in 0.008s
 
 OK
 ~~~
@@ -309,7 +309,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 232 active Markdown files (310 available as link targets) and 347 local Markdown links.
+Scanned 223 active Markdown files (304 available as link targets) and 349 local Markdown links.
 Found 2 unresolved local Markdown targets or anchors.
 archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
 archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
@@ -321,7 +321,26 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-None.
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **new** · fingerprint: 3d0eb996eb2ac7266bac89b6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are restored
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:148:188 · **new** · fingerprint: e1fbc1afe62a844787cdbdb0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are retained
+- **synonym-rotation** · workspace/task_board.md:21:38 · **new** · fingerprint: f8874d55207a198913c99e59
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** check
+- **synonym-rotation** · workspace/task_board.md:23:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
+  - **Level:** advisory-free
+  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Correct
+- **synonym-rotation** · workspace/task_board.md:34:21 · **new** · fingerprint: 7cb82e69e7844d17f868b2a2
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Repair
 
 ### Recurring findings
 
@@ -1917,10 +1936,6 @@ None.
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **recurring** · fingerprint: d54e065531122bd43e42b93b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are allocated
 - **passive-voice** · .agent/skills/the-worker/references/archive-records-and-image-prompts.md:13:64 · **recurring** · fingerprint: e5525626c1967e0a340ca6a0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2225,10 +2240,6 @@ None.
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **synonym-rotation** · workspace/task_board.md:32:21 · **recurring** · fingerprint: 6d69ad27d49d36813c14b275
-  - **Level:** advisory-free
-  - **Message:** 'repair' and 'correct' name the same action. Pick one and use it every time.
-  - **Matched text:** Repair
 - **passive-voice** · .agent/skills/asd-ste100/README.md:26:35 · **recurring** · fingerprint: f592f42318251b648dd03dcb
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -3412,7 +3423,14 @@ None.
 
 ### Resolved findings
 
-None.
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **resolved** · fingerprint: d54e065531122bd43e42b93b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are allocated
+- **synonym-rotation** · workspace/task_board.md:32:21 · **resolved** · fingerprint: 6d69ad27d49d36813c14b275
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'correct' name the same action. Pick one and use it every time.
+  - **Matched text:** Repair
 
 ## 8. Complete per-file diagnostics
 
@@ -5980,10 +5998,10 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 7
+- **Findings:** 8
 - **Hard findings:** 4
 - **Baseline:** 0
-- **Words:** 4632
+- **Words:** 4654
 - **Findings per 100 words:** 0.2
 
 #### Complete diagnostics
@@ -6018,10 +6036,15 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **recurring** · fingerprint: d54e065531122bd43e42b93b
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **new** · fingerprint: 3d0eb996eb2ac7266bac89b6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are allocated
+  - **Matched text:** are restored
+
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:148:188 · **new** · fingerprint: e1fbc1afe62a844787cdbdb0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are retained
 
 
 ### .agent/skills/the-worker/references/archive-records-and-image-prompts.md
@@ -6525,17 +6548,27 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 1
-- **Hard findings:** 1
+- **Findings:** 3
+- **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 246
-- **Findings per 100 words:** 0.4
+- **Words:** 291
+- **Findings per 100 words:** 1.0
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/task_board.md:32:21 · **recurring** · fingerprint: 6d69ad27d49d36813c14b275
+- **synonym-rotation** · workspace/task_board.md:21:38 · **new** · fingerprint: f8874d55207a198913c99e59
   - **Level:** advisory-free
-  - **Message:** 'repair' and 'correct' name the same action. Pick one and use it every time.
+  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** check
+
+- **synonym-rotation** · workspace/task_board.md:23:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
+  - **Level:** advisory-free
+  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Correct
+
+- **synonym-rotation** · workspace/task_board.md:34:21 · **new** · fingerprint: 7cb82e69e7844d17f868b2a2
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Repair
 
 
