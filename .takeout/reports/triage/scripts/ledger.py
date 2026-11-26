@@ -805,28 +805,29 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
     subtask_content = render_worker_ci_subtask(root, task_id, title, group_id, findings, timestamp)
     subtask_index_path = task_folder / "subtasks" / "README.md"
     subtask_index = (
-        "# Subtasks — " + task_id + "\n\n"
-        "Parent: [task.md](../task.md)\n\n"
-        "- [CI remediation — " + markdown_cell(title) + "](01-ci-remediation.md) — Proposed\n\n"
+        "# Subtasks — " + task_id + "\\n\\n"
+        "Parent: [task.md](../task.md)\\n\\n"
+        "- [CI remediation — " + markdown_cell(title) + "](01-ci-remediation.md) — Proposed\\n\\n"
         "The parent remains Proposed until Worker review. Parent Done requires every required subtask Done. "
-        "CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.\n"
+        "CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.\\n"
     )
-    atomic_write_text(task_path, content)
-    atomic_write_text(subtask_index_path, subtask_index)
-    atomic_write_text(subtask_path, subtask_content)
-    task = {"id": task_id, "path": task_path, "content": content}
     try:
+        atomic_write_text(task_path, content)
+        atomic_write_text(subtask_index_path, subtask_index)
+        atomic_write_text(subtask_path, subtask_content)
+        task = {"id": task_id, "path": task_path, "content": content}
         upsert_task_board_row(root, task)
     except Exception:
-        subtask_path.unlink(missing_ok=True)
-        subtask_index_path.unlink(missing_ok=True)
-        task_path.unlink(missing_ok=True)
-        subtask_path.parent.rmdir()
-        task_folder.rmdir()
+        for created_path in (subtask_path, subtask_index_path, task_path):
+            created_path.unlink(missing_ok=True)
+        for created_folder in (task_folder / "subtasks", task_folder):
+            try:
+                created_folder.rmdir()
+            except OSError:
+                pass
         raise
     active_tasks[group_id] = task
-    return task_id, True, True
-def enforce_single_current_execution(root, preferred_task_id=None):
+    return task_id, True, Truedef enforce_single_current_execution(root, preferred_task_id=None):
     """Synchronize Current Execution with an existing Worker selection; never select a new Ledger task."""
     folder = root / "workspace" / "tasks"
     if not folder.is_dir():
