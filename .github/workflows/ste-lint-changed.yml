@@ -6,7 +6,7 @@ on:
       - gpt
     paths:
       - '**.md'
-      - '!reports/**'
+      - '!.takeout/reports/**'
       - '!.archive/**'
       - '!workspace/tasks/**'
       - '!workspace/task_board.md'
