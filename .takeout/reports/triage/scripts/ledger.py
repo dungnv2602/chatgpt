@@ -551,7 +551,7 @@ def update_task_findings(content, findings, timestamp, task_path=None):
     for finding in findings:
         finding_id = str(finding.get("finding_id") or "")
         row = finding_row(finding, report_prefix)
-        pattern = re.compile(r"^\\|\\s*" + re.escape(chr(96) + finding_id + chr(96)) + r"\\s*\\|")
+        pattern = re.compile(r"^\|\s*" + re.escape(chr(96) + finding_id + chr(96)) + r"\s*\|")
         row_index = next((i for i, line in enumerate(section_lines) if pattern.search(line)), None)
         if row_index is None:
             section_lines.append(row)
@@ -562,14 +562,14 @@ def update_task_findings(content, findings, timestamp, task_path=None):
     if not changed:
         return content, False
     new_priority = "P0"
-    current_priority = re.search(r"(?m)^- \\*\\*Priority:\\*\\* (P[0-3])$", content)
+    current_priority = re.search(r"(?m)^- \*\*Priority:\*\* (P[0-3])$", content)
     if current_priority and int(new_priority[1:]) < int(current_priority.group(1)[1:]):
         content = content[:current_priority.start(1)] + new_priority + content[current_priority.end(1):]
     updated = parse_time(timestamp).strftime("%Y-%m-%d %H:%M UTC")
     new_section = "\n".join(section_lines)
     new_content = content[:start] + new_section + content[end:]
     new_content = re.sub(
-        r"(?m)^- \\*\\*Updated:\\*\\* .*$",
+        r"(?m)^- \*\*Updated:\*\* .*$",
         "- **Updated:** " + updated,
         new_content,
         count=1,
@@ -695,7 +695,7 @@ def upsert_task_board_row(root, task):
     else:
         task_location = task_path.name
     governing_adrs = task_metadata(content, "Governing ADR(s)")
-    adr_ids = re.findall(r"\\bADR-\\d{4}\\b", governing_adrs)
+    adr_ids = re.findall(r"\bADR-\d{4}\b", governing_adrs)
     adr_cell = ", ".join(adr_ids) if adr_ids else ("Pending" if governing_adrs.lower().startswith("pending") else "—")
     row = "| " + task_id + " | " + title + " | " + priority + " | " + status + " | " + origin + " | " + approval + " | " + markdown_cell(adr_cell) + " | " + updated + " | [Task record](tasks/" + task_location + ") |"
     lines = board.splitlines()
@@ -730,7 +730,7 @@ def upsert_task_board_row(root, task):
             raise LedgerError("Task board table is missing or malformed under " + heading)
         else:
             lines.insert(header_index + 2, row)
-    new_board = "\\n".join(lines) + "\\n"
+    new_board = "\n".join(lines) + "\n"
     if new_board == board:
         return False
     atomic_write_text(board_path, new_board)
@@ -843,8 +843,8 @@ def enforce_single_current_execution(root, preferred_task_id=None):
     selected = next((item for item in active if item["id"] == preferred_task_id and item["status"] in executable), None)
     board_path = root / "workspace" / "task_board.md"
     board = board_path.read_text(encoding="utf-8") if board_path.is_file() else ""
-    current_section = board.split("## Current Execution", 1)[-1].split("\\n## ", 1)[0] if "## Current Execution" in board else ""
-    match = re.search(r"\\(tasks/([^)]+)\\)", current_section)
+    current_section = board.split("## Current Execution", 1)[-1].split("\n## ", 1)[0] if "## Current Execution" in board else ""
+    match = re.search(r"\(tasks/([^)]+)\)", current_section)
     if selected is None and match:
         pointer_path = folder / Path(match.group(1))
         pointer_id = task_metadata(pointer_path.read_text(encoding="utf-8"), "ID") if pointer_path.is_file() else ""
@@ -860,7 +860,7 @@ def enforce_single_current_execution(root, preferred_task_id=None):
         content = item["path"].read_text(encoding="utf-8")
         desired = "Yes" if selected_id and item["id"] == selected_id else "No"
         updated = re.sub(
-            r"(?m)^- \\*\\*Current execution:\\*\\* (?:Yes|No)$",
+            r"(?m)^- \*\*Current execution:\*\* (?:Yes|No)$",
             "- **Current execution:** " + desired,
             content,
             count=1,
@@ -869,7 +869,7 @@ def enforce_single_current_execution(root, preferred_task_id=None):
             atomic_write_text(item["path"], updated)
     if board and "## Current Execution" in board:
         heading_start = board.index("## Current Execution")
-        section_end = board.find("\\n## ", heading_start + len("## Current Execution"))
+        section_end = board.find("\n## ", heading_start + len("## Current Execution"))
         if section_end < 0:
             section_end = len(board)
         section = board[heading_start:section_end]
@@ -883,7 +883,7 @@ def enforce_single_current_execution(root, preferred_task_id=None):
             if existing:
                 section = section.replace(existing, pointer, 1)
             else:
-                section = section.replace("## Current Execution", "## Current Execution\\n\\n" + pointer, 1)
+                section = section.replace("## Current Execution", "## Current Execution\n\n" + pointer, 1)
         elif not pointer and existing:
             section = section.replace(existing, "_No task selected._", 1)
         if section != board[heading_start:section_end]:
