@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45864180906",
-  "run_number": 820,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45864180906",
+  "run_id": "45901511879",
+  "run_number": 821,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45901511879",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "2a18f0c9576131ffaa126d405433cf6dc31b1ded",
+  "commit_sha": "b68ab7a239b5dc17e67b9c005b4541dc998caf2b",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "56510b4fa78680c75bba4ffc5e483842d4b24938",
-  "generated_at_utc": "2026-11-26T17:02:45.764811+00:00",
+  "baseline_sha": "2a18f0c9576131ffaa126d405433cf6dc31b1ded",
+  "generated_at_utc": "2026-11-26T21:57:16.383099+00:00",
   "status": "Failed",
-  "linter_source_sha": "2a18f0c9576131ffaa126d405433cf6dc31b1ded",
+  "linter_source_sha": "b68ab7a239b5dc17e67b9c005b4541dc998caf2b",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -29,14 +29,13 @@
     "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md"
   ],
   "files_with_findings": 1,
-  "total_findings": 46,
-  "hard_findings": 22,
+  "total_findings": 45,
+  "hard_findings": 21,
   "advisory_findings": 24,
   "findings_by_rule": {
     "synonym-rotation": 4,
     "passive-voice": 24,
-    "semicolon": 17,
-    "long-sentence": 1
+    "semicolon": 17
   },
   "records": [
     {
@@ -268,15 +267,6 @@
         },
         {
           "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 190,
-          "col": 3,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "32 words",
-          "message": "Sentence has 32 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
           "line": 192,
           "col": 43,
           "rule": "semicolon",
@@ -456,10 +446,10 @@
           "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 46,
-      "hard_count": 22,
+      "count": 45,
+      "hard_count": 21,
       "baseline": 0,
-      "words": 3472,
+      "words": 3478,
       "per_100_words": 1.3,
       "path": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
       "exit_code": 1
@@ -469,7 +459,7 @@
       "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 313,
+      "words": 378,
       "per_100_words": 0.0,
       "path": "workspace/task_board.md",
       "exit_code": 0
@@ -485,7 +475,7 @@
       "match": "delete",
       "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
       "fingerprint": "3d753fd2c4828ff430fdb6c2",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -496,7 +486,7 @@
       "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "0642057a58aa1965274b9762",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -507,7 +497,7 @@
       "match": "verify",
       "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "f331458e480ad4445c592130",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -518,7 +508,7 @@
       "match": "checks",
       "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "869c8495109dea6f34af871c",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -529,7 +519,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -540,7 +530,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -551,7 +541,7 @@
       "match": "is controlled",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "c165f6e8824400b2723a92ab",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -562,7 +552,7 @@
       "match": "is generated",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "0ee5ca333d00a4f63756c25b",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -573,7 +563,7 @@
       "match": "was measured",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "96c00d0b1528652722c7e2e3",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -584,7 +574,7 @@
       "match": "was evaluated",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "3a2d463bad961d4a2f26d082",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -595,7 +585,7 @@
       "match": "are removed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6a75e8e708a43c0d36cdde23",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -606,7 +596,7 @@
       "match": "are removed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6a75e8e708a43c0d36cdde23",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -617,7 +607,7 @@
       "match": "are stored",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "421ce0d953be11182d9e810a",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -628,7 +618,7 @@
       "match": "is rendered",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6937ea80a6afca82e7f414d5",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -639,7 +629,7 @@
       "match": "is needed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "2e0dfecf96eeb4735f44ac24",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -650,7 +640,7 @@
       "match": "is identified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "f8411801c3d8953cd8c2acbe",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -661,7 +651,7 @@
       "match": "are removed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6a75e8e708a43c0d36cdde23",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -672,7 +662,7 @@
       "match": "is performed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "a0bfc1f95f604fc3f864783e",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -683,7 +673,7 @@
       "match": "are unchanged",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "0da19e7aab04deb7911a62a5",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -694,7 +684,7 @@
       "match": "validates",
       "message": "'validate' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "fa6c012aa723a1be302eb24c",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -705,7 +695,7 @@
       "match": "were copied",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "4d9fcdb8f2b29ee7904ba6a4",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -716,7 +706,7 @@
       "match": "is migrated",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "87a065e710f1792ecf1034fc",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -727,7 +717,7 @@
       "match": "was modified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "051c97c1441fc96df828d5f6",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -738,7 +728,7 @@
       "match": "was used",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6f3d1a1473ce547dba606827",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -749,18 +739,7 @@
       "match": "are filtered",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "494f747b32f0b27099114e91",
-      "comparison": "new"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 190,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "32 words",
-      "message": "Sentence has 32 words (cap 25). Split it.",
-      "fingerprint": "0dc1b5fa54679407d060b44e",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -771,7 +750,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -782,7 +761,7 @@
       "match": "was tested",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6d4df52d9a6f40d7fd4657d2",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -793,7 +772,7 @@
       "match": "were inspected",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ca82b6e19a6f4ef4347ae654",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -804,7 +783,7 @@
       "match": "was measured",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "96c00d0b1528652722c7e2e3",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -815,7 +794,7 @@
       "match": "was tested",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6d4df52d9a6f40d7fd4657d2",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -826,7 +805,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -837,7 +816,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -848,7 +827,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -859,7 +838,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -870,7 +849,7 @@
       "match": "was deleted",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6b4576cd5b0f0b9ac4699130",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -881,7 +860,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -892,7 +871,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -903,7 +882,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -914,7 +893,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -925,7 +904,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -936,7 +915,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -947,7 +926,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -958,7 +937,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -969,7 +948,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -980,12 +959,24 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "new"
+      "comparison": "recurring"
     }
   ],
-  "new_findings": 46,
-  "recurring_findings": 0,
-  "resolved_findings": [],
+  "new_findings": 0,
+  "recurring_findings": 45,
+  "resolved_findings": [
+    {
+      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
+      "line": 190,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "32 words",
+      "message": "Sentence has 32 words (cap 25). Split it.",
+      "fingerprint": "0dc1b5fa54679407d060b44e",
+      "comparison": "resolved"
+    }
+  ],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -1003,13 +994,13 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.301s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.217s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.007s\n\nOK\n"
+      "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.006s\n\nOK\n"
     },
     {
       "name": "STE linter self-test",
@@ -1021,7 +1012,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 2 changed Markdown sources (323 available as link targets) and 12 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 2 changed Markdown sources (328 available as link targets) and 16 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
