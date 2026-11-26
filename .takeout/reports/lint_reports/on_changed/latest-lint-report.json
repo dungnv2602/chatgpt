@@ -1,267 +1,98 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45901977965",
-  "run_number": 822,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45901977965",
+  "run_id": "45902440489",
+  "run_number": 823,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45902440489",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "c22f51846d9bf5dca2dc22ce8cb36934bf56bdc9",
+  "commit_sha": "18544ec38967abe06c7276816ef67d04e75add09",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "b68ab7a239b5dc17e67b9c005b4541dc998caf2b",
-  "generated_at_utc": "2026-11-26T22:01:28.129182+00:00",
+  "baseline_sha": "c22f51846d9bf5dca2dc22ce8cb36934bf56bdc9",
+  "generated_at_utc": "2026-11-26T22:05:40.937907+00:00",
   "status": "Failed",
-  "linter_source_sha": "c22f51846d9bf5dca2dc22ce8cb36934bf56bdc9",
+  "linter_source_sha": "18544ec38967abe06c7276816ef67d04e75add09",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
-    "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-    "workspace/task_board.md"
+    ".agent/skills/the-worker/SKILL.md"
   ],
-  "files_evaluated_count": 2,
-  "files_failed": 2,
+  "files_evaluated_count": 1,
+  "files_failed": 1,
   "failed_files": [
-    "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-    "workspace/task_board.md"
+    ".agent/skills/the-worker/SKILL.md"
   ],
-  "files_with_findings": 2,
-  "total_findings": 22,
-  "hard_findings": 7,
-  "advisory_findings": 15,
+  "files_with_findings": 1,
+  "total_findings": 2,
+  "hard_findings": 1,
+  "advisory_findings": 1,
   "findings_by_rule": {
-    "synonym-rotation": 5,
-    "passive-voice": 15,
-    "semicolon": 1,
+    "passive-voice": 1,
     "long-sentence": 1
   },
   "records": [
     {
       "violations": [
         {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 66,
-          "col": 50,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "alter",
-          "message": "'alter' and 'change' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 74,
-          "col": 38,
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 270,
+          "col": 144,
           "rule": "passive-voice",
           "level": "advisory",
-          "match": "is required",
+          "match": "are authorized",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         },
         {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 92,
-          "col": 102,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "check",
-          "message": "'check' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 106,
-          "col": 202,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is generated",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 107,
-          "col": 185,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was measured",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 119,
-          "col": 123,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was evaluated",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 129,
-          "col": 103,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are removed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 129,
-          "col": 191,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are removed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 131,
-          "col": 46,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are stored",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 131,
-          "col": 115,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is rendered",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 133,
-          "col": 54,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is needed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 149,
-          "col": 70,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are removed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 154,
-          "col": 260,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "validated",
-          "message": "'validate' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 157,
-          "col": 125,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is migrated",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 159,
-          "col": 295,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was used",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 178,
-          "col": 70,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are filtered",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 193,
-          "col": 259,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 204,
-          "col": 15,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "deletes",
-          "message": "'delete' and 'remove' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 214,
-          "col": 263,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "were inspected",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 216,
-          "col": 260,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was tested",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 233,
-          "col": 49,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        }
-      ],
-      "count": 21,
-      "hard_count": 6,
-      "baseline": 0,
-      "words": 3456,
-      "per_100_words": 0.6,
-      "path": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "exit_code": 1
-    },
-    {
-      "violations": [
-        {
-          "file": "workspace/task_board.md",
-          "line": 21,
-          "col": 1,
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 273,
+          "col": 3,
           "rule": "long-sentence",
           "level": "advisory-free",
-          "match": "98 words",
-          "message": "Sentence has 98 words (cap 25). Split it."
+          "match": "44 words",
+          "message": "Sentence has 44 words (cap 25). Split it."
         }
       ],
-      "count": 1,
+      "count": 2,
       "hard_count": 1,
       "baseline": 0,
-      "words": 439,
-      "per_100_words": 0.2,
-      "path": "workspace/task_board.md",
+      "words": 5619,
+      "per_100_words": 0.0,
+      "path": ".agent/skills/the-worker/SKILL.md",
       "exit_code": 1
     }
   ],
   "findings": [
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 270,
+      "col": 144,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are authorized",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "857e0d2fef3568ba9dff44ac",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 273,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "44 words",
+      "message": "Sentence has 44 words (cap 25). Split it.",
+      "fingerprint": "bca5f43ed3545a47de04d134",
+      "comparison": "new"
+    }
+  ],
+  "new_findings": 2,
+  "recurring_findings": 0,
+  "resolved_findings": [
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
       "line": 66,
@@ -271,7 +102,7 @@
       "match": "alter",
       "message": "'alter' and 'change' name the same action. Pick one and use it every time.",
       "fingerprint": "3f34a81299a3d18ae26e4279",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -282,7 +113,7 @@
       "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "0642057a58aa1965274b9762",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -293,7 +124,7 @@
       "match": "check",
       "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "c71ff84334a10d7dd38255c9",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -304,7 +135,7 @@
       "match": "is generated",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "0ee5ca333d00a4f63756c25b",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -315,7 +146,7 @@
       "match": "was measured",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "96c00d0b1528652722c7e2e3",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -326,7 +157,7 @@
       "match": "was evaluated",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "3a2d463bad961d4a2f26d082",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -337,7 +168,7 @@
       "match": "are removed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6a75e8e708a43c0d36cdde23",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -348,7 +179,7 @@
       "match": "are removed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6a75e8e708a43c0d36cdde23",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -359,7 +190,7 @@
       "match": "are stored",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "421ce0d953be11182d9e810a",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -370,7 +201,7 @@
       "match": "is rendered",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6937ea80a6afca82e7f414d5",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -381,7 +212,7 @@
       "match": "is needed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "2e0dfecf96eeb4735f44ac24",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -392,7 +223,7 @@
       "match": "are removed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6a75e8e708a43c0d36cdde23",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -403,7 +234,7 @@
       "match": "validated",
       "message": "'validate' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "d2ff8094ef84d15b57e688d1",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -414,7 +245,7 @@
       "match": "is migrated",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "87a065e710f1792ecf1034fc",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -425,7 +256,7 @@
       "match": "was used",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6f3d1a1473ce547dba606827",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -436,7 +267,7 @@
       "match": "are filtered",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "494f747b32f0b27099114e91",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -447,7 +278,7 @@
       "match": "verify",
       "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "f331458e480ad4445c592130",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -458,7 +289,7 @@
       "match": "deletes",
       "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
       "fingerprint": "a5b303c3291ad245c6135b6c",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -469,7 +300,7 @@
       "match": "were inspected",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ca82b6e19a6f4ef4347ae654",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -480,7 +311,7 @@
       "match": "was tested",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6d4df52d9a6f40d7fd4657d2",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -491,7 +322,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0d416a176834b9a3c1481769",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/task_board.md",
@@ -502,120 +333,6 @@
       "match": "98 words",
       "message": "Sentence has 98 words (cap 25). Split it.",
       "fingerprint": "8647e8d8e7c0939979ecdb3d",
-      "comparison": "new"
-    }
-  ],
-  "new_findings": 5,
-  "recurring_findings": 17,
-  "resolved_findings": [
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 66,
-      "col": 61,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "delete",
-      "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
-      "fingerprint": "3d753fd2c4828ff430fdb6c2",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 100,
-      "col": 85,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checks",
-      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "869c8495109dea6f34af871c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 105,
-      "col": 254,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is controlled",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c165f6e8824400b2723a92ab",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 143,
-      "col": 183,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is identified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f8411801c3d8953cd8c2acbe",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 150,
-      "col": 203,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is performed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a0bfc1f95f604fc3f864783e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 154,
-      "col": 149,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are unchanged",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "0da19e7aab04deb7911a62a5",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 154,
-      "col": 213,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "validates",
-      "message": "'validate' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "fa6c012aa723a1be302eb24c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 154,
-      "col": 347,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were copied",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "4d9fcdb8f2b29ee7904ba6a4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 158,
-      "col": 130,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was modified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "051c97c1441fc96df828d5f6",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 222,
-      "col": 62,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was deleted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "6b4576cd5b0f0b9ac4699130",
       "comparison": "resolved"
     }
   ],
@@ -636,13 +353,13 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.358s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.215s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.007s\n\nOK\n"
+      "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.006s\n\nOK\n"
     },
     {
       "name": "STE linter self-test",
@@ -654,7 +371,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 2 changed Markdown sources (329 available as link targets) and 16 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 1 changed Markdown sources (330 available as link targets) and 3 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
