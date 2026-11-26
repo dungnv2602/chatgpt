@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-_None._
+[20261126-142500 — Repair CI task generation and clear active reports](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md)
 
 ## Proposed
 
@@ -18,7 +18,7 @@ _No tasks._
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-_No tasks._
+| 20261126-142500 | Repair CI task generation and clear active reports | P1 | In Progress | User | Approved | — | 2026-11-26 14:25 UTC | [Task record](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) |
 
 ## Blocked
 
