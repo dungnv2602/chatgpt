@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#801](https://github.com/dungnv2602/chatgpt/actions/runs/45817273521)
-- **Run ID / attempt:** 45817273521 / 1
+- **Run:** [#802](https://github.com/dungnv2602/chatgpt/actions/runs/45819716980)
+- **Run ID / attempt:** 45819716980 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / d6ca2fc86a636c7da20fceefca01d1025644f4d9
+- **Branch / commit:** gpt / abcbe20e42e2790d6d3a84d2c55c058c8ace6222
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** d6ca2fc86a636c7da20fceefca01d1025644f4d9
-- **Generated (UTC):** 2026-11-26T12:12:03.111590+00:00
+- **Linter source SHA:** abcbe20e42e2790d6d3a84d2c55c058c8ace6222
+- **Generated (UTC):** 2026-11-26T12:27:43.209250+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 89 |
-| Files that failed | 34 |
-| Files with findings | 64 |
-| Total findings | 756 |
-| Hard findings | 314 |
-| Advisory findings | 442 |
-| New findings | 0 |
+| Files evaluated | 92 |
+| Files that failed | 37 |
+| Files with findings | 68 |
+| Total findings | 771 |
+| Hard findings | 320 |
+| Advisory findings | 451 |
+| New findings | 15 |
 | Recurring findings | 756 |
-| Resolved findings | 1 |
+| Resolved findings | 0 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -67,6 +67,7 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - .agent/skills/internal-comms/examples/faq-answers.md
 - .agent/skills/README.md
 - .agent/skills/drawing/references/style-guide.md
+- archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md
 - .agent/skills/github-actions/SKILL.md
 - .agent/skills/drawing/assets/attempt-template.md
 - .agent/skills/theme-factory/themes/ocean-depths.md
@@ -75,6 +76,7 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - .agent/skills/the-worker/assets/session-summary-template.md
 - .agent/skills/the-worker/SKILL.md
 - .agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md
+- archive/adr/README.md
 - workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md
 - .agent/skills/philosophy-religion-asceticism/references/source-standards.md
 - .agent/skills/philosophy-religion-asceticism/SKILL.md
@@ -124,6 +126,7 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - .agent/skills/asd-ste100/assets/lint-report-template.md
 - workspace/DRAFT_TEMPLATE.md
 - .agent/skills/discernment-nudge/SKILL.md
+- archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 - workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
 - .agent/skills/asd-ste100/references/repository-writing-policy.md
 - .agent/skills/theme-factory/SKILL.md
@@ -149,7 +152,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/drawing/README.md | PASS | 0 | 0 | 0 | 406 | 0.0 | 0 |
 | .agent/skills/theme-factory/themes/midnight-galaxy.md | PASS | 0 | 0 | 0 | 70 | 0.0 | 0 |
 | .agent/skills/skill-creator/SKILL.md | FAIL | 49 | 43 | 0 | 4775 | 1.0 | 1 |
-| workspace/adr/README.md | PASS | 0 | 0 | 0 | 523 | 0.0 | 0 |
+| workspace/adr/README.md | FAIL | 2 | 2 | 0 | 543 | 0.4 | 1 |
 | .agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | .agent/skills/drawing/references/patterns/README.md | PASS | 1 | 0 | 0 | 795 | 0.1 | 0 |
 | workspace/ADR_TEMPLATE.md | PASS | 0 | 0 | 0 | 349 | 0.0 | 0 |
@@ -163,6 +166,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/internal-comms/examples/faq-answers.md | FAIL | 7 | 4 | 0 | 403 | 1.7 | 1 |
 | .agent/skills/README.md | PASS | 0 | 0 | 0 | 425 | 0.0 | 0 |
 | .agent/skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
+| archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | PASS | 2 | 0 | 0 | 2919 | 0.1 | 0 |
 | .agent/skills/github-actions/SKILL.md | PASS | 3 | 0 | 0 | 2534 | 0.1 | 0 |
 | .agent/skills/drawing/assets/attempt-template.md | PASS | 1 | 0 | 0 | 593 | 0.2 | 0 |
 | .agent/skills/theme-factory/themes/ocean-depths.md | PASS | 0 | 0 | 0 | 76 | 0.0 | 0 |
@@ -171,6 +175,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/the-worker/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
 | .agent/skills/the-worker/SKILL.md | PASS | 0 | 0 | 0 | 5288 | 0.0 | 0 |
 | .agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md | PASS | 0 | 0 | 0 | 166 | 0.0 | 0 |
+| archive/adr/README.md | FAIL | 3 | 2 | 0 | 153 | 2.0 | 1 |
 | workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md | FAIL | 50 | 23 | 0 | 9822 | 0.5 | 1 |
 | .agent/skills/philosophy-religion-asceticism/references/source-standards.md | PASS | 2 | 0 | 1 | 1467 | 0.1 | 0 |
 | .agent/skills/philosophy-religion-asceticism/SKILL.md | PASS | 8 | 0 | 7 | 2387 | 0.3 | 0 |
@@ -220,6 +225,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/asd-ste100/assets/lint-report-template.md | PASS | 0 | 0 | 0 | 385 | 0.0 | 0 |
 | workspace/DRAFT_TEMPLATE.md | FAIL | 9 | 4 | 0 | 1242 | 0.7 | 1 |
 | .agent/skills/discernment-nudge/SKILL.md | FAIL | 26 | 24 | 0 | 1701 | 1.5 | 1 |
+| archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md | FAIL | 8 | 2 | 0 | 1310 | 0.6 | 1 |
 | workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | FAIL | 75 | 53 | 0 | 8961 | 0.8 | 1 |
 | .agent/skills/asd-ste100/references/repository-writing-policy.md | PASS | 1 | 0 | 0 | 570 | 0.2 | 0 |
 | .agent/skills/theme-factory/SKILL.md | FAIL | 6 | 2 | 0 | 473 | 1.3 | 1 |
@@ -231,9 +237,9 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 387 |
+| passive-voice | 396 |
 | long-sentence | 137 |
-| semicolon | 110 |
+| semicolon | 116 |
 | present-perfect | 55 |
 | synonym-rotation | 54 |
 | marketing-adjective | 6 |
@@ -270,7 +276,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.353s
+Ran 4 tests in 0.350s
 
 OK
 ~~~
@@ -283,7 +289,7 @@ OK
 ~~~text
 .....
 ----------------------------------------------------------------------
-Ran 5 tests in 0.007s
+Ran 5 tests in 0.005s
 
 OK
 ~~~
@@ -303,8 +309,10 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 227 active Markdown files (303 available as link targets) and 341 local Markdown links.
-Found 1 unresolved local Markdown targets or anchors.
+Scanned 231 active Markdown files (308 available as link targets) and 347 local Markdown links.
+Found 3 unresolved local Markdown targets or anchors.
+archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
+archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 ~~~
 
@@ -314,7 +322,66 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-None.
+- **semicolon** · workspace/adr/README.md:69:153 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/README.md:70:169 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:259:84 · **new** · fingerprint: 734ac0d54144b8de84f90ff4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+- **passive-voice** · archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:259:138 · **new** · fingerprint: 7c934f9872519acfc4b13259
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are Done
+- **passive-voice** · archive/adr/README.md:5:62 · **new** · fingerprint: afbd141f811ff427dc8bb038
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are Done
+- **semicolon** · archive/adr/README.md:17:135 · **new** · fingerprint: a1039b6ad741e18f87b285bd
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/adr/README.md:18:151 · **new** · fingerprint: a1039b6ad741e18f87b285bd
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:34:64 · **new** · fingerprint: ff82c4d460290b340f70f69b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:47:41 · **new** · fingerprint: c2f0677bf1aa944480a3f6bf
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was made
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:111:44 · **new** · fingerprint: 20d107d90ccf9760095a4e15
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are implemented
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:150:86 · **new** · fingerprint: 402287be8b2272487fa02958
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was retired
+- **semicolon** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:152:54 · **new** · fingerprint: eee5422d3a79b68ce9ee28d7
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:160:67 · **new** · fingerprint: e0320262e55fde3e62f3dab0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are committed
+- **semicolon** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:163:53 · **new** · fingerprint: eee5422d3a79b68ce9ee28d7
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:163:180 · **new** · fingerprint: 78bcfbc3cefe3d330515f8fe
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was archived
 
 ### Recurring findings
 
@@ -3345,10 +3412,7 @@ None.
 
 ### Resolved findings
 
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:190:37 · **resolved** · fingerprint: 5776176caba0a90604144fef
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is linked
+None.
 
 ## 8. Complete per-file diagnostics
 
@@ -4258,15 +4322,25 @@ No STE findings were recorded for this file.
 
 ### workspace/adr/README.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 2
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 523
-- **Findings per 100 words:** 0.0
+- **Words:** 543
+- **Findings per 100 words:** 0.4
 
-No STE findings were recorded for this file.
+#### Complete diagnostics
+
+- **semicolon** · workspace/adr/README.md:69:153 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/README.md:70:169 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 
 ### .agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md
@@ -5138,6 +5212,29 @@ No STE findings were recorded for this file.
   - **Matched text:** was classified
 
 
+### archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md
+
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 2
+- **Hard findings:** 0
+- **Baseline:** 0
+- **Words:** 2919
+- **Findings per 100 words:** 0.1
+
+#### Complete diagnostics
+
+- **passive-voice** · archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:259:84 · **new** · fingerprint: 734ac0d54144b8de84f90ff4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+
+- **passive-voice** · archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:259:138 · **new** · fingerprint: 7c934f9872519acfc4b13259
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are Done
+
+
 ### .agent/skills/github-actions/SKILL.md
 
 - **Result:** PASS
@@ -5310,6 +5407,34 @@ No STE findings were recorded for this file.
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
+
+
+### archive/adr/README.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 3
+- **Hard findings:** 2
+- **Baseline:** 0
+- **Words:** 153
+- **Findings per 100 words:** 2.0
+
+#### Complete diagnostics
+
+- **passive-voice** · archive/adr/README.md:5:62 · **new** · fingerprint: afbd141f811ff427dc8bb038
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are Done
+
+- **semicolon** · archive/adr/README.md:17:135 · **new** · fingerprint: a1039b6ad741e18f87b285bd
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/adr/README.md:18:151 · **new** · fingerprint: a1039b6ad741e18f87b285bd
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 
 ### workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md
@@ -7822,6 +7947,59 @@ No STE findings were recorded for this file.
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+
+
+### archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 8
+- **Hard findings:** 2
+- **Baseline:** 0
+- **Words:** 1310
+- **Findings per 100 words:** 0.6
+
+#### Complete diagnostics
+
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:34:64 · **new** · fingerprint: ff82c4d460290b340f70f69b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:47:41 · **new** · fingerprint: c2f0677bf1aa944480a3f6bf
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was made
+
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:111:44 · **new** · fingerprint: 20d107d90ccf9760095a4e15
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are implemented
+
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:150:86 · **new** · fingerprint: 402287be8b2272487fa02958
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was retired
+
+- **semicolon** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:152:54 · **new** · fingerprint: eee5422d3a79b68ce9ee28d7
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:160:67 · **new** · fingerprint: e0320262e55fde3e62f3dab0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are committed
+
+- **semicolon** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:163:53 · **new** · fingerprint: eee5422d3a79b68ce9ee28d7
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md:163:180 · **new** · fingerprint: 78bcfbc3cefe3d330515f8fe
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was archived
 
 
 ### workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
