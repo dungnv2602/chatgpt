@@ -57,9 +57,9 @@ status: complete
 ## 9. Illustrations
 Three standalone fresh-generation illustrations have been delivered in this conversation and documented below. All three are provisional partial or missed-target matches; none is approved canon. Their generated image binaries remain conversation-delivered assets and have not been committed to GitHub.
 
-- [Illustration 01 — Maya listens across the book](illustrations/illustration-01.md) — [Prompt Attempt 04](../../../../drawings/history/2026-11-16-image-prompts.md#attempt-04--maya-listens-across-the-book)
-- [Illustration 02 — A closer listening moment](illustrations/illustration-02.md) — [Prompt Attempt 05](../../../../drawings/history/2026-11-16-image-prompts.md#attempt-05--a-closer-listening-moment)
-- [Illustration 03 — Maya across the café table](illustrations/illustration-03.md) — [Prompt Attempt 06](../../../../drawings/history/2026-11-16-image-prompts.md#attempt-06--maya-across-the-café-table)
+- [Illustration 01 — Maya listens across the book](illustrations/illustration-01.md) — [Prompt Attempt 04](../../../../drawing/history/2026-11-16-image-prompts.md#attempt-04--maya-listens-across-the-book)
+- [Illustration 02 — A closer listening moment](illustrations/illustration-02.md) — [Prompt Attempt 05](../../../../drawing/history/2026-11-16-image-prompts.md#attempt-05--a-closer-listening-moment)
+- [Illustration 03 — Maya across the café table](illustrations/illustration-03.md) — [Prompt Attempt 06](../../../../drawing/history/2026-11-16-image-prompts.md#attempt-06--maya-across-the-café-table)
 
 The generations did not use an attached image. Exact facial identity and garment-construction fidelity remain unverified; the first two actual prompts also omitted an explicit identity lock, and the third call did not faithfully use its archived authored prompt. See each illustration note and the chronological prompt log.
 
