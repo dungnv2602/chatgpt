@@ -1053,6 +1053,18 @@
     {
       "path": ".archive/task/20261127-013151-01/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
+    },
+    {
+      "path": ".archive/task/20261127-013151-44/task.md",
+      "archived_at_utc": "2026-11-27T04:33:58Z"
+    },
+    {
+      "path": ".archive/task/20261127-013151-44/subtasks/README.md",
+      "archived_at_utc": "2026-11-27T04:33:58Z"
+    },
+    {
+      "path": ".archive/task/20261127-013151-44/subtasks/01-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T04:33:58Z"
     }
   ]
 }
