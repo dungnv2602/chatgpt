@@ -46,7 +46,6 @@ After `/start` passes, load domain skills only as the task requires:
 
 - **CI Ledger:** Mandatory during every `/start` for the CI-generated P0 batch. Retrieve `.agent/skills/ci-ledger/SKILL.md` before batch selection.
 - **GitHub Actions:** Mandatory during every `/start` for technical CI remediation. Retrieve `.agent/skills/github-actions/SKILL.md` before batch execution. It also governs CI diagnostics, workflow changes, recurrence prevention, and validation procedure.
-- **Document Standards:** creating, moving, materially revising, or validating recurring documents or structured records.
 - **ASD-STE100:** skill or technical-document authoring/revision, including when a domain skill requires its writing standard.
 - **Agent Skill Authoring:** skill creation, revision, integration, or validation.
 
@@ -83,7 +82,7 @@ When the user triggers this procedure:
 
 Use this order:
 
-1. **Baseline:** The Worker (including its mandatory Conversation Mode reference). Load ASD-STE100, GitHub Actions, and Document Standards when their task-specific activation conditions apply.
+1. **Baseline:** The Worker (including its mandatory Conversation Mode reference). Load ASD-STE100 and GitHub Actions when their task-specific activation conditions apply. The Worker owns document governance.
 2. **Drawing:** The Worker's archive/media references, Drawing, and its required references.
 3. **Novelist:** Romantic Storyteller skill and the active novel's canonical records.
 
