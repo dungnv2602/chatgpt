@@ -1,6 +1,6 @@
 {
   "schema_version": "1.7.0",
-  "updated_at_utc": "2026-11-27T03:56:48Z",
+  "updated_at_utc": "2026-11-27T05:31:00Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -231,7 +231,7 @@
       "source_family": "github_actions",
       "category": "publication_or_push",
       "title": "STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence: publication_or_push",
-      "status": "open",
+      "status": "resolved",
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:51:33Z",
@@ -246,7 +246,15 @@
           "observation_id": "github_actions:424715662:45842593526:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "07214aa44105022ade3a42317d60ecba9e235e1a",
+        "resolved_at_utc": "2026-11-26T15:10:11Z",
+        "validation": {
+          "status": "pending",
+          "note": "Hosted validation was not reviewed. Review remains subject to the user's explicit trigger."
+        },
+        "note": "Backfilled from the immutable archived task record. The Worker verified the fix commit on branch gpt and read back .github/workflows/ste-lint-changed.yml. The current workflow still contains the bounded five-attempt fetch/rebase/push retry. Hosted validation remains pending."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
