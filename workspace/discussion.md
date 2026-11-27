@@ -13,6 +13,8 @@ Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 
 
 ## Reports
 
+- **2026-11-27 07:58 UTC:** Started a new session for the user's explicit scope: execute only task [20261126-232913](tasks/20261126-232913/task.md). Do not resolve unrelated CI tasks. Continue to defer hosted-results review until explicit user trigger.
+
 - **2026-11-27 05:50 UTC:** Approved progressive skill activation. `/start` now loads The Worker and Conversation Mode only. CI, document governance, technical writing, and skill authoring are task-activated. GitHub Actions is no longer universal startup-loaded. Committed and read-back verified. Commits: `764d771`, `f9a3e2f`, `11a5475`, `7bcb449`, `4ed128e`.
 
 - **2026-11-26 22:46 UTC:** Applied mandatory CI P0 batch execution to `/start`. Session Start now sends a pre-batch wait notice, runs every eligible CI Ledger-generated P0 task before accepting the user's prompt, stops before hosted results review, and then confirms readiness. The Worker, Conversation Mode, and initialization policy now match. Manual read-back and archive/index/board closeout passed. Hosted CI, lint, and the official skills validator were not run or reviewed. Commits: `b31bfe1`, `d9bc35f`, `ab9e135`, `b85adbc`, `ae5bf33`, `ebc75d4`, `fcf8723`, `2efee5e`.
