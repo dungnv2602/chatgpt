@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. All six implementation subtasks are Done. Final implementation and regression/documentation mapping are complete. Parent closeout remains pending. Two sampled non-expired historical task paths remain missing from the retention index. The Ledger reader and retention workflow now fail closed on missing retained paths. Do not restore archives or alter index entries without user authorization. Hosted results remain unreviewed. Preserve the deferred hosted-results-review boundary.
+Initialize this session, then review only eligible CI Ledger-generated P0 tasks. Preserve the user's task-scope restriction and defer hosted CI result review. Link [20261126-232913](tasks/20261126-232913/task.md) for the user's requested status follow-up.
 
 ## Open Discussions
 
