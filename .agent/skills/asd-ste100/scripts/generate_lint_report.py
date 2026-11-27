@@ -273,6 +273,7 @@ def main():
     parser.add_argument("--previous-report", default="")
     parser.add_argument("--linter-source-sha", default="")
     parser.add_argument("--checks-file", default="")
+    parser.add_argument("--task-id", default="")
     args = parser.parse_args()
 
     if args.scope not in VALID_SCOPES:
@@ -337,6 +338,7 @@ def main():
     attempt = safe_int(args.attempt, 1)
     data = {
         "schema_version": SCHEMA_VERSION, "scope": args.scope,
+        "source_task_id": args.task_id.strip() or None,
         "run_id": args.run_id, "run_number": run_number, "run_url": args.run_url,
         "attempt": attempt, "branch": args.branch, "commit_sha": args.commit,
         "event": args.event, "workflow": os.environ.get("GITHUB_WORKFLOW"),
