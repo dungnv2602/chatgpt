@@ -29,7 +29,7 @@ Load specialist skills in dependency order. Do not load them during ordinary fou
 
 1. **Foundational:** The Worker (including its mandatory Conversation Mode reference).
 2. **Drawing:** The Worker's archive/media references, the Drawing skill, and its required references. Activate only after foundational initialization passes. Load only the Worker references required by the drawing or archive procedure.
-3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
+3. **Novelist:** [Romantic Storyteller](romantic-storyteller-visual-artist/SKILL.md) and active novel records. Activate only for the novelist role.
 
 Use the per-conversation verified-load ledger in [SESSION_START.md](../SESSION_START.md). A file that was successfully retrieved and read earlier in the same conversation must be reused, not loaded again.
 
