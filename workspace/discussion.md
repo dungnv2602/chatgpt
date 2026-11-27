@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Reconcile task-board links to all six migrated task folders, then read back every migrated task.md and subtasks/README.md. Verify old flat paths are absent and every migrated relative evidence link resolves to the intended repository path. Scope: ADR-0004 subtask 05 only. Preserve the deferred hosted-results-review boundary.
+Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Repair a migration defect found during read-back: the relative-link rewrite omitted closing Markdown parentheses. Restore each original link boundary in the six migrated task records, verify link parity against the pre-migration content, then resume the folder and board audit. Scope: ADR-0004 subtask 05 only. Preserve the deferred hosted-results-review boundary.
 
 ## Open Discussions
 
