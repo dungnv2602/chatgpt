@@ -22,3 +22,6 @@
 - **2026-11-27 08:24 UTC:** Session initialization passed. Startup P0 review found no Ready P0 tasks. The batch ended at quiescence. Hosted CI results were not inspected.
 
 - **2026-11-27:** Session initialization started by `/start`. Foundational retrieval and startup CI Ledger batch are in progress; hosted CI results remain out of scope.
+
+
+- **2026-11-27:** Created independent parents `20261127-173000` (Refactor Skills) and `20261127-173100` (Template Fix). Reparented the former document-governance parent `20261127-102301` under Refactor Skills, preserving its partial consolidation and nested implementation record. Template Fix has children for creating a task-board template and auditing repository template coverage/remediating confirmed gaps.
