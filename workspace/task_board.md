@@ -10,34 +10,38 @@ This file is the single index for active and retained task records. Each active 
 
 ## Current Execution
 
-[20261127-013151-34 — Next P0 CI remediation](tasks/20261127-013151-34/task.md)
+[20261126-232913 — Implement ADR-0004 task folders and CI Ledger lifecycle](tasks/20261126-232913/task.md)
 
-## Ready — Mandatory CI P0
+## Proposed — Mandatory P0 (decision review required)
+
+These tasks remain mandatory and execution-approved. Their Proposed status preserves ADR-0004 governance because no accepted ADR covers edits to accepted decision content.
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-013151-34 | Review present-perfect findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-34/task.md) |
-| 20261127-013151-33 | Review synonym-rotation findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-33/task.md) |
-| 20261127-013151-32 | Review semicolon findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-32/task.md) |
-| 20261127-013151-31 | Review passive-voice findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-31/task.md) |
-| 20261127-013151-30 | Review long-sentence findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-30/task.md) |
+| 20261127-013151-34 | Review present-perfect findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Approved | Pending | 2026-11-27 05:31 UTC | [Task record](tasks/20261127-013151-34/task.md) |
+| 20261127-013151-33 | Review synonym-rotation findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Approved | Pending | 2026-11-27 05:31 UTC | [Task record](tasks/20261127-013151-33/task.md) |
+| 20261127-013151-32 | Review semicolon findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Approved | Pending | 2026-11-27 05:31 UTC | [Task record](tasks/20261127-013151-32/task.md) |
+| 20261127-013151-31 | Review passive-voice findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Approved | Pending | 2026-11-27 05:31 UTC | [Task record](tasks/20261127-013151-31/task.md) |
+| 20261127-013151-30 | Review long-sentence findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Approved | Pending | 2026-11-27 05:31 UTC | [Task record](tasks/20261127-013151-30/task.md) |
+| 20261126-170259-02 | Review semicolon findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | Proposed | Assistant | Approved | Pending | 2026-11-27 05:31 UTC | [Task record](tasks/20261126-170259-02/task.md) |
+| 20261126-170259-01 | Review passive-voice findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | Proposed | Assistant | Approved | Pending | 2026-11-27 05:31 UTC | [Task record](tasks/20261126-170259-01/task.md) |
+| 20261126-170259 | Review synonym-rotation findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | Proposed | Assistant | Approved | Pending | 2026-11-27 05:31 UTC | [Task record](tasks/20261126-170259/task.md) |
+
+## Ready — Mandatory CI P0
+
+_No tasks._
+
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
 | 20261126-232913 | Implement ADR-0004 task folders and CI Ledger lifecycle | P0 | In Progress | User | Approved | ADR-0004 | 2026-11-27 01:10 UTC | [Task record](tasks/20261126-232913/task.md) |
-
-| 20261126-170259-02 | Review semicolon findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259-02/task.md) |
-| 20261126-170259-01 | Review passive-voice findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259-01/task.md) |
-| 20261126-170259 | Review synonym-rotation findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259/task.md) |
 | 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 17:04 UTC | [Task record](tasks/20261126-090154/task.md) |
 
 ## Blocked
 
 _No tasks._
 
-
 ## Paused
-
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
 | 20261126-142500 | Resolve CI task generation and clear active reports | P1 | Paused | User | Approved | — | 2026-11-26 10:44 UTC | [Task record](tasks/20261126-142500/task.md) |
