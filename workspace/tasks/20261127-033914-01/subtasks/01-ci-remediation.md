@@ -17,7 +17,7 @@ Store this record under its parent task's `subtasks/` directory.
 - **Dependencies:** None
 - **Required:** Yes
 - **Created:** 2026-11-27 03:39 UTC
-- **Updated:** 2026-11-27 03:39 UTC
+- **Updated:** 2026-11-27 03:46 UTC
 - **Ledger group:** `ci-ec825d4d86907bf8`
 - **Legacy Task IDs:** None
 
@@ -92,4 +92,4 @@ The CI Ledger maintains finding links for this remediation group. Keep finding I
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-d6ac34f6216a8a5c7f5df9d3` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45935299170-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45935299170) |
+| `lint-d6ac34f6216a8a5c7f5df9d3` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45935299170-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45935299170) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45936031539-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45936031539) |

@@ -7,4 +7,4 @@ Parent: [task.md](../task.md)
 - [CI remediation — Review semicolon findings in .agent/skills/the-worker/SKILL.md](03-ci-remediation.md) — Ready
 - [CI remediation — Review passive-voice findings in .agent/skills/the-worker/SKILL.md](04-ci-remediation.md) — Ready
 
-The parent remains subject to Worker governance. Parent Done requires every required child Done. CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.
+CI P0 remediation children are Approved and Ready under standing authorization. Parent Done requires every required child Done. CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.
