@@ -81,6 +81,20 @@ After a proposal receives approval, wait for `proceed` or `execute` before start
 At `/start`, follow `.agent/SESSION_START.md`. The mandatory P0 batch uses the rules above. Do not inspect hosted CI results. At batch completion, state readiness and remaining blockers.
 
 
+
+## Parent selection — scope test and hierarchy correction
+
+Create a parent task for each distinct user objective. Do not treat the active parent, current execution pointer, repository, project, or general maintenance theme as sufficient grounds for parentage.
+
+Before selecting parent or child, compare the requested outcome against the candidate parent's original objective and acceptance criteria:
+
+- **Same objective:** the request advances, completes, corrects, or extends an outcome already defined by that parent. Create a child when it is a distinct deliverable or substantive follow-up; record a non-deliverable decision/clarification in Subsequent Instructions.
+- **Different objective:** the request creates an independently valuable outcome, changes a separate system or concern, or does not materially contribute to the candidate parent's acceptance criteria. Create a new parent, even when another parent is active or the work touches the same repository, files, or broad theme.
+- **CI remediation exception:** CI findings may be children only of the genuine user task attributed by the source commit's Task-ID trailer, as governed above. This attribution rule does not authorize ordinary user work to be nested under that task.
+- **Uncertain relationship:** compare objectives and criteria explicitly. If no genuine parent can be established without guesswork, leave parentage unassigned and ask at quiescence. Do not default to the current parent.
+
+Before creating or updating a task, audit the proposed relationship. If the parent does not fit, correct it before scheduling: create the genuine parent, move/recreate the record under it, update both indexes and board links, preserve original prompt, approval, status, dependencies, progress, commit evidence, and history, then remove the stale child link. Never change parentage silently or discard evidence. A parent-child relationship is valid only when the child directly advances the parent's defined objective.
+
 ## Document governance — mandatory template-first gate
 
 The Worker owns document governance and must apply this gate before creating, moving, renaming, materially revising, or validating a recurring document or structured record.
