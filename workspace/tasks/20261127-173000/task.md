@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 13:17 UTC
+- **Updated:** 2026-11-27T13:18:10Z
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -53,6 +53,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27T13:18:10Z — startup P0 child 16 closeout
+
+- **Action:** Split the two remaining semicolon constructions in the decision-governance reference into separate sentences. Verified the target file and resolved the linked Ledger finding.
+- **Result:** Closed and deleted child 16. Activated child 17, the next P0 remediation.
+- **Evidence:** Commit `ecf0a00796997d7ca6c76e96232632680e6268af`.
+- **Validation:** Hosted validation remains pending. No hosted CI results were inspected.
+
 
 ### 2026-11-27T13:15:50Z — startup P0 child 15 closeout
 
@@ -243,7 +251,6 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 | `lint-66ac36e2cdb3db3683c0c8f2` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45921789448-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45921789448) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45929248916-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45929248916) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45974724264-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45974724264) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-4e20a50af596bd1c8120efea` | medium | synonym-rotation: 'retrieve' and 'fetch' name the same action. Pick one and use it every time. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45942426065-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45942426065) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-99ddd247f24032b76e53f957` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45974724264-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45974724264) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
-| `lint-b705ef6f747ccfaf4dd42d95` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-e7ff64fedb3eddf5ee3c1564` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45995191222-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45995191222) |
 | `lint-3c37bdb100e76e92190f285d` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45995191222-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45995191222) |
 | `lint-635c1984012e0d9f0ec925af` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45995191222-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45995191222) |
