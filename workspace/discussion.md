@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Record subtask 05 as Done with migration, retention, link, and read-back evidence. Update the parent checkpoint and subtask index. Then begin subtask 06 regression and documentation alignment. Scope: ADR-0004 only. Preserve the deferred hosted-results-review boundary.
+Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Begin subtask 06. Audit ADR-0004 Confirmation criteria against the current Ledger tests, schema, templates, skills, catalog, workspace and triage guides. Load Agent Skill Authoring before skill edits. Implement only missing regression/documentation coverage; do not inspect hosted results. Preserve the deferred hosted-results-review boundary.
 
 ## Open Discussions
 
