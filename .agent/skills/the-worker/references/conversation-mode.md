@@ -11,7 +11,7 @@ Use Default Mode for detailed work updates and Condensed Mode for concise delive
 - Open Discussions: unresolved decisions, essential user inputs, external gates, and access/safety boundaries. Remove resolved entries.
 - Reports: three latest successful summaries.
 
-Keep task-level details in task records. Before each meaningful step, replace Current Step with the current task and action. Record meaningful progress and commits in the task record.
+Keep task-level details in task records. The Worker’s mandatory Prompt capture rule governs every request; this brief is not a substitute for a task or subtask record. Before each meaningful step, replace Current Step with the current task and action. Record progress and commits in the task record.
 
 ## User-input coordination
 
