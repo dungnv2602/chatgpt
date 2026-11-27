@@ -59,7 +59,7 @@ Add an objective-based parent-selection test, prevent active-parent bias, and de
 
 ## 6. Current State and Remaining Work
 
-Workflow and task templates now enforce objective-based parent selection. Task 22 was moved from the CI/reporting parent to a separate document-governance parent. Remaining closeout/reconciliation is deferred behind the P0 queue.
+Workflow and task templates now enforce objective-based parent selection. Document-governance work is now a child of Refactor Skills; no longer an unrelated CI-parent child. Remaining closeout/reconciliation is deferred behind the P0 queue.
 
 ## 7. Verification and Evidence
 
