@@ -7,7 +7,7 @@
 - **ID:** 20261127-173100-01
 - **Parent Task ID:** 20261127-173100
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -48,17 +48,17 @@ Create a reusable canonical template for task-board documents, including schedul
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Pending
-- **Readback:** Pending
-- **Checks:** Not performed
-- **Limitations:** Not performed.
+- **Commit SHA:** `cb768922209bb07fcd083d57b1212995fe1ca47b` (template); `8a9a9429181d214613cb541e45ecb0738a4c1ec8` (board link); `4435c51224e8cb471f990275bd35ae7b32a5193e` (navigation)
+- **Changed paths:** `workspace/TASK_BOARD_TEMPLATE.md`; `workspace/task_board.md`; `workspace/README.md`.
+- **Readback:** Pending.
+- **Checks:** Not performed.
+- **Limitations:** Structural template review only.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 UTC
+- **Completion basis:** Template created, linked, and read back.
 
 ## 8. Hosted Validation
 
@@ -67,7 +67,7 @@ Create a reusable canonical template for task-board documents, including schedul
 
 ## 9. Handoff
 
-Implement after relevant template/contract review.
+No remaining work for this subtask.
 
 ## 10. Ledger Findings
 
