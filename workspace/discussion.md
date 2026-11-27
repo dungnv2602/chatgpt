@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T17:15:00Z**: Startup P0 batch reviewed. Child 26 and 52 closed; child 50 remains blocked by the history reset. DRAFT-0005 revision 1 is in review because removing the latest lint JSON changes accepted ADR-0003. Child 04 is Current Execution for Refactor Skills.
+- **2026-11-27T17:30:00Z**: Closed Refactor Skills child 04. The Worker, Agent Skill Authoring, and document-type catalog now require approval before creating missing templates. DRAFT-0005 remains in review. Next: audit the skill portfolio and identify the next refactoring work.
 
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.

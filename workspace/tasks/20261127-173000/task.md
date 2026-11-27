@@ -66,6 +66,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
+### 2026-11-27T17:30:00Z — Refactor Skills child 04 closeout
+
+- **Action:** Added a mandatory template-first gate to The Worker. The gate now requires user approval before the Worker creates a missing template or edits its target. Updated Agent Skill Authoring and the document-type catalog to enforce the same rule.
+- **Result:** Read back all three changed files. The Worker uses its existing skill template. Agent Skill Authoring uses its canonical skill template. The catalog uses its embedded table contract. Closed and removed child 04.
+- **Evidence:** Commit `ebc73c9a3f3f69d21d218d2a271c02aad1145d38`.
+- **Validation:** No local tests or hosted CI results were inspected.
+
+
 ### 2026-11-27T17:05:00Z — latest lint pointer removal
 
 - **Action:** Created child 54 to remove the standalone latest lint JSON and migrate its consumers to the unified index.
@@ -315,11 +323,20 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 6. Current State and Remaining Work
 
-This parent remains open as the persistent skills-refactoring workstream. Child 01 (document governance consolidation) has been completed and closed. Child 04 (the lint report regression-test remediation) is complete by commit `1e697f0e5167e9c0778cadef69d7cf084249be27` and its child record is closed. Child 05 (Markdown links and heading anchors) is complete and closed after commits `f514ad0dfc46bca10ab5d9cae95d609d26b8a704`, `60ec079dbb8aaa6db97d8b717af9fc3b95962826`, and `22907d4bfb9905ee155d0d16164982c96d415762`. Child 02 (consolidate specialist skills into The Worker) is Ready after the mandatory startup P0 batch. Child 03 (objective-based task-parent selection) remains Paused. Future skills-refactoring requests that fit this scope must be captured as new child subtasks under this parent. Do not retire this parent when the current children are complete.
+This parent remains open as the persistent Refactor Skills workstream. The Worker and Agent Skill Authoring now enforce the template-first gate. The document-type catalog defines the approval step for missing formats.
+
+Current child state:
+- Child 03 is Paused.
+- Children 27–50 are Blocked. Child 50 awaits a complete diagnostic report with its failing Markdown target and anchor.
+- Child 53 is Done.
+- Child 54 is Proposed. DRAFT-0005 revision 1 requires user approval before its implementation.
+- Child 04 is complete and its child record is closed.
+
+Continue with new child subtasks for distinct skills-refactoring deliverables. Keep this parent open. Do not retire or delete it.
 
 ## 7. Verification and Evidence
 
-- **Commit SHA:** `1e6800f40e4c1bf1e15263f0a479a54afe81468a` (parent priority/current-execution); `24f697da8a75972ff7f6a0dca7302a125e63499c` (child 01 activation); `3f0101796d08a5eba78dfe2fd4120b7445bf5c62` (subtask index); `91ca878a4c151aeb65d3f5ff78b438af8e437aa3` (board)
+- **Commit SHA:** `1e6800f40e4c1bf1e15263f0a479a54afe81468a` (parent priority/current-execution); `24f697da8a75972ff7f6a0dca7302a125e63499c` (child 01 activation); `3f0101796d08a5eba78dfe2fd4120b7445bf5c62` (subtask index); `91ca878a4c151aeb65d3f5ff78b438af8e437aa3` (board); `ebc73c9a3f3f69d21d218d2a271c02aad1145d38` (template-first governance)
 - **Changed paths:** `workspace/tasks/20261127-173000/task.md`; `workspace/tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md`; `workspace/tasks/20261127-173000/subtasks/README.md`; `workspace/task_board.md`
 - **Readback:** Verified all four paths on branch `gpt`.
 - **Checks:** Not performed
