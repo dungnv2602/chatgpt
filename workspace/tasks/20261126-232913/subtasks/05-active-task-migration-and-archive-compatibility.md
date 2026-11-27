@@ -6,7 +6,7 @@
 - **ID:** 20261126-232913-05
 - **Parent Task ID:** 20261126-232913
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -14,7 +14,7 @@
 - **Dependencies:** 20261126-232913-01
 - **Required:** Yes
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-27 00:20 UTC
+- **Updated:** 2026-11-27 00:58 UTC
 
 ## 1. Objective
 Active-task migration and folder archive compatibility as part of the accepted ADR-0004 implementation.
@@ -46,16 +46,16 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 In Progress. Active task inventory and archive cleanup compatibility are being audited; no active flat task records have been migrated yet.
 
 ## 7. Evidence
-- **Commit SHA:** Not applicable yet.
-- **Changed paths:** None.
-- **Read-back:** Not performed.
-- **Other evidence:** None.
+- **Commit SHA:** Multiple remote commits; key commits are recorded in the progress log.
+- **Changed paths:** Six migrated task folders and subtask indexes, `workspace/task_board.md`, `.github/scripts/cleanup-archive.py`, `.github/scripts/test_cleanup_archive.py`.
+- **Read-back:** All six task.md files, all six subtasks/README.md files, board links, cleanup script, tests, and retention index were read back.
+- **Other evidence:** All six old flat paths returned NOT_FOUND. All local evidence targets checked exist. No archive record or retention-index entry was changed.
 
 ## 8. Completion Record
-- **Status:** Ready
-- **Completed at:** Not applicable
-- **Completion basis:** Not Done.
-- **Evidence:** Not applicable.
+- **Status:** Done
+- **Completed at:** 2026-11-27 00:58 UTC
+- **Completion basis:** All six active flat tasks were migrated, all required task folders and subtask indexes were verified, board and relative links were reconciled, and folder/legacy archive retention compatibility was implemented with regression coverage.
+- **Evidence:** Remote read-back of every changed path. Hosted tests were not executed or reviewed.
 
 ## 10. Handoff
-Follow the parent subtask index. Record exact commits and read-back evidence. Do not mark Done until all acceptance criteria pass.
+Subtask 05 is complete. Continue with subtask 06 — regression coverage and documentation/catalog alignment. Preserve the deferred hosted-results-review boundary.
