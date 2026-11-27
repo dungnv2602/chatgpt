@@ -10,7 +10,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "1.6.0"
+      "const": "1.7.0"
     },
     "updated_at_utc": {
       "type": [
@@ -73,7 +73,10 @@
           "first_seen_utc",
           "last_seen_utc",
           "occurrence_count",
-          "evidence"
+          "evidence",
+          "parent_group",
+          "subtask_refs",
+          "legacy_task_refs"
         ],
         "properties": {
           "finding_id": {
@@ -83,7 +86,7 @@
           "task_group": {
             "type": "string",
             "pattern": "^ci-[0-9a-f]{16}$",
-            "description": "Stable remediation group used by event-driven Worker task creation."
+            "description": "Stable CI remediation group. Each group is represented by a child subtask under its work-target parent."
           },
           "source_family": {
             "enum": [
@@ -355,7 +358,7 @@
           },
           "task_refs": {
             "type": "array",
-            "description": "Stable parent Task IDs containing remediation work; subtask IDs are tracked within each task folder, not in this field.",
+            "description": "Stable parent Task IDs containing remediation work. CI child IDs are stored separately in subtask_refs.",
             "items": {
               "type": "string",
               "minLength": 1
@@ -367,6 +370,29 @@
               "string",
               "null"
             ]
+          },
+          "parent_group": {
+            "type": "string",
+            "pattern": "^ci-[0-9a-f]{16}$",
+            "description": "Stable work-target parent group (one affected file or workflow)."
+          },
+          "subtask_refs": {
+            "type": "array",
+            "description": "Stable child subtask IDs for the linked remediation groups.",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "legacy_task_refs": {
+            "type": "array",
+            "description": "Retired standalone CI task IDs retained for migration provenance after their records move into child subtasks.",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
           }
         },
         "additionalProperties": false
