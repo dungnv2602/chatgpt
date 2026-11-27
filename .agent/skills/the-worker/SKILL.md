@@ -117,28 +117,41 @@ Before creating or updating a task, audit the proposed relationship. If the pare
 
 ## Document governance — mandatory template-first gate
 
-The Worker owns document governance and must apply this gate before creating, moving, renaming, materially revising, or validating a recurring document or structured record.
+The Worker owns document governance. Apply this gate before creating, moving, renaming, materially revising, or validating a repository document or structured record.
 
-1. Identify the target path, document owner, and type.
-2. Read the current catalog entry in `.agent/skills/the-worker/references/document-type-catalog.md`. Match Markdown against the path-coverage register and structured records against the exact schema, processor, generator, and tests.
-3. Read the owner's instructions and fetch the applicable canonical template, schema, or embedded contract and relevant tests **before changing the target**. Never start target edits before reading its template.
-4. If the format or coverage rule is missing, define it first. Place templates in the canonical owner assets directory. Update the catalog, owner index/workflow, and coverage rule. Use Reserved for a verified Markdown family with no current record. Commit and read back the format setup first. Then change Reserved to Active in the same commit that creates its first record. Use Active for existing families. Optional only for eligible generator-owned outputs.
-5. Create or revise from the canonical format. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable, delete unused placeholders, and do not invent approvals or values. For existing documents, update the canonical format before migrating the target. Do not mass-migrate untouched history.
-6. Update indexes and cross-links. Verify the target against its format, workflow, and writing/data standard. Read back every changed path and commit. Run structural validation only through authorized hosted workflows. do not run repository scripts locally.
-7. For one-off or exempt documents, use a lightweight pattern and record the exemption when it affects maintenance. Do not force templates onto creative writing. Do not create a template when an embedded contract or generator already owns the format.
+1. Identify the target path, owner, and document type.
+2. Read the current entry in `references/document-type-catalog.md`.
+3. Read the format source that matches the catalog class:
+   - **Template required:** Read the complete canonical template.
+   - **Schema required:** Read the schema and relevant validator or tests.
+   - **Embedded contract:** Read the owner file that defines the format.
+   - **Generator-owned:** Read the generator, schema, and relevant tests.
+   - **Lightweight pattern:** Read the documented pattern and owner instructions.
+   - **Exempt:** Preserve the approved form. Do not add a template requirement.
+4. If the catalog entry is missing or unclear, stop before editing the target. Propose the required format to the user.
+5. If a required template or format contract does not exist, do not modify the target. Propose a suitable format and explain its purpose, intended use, fields, ownership, and validation.
+6. Wait for the user's explicit approval of the proposed format. Do not create the template or edit the target before approval.
+7. After approval, create the canonical template or contract. Update the catalog, owner index, and workflow. Read back and commit this format setup first.
+8. Read the complete approved template before modifying the target. Create or revise the target from that format.
+9. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable. Delete unused placeholders. Do not invent approvals or values.
+10. Update indexes and links. Check the target against its format and writing or data standard. Read back every changed path and commit.
+11. Use Reserved for a verified Markdown family with no current record. Change Reserved to Active in the commit that creates its first record.
+12. Do not mass-migrate untouched history. Do not create a template when an approved embedded contract, schema, or generator already defines the format.
+
+For a one-off note or creative document, follow an explicit Lightweight pattern or Exempt catalog entry. If no such entry exists, propose the format before editing. Source code, generated output, schemas, and machine-readable data follow their own contracts.
 
 ### Document-format classes
 
-- **Template required:** Copy a canonical template for each new record.
-- **Schema required:** Verify structured records against their schema.
-- **Embedded contract:** Follow the format in one live owner file, workflow, or script.
-- **Generator-owned:** Follow the generator and its tests.
-- **Lightweight pattern:** Use a small structure for a low-risk or one-off note.
-- **Exempt:** Preserve creative freedom or an external format.
+- **Template required:** Read and copy the canonical template for each new record.
+- **Schema required:** Read and validate structured records against their schema.
+- **Embedded contract:** Read and follow the format in one live owner file, workflow, or script.
+- **Generator-owned:** Read and follow the generator and its tests.
+- **Lightweight pattern:** Read and use an approved small structure for a low-risk or one-off note.
+- **Exempt:** Preserve creative freedom or an approved external format.
 
-Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required. explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
+The catalog defines purpose and document type, required and conditional fields, formats, allowed values, status, approval, provenance, stable IDs, parent links, migration, validation, owner, and canonical path. Treat unmarked fields as required. Mark Optional and Conditional fields explicitly. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
-Canonical copy-ready formats are in `.agent/skills/the-worker/assets/`; see its README for the asset index. The catalog and validator are integral Worker-owned assets in the Worker's `references/` and `scripts/` directories. The catalog owns document-type and Markdown coverage integrity. The validator verifies catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+Canonical copy-ready formats are in `.agent/skills/the-worker/assets/`. See its README for the asset index. The catalog and validator are Worker-owned assets in `references/` and `scripts/`. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
 
 ## Worker-owned domain operations
 

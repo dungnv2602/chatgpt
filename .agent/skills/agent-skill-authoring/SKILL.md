@@ -133,14 +133,15 @@ For each new skill or material revision:
 2. **Identify authority.** Determine which user instructions, project policies, canonical records, and other skills govern the task. Do not invent a new authority hierarchy.
 3. **Inspect existing material.** Read the exact current files and relevant links before changing them. Reuse established terminology and avoid creating a competing skill for an existing responsibility.
 4. **Choose the directory name.** Use a concise, descriptive, lowercase hyphenated name that satisfies the specification.
-5. **Write frontmatter first.** Check the name-directory match and the description before drafting the body. Start from `assets/SKILL_TEMPLATE.md` and remove sections that do not apply.
-6. **Write executable instructions.** Use clear activation criteria, ordered steps, decision points, edge cases, and verification requirements. Distinguish mandatory rules from recommendations.
-7. **Separate supporting material.** Add references, scripts, or assets only when needed. Keep references focused and avoid deep chains of linked references.
-8. **Integrate activation.** Decide whether the skill is foundational or task-specific. Update only the appropriate initiation file, index, or dependency record.
-9. **Check consistency.** Resolve contradictions with the authoritative project rules. Do not silently change user preferences, activation cues, or established workflow boundaries.
-10. **Check.** Check frontmatter, paths, links, references, line length where relevant, and the complete operational logic.
-11. **Commit and read back.** Follow repository write discipline, then fetch the exact committed path and check the final content.
-12. **Report precisely.** Identify the created or changed paths, the commit result, the verification performed, and any limitation that remains.
+5. **Read the template first.** Read the Worker document-type catalog entry and the complete `assets/SKILL_TEMPLATE.md` before creating or materially revising a skill. If the required template is missing, stop. Propose its purpose, structure, and use to the user. Wait for explicit approval before creating the template or editing the skill.
+6. **Write frontmatter first.** Check the name-directory match and the description before drafting the body. Start from `assets/SKILL_TEMPLATE.md` and remove sections that do not apply.
+7. **Write executable instructions.** Use clear activation criteria, ordered steps, decision points, edge cases, and verification requirements. Distinguish mandatory rules from recommendations.
+8. **Separate supporting material.** Add references, scripts, or assets only when needed. Keep references focused and avoid deep chains of linked references.
+9. **Integrate activation.** Decide whether the skill is foundational or task-specific. Update only the appropriate initiation file, index, or dependency record.
+10. **Check consistency.** Resolve contradictions with the authoritative project rules. Do not silently change user preferences, activation cues, or established workflow boundaries.
+11. **Check.** Check frontmatter, paths, links, references, line length where relevant, and the complete operational logic.
+12. **Commit and read back.** Follow repository write discipline, then fetch the exact committed path and check the final content.
+13. **Report precisely.** Identify the created or changed paths, the commit result, the verification performed, and any limitation that remains.
 
 ## 6. Foundational versus task-specific skills
 
