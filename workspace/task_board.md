@@ -2,7 +2,7 @@
 
 ## CI-generated P0 execution policy
 
-CI Ledger-generated P0 parents and children are mandatory, Approved, and Ready under standing authorization. Start work without separate approval or hosted-CI validation. Mark a child Done after you commit its fix, verify the commit, read back changed files, and record the SHA and summary. Close the parent after every required child is Done. Preserve safety, scope, and accepted decision constraints. Review hosted results only when the user asks.
+CI Ledger-generated P0 parents and children are mandatory and execution-approved under standing authorization. Keep a task Proposed when Governing ADR(s) is Pending. Move it to Ready only after accepted ADR linkage exists or decision approval is not required. Do not bypass accepted decision constraints. Start independently safe work without discretionary approval or hosted-CI validation. Mark a child Done after you commit its fix, verify the commit, read back changed files, and record the SHA and summary. Close the parent after every required child is Done. Review hosted results only when the user asks.
 
 
 
