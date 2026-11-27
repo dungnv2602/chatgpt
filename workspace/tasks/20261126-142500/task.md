@@ -248,3 +248,11 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 | `lint-7966f136f54c681540016f83` | medium | synonym-rotation: 'delete' and 'erase' name the same action. Pick one and use it every time. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45974724264-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45974724264) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45977120769-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45977120769) |
 | `lint-6ae9a6a4a2db5981a11a3382` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45977120769-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45977120769) |
 | `lint-20ab01d0763dc8b1779dc36e` | medium | long-sentence: Sentence has 27 words \(cap 25\). Split it. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45977120769-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45977120769) |
+
+### 2026-11-27 — Board and template reconciliation
+
+- **Action:** Captured and completed follow-up subtask `20261126-142500-21`. Reconciled the Worker board against the active P0 children, surfaced the eligible queue, separated blocked child 03, and updated task/subtask templates to clarify eligibility, priority, deferral, and board reconciliation.
+- **Result:** Board readback shows the eligible P0 children 04–20 in order, blocked 03 outside the queue, and child 04 selected as the next task. The empty-queue claim was corrected.
+- **References:** Board commit `08294bf7b977c68d9bc3739d0028b0cb9fd9b2fb`; queue-selection commit `458cfa4a9dc274ec4bfbb495c4b5714670b1bf95`; task template commit `a41f781b95481f42bed9fd2c151241d7be40a372`; subtask template commit `844e6ed8966b8a151d34438b7b1ba7412389b346`.
+- **Checks:** Remote readback confirmed the updated board and both templates. No local tests or hosted CI review.
+- **Next:** Execute the P0 queue from the corrected board.
