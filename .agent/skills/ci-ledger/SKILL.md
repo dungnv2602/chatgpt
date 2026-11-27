@@ -116,7 +116,7 @@ Do not close a CI remediation subtask as Done until its own commit-based accepta
 2. Store hosted validation separately as optional metadata. A Pending, Failed, or not-yet-reviewed hosted run does not keep the remediation subtask open and does not change its Done state.
 3. On a new observation after resolution, reopen the same finding identity, preserve the previous resolution in `resolution_history`, and increment occurrence count for the new observation.
 4. If the previous remediation task is no longer active, create a new parent task folder with a CI remediation subtask. Append the new parent Task ID to `task_refs`; preserve prior task references.
-5. Archive complete task folders under `.archive/task/<task-id>/`. Index the parent `task.md` and every child record by exact path. Historical flat archive files remain immutable and readable.
+5. Archive complete task folders under `.archive/task/<task-id>/`. Index `task.md`, `subtasks/README.md`, and every child record by exact path. Use one shared UTC timestamp for every file in the folder. The cleanup workflow retains and deletes the folder as one unit. Historical flat archive files remain immutable and readable.
 6. Archiving a task never removes terminal findings, resolution history, or prior task references. Do not implement destructive finding retirement or retirement scans.
 
 Finding status and task status remain distinct. A Proposed task does not mean remediation has started. A finding becomes resolved when the fix commit is recorded; hosted validation is independent. Later recurrence creates new remediation work without rewriting the previous Done record.
