@@ -128,7 +128,7 @@ def indexed_reports(root):
     """Resolve only complete, well-formed report records published by family indexes."""
     found = []
     for scope in ("on_changed", "on_repo"):
-        index_path = root / ".takeout" / "reports / scope / "index.json"
+        index_path = root / ".takeout" / "reports" / "index.json"
         if not index_path.is_file():
             continue
         index = read_json(index_path)
@@ -157,7 +157,7 @@ def indexed_reports(root):
                 )
             found.append(("lint", report_path.relative_to(root).as_posix(), row))
 
-    gh_index_path = root / ".takeout" / "reports / "index.json"
+    gh_index_path = root / ".takeout" / "reports" / "index.json"
     if gh_index_path.is_file():
         index = read_json(gh_index_path)
         if not isinstance(index, dict) or not isinstance(index.get("runs"), list):
