@@ -2,7 +2,7 @@
 
 ## Current Step
 
-_No active step._
+**Session initialization — /start — 2026-11-27.** Loading foundational Worker and mandatory Conversation Mode reference. Startup batch will follow after initialization and domain-skill retrieval.
 
 ## Open Discussions
 
@@ -17,7 +17,5 @@ _No active step._
 
 - **2026-11-27 07:15 UTC:** Completed the mandatory startup P0 batch eligibility review. The task board has no Ready P0 tasks. Eight active Ledger-generated P0 task groups remain Proposed because accepted ADR coverage is pending for edits to ADR-0003 and ADR-0004. No eligible remediation could proceed. No source changes or hosted CI results review were performed.
 - **2026-11-27 05:31 UTC:** Resolved archived P0 finding `gha-f04b588b537a96b00c56b6ae` for task 20261126-145133. Verified fix commit `07214aa44105022ade3a42317d60ecba9e235e1a` remains on branch `gpt` and the workflow retains the bounded five-attempt publication retry. Read back the Ledger resolution. Hosted validation remains Pending and was not reviewed.
-
 - **2026-11-27:** Updated task closeout, CI Ledger recurrence, workspace navigation, task template, board, Document Type Catalog, GitHub Actions policy, and Markdown link validation for direct deletion. Removed the archive retention workflow, cleanup tooling, index/state, and the complete `workspace/archive/` tree. Commits: `cf40560361853df9a6b2550e72e55d236a1aace9`, `62d27d93857812c7340ad3afce23ba435af0cf55`, and `2ae31d2ed356edc660d6708a6340f8c450705f5d`. Automated workflows may run on push; no CI results were inspected.
-
 - **2026-11-27:** Deleted obsolete DRAFT-0006 and DRAFT-0007 per user direction; removed them from the Draft index.
