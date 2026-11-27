@@ -45,7 +45,7 @@ Do not treat a linter result as proof that a document is accurate. A linter chec
 
 ## Validation
 
-Do not run the linter or CI workflows locally. Push changes to branch `gpt` and let GitHub Actions check them when the current task requires validation. CI review is task-scoped, not a pre-prompt gate. Follow the [GitHub Actions skill](../../github-actions/SKILL.md). Do not wait for or poll CI results.
+Do not run the linter or CI workflows locally. Push changes to branch `gpt` and let GitHub Actions check them when the current task requires validation. CI review is task-scoped, not a pre-prompt gate. Follow the Worker's [GitHub Actions reference](../../the-worker/references/github-actions.md). Do not wait for or poll CI results.
 
 The repository has two lint workflows:
 
