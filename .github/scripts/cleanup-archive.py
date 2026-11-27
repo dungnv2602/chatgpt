@@ -99,13 +99,27 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
         else:
             retained.append(record)
 
-    if not due:
-        return [], False
     archive_root = repository_root / ".archive"
     for family in ("task", "reports"):
         family_dir = archive_root / family
         if archive_root.is_symlink() or family_dir.is_symlink():
             raise ValueError(f"Refusing to follow symlink in {family_dir}.")
+
+    # Retained index entries must still point to real files. Do not silently
+    # accept a missing archive before its retention period expires.
+    for record in retained:
+        path = record["path"]
+        target = repository_root / PurePosixPath(path)
+        cursor = repository_root
+        for component in PurePosixPath(path).parts:
+            cursor = cursor / component
+            if cursor.is_symlink():
+                raise ValueError(f"Refusing to follow a symlink in indexed path: {path}")
+        if not target.is_file():
+            raise ValueError(f"Indexed archive file is missing before retention expiry: {path}")
+
+    if not due:
+        return [], False
     targets = []
     for path in due:
         target = repository_root / PurePosixPath(path)
