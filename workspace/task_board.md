@@ -18,7 +18,7 @@ _No task currently executing._
 
 <text>Ranked by the Worker's scheduler. Only eligible candidates are listed.</text>
 
-_No eligible tasks. The board was reconciled after the ADR editorial commits and cancellation/deletion of search task 20261126-090154. Remaining work is deferred by ADR-governance records or user-triggered external-review gates; no cancelled task is queued._
+_No eligible tasks. The board was reconciled after the ADR editorial commits and cancellation/deletion of search task 20261126-090154. Remaining work is deferred by ADR-governance records and the paused P1 task; no cancelled task is queued._
 
 ## Next Task
 
@@ -28,7 +28,7 @@ _No eligible tasks. The board was reconciled after the ADR editorial commits and
 
 ### Proposed — governance decision pending
 
-These editorial P0 groups have been remediated and removed at direct closeout. Ledger findings retain stable identities, resolution history, task references, and commit evidence. Hosted validation remains pending user-triggered review.
+These editorial P0 groups have been remediated and removed at direct closeout. Ledger findings retain stable identities, resolution history, task references, and commit evidence. Hosted validation is optional and is not reviewed.
 
 | ID | Title | Priority | Status | Approval | ADR(s) | Task record |
 |---|---|---:|---|---|---|---|
@@ -45,11 +45,4 @@ _No proposed editorial remediation groups remain._
 
 _No tasks currently listed. The Worker reevaluates these tasks after prerequisite completion. They are not queue candidates._
 
-### In Progress — awaiting external/user-triggered review
-
-This work is not the Current Execution pointer and is not selectable until its outstanding gate is satisfied.
-
-| ID | Title | Priority | Status | Approval | ADR(s) | Outstanding gate | Task record |
-|---|---|---:|---|---|---|---|---|
-| 20261126-232913 | Implement ADR-0004 task folders and CI Ledger lifecycle | P0 | In Progress | Approved | ADR-0004 | Criterion 15 awaits user-triggered hosted Ledger regression and Document Type Catalog results review | [Task record](tasks/20261126-232913/task.md) |
-
+#
