@@ -6,7 +6,6 @@ Parent: [task.md](../task.md)
 |---|---|---|---|
 | 20261127-173000-03 | Correct objective-based task parent selection | Paused | [03-correct-objective-based-task-parent-selection.md](03-correct-objective-based-task-parent-selection.md) |
 | 20261127-173000-04 | Enforce template-first document editing | Ready | [04-enforce-template-first-document-editing.md](04-enforce-template-first-document-editing.md) |
-| 20261127-173000-12 | CI remediation — Review semicolon findings in .agent/skills/the-worker/SKILL.md | In Progress | [12-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md](12-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md) |
 | 20261127-173000-13 | CI remediation — Review synonym-rotation findings in .agent/SESSION\\\_START.md | Blocked | [13-ci-remediation-review-synonym-rotation-findings-in-agent-session-start-md.md](13-ci-remediation-review-synonym-rotation-findings-in-agent-session-start-md.md) |
 | 20261127-173000-14 | CI remediation — Review phrasal-verb findings in .agent/skills/asd-ste100/SKILL.md | Blocked | [14-ci-remediation-review-phrasal-verb-findings-in-agent-skills-asd-ste100-skill-md.md](14-ci-remediation-review-phrasal-verb-findings-in-agent-skills-asd-ste100-skill-md.md) |
 | 20261127-173000-15 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/SKILL.md | Blocked | [15-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md](15-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md) |

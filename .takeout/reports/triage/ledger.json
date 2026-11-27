@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:07:44Z",
+  "updated_at_utc": "2026-11-27T13:08:03Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -2890,7 +2890,7 @@
       "source_family": "lint",
       "category": "semicolon",
       "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T22:15:06.363498+00:00",
@@ -2953,7 +2953,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "f62d4cc6692f764cad57f1a291066c8af0966ca0",
+        "resolved_at_utc": "2026-11-27T13:08:03Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "All six semicolon occurrences in the Worker skill were split into separate sentences. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
