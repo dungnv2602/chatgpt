@@ -6,7 +6,7 @@
 - **ID:** 20261126-232913-05
 - **Parent Task ID:** 20261126-232913
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -43,19 +43,27 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 - **Next:** Enumerate exact active flat task files and inspect cleanup/index schema before moving any record.
 
 ## 6. Current State
-In Progress. Active task inventory and archive cleanup compatibility are being audited; no active flat task records have been migrated yet.
+Done. Active task migration, folder retention, Ledger archive reading, historical flat-file compatibility, and recurrence links are implemented and read back.
+
+### 2026-11-27 01:10 UTC
+- **Action:** Implemented `read_archived_task()` in the Ledger. It resolves folder archives and historical flat archives through exact retention-index paths. It validates the folder parent, subtask index, shared timestamp, task ID, path safety, symlink boundaries, and file existence. Recurrence now adds a Related tasks link to any retained prior archive.
+- **Result:** Added regression coverage for folder and compact-ID flat archives, unindexed files, incomplete folder indexes, and recurrence links. Historical archive files remain unchanged. Also repaired a malformed function boundary in `ledger.py` that had concatenated a return statement and the next function definition.
+- **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.archive/task/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md`; `.github/archive-retention-index.json`; commits `7632ed1`, `5e7d051`, `6a443e7`, `9933ded`, `13132e7`, `0763c16`.
+- **Next:** Finish subtask 06 and map every ADR-0004 Confirmation criterion. Hosted results remain unreviewed.
+
+
 
 ## 7. Evidence
 - **Commit SHA:** Multiple remote commits; key commits are recorded in the progress log.
-- **Changed paths:** Six migrated task folders and subtask indexes, `workspace/task_board.md`, `.github/scripts/cleanup-archive.py`, `.github/scripts/test_cleanup_archive.py`.
-- **Read-back:** All six task.md files, all six subtasks/README.md files, board links, cleanup script, tests, and retention index were read back.
-- **Other evidence:** All six old flat paths returned NOT_FOUND. All local evidence targets checked exist. No archive record or retention-index entry was changed.
+- **Changed paths:** Six migrated task folders and subtask indexes, `workspace/task_board.md`, `.github/scripts/cleanup-archive.py`, `.github/scripts/test_cleanup_archive.py`, `.takeout/reports/triage/scripts/ledger.py`, `.takeout/reports/triage/scripts/test_ledger.py`, and lifecycle documentation.
+- **Read-back:** All six task.md files and subtask indexes, board links, Ledger archive reader, Ledger regression tests, cleanup script/tests, retention index, and linked historical flat archive were read back.
+- **Other evidence:** All six old flat paths returned NOT_FOUND. All local evidence targets checked exist. The indexed historical flat archive was read without modification. Folder archive behavior is covered by regression fixtures. No archive record or retention-index entry was changed. Tests were not executed.
 
 ## 8. Completion Record
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Reopened because the Ledger archive reader required by ADR-0004 is missing.
-- **Evidence:** The migration and retention changes are committed and read back. Ledger archive-reader compatibility and regression coverage remain outstanding.
+- **Status:** Done
+- **Completed at:** 2026-11-27 01:10 UTC
+- **Completion basis:** All six active task records were migrated. Folder and legacy flat archives are readable through exact index paths. Retention is atomic for folder archives. Recurrence links retained prior archives. Regression coverage and documentation are committed and read back.
+- **Evidence:** Exact-path read-back and committed regression cases. Tests were not executed. Hosted results remain unreviewed.
 
 ## 10. Handoff
-Implement the Ledger archive reader for folder archives and historical flat archives. Do not scan or rewrite archive directories. Preserve the deferred hosted-results-review boundary.
+Subtask 05 is complete. Continue with subtask 06 final regression/documentation audit. Do not inspect hosted results until the user explicitly triggers results review.
