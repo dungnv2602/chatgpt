@@ -5,14 +5,14 @@
 - **Template version:** 2.5
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-27 10:42 UTC
+- **Updated:** 2026-11-27 18:20 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation.
 - **Governing ADR(s):** None — CI/reporting repair; review governance boundaries before any architecture change
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
 
@@ -257,3 +257,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Checks:** Remote readback confirmed the updated board and both templates. No local tests or hosted CI review.
 - **Next:** Execute the P0 queue from the corrected board.
 | `lint-tooling-fd63ee164167664baaa97d9b` | high | Lint tooling check failed: Lint report regression tests | [report](../../../.takeout/reports/lint_reports/on_changed/history/45979960470-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45979960470) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45980978400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45980978400) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45981578057-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45981578057) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45981806913-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45981806913) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45984083069-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45984083069) |
+
+### 2026-11-27 18:20 UTC — P0 editorial batch
+
+- **Action:** Remediated and remotely read back the shared source files for P0 children 04–20. Closed the corresponding task records. Recreated the missing child 20 record and corrected the duplicate index entry.
+- **Result:** Children 04–20 are Done based on committed edits and remote readback. No lint or regression tests were executed. Hosted CI results were not inspected.
+- **References:** GitHub Actions skill `bc4e07a382024a3edc7aadf42d22f395425e58b0`; Worker skill `433c5d91eb2729091e39d29f0b37b0b274dcf7cb`; conversation-mode reference `6dfd4d5b81cf0b6288fe7219fd98f8c9c5a30157`; task board `7b844f5b03b3724c06295b83e673c4f141ddda77`; CI Ledger skill `32c44fd8c2ed0b7f2b8a7540ae1bafd63842fb0a`.
+- **Next:** Two P0 blockers remain. Child 03 needs immutable report evidence, and child 23 needs the regression-test failure details. Hosted CI review remains prohibited. Current Execution is clear.
