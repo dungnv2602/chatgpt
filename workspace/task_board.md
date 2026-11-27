@@ -29,7 +29,6 @@ This file is the single index for active and retained task records. Each active 
 | 20261126-170259-02 | Review semicolon findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259-02/task.md) |
 | 20261126-170259-01 | Review passive-voice findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259-01/task.md) |
 | 20261126-170259 | Review synonym-rotation findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259/task.md) |
-| 20261126-145133 | Review publication\_or\_push failures in STE Lint Changed Documentation / Lint changed Markdown files and publish detailed | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 15:18 UTC | [Task record](tasks/20261126-145133/task.md) |
 | 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 17:04 UTC | [Task record](tasks/20261126-090154/task.md) |
 
 ## Blocked
@@ -46,6 +45,7 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261126-145133 | Review publication\_or\_push failures in STE Lint Changed Documentation / Lint changed Markdown files and publish detailed | P0 | Done | Assistant | Approved | — | 2026-11-26 15:10 UTC | [Archived task](../.archive/task/20261126-145133/task.md) | [1e231f1](https://github.com/dungnv2602/chatgpt/commit/1e231f1b8800990a8581e4b103ce1edd07eaaa83) |
 | 20261127-013151-20 | Review synonym-rotation findings in .agent/INITIALIZATION\_POLICY.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:52 UTC | [Archived task](../.archive/task/20261127-013151-20/task.md) | [92ee51b](https://github.com/dungnv2602/chatgpt/commit/92ee51b2baa6027b38149e8d8ffb2dea1ec6fe03) |
 | 20261127-013151-12 | Review long-sentence findings in .agent/INITIALIZATION\_POLICY.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:52 UTC | [Archived task](../.archive/task/20261127-013151-12/task.md) | [92ee51b](https://github.com/dungnv2602/chatgpt/commit/92ee51b2baa6027b38149e8d8ffb2dea1ec6fe03) |
 | 20261127-013151-11 | Review passive-voice findings in .agent/INITIALIZATION\_POLICY.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:52 UTC | [Archived task](../.archive/task/20261127-013151-11/task.md) | [92ee51b](https://github.com/dungnv2602/chatgpt/commit/92ee51b2baa6027b38149e8d8ffb2dea1ec6fe03) |
