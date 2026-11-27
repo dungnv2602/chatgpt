@@ -1329,6 +1329,10 @@
     {
       "path": ".archive/task/20261127-013151-13/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
+    },
+    {
+      "path": ".archive/task/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md",
+      "archived_at_utc": "2026-11-27T05:15:00Z"
     }
   ]
 }
