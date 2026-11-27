@@ -438,6 +438,24 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(before["child"], (subtasks / "01-child.md").read_text(encoding="utf-8"))
         self.assertEqual(before["flat"], flat_path.read_text(encoding="utf-8"))
 
+    def test_archived_task_reader_rejects_incomplete_folder_archive(self):
+        task_id = "20261122-060000"
+        folder = self.root / ".archive" / "task" / task_id
+        folder.mkdir(parents=True)
+        parent = folder / "task.md"
+        parent.write_text("# Task: Incomplete archive\n\n- **ID:** " + task_id + "\n", encoding="utf-8")
+        index_path = self.root / ".github" / "archive-retention-index.json"
+        index_path.parent.mkdir(parents=True, exist_ok=True)
+        index_path.write_text(json.dumps({
+            "schema_version": 1,
+            "records": [{
+                "path": ".archive/task/" + task_id + "/task.md",
+                "archived_at_utc": "2026-11-22T06:00:00Z",
+            }],
+        }), encoding="utf-8")
+        with self.assertRaisesRegex(LEDGER.LedgerError, "Task-folder archive index is incomplete"):
+            LEDGER.read_archived_task(self.root, task_id)
+
     def test_task_folder_and_archive_contract_is_consistent_across_docs(self):
         root = SCRIPT.parents[4]
         parent_template = (root / "workspace" / "TASK_TEMPLATE.md").read_text(encoding="utf-8")
