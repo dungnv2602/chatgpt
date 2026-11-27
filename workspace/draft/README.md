@@ -11,6 +11,8 @@ This folder stores proposals that require a user decision.
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 4. Style-only wording update. The discussion register records approval of Option 3 with added requirements. The Draft metadata and task record still show review-pending state. Reconcile the exact approved revision and scope before ADR promotion.
 - [DRAFT-0003 — Area, Project, and Task Architecture](DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md) — Revision 1 in review. Companion to DRAFT-0002. Recommends project folders with nested task folders, one global task board, scoped resources, and the existing global Draft/ADR and archive contracts.
+- [DRAFT-0006 — Editorial Successor for ADR-0003](DRAFT-0006-editorial-successor-for-adr-0003.md) — Revision 1 in review. Proposes a superseding ADR with editorial corrections only. Preserves the accepted artifact-layout decision and all Confirmation states.
+- [DRAFT-0007 — Editorial Successor for ADR-0004](DRAFT-0007-editorial-successor-for-adr-0004.md) — Revision 1 in review. Proposes a superseding ADR with editorial corrections only. Preserves the accepted task-folder and CI Ledger decision, scope, and Confirmation states.
 
 ## Workflow
 
