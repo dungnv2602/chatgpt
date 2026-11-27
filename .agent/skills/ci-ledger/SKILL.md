@@ -46,6 +46,10 @@ Load this skill only when the task concerns Ledger ingestion, reconciliation, fi
 4. Publish report indexes, Ledger, task files, task board, and task links atomically through the existing commit/rebase/push flow.
 5. Ignore Ledger-only, task-board-only, discussion-only, and report-archive-only pushes during diagnostics sweeps. Follow the established archive-index trigger rules.
 6. Make ingestion idempotent. Preserve terminal finding identities and resolution history; do not introduce retirement scans or periodic scans.
+7. Validate every indexed run/workflow ID and attempt before constructing a path. Require Actions history paths to match their indexed run identity and reject traversal, absolute paths, backslashes, and malformed segments.
+8. Fail closed when an index declares a complete eligible report but its report file is missing. Do not silently skip missing complete reports.
+9. Leave incomplete, pre-finalizer, or non-final Actions captures unprocessed and retryable, including when a legacy processed marker exists but the report body is incomplete.
+10. Return structured per-report errors and a non-zero process exit when ingestion fails. Continue independent report processing where safe; the diagnostics workflow publishes safe partial progress before the failed job concludes.
 
 Preserve the existing generator, schema, workflow, and publication architecture unless the user authorizes a specific change.
 
@@ -57,7 +61,7 @@ Each lint scope has a separate baseline flag in `ingestion_state.lint_baseline_s
 2. Accept a baseline only when the report is complete, uses the expected full-audit mode, contains a commit SHA, and all six report-tooling checks pass.
 3. A Failed lint conclusion can still provide a valid baseline when the report-tooling checks pass.
 4. A report with failed or missing tooling checks does not contribute lint findings or seed a baseline. Record each failed tooling check independently.
-5. Mark an incomplete, incremental when a full baseline is required, or tooling-invalid report processed once. Keep the scope unseeded until a valid full audit arrives.
+5. For lint reports only, mark an incomplete, incremental when a full baseline is required, or tooling-invalid report processed once. This does not apply to GitHub Actions captures, which remain unprocessed and retryable until complete. Keep the lint scope unseeded until a valid full audit arrives.
 6. Compare later tooling-valid reports with the baseline. Create tasks only for genuinely new findings. Refresh evidence for tracked findings. Ignore recurring untracked findings from the baseline.
 
 The changed-document workflow selects the latest complete tooling-valid report commit as its baseline. It does not use the last successful workflow conclusion as the baseline.
@@ -102,7 +106,7 @@ Task creation is part of report ingestion.
 6. Record each stable parent Task ID in the finding's `task_refs`; do not store subtask IDs in this field. Record finding IDs, concise diagnostics, and report links in the parent task.md. Do not copy full logs or occurrence histories.
 7. Keep finding, parent-task, CI-subtask, and hosted-validation states distinct. Findings remain non-terminal until the fix commit is verified. A CI remediation subtask becomes Done on the verified intended-branch commit plus recorded SHA and summary. Hosted validation may remain Pending or later be Failed without reopening the completed remediation.
 
-The permanent P0 authorization governs Ledger-generated task intake and remediation. It does not authorize destructive resets, restoring deleted files, weakening checks, bypassing safety, decision governance, or task-specific scope limits. The Worker applies these gates and executes eligible tasks. The GitHub Actions skill governs technical remediation. Follow the Worker's batch execution procedure.
+P0 is the Ledger-generated task intake priority; it does not grant execution approval. Generated tasks remain Proposed until Worker review, accepted ADR linkage, and separate execution authorization. P0 priority does not authorize destructive resets, restoring deleted files, weakening checks, bypassing safety, decision governance, or task-specific scope limits. The Worker applies these gates and executes eligible tasks. The GitHub Actions skill governs technical remediation. Follow the Worker's batch execution procedure.
 
 ## Resolution and recurrence retention
 

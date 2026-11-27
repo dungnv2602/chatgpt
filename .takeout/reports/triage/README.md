@@ -1,6 +1,6 @@
 # CI Ledger data and navigation
 
-The CI Ledger tracks distinct findings from lint reports and GitHub Actions diagnostics. It stores active finding state, bounded evidence references, stable parent-task links, resolution history, and separate hosted-validation metadata. The Ledger does not execute remediation.
+The CI Ledger tracks distinct findings from lint reports and GitHub Actions diagnostics. It stores active finding state, bounded evidence references, stable parent-task links, resolution history, and separate hosted-validation metadata. The Ledger does not execute remediation. It creates Proposed parent task folders with CI remediation subtasks; P0 is priority, not execution approval. A CI remediation is resolved on a verified fix commit, while hosted validation is separate metadata.
 
 ## Ownership
 
@@ -20,7 +20,7 @@ The data file stores:
 - `findings`: distinct finding records, including identity, source family, category, title, lifecycle status, severity, owner, first/last observation, cumulative occurrence count, bounded evidence, resolution, resolution history, duplicate relationship, accepted risk, task references, and task grouping.
 - `ingestion_state`: processed report paths, lint baseline flags by scope, pending capture state, and other generator-managed ingestion metadata.
 
-Finding IDs and report paths are stable references. Evidence rows retain the source report path, run URL, observation time, source-run identity, and concise note. The generator owns the structured format and schema validation.
+Finding IDs and report paths are stable references. Evidence rows retain the source report path, run URL, observation time, source-run identity, and concise note. The generator owns the structured format and schema validation. It rejects malformed index identities and missing indexed complete reports, leaves incomplete Actions captures retryable, and returns non-zero when report processing errors occur.
 
 ## Report navigation
 
