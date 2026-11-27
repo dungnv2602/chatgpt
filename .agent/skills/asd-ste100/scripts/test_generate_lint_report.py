@@ -166,5 +166,32 @@ class ReportGeneratorTests(unittest.TestCase):
             self.assertTrue((older/"integrity.json").is_file())
 
 
+    def test_source_task_id_is_recorded_for_push_commit(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            record = {"path": "docs/a.md", "exit_code": 0, "violations": [], "count": 0}
+            output = self.run_report(
+                root, "on_repo", "901", 901, 1, {"a": record},
+                status="Passed", task_id="20261127-090000", event="push",
+            )
+            report = json.loads((output / "report.json").read_text(encoding="utf-8"))
+            markdown = (output / "report.md").read_text(encoding="utf-8")
+            self.assertEqual(report["source_task_id"], "20261127-090000")
+            self.assertIn("Source task: 20261127-090000", markdown)
+
+    def test_scheduled_report_does_not_claim_a_task(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            record = {"path": "docs/a.md", "exit_code": 0, "violations": [], "count": 0}
+            output = self.run_report(
+                root, "on_repo", "902", 902, 1, {"a": record},
+                status="Passed", task_id="20261127-090000", event="schedule",
+            )
+            report = json.loads((output / "report.json").read_text(encoding="utf-8"))
+            markdown = (output / "report.md").read_text(encoding="utf-8")
+            self.assertIsNone(report["source_task_id"])
+            self.assertIn("Source task: Unassigned", markdown)
+
+
 if __name__=="__main__":
     unittest.main()
