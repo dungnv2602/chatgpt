@@ -54,7 +54,7 @@ Consolidate lint and GitHub Actions diagnostics under a unified `.takeout/report
 
 - **Commit SHA:** Not committed
 - **Changed paths:** Pending
-- **Readback:** Initial report tree audit completed
+- **Readback:** Initial report tree audit completed; task record and board read back
 - **Checks:** Not performed
 - **Limitations:** No local scripts/tests or hosted CI inspection.
 
