@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#898](https://github.com/dungnv2602/chatgpt/actions/runs/45940913773)
-- **Run ID / attempt:** 45940913773 / 1
+- **Run:** [#899](https://github.com/dungnv2602/chatgpt/actions/runs/45941995999)
+- **Run ID / attempt:** 45941995999 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 3b57ddb169167d8b3a450033c4a743a45e8c8fe8
+- **Branch / commit:** gpt / ff7104f21cc2d82809004813cbb89c18615faf31
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 287d8325dea0cbaea7e4626fad9941a81aead8d0
-- **Linter source SHA:** 3b57ddb169167d8b3a450033c4a743a45e8c8fe8
-- **Generated (UTC):** 2026-11-27T04:36:46.787639+00:00
+- **Baseline SHA:** 3b57ddb169167d8b3a450033c4a743a45e8c8fe8
+- **Linter source SHA:** ff7104f21cc2d82809004813cbb89c18615faf31
+- **Generated (UTC):** 2026-11-27T04:48:15.899632+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 3 |
-| Files that failed | 2 |
+| Files evaluated | 2 |
+| Files that failed | 1 |
 | Files with findings | 2 |
 | Total findings | 5 |
-| Hard findings | 4 |
-| Advisory findings | 1 |
+| Hard findings | 3 |
+| Advisory findings | 2 |
 | New findings | 1 |
 | Recurring findings | 4 |
-| Resolved findings | 0 |
+| Resolved findings | 1 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -39,9 +39,8 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- workspace/adr/README.md
+- .agent/skills/the-worker/references/conversation-mode.md
 - workspace/task_board.md
-- workspace/README.md
 
 ## 4. Per-file result matrix
 
@@ -49,9 +48,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| workspace/adr/README.md | FAIL | 1 | 1 | 0 | 571 | 0.2 | 1 |
-| workspace/task_board.md | FAIL | 4 | 3 | 0 | 1377 | 0.3 | 1 |
-| workspace/README.md | PASS | 0 | 0 | 0 | 1006 | 0.0 | 0 |
+| .agent/skills/the-worker/references/conversation-mode.md | PASS | 1 | 0 | 0 | 3215 | 0.0 | 0 |
+| workspace/task_board.md | FAIL | 4 | 3 | 0 | 1387 | 0.3 | 1 |
 
 ## 5. Findings by rule
 
@@ -59,10 +57,9 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
+| passive-voice | 2 |
 | synonym-rotation | 2 |
 | long-sentence | 1 |
-| passive-voice | 1 |
-| semicolon | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -94,7 +91,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.325s
+Ran 4 tests in 0.345s
 
 OK
 ~~~
@@ -105,9 +102,9 @@ OK
 - **Exit code:** 0
 
 ~~~text
-.......
+........
 ----------------------------------------------------------------------
-Ran 7 tests in 0.005s
+Ran 8 tests in 0.001s
 
 OK
 ~~~
@@ -127,7 +124,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 3 changed Markdown sources (550 available as link targets) and 84 local Markdown links.
+Scanned 2 changed Markdown sources (552 available as link targets) and 68 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -137,10 +134,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **semicolon** · workspace/adr/README.md:72:170 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:190:263 · **new** · fingerprint: 2deb4746f57db62d7bedde8b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
 
 ### Recurring findings
 
@@ -148,14 +145,14 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Done
-- **synonym-rotation** · workspace/task_board.md:20:41 · **recurring** · fingerprint: 8940fe614ee1d534bedb13a4
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** check
-- **long-sentence** · workspace/task_board.md:51:1 · **recurring** · fingerprint: 8647e8d8e7c0939979ecdb3d
+- **long-sentence** · workspace/task_board.md:41:1 · **recurring** · fingerprint: 8647e8d8e7c0939979ecdb3d
   - **Level:** advisory-free
   - **Message:** Sentence has 98 words (cap 25). Split it.
   - **Matched text:** 98 words
+- **synonym-rotation** · workspace/task_board.md:67:41 · **recurring** · fingerprint: 8940fe614ee1d534bedb13a4
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** check
 - **synonym-rotation** · workspace/task_board.md:99:88 · **recurring** · fingerprint: e62ca06f23c949cf9f748c10
   - **Level:** advisory-free
   - **Message:** 'validate' and 'verify' name the same action. Pick one and use it every time.
@@ -163,28 +160,31 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-None.
+- **semicolon** · workspace/adr/README.md:72:170 · **resolved** · fingerprint: 0927b4ce823c0e0c8d5570fa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### workspace/adr/README.md
+### .agent/skills/the-worker/references/conversation-mode.md
 
-- **Result:** FAIL
-- **Exit code:** 1
+- **Result:** PASS
+- **Exit code:** 0
 - **Findings:** 1
-- **Hard findings:** 1
+- **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 571
-- **Findings per 100 words:** 0.2
+- **Words:** 3215
+- **Findings per 100 words:** 0.0
 
 #### Complete diagnostics
 
-- **semicolon** · workspace/adr/README.md:72:170 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:190:263 · **new** · fingerprint: 2deb4746f57db62d7bedde8b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
 
 
 ### workspace/task_board.md
@@ -194,7 +194,7 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 4
 - **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 1377
+- **Words:** 1387
 - **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
@@ -204,33 +204,20 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Done
 
-- **synonym-rotation** · workspace/task_board.md:20:41 · **recurring** · fingerprint: 8940fe614ee1d534bedb13a4
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** check
-
-- **long-sentence** · workspace/task_board.md:51:1 · **recurring** · fingerprint: 8647e8d8e7c0939979ecdb3d
+- **long-sentence** · workspace/task_board.md:41:1 · **recurring** · fingerprint: 8647e8d8e7c0939979ecdb3d
   - **Level:** advisory-free
   - **Message:** Sentence has 98 words (cap 25). Split it.
   - **Matched text:** 98 words
+
+- **synonym-rotation** · workspace/task_board.md:67:41 · **recurring** · fingerprint: 8940fe614ee1d534bedb13a4
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** check
 
 - **synonym-rotation** · workspace/task_board.md:99:88 · **recurring** · fingerprint: e62ca06f23c949cf9f748c10
   - **Level:** advisory-free
   - **Message:** 'validate' and 'verify' name the same action. Pick one and use it every time.
   - **Matched text:** validate
-
-
-### workspace/README.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 1006
-- **Findings per 100 words:** 0.0
-
-No STE findings were recorded for this file.
 
 ## 9. Structured evidence and integrity
 
