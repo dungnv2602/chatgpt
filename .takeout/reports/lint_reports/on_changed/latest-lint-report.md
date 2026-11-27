@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#923](https://github.com/dungnv2602/chatgpt/actions/runs/45962152504)
-- **Run ID / attempt:** 45962152504 / 1
+- **Run:** [#925](https://github.com/dungnv2602/chatgpt/actions/runs/45962662468)
+- **Run ID / attempt:** 45962662468 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 34da952a686ae53b315a7fcaef7925b902e9dcbf
+- **Branch / commit:** gpt / 56e93b445236f33b0d4aa8ecc5d605806dc1abc3
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 6e6d035a10b63f2f8f4426e12f1441e023785318
-- **Linter source SHA:** 34da952a686ae53b315a7fcaef7925b902e9dcbf
-- **Generated (UTC):** 2026-11-27T07:59:51.900261+00:00
+- **Baseline SHA:** 34da952a686ae53b315a7fcaef7925b902e9dcbf
+- **Linter source SHA:** 56e93b445236f33b0d4aa8ecc5d605806dc1abc3
+- **Generated (UTC):** 2026-11-27T08:03:47.306411+00:00
 
 ## 1. Executive summary
 
@@ -19,11 +19,11 @@
 | Files evaluated | 2 |
 | Files that failed | 2 |
 | Files with findings | 2 |
-| Total findings | 20 |
-| Hard findings | 13 |
-| Advisory findings | 7 |
-| New findings | 11 |
-| Recurring findings | 9 |
+| Total findings | 32 |
+| Hard findings | 20 |
+| Advisory findings | 12 |
+| New findings | 10 |
+| Recurring findings | 22 |
 | Resolved findings | 0 |
 | Failed workflow checks | 1 |
 
@@ -48,8 +48,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/github-actions/SKILL.md | FAIL | 8 | 5 | 0 | 3050 | 0.3 | 1 |
-| .agent/skills/the-worker/SKILL.md | FAIL | 12 | 8 | 0 | 5464 | 0.2 | 1 |
+| .agent/skills/github-actions/SKILL.md | FAIL | 12 | 8 | 0 | 3203 | 0.4 | 1 |
+| .agent/skills/the-worker/SKILL.md | FAIL | 20 | 12 | 0 | 5665 | 0.4 | 1 |
 
 ## 5. Findings by rule
 
@@ -57,10 +57,11 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 7 |
-| long-sentence | 6 |
-| semicolon | 4 |
-| synonym-rotation | 3 |
+| passive-voice | 11 |
+| long-sentence | 9 |
+| semicolon | 6 |
+| synonym-rotation | 5 |
+| present-perfect | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -92,7 +93,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.304s
+Ran 4 tests in 0.299s
 
 OK
 ~~~
@@ -114,7 +115,7 @@ Traceback (most recent call last):
 AssertionError: ValueError not raised
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.002s
+Ran 8 tests in 0.020s
 
 FAILED (failures=1)
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,7 +135,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 2 changed Markdown sources (368 available as link targets) and 7 local Markdown links.
+Scanned 2 changed Markdown sources (369 available as link targets) and 7 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -144,86 +145,134 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **semicolon** · .agent/skills/github-actions/SKILL.md:38:30 · **new** · fingerprint: 37b04b4859601e36ccef7b3a
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:40:297 · **new** · fingerprint: fcd8f24e30246be44c72e42a
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:51:209 · **new** · fingerprint: de2e6ff859150e25d2ddbdf7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:51:236 · **new** · fingerprint: 67be1862f0bcd76c81a66643
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are read
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:51:284 · **new** · fingerprint: ebe73caf7cb37aa94e730288
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are recorded
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:59:1 · **new** · fingerprint: 5bc051350b900cffa5093b16
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **semicolon** · .agent/skills/github-actions/SKILL.md:67:351 · **new** · fingerprint: 37b04b4859601e36ccef7b3a
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:75:3 · **new** · fingerprint: 5bc051350b900cffa5093b16
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:58:1 · **new** · fingerprint: 009f1803dee803be87a4fa14
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:40:1 · **new** · fingerprint: 4204cb531c8aff890596862d
   - **Level:** advisory-free
   - **Message:** Sentence has 27 words (cap 25). Split it.
   - **Matched text:** 27 words
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:58:325 · **new** · fingerprint: 294737cb2d1e61035fd8af4e
+- **synonym-rotation** · .agent/skills/github-actions/SKILL.md:40:520 · **new** · fingerprint: 091d168f31f96c3eea2c191a
   - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:60:1 · **new** · fingerprint: 009f1803dee803be87a4fa14
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verifying
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:40:696 · **new** · fingerprint: 77549c08bde1f3beccd0e141
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is exhausted
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:56:97 · **new** · fingerprint: 29bf7cd1e44f6d01fc347374
   - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **present-perfect** · .agent/skills/the-worker/SKILL.md:56:327 · **new** · fingerprint: 8aa1ab77e3be3d1ccc86261b
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been committed
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:56:331 · **new** · fingerprint: 1d7522399465bd44a975cfb7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been committed
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:58:451 · **new** · fingerprint: 4c2a0326fd77cfff256b0382
+  - **Level:** advisory-free
+  - **Message:** Sentence has 52 words (cap 25). Split it.
+  - **Matched text:** 52 words
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:58:474 · **new** · fingerprint: 744124c649cfe9432abfa28d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are collected
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:58:767 · **new** · fingerprint: ed0aae51db7a829a76e63e74
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is exhausted
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:75:28 · **new** · fingerprint: 8ed72353c79e8cb075e2d945
+  - **Level:** advisory-free
+  - **Message:** 'start' and 'begin' name the same action. Pick one and use it every time.
+  - **Matched text:** starting
 
 ### Recurring findings
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:143:79 · **recurring** · fingerprint: 1ead56a935297678d525088d
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** Remove
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:150:40 · **recurring** · fingerprint: 58a47654e8fe2ff210753ac7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are deleted
-- **semicolon** · .agent/skills/the-worker/SKILL.md:151:136 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+- **semicolon** · .agent/skills/github-actions/SKILL.md:40:457 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:237:91 · **recurring** · fingerprint: 448e62e062b885437ed3015e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deleted
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:285:144 · **recurring** · fingerprint: 857e0d2fef3568ba9dff44ac
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are authorized
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:290:3 · **recurring** · fingerprint: 6ceec6aac665e34ceb1f916d
+- **semicolon** · .agent/skills/github-actions/SKILL.md:42:30 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:44:297 · **recurring** · fingerprint: fcd8f24e30246be44c72e42a
   - **Level:** advisory-free
   - **Message:** Sentence has 33 words (cap 25). Split it.
   - **Matched text:** 33 words
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:378:196 · **recurring** · fingerprint: ce2bd2aefd327fda5d21b1cd
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:55:209 · **recurring** · fingerprint: de2e6ff859150e25d2ddbdf7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:55:236 · **recurring** · fingerprint: 67be1862f0bcd76c81a66643
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are read
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:55:284 · **recurring** · fingerprint: ebe73caf7cb37aa94e730288
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:63:1 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **semicolon** · .agent/skills/github-actions/SKILL.md:71:351 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:79:3 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **semicolon** · .agent/skills/the-worker/SKILL.md:58:365 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:64:1 · **recurring** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:64:325 · **recurring** · fingerprint: 294737cb2d1e61035fd8af4e
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** alter
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:66:1 · **recurring** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:149:79 · **recurring** · fingerprint: 1ead56a935297678d525088d
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** Remove
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:156:40 · **recurring** · fingerprint: 58a47654e8fe2ff210753ac7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are deleted
+- **semicolon** · .agent/skills/the-worker/SKILL.md:157:136 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:243:91 · **recurring** · fingerprint: 448e62e062b885437ed3015e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deleted
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:291:144 · **recurring** · fingerprint: 857e0d2fef3568ba9dff44ac
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are authorized
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:296:3 · **recurring** · fingerprint: 6ceec6aac665e34ceb1f916d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 33 words (cap 25). Split it.
+  - **Matched text:** 33 words
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:384:196 · **recurring** · fingerprint: ce2bd2aefd327fda5d21b1cd
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Done
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:410:33 · **recurring** · fingerprint: 952a5f851897b7d21a178421
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:416:33 · **recurring** · fingerprint: 952a5f851897b7d21a178421
   - **Level:** advisory-free
   - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** confirm
-- **semicolon** · .agent/skills/the-worker/SKILL.md:414:317 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+- **semicolon** · .agent/skills/the-worker/SKILL.md:420:317 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -240,50 +289,70 @@ This section includes every normalized finding with its rule, level, source loca
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 8
-- **Hard findings:** 5
+- **Findings:** 12
+- **Hard findings:** 8
 - **Baseline:** 0
-- **Words:** 3050
-- **Findings per 100 words:** 0.3
+- **Words:** 3203
+- **Findings per 100 words:** 0.4
 
 #### Complete diagnostics
 
-- **semicolon** · .agent/skills/github-actions/SKILL.md:38:30 · **new** · fingerprint: 37b04b4859601e36ccef7b3a
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:40:1 · **new** · fingerprint: 4204cb531c8aff890596862d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+
+- **semicolon** · .agent/skills/github-actions/SKILL.md:40:457 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:40:297 · **new** · fingerprint: fcd8f24e30246be44c72e42a
+- **synonym-rotation** · .agent/skills/github-actions/SKILL.md:40:520 · **new** · fingerprint: 091d168f31f96c3eea2c191a
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verifying
+
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:40:696 · **new** · fingerprint: 77549c08bde1f3beccd0e141
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is exhausted
+
+- **semicolon** · .agent/skills/github-actions/SKILL.md:42:30 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:44:297 · **recurring** · fingerprint: fcd8f24e30246be44c72e42a
   - **Level:** advisory-free
   - **Message:** Sentence has 33 words (cap 25). Split it.
   - **Matched text:** 33 words
 
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:51:209 · **new** · fingerprint: de2e6ff859150e25d2ddbdf7
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:55:209 · **recurring** · fingerprint: de2e6ff859150e25d2ddbdf7
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
 
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:51:236 · **new** · fingerprint: 67be1862f0bcd76c81a66643
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:55:236 · **recurring** · fingerprint: 67be1862f0bcd76c81a66643
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are read
 
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:51:284 · **new** · fingerprint: ebe73caf7cb37aa94e730288
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:55:284 · **recurring** · fingerprint: ebe73caf7cb37aa94e730288
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are recorded
 
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:59:1 · **new** · fingerprint: 5bc051350b900cffa5093b16
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:63:1 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
 
-- **semicolon** · .agent/skills/github-actions/SKILL.md:67:351 · **new** · fingerprint: 37b04b4859601e36ccef7b3a
+- **semicolon** · .agent/skills/github-actions/SKILL.md:71:351 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:75:3 · **new** · fingerprint: 5bc051350b900cffa5093b16
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:79:3 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
@@ -293,70 +362,110 @@ This section includes every normalized finding with its rule, level, source loca
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 12
-- **Hard findings:** 8
+- **Findings:** 20
+- **Hard findings:** 12
 - **Baseline:** 0
-- **Words:** 5464
-- **Findings per 100 words:** 0.2
+- **Words:** 5665
+- **Findings per 100 words:** 0.4
 
 #### Complete diagnostics
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:58:1 · **new** · fingerprint: 009f1803dee803be87a4fa14
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:56:97 · **new** · fingerprint: 29bf7cd1e44f6d01fc347374
   - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:58:325 · **new** · fingerprint: 294737cb2d1e61035fd8af4e
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
+- **present-perfect** · .agent/skills/the-worker/SKILL.md:56:327 · **new** · fingerprint: 8aa1ab77e3be3d1ccc86261b
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been committed
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:60:1 · **new** · fingerprint: 009f1803dee803be87a4fa14
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:143:79 · **recurring** · fingerprint: 1ead56a935297678d525088d
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** Remove
-
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:150:40 · **recurring** · fingerprint: 58a47654e8fe2ff210753ac7
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:56:331 · **new** · fingerprint: 1d7522399465bd44a975cfb7
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are deleted
+  - **Matched text:** been committed
 
-- **semicolon** · .agent/skills/the-worker/SKILL.md:151:136 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+- **semicolon** · .agent/skills/the-worker/SKILL.md:58:365 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:237:91 · **recurring** · fingerprint: 448e62e062b885437ed3015e
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:58:451 · **new** · fingerprint: 4c2a0326fd77cfff256b0382
+  - **Level:** advisory-free
+  - **Message:** Sentence has 52 words (cap 25). Split it.
+  - **Matched text:** 52 words
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:58:474 · **new** · fingerprint: 744124c649cfe9432abfa28d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are collected
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:58:767 · **new** · fingerprint: ed0aae51db7a829a76e63e74
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is exhausted
+
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:64:1 · **recurring** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:64:325 · **recurring** · fingerprint: 294737cb2d1e61035fd8af4e
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** alter
+
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:66:1 · **recurring** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:75:28 · **new** · fingerprint: 8ed72353c79e8cb075e2d945
+  - **Level:** advisory-free
+  - **Message:** 'start' and 'begin' name the same action. Pick one and use it every time.
+  - **Matched text:** starting
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:149:79 · **recurring** · fingerprint: 1ead56a935297678d525088d
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** Remove
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:156:40 · **recurring** · fingerprint: 58a47654e8fe2ff210753ac7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are deleted
+
+- **semicolon** · .agent/skills/the-worker/SKILL.md:157:136 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:243:91 · **recurring** · fingerprint: 448e62e062b885437ed3015e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deleted
 
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:285:144 · **recurring** · fingerprint: 857e0d2fef3568ba9dff44ac
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:291:144 · **recurring** · fingerprint: 857e0d2fef3568ba9dff44ac
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are authorized
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:290:3 · **recurring** · fingerprint: 6ceec6aac665e34ceb1f916d
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:296:3 · **recurring** · fingerprint: 6ceec6aac665e34ceb1f916d
   - **Level:** advisory-free
   - **Message:** Sentence has 33 words (cap 25). Split it.
   - **Matched text:** 33 words
 
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:378:196 · **recurring** · fingerprint: ce2bd2aefd327fda5d21b1cd
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:384:196 · **recurring** · fingerprint: ce2bd2aefd327fda5d21b1cd
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Done
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:410:33 · **recurring** · fingerprint: 952a5f851897b7d21a178421
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:416:33 · **recurring** · fingerprint: 952a5f851897b7d21a178421
   - **Level:** advisory-free
   - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** confirm
 
-- **semicolon** · .agent/skills/the-worker/SKILL.md:414:317 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+- **semicolon** · .agent/skills/the-worker/SKILL.md:420:317 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
