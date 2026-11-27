@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:24:24Z",
+  "updated_at_utc": "2026-11-27T13:25:53Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -22202,10 +22202,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-19"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-7c343f6578473201",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -22262,10 +22262,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-19"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-7c343f6578473201",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -22322,10 +22322,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-19"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-7c343f6578473201",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -22442,10 +22442,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-19"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-7c343f6578473201",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -23232,10 +23232,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-19"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-7c343f6578473201",
       "parent_group": "ci-130d26d7756a53d7"
     },
