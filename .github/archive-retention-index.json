@@ -1333,6 +1333,14 @@
     {
       "path": ".archive/task/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md",
       "archived_at_utc": "2026-11-27T05:15:00Z"
+    },
+    {
+      "path": ".archive/task/20261126-145133/task.md",
+      "archived_at_utc": "2026-11-26T15:10:11Z"
+    },
+    {
+      "path": ".archive/task/20261126-145133/subtasks/README.md",
+      "archived_at_utc": "2026-11-26T15:10:11Z"
     }
   ]
 }
