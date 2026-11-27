@@ -16,7 +16,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [20261127-173000-57: Enforce autonomous execution to quiescence](tasks/20261127-173000/subtasks/57-autonomous-execution-to-quiescence.md) — Approved, In Progress, no dependencies. Parent: [Refactor Skills](tasks/20261127-173000/task.md).
+None. Refactor Skills has no Ready child. The parent remains open.
 
 ## Ordered Eligible Execution Queue
 
@@ -24,7 +24,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-Child 57 is the active Refactor Skills execution. After it closes, the global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+No Ready child remains under Refactor Skills. The global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 

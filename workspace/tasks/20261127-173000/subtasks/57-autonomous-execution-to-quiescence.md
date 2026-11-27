@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-57
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** In Progress — authorized within the user's active Refactor Skills focus
 - **Required:** Yes
 - **Created:** 2026-11-27 23:01 UTC
-- **Updated:** 2026-11-27 23:01 UTC
+- **Updated:** 2026-11-27 23:02 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -50,21 +50,22 @@ Update the Worker, Conversation Mode, Session Start, initialization history, and
 
 - **Decision:** Treat this request as an operational clarification of the accepted Worker selection and task-lifecycle contract in ADR-0004. Do not create a new decision model.
 - **Progress:** Audited the Worker, Conversation Mode, Session Start, initialization policy, task board, templates, and ADR-0004. Confirmed that general non-interruption guidance existed but lacked a deterministic queue-reselection procedure and explicit no-ping rule.
-- **Implementation:** Updated the canonical execution loop, user-input coordination, startup batch steps, initialization history, and live task-board scheduler contract. Commit and readback remain pending.
+- **Implementation:** Updated the canonical execution loop, user-input coordination, startup batch steps, initialization history, and live task-board scheduler contract.
+- **Closeout:** Read back all nine changed paths from branch `gpt`. Every expected change marker was present. The branch head matched the implementation commit.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Pending final readback
-- **Readback:** Pending
-- **Checks:** Not performed
-- **Limitations:** Repository scripts, tests, lint, and hosted CI were not run or inspected.
+- **Commit SHA:** `c60358df2cc81747a5223f2d5aa5c750bb4773df`
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`, `.agent/skills/the-worker/references/conversation-mode.md`, `.agent/SESSION_START.md`, `.agent/INITIALIZATION_POLICY.md`, `workspace/task_board.md`, `workspace/discussion.md`, `workspace/tasks/20261127-173000/task.md`, `workspace/tasks/20261127-173000/subtasks/README.md`, and this subtask.
+- **Readback:** All nine paths were fetched from branch `gpt` at commit `c60358df2cc81747a5223f2d5aa5c750bb4773df`. Each expected change marker was present.
+- **Checks:** No local scripts, tests, or lint were run. Hosted CI results were not inspected.
+- **Limitations:** Readback confirms committed content. It does not prove hosted workflow behavior.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 23:02 UTC
+- **Completion basis:** All eight acceptance criteria passed. The implementation commit is on `gpt`. Readback confirmed every changed path and the expected instruction markers.
 
 ## 8. Hosted Validation
 
@@ -72,7 +73,7 @@ Not applicable.
 
 ## 9. Handoff
 
-Read back the modified Worker and scheduling instructions. Verify cross-file consistency. Record the commit SHA and close this child after readback. Do not inspect hosted CI.
+Closed after commit and readback. The parent lifecycle requires deletion of completed child records after closeout. Do not inspect hosted CI.
 
 ## 10. Ledger Findings
 

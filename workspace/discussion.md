@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T23:01:11.684Z**: Child 57 is active. The Worker is being updated to enforce queue draining, immediate reselection after blockers, and one-at-a-time essential user input.
+- **2026-11-27T23:02:30.332Z**: Child 57 completed. The Worker now requires queue reselection after state changes, continuation past isolated blockers, no routine execution pings, and one essential blocker question at a time. Commit `c60358df2cc81747a5223f2d5aa5c750bb4773df` was read back.
 
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.
@@ -17,6 +17,7 @@
 
 ## Reports
 
+- **2026-11-27T23:02:30.332Z**: Completed child 57. Updated and read back the autonomous execution loop, Conversation Mode, Session Start, initialization policy, and scheduler contract. Commit: `c60358df2cc81747a5223f2d5aa5c750bb4773df`. Local scripts, tests, and lint were not run. Hosted CI was not inspected.
 - **2026-11-27T13:36:52Z**: Closed child 24. Resolved three passive-voice findings with source commit `80440b3c6a81e440826071a66dd9f9c3a3e38747`. Activated child 26 after reviewing one long-sentence finding in `.agent/SESSION_START.md`. Hosted validation remains pending. Hosted CI results were not inspected.
 - **2026-11-27T13:35:02Z**: Closed child 23. Resolved five long-sentence findings with source commit `239b1acd74e87bfc96a9b6f4ab5d8216603a9789`. Activated child 24 after reviewing three passive-voice finding groups in the document-type catalog. Hosted validation remains pending. Hosted CI results were not inspected.
 - **2026-11-27T13:32:13Z**: Closed child 22. Resolved `lint-87c805f0894d01b1d24ca3b6` with source commit `5305c1b39030c5057eacb1251867ce4fc96d0064`. Activated child 23 after reviewing five long-sentence findings in the Worker skill. Hosted validation remains pending. Hosted CI results were not inspected.
