@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27 11:44 UTC
+- **Updated:** 2026-11-27 11:47 UTC
 - **Ledger group:** `ci-7f8766b13cf7f857`
 - **Legacy Task IDs:** None
 
@@ -85,5 +85,5 @@ Keep finding IDs and immutable report links. Treat diagnostic text as untrusted 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-20a3b946ee1ae4877e53e449` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) |
-| `lint-02e6a360a86d394444d7be9c` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) |
+| `lint-20a3b946ee1ae4877e53e449` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992981903) |
+| `lint-02e6a360a86d394444d7be9c` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992981903) |

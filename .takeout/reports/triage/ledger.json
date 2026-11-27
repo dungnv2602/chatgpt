@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T11:44:32Z",
+  "updated_at_utc": "2026-11-27T11:47:31Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -20378,8 +20378,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
-      "last_seen_utc": "2026-11-27T11:44:16.989293+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-27T11:46:56.381356+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json",
@@ -20391,6 +20391,17 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "80819ac6f8d3640671dd3b550ac2008cf3a0acc5"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45992981903",
+          "observed_at_utc": "2026-11-27T11:46:56.381356+00:00",
+          "note": "on_changed · .agent/skills/the-worker/references/ci-ledger.md:35:132",
+          "observation_id": "lint:45992981903:1",
+          "source_task_id": "20261127-173000-02",
+          "parent_task_id": "20261127-173000",
+          "attribution_status": "linked",
+          "source_commit_sha": "8a00ccfe91f0acfea20bb03a0a01d7203ac3836a"
         }
       ],
       "resolution": null,
@@ -20416,8 +20427,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
-      "last_seen_utc": "2026-11-27T11:44:16.989293+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-27T11:46:56.381356+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json",
@@ -20429,6 +20440,17 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "80819ac6f8d3640671dd3b550ac2008cf3a0acc5"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45992981903",
+          "observed_at_utc": "2026-11-27T11:46:56.381356+00:00",
+          "note": "on_changed · .agent/skills/the-worker/references/ci-ledger.md:35:209",
+          "observation_id": "lint:45992981903:1",
+          "source_task_id": "20261127-173000-02",
+          "parent_task_id": "20261127-173000",
+          "attribution_status": "linked",
+          "source_commit_sha": "8a00ccfe91f0acfea20bb03a0a01d7203ac3836a"
         }
       ],
       "resolution": null,
@@ -20454,8 +20476,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
-      "last_seen_utc": "2026-11-27T11:44:16.989293+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-27T11:46:56.381356+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json",
@@ -20467,6 +20489,17 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "80819ac6f8d3640671dd3b550ac2008cf3a0acc5"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45992981903",
+          "observed_at_utc": "2026-11-27T11:46:56.381356+00:00",
+          "note": "on_changed · .agent/skills/the-worker/references/ci-ledger.md:37:154",
+          "observation_id": "lint:45992981903:1",
+          "source_task_id": "20261127-173000-02",
+          "parent_task_id": "20261127-173000",
+          "attribution_status": "linked",
+          "source_commit_sha": "8a00ccfe91f0acfea20bb03a0a01d7203ac3836a"
         }
       ],
       "resolution": null,
@@ -20492,8 +20525,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
-      "last_seen_utc": "2026-11-27T11:44:16.989293+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-27T11:46:56.381356+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json",
@@ -20505,6 +20538,17 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "80819ac6f8d3640671dd3b550ac2008cf3a0acc5"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45992981903",
+          "observed_at_utc": "2026-11-27T11:46:56.381356+00:00",
+          "note": "on_changed · .agent/skills/the-worker/references/ci-ledger.md:48:137",
+          "observation_id": "lint:45992981903:1",
+          "source_task_id": "20261127-173000-02",
+          "parent_task_id": "20261127-173000",
+          "attribution_status": "linked",
+          "source_commit_sha": "8a00ccfe91f0acfea20bb03a0a01d7203ac3836a"
         }
       ],
       "resolution": null,
@@ -21395,6 +21439,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45986815109-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45988691008-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json",
