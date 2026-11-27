@@ -54,6 +54,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
+### 2026-11-27T16:42:00Z — startup P0 child 52 closeout
+
+- **Action:** Rewrote the passive-voice statements in the Actions report template to name the capture process as the actor.
+- **Result:** Read back the template. The two finding IDs in child 52 are not present in the current Ledger, so no Ledger finding status was changed. Closed and removed the completed child record.
+- **Evidence:** Commit pending. Changed path: `.agent/skills/the-worker/assets/actions-report-template.md`.
+- **Validation:** No local tests or hosted CI results were inspected.
+
+
 ### 2026-11-27T13:36:52Z — startup P0 child 24 closeout
 
 - **Action:** Rewrote the ADR status and completed-task deletion descriptions in the document-type catalog to name the repository or Worker as the actor. Verified the target file and resolved all three linked findings in the central Ledger.
