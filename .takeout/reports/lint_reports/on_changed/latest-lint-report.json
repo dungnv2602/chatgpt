@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45914092191",
-  "run_number": 865,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45914092191",
+  "run_id": "45915467938",
+  "run_number": 866,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45915467938",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "4226404667c584fe1bc9cf4f0b8d81fb9e8bec18",
+  "commit_sha": "cdc45c33acbb126e2cddf3b3743dbf0ca4635333",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "d050a9807fcc65ce39953a78ae7392a8c04f5032",
-  "generated_at_utc": "2026-11-26T23:59:59.760833+00:00",
+  "baseline_sha": "4226404667c584fe1bc9cf4f0b8d81fb9e8bec18",
+  "generated_at_utc": "2026-11-27T00:13:53.653533+00:00",
   "status": "Failed",
-  "linter_source_sha": "4226404667c584fe1bc9cf4f0b8d81fb9e8bec18",
+  "linter_source_sha": "cdc45c33acbb126e2cddf3b3743dbf0ca4635333",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -28,14 +28,14 @@
     ".agent/skills/ci-ledger/SKILL.md"
   ],
   "files_with_findings": 1,
-  "total_findings": 18,
-  "hard_findings": 9,
+  "total_findings": 21,
+  "hard_findings": 12,
   "advisory_findings": 9,
   "findings_by_rule": {
     "long-sentence": 2,
     "passive-voice": 8,
-    "semicolon": 4,
-    "synonym-rotation": 3,
+    "semicolon": 6,
+    "synonym-rotation": 4,
     "present-perfect": 1
   },
   "records": [
@@ -79,7 +79,25 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 50,
+          "line": 49,
+          "col": 4,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Validate",
+          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": ".agent/skills/ci-ledger/SKILL.md",
+          "line": 52,
+          "col": 140,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": ".agent/skills/ci-ledger/SKILL.md",
+          "line": 54,
           "col": 119,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -88,8 +106,8 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 60,
-          "col": 57,
+          "line": 64,
+          "col": 80,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is required",
@@ -97,7 +115,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 102,
+          "line": 106,
           "col": 66,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -106,7 +124,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 103,
+          "line": 107,
           "col": 132,
           "rule": "passive-voice",
           "level": "advisory",
@@ -116,6 +134,15 @@
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
           "line": 109,
+          "col": 48,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": ".agent/skills/ci-ledger/SKILL.md",
+          "line": 113,
           "col": 156,
           "rule": "passive-voice",
           "level": "advisory",
@@ -124,7 +151,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 111,
+          "line": 115,
           "col": 4,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -133,7 +160,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 114,
+          "line": 118,
           "col": 165,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -142,7 +169,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 116,
+          "line": 120,
           "col": 27,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -151,7 +178,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 118,
+          "line": 122,
           "col": 91,
           "rule": "present-perfect",
           "level": "advisory",
@@ -160,7 +187,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 118,
+          "line": 122,
           "col": 151,
           "rule": "passive-voice",
           "level": "advisory",
@@ -169,7 +196,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 118,
+          "line": 122,
           "col": 162,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -178,7 +205,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 124,
+          "line": 128,
           "col": 20,
           "rule": "passive-voice",
           "level": "advisory",
@@ -187,7 +214,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 134,
+          "line": 138,
           "col": 61,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -196,7 +223,7 @@
         },
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
-          "line": 143,
+          "line": 147,
           "col": 95,
           "rule": "passive-voice",
           "level": "advisory",
@@ -204,10 +231,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 18,
-      "hard_count": 9,
+      "count": 21,
+      "hard_count": 12,
       "baseline": 0,
-      "words": 1860,
+      "words": 2008,
       "per_100_words": 1.0,
       "path": ".agent/skills/ci-ledger/SKILL.md",
       "exit_code": 1
@@ -260,7 +287,29 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 50,
+      "line": 49,
+      "col": 4,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Validate",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "62caae9adf1fe0478e35b91e",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/ci-ledger/SKILL.md",
+      "line": 52,
+      "col": 140,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0ae22a9c140235350291bdfa",
+      "comparison": "recurring"
+    },
+    {
+      "file": ".agent/skills/ci-ledger/SKILL.md",
+      "line": 54,
       "col": 119,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -271,8 +320,8 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 60,
-      "col": 57,
+      "line": 64,
+      "col": 80,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is required",
@@ -282,7 +331,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 102,
+      "line": 106,
       "col": 66,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -293,7 +342,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 103,
+      "line": 107,
       "col": 132,
       "rule": "passive-voice",
       "level": "advisory",
@@ -305,6 +354,17 @@
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
       "line": 109,
+      "col": 48,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0ae22a9c140235350291bdfa",
+      "comparison": "recurring"
+    },
+    {
+      "file": ".agent/skills/ci-ledger/SKILL.md",
+      "line": 113,
       "col": 156,
       "rule": "passive-voice",
       "level": "advisory",
@@ -315,7 +375,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 111,
+      "line": 115,
       "col": 4,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -326,7 +386,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 114,
+      "line": 118,
       "col": 165,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -337,7 +397,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 116,
+      "line": 120,
       "col": 27,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -348,7 +408,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 118,
+      "line": 122,
       "col": 91,
       "rule": "present-perfect",
       "level": "advisory",
@@ -359,7 +419,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 118,
+      "line": 122,
       "col": 151,
       "rule": "passive-voice",
       "level": "advisory",
@@ -370,7 +430,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 118,
+      "line": 122,
       "col": 162,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -381,7 +441,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 124,
+      "line": 128,
       "col": 20,
       "rule": "passive-voice",
       "level": "advisory",
@@ -392,7 +452,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 134,
+      "line": 138,
       "col": 61,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -403,7 +463,7 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
-      "line": 143,
+      "line": 147,
       "col": 95,
       "rule": "passive-voice",
       "level": "advisory",
@@ -413,252 +473,9 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 18,
-  "resolved_findings": [
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 21,
-      "col": 206,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are permitted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "ce5c879312639d5e4a37c1f2",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 23,
-      "col": 59,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is provided",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "5ef6ce13baf5600a1694be8b",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 33,
-      "col": 40,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "have reached",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "e8019ef8bf6c31ab6be19a58",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 69,
-      "col": 35,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "fix",
-      "message": "'fix' and 'repair' name the same action. Pick one and use it every time.",
-      "fingerprint": "cffdf948bb88f727bace9878",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 69,
-      "col": 205,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "de2e6ff859150e25d2ddbdf7",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 69,
-      "col": 254,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are recorded",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "ebe73caf7cb37aa94e730288",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 77,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "4baec72a55fa29cd2e674673",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 81,
-      "col": 240,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "37b04b4859601e36ccef7b3a",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 82,
-      "col": 106,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "corrected",
-      "message": "'correct' and 'repair' name the same action. Pick one and use it every time.",
-      "fingerprint": "585f1dd2fc6ade752cecb1db",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 83,
-      "col": 63,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "069c795a0a52ebd5721e8aa1",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 83,
-      "col": 305,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "37b04b4859601e36ccef7b3a",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 84,
-      "col": 204,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is Done",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "70d702d2f48b407e4ddfc138",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 84,
-      "col": 283,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are recorded",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "ebe73caf7cb37aa94e730288",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 84,
-      "col": 362,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "37b04b4859601e36ccef7b3a",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 85,
-      "col": 50,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "ef1c126313fcc76c2583dac7",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 85,
-      "col": 353,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "37b04b4859601e36ccef7b3a",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 87,
-      "col": 105,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are committed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "cd7ba366b1a6c942aa7fd8b1",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 87,
-      "col": 130,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "validated",
-      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "82d53272cc36ef4ea58a00e3",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 159,
-      "col": 42,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "fetch",
-      "message": "'fetch' and 'obtain' name the same action. Pick one and use it every time.",
-      "fingerprint": "7f75534bb1aa53c4310430aa",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/task_board.md",
-      "line": 3,
-      "col": 146,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "0141c0cfbe133e92bf61057a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/task_board.md",
-      "line": 3,
-      "col": 159,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is stored",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "2e2452378860adcb5f140771",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/task_board.md",
-      "line": 22,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "98 words",
-      "message": "Sentence has 98 words (cap 25). Split it.",
-      "fingerprint": "8647e8d8e7c0939979ecdb3d",
-      "comparison": "resolved"
-    }
-  ],
+  "new_findings": 1,
+  "recurring_findings": 20,
+  "resolved_findings": [],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -676,7 +493,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.398s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.348s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -694,7 +511,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 1 changed Markdown sources (360 available as link targets) and 0 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 1 changed Markdown sources (361 available as link targets) and 0 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
