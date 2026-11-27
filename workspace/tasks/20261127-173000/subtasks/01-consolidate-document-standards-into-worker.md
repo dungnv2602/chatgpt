@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-01
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** Eligible — Ready; approved, no dependencies. Parent Refactor Skills is the selected P0 execution.
 - **Required:** Yes
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 18:00 UTC
+- **Updated:** 2026-11-27 18:30 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** 20261127-102301
 
@@ -52,17 +52,17 @@ Consolidate document-format governance and template-first execution guidance int
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Existing partial consolidation commits; migration commits pending.
-- **Changed paths:** Migrated task/subtask/index records.
-- **Readback:** Pending.
-- **Checks:** Not performed.
-- **Limitations:** No hosted CI review.
+- **Commit SHA:** `c7b7678f8e5fc19db75be0aced703c461aac66e6` (deletion commit; consolidation series includes subsequent relocation and reconciliation commits)
+- **Changed paths:** `.agent/skills/the-worker/references/document-type-catalog.md`; `.agent/skills/the-worker/scripts/validate_document_catalog.py`; `.agent/skills/the-worker/scripts/test_validate_document_catalog.py`; `.agent/skills/the-worker/SKILL.md`; `.agent/skills/README.md`; removed `.agent/skills/document-standards/` assets.
+- **Readback:** All relocated files and updated Worker/index were retrieved from branch `gpt`. Standalone skill and assets were deleted.
+- **Checks:** Tests and validator not executed; prohibited local execution was not used.
+- **Limitations:** No local validation or hosted CI inspection. Readback verifies committed content, not test behavior.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 18:30 UTC
+- **Completion basis:** Consolidation, deletion, references/index reconciliation, and branch readback.
 
 ## 8. Hosted Validation
 
