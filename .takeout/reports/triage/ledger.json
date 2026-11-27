@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:20:56Z",
+  "updated_at_utc": "2026-11-27T13:22:30Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -2888,11 +2888,10 @@
         "20261127-173000"
       ],
       "task_group": "ci-72bec6c4d1d3df9e",
-      "subtask_refs": [
-        "20261127-173000-17"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
-        "20261127-013151-03"
+        "20261127-013151-03",
+        "20261127-173000-17"
       ],
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -15187,11 +15186,11 @@
       ],
       "task_group": "ci-72bec6c4d1d3df9e",
       "subtask_refs": [
-        "20261126-142500-11",
-        "20261127-173000-17"
+        "20261126-142500-11"
       ],
       "legacy_task_refs": [
-        "20261127-013151-03"
+        "20261127-013151-03",
+        "20261127-173000-17"
       ],
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -20208,10 +20207,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-17"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-72bec6c4d1d3df9e",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -20268,10 +20267,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-17"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-72bec6c4d1d3df9e",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -20388,10 +20387,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-17"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-72bec6c4d1d3df9e",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -20448,10 +20447,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-17"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-72bec6c4d1d3df9e",
       "parent_group": "ci-7d49af0ce94de93a"
     },
