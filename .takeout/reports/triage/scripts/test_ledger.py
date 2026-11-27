@@ -391,6 +391,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("required subtask is not Done", parent_template)
         self.assertIn("A regular subtask is Done when its own acceptance criteria are satisfied", subtask_template)
         self.assertIn("every required subtask is Done", worker)
+        self.assertIn("New task-folder entries share one UTC timestamp", worker)
         self.assertIn("Historical flat archive files remain immutable and readable", ci_ledger)
         self.assertIn("one shared UTC timestamp", ci_ledger)
         self.assertIn("one shared UTC archive timestamp", github_actions)
