@@ -3,6 +3,26 @@
   "runs": [
     {
       "scope": "on_changed",
+      "run_id": "45929248916",
+      "run_number": 887,
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45929248916",
+      "attempt": 1,
+      "commit_sha": "0814be54a9a2a4dc365794f03de98c1d71d66fba",
+      "generated_at_utc": "2026-11-27T02:37:46.036675+00:00",
+      "status": "Failed",
+      "execution_mode": "incremental",
+      "files_evaluated_count": 3,
+      "files_failed": 2,
+      "files_with_findings": 3,
+      "total_findings": 122,
+      "hard_findings": 70,
+      "advisory_findings": 52,
+      "new_findings": 122,
+      "recurring_findings": 0,
+      "resolved_findings_count": 36
+    },
+    {
+      "scope": "on_changed",
       "run_id": "45928095575",
       "run_number": 884,
       "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45928095575",
