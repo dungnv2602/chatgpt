@@ -50,7 +50,7 @@ Create a reusable canonical template for task-board documents, including schedul
 
 - **Commit SHA:** `cb768922209bb07fcd083d57b1212995fe1ca47b` (template); `8a9a9429181d214613cb541e45ecb0738a4c1ec8` (board link); `4435c51224e8cb471f990275bd35ae7b32a5193e` (navigation)
 - **Changed paths:** `workspace/TASK_BOARD_TEMPLATE.md`; `workspace/task_board.md`; `workspace/README.md`.
-- **Readback:** Pending.
+- **Readback:** Confirmed template, board link, Workspace navigation, and subtask index on branch `gpt`.
 - **Checks:** Not performed.
 - **Limitations:** Structural template review only.
 
