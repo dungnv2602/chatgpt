@@ -18,7 +18,7 @@ This skill applies that discipline to a different reader: an **AI agent or a dow
 - An agent's output (explanation, instruction, log message, tool description) reads as dense, jargon-heavy, or ambiguous.
 - Text will be consumed by another agent, a translation pipeline, or a non-native English reader, and misparsing has a real cost.
 - You are writing a prompt, system message, or tool description and want to remove ambiguity before a model ever sees it.
-- You want a **before/after** comparison showing exactly which rule was violated and how the rewrite fixes it. Ask for it — the default output is the rewritten text alone (see Output Format).
+- You want a **before/after** comparison showing exactly which rule the original text violated and how the rewrite fixes it. Ask for it — the default output is the rewritten text alone (see Output Format).
 
 This skill is not for creative or marketing copy — STE is deliberately flat and literal. Do not apply it to text where voice, nuance, or persuasion is the point.
 
@@ -46,7 +46,7 @@ Instead, this skill applies the *underlying principle*: choose the plainest, mos
 
 ## Core Rewrite Rules
 
-STE's rules divide into two kinds, and this skill can only fully deliver one of them. **Structural rules** are self-contained: they describe sentence shape, and you can apply them from the description alone. **Lexical rules** are defined entirely by the official ~900-word dictionary, which this skill deliberately does not reproduce (see Source and Scope). Without that dictionary, the lexical rules degrade from a checkable standard into a preference for plain words.
+STE's rules divide into two kinds, and this skill can only fully deliver one of them. **Structural rules** are self-contained: they describe sentence shape, and you can apply them from the description alone. The official ~900-word dictionary defines **lexical rules**. This skill deliberately does not reproduce that dictionary (see Source and Scope). Without that dictionary, the lexical rules degrade from a checkable standard into a preference for plain words.
 
 Apply the structural rules with confidence. Apply the lexical rules as a direction of travel, and say so in your output rather than implying dictionary compliance you cannot establish.
 
@@ -54,7 +54,7 @@ Apply the structural rules with confidence. Apply the lexical rules as a directi
 
 | Rule | Do | Don't |
 |---|---|---|
-| Active voice | "The agent removes the file." | "The file is removed (by the agent)." — unless the actor is genuinely unknown or irrelevant |
+| Active voice | "The agent removes the file." | "A sentence that hides the actor." — unless the actor is genuinely unknown or irrelevant |
 | No phrasal verbs (Rule 9.3) | "Remove the panel." / "Start the job." | "Use a verb plus a particle for the job." — a multiword verb can have a meaning the parts do not predict |
 | One instruction per sentence | "Open the file. Read line 3." | "Open the file and read line 3, then check if it matches." |
 | Sentence length | ≤20 words for instructions/procedures, ≤25 words for descriptions | Long compound/subordinate-clause sentences |
@@ -70,7 +70,7 @@ Apply the structural rules with confidence. Apply the lexical rules as a directi
 | Rule | Do | Don't | Why it is weaker here |
 |---|---|---|---|
 | One word, one meaning | Pick one verb for one action and reuse it every time (e.g. always "check", never use a different verb for the same action) | Rotate synonyms for the same idea across a document | Consistency within a document is checkable. Which word is the *approved* one is not, without the dictionary. |
-| One part of speech per word | "Apply oil to the valve" (oil = noun) | "Oil the valve" (oil = verb) | Whether "oil" is approved as a noun only is a dictionary fact. Prefer the noun form when both read equally well. Do not claim compliance. |
+| One part of speech per word | "Apply oil to the valve" (oil = noun) | "Oil the valve" (oil = verb) | Only the dictionary can confirm whether it lists "oil" as a noun. Prefer the noun form when both read equally well. Do not claim compliance. |
 | Verb, not noun (Rule 3.7) | "Analyze the log." | "Perform an analysis of the log." — a noun form of an action makes the sentence longer and hides who acts | Rule 3.7 says "use an **approved** verb to describe an action." Preferring the verb form is safe to apply anywhere. Knowing which verb is the approved one needs the dictionary. |
 | Domain terms | Keep necessary technical nouns/verbs, but define them once if not common English (STE allows a project-specific glossary beyond its base dictionary) | Use jargon without ever defining it | The glossary allowance is real STE, but the base dictionary it extends is absent. |
 
@@ -143,7 +143,7 @@ Follow the table with a one-line note on anything you deliberately did **not** s
 - Suggest a one-line glossary entry for domain terms that must stay.
 
 **Will not:**
-- Reproduce ASD's official ~900-word dictionary as if it were memorized verbatim — always treat the official download as the source of truth for exact approved wording.
+- Present ASD's official ~900-word dictionary as if the skill memorized it verbatim. Always treat the official download as the source of truth for exact approved wording.
 - Simplify creative, marketing, or persuasive copy where voice and nuance are the point.
 - Silently drop a safety condition, exception, or scope qualifier to shorten a sentence — it will flag the trade-off instead.
 - Convert "may have failed" into "failed", or "could be caused by X" into "X is the cause" — losing a hedge changes the claim.
