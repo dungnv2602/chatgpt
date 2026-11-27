@@ -12,7 +12,7 @@ This file is the single index for active task records. Each active task is a fol
 
 ## Current Execution
 
-[20261127-082500 — Refactor task board to reflect scheduler working order](tasks/20261127-082500/task.md)
+_No task currently executing._
 
 ## Ordered Eligible Execution Queue
 
