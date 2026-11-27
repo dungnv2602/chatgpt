@@ -14,9 +14,9 @@ This skill governs workflow design and technical remediation. The Worker owns pr
 
 - Work only on branch `gpt` through remote GitHub operations. Do not use local repository tools.
 - Inspect workflow definitions, source files, report schemas, and indexed immutable reports when the task requires them.
-- Do not inspect hosted run pages, job output, logs, or artifacts; do not poll, dispatch, rerun, or wait for CI results.
+- Do not inspect hosted run pages, job output, logs, or artifacts. do not poll, dispatch, rerun, or wait for CI results.
 - Do not run repository scripts, tests, or lint locally. Record unperformed validation honestly.
-- Preserve failure, cancellation, skipped, neutral, queued, and incomplete states as distinct. Missing evidence is not proof of a workflow defect.
+- Keep failure, cancellation, skipped, neutral, queued, and incomplete states distinct. Missing evidence does not prove a workflow defect.
 - Never weaken tests, validation coverage, permissions, safety controls, or lint baselines.
 
 ## 2. Task attribution
