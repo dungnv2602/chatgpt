@@ -89,8 +89,8 @@ Use this order:
 Before novelist work:
 
 1. Verify whether foundational initialization passed in the current conversation.
-2. If it did not pass, stop novelist initialization and ask the user to say `/start`. Do not fetch foundational or specialist skills until that explicit cue is given.
-3. Fetch the relevant Worker references when they have not been verified in this conversation: `.agent/skills/the-worker/references/archive-records-and-image-prompts.md` and, when needed, `drawing-session-closeout.md` and `image-provenance-and-webp.md`. These define the session-brief, archive, and prompt-provenance procedures.
+2. If it did not pass, stop novelist initialization and ask the user to say `/start`. Do not fetch foundational or specialist skills until the user gives that explicit cue.
+3. Fetch the relevant Worker references if you have not verified them in this conversation: `.agent/skills/the-worker/references/archive-records-and-image-prompts.md` and, when needed, `drawing-session-closeout.md` and `image-provenance-and-webp.md`. These define the session-brief, archive, and prompt-provenance procedures.
 4. Verify whether the Drawing skill and each required reference were successfully read in this conversation. Fetch only files that are not already verified.
 5. Verify whether `.agent/skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Fetch it only if it is not already verified.
 6. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
