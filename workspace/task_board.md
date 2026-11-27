@@ -10,16 +10,12 @@ This file is the single index for active and retained task records. Each active 
 
 ## Current Execution
 
-[20261127-013151-09 — Next P0 CI remediation](tasks/20261127-013151-09/task.md)
+[20261127-013151-04 — Next P0 CI remediation](tasks/20261127-013151-04/task.md)
 
 ## Ready — Mandatory CI P0
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-013151-09 | Review semicolon findings in .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-09/task.md) |
-| 20261127-013151-08 | Review long-sentence findings in .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-08/task.md) |
-| 20261127-013151-07 | Review synonym-rotation findings in .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-07/task.md) |
-| 20261127-013151-05 | Review passive-voice findings in .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-05/task.md) |
 | 20261127-013151-04 | Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-04/task.md) |
 | 20261127-013151-03 | Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-03/task.md) |
 | 20261127-013151-02 | Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-02/task.md) |
@@ -52,7 +48,6 @@ This file is the single index for active and retained task records. Each active 
 | 20261127-013151-12 | Review long-sentence findings in .agent/INITIALIZATION\_POLICY.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-12/task.md) |
 | 20261127-013151-11 | Review passive-voice findings in .agent/INITIALIZATION\_POLICY.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-11/task.md) |
 | 20261127-013151-10 | Review present-perfect findings in .agent/INITIALIZATION\_POLICY.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-10/task.md) |
-| 20261127-013151-06 | Review present-perfect findings in .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-06/task.md) |
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
@@ -78,6 +73,11 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261127-013151-09 | Review semicolon findings in .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-013151-09/task.md) | [8bd1354](https://github.com/dungnv2602/chatgpt/commit/8bd1354d313408514488bb66cc232f044effa6a8) |
+| 20261127-013151-08 | Review long-sentence findings in .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-013151-08/task.md) | [8bd1354](https://github.com/dungnv2602/chatgpt/commit/8bd1354d313408514488bb66cc232f044effa6a8) |
+| 20261127-013151-07 | Review synonym-rotation findings in .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-013151-07/task.md) | [8bd1354](https://github.com/dungnv2602/chatgpt/commit/8bd1354d313408514488bb66cc232f044effa6a8) |
+| 20261127-013151-05 | Review passive-voice findings in .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-013151-05/task.md) | [8bd1354](https://github.com/dungnv2602/chatgpt/commit/8bd1354d313408514488bb66cc232f044effa6a8) |
+| 20261127-013151-06 | Review present-perfect findings in .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-013151-06/task.md) | [8bd1354](https://github.com/dungnv2602/chatgpt/commit/8bd1354d313408514488bb66cc232f044effa6a8) |
 | 20261127-013151-42 | Review present-perfect findings in .agent/skills/ci-ledger/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:24 UTC | [Archived task](../.archive/task/20261127-013151-42/task.md) | [8127560](https://github.com/dungnv2602/chatgpt/commit/8127560922ad06c6d014d41e57b0a59171c04fbd) |
 | 20261127-013151-41 | Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:24 UTC | [Archived task](../.archive/task/20261127-013151-41/task.md) | [8127560](https://github.com/dungnv2602/chatgpt/commit/8127560922ad06c6d014d41e57b0a59171c04fbd) |
 | 20261127-013151-19 | Review synonym-rotation findings in .agent/skills/ci-ledger/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:24 UTC | [Archived task](../.archive/task/20261127-013151-19/task.md) | [8127560](https://github.com/dungnv2602/chatgpt/commit/8127560922ad06c6d014d41e57b0a59171c04fbd) |
