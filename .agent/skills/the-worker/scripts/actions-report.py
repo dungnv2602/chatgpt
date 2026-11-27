@@ -687,53 +687,32 @@ def report_is_retained(report):
 
 
 def prune_invalid_history(root):
-    """Apply error-only retention and migrate retained captures to the canonical layout."""
+    """Retain error captures while preserving lint entries in the shared index."""
     history_root = root / "history"
-    retained_reports = []
-    removed = 0
-    migrated = 0
-    verified = 0
+    retained_reports, removed, migrated, verified = [], 0, 0, 0
     if history_root.is_dir():
         for report_path in sorted(history_root.glob("*/*/report.json")):
             report = json.loads(report_path.read_text(encoding="utf-8"))
-            folder = report_path.parent
-            expected = folder.relative_to(root).as_posix()
+            folder, expected = report_path.parent, report_path.parent.relative_to(root).as_posix()
             if report.get("history_path") != expected or not report_is_retained(report):
-                shutil.rmtree(folder)
-                removed += 1
-                continue
+                shutil.rmtree(folder); removed += 1; continue
             retained_reports.append(report)
-            markdown_path = folder / "report.md"
-            if markdown_path.exists():
-                markdown_path.unlink()
-                migrated += 1
-            write_integrity_manifest(folder, report["capture"]["captured_at_utc"])
-            verified += 1
-
+            md = folder / "report.md"
+            if md.exists(): md.unlink(); migrated += 1
+            write_integrity_manifest(folder, report["capture"]["captured_at_utc"]); verified += 1
     index = load_index(root)
-    records = [index_record(report) for report in retained_reports]
-    records.sort(key=sort_key, reverse=True)
-    index["runs"] = records[:1000]
+    lint_rows = [r for r in index.get("runs", []) if isinstance(r, dict) and r.get("family") == "lint"]
+    action_rows = [index_record(r) for r in retained_reports]
+    index["runs"] = sorted(lint_rows + action_rows, key=sort_key, reverse=True)[:1000]
     index["latest_report"] = index["runs"][0] if index["runs"] else None
     save_json(root / "index.json", index)
-
-    # Remove only derived navigation copies. Canonical history JSON and logs remain in place.
-    for name in ("latest-gh-ac-report.md", "latest-gh-ac-report.json"):
-        (root / name).unlink(missing_ok=True)
+    for name in ("latest-gh-ac-report.md", "latest-gh-ac-report.json"): (root / name).unlink(missing_ok=True)
     workflow_root = root / "by_workflow"
-    if workflow_root.exists():
-        shutil.rmtree(workflow_root)
-
+    if workflow_root.exists(): shutil.rmtree(workflow_root)
     if history_root.is_dir():
         for child in history_root.iterdir():
-            if child.is_dir() and not any(child.iterdir()):
-                child.rmdir()
-    return {
-        "removed": removed, "retained": len(retained_reports),
-        "migrated_markdown": migrated, "verified_integrity": verified,
-    }
-
-
+            if child.is_dir() and not any(child.iterdir()): child.rmdir()
+    return {"removed": removed, "retained": len(retained_reports), "migrated_markdown": migrated, "verified_integrity": verified}
 def render_report(root, history_path):
     """Render one canonical report JSON file as Markdown without persisting a copy."""
     root = root.resolve()

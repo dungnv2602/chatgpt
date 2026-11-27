@@ -56,14 +56,14 @@ jobs:
 
       - name: Compile and test the diagnostic reporter
         run: |
-          python3 -m py_compile .takeout/reports/gh_ac_reports/scripts/report.py .takeout/reports/triage/scripts/ledger.py .github/scripts/cleanup-archive.py
+          python3 -m py_compile .agent/skills/the-worker/scripts/actions-report.py .agent/skills/the-worker/scripts/ledger.py .github/scripts/cleanup-archive.py
           python3 .github/scripts/test_cleanup_archive.py
           python3 -m unittest discover \
-            -s .takeout/reports/gh_ac_reports/scripts \
+            -s  .takeout/reports/history/scripts \
             -p 'test_report.py' \
             -v
           python3 -m unittest discover \
-            -s .takeout/reports/triage/scripts \
+            -s  .takeout/reports/scripts \
             -p 'test_ledger.py' \
             -v
 
@@ -71,7 +71,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 .takeout/reports/gh_ac_reports/scripts/report.py --mode sweep --repo "$GITHUB_REPOSITORY"
+        run: python3 .agent/skills/the-worker/scripts/actions-report.py --mode sweep --repo "$GITHUB_REPOSITORY"
 
       - name: Ingest centralized CI issues
         run: python3 .takeout/reports/triage/scripts/ledger.py --mode ingest
@@ -83,7 +83,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- .takeout/reports/gh_ac_reports/ .takeout/reports/triage/ workspace/tasks/ workspace/task_board.md
+          git add -A -- .takeout/reports/ workspace/tasks/ workspace/task_board.md
           if git diff --cached --quiet; then
             echo "No new diagnostic evidence to publish."
             exit 0
