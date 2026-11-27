@@ -1,7 +1,7 @@
 # Discussion Register
 
 ## Current Step
-Execute all CI-generated P0 tasks as explicitly requested on 2026-11-27. Promote any Proposed P0 entries to mandatory, order the task board newest first, and process eligible tasks sequentially. Do not review hosted CI results unless the user explicitly requests results review.
+Identify the complete eligible CI-generated P0 batch from the current task board, active task records, and CI Ledger linkage; then establish execution order and task dependencies. Scope: approved workspace task records and triage Ledger only. Expected result: a verified newest-first batch inventory with blocked decision-governed items isolated.
 
 ## Open Discussions
 
