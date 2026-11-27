@@ -4,7 +4,7 @@
 - **Template version:** 2.0
 - **ID:** 20261126-232913
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-26 23:50 UTC
+- **Updated:** 2026-11-27 00:20 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -80,12 +80,12 @@ Implement accepted ADR-0004 completely and restore reliable CI Ledger operation.
 ## 7. Current State
 - ADR-0004 is accepted and indexed.
 - This task is Approved, P0, In Progress, and Current Execution.
-- Six implementation subtasks are registered in this folder; subtasks 01–03 are Done, subtask 04 is In Progress, and subtasks 05–06 remain Ready.
+- Six implementation subtasks are registered in this folder; subtasks 01–04 are Done, subtask 05 is In Progress, and subtask 06 remains Ready.
 - The Ledger generator now publishes governed folder tasks, and resolution/recurrence semantics are commit-based with terminal history retained. Ingestion integrity, active-task migration, archive compatibility, and final regression coverage remain incomplete.
 - No hosted workflow has been run or inspected for this implementation.
 
 ## 8. Remaining Work
-- Subtasks 04–06 remain incomplete.
+- Subtasks 05–06 remain incomplete.
 - Active flat task records have not yet been migrated.
 - Templates, generator, schema, skills, archive reader/writer, tests, and catalog have not yet been updated.
 - Hosted regression results remain intentionally unreviewed pending explicit user trigger.

@@ -6,7 +6,7 @@
 - **ID:** 20261126-232913-04
 - **Parent Task ID:** 20261126-232913
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -14,7 +14,7 @@
 - **Dependencies:** 20261126-232913-01
 - **Required:** Yes
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-26 23:50 UTC
+- **Updated:** 2026-11-27 00:20 UTC
 
 ## 1. Objective
 Ingestion integrity and report-index hardening as part of the accepted ADR-0004 implementation.
@@ -43,7 +43,13 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 - **Next:** Validate indexed IDs and paths, preserve incomplete Actions captures for retry, and surface processing errors as non-zero results.
 
 ## 6. Current State
-In Progress. Index shapes and existing resolved-validation records have been inspected. Report path validation, incomplete-capture retry handling, and failure exit codes remain to be implemented.
+Done. Index identities and paths are validated; missing indexed complete reports fail closed; incomplete and pre-finalizer Actions captures remain retryable; per-report failures are structured and produce a non-zero CLI exit while allowing independent reports to be processed and safely published.
+
+## 8. Completion Record
+- **Status:** Done
+- **Completed at:** 2026-11-27 00:20 UTC
+- **Completion basis:** All six acceptance criteria are implemented and regression coverage exists. Current repository index audit found 0 missing reports across 48 lint and 16 Actions entries; all 16 Actions bodies satisfy the complete post-run contract. Remote read-back verified. Tests were not run.
+- **Evidence:** Ledger generator SHA 5a389ba377213c909ce6cad714e282337f08fc89; test SHA 9d333f8c0e979808c09ca714ec439200c9fa2931; static report-index audit 64/64 present and valid.
 
 ## 7. Evidence
 - **Commit SHA:** Not applicable yet.

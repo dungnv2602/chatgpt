@@ -6,7 +6,7 @@
 - **ID:** 20261126-232913-05
 - **Parent Task ID:** 20261126-232913
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -14,7 +14,7 @@
 - **Dependencies:** 20261126-232913-01
 - **Required:** Yes
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-26 23:31 UTC
+- **Updated:** 2026-11-27 00:20 UTC
 
 ## 1. Objective
 Active-task migration and folder archive compatibility as part of the accepted ADR-0004 implementation.
@@ -36,14 +36,14 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 - Do not inspect hosted results before explicit user trigger.
 
 ## 5. Progress Log
-### 2026-11-26 23:31 UTC
-- **Action:** Registered this implementation subtask and its acceptance criteria.
-- **Result:** Ready; implementation has not started.
-- **References:** ADR-0004 and parent task folder.
-- **Next:** Execute after dependencies are complete.
+### 2026-11-27 00:20 UTC
+- **Action:** Began inventory of active flat task records and review of archive retention/index cleanup behavior.
+- **Result:** Task-folder and Ledger generation contracts are in place. Migration must preserve all active task IDs and metadata, create at least one subtask record per task, update board pointers and relative evidence links, and leave historical flat archives immutable. Archive cleanup currently indexes exact file paths, so new folder archives must index every child file.
+- **References:** workspace/tasks/; workspace/task_board.md; .github/archive-retention-index.json; .github/scripts/cleanup-archive.py; ADR-0004.
+- **Next:** Enumerate exact active flat task files and inspect cleanup/index schema before moving any record.
 
 ## 6. Current State
-Ready; implementation has not started.
+In Progress. Active task inventory and archive cleanup compatibility are being audited; no active flat task records have been migrated yet.
 
 ## 7. Evidence
 - **Commit SHA:** Not applicable yet.
