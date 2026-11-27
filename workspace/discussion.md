@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T23:17:11.683Z**: Child 50 completed. The task-template exemption, 22 task-board child links, and three obsolete template links are fixed. The central Ledger now records the Markdown-link tooling finding as resolved. Commits: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`, `6057e5596021b84a70a7201875c2f7bd3d1890b0`.
+- **2026-11-27T23:17:47.504Z**: Child 50 completed, the Ledger finding resolved, and the task record/index row deleted under the standing parent lifecycle. Source fix: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`. Documentation fixes: `6057e5596021b84a70a7201875c2f7bd3d1890b0`. Ledger closeout: `f7a5c764c99b1a070b9c84ffeed6af1673b606e3`.
 
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.

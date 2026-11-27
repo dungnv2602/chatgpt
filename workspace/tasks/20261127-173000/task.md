@@ -78,7 +78,7 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - Recovered all five historical check reports through Git commit path history, without opening hosted Actions results.
 - Corrected the canonical task-template exemption and regression test. Fixed all 22 current task-board child links and the three obsolete template links in the ADR, analysis, and draft indexes.
 - Source fix: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`. Documentation fixes: `6057e5596021b84a70a7201875c2f7bd3d1890b0`.
-- Readback confirmed all 23 board link targets and all three template files exist in the current tree. Central Ledger finding `lint-tooling-2c26d8bc14fd4d4bbe314234` was marked resolved with all recovered report references. Closeout commit and readback pending.
+- Readback confirmed all 23 board link targets and all three template files exist in the current tree. Central Ledger finding `lint-tooling-2c26d8bc14fd4d4bbe314234` was marked resolved with all recovered report references. Closeout commit `f7a5c764c99b1a070b9c84ffeed6af1673b606e3` was read back. Deleted the completed child record and index row under the standing parent lifecycle.
 
 ### 2026-11-27T23:12:40.445Z — resumed Markdown-anchor tooling remediation child 50
 
