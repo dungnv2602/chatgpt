@@ -733,6 +733,30 @@
     {
       "path": ".archive/task/20261126-224100-apply-ci-p0-batch-to-session-start.md",
       "archived_at_utc": "2026-11-26T22:46:04Z"
+    },
+    {
+      "path": ".archive/task/20261127-033914-01/task.md",
+      "archived_at_utc": "2026-11-27T03:59:53Z"
+    },
+    {
+      "path": ".archive/task/20261127-033914-01/subtasks/README.md",
+      "archived_at_utc": "2026-11-27T03:59:53Z"
+    },
+    {
+      "path": ".archive/task/20261127-033914-01/subtasks/01-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T03:59:53Z"
+    },
+    {
+      "path": ".archive/task/20261127-033914-01/subtasks/02-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T03:59:53Z"
+    },
+    {
+      "path": ".archive/task/20261127-033914-01/subtasks/03-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T03:59:53Z"
+    },
+    {
+      "path": ".archive/task/20261127-033914-01/subtasks/04-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T03:59:53Z"
     }
   ]
 }
