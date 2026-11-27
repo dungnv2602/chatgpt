@@ -10,7 +10,7 @@ This file is the single index for active and retained task records. Each active 
 
 ## Current Execution
 
-[20261127-013151-24 — Next P0 CI remediation](tasks/20261127-013151-24/task.md)
+[20261127-013151-20 — Next P0 CI remediation](tasks/20261127-013151-20/task.md)
 
 ## Ready — Mandatory CI P0
 
@@ -21,10 +21,6 @@ This file is the single index for active and retained task records. Each active 
 | 20261127-013151-32 | Review semicolon findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-32/task.md) |
 | 20261127-013151-31 | Review passive-voice findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-31/task.md) |
 | 20261127-013151-30 | Review long-sentence findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-30/task.md) |
-| 20261127-013151-24 | Review present-perfect findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-24/task.md) |
-| 20261127-013151-23 | Review passive-voice findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-23/task.md) |
-| 20261127-013151-22 | Review semicolon findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-22/task.md) |
-| 20261127-013151-21 | Review long-sentence findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-21/task.md) |
 | 20261127-013151-20 | Review synonym-rotation findings in .agent/INITIALIZATION\_POLICY.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-20/task.md) |
 | 20261127-013151-16 | Review long-sentence findings in .agent/SESSION\_START.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-16/task.md) |
 | 20261127-013151-15 | Review synonym-rotation findings in .agent/SESSION\_START.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-15/task.md) |
@@ -58,6 +54,10 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261127-013151-24 | Review present-perfect findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:47 UTC | [Archived task](../.archive/task/20261127-013151-24/task.md) | [0fc410b](https://github.com/dungnv2602/chatgpt/commit/0fc410b4c2c6e4acd091088b73bb65de948b4f8b) |
+| 20261127-013151-23 | Review passive-voice findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:47 UTC | [Archived task](../.archive/task/20261127-013151-23/task.md) | [0fc410b](https://github.com/dungnv2602/chatgpt/commit/0fc410b4c2c6e4acd091088b73bb65de948b4f8b) |
+| 20261127-013151-22 | Review semicolon findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:47 UTC | [Archived task](../.archive/task/20261127-013151-22/task.md) | [0fc410b](https://github.com/dungnv2602/chatgpt/commit/0fc410b4c2c6e4acd091088b73bb65de948b4f8b) |
+| 20261127-013151-21 | Review long-sentence findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:47 UTC | [Archived task](../.archive/task/20261127-013151-21/task.md) | [0fc410b](https://github.com/dungnv2602/chatgpt/commit/0fc410b4c2c6e4acd091088b73bb65de948b4f8b) |
 | 20261127-013151-29 | Review synonym-rotation findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | P0 | Cancelled | Assistant | Approved | — | 2026-11-27 04:42 UTC | [Archived task](../.archive/task/20261127-013151-29/task.md) | [31adb2c](https://github.com/dungnv2602/chatgpt/commit/31adb2c96bac901836c073ac643b0d9604c015f7) |
 | 20261127-013151-28 | Review semicolon findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | P0 | Cancelled | Assistant | Approved | — | 2026-11-27 04:42 UTC | [Archived task](../.archive/task/20261127-013151-28/task.md) | [31adb2c](https://github.com/dungnv2602/chatgpt/commit/31adb2c96bac901836c073ac643b0d9604c015f7) |
 | 20261127-013151-27 | Review present-perfect findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | P0 | Cancelled | Assistant | Approved | — | 2026-11-27 04:42 UTC | [Archived task](../.archive/task/20261127-013151-27/task.md) | [31adb2c](https://github.com/dungnv2602/chatgpt/commit/31adb2c96bac901836c073ac643b0d9604c015f7) |
