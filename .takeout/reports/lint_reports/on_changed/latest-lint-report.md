@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#868](https://github.com/dungnv2602/chatgpt/actions/runs/45915952464)
-- **Run ID / attempt:** 45915952464 / 1
+- **Run:** [#869](https://github.com/dungnv2602/chatgpt/actions/runs/45916045895)
+- **Run ID / attempt:** 45916045895 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 80670bb8b8536256419b5b2372076357da62d2ac
+- **Branch / commit:** gpt / 2944f6bf4af7847944660a4f7a22ba54313a9ffc
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 470b32f24310969cc6e0856cfc744ffc8db5e31e
-- **Linter source SHA:** 80670bb8b8536256419b5b2372076357da62d2ac
-- **Generated (UTC):** 2026-11-27T00:18:55.700106+00:00
+- **Baseline SHA:** 80670bb8b8536256419b5b2372076357da62d2ac
+- **Linter source SHA:** 2944f6bf4af7847944660a4f7a22ba54313a9ffc
+- **Generated (UTC):** 2026-11-27T00:19:55.966744+00:00
 
 ## 1. Executive summary
 
@@ -47,7 +47,7 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/the-worker/SKILL.md | FAIL | 31 | 11 | 0 | 5993 | 0.5 | 1 |
+| .agent/skills/the-worker/SKILL.md | FAIL | 31 | 11 | 0 | 5997 | 0.5 | 1 |
 
 ## 5. Findings by rule
 
@@ -90,7 +90,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.340s
+Ran 4 tests in 0.224s
 
 OK
 ~~~
@@ -103,7 +103,7 @@ OK
 ~~~text
 .......
 ----------------------------------------------------------------------
-Ran 7 tests in 0.036s
+Ran 7 tests in 0.008s
 
 OK
 ~~~
@@ -123,7 +123,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 1 changed Markdown sources (363 available as link targets) and 7 local Markdown links.
+Scanned 1 changed Markdown sources (364 available as link targets) and 7 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -277,7 +277,7 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 31
 - **Hard findings:** 11
 - **Baseline:** 0
-- **Words:** 5993
+- **Words:** 5997
 - **Findings per 100 words:** 0.5
 
 #### Complete diagnostics
