@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-51
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -87,3 +87,14 @@ Inventory and migrate the CI Ledger and GitHub Actions operational resources int
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
+
+
+### Implementation evidence
+
+- `7744b9fccf0f5671054a0e9d4031c0bb3ff1ab29`: schemas and eligibility policy moved into Worker assets/scripts.
+- `36a6ecc41200e1597ca2eb3a393a4d5bcf68607c`: report producers moved into Worker scripts.
+- `578207a672f90c137d34d4fea39fc723a760dfbc`: regression tests moved and imports/path contracts updated.
+- `4d86b3486045fb67e85a649435f5b4812fabde0a`: composite capture action switched to Worker scripts.
+- `6f8adc02ab7e7c079643b06b8c37b265341d4af1`: ownership references and report README updated.
+- `e75cf107c9387ce7c7f7f11c4d9888240e3c9033`: obsolete report-family implementations removed.
+- `9b8a88ebe16731a21ba2934285b30a5c0244a7e8`: corrected action test filter and ledger invocation path.
