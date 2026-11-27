@@ -557,5 +557,22 @@ class LedgerAttributionTests(unittest.TestCase):
         self.assertNotIn("[open](", child)
 
 
+    def test_ci_child_inherits_parent_governance_gate(self):
+        pending_id = "20261127-090100"
+        self.add_parent(
+            pending_id, status="Proposed",
+            governing="Pending — ADR-0009 approval required",
+        )
+        self.add_lint("302", source_task_id=pending_id)
+        self.ingest()
+        children = sorted((self.root / "workspace" / "tasks" / pending_id / "subtasks").glob("[0-9][0-9]-*.md"))
+        self.assertEqual(len(children), 1)
+        child = children[0].read_text(encoding="utf-8")
+        self.assertEqual(LEDGER.task_metadata(child, "Priority"), "P0")
+        self.assertEqual(LEDGER.task_metadata(child, "Approval"), "Approved")
+        self.assertEqual(LEDGER.task_metadata(child, "Status"), "Proposed")
+        self.assertEqual(LEDGER.task_metadata(child, "Governing ADR(s)"), "Pending — ADR-0009 approval required")
+        self.assertIn("parent governance decision is pending", LEDGER.task_metadata(child, "Eligibility / deferral reason").lower())
+
 if __name__ == "__main__":
     unittest.main()
