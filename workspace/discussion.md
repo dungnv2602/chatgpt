@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T23:02:30.332Z**: Child 57 completed. The Worker now requires queue reselection after state changes, continuation past isolated blockers, no routine execution pings, and one essential blocker question at a time. Commit `c60358df2cc81747a5223f2d5aa5c750bb4773df` was read back.
+- **2026-11-27T23:02:30.332Z**: Child 57 completed. The Worker now requires queue reselection after state changes, continuation past isolated blockers, no routine execution pings, and one essential blocker question at a time. Commit `c60358df2cc81747a5223f2d5aa5c750bb4773df` was read back. The child record and index row were deleted under the standing parent lifecycle rule.
 
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.

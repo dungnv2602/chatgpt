@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 23:02 UTC
+- **Updated:** 2026-11-27 23:03 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -83,7 +83,7 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Changed paths:** Worker skill, Conversation Mode, Session Start, initialization policy, task board, discussion register, parent task, subtask index, and child57 record.
 - **Readback:** All nine paths fetched from `gpt`; expected change markers present.
 - **Checks:** Local scripts, tests, and lint not run. Hosted CI not inspected.
-- **Closeout:** Child 57 marked Done. Its task record will be deleted after this closeout under the standing parent lifecycle rule.
+- **Closeout:** Child 57 passed its acceptance criteria. Its record and index row were deleted directly after verified closeout under the standing parent lifecycle rule.
 
 ### 2026-11-27T18:20:00Z — Refactor Skills child 56 closeout
 
