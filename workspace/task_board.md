@@ -14,17 +14,16 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-26: CI remediation — Review long-sentence findings in .agent/SESSION_START.md](tasks/20261127-173000/subtasks/26-ci-remediation-review-long-sentence-findings-in-agent-session-start-md.md). This P0 child is active under the persistent Refactor Skills parent.
+[20261127-173000-51: Consolidate CI Ledger and GitHub Actions operational assets into The Worker](tasks/20261127-173000/subtasks/51-consolidate-ci-ledger-and-github-actions-operational-assets.md). This P0 consolidation is active under the persistent Refactor Skills parent.
 
 ## Ordered Eligible Execution Queue
 
-1. **P0** — [20261127-173000-50: CI remediation — Fix lint tooling check: Markdown links and heading anchors](tasks/20261127-173000/subtasks/50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) — Approved, Ready, no dependencies.
-2. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
-3. **P1** — [20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — Approved, Ready, no dependencies.
+1. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
+2. **P1** — [20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — Approved, Ready, no dependencies.
 
 ## Next Task
 
-[20261127-173000-50](tasks/20261127-173000/subtasks/50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) is next after child 10 completes.
+The Worker consolidation child 51 is Current Execution. The remaining eligible queue follows after it.
 
 ## Deferred Work
 
@@ -55,6 +54,13 @@ This is the sole index of active task parents. Each parent folder contains `task
 | 20261127-173000-47 | CI remediation — Review passive-voice findings in .agent/skills/asd-ste100/references/repository-writing-policy.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](47-ci-remediation-review-passive-voice-findings-in-agent-skills-asd-ste100-referen.md) |
 | 20261127-173000-48 | CI remediation — Review synonym-rotation findings in .agent/skills/agent-skill-authoring/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](48-ci-remediation-review-synonym-rotation-findings-in-agent-skills-agent-skill-aut.md) |
 | 20261127-173000-49 | CI remediation — Review passive-voice findings in workspace/task\\\_board.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](49-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md) |
+
+### Paused
+
+| ID | Title | Priority | Status | Approval | Reason | Task record |
+|---|---|---:|---|---|---|---|
+| 20261127-173000-26 | CI remediation — Review long-sentence findings in .agent/SESSION_START.md | P0 | Paused | Approved | User superseded the startup remediation queue to prioritize Worker consolidation. | [subtask](tasks/20261127-173000/subtasks/26-ci-remediation-review-long-sentence-findings-in-agent-session-start-md.md) |
+| 20261127-173000-50 | CI remediation — Fix lint tooling check: Markdown links and heading anchors | P0 | Paused | Approved | User superseded the startup remediation queue to prioritize Worker consolidation. | [subtask](tasks/20261127-173000/subtasks/50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 
 ### Proposed — decision pending
 
