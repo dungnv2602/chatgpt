@@ -2,7 +2,7 @@
 
 ## Current Step
 
-**2026-11-27 08:25 UTC — Task-board scheduler-order refactor.** Create the approved task record and refactor `workspace/task_board.md` to show Current Execution, a ranked eligible queue, Next Task, and deferred work. Task: [20261127-082500](tasks/20261127-082500/task.md).
+**2026-11-27 08:26 UTC — Publish scheduler-order board.** Update `workspace/task_board.md` with one Current Execution pointer, a ranked eligible queue, a Next Task indicator, and distinct deferred sections. Task: [20261127-082500](tasks/20261127-082500/task.md).
 
 ## Open Discussions
 
