@@ -142,7 +142,7 @@ class LedgerAttributionTests(unittest.TestCase):
     def add_actions(
         self, run_id, timestamp=NOW, issues=None, task_message=None,
         source_status="completed", completeness="Complete", stage="post_run",
-        conclusion="failure",
+        conclusion="failure", source_event="push",
     ):
         workflow_id = 55
         history_relative = "history/" + str(workflow_id) + "/" + str(run_id) + "-attempt-1-" + stage
@@ -155,7 +155,7 @@ class LedgerAttributionTests(unittest.TestCase):
                 "workflow_id": workflow_id, "workflow_name": "Example CI",
                 "workflow_path": ".github/workflows/example.yml",
                 "run_url": "https://example.invalid/actions/runs/" + str(run_id),
-                "status": source_status, "conclusion": conclusion, "event": "push",
+                "status": source_status, "conclusion": conclusion, "event": source_event,
                 "head_sha": "b" * 40,
                 "head_commit_message": task_message,
             },
@@ -414,6 +414,142 @@ class LedgerAttributionTests(unittest.TestCase):
         LEDGER.atomic_write_text(target, "written\n")
         self.assertEqual(target.read_text(encoding="utf-8"), "written\n")
         self.assertEqual(list(self.root.glob(".atomic.txt.*")), [])
+
+
+    def test_repeated_actions_observations_reuse_one_child(self):
+        message = "Fix task.\n\nTask-ID: " + PARENT_ID
+        self.add_actions("270", task_message=message)
+        self.ingest()
+        self.add_actions("271", timestamp="2026-11-27T10:05:00Z", task_message=message)
+        self.ingest()
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(finding["occurrence_count"], 2)
+        self.assertEqual(len(finding["evidence"]), 2)
+        self.assertEqual(finding["task_refs"], [PARENT_ID])
+        self.assertEqual(finding["subtask_refs"], [PARENT_ID + "-01"])
+        self.assertEqual(len(self.child_files()), 1)
+
+    def test_lint_tooling_repeat_across_scopes_reuses_one_child(self):
+        checks = [
+            {"name": name, "status": ("Failed" if name == "Markdown links and heading anchors" else "Passed"),
+             "exit_code": (1 if name == "Markdown links and heading anchors" else 0), "output": "check"}
+            for name in LEDGER.LINT_TOOLING_CHECKS
+        ]
+        self.add_lint("280", scope="on_repo", checks=checks)
+        self.ingest()
+        self.add_lint("281", scope="on_changed", timestamp="2026-11-27T10:05:00Z", checks=checks)
+        self.ingest()
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(finding["category"], "lint_tooling")
+        self.assertEqual(finding["occurrence_count"], 2)
+        self.assertEqual(len(finding["subtask_refs"]), 1)
+        self.assertEqual(len(self.child_files()), 1)
+
+    def test_processed_report_is_idempotent(self):
+        self.add_lint("290")
+        first = self.ingest()
+        second = self.ingest()
+        self.assertEqual(first["subtasks_created"], 1)
+        self.assertEqual(second["reports_processed"], 0)
+        self.assertEqual(len(self.child_files()), 1)
+        self.assertEqual(self.read_ledger()["findings"][0]["occurrence_count"], 1)
+
+    def test_untracked_recurring_lint_finding_is_suppressed(self):
+        finding = {
+            "file": "docs/example.md", "line": 5, "col": 2, "rule": "semicolon",
+            "level": "hard", "message": "Split this sentence.",
+            "fingerprint": "dddddddd4444", "comparison": "recurring",
+        }
+        self.add_lint("291", findings=[finding])
+        self.ingest()
+        self.assertEqual(self.read_ledger()["findings"], [])
+        self.assertEqual(self.child_files(), [])
+
+    def test_unknown_flat_task_record_does_not_become_parent(self):
+        flat_id = "20261127-080000"
+        flat = self.root / "workspace" / "tasks" / (flat_id + ".md")
+        flat.write_text("# Legacy flat task\n\n- **ID:** " + flat_id + "\n- **Origin:** User\n- **Status:** In Progress\n", encoding="utf-8")
+        self.add_lint("292", source_task_id=flat_id)
+        self.ingest()
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(finding["task_refs"], [])
+        self.assertEqual(finding["subtask_refs"], [])
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 1)
+
+    def test_scheduled_actions_run_is_unattributed(self):
+        self.add_actions("293", task_message="Task-ID: " + PARENT_ID, source_event="schedule")
+        self.ingest()
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(finding["task_refs"], [])
+        self.assertEqual(finding["evidence"][-1]["attribution_status"], "unsupported_event")
+        self.assertEqual(self.child_files(), [])
+
+    def test_malformed_report_remains_unprocessed(self):
+        report = self.add_lint("294")
+        report.write_text("{ malformed json", encoding="utf-8")
+        result = self.ingest()
+        self.assertEqual(len(result["errors"]), 1)
+        self.assertNotIn(
+            ".takeout/reports/lint_reports/on_repo/history/294-attempt-1/report.json",
+            self.read_ledger()["ingestion_state"]["processed_reports"],
+        )
+        self.assertEqual(self.read_ledger()["findings"], [])
+
+    def test_missing_indexed_report_fails_closed(self):
+        report = self.add_lint("295")
+        report.unlink()
+        with self.assertRaises(LEDGER.LedgerError):
+            self.ingest()
+        self.assertEqual(self.read_ledger()["findings"], [])
+
+    def test_human_managed_finding_fields_survive_recurrence(self):
+        self.ingest_after_lint("296")
+        ledger = self.read_ledger()
+        finding = ledger["findings"][0]
+        finding["status"] = "accepted"
+        finding["severity"] = "low"
+        finding["owner"] = "Human owner"
+        finding["accepted_risk"] = {
+            "rationale": "Known risk.", "accepted_by": "User", "accepted_at_utc": NOW,
+            "expires_at_utc": None,
+        }
+        observation = {
+            "finding_id": finding["finding_id"],
+            "evidence": {
+                "report_path": ".takeout/reports/lint_reports/on_repo/history/297-attempt-1/report.json",
+                "run_url": None, "observed_at_utc": "2026-11-27T10:05:00Z",
+                "note": "recurrence", "observation_id": "lint:297:1",
+                "source_task_id": PARENT_ID, "parent_task_id": PARENT_ID,
+                "attribution_status": "linked", "source_commit_sha": "d" * 40,
+            },
+        }
+        LEDGER.upsert_finding(ledger, observation)
+        self.assertEqual(finding["status"], "accepted")
+        self.assertEqual(finding["severity"], "low")
+        self.assertEqual(finding["owner"], "Human owner")
+        self.assertEqual(finding["accepted_risk"]["rationale"], "Known risk.")
+
+    def test_resolved_finding_needs_commit_but_not_hosted_validation(self):
+        self.ingest_after_lint("298")
+        ledger = self.read_ledger()
+        finding = ledger["findings"][0]
+        finding["status"] = "resolved"
+        finding["resolution"] = {"fix_commit": "e" * 40, "resolved_at_utc": NOW, "note": "Fixed."}
+        LEDGER.validate_semantics(ledger)
+        finding["resolution"].pop("fix_commit")
+        with self.assertRaises(LEDGER.LedgerError):
+            LEDGER.validate_semantics(ledger)
+
+    def test_diagnostic_markdown_is_escaped_in_task_summary(self):
+        malicious = {
+            "file": "docs/example.md", "line": 5, "col": 2, "rule": "semicolon",
+            "level": "hard", "message": "[open](https://attacker.invalid)",
+            "fingerprint": "eeeeeeee5555", "comparison": "new",
+        }
+        self.ingest_after_lint("299", findings=[malicious])
+        child = self.child_files()[0].read_text(encoding="utf-8")
+        self.assertIn("\\[open\\]", child)
+        self.assertNotIn("[open](", child)
 
 
 if __name__ == "__main__":
