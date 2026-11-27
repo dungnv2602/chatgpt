@@ -138,7 +138,7 @@ The Worker owns document governance and must apply this gate before creating, mo
 
 Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required. explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
-The catalog and validator are integral Worker-owned assets in the Worker's `references/` and `scripts/` directories. The catalog owns document-type and Markdown coverage integrity. The validator verifies catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+Canonical copy-ready formats are in `.agent/skills/the-worker/assets/`; see its README for the asset index. The catalog and validator are integral Worker-owned assets in the Worker's `references/` and `scripts/` directories. The catalog owns document-type and Markdown coverage integrity. The validator verifies catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
 
 ## Worker-owned domain operations
 
