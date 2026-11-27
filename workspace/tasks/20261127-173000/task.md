@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 18:40 UTC
+- **Updated:** 2026-11-27 11:02 UTC
 - **Priority:** P0
 - **Status:** Ready
 - **Origin:** User
@@ -92,3 +92,4 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
+| `lint-tooling-fd63ee164167664baaa97d9b` | high | Lint tooling check failed: Lint report regression tests | [report](../../../.takeout/reports/lint_reports/on_changed/history/45979960470-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45979960470) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45984083069-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45984083069) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45985300823-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45985300823) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45985475477-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45985475477) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45986815109-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45986815109) |
