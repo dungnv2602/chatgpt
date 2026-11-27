@@ -100,7 +100,7 @@ Before creating or updating a task, audit the proposed relationship. If the pare
 The Worker owns document governance and must apply this gate before creating, moving, renaming, materially revising, or validating a recurring document or structured record.
 
 1. Identify the target path, document owner, and type.
-2. Read the current catalog entry in `.agent/skills/document-standards/references/document-type-catalog.md`. Match Markdown against the path-coverage register and structured records against the exact schema, processor, generator, and tests.
+2. Read the current catalog entry in `.agent/skills/the-worker/references/document-type-catalog.md`. Match Markdown against the path-coverage register and structured records against the exact schema, processor, generator, and tests.
 3. Read the owner's instructions and retrieve the applicable canonical template, schema, or embedded contract and relevant tests **before modifying the target**. Never begin target edits before reading its template.
 4. If the format or coverage rule is missing, define it first. Place templates in the canonical owner assets directory. Update the catalog, owner index/workflow, and coverage rule. Use Reserved for a validated Markdown family with no current record, commit and read back the format setup first, then change Reserved to Active in the same commit that creates its first record. Use Active for existing families. Optional only for eligible generator-owned outputs.
 5. Create or revise from the canonical format. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable, remove unused placeholders, and do not invent approvals or values. For existing documents, update the canonical format before migrating the target. Do not mass-migrate untouched history.
@@ -118,7 +118,7 @@ The Worker owns document governance and must apply this gate before creating, mo
 
 Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required. explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
-Catalog validator and tests remain supporting infrastructure under `.agent/skills/document-standards/`. they are assets, not a separately activated skill. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. it does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+Catalog validator and tests remain supporting infrastructure under `.agent/skills/the-worker/`. they are assets, not a separately activated skill. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. it does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
 
 ## Diagnostic investigation before blockers
 
