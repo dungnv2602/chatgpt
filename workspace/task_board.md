@@ -62,10 +62,6 @@ _No proposed tasks._
 |---|---|---:|---|---|---|---|
 | 20261126-142500-22 | Consolidate Document Standards into The Worker | P1 | In Progress | Approved | Supporting consolidation work; current CI P0 queue remains scheduled first. | [22](tasks/20261126-142500/subtasks/22-consolidate-document-standards-into-worker.md) |
 
-### Paused
-
-_No paused tasks._
-
 ### Dependency-waiting
 
 _No dependency-waiting tasks._
