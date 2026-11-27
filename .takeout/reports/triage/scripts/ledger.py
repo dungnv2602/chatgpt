@@ -734,17 +734,17 @@ def render_worker_task(root, task_id, title, parent_group, findings, timestamp, 
         "[State the parent outcome.]":
             "Improve the affected work target by addressing the actionable CI findings recorded in its required child subtasks.",
         "[List parent-level outcome criteria. For implementation tasks, map applicable accepted ADR Confirmation criteria to the relevant child subtask acceptance criteria.]":
-            "1. Worker reviews all child finding groups and assigns applicable accepted ADR coverage.\n2. Worker separately authorizes each remediation subtask.\n3. Every required CI remediation child meets its commit-based completion criteria.\n4. The parent closes only after every required child is Done.",
+            "1. Execute all eligible child remediation tasks under standing authorization while respecting safety and accepted ADR constraints.\n2. Record each child’s verified intended-branch commit, SHA, and remediation summary.\n3. The parent closes only after every required child is Done.",
         "[Record approved decisions and concise rationale. Mark unapproved ideas as Proposed.]":
-            "- **Grouping:** One parent per affected work target. Each stable CI remediation group is a child subtask.\n- **Execution approval:** Pending Worker review.\n- **Completion:** Each CI child is commit-based; hosted validation is separate metadata.",
+            "- **Grouping:** One parent per affected work target. Each stable CI remediation group is a child subtask.\n- **Execution approval:** Approved under standing authorization.\n- **Completion:** Each CI child is commit-based; hosted validation is separate metadata.",
         "Record every meaningful action with timestamp, action, result, references, and next step.\n\n### YYYY-MM-DD HH:MM UTC\n\n- **Action:** [What changed or was checked.]\n- **Result:** [Observed outcome and uncertainty.]\n- **References:** [Exact paths, commits, URLs, or source IDs.]\n- **Next:** [Next action.]":
-            "### " + created + "\n\n- **Action:** Created a work-target parent and grouped " + str(len(findings)) + " CI finding(s) into child remediation subtasks.\n- **Result:** The parent is Ready and Approved under standing authorization.\n- **References:** .takeout/reports/triage/ledger.json and the child evidence tables.\n- **Next:** Worker reviews governance and separately authorizes eligible children.",
+            "### " + created + "\n\n- **Action:** Created a work-target parent and grouped " + str(len(findings)) + " CI finding(s) into child remediation subtasks.\n- **Result:** The parent is Ready and Approved under standing authorization.\n- **References:** .takeout/reports/triage/ledger.json and the child evidence tables.\n- **Next:** Execute eligible children under standing authorization; preserve safety and accepted decision constraints.",
         "[Describe the verified parent outcome and the state of its subtasks. Distinguish committed implementation from unverified behavior.]":
             "Proposed. The Ledger grouped findings by work target. Root causes and fixes remain unassessed. CI remediation work exists only in child subtasks.",
         "[List incomplete requirements, open subtasks, blockers, and outstanding checks.]":
-            "- Worker review and accepted ADR linkage are pending.\n- Required CI remediation subtasks have no verified fix commits.",
+            "- Eligible children are Ready and Approved under standing authorization.\n- Required CI remediation subtasks have no verified fix commits.",
         "1. [Exact next action.]\n2. [Following action.]":
-            "1. Worker reviews the target and all child evidence.\n2. Worker assigns accepted ADR coverage and separately authorizes remediation.",
+            "1. Execute the eligible CI P0 child remediation under standing authorization.\n2. Respect safety and accepted decision constraints; record verified commits and summaries.",
         "- [Relevant repository paths and related task IDs.]\n- [Commit links and hashes.]\n- [External references and their relevance.]":
             "- .takeout/reports/triage/ledger.json\n- Child subtasks contain exact report links and finding IDs.",
         "- **Check:** [What was checked.]\n- **Method:** [How it was checked.]\n- **Result:** [Actual result, or Not performed.]\n- **Limitations:** [What the check does not establish.]":
@@ -1034,7 +1034,7 @@ def render_subtask_index(task_folder, task_id):
         lines.append("- [" + title + "](" + path.name + ") — " + status)
     lines.extend([
         "",
-        "The parent remains subject to Worker governance. Parent Done requires every required child Done. CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.",
+        "CI P0 remediation children are Approved and Ready under standing authorization. Parent Done requires every required child Done. CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.",
         "",
     ])
     return "\n".join(lines)
