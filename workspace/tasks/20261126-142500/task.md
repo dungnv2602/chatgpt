@@ -5,7 +5,7 @@
 - **Template version:** 2.5
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-27 18:20 UTC
+- **Updated:** 2026-11-27 11:08 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -139,6 +139,13 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** `workspace/tasks/20261126-142500/subtasks/01-audit-prompt-capture-rules.md`; `workspace/tasks/20261126-142500/subtasks/02-refactor-task-ci-lifecycle.md`; `workspace/tasks/20261126-142500/subtasks/README.md`; `workspace/task_board.md`.
 - **Next:** Audit authoritative task lifecycle, CI Ledger, GitHub Actions, templates, schemas, generator, and regression coverage.
 
+### 2026-11-27 11:08 UTC — shared P0 remediation closeout
+
+- **Action:** Closed P0 child `20261126-142500-03` using the shared Markdown-link fix from Refactor Skills child `20261127-173000-05`. Closed P0 child `20261126-142500-23` using the shared report-test fix from Refactor Skills child `20261127-173000-04`.
+- **Result:** Child 03 is satisfied by commit `22907d4bfb9905ee155d0d16164982c96d415762`. Child 23 is satisfied by commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Both intended-branch changes were read back. No local tests or hosted CI results were inspected.
+- **References:** Indexed report `.takeout/reports/lint_reports/on_repo/history/45976205944-attempt-1/report.json`; latest report `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json`; changed-document report `.takeout/reports/lint_reports/on_changed/history/45986815109-attempt-1/report.json`.
+- **Next:** Close and delete both completed child records. Continue child 02 and reconcile the original report-ingestion acceptance criteria from repository-owned state only.
+
 ## 7. Current State
 
 The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`. This parent was resumed for the user's prompt-capture and CI-hierarchy follow-up.
@@ -148,7 +155,7 @@ The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c
 - The Worker, task templates, workspace guide, CI Ledger guide, Actions guide, report schemas, lint report capture, Ledger attribution/generation code, workflow callers, and regression tests have been updated.
 - CI attribution now comes from the source commit's Task-ID trailer. Unresolvable markers remain unassigned. The Ledger no longer creates synthetic CI parents or changes the scheduler board.
 - Regression tests were added but not executed. No hosted CI results were inspected.
-- The parent remains In Progress until child 02 closes and the original parent acceptance criteria are reconciled with current report-ingestion state. No claim is made that active report indexes are empty or that hosted validation passed.
+- CI child 03 (Markdown links) and child 23 (lint report regression tests) are complete through shared verified commits and are undergoing record closeout. Implementation child 02 remains In Progress. The parent remains In Progress until child 02 closes and the original parent acceptance criteria are reconciled with current report-ingestion state. No claim is made that active report indexes are empty or that hosted validation passed.
 
 
 ## 8. Remaining Work
@@ -161,9 +168,9 @@ The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c
 
 ## 9. Next Actions
 
-1. Finish static code/schema/template/workflow readback.
+1. Finish static code/schema/template/workflow readback for child 02.
 2. Mark child 02 Done only after its acceptance criteria and committed-content checks pass.
-3. Reconcile any outstanding indexed Ledger work through the normal event-driven process without hosted-results review.
+3. Reconcile outstanding indexed Ledger work through the normal event-driven process without hosted-results review.
 4. Close and directly delete this parent folder only when every required child and original acceptance criterion is complete.
 
 
