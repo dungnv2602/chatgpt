@@ -10,16 +10,12 @@ This file is the single index for active and retained task records. Each active 
 
 ## Current Execution
 
-[20261127-013151-04 — Next P0 CI remediation](tasks/20261127-013151-04/task.md)
+[20261127-013151-44 — Next P0 CI remediation](tasks/20261127-013151-44/task.md)
 
 ## Ready — Mandatory CI P0
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-013151-04 | Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-04/task.md) |
-| 20261127-013151-03 | Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-03/task.md) |
-| 20261127-013151-02 | Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-02/task.md) |
-| 20261127-013151-01 | Review passive-voice findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-01/task.md) |
 | 20261127-013151-44 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-44/task.md) |
 | 20261127-013151-43 | Review passive-voice findings in workspace/README.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-43/task.md) |
 | 20261127-013151-38 | Fix lint tooling check: Markdown links and heading anchors | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-38/task.md) |
@@ -73,6 +69,10 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261127-013151-04 | Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:16 UTC | [Archived task](../.archive/task/20261127-013151-04/task.md) | [7d412ec](https://github.com/dungnv2602/chatgpt/commit/7d412eccdce6ad2cff6e241d34f4dad68faebbb8) |
+| 20261127-013151-03 | Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:16 UTC | [Archived task](../.archive/task/20261127-013151-03/task.md) | [7d412ec](https://github.com/dungnv2602/chatgpt/commit/7d412eccdce6ad2cff6e241d34f4dad68faebbb8) |
+| 20261127-013151-02 | Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:16 UTC | [Archived task](../.archive/task/20261127-013151-02/task.md) | [7d412ec](https://github.com/dungnv2602/chatgpt/commit/7d412eccdce6ad2cff6e241d34f4dad68faebbb8) |
+| 20261127-013151-01 | Review passive-voice findings in .agent/skills/the-worker/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:16 UTC | [Archived task](../.archive/task/20261127-013151-01/task.md) | [7d412ec](https://github.com/dungnv2602/chatgpt/commit/7d412eccdce6ad2cff6e241d34f4dad68faebbb8) |
 | 20261127-013151-09 | Review semicolon findings in .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-013151-09/task.md) | [8bd1354](https://github.com/dungnv2602/chatgpt/commit/8bd1354d313408514488bb66cc232f044effa6a8) |
 | 20261127-013151-08 | Review long-sentence findings in .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-013151-08/task.md) | [8bd1354](https://github.com/dungnv2602/chatgpt/commit/8bd1354d313408514488bb66cc232f044effa6a8) |
 | 20261127-013151-07 | Review synonym-rotation findings in .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-013151-07/task.md) | [8bd1354](https://github.com/dungnv2602/chatgpt/commit/8bd1354d313408514488bb66cc232f044effa6a8) |
