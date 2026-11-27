@@ -450,7 +450,7 @@ def resolve_task_attribution(root, source_task_id, marker_status="present"):
 
 
 def parent_group_for_finding(finding):
-    """Group CI remediation children under the work-target parent."""
+    """Legacy grouping key retained for schema migration; never used as task parentage."""
     family = finding.get("source_family")
     if family == "lint":
         evidence = finding.get("evidence") or []
@@ -582,6 +582,8 @@ def actions_observations(report, report_path, root):
     parse_time(observed_at)
     observation_id = "github_actions:" + str(workflow_id) + ":" + run_id + ":" + str(attempt)
     source_task_id, marker_status = source_task_id_from_message(source.get("head_commit_message"))
+    if source.get("event") not in ("push", "pull_request"):
+        source_task_id, marker_status = None, "unsupported_event"
     attribution = resolve_task_attribution(root, source_task_id, marker_status)
     source_commit_sha = source.get("head_sha")
     result = {}
@@ -658,7 +660,7 @@ def validate_semantics(ledger):
     for finding in ledger["findings"]:
         status = finding["status"]
         if not isinstance(finding.get("parent_group"), str) or not re.fullmatch(r"ci-[0-9a-f]{16}", finding["parent_group"]):
-            raise LedgerError("Finding requires a stable parent_group: " + str(finding.get("finding_id")))
+            raise LedgerError("Finding requires a stable legacy parent_group: " + str(finding.get("finding_id")) )
         for field in ("task_refs", "subtask_refs", "legacy_task_refs"):
             values = finding.get(field, [])
             if not isinstance(values, list) or not all(isinstance(item, str) and item.strip() for item in values) or len(values) != len(set(values)):
