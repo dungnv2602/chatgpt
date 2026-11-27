@@ -2,36 +2,36 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#215](https://github.com/dungnv2602/chatgpt/actions/runs/45958081480)
-- **Run ID / attempt:** 45958081480 / 1
+- **Run:** [#216](https://github.com/dungnv2602/chatgpt/actions/runs/45970377226)
+- **Run ID / attempt:** 45970377226 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / 2ae31d2ed356edc660d6708a6340f8c450705f5d
+- **Branch / commit:** gpt / 8b319c7a7dc6234be34c31f9362789954a9ac6e3
 - **Event:** push
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 680a5b226775a803eb8d45e5e27f46d786154e40
-- **Generated (UTC):** 2026-11-27T07:25:40.380221+00:00
+- **Linter source SHA:** 9016225619db38a25e2e6d047ecca4833d922919
+- **Generated (UTC):** 2026-11-27T09:04:43.016500+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 96 |
-| Files that failed | 40 |
-| Files with findings | 71 |
-| Total findings | 730 |
-| Hard findings | 315 |
-| Advisory findings | 415 |
-| New findings | 2 |
-| Recurring findings | 728 |
-| Resolved findings | 2 |
-| Failed workflow checks | 2 |
+| Files evaluated | 94 |
+| Files that failed | 41 |
+| Files with findings | 70 |
+| Total findings | 729 |
+| Hard findings | 301 |
+| Advisory findings | 428 |
+| New findings | 54 |
+| Recurring findings | 675 |
+| Resolved findings | 36 |
+| Failed workflow checks | 1 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -85,7 +85,6 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - .agent/skills/asd-ste100/references/writing-rules.md
 - .agent/skills/drawing/references/series-continuity-and-iteration.md
 - .agent/skills/document-standards/references/document-type-catalog.md
-- workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md
 - .agent/skills/the-worker/references/archive-records-and-image-prompts.md
 - .agent/skills/drawing/references/image-editing-protocol.md
 - .agent/skills/agent-skill-authoring/SKILL.md
@@ -127,7 +126,6 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md
 - workspace/SUBTASK_TEMPLATE.md
 - .agent/skills/asd-ste100/SKILL.md
-- workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md
 - .agent/skills/asd-ste100/assets/lint-report-template.md
 - workspace/DRAFT_TEMPLATE.md
 - .agent/skills/discernment-nudge/SKILL.md
@@ -147,7 +145,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/the-worker/references/image-provenance-and-webp.md | FAIL | 15 | 7 | 0 | 1248 | 1.2 | 1 |
 | .agent/skills/drawing/SKILL.md | PASS | 26 | 3 | 24 | 4899 | 0.5 | 0 |
 | .agent/skills/doc-coauthoring/SKILL.md | FAIL | 28 | 9 | 0 | 2456 | 1.1 | 1 |
-| workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | FAIL | 82 | 57 | 0 | 3479 | 2.4 | 1 |
+| workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | FAIL | 37 | 17 | 0 | 3631 | 1.0 | 1 |
 | .agent/skills/the-worker/assets/session-brief-template.md | PASS | 0 | 0 | 0 | 288 | 0.0 | 0 |
 | .agent/INITIALIZATION_POLICY.md | PASS | 1 | 1 | 4 | 1965 | 0.1 | 0 |
 | .agent/skills/internal-comms/SKILL.md | FAIL | 1 | 1 | 0 | 196 | 0.5 | 1 |
@@ -165,19 +163,19 @@ The table includes every evaluated file, including files with zero findings and 
 | .takeout/images/README-2.md | FAIL | 10 | 2 | 0 | 2048 | 0.5 | 1 |
 | .agent/skills/theme-factory/themes/sunset-boulevard.md | PASS | 0 | 0 | 0 | 76 | 0.0 | 0 |
 | .agent/skills/drawing/references/patterns/successful-patterns.md | PASS | 6 | 0 | 0 | 816 | 0.7 | 0 |
-| workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | FAIL | 4 | 4 | 0 | 3456 | 0.1 | 1 |
+| workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | FAIL | 2 | 2 | 0 | 3478 | 0.1 | 1 |
 | .agent/skills/define-goal/SKILL.md | FAIL | 11 | 9 | 0 | 857 | 1.3 | 1 |
 | .agent/skills/drawing/references/generation-recovery-and-provenance.md | PASS | 19 | 0 | 17 | 2756 | 0.7 | 0 |
 | .agent/skills/internal-comms/examples/faq-answers.md | FAIL | 7 | 4 | 0 | 403 | 1.7 | 1 |
 | .agent/skills/README.md | PASS | 0 | 0 | 0 | 434 | 0.0 | 0 |
 | .agent/skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
-| .agent/skills/github-actions/SKILL.md | FAIL | 6 | 3 | 0 | 2938 | 0.2 | 1 |
+| .agent/skills/github-actions/SKILL.md | FAIL | 8 | 6 | 0 | 3017 | 0.3 | 1 |
 | .agent/skills/drawing/assets/attempt-template.md | PASS | 1 | 0 | 0 | 593 | 0.2 | 0 |
 | .agent/skills/theme-factory/themes/ocean-depths.md | PASS | 0 | 0 | 0 | 76 | 0.0 | 0 |
 | .agent/SESSION_START.md | FAIL | 8 | 4 | 0 | 3002 | 0.3 | 1 |
 | .agent/skills/theme-factory/themes/modern-minimalist.md | PASS | 0 | 0 | 0 | 74 | 0.0 | 0 |
 | .agent/skills/the-worker/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
-| .agent/skills/the-worker/SKILL.md | FAIL | 8 | 4 | 0 | 5186 | 0.2 | 1 |
+| .agent/skills/the-worker/SKILL.md | FAIL | 25 | 15 | 0 | 970 | 2.6 | 1 |
 | .agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md | PASS | 0 | 0 | 0 | 166 | 0.0 | 0 |
 | workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md | FAIL | 50 | 23 | 0 | 9822 | 0.5 | 1 |
 | .agent/skills/philosophy-religion-asceticism/references/source-standards.md | PASS | 2 | 0 | 1 | 1467 | 0.1 | 0 |
@@ -187,31 +185,30 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/decision-governance/SKILL.md | FAIL | 9 | 5 | 0 | 2991 | 0.3 | 1 |
 | .agent/skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | .agent/skills/drawing/references/series-continuity-and-iteration.md | PASS | 9 | 0 | 9 | 3262 | 0.3 | 0 |
-| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 5 | 1 | 0 | 4588 | 0.1 | 1 |
-| workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md | FAIL | 3 | 2 | 0 | 1957 | 0.2 | 1 |
+| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 6 | 2 | 0 | 4603 | 0.1 | 1 |
 | .agent/skills/the-worker/references/archive-records-and-image-prompts.md | FAIL | 28 | 3 | 0 | 3538 | 0.8 | 1 |
 | .agent/skills/drawing/references/image-editing-protocol.md | PASS | 2 | 1 | 4 | 474 | 0.4 | 0 |
 | .agent/skills/agent-skill-authoring/SKILL.md | PASS | 15 | 0 | 6 | 2260 | 0.7 | 0 |
 | .agent/skills/philosophy-religion-asceticism/README.md | PASS | 1 | 0 | 0 | 471 | 0.2 | 0 |
 | .takeout/images/README-1.md | PASS | 1 | 0 | 0 | 314 | 0.3 | 0 |
 | .agent/skills/theme-factory/themes/golden-hour.md | PASS | 0 | 0 | 0 | 71 | 0.0 | 0 |
-| .agent/skills/the-worker/references/conversation-mode.md | PASS | 1 | 0 | 0 | 3215 | 0.0 | 0 |
+| .agent/skills/the-worker/references/conversation-mode.md | FAIL | 6 | 2 | 0 | 335 | 1.8 | 1 |
 | .agent/skills/internal-comms/examples/company-newsletter.md | FAIL | 4 | 1 | 0 | 554 | 0.7 | 1 |
 | .agent/skills/skill-creator/agents/comparator.md | FAIL | 6 | 1 | 0 | 735 | 0.8 | 1 |
-| workspace/task_board.md | PASS | 1 | 0 | 0 | 450 | 0.2 | 0 |
+| workspace/task_board.md | FAIL | 9 | 2 | 0 | 324 | 2.8 | 1 |
 | .agent/skills/theme-factory/themes/desert-rose.md | PASS | 0 | 0 | 0 | 68 | 0.0 | 0 |
 | workspace/analysis/README.md | PASS | 0 | 0 | 0 | 278 | 0.0 | 0 |
 | workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | PASS | 2 | 0 | 0 | 2919 | 0.1 | 0 |
 | .agent/skills/asd-ste100/README.md | PASS | 2 | 0 | 0 | 1573 | 0.1 | 0 |
-| .agent/skills/ci-ledger/SKILL.md | FAIL | 5 | 5 | 0 | 2255 | 0.2 | 1 |
+| .agent/skills/ci-ledger/SKILL.md | FAIL | 13 | 11 | 0 | 2152 | 0.6 | 1 |
 | workspace/ANALYSIS_TEMPLATE.md | PASS | 1 | 0 | 0 | 384 | 0.3 | 0 |
 | .agent/skills/the-worker/references/image-processing-scripts.md | PASS | 0 | 0 | 0 | 340 | 0.0 | 0 |
 | .agent/skills/document-standards/SKILL.md | FAIL | 4 | 2 | 0 | 1044 | 0.4 | 1 |
 | .agent/skills/migrate-to-rust/SKILL.md | FAIL | 21 | 15 | 0 | 1173 | 1.8 | 1 |
 | .agent/skills/theme-factory/themes/forest-canopy.md | PASS | 0 | 0 | 0 | 68 | 0.0 | 0 |
 | .agent/skills/skill-creator/references/schemas.md | PASS | 3 | 0 | 0 | 518 | 0.6 | 0 |
-| workspace/draft/README.md | PASS | 0 | 0 | 0 | 728 | 0.0 | 0 |
-| workspace/TASK_TEMPLATE.md | FAIL | 6 | 2 | 0 | 477 | 1.3 | 1 |
+| workspace/draft/README.md | PASS | 0 | 0 | 0 | 667 | 0.0 | 0 |
+| workspace/TASK_TEMPLATE.md | FAIL | 10 | 5 | 0 | 588 | 1.7 | 1 |
 | .agent/skills/pdf/FORMS.md | FAIL | 13 | 8 | 0 | 1195 | 1.1 | 1 |
 | .agent/skills/theme-factory/themes/arctic-frost.md | PASS | 0 | 0 | 0 | 73 | 0.0 | 0 |
 | .agent/skills/pdf/SKILL.md | FAIL | 1 | 1 | 0 | 347 | 0.3 | 1 |
@@ -220,7 +217,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/philosophy-religion-asceticism/references/research-method.md | PASS | 0 | 0 | 0 | 559 | 0.0 | 0 |
 | .agent/skills/philosophy-religion-asceticism/CHANGELOG.md | PASS | 0 | 0 | 0 | 56 | 0.0 | 0 |
 | .agent/skills/drawing/references/patterns/failure-patterns.md | PASS | 25 | 0 | 0 | 2146 | 1.2 | 0 |
-| workspace/README.md | FAIL | 1 | 1 | 0 | 1084 | 0.1 | 1 |
+| workspace/README.md | FAIL | 4 | 2 | 0 | 1222 | 0.3 | 1 |
 | .agent/skills/drawing/assets/daily-index-template.md | PASS | 0 | 0 | 0 | 210 | 0.0 | 0 |
 | workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md | FAIL | 8 | 2 | 0 | 1310 | 0.6 | 1 |
 | .agent/skills/theme-factory/themes/tech-innovation.md | FAIL | 1 | 1 | 0 | 73 | 1.4 | 1 |
@@ -228,9 +225,8 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/philosophy-religion-asceticism/references/answer-patterns.md | PASS | 1 | 0 | 0 | 235 | 0.4 | 0 |
 | .agent/skills/drawing/assets/pattern-entry-templates.md | PASS | 9 | 0 | 0 | 562 | 1.6 | 0 |
 | .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md | FAIL | 13 | 10 | 0 | 1274 | 1.0 | 1 |
-| workspace/SUBTASK_TEMPLATE.md | PASS | 0 | 0 | 0 | 424 | 0.0 | 0 |
+| workspace/SUBTASK_TEMPLATE.md | FAIL | 4 | 3 | 0 | 526 | 0.8 | 1 |
 | .agent/skills/asd-ste100/SKILL.md | PASS | 20 | 12 | 31 | 2609 | 0.8 | 0 |
-| workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md | FAIL | 3 | 2 | 0 | 2081 | 0.1 | 1 |
 | .agent/skills/asd-ste100/assets/lint-report-template.md | PASS | 0 | 0 | 0 | 385 | 0.0 | 0 |
 | workspace/DRAFT_TEMPLATE.md | FAIL | 9 | 4 | 0 | 1242 | 0.7 | 1 |
 | .agent/skills/discernment-nudge/SKILL.md | FAIL | 26 | 24 | 0 | 1701 | 1.5 | 1 |
@@ -245,11 +241,11 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 367 |
-| long-sentence | 128 |
-| semicolon | 104 |
-| synonym-rotation | 70 |
-| present-perfect | 48 |
+| passive-voice | 377 |
+| long-sentence | 130 |
+| semicolon | 92 |
+| synonym-rotation | 66 |
+| present-perfect | 51 |
 | marketing-adjective | 6 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -284,32 +280,23 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.356s
+Ran 4 tests in 0.236s
 
 OK
 ~~~
 
 ### Markdown anchor regression tests
 
-- **Result:** Failed
-- **Exit code:** 1
+- **Result:** Passed
+- **Exit code:** 0
 
-~~~~~~~~~~~~~~~~~~~~~~~text
-..F.....
-======================================================================
-FAIL: test_incremental_scope_rejects_inactive_or_untracked_sources (__main__.MarkdownAnchorTests.test_incremental_scope_rejects_inactive_or_untracked_sources) (path='.archive/adr/old.md')
+~~~text
+........
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/runner/work/chatgpt/chatgpt/.agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py", line 80, in test_incremental_scope_rejects_inactive_or_untracked_sources
-    with self.assertRaisesRegex(ValueError, "inactive or untracked"):
-         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: ValueError not raised
+Ran 8 tests in 0.001s
 
-----------------------------------------------------------------------
-Ran 8 tests in 0.008s
-
-FAILED (failures=1)
-~~~~~~~~~~~~~~~~~~~~~~~
+OK
+~~~
 
 ### STE linter self-test
 
@@ -326,12 +313,11 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 196 all active Markdown sources (366 available as link targets) and 384 local Markdown links.
-Found 5 unresolved local Markdown targets or anchors.
+Scanned 194 all active Markdown sources (344 available as link targets) and 341 local Markdown links.
+Found 4 unresolved local Markdown targets or anchors.
 .takeout/reports/README.md: missing Markdown file: ../../workspace/archive/README.md
 workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
 workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
-workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md: missing Markdown file: ../tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 ~~~
 
@@ -341,11 +327,219 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:401:33 · **new** · fingerprint: 952a5f851897b7d21a178421
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:97:90 · **new** · fingerprint: ae3383c2340edc8feecfe4eb
   - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirm
-- **semicolon** · .agent/skills/ci-ledger/SKILL.md:44:118 · **new** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Message:** 'confirm' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** confirmd
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:131:78 · **new** · fingerprint: f3f1d34b2d9fc9aa8def0bd1
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** validate
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:158:198 · **new** · fingerprint: 8b94e2d2ab83e942a9c53498
+  - **Level:** advisory-free
+  - **Message:** 'erase' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** erase
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:165:76 · **new** · fingerprint: 3f4020ebc1df4b02b6bc194e
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:184:44 · **new** · fingerprint: f0bb2234abbfaadfb9b32f17
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are removed
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:184:113 · **new** · fingerprint: e034604c115f5b656a6c5ab9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:386 · **new** · fingerprint: 0ce56fdfcbc85adb0c649e73
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are inspected
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:219:98 · **new** · fingerprint: 4173039ab32cefe8e6332828
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is removed
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:99:87 · **new** · fingerprint: 869c8495109dea6f34af871c
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:51:140 · **new** · fingerprint: 26126e68e07c3d0e59c329ee
+  - **Level:** advisory-free
+  - **Message:** Sentence has 29 words (cap 25). Split it.
+  - **Matched text:** 29 words
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:51:323 · **new** · fingerprint: 70d702d2f48b407e4ddfc138
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:67:430 · **new** · fingerprint: 75d03b744986296661ae3292
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:13:267 · **new** · fingerprint: 646b7bb10f9a4afa968e76a8
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was rejected
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:34:286 · **new** · fingerprint: 191f16d660022070d80486cd
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is collected
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:35:16 · **new** · fingerprint: 744124c649cfe9432abfa28d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are collected
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:36:67 · **new** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:37:136 · **new** · fingerprint: fbbd420487349088b9286d6b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are handled
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:38:116 · **new** · fingerprint: 15f03876d973741a8c5cb8e4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is completed
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:44:81 · **new** · fingerprint: e749a89a221be9cabe94904f
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** remove
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:52:147 · **new** · fingerprint: 6e2f9b805be9c08510010f85
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:52:331 · **new** · fingerprint: 1b0e16e405ca623501c8a765
+  - **Level:** advisory-free
+  - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
+  - **Matched text:** fix
+- **present-perfect** · .agent/skills/the-worker/SKILL.md:56:29 · **new** · fingerprint: a5d55557cb1399d0acf7ac08
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have received
+- **present-perfect** · .agent/skills/the-worker/SKILL.md:56:167 · **new** · fingerprint: 741749aa0db79422e1509169
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has approved
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:56:300 · **new** · fingerprint: 39ce18413ef5d1941ef0df0a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is omitted
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:56:319 · **new** · fingerprint: 4a50516b3278c464640d6067
+  - **Level:** advisory-free
+  - **Message:** 'initiate' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** initiate
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:58:17 · **new** · fingerprint: 485cc95c832398176cc2730f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is given
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:58:294 · **new** · fingerprint: 191f16d660022070d80486cd
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is collected
+- **semicolon** · .agent/skills/document-standards/references/document-type-catalog.md:131:297 · **new** · fingerprint: e2e4500a529bb5cf3751722a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **present-perfect** · .agent/skills/the-worker/references/conversation-mode.md:20:214 · **new** · fingerprint: 6ae9a6a4a2db5981a11a3382
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been collected
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:20:219 · **new** · fingerprint: bdeb60b7ecf5b8b23d08fe8f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been collected
+- **semicolon** · .agent/skills/the-worker/references/conversation-mode.md:26:339 · **new** · fingerprint: 7b11bbeb7d4a010ad6e77377
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · .agent/skills/the-worker/references/conversation-mode.md:26:365 · **new** · fingerprint: 20ab01d0763dc8b1779dc36e
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:26:378 · **new** · fingerprint: bd4591524e78ee2f7fa8b868
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is given
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:30:156 · **new** · fingerprint: 4012e882a41727aa31e45e80
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was verified
+- **semicolon** · workspace/task_board.md:9:184 · **new** · fingerprint: 0141c0cfbe133e92bf61057a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/task_board.md:9:211 · **new** · fingerprint: 2576c78693220ab79f5566ff
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was rejected
+- **passive-voice** · workspace/task_board.md:19:66 · **new** · fingerprint: 41baa6b366e177c2499f5233
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are listed
+- **passive-voice** · workspace/task_board.md:21:31 · **new** · fingerprint: bd8b55f1d04f97c603ef1aff
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was reconciled
+- **passive-voice** · workspace/task_board.md:21:151 · **new** · fingerprint: 9db0ccdc5f344a34e6b09777
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deferred
+- **semicolon** · workspace/task_board.md:21:211 · **new** · fingerprint: 0141c0cfbe133e92bf61057a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/task_board.md:21:231 · **new** · fingerprint: 4119e24c85ce36f95f82426b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is queued
+- **present-perfect** · workspace/task_board.md:31:27 · **new** · fingerprint: 9612c1c87b475ef28776a775
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been remediated
+- **passive-voice** · workspace/task_board.md:31:32 · **new** · fingerprint: ad9a72b9a291435f0a3c005b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been remediated
+- **passive-voice** · .agent/skills/ci-ledger/SKILL.md:38:155 · **new** · fingerprint: a4e5c923c31ec30191d6b854
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is suppressed
+- **long-sentence** · .agent/skills/ci-ledger/SKILL.md:110:143 · **new** · fingerprint: 0e62ca8d71819e8e8727168f
+  - **Level:** advisory-free
+  - **Message:** Sentence has 41 words (cap 25). Split it.
+  - **Matched text:** 41 words
+- **passive-voice** · .agent/skills/ci-ledger/SKILL.md:117:286 · **new** · fingerprint: bbd8f7f08837e2060f7f4d03
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **passive-voice** · workspace/TASK_TEMPLATE.md:20:60 · **new** · fingerprint: d6cb213a49d24318311d0da8
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deferred
+- **semicolon** · workspace/README.md:36:183 · **new** · fingerprint: 99ddd247f24032b76e53f957
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/README.md:36:210 · **new** · fingerprint: 7db95bfd4fd923e46bee569d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was rejected
+- **passive-voice** · workspace/README.md:36:484 · **new** · fingerprint: f5049c86552d80c254f92f30
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are satisfied
+- **passive-voice** · workspace/SUBTASK_TEMPLATE.md:19:60 · **new** · fingerprint: f1ec495bc7a973b2581b8695
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deferred
+- **semicolon** · workspace/SUBTASK_TEMPLATE.md:28:42 · **new** · fingerprint: ae777a92ddc5d2c5149411bc
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/SUBTASK_TEMPLATE.md:84:152 · **new** · fingerprint: ae777a92ddc5d2c5149411bc
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/SUBTASK_TEMPLATE.md:84:182 · **new** · fingerprint: ae777a92ddc5d2c5149411bc
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -668,46 +862,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are contained
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:37:57 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:42:32 · **recurring** · fingerprint: 0b78e160768da5f8fc81245e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are surfaced
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:46:184 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:50:263 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:72:40 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:72:92 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:74:105 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:76:181 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:80:163 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:83:120 · **recurring** · fingerprint: f344f235da524619c5f3958e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are represented
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:84:107 · **recurring** · fingerprint: b6f783768f9aa08d96bf979c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -732,78 +890,30 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Done
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:93:131 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:94:221 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:95:345 · **recurring** · fingerprint: 6ecaad7e08b08c8dc23c4ac5
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** deletes
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:96:213 · **recurring** · fingerprint: d88c984bfabc22fedfc1df95
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **present-perfect** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:97:86 · **recurring** · fingerprint: 6a157062d0e778513b660642
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has validated
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:111:162 · **recurring** · fingerprint: 8d237e4d80507b6e1ceceb31
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:115:3 · **recurring** · fingerprint: 95b3ae27d255dd6d3908c02c
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:115:67 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:96:302 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:115:115 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:111:162 · **recurring** · fingerprint: 23ba89c188bd721485225ac0
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
 - **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:116:3 · **recurring** · fingerprint: 23ba89c188bd721485225ac0
   - **Level:** advisory-free
   - **Message:** Sentence has 30 words (cap 25). Split it.
   - **Matched text:** 30 words
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:118:95 · **recurring** · fingerprint: e9a8ebb703f48aa4c6b3f8f5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:24 · **recurring** · fingerprint: 87531091dab5fb40e4c2d4ea
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were run
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:83 · **recurring** · fingerprint: dfff58b82bd3b79192dfa4bf
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was replayed
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:118 · **recurring** · fingerprint: e9a8ebb703f48aa4c6b3f8f5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:125:143 · **recurring** · fingerprint: 298a9b83f5adba5f46527b78
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are Done
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:126:57 · **recurring** · fingerprint: 0ed0ae36b993057bc70765a0
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:127:21 · **recurring** · fingerprint: f85e8d2b3bb15312e48006c0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is confused
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:128:107 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:128:181 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:130:22 · **recurring** · fingerprint: 3c01363d8fccb6632309a933
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -812,14 +922,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is accepted
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:133:109 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:134:224 · **recurring** · fingerprint: de92bd816462c66ade721476
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** confirm
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:145:206 · **recurring** · fingerprint: 579e397c39954135265f1d98
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -844,150 +946,30 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are recorded
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:158:54 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:158:178 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:174:3 · **recurring** · fingerprint: 95b3ae27d255dd6d3908c02c
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:175:95 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:175:109 · **recurring** · fingerprint: b6f783768f9aa08d96bf979c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is blocked
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:177:75 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:201 · **recurring** · fingerprint: 6ecaad7e08b08c8dc23c4ac5
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** deletes
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:366 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:180:85 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:214:190 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:100 · **recurring** · fingerprint: e9365b9cbb59d135219ec64e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is claimed
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:201:81 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:220:3 · **recurring** · fingerprint: 8d237e4d80507b6e1ceceb31
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:206:85 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:3 · **recurring** · fingerprint: 8529e180856bf3676ae3fab0
-  - **Level:** advisory-free
-  - **Message:** Sentence has 44 words (cap 25). Split it.
-  - **Matched text:** 44 words
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:43 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:71 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:89 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:148 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:232 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:269 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:292 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:328 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:346 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:3 · **recurring** · fingerprint: 13f3933d006440387035088b
-  - **Level:** advisory-free
-  - **Message:** Sentence has 47 words (cap 25). Split it.
-  - **Matched text:** 47 words
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:63 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:199 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:279 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:353 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:385 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:215:3 · **recurring** · fingerprint: 3d2b37a88e8f61e65de9b8fa
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:215:125 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:215:158 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:219:98 · **recurring** · fingerprint: 1667b4bb6e8771c9446dd6e3
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deleted
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:219:135 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:220:133 · **recurring** · fingerprint: 94d4b6dd593fe428491082fb
-  - **Level:** advisory-free
-  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** repairs
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:221:71 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:221:140 · **recurring** · fingerprint: dbe769c0dba8d9167f6f8147
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** altering
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:240:312 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:245:164 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
 - **synonym-rotation** · .agent/INITIALIZATION_POLICY.md:64:1 · **recurring** · fingerprint: 4e20a50af596bd1c8120efea
   - **Level:** advisory-free
   - **Message:** 'retrieve' and 'fetch' name the same action. Pick one and use it every time.
@@ -1484,22 +1466,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** being requested
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:90:102 · **recurring** · fingerprint: e65e3922aa38293af2adc5e0
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:97:260 · **recurring** · fingerprint: e65e3922aa38293af2adc5e0
   - **Level:** advisory-free
   - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
   - **Matched text:** Delete
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:92:104 · **recurring** · fingerprint: c71ff84334a10d7dd38255c9
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** check
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:158:108 · **recurring** · fingerprint: 3f34a81299a3d18ae26e4279
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:159:149 · **recurring** · fingerprint: 563af8dd74cf1ba4bd074708
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** Validate
 - **long-sentence** · .agent/skills/define-goal/SKILL.md:3:14 · **recurring** · fingerprint: 6e69702dd7b70f9e58a5b7d0
   - **Level:** advisory-free
   - **Message:** Sentence has 38 words (cap 25). Split it.
@@ -1652,27 +1622,23 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was classified
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:209 · **recurring** · fingerprint: de2e6ff859150e25d2ddbdf7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:236 · **recurring** · fingerprint: 67be1862f0bcd76c81a66643
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are read
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:284 · **recurring** · fingerprint: ebe73caf7cb37aa94e730288
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are recorded
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:55:1 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **semicolon** · .agent/skills/github-actions/SKILL.md:63:351 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
+- **semicolon** · .agent/skills/github-actions/SKILL.md:40:336 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:71:3 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:53:4 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:59:1 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **semicolon** · .agent/skills/github-actions/SKILL.md:67:351 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:75:3 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
@@ -1712,31 +1678,43 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** 'validate' and 'verify' name the same action. Pick one and use it every time.
   - **Matched text:** validates
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:135:79 · **recurring** · fingerprint: 1ead56a935297678d525088d
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** Remove
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:142:40 · **recurring** · fingerprint: 58a47654e8fe2ff210753ac7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are deleted
-- **semicolon** · .agent/skills/the-worker/SKILL.md:143:136 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+- **semicolon** · .agent/skills/the-worker/SKILL.md:5:170 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:229:91 · **recurring** · fingerprint: 448e62e062b885437ed3015e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deleted
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:277:144 · **recurring** · fingerprint: 857e0d2fef3568ba9dff44ac
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are authorized
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:369:196 · **recurring** · fingerprint: ce2bd2aefd327fda5d21b1cd
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is Done
-- **semicolon** · .agent/skills/the-worker/SKILL.md:405:317 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+- **semicolon** · .agent/skills/the-worker/SKILL.md:7:296 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/SKILL.md:13:238 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/SKILL.md:19:316 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/SKILL.md:35:108 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/SKILL.md:37:111 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/SKILL.md:42:257 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/SKILL.md:52:322 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/SKILL.md:62:232 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/SKILL.md:62:275 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -2108,18 +2086,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
-- **passive-voice** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:90:59 · **recurring** · fingerprint: 3a5b8412eaf100e118f17c8f
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **synonym-rotation** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:158:19 · **recurring** · fingerprint: 88c525f2c2d9aadc1e2f7faf
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
-- **synonym-rotation** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:171:143 · **recurring** · fingerprint: 13f39a799a7213976339c951
-  - **Level:** advisory-free
-  - **Message:** 'fix' and 'correct' name the same action. Pick one and use it every time.
-  - **Matched text:** Fix
 - **passive-voice** · .agent/skills/the-worker/references/archive-records-and-image-prompts.md:13:64 · **recurring** · fingerprint: e5525626c1967e0a340ca6a0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2308,10 +2274,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is converted
-- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:190:263 · **recurring** · fingerprint: 2deb4746f57db62d7bedde8b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
 - **passive-voice** · .agent/skills/internal-comms/examples/company-newsletter.md:2:9 · **recurring** · fingerprint: d119f69401fb0d7940bb4b07
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2352,10 +2314,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · workspace/task_board.md:5:556 · **recurring** · fingerprint: 091688e97ff44b87f3a1d264
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is Done
 - **passive-voice** · workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:259:84 · **recurring** · fingerprint: 729850cb6edbfa392f5fd0c0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2372,10 +2330,34 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is approved
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:44:118 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **synonym-rotation** · .agent/skills/ci-ledger/SKILL.md:67:5 · **recurring** · fingerprint: ca9ad71bde9bdef6b1180213
   - **Level:** advisory-free
   - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
   - **Matched text:** changed
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:105:103 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:110:198 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:110:582 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:114:28 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:117:261 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **synonym-rotation** · .agent/skills/ci-ledger/SKILL.md:121:24 · **recurring** · fingerprint: b15b11ac85d2fcdf68c941a9
   - **Level:** advisory-free
   - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
@@ -2504,27 +2486,39 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was run
-- **synonym-rotation** · workspace/TASK_TEMPLATE.md:24:136 · **recurring** · fingerprint: 3a0997aa00ae589847e48a35
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** remove
-- **passive-voice** · workspace/TASK_TEMPLATE.md:52:32 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was checked
-- **passive-voice** · workspace/TASK_TEMPLATE.md:78:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was checked
-- **passive-voice** · workspace/TASK_TEMPLATE.md:79:23 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was checked
-- **semicolon** · workspace/TASK_TEMPLATE.md:95:110 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
+- **semicolon** · workspace/TASK_TEMPLATE.md:24:152 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · workspace/TASK_TEMPLATE.md:95:247 · **recurring** · fingerprint: f89fcc99c66cd06012ce7d5a
+- **semicolon** · workspace/TASK_TEMPLATE.md:24:182 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/TASK_TEMPLATE.md:28:42 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · workspace/TASK_TEMPLATE.md:30:136 · **recurring** · fingerprint: 3a0997aa00ae589847e48a35
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** remove
+- **passive-voice** · workspace/TASK_TEMPLATE.md:58:32 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was checked
+- **passive-voice** · workspace/TASK_TEMPLATE.md:84:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was checked
+- **passive-voice** · workspace/TASK_TEMPLATE.md:85:23 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was checked
+- **semicolon** · workspace/TASK_TEMPLATE.md:101:110 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/TASK_TEMPLATE.md:101:247 · **recurring** · fingerprint: f89fcc99c66cd06012ce7d5a
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is untrusted
@@ -2864,7 +2858,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is maintained
-- **synonym-rotation** · workspace/README.md:46:200 · **recurring** · fingerprint: d8d5bdd914126f90076410ea
+- **synonym-rotation** · workspace/README.md:48:200 · **recurring** · fingerprint: d8d5bdd914126f90076410ea
   - **Level:** advisory-free
   - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
   - **Matched text:** Remove
@@ -3080,18 +3074,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were memorized
-- **passive-voice** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:99:59 · **recurring** · fingerprint: c39323ab6689958912bbc8ba
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **synonym-rotation** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:168:19 · **recurring** · fingerprint: 26a6732babf8a18c8f5ce179
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
-- **synonym-rotation** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:182:143 · **recurring** · fingerprint: 2a02d81fb2a9bfbd6ffc2294
-  - **Level:** advisory-free
-  - **Message:** 'fix' and 'correct' name the same action. Pick one and use it every time.
-  - **Matched text:** Fix
 - **passive-voice** · workspace/DRAFT_TEMPLATE.md:25:119 · **recurring** · fingerprint: f64bf1ef9acc14ca64a7b985
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -3267,14 +3249,150 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:395:513 · **resolved** · fingerprint: 6e2f9b805be9c08510010f85
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:83:120 · **resolved** · fingerprint: f344f235da524619c5f3958e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are represented
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:96:213 · **resolved** · fingerprint: d88c984bfabc22fedfc1df95
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **present-perfect** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:97:86 · **resolved** · fingerprint: 6a157062d0e778513b660642
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has validated
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:118:95 · **resolved** · fingerprint: e9a8ebb703f48aa4c6b3f8f5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were inspected
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:24 · **resolved** · fingerprint: 87531091dab5fb40e4c2d4ea
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were run
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:83 · **resolved** · fingerprint: dfff58b82bd3b79192dfa4bf
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was replayed
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:118 · **resolved** · fingerprint: e9a8ebb703f48aa4c6b3f8f5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were inspected
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:126:57 · **resolved** · fingerprint: 0ed0ae36b993057bc70765a0
   - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:397:717 · **resolved** · fingerprint: 9cca8e1414feae74d470296b
+  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** Verify
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:134:224 · **resolved** · fingerprint: de92bd816462c66ade721476
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** confirm
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:100 · **resolved** · fingerprint: e9365b9cbb59d135219ec64e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is claimed
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:3 · **resolved** · fingerprint: 8529e180856bf3676ae3fab0
+  - **Level:** advisory-free
+  - **Message:** Sentence has 44 words (cap 25). Split it.
+  - **Matched text:** 44 words
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:3 · **resolved** · fingerprint: 13f3933d006440387035088b
+  - **Level:** advisory-free
+  - **Message:** Sentence has 47 words (cap 25). Split it.
+  - **Matched text:** 47 words
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:215:3 · **resolved** · fingerprint: 3d2b37a88e8f61e65de9b8fa
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:219:98 · **resolved** · fingerprint: 1667b4bb6e8771c9446dd6e3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deleted
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:220:133 · **resolved** · fingerprint: 94d4b6dd593fe428491082fb
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** repairs
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:221:140 · **resolved** · fingerprint: dbe769c0dba8d9167f6f8147
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** altering
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:92:104 · **resolved** · fingerprint: c71ff84334a10d7dd38255c9
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** check
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:158:108 · **resolved** · fingerprint: 3f34a81299a3d18ae26e4279
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** alter
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:159:149 · **resolved** · fingerprint: 563af8dd74cf1ba4bd074708
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** Validate
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:209 · **resolved** · fingerprint: de2e6ff859150e25d2ddbdf7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:236 · **resolved** · fingerprint: 67be1862f0bcd76c81a66643
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are read
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:284 · **resolved** · fingerprint: ebe73caf7cb37aa94e730288
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:135:79 · **resolved** · fingerprint: 1ead56a935297678d525088d
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** Remove
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:142:40 · **resolved** · fingerprint: 58a47654e8fe2ff210753ac7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are deleted
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:229:91 · **resolved** · fingerprint: 448e62e062b885437ed3015e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deleted
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:277:144 · **resolved** · fingerprint: 857e0d2fef3568ba9dff44ac
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are authorized
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:369:196 · **resolved** · fingerprint: ce2bd2aefd327fda5d21b1cd
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:401:33 · **resolved** · fingerprint: 952a5f851897b7d21a178421
   - **Level:** advisory-free
   - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirms
+  - **Matched text:** confirm
+- **passive-voice** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:90:59 · **resolved** · fingerprint: 3a5b8412eaf100e118f17c8f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **synonym-rotation** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:158:19 · **resolved** · fingerprint: 88c525f2c2d9aadc1e2f7faf
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** alter
+- **synonym-rotation** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:171:143 · **resolved** · fingerprint: 13f39a799a7213976339c951
+  - **Level:** advisory-free
+  - **Message:** 'fix' and 'correct' name the same action. Pick one and use it every time.
+  - **Matched text:** Fix
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:190:263 · **resolved** · fingerprint: 2deb4746f57db62d7bedde8b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · workspace/task_board.md:5:556 · **resolved** · fingerprint: 091688e97ff44b87f3a1d264
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+- **passive-voice** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:99:59 · **resolved** · fingerprint: c39323ab6689958912bbc8ba
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **synonym-rotation** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:168:19 · **resolved** · fingerprint: 26a6732babf8a18c8f5ce179
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** alter
+- **synonym-rotation** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:182:143 · **resolved** · fingerprint: 2a02d81fb2a9bfbd6ffc2294
+  - **Level:** advisory-free
+  - **Message:** 'fix' and 'correct' name the same action. Pick one and use it every time.
+  - **Matched text:** Fix
 
 ## 8. Complete per-file diagnostics
 
@@ -3734,11 +3852,11 @@ This section includes every normalized finding with its rule, level, source loca
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 82
-- **Hard findings:** 57
+- **Findings:** 37
+- **Hard findings:** 17
 - **Baseline:** 0
-- **Words:** 3479
-- **Findings per 100 words:** 2.4
+- **Words:** 3631
+- **Findings per 100 words:** 1.0
 
 #### Complete diagnostics
 
@@ -3752,55 +3870,10 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are contained
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:37:57 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:42:32 · **recurring** · fingerprint: 0b78e160768da5f8fc81245e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are surfaced
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:46:184 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:50:263 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:72:40 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:72:92 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:74:105 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:76:181 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:80:163 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:83:120 · **recurring** · fingerprint: f344f235da524619c5f3958e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are represented
 
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:84:107 · **recurring** · fingerprint: b6f783768f9aa08d96bf979c
   - **Level:** advisory
@@ -3832,95 +3905,40 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Done
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:93:131 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:94:221 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:95:345 · **recurring** · fingerprint: 6ecaad7e08b08c8dc23c4ac5
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** deletes
-
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:96:213 · **recurring** · fingerprint: d88c984bfabc22fedfc1df95
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-
-- **present-perfect** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:97:86 · **recurring** · fingerprint: 6a157062d0e778513b660642
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has validated
-
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:111:162 · **recurring** · fingerprint: 8d237e4d80507b6e1ceceb31
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:115:3 · **recurring** · fingerprint: 95b3ae27d255dd6d3908c02c
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:115:67 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:96:302 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:115:115 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:97:90 · **new** · fingerprint: ae3383c2340edc8feecfe4eb
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'confirm' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** confirmd
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:111:162 · **recurring** · fingerprint: 23ba89c188bd721485225ac0
+  - **Level:** advisory-free
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
 
 - **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:116:3 · **recurring** · fingerprint: 23ba89c188bd721485225ac0
   - **Level:** advisory-free
   - **Message:** Sentence has 30 words (cap 25). Split it.
   - **Matched text:** 30 words
 
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:118:95 · **recurring** · fingerprint: e9a8ebb703f48aa4c6b3f8f5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
-
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:24 · **recurring** · fingerprint: 87531091dab5fb40e4c2d4ea
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were run
-
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:83 · **recurring** · fingerprint: dfff58b82bd3b79192dfa4bf
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was replayed
-
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:119:118 · **recurring** · fingerprint: e9a8ebb703f48aa4c6b3f8f5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
-
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:125:143 · **recurring** · fingerprint: 298a9b83f5adba5f46527b78
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are Done
 
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:126:57 · **recurring** · fingerprint: 0ed0ae36b993057bc70765a0
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:127:21 · **recurring** · fingerprint: f85e8d2b3bb15312e48006c0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is confused
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:128:107 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:128:181 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:130:22 · **recurring** · fingerprint: 3c01363d8fccb6632309a933
   - **Level:** advisory
@@ -3932,15 +3950,10 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is accepted
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:133:109 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:131:78 · **new** · fingerprint: f3f1d34b2d9fc9aa8def0bd1
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:134:224 · **recurring** · fingerprint: de92bd816462c66ade721476
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** confirm
+  - **Message:** 'validate' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** validate
 
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:145:206 · **recurring** · fingerprint: 579e397c39954135265f1d98
   - **Level:** advisory
@@ -3972,185 +3985,65 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are recorded
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:158:54 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:158:198 · **new** · fingerprint: 8b94e2d2ab83e942a9c53498
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'erase' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** erase
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:158:178 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:165:76 · **new** · fingerprint: 3f4020ebc1df4b02b6bc194e
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
 
 - **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:174:3 · **recurring** · fingerprint: 95b3ae27d255dd6d3908c02c
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:175:95 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
 - **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:175:109 · **recurring** · fingerprint: b6f783768f9aa08d96bf979c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is blocked
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:177:75 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:180:85 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:100 · **recurring** · fingerprint: e9365b9cbb59d135219ec64e
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:184:44 · **new** · fingerprint: f0bb2234abbfaadfb9b32f17
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is claimed
+  - **Matched text:** are removed
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:201:81 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:206:85 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:3 · **recurring** · fingerprint: 8529e180856bf3676ae3fab0
-  - **Level:** advisory-free
-  - **Message:** Sentence has 44 words (cap 25). Split it.
-  - **Matched text:** 44 words
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:43 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:71 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:89 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:148 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:232 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:269 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:292 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:328 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:211:346 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:3 · **recurring** · fingerprint: 13f3933d006440387035088b
-  - **Level:** advisory-free
-  - **Message:** Sentence has 47 words (cap 25). Split it.
-  - **Matched text:** 47 words
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:63 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:199 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:279 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:353 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:212:385 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:215:3 · **recurring** · fingerprint: 3d2b37a88e8f61e65de9b8fa
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:215:125 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:215:158 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:219:98 · **recurring** · fingerprint: 1667b4bb6e8771c9446dd6e3
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:184:113 · **new** · fingerprint: e034604c115f5b656a6c5ab9
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deleted
+  - **Matched text:** is created
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:219:135 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:201 · **recurring** · fingerprint: 6ecaad7e08b08c8dc23c4ac5
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** deletes
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:366 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:220:133 · **recurring** · fingerprint: 94d4b6dd593fe428491082fb
-  - **Level:** advisory-free
-  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** repairs
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:386 · **new** · fingerprint: 0ce56fdfcbc85adb0c649e73
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are inspected
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:221:71 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:214:190 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:221:140 · **recurring** · fingerprint: dbe769c0dba8d9167f6f8147
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** altering
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:219:98 · **new** · fingerprint: 4173039ab32cefe8e6332828
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is removed
 
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:240:312 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:220:3 · **recurring** · fingerprint: 8d237e4d80507b6e1ceceb31
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:245:164 · **recurring** · fingerprint: 235b8a3528fa8a066c7b86a4
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
 
 
 ### .agent/skills/the-worker/assets/session-brief-template.md
@@ -4998,33 +4891,23 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 4
-- **Hard findings:** 4
+- **Findings:** 2
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 3456
+- **Words:** 3478
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:90:102 · **recurring** · fingerprint: e65e3922aa38293af2adc5e0
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:97:260 · **recurring** · fingerprint: e65e3922aa38293af2adc5e0
   - **Level:** advisory-free
   - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
   - **Matched text:** Delete
 
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:92:104 · **recurring** · fingerprint: c71ff84334a10d7dd38255c9
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:99:87 · **new** · fingerprint: 869c8495109dea6f34af871c
   - **Level:** advisory-free
   - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** check
-
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:158:108 · **recurring** · fingerprint: 3f34a81299a3d18ae26e4279
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
-
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:159:149 · **recurring** · fingerprint: 563af8dd74cf1ba4bd074708
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** Validate
+  - **Matched text:** checks
 
 
 ### .agent/skills/define-goal/SKILL.md
@@ -5286,40 +5169,50 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 6
-- **Hard findings:** 3
+- **Findings:** 8
+- **Hard findings:** 6
 - **Baseline:** 0
-- **Words:** 2938
-- **Findings per 100 words:** 0.2
+- **Words:** 3017
+- **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
 
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:209 · **recurring** · fingerprint: de2e6ff859150e25d2ddbdf7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:236 · **recurring** · fingerprint: 67be1862f0bcd76c81a66643
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are read
-
-- **passive-voice** · .agent/skills/github-actions/SKILL.md:47:284 · **recurring** · fingerprint: ebe73caf7cb37aa94e730288
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are recorded
-
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:55:1 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-
-- **semicolon** · .agent/skills/github-actions/SKILL.md:63:351 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
+- **semicolon** · .agent/skills/github-actions/SKILL.md:40:336 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **long-sentence** · .agent/skills/github-actions/SKILL.md:71:3 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:51:140 · **new** · fingerprint: 26126e68e07c3d0e59c329ee
+  - **Level:** advisory-free
+  - **Message:** Sentence has 29 words (cap 25). Split it.
+  - **Matched text:** 29 words
+
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:51:323 · **new** · fingerprint: 70d702d2f48b407e4ddfc138
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:53:4 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:59:1 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+
+- **semicolon** · .agent/skills/github-actions/SKILL.md:67:351 · **recurring** · fingerprint: 37b04b4859601e36ccef7b3a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/github-actions/SKILL.md:67:430 · **new** · fingerprint: 75d03b744986296661ae3292
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+
+- **long-sentence** · .agent/skills/github-actions/SKILL.md:75:3 · **recurring** · fingerprint: 5bc051350b900cffa5093b16
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
@@ -5439,50 +5332,135 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 8
-- **Hard findings:** 4
+- **Findings:** 25
+- **Hard findings:** 15
 - **Baseline:** 0
-- **Words:** 5186
-- **Findings per 100 words:** 0.2
+- **Words:** 970
+- **Findings per 100 words:** 2.6
 
 #### Complete diagnostics
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:135:79 · **recurring** · fingerprint: 1ead56a935297678d525088d
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** Remove
-
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:142:40 · **recurring** · fingerprint: 58a47654e8fe2ff210753ac7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are deleted
-
-- **semicolon** · .agent/skills/the-worker/SKILL.md:143:136 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+- **semicolon** · .agent/skills/the-worker/SKILL.md:5:170 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:229:91 · **recurring** · fingerprint: 448e62e062b885437ed3015e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deleted
-
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:277:144 · **recurring** · fingerprint: 857e0d2fef3568ba9dff44ac
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are authorized
-
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:369:196 · **recurring** · fingerprint: ce2bd2aefd327fda5d21b1cd
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is Done
-
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:401:33 · **new** · fingerprint: 952a5f851897b7d21a178421
+- **semicolon** · .agent/skills/the-worker/SKILL.md:7:296 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
   - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirm
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
-- **semicolon** · .agent/skills/the-worker/SKILL.md:405:317 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+- **semicolon** · .agent/skills/the-worker/SKILL.md:13:238 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:13:267 · **new** · fingerprint: 646b7bb10f9a4afa968e76a8
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was rejected
+
+- **semicolon** · .agent/skills/the-worker/SKILL.md:19:316 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:34:286 · **new** · fingerprint: 191f16d660022070d80486cd
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is collected
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:35:16 · **new** · fingerprint: 744124c649cfe9432abfa28d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are collected
+
+- **semicolon** · .agent/skills/the-worker/SKILL.md:35:108 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:36:67 · **new** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+
+- **semicolon** · .agent/skills/the-worker/SKILL.md:37:111 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:37:136 · **new** · fingerprint: fbbd420487349088b9286d6b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are handled
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:38:116 · **new** · fingerprint: 15f03876d973741a8c5cb8e4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is completed
+
+- **semicolon** · .agent/skills/the-worker/SKILL.md:42:257 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:44:81 · **new** · fingerprint: e749a89a221be9cabe94904f
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** remove
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:52:147 · **new** · fingerprint: 6e2f9b805be9c08510010f85
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+
+- **semicolon** · .agent/skills/the-worker/SKILL.md:52:322 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:52:331 · **new** · fingerprint: 1b0e16e405ca623501c8a765
+  - **Level:** advisory-free
+  - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
+  - **Matched text:** fix
+
+- **present-perfect** · .agent/skills/the-worker/SKILL.md:56:29 · **new** · fingerprint: a5d55557cb1399d0acf7ac08
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have received
+
+- **present-perfect** · .agent/skills/the-worker/SKILL.md:56:167 · **new** · fingerprint: 741749aa0db79422e1509169
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has approved
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:56:300 · **new** · fingerprint: 39ce18413ef5d1941ef0df0a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is omitted
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:56:319 · **new** · fingerprint: 4a50516b3278c464640d6067
+  - **Level:** advisory-free
+  - **Message:** 'initiate' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** initiate
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:58:17 · **new** · fingerprint: 485cc95c832398176cc2730f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is given
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:58:294 · **new** · fingerprint: 191f16d660022070d80486cd
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is collected
+
+- **semicolon** · .agent/skills/the-worker/SKILL.md:62:232 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · .agent/skills/the-worker/SKILL.md:62:275 · **recurring** · fingerprint: c9f0d9a4ac52efda5b4f9aea
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -6044,13 +6022,18 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 5
-- **Hard findings:** 1
+- **Findings:** 6
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 4588
+- **Words:** 4603
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
+
+- **semicolon** · .agent/skills/document-standards/references/document-type-catalog.md:131:297 · **new** · fingerprint: e2e4500a529bb5cf3751722a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 - **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:145:143 · **recurring** · fingerprint: 42f86e8fba1534a97a0dd2a0
   - **Level:** advisory
@@ -6076,34 +6059,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
-
-
-### workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md
-
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 3
-- **Hard findings:** 2
-- **Baseline:** 0
-- **Words:** 1957
-- **Findings per 100 words:** 0.2
-
-#### Complete diagnostics
-
-- **passive-voice** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:90:59 · **recurring** · fingerprint: 3a5b8412eaf100e118f17c8f
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-
-- **synonym-rotation** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:158:19 · **recurring** · fingerprint: 88c525f2c2d9aadc1e2f7faf
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
-
-- **synonym-rotation** · workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md:171:143 · **recurring** · fingerprint: 13f39a799a7213976339c951
-  - **Level:** advisory-free
-  - **Message:** 'fix' and 'correct' name the same action. Pick one and use it every time.
-  - **Matched text:** Fix
 
 
 ### .agent/skills/the-worker/references/archive-records-and-image-prompts.md
@@ -6421,20 +6376,45 @@ No STE findings were recorded for this file.
 
 ### .agent/skills/the-worker/references/conversation-mode.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 1
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 6
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 3215
-- **Findings per 100 words:** 0.0
+- **Words:** 335
+- **Findings per 100 words:** 1.8
 
 #### Complete diagnostics
 
-- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:190:263 · **recurring** · fingerprint: 2deb4746f57db62d7bedde8b
+- **present-perfect** · .agent/skills/the-worker/references/conversation-mode.md:20:214 · **new** · fingerprint: 6ae9a6a4a2db5981a11a3382
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been collected
+
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:20:219 · **new** · fingerprint: bdeb60b7ecf5b8b23d08fe8f
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
+  - **Matched text:** been collected
+
+- **semicolon** · .agent/skills/the-worker/references/conversation-mode.md:26:339 · **new** · fingerprint: 7b11bbeb7d4a010ad6e77377
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · .agent/skills/the-worker/references/conversation-mode.md:26:365 · **new** · fingerprint: 20ab01d0763dc8b1779dc36e
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:26:378 · **new** · fingerprint: bd4591524e78ee2f7fa8b868
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is given
+
+- **passive-voice** · .agent/skills/the-worker/references/conversation-mode.md:30:156 · **new** · fingerprint: 4012e882a41727aa31e45e80
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was verified
 
 
 ### .agent/skills/internal-comms/examples/company-newsletter.md
@@ -6515,20 +6495,60 @@ No STE findings were recorded for this file.
 
 ### workspace/task_board.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 1
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 9
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 450
-- **Findings per 100 words:** 0.2
+- **Words:** 324
+- **Findings per 100 words:** 2.8
 
 #### Complete diagnostics
 
-- **passive-voice** · workspace/task_board.md:5:556 · **recurring** · fingerprint: 091688e97ff44b87f3a1d264
+- **semicolon** · workspace/task_board.md:9:184 · **new** · fingerprint: 0141c0cfbe133e92bf61057a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/task_board.md:9:211 · **new** · fingerprint: 2576c78693220ab79f5566ff
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is Done
+  - **Matched text:** was rejected
+
+- **passive-voice** · workspace/task_board.md:19:66 · **new** · fingerprint: 41baa6b366e177c2499f5233
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are listed
+
+- **passive-voice** · workspace/task_board.md:21:31 · **new** · fingerprint: bd8b55f1d04f97c603ef1aff
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was reconciled
+
+- **passive-voice** · workspace/task_board.md:21:151 · **new** · fingerprint: 9db0ccdc5f344a34e6b09777
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deferred
+
+- **semicolon** · workspace/task_board.md:21:211 · **new** · fingerprint: 0141c0cfbe133e92bf61057a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/task_board.md:21:231 · **new** · fingerprint: 4119e24c85ce36f95f82426b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is queued
+
+- **present-perfect** · workspace/task_board.md:31:27 · **new** · fingerprint: 9612c1c87b475ef28776a775
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been remediated
+
+- **passive-voice** · workspace/task_board.md:31:32 · **new** · fingerprint: ad9a72b9a291435f0a3c005b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been remediated
 
 
 ### .agent/skills/theme-factory/themes/desert-rose.md
@@ -6607,15 +6627,20 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 5
-- **Hard findings:** 5
+- **Findings:** 13
+- **Hard findings:** 11
 - **Baseline:** 0
-- **Words:** 2255
-- **Findings per 100 words:** 0.2
+- **Words:** 2152
+- **Findings per 100 words:** 0.6
 
 #### Complete diagnostics
 
-- **semicolon** · .agent/skills/ci-ledger/SKILL.md:44:118 · **new** · fingerprint: 0ae22a9c140235350291bdfa
+- **passive-voice** · .agent/skills/ci-ledger/SKILL.md:38:155 · **new** · fingerprint: a4e5c923c31ec30191d6b854
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is suppressed
+
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:44:118 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -6624,6 +6649,41 @@ No STE findings were recorded for this file.
   - **Level:** advisory-free
   - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
   - **Matched text:** changed
+
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:105:103 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · .agent/skills/ci-ledger/SKILL.md:110:143 · **new** · fingerprint: 0e62ca8d71819e8e8727168f
+  - **Level:** advisory-free
+  - **Message:** Sentence has 41 words (cap 25). Split it.
+  - **Matched text:** 41 words
+
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:110:198 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:110:582 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:114:28 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · .agent/skills/ci-ledger/SKILL.md:117:261 · **recurring** · fingerprint: 0ae22a9c140235350291bdfa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/ci-ledger/SKILL.md:117:286 · **new** · fingerprint: bbd8f7f08837e2060f7f4d03
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
 
 - **synonym-rotation** · .agent/skills/ci-ledger/SKILL.md:121:24 · **recurring** · fingerprint: b15b11ac85d2fcdf68c941a9
   - **Level:** advisory-free
@@ -6871,7 +6931,7 @@ No STE findings were recorded for this file.
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 728
+- **Words:** 667
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
@@ -6881,40 +6941,60 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 6
-- **Hard findings:** 2
+- **Findings:** 10
+- **Hard findings:** 5
 - **Baseline:** 0
-- **Words:** 477
-- **Findings per 100 words:** 1.3
+- **Words:** 588
+- **Findings per 100 words:** 1.7
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/TASK_TEMPLATE.md:24:136 · **recurring** · fingerprint: 3a0997aa00ae589847e48a35
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** remove
-
-- **passive-voice** · workspace/TASK_TEMPLATE.md:52:32 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+- **passive-voice** · workspace/TASK_TEMPLATE.md:20:60 · **new** · fingerprint: d6cb213a49d24318311d0da8
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was checked
+  - **Matched text:** is deferred
 
-- **passive-voice** · workspace/TASK_TEMPLATE.md:78:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was checked
-
-- **passive-voice** · workspace/TASK_TEMPLATE.md:79:23 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was checked
-
-- **semicolon** · workspace/TASK_TEMPLATE.md:95:110 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
+- **semicolon** · workspace/TASK_TEMPLATE.md:24:152 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · workspace/TASK_TEMPLATE.md:95:247 · **recurring** · fingerprint: f89fcc99c66cd06012ce7d5a
+- **semicolon** · workspace/TASK_TEMPLATE.md:24:182 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/TASK_TEMPLATE.md:28:42 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **synonym-rotation** · workspace/TASK_TEMPLATE.md:30:136 · **recurring** · fingerprint: 3a0997aa00ae589847e48a35
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** remove
+
+- **passive-voice** · workspace/TASK_TEMPLATE.md:58:32 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was checked
+
+- **passive-voice** · workspace/TASK_TEMPLATE.md:84:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was checked
+
+- **passive-voice** · workspace/TASK_TEMPLATE.md:85:23 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was checked
+
+- **semicolon** · workspace/TASK_TEMPLATE.md:101:110 · **recurring** · fingerprint: 1d091436eb9c47dd7a5b55d1
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/TASK_TEMPLATE.md:101:247 · **recurring** · fingerprint: f89fcc99c66cd06012ce7d5a
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is untrusted
@@ -7448,15 +7528,30 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 1
-- **Hard findings:** 1
+- **Findings:** 4
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 1084
-- **Findings per 100 words:** 0.1
+- **Words:** 1222
+- **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/README.md:46:200 · **recurring** · fingerprint: d8d5bdd914126f90076410ea
+- **semicolon** · workspace/README.md:36:183 · **new** · fingerprint: 99ddd247f24032b76e53f957
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/README.md:36:210 · **new** · fingerprint: 7db95bfd4fd923e46bee569d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was rejected
+
+- **passive-voice** · workspace/README.md:36:484 · **new** · fingerprint: f5049c86552d80c254f92f30
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are satisfied
+
+- **synonym-rotation** · workspace/README.md:48:200 · **recurring** · fingerprint: d8d5bdd914126f90076410ea
   - **Level:** advisory-free
   - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
   - **Matched text:** Remove
@@ -7720,15 +7815,35 @@ No STE findings were recorded for this file.
 
 ### workspace/SUBTASK_TEMPLATE.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 4
+- **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 424
-- **Findings per 100 words:** 0.0
+- **Words:** 526
+- **Findings per 100 words:** 0.8
 
-No STE findings were recorded for this file.
+#### Complete diagnostics
+
+- **passive-voice** · workspace/SUBTASK_TEMPLATE.md:19:60 · **new** · fingerprint: f1ec495bc7a973b2581b8695
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deferred
+
+- **semicolon** · workspace/SUBTASK_TEMPLATE.md:28:42 · **new** · fingerprint: ae777a92ddc5d2c5149411bc
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/SUBTASK_TEMPLATE.md:84:152 · **new** · fingerprint: ae777a92ddc5d2c5149411bc
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/SUBTASK_TEMPLATE.md:84:182 · **new** · fingerprint: ae777a92ddc5d2c5149411bc
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 
 ### .agent/skills/asd-ste100/SKILL.md
@@ -7842,34 +7957,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were memorized
-
-
-### workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md
-
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 3
-- **Hard findings:** 2
-- **Baseline:** 0
-- **Words:** 2081
-- **Findings per 100 words:** 0.1
-
-#### Complete diagnostics
-
-- **passive-voice** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:99:59 · **recurring** · fingerprint: c39323ab6689958912bbc8ba
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-
-- **synonym-rotation** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:168:19 · **recurring** · fingerprint: 26a6732babf8a18c8f5ce179
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
-
-- **synonym-rotation** · workspace/draft/DRAFT-0007-editorial-successor-for-adr-0004.md:182:143 · **recurring** · fingerprint: 2a02d81fb2a9bfbd6ffc2294
-  - **Level:** advisory-free
-  - **Message:** 'fix' and 'correct' name the same action. Pick one and use it every time.
-  - **Matched text:** Fix
 
 
 ### .agent/skills/asd-ste100/assets/lint-report-template.md
