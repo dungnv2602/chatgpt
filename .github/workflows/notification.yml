@@ -55,4 +55,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./reports/gh_ac_reports/actions/capture
+        uses: ./.takeout/reports/gh_ac_reports/actions/capture

@@ -1,0 +1,762 @@
+{
+  "schema_version": "1.2.0",
+  "scope": "on_changed",
+  "source_task_id": "20261127-173000-05",
+  "run_id": "45988691008",
+  "run_number": 991,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45988691008",
+  "attempt": 1,
+  "branch": "gpt",
+  "commit_sha": "22907d4bfb9905ee155d0d16164982c96d415762",
+  "event": "push",
+  "workflow": "STE Lint Changed Documentation",
+  "runner_os": "Linux",
+  "execution_mode": "incremental",
+  "baseline_sha": "7be1eb9a1f960c75e230430a6b6308860fd743fc",
+  "generated_at_utc": "2026-11-27T11:15:16.409350+00:00",
+  "status": "Failed",
+  "linter_source_sha": "22907d4bfb9905ee155d0d16164982c96d415762",
+  "runtime": {
+    "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
+    "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
+  },
+  "files_evaluated": [
+    "workspace/task_board.md",
+    "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+    "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md"
+  ],
+  "files_evaluated_count": 3,
+  "files_failed": 2,
+  "failed_files": [
+    "workspace/task_board.md",
+    "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md"
+  ],
+  "files_with_findings": 2,
+  "total_findings": 10,
+  "hard_findings": 3,
+  "advisory_findings": 7,
+  "findings_by_rule": {
+    "synonym-rotation": 1,
+    "passive-voice": 7,
+    "semicolon": 2
+  },
+  "records": [
+    {
+      "violations": [
+        {
+          "file": "workspace/task_board.md",
+          "line": 44,
+          "col": 24,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Correct",
+          "message": "'correct' and 'fix' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/task_board.md",
+          "line": 44,
+          "col": 147,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is deferred",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        }
+      ],
+      "count": 2,
+      "hard_count": 1,
+      "baseline": 0,
+      "words": 413,
+      "per_100_words": 0.5,
+      "path": "workspace/task_board.md",
+      "exit_code": 1
+    },
+    {
+      "violations": [
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 34,
+          "col": 64,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is required",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 47,
+          "col": 41,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was made",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 111,
+          "col": 44,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are implemented",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 150,
+          "col": 86,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was retired",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 152,
+          "col": 54,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 160,
+          "col": 67,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are committed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 163,
+          "col": 53,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 163,
+          "col": 93,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was archived",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        }
+      ],
+      "count": 8,
+      "hard_count": 2,
+      "baseline": 0,
+      "words": 1308,
+      "per_100_words": 0.6,
+      "path": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "exit_code": 1
+    },
+    {
+      "violations": [],
+      "count": 0,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 9016,
+      "per_100_words": 0.0,
+      "path": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "exit_code": 0
+    }
+  ],
+  "findings": [
+    {
+      "file": "workspace/task_board.md",
+      "line": 44,
+      "col": 24,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Correct",
+      "message": "'correct' and 'fix' name the same action. Pick one and use it every time.",
+      "fingerprint": "f3da998ac0ab93f31587c635",
+      "comparison": "recurring"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 44,
+      "col": 147,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is deferred",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "9db0ccdc5f344a34e6b09777",
+      "comparison": "recurring"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 34,
+      "col": 64,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "fbe6150d9b5e8dab3b1e43a3",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 47,
+      "col": 41,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was made",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8d3ad3a1e3838d879ee9b85a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 111,
+      "col": 44,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are implemented",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e871aaaf906a610ac0db5605",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 150,
+      "col": 86,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was retired",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e56053c3ddae76d3a0704b63",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 152,
+      "col": 54,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "9a23cba48e9d5ffca1df4cc7",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 160,
+      "col": 67,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are committed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "2eafa78f211213b12b14d4d5",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 163,
+      "col": 53,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "9a23cba48e9d5ffca1df4cc7",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 163,
+      "col": 93,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was archived",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "cb29534f35d8d330ae1e06be",
+      "comparison": "new"
+    }
+  ],
+  "new_findings": 8,
+  "recurring_findings": 2,
+  "resolved_findings": [
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 20,
+      "col": 83,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "7b14acb1f2bd5527bba85225",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 29,
+      "col": 165,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "35 words",
+      "message": "Sentence has 35 words (cap 25). Split it.",
+      "fingerprint": "d12eb5aac33ab414d203a6d5",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 29,
+      "col": 319,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 29,
+      "col": 468,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "29 words",
+      "message": "Sentence has 29 words (cap 25). Split it.",
+      "fingerprint": "ca1db01f7b11a29a176a2e86",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 29,
+      "col": 750,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 45,
+      "col": 141,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "41c8fb47b6b000b0b2e47dfc",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 51,
+      "col": 10,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are Proposed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "0ccd1f7c4af982aef5659c2d",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 56,
+      "col": 41,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 57,
+      "col": 29,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 58,
+      "col": 16,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 69,
+      "col": 91,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is read",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "0aaa53d17394c2697ff91643",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 96,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "29bf7cd1e44f6d01fc347374",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 100,
+      "col": 70,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "42 words",
+      "message": "Sentence has 42 words (cap 25). Split it.",
+      "fingerprint": "030301d369a6833422178b29",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 100,
+      "col": 330,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "remove",
+      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
+      "fingerprint": "e749a89a221be9cabe94904f",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 108,
+      "col": 139,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "modifying",
+      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
+      "fingerprint": "90e6b7d1bbc5bc36ea42d40b",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 108,
+      "col": 169,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "begin",
+      "message": "'begin' and 'start' name the same action. Pick one and use it every time.",
+      "fingerprint": "9a91179e5c545e21411d154c",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 109,
+      "col": 182,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "33 words",
+      "message": "Sentence has 33 words (cap 25). Split it.",
+      "fingerprint": "6ceec6aac665e34ceb1f916d",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 109,
+      "col": 201,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "validated",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "d04c76628166e8796dcfc446",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 125,
+      "col": 257,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 133,
+      "col": 286,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "repair",
+      "message": "'repair' and 'correct' name the same action. Pick one and use it every time.",
+      "fingerprint": "f071e35d93664b24286e6bb7",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 134,
+      "col": 302,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "fetch",
+      "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
+      "fingerprint": "5d8336dc915865ae43f6b3a8",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 136,
+      "col": 100,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are exhausted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e5c16c0bb6df9d137ce2bf13",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 136,
+      "col": 142,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "29 words",
+      "message": "Sentence has 29 words (cap 25). Split it.",
+      "fingerprint": "ca1db01f7b11a29a176a2e86",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 136,
+      "col": 228,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "were examined",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "961e310a4d56d86392dd989d",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/references/document-type-catalog.md",
+      "line": 43,
+      "col": 131,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "e7ff64fedb3eddf5ee3c1564",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/references/document-type-catalog.md",
+      "line": 44,
+      "col": 275,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "e7ff64fedb3eddf5ee3c1564",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/references/document-type-catalog.md",
+      "line": 131,
+      "col": 297,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "e7ff64fedb3eddf5ee3c1564",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/references/document-type-catalog.md",
+      "line": 145,
+      "col": 143,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are completed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "3c37bdb100e76e92190f285d",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/references/document-type-catalog.md",
+      "line": 145,
+      "col": 228,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are accepted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "635c1984012e0d9f0ec925af",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/references/document-type-catalog.md",
+      "line": 213,
+      "col": 89,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are deleted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6b4e11cdd83b54cefd8c9eb0",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/references/document-type-catalog.md",
+      "line": 213,
+      "col": 179,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are deleted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6b4e11cdd83b54cefd8c9eb0",
+      "comparison": "resolved"
+    },
+    {
+      "file": ".agent/skills/the-worker/references/document-type-catalog.md",
+      "line": 213,
+      "col": 206,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "checks",
+      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "462e0ea3915e8d7012fd216c",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 17,
+      "col": 86,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0141c0cfbe133e92bf61057a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 21,
+      "col": 30,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0141c0cfbe133e92bf61057a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 25,
+      "col": 81,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are paused",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "acef55e552dc6ca1566b2e9e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 25,
+      "col": 91,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0141c0cfbe133e92bf61057a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 33,
+      "col": 138,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was read",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "b1a46d8a22d1e761ec9da309",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 33,
+      "col": 226,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0141c0cfbe133e92bf61057a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 34,
+      "col": 132,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was read",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "b1a46d8a22d1e761ec9da309",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 34,
+      "col": 242,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0141c0cfbe133e92bf61057a",
+      "comparison": "resolved"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Wrapper shell syntax",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Python report tooling compilation",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Lint report regression tests",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.423s\n\nOK\n"
+    },
+    {
+      "name": "Markdown anchor regression tests",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.005s\n\nOK\n"
+    },
+    {
+      "name": "STE linter self-test",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "selftest OK\n"
+    },
+    {
+      "name": "Markdown links and heading anchors",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "Scanned 3 changed Markdown sources (392 available as link targets) and 10 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+    }
+  ],
+  "failed_checks": []
+}

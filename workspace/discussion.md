@@ -1,25 +1,32 @@
+# Discussion Register
+
 ## Current Step
 
-**2026-11-25 02:15 UTC — Verify and execute the branch merge:** Check repository merge settings and open pull requests. Since `gpt` is 665 commits ahead and zero behind, use a protected fast-forward/PR path if repository policy permits. Then inspect DRAFT-0002, its template/catalog entry, existing task context, and decision-governance requirements before revising it.
+- **2026-11-27 18:01 +07:00:** Startup CI P0 batch complete. The report-template assertions were corrected in commit `1e697f0e5167e9c0778cadef69d7cf084249be27`; the four stale Markdown links were corrected in commits `f514ad0dfc46bca10ab5d9cae95d609d26b8a704`, `60ec079dbb8aaa6db97d8b717af9fc3b95962826`, and `22907d4bfb9905ee155d0d16164982c96d415762`. The latest inspected indexed report records six regression tests passed but predates the link fixes. No local tests were run and no hosted CI results were inspected. No eligible CI-generated P0 tasks remain in the inspected active task indexes. Next selected task: Refactor Skills child `20261127-173000-02`.
+- **2026-11-27:** Correcting task-parent selection: independent objectives require separate parents; Document Standards consolidation was misparented under the CI/reporting task and is now tracked under its own parent.
+- **2026-11-27:** Consolidation request captured as paused subtask `20261127-173000-02` under Refactor Skills: merge GitHub Actions, CI Ledger, Decision Governance, and Document Standards into The Worker and delete the separate skill directories, deferred behind P0.
 
-**2026-11-25 02:15 UTC — Inspect task state and branch history:** Read the workspace navigation and task board, identify the active DRAFT-0002 task, and compare `gpt` with `main`. Determine a safe merge path without force-pushing or bypassing review protections.
-
-**2026-11-25 02:15 UTC — Session started:** Foundational initialization is in progress. Task: merge `gpt` into `main`, then assess all options in [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md#considered-options) and publish an updated draft with detailed option assessments. No implementation decision is implied by this review.
-
-**2026-11-24 18:57 UTC — Catalog repair validated and task archived:** [Document Standards #365](https://github.com/actions/runs/45461707151) passed on commit `cedc0b751f02f494feabb822b2669c29fa9d7180`, and [STE Lint #681](https://github.com/actions/runs/45461706916) passed with zero findings. Task `20261124-183017` is archived at [the immutable task record](../archive/tasks/20261124-183017-repair-adr-catalog-rule-and-ci-follow-through.md) via [archive commit](https://github.com/dungnv2602/chatgpt/commit/5cdb81d16becbb86f6e5270d493f1b1ff6210bcb). The retention index uses the archive commit timestamp, `2026-11-24T18:56:28Z`. Note: the immutable archive front matter contains an erroneous archive timestamp (`2026-11-25T18:55:00Z`); the archive was not altered, and the index records the actual commit time. DRAFT-0002 remains unchanged.
-
+- **2026-11-27:** Implement [subtask 20261126-142500-02](tasks/20261126-142500/subtasks/02-refactor-task-ci-lifecycle.md) under [parent task 20261126-142500](tasks/20261126-142500/task.md). Audit child 01 is Done. Current focus: prompt capture gate, Task-ID provenance, genuine-parent CI child generation, Ledger schema/generator/tests, and concise aligned templates/skills.
 
 ## Open Discussions
 
-- **2026-11-24 — Review DRAFT-0002 revision 2:** [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md). Revision 2 retains Option 3 and updates the proposal to target Task Template 1.4, define one authoritative Next Step with optional Following Actions, use event-based research checkpoints, clarify findings-note archival, and set measurable criteria for a three-task pilot. ADR-0001 governs the decision process only. It does not approve this proposal's substance or implementation. Please decide whether to approve the exact revision 2 and scope, adapt the external concepts rather than install the full system, and accept the proposed pilot. Do not implement before the user approves this exact Draft and the repository accepts its implementation ADR.
-
-- **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
+- **2026-11-27:** Completed/cancelled task folders must be deleted directly after closeout. Do not create task or report archives, retention copies, cleanup schedules, or Historical board rows.
+- **2026-11-27:** Do not inspect, poll, dispatch, or rerun hosted CI. Commit/readback is the completion evidence; later failures flow through automatic report ingestion.
+- **2026-11-27:** User authorized direct execution of this task's full prompt-capture and CI lifecycle refactor.
 
 ## Reports
 
-- **2026-11-24 18:57 UTC — Catalog repair validated:** Document Standards #365 passed and STE Lint #681 passed with zero findings on commit `cedc0b751f02f494feabb822b2669c29fa9d7180`. The catalog and Worker changes are validated. Task `20261124-183017` was archived; its archive timestamp discrepancy is documented in Current Step, and the retention index uses the archive commit's actual timestamp.
 
-- **2026-11-24 18:30 UTC — Post-archive CI review:** [STE Lint #678](https://github.com/dungnv2602/chatgpt/actions/runs/45457882540) passed. [Document Standards #362](https://github.com/dungnv2602/chatgpt/actions/runs/45457882610) failed at catalog validation because the empty active ADR family remained marked Active. [Diagnostics #649](https://github.com/dungnv2602/chatgpt/actions/runs/45458212210) and [#648](https://github.com/dungnv2602/chatgpt/actions/runs/45458192477) passed.
-- **2026-11-24 15:07 UTC — Changed-document lint passed:** Run [#636](https://github.com/dungnv2602/chatgpt/actions/runs/45421670881) passed on commit 4dfbde6. The report records zero hard findings, 29 recurring advisory findings, zero new findings, and one resolved finding. Report publication succeeded.
-- **2026-11-24 15:06 UTC — Document Standards validation passed:** Run [#320](https://github.com/dungnv2602/chatgpt/actions/runs/45421670850) passed 37 Ledger tests, 32 catalog tests, catalog validation, and its diagnostics capture.
-- **2026-11-24 15:06 UTC — GitHub Actions diagnostics passed:** Run [#587](https://github.com/dungnv2602/chatgpt/actions/runs/45421671015) passed reporter tests, backfill, Ledger ingestion, and publication.
+- **2026-11-27 08:50 UTC:** Reconciled and directly closed eight P0 editorial task groups covering ADR-0003/0004. Wording edits committed (ADR-0003: `4a5e17764a173f519846a5a542902921bc296a0b`; ADR-0004: `bd89ad40440ee10c83b2e6a08770f082dc184fb3`). Ledger commit `5dbb6c6f80be3e79bdff62bf665611b5755570ab` resolved 65 findings with validation metadata Pending; hosted results were not inspected. Task folders were deleted directly under ADR-0004 lifecycle rules; finding identity and historical task references remain in Ledger.
+
+- **2026-11-27:** Audited workspace task templates, task-board contract, navigation, and Document Type Catalog for consistency with the scheduler-order board. Updated task/subtask templates, workspace README, catalog references/version notes, and Worker board contract. Remote readback verified. Commits: `80f82f48d296ae70fbc70a7220a9b3ddb86db5b5`, `b93c2ddc9a47ae8f345e7d0cdc396956520dc959`, `1ce764f5bc3679f1fa72322b0595481f83c302ac`, `5f236bb0b113790354b643f6076dfda49fdcb0d0`, `7137b7642ae5a283fd05c840ccab4f8248bbf4ac`. Hosted validation was not inspected.
+- **2026-11-27 08:27 UTC:** Refactored `workspace/task_board.md` to show Current Execution, an ordered eligible queue, Next Task, and deferred work categories. Worker remains the scheduling authority. Verified board readback and deleted the completed task folder under the direct-deletion lifecycle. Commit: `6a7aa74ec0f7d014aec1e3470c4019b6edb3fc37`. Hosted validation was not inspected.
+- **2026-11-27 08:24 UTC:** Session initialization passed. Startup P0 review found no Ready P0 tasks. The batch ended at quiescence. Hosted CI results were not inspected.
+
+- **2026-11-27:** Session initialization started by `/start`. Foundational retrieval and startup CI Ledger batch are in progress; hosted CI results remain out of scope.
+
+
+- **2026-11-27:** Created independent parents `20261127-173000` (Refactor Skills) and `20261127-173100` (Template Fix). Reparented the former document-governance parent `20261127-102301` under Refactor Skills, preserving its partial consolidation and nested implementation record. Template Fix has children for creating a task-board template and auditing repository template coverage/remediating confirmed gaps.
+- **2026-11-27:** Reparented objective-based workflow correction `20261127-102300` as Refactor Skills subtask `20261127-173000-03`, preserving its original prompt and implementation/evidence notes. Deferred its remaining audit/closeout behind the mandatory P0 queue.
+
+- **2026-11-27 18:20 UTC:** Remediated and read back source changes for P0 editorial children 04–20. Two P0 tasks remain blocked by missing immutable diagnostic details under the no-hosted-CI-review rule. Board now shows no eligible P0 tasks and no Current Execution.

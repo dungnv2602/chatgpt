@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45792737046",
+    "number": 584,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45792737046",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "a366786103f62c68a68fd4dccea812ed39407001",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-26T09:31:20Z",
+    "run_started_at": "2026-11-26T09:31:20Z",
+    "updated_at": "2026-11-26T09:32:24Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "test(ci-ledger): guard canonical decisions placeholder rendering"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-26T10:13:42Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "139815862523",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "failure"
+    }
+  },
+  "classification": {
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "validation_or_test",
+    "categories": [
+      "validation_or_test"
+    ],
+    "issues": [
+      {
+        "category": "validation_or_test",
+        "job_id": "139815764864",
+        "job_name": "validate-document-standards",
+        "step_number": 4,
+        "step_name": "Run CI Ledger regression tests",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "2026-11-26T09:31:50.5841553Z Traceback (most recent call last):"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "139815764864",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-26T09:31:43Z",
+      "completed_at": "2026-11-26T09:31:52Z",
+      "runner_name": "GitHub Actions 1000003134",
+      "runner_id": 1000003134,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:31:44Z",
+          "completed_at": "2026-11-26T09:31:44Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:31:44Z",
+          "completed_at": "2026-11-26T09:31:49Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:31:49Z",
+          "completed_at": "2026-11-26T09:31:49Z"
+        },
+        {
+          "number": 4,
+          "name": "Run CI Ledger regression tests",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-26T09:31:49Z",
+          "completed_at": "2026-11-26T09:31:50Z"
+        },
+        {
+          "number": 5,
+          "name": "Run catalog validator regression tests",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:31:50Z",
+          "completed_at": "2026-11-26T09:31:50Z"
+        },
+        {
+          "number": 6,
+          "name": "Validate the document type catalog",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:31:50Z",
+          "completed_at": "2026-11-26T09:31:50Z"
+        },
+        {
+          "number": 11,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:31:50Z",
+          "completed_at": "2026-11-26T09:31:50Z"
+        },
+        {
+          "number": 12,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:31:50Z",
+          "completed_at": "2026-11-26T09:31:50Z"
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:31:50Z",
+          "completed_at": "2026-11-26T09:31:50Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 64597,
+        "path": "logs/job-139815764864.log",
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:31:50.5841553Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:31:50.5880004Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:31:50.5912799Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:31:50.5944553Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:31:50.5975585Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:31:50.6006905Z Traceback (most recent call last):",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:31:50.6008890Z FAILED (failures=6)",
+          "validate-document-standards\tRun CI Ledger regression tests\t2026-11-26T09:31:50.6023806Z ##[error]Process completed with exit code 1."
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "139815764864",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-26T09:31:43Z",
+      "completed_at": "2026-11-26T09:31:52Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45792737046/job/139815764864",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "139815764864",
+      "job_id": "139815764864",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "139815764864",
+      "job_id": "139815764864",
+      "path": ".github",
+      "start_line": 111,
+      "end_line": 111,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45792737046-attempt-1-post_run"
+}

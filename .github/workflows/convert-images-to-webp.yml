@@ -7,12 +7,14 @@ on:
     paths:
       # Intake uploads trigger validation. Ready-state changes and processor,
       # test, or workflow edits require an explicit manual dispatch.
-      - 'images/takeout/*'
-      - '!images/takeout/HANDOFF.yml'
-      - '!images/takeout/README.md'
-      - 'drawings/history/*-conversation-integrity.md'
-      - 'novels/**/conversation-integrity.md'
-      - 'images/**/conversation-integrity.md'
+      - '.takeout/images/*'
+      - '!.takeout/images/HANDOFF.yml'
+      - '!.takeout/images/README-1.md'
+      - '!.takeout/images/README-2.md'
+      - '!.takeout/images/.gitkeep'
+      - 'area/drawing/history/*-conversation-integrity.md'
+      - 'area/novel/**/conversation-integrity.md'
+      - '.takeout/images/**/conversation-integrity.md'
       # Maintenance changes do not launch a batch against the live intake.
   workflow_dispatch: {}
 
@@ -47,13 +49,13 @@ jobs:
       - name: Compile takeout processor and publication verifier
         run: |
           python3 -m py_compile \
-            skills/the-worker/scripts/process_takeout.py \
-            skills/the-worker/scripts/verify_published_manifest.py
+            .agent/skills/the-worker/scripts/process_takeout.py \
+            .agent/skills/the-worker/scripts/verify_published_manifest.py
 
       - name: Test takeout processor
         run: |
           python3 -m unittest discover \
-            -s skills/the-worker/scripts \
+            -s .agent/skills/the-worker/scripts \
             -p 'test_process_takeout_unittest.py' \
             -v
 
@@ -61,7 +63,7 @@ jobs:
         id: process
         continue-on-error: true
         run: |
-          python3 skills/the-worker/scripts/process_takeout.py \
+          python3 .agent/skills/the-worker/scripts/process_takeout.py \
             --repo-root . \
             --run-id "$GITHUB_RUN_ID"
 
@@ -76,11 +78,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Include only working-tree changes created by the takeout processor.
-          git add -A -- images/ drawings/
-          if [[ -d novels/ ]]; then
-            git add -A -- novels/
-          fi
+          # Stage the relocated shared image store and project-specific outputs.
+          for path in .takeout/images/ area/drawing/ area/novel/; do
+            if [[ -d "$path" ]]; then
+              git add -A -- "$path"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "No takeout processing changes to publish."
             exit 0
@@ -132,13 +135,13 @@ jobs:
 
           # This verifies the first published commit and changes Pending
           # manifest rows only after the exact remote blobs and URLs match.
-          python3 skills/the-worker/scripts/verify_published_manifest.py \
+          python3 .agent/skills/the-worker/scripts/verify_published_manifest.py \
             --repo-root . \
             --git-ref origin/gpt \
             --branch gpt
 
-          if ! git diff --quiet -- drawings/; then
-            git add -A -- drawings/
+          if ! git diff --quiet -- area/drawing/; then
+            git add -A -- area/drawing/
             git commit -m "chore(drawings): verify published image manifests"
 
             max_attempts=5
@@ -169,7 +172,7 @@ jobs:
           fi
 
           git fetch origin gpt
-          python3 skills/the-worker/scripts/verify_published_manifest.py \
+          python3 .agent/skills/the-worker/scripts/verify_published_manifest.py \
             --repo-root . \
             --git-ref origin/gpt \
             --branch gpt \
@@ -205,4 +208,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./reports/gh_ac_reports/actions/capture
+        uses: ./.takeout/reports/gh_ac_reports/actions/capture

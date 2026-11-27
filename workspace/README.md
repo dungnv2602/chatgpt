@@ -1,72 +1,45 @@
 # Workspace
 
-The workspace is the task-management and conversation-navigation area. The Worker owns task records, selection, progress, handoffs, archive closeout, and the shared discussion register. Document Standards governs workspace document formats.
+The Worker owns task capture, hierarchy, scheduling, progress, handoff, and direct closeout. Document Standards owns document formats.
 
 ## Files
 
 | Path | Purpose |
 |---|---|
-| [discussion.md](discussion.md) | Current-step brief, open discussions, and the three latest verified success reports |
-| [task_board.md](task_board.md) | Task index, priorities, states, and current execution |
-| [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Canonical task-record format |
-| [DRAFT_TEMPLATE.md](DRAFT_TEMPLATE.md) | Canonical decision-draft format |
-| [ADR_TEMPLATE.md](ADR_TEMPLATE.md) | Canonical decision-record format |
-| [ANALYSIS_TEMPLATE.md](ANALYSIS_TEMPLATE.md) | Canonical repository-analysis format |
-| [tasks/](tasks/) | Active task records |
-| [draft/](draft/README.md) | Proposals awaiting user review and decision |
-| [adr/](adr/README.md) | Accepted decisions awaiting implementation and confirmation |
-| [analysis/](analysis/README.md) | Evidence-based repository analysis snapshots |
-| [../reports/README.md](../reports/README.md) | Lint, Actions, and issue-ledger navigation |
-| [../archive/README.md](../archive/README.md) | Archive and retention policy |
+| [discussion.md](discussion.md) | Current step, open decisions, and three latest success reports |
+| [task_board.md](task_board.md) | Current execution, eligible queue, next task, and deferred work |
+| [TASK_BOARD_TEMPLATE.md](TASK_BOARD_TEMPLATE.md) | Canonical task-board structure and scheduler contract |
+| [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Parent task folder |
+| [SUBTASK_TEMPLATE.md](SUBTASK_TEMPLATE.md) | Follow-up and remediation child |
+| [tasks/](tasks/) | Active task folders; each has task.md and subtasks/README.md |
+| [draft/](draft/README.md) | Decision proposals |
+| [adr/](adr/README.md) | Accepted decisions |
+| [analysis/](analysis/README.md) | Evidence-based repository analysis |
+| [../.takeout/reports/README.md](../.takeout/reports/README.md) | Lint, Actions, and Ledger navigation |
 
-## Draft and ADR workflow
+## Task lifecycle
 
-Use a Draft to present a proposal. Do not implement a proposed decision.
+1. Before substantive work, inspect active tasks and capture the actionable prompt verbatim.
+2. A new objective creates a parent task. A substantive follow-up, correction, or scope extension creates its own subtask under the genuine parent. Clarifications and approvals with no independent deliverable are recorded verbatim as subsequent instructions. Greetings and acknowledgements need no task.
+3. Split independent objectives. Do not attach unrelated requests to one parent. Do not guess parentage; record uncertain requests and resolve attribution at quiescence.
+4. Keep parent and child indexes current. The Worker alone schedules and updates `task_board.md`.
+5. Record commits, readback, checks, decisions, and limitations. Every task-specific implementation commit includes `Task-ID: <task-id>`.
+6. A parent cannot be Done while a required child is open. After closeout, delete the complete task folder and board row. Do not archive or retain a copy.
 
-After the user approves the exact Draft, create a provisional ADR with status promotion-pending. Compare the complete ADR with the approved Draft. Review every material rationale, scope, trade-off, safeguard, dependency, migration, rollback, Confirmation criterion, source, and approval detail.
+Approval is scope authorization, not status. Use Proposed only when a required decision or authorization is genuinely pending. P0 does not bypass a real decision gate.
 
-Read back the provisional ADR. Change its status to accepted only after the completeness check passes. Read back the accepted ADR before deleting the source Draft.
+## Decision records
 
-After successful promotion, delete the source Draft. Keep its ID and approved revision as ADR provenance. Do not link the ADR to a source file that no longer exists. Do not create an archive/draft/ folder or a Promoted Drafts index.
+Use a Draft for a proposed decision. Do not implement the proposal before approval. After approval, promote it to an accepted ADR only after the full rationale and completeness review. Keep accepted ADRs in `workspace/adr/`; do not create archive folders or historical copies.
 
-If source deletion fails after acceptance, retain the Draft temporarily. Record the resulting ADR ID and cleanup reason in its metadata. List it only under Promotion Cleanup Pending. Retry deletion without creating another ADR or repeating approval.
+## CI lifecycle
 
-Only accepted ADRs can govern implementation tasks. Keep task execution approval separate from the ADR's decision approval.
+Report evidence must identify the task that caused the run. Worker commits carry a `Task-ID:` trailer. The Ledger resolves a parent ID directly or resolves a child ID through its Parent Task ID. It creates P0, Approved, Ready remediation children under that genuine user task. It never creates a CI work-target parent or changes the board/current execution pointer.
 
-When all implementation tasks and the ADR's confirmation checks pass, move the ADR to archive/adr/. Keep archived ADRs permanently. Never add them to the 90-day task/report retention index.
+If attribution is missing, invalid, inactive, or points to a deleted task, keep the finding in the Ledger as unassigned. Do not infer a parent from filenames, workflow, branch, current execution, or timing. The Worker can resolve attribution when reliable evidence becomes available.
 
-The decision-governance skill owns Draft, ADR, and repository-analysis lifecycles. Load it only when a task requires decision governance. Do not add it to foundational initialization.
+Lint baselines, finding identity, grouped remediation, bounded evidence, and occurrence history prevent repeat reports from flooding the queue. The same active finding group under the same parent reuses its child. A recurrence after resolution preserves history and creates/reuses a follow-up under the task identified by that run's commit.
 
-## Task workflow
+The Ledger owns finding state and child evidence. The Worker owns task status, selection, approval checks, parent/child completion, and direct deletion. CI remediation closes after the intended-branch commit is verified; hosted validation is optional metadata. Do not inspect hosted results unless the user explicitly asks.
 
-1. Check the board and active records before creating work. Update an existing task when the objective continues. Otherwise, create a distinct task.
-2. Record the user's request, scope, constraints, approval, priority, dependencies, and acceptance criteria.
-3. Select one current execution task. Follow explicit user direction, then dependencies, priority, and age.
-4. Record meaningful actions, decisions, verification, and blockers in the task record. Keep the board as an index.
-5. Close only after all acceptance criteria pass. Create the archive copy and read it back. Update the retention index and delete the active record. Check that the board links to the archive commit.
-
-Task IDs use UTC YYYYMMDD-HHMMSS. Use only the statuses Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Optional assistant improvements remain Proposed until approved. Necessary follow-ups may be created automatically within the approved scope.
-
-## CI issue workflow
-
-GitHub Actions publishes diagnostic evidence into the lint and Actions report families. The event-driven Ledger creates grouped Proposed tasks for newly identified actionable findings and links them through task_refs. The Worker retains prioritization, approval, remediation, verification, and closeout.
-
-The first complete tooling-valid full audit in each lint scope establishes a baseline without creating tasks. Later runs create tasks only for genuinely new actionable findings. Recurring untracked baseline findings do not flood the backlog. The Ledger retains at most five evidence paths per finding while preserving cumulative occurrence counts.
-
-A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
-
-A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the Worker archives the task as Done and indexes it, the archive/tasks/** push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not delete Ledger entries manually or run periodic retirement scans.
-
-A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior archive/reports/** snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See reports/triage/README.md and archive/README.md for exact reset and closeout rules.
-
-Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A successful validation run URL and UTC timestamp provide sufficient resolution evidence. Capture a full successful-run diagnostic report only when the task needs detailed evidence.
-
-The changed-document lint workflow uses GitHub Actions concurrency to cancel superseded push runs. Do not add a separate run-list preflight guard. GitHub may not list the current run when its first job queries the run list, which can cause the guard to cancel the current run.
-
-## Discussion register
-
-The Worker maintains [discussion.md](discussion.md) in both conversation modes. Its Conversation Mode reference defines the section order, pre-step brief, open-discussion lifecycle, and three-report limit. Keep technical progress and handoffs in task records, not in the register.
-
-## Recovery
-
-Read this file, the board, and the selected task record. Check the current gpt repository state before resuming. Follow the task's Next Actions. Reconcile discrepancies against the latest user instruction and committed repository state.
+See [CI Ledger](../.agent/skills/ci-ledger/SKILL.md), [GitHub Actions](../.agent/skills/github-actions/SKILL.md), and [.takeout report navigation](../.takeout/reports/README.md).
