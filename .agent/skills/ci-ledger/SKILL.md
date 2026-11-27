@@ -35,7 +35,7 @@ Load this skill for Ledger ingestion, reconciliation, finding identity, eligibil
 - Workflow startup, timeout, and action-required errors can be eligible without a job or step identity when the classifier supplies a diagnostic.
 - Reporter retention and Ledger ingestion use the same independent-error predicate. Incomplete captures can be retained for retry. The Ledger ingests only complete captures.
 - Lint findings at every severity are eligible after comparison with a complete, tooling-valid baseline.
-- Failed report-tooling checks create separate stable `lint_tooling` findings. Unbaselined lint findings remain excluded.
+- Failed report-tooling checks create separate stable `lint_tooling` findings and generate remediation children even when ordinary lint finding ingestion is suppressed for that invalid report. Unbaselined lint findings remain excluded.
 - Skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
 
 ## Ingestion and publication
@@ -114,7 +114,7 @@ The user's standing authorization makes CI-generated P0 remediation mandatory an
 Use commit-based resolution; hosted validation is separate and does not gate remediation closure.
 
 1. Check that the remediation commit exists on the intended branch. Record the full commit SHA, concise remediation summary, and UTC resolution timestamp. This is sufficient for a finding to become `resolved`.
-2. Store hosted validation separately as optional metadata. A Pending, Failed, or not-yet-reviewed hosted run does not keep the remediation subtask open and does not change its Done state.
+2. Store hosted validation separately as optional metadata. A Pending, Failed, or not-yet-reviewed hosted run does not keep the remediation subtask open and does not change its Done state. Later failures are automatically ingested into new remediation children; no user review trigger is required.
 3. On a new observation after resolution, reopen the same finding identity, preserve the previous resolution in `resolution_history`, and increment occurrence count for the new observation.
 4. If the previous remediation task is no longer active, use its Task ID from `task_refs` as provenance. Do not attempt to read or link a deleted task file. Create or reuse the work-target parent. Append its Task ID to `task_refs`. Append the child ID to `subtask_refs`. If the prior parent is no longer active, create a new parent with the recurring remediation child.
 5. Delete completed or cancelled task folders directly after the Worker verifies the closeout criteria. Do not create an archive copy, retention entry, or historical task link.
