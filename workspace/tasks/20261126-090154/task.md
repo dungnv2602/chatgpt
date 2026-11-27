@@ -6,9 +6,9 @@
 - **Folder migration:** ADR-0004, 2026-11-27
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 17:04 UTC
+- **Updated:** 2026-11-27 05:31 UTC
 - **Priority:** P0
-- **Status:** In Progress
+- **Status:** Blocked
 - **Origin:** User
 - **Approval:** Approved
 - **Governing ADR(s):** ADR-0003 governs the approved Option 3 artifact-layout work only. The error-only retention and Ledger task-linkage remediation remains separately user-approved grandfathered scope.
@@ -191,28 +191,23 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **References:** `workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md`; `workspace/adr/README.md`; `workspace/draft/README.md`; commit `acc1ace03f40f44398c849d7133ed63bf66f751e`.
 - **Next:** Implement the shared reporter/Ledger eligibility and baseline-aware lint tooling behavior before beginning artifact migration.
 
+### 2026-11-27 05:31 UTC
+
+- **Action:** Rechecked the remaining ADR-0003 Confirmation gate under the user's request to resolve all P0 CI tasks.
+- **Result:** Five of six Confirmation criteria remain verified. Criterion 4 requires a read-only repository-wide reference search. The current request does not explicitly authorize a full-repository audit. The Worker boundary prohibits repository-wide code search or recursive root-tree listings without that authorization. No search was performed. The task is Blocked pending user authorization.
+- **References:** workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md; .agent/skills/the-worker/references/conversation-mode.md; prior targeted consumer review in this task.
+- **Next:** Obtain explicit authorization for the read-only full-repository reference search.
+
 ## 7. Current State
-
-The error-only reporter/Ledger contract is implemented and hosted-validated. Reporter retention and Ledger ingestion use the same independent-error predicate; incomplete captures remain retryable but are not ingested. Failed lint tooling checks create stable tasks without importing unbaselined lint findings. The Ledger enforces one active Current Execution task and synchronizes its board pointer.
-
-The four linked Validate Document Standards findings are resolved with fix commits and successful hosted validation. Their 12 unique Actions report folders, integrity manifests, and captured logs are preserved in the report archive and registered. All four Ledger evidence paths and task links resolve to those archived JSON reports.
-
-ADR-0003 Option 3 is implemented. The generator writes canonical JSON, integrity manifests, and logs only; the central index is the only index/latest pointer; Markdown renders on demand; and the 28 original report/log blobs were preserved byte-for-byte. Five of six ADR Confirmation criteria are verified by hosted runs and changed-path evidence. Criterion 4 remains open pending explicit authorization for a read-only repository-wide reference search.
+Blocked. Five of six ADR-0003 Confirmation criteria are verified. Criterion 4 remains unverified because a full-repository reference search requires explicit user authorization.
 
 ## 8. Remaining Work
-
-- Obtain explicit user authorization for the read-only repository-wide reference search required by ADR-0003 Confirmation criterion 4.
-- Search only for the exact removed report paths and verify every required reference is either removed or migrated. Do not perform unrelated repository review.
-- After criterion 4 passes, update ADR-0003 implementation status and task acceptance evidence, then archive this task.
-- Allow the natural Diagnostics sweep after task archival to verify the remaining active report manifests and retire the four terminal linked findings.
+- Obtain explicit user authorization for a read-only full-repository reference search.
 
 ## 9. Next Actions
-
-1. Obtain explicit user authorization for a read-only search across tracked repository files for the removed report paths.
-2. Complete that exact-path reference search and record the result in ADR-0003.
-3. Update ADR-0003 to implementation complete only when all six Confirmation criteria pass.
-4. Archive this task with its report evidence already preserved under `.archive/reports/`.
-5. Allow the natural Diagnostics sweep to verify the remaining history and retire the four linked Ledger findings.
+1. After authorization, search for every reference to the removed report paths.
+2. Verify that every remaining consumer points to unchanged canonical report JSON and log paths.
+3. Update ADR-0003 Confirmation evidence and close the task only after criterion 4 passes.
 
 ## 10. References
 
@@ -238,8 +233,7 @@ ADR-0003 Option 3 is implemented. The generator writes canonical JSON, integrity
 - **Limitations:** Confirmation criterion 4 remains pending explicit authorization for a read-only repository-wide reference search. The final Diagnostics sweep after this task archive must verify the remaining active history and retire the four linked findings.
 
 ## 12. Handoff Instructions
-
-Treat this as P0, Approved, and In Progress. ADR-0003 Option 3 is implemented and five of six Confirmation criteria are verified. Do not close until the authorized repository-wide reference search completes. Preserve canonical report JSON, integrity manifests, logs, and evidence paths. Do not touch DRAFT-0002 or other unapproved drafts. Do not poll or manually dispatch CI.
+Keep Blocked. Do not perform repository-wide search or recursive tree inventory until the user explicitly authorizes a full-repository audit. Do not inspect hosted CI results unless the user explicitly triggers results review.
 
 ## 13. Ledger Findings
 
