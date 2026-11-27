@@ -12,7 +12,7 @@ This is the single index of active task parents. Every parent folder contains `t
 
 ## Current Execution
 
-[20261126-142500-21 — Reconcile task board scheduling and task templates](tasks/20261126-142500/subtasks/21-reconcile-task-board-and-task-templates.md)
+[20261126-142500-04 — Review semicolon findings in .agent/skills/github-actions/SKILL.md](tasks/20261126-142500/subtasks/04-ci-remediation-review-semicolon-findings-in-agent-skills-github-actions-skill-m.md)
 
 Parent: [20261126-142500 — Repair CI task generation and clear active reports](tasks/20261126-142500/task.md)
 
