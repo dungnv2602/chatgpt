@@ -8,7 +8,7 @@ Create one directory per task: `workspace/tasks/<task-id>/`. Store this template
 
 - **ID:** 20261127-013151-09
 - **Created:** 2026-11-27 01:31 UTC
-- **Updated:** 2026-11-27 01:31 UTC
+- **Updated:** 2026-11-27 01:49 UTC
 - **Priority:** P0
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -99,4 +99,4 @@ The CI Ledger maintains parent-level finding links. Keep each finding ID and imm
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-37b04b4859601e36ccef7b3a` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45903955161-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45903955161) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45904670122-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45904670122) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45905552238-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45905552238) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45913841560-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45913841560) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45921995070-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45921995070) |
+| `lint-37b04b4859601e36ccef7b3a` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45903955161-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45903955161) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45905552238-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45905552238) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45913841560-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45913841560) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45921995070-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45921995070) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45924609840-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45924609840) |
