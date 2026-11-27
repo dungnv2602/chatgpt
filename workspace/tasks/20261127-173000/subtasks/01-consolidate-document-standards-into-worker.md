@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-01
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Paused
+- **Status:** Ready
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Existing approval retained from original task 20261127-102301 and explicit reparenting instruction.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Paused — partial consolidation committed; remaining reconciliation deferred behind active P0 queue.
+- **Eligibility / deferral reason:** Eligible — Ready; approved, no dependencies. Parent Refactor Skills is the selected P0 execution.
 - **Required:** Yes
 - **Created:** 2026-11-27 17:30 UTC
 - **Updated:** 2026-11-27 17:30 UTC
@@ -49,7 +49,7 @@ Consolidate document-format governance and template-first execution guidance int
 - **Action:** Migrated original parent task to a subtask under Refactor Skills and preserved its nested implementation child.
 - **Result:** Reparenting records created; readback pending.
 - **References:** Legacy task ID 20261127-102301.
-- **Next:** Finish catalog and reference reconciliation after P0 queue.
+- **Next:** Resume remaining consolidation work as the first child of selected P0 parent.
 
 ## 6. State and Evidence
 
@@ -72,7 +72,7 @@ Consolidate document-format governance and template-first execution guidance int
 
 ## 9. Handoff
 
-Complete remaining reconciliation after P0 queue. Preserve partial work.
+Complete remaining consolidation and reconciliation as the first execution step under the P0 parent. Preserve partial work.
 
 ## 10. Ledger Findings
 
