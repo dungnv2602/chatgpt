@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-14: CI remediation — Review phrasal-verb findings in .agent/skills/asd-ste100/SKILL.md](tasks/20261127-173000/subtasks/14-ci-remediation-review-phrasal-verb-findings-in-agent-skills-asd-ste100-skill-md.md). This P0 child is active under the persistent Refactor Skills parent.
+[20261127-173000-15: CI remediation — Review passive-voice findings in .agent/skills/the-worker/SKILL.md](tasks/20261127-173000/subtasks/15-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md). This P0 child is active under the persistent Refactor Skills parent.
 
 ## Ordered Eligible Execution Queue
 
@@ -32,7 +32,6 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-15 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](15-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md) |
 | 20261127-173000-16 | CI remediation — Review semicolon findings in .agent/skills/the-worker/references/decision-governance.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](16-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-references.md) |
 | 20261127-173000-17 | CI remediation — Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](17-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-skil.md) |
 | 20261127-173000-18 | CI remediation — Review passive-voice findings in .agent/SESSION\\\_START.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](18-ci-remediation-review-passive-voice-findings-in-agent-session-start-md.md) |

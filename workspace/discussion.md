@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T13:10:46Z**: Closed P0 child 13 after source readback and resolution of two synonym-rotation findings. Child 14 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.
+- **2026-11-27T13:12:54Z**: Closed P0 child 14 after source readback and resolution of five phrasal-verb findings. Child 15 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.
 
 ## Open Discussions
 
@@ -12,6 +12,7 @@
 
 ## Reports
 
+- **2026-11-27T13:12:54Z**: Closed child 14. Resolved five phrasal-verb findings with source commit `7b682727a140dae6135471a694aca2148fdbff2c`. Activated child 15 after reviewing seven passive-voice findings in the Worker skill. Hosted validation remains pending. Hosted CI results were not inspected.
 - **2026-11-27T13:10:46Z**: Closed child 13. Resolved `lint-0934ec0e9cbf6427170b249c` and `lint-b364e80e8c98116d3ebcfb38` with source commit `86ef132fb4948487f7f8aefe324ca1b74e19db0f`. Activated child 14 after reviewing five flagged phrasal-verb occurrences in the ASD-STE100 skill. Hosted validation remains pending. Hosted CI results were not inspected.
 - **2026-11-27T13:08:03Z**: Closed child 12. Resolved `lint-c9f0d9a4ac52efda5b4f9aea` with source commit `f62d4cc6692f764cad57f1a291066c8af0966ca0`. Activated child 13 after reviewing the `fetch`/`retrieve` and `check`/`verify` findings. Hosted validation remains pending. Hosted CI results were not inspected.
 - **2026-11-27T13:05:55Z**: Closed child 11. Resolved ten passive-voice findings with source commit `eb780b92aa048fdaf2c9bc6a1e1783c8bc2adceb`. Activated child 12 after reviewing its six semicolon occurrences in the Worker skill. Hosted validation remains pending. Hosted CI results were not inspected.

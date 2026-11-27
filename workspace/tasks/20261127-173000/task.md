@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 13:12 UTC
+- **Updated:** 2026-11-27T13:12:54Z
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -53,6 +53,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27T13:12:54Z — startup P0 child 14 closeout
+
+- **Action:** Replaced the flagged phrasal-verb examples in the ASD-STE100 skill with plain-language descriptions and single-word alternatives. Verified the target file and resolved all five linked findings in the central Ledger.
+- **Result:** Closed and deleted child 14. Activated child 15, the next P0 remediation.
+- **Evidence:** Commit `7b682727a140dae6135471a694aca2148fdbff2c`.
+- **Validation:** Hosted validation remains pending. No hosted CI results were inspected.
+
 
 ### 2026-11-27T13:10:46Z — startup P0 child 13 closeout
 
@@ -252,11 +260,6 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 | `lint-8a011f6518e4f647accaa107` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-28ef39a3cb8b2ca848f4ec97` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-9efba8ed23b805f9a79bdc62` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
-| `lint-70281f9b33028652f7a1daae` | medium | phrasal-verb: Soft phrasal verb. Use the single plain verb \(start, contact, read, begin\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
-| `lint-d272642fbbf9daaca0e0f89b` | medium | phrasal-verb: Soft phrasal verb. Use the single plain verb \(start, contact, read, begin\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
-| `lint-0069ef4a67380240203a7d96` | medium | phrasal-verb: Soft phrasal verb. Use the single plain verb \(start, contact, read, begin\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
-| `lint-a00e46d5c1d01ed73aeb5e48` | medium | phrasal-verb: Soft phrasal verb. Use the single plain verb \(start, contact, read, begin\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
-| `lint-186eeebc10bfa90b61b9f168` | medium | phrasal-verb: Soft phrasal verb. Use the single plain verb \(start, contact, read, begin\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-7e86fc5d602e4865ed4a0ff6` | medium | nominalization: Action frozen into a noun. Use the verb \(analyze, not perform an analysis of\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-fa833ca0d8a25be575faf6e0` | medium | nominalization: Action frozen into a noun. Use the verb \(analyze, not perform an analysis of\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-7a15da17f8212acf9cbcd80a` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
