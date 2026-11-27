@@ -11,7 +11,7 @@ import yaml
 SUPPORTED = {".png", ".jpg", ".jpeg"}
 KNOWN_IMAGE = SUPPORTED | {".apng", ".gif", ".webp", ".bmp", ".tif", ".tiff", ".heic", ".heif", ".avif"}
 HANDOFF = "HANDOFF.yml"
-INTAKE_METADATA_FILES = {HANDOFF, "README-1.md", "README-2.md", ".gitkeep"}
+INTAKE_METADATA_FILES = {HANDOFF, "README.md", ".gitkeep"}
 EMPTY_HANDOFF = "version: 1\nstatus: empty\nitems: []\n"
 FIELDS = [
     "source_filename", "source_path", "title", "asset_id", "source_asset_id", "attempt", "destination_dir",
@@ -1261,7 +1261,7 @@ def main() -> int:
                     raise ProcessingError(f"Unsupported image format {suffix} for {child.name}; only PNG, JPG and JPEG are accepted. Animated images are never flattened.")
                 raise ProcessingError(f"Unexpected non-image file in takeout: {child.name}")
             inbox_images.add(child.name)
-        checks.append("Inbox is flat and contains only PNG/JPG/JPEG uploads, README-1.md, README-2.md, HANDOFF.yml, .gitkeep, and the reserved history/, original/, and webp/ directories.")
+        checks.append("Inbox is flat and contains only PNG/JPG/JPEG uploads, README.md, HANDOFF.yml, .gitkeep, and the reserved history/, original/, and webp/ directories.")
 
         sources: set[str] = set()
         ids: set[str] = set()

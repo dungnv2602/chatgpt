@@ -35,7 +35,7 @@ esac
 
 # STE-flavored prose does not enforce synonym rotation.
 case "$file" in
-  .takeout/images/README-1.md|.takeout/images/README-2.md|.agent/skills/asd-ste100/README.md|.agent/skills/drawing/README.md|.agent/skills/drawing/references/patterns/*.md|.agent/skills/drawing/references/style-guide.md|.agent/skills/philosophy-religion-asceticism/README.md|.agent/skills/philosophy-religion-asceticism/CHANGELOG.md|.agent/skills/philosophy-religion-asceticism/references/*.md)
+  .takeout/images/README.md|.agent/skills/asd-ste100/README.md|.agent/skills/drawing/README.md|.agent/skills/drawing/references/patterns/*.md|.agent/skills/drawing/references/style-guide.md|.agent/skills/philosophy-religion-asceticism/README.md|.agent/skills/philosophy-religion-asceticism/CHANGELOG.md|.agent/skills/philosophy-religion-asceticism/references/*.md)
     disable="synonym-rotation"
     ;;
 esac

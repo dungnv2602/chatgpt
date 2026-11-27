@@ -50,11 +50,11 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.inbox = self.root / ".takeout" / "images"
         self.inbox.mkdir(parents=True)
-        (self.inbox / "README-1.md").write_text(
+        (self.inbox / "README.md").write_text(
             "# Image Assets test fixture\n",
             encoding="utf-8",
         )
-        (self.inbox / "README-2.md").write_text(
+        (self.inbox / "README.md").write_text(
             "# Image Takeout test fixture\n",
             encoding="utf-8",
         )

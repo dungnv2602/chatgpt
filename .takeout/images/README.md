@@ -1,4 +1,39 @@
-# Image Takeout
+# Image Assets, Intake, and WebP Delivery
+
+This directory supports shared image intake and retained image masters. WebP files are separate delivery derivatives.
+
+## Destinations
+
+- General retained assets: `.takeout/images/`.
+- Non-novel drawing outputs: `area/drawing/YYYY-MM-DD/images/`.
+- Novel illustrations: `area/novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`.
+
+For general assets, the processor stores the original in `.takeout/images/original/` and the WebP derivative in `.takeout/images/webp/`. For project assets, it stores the original in the destination's `original/` folder and the WebP derivative in the destination root. Do not overwrite an existing asset.
+
+## Shared intake
+
+Send every new upload that requires repository retention to the flat `.takeout/images/` intake. Do not create upload subfolders or place uploads in the reserved `history/`, `original/`, and `webp/` directories.
+
+The normal Action accepts static PNG, JPG, and JPEG files. It rejects unsupported formats and does not flatten animated images. Every mapped hand-off item must reference a dated conversation-integrity record with an exact source-mapping row. Drawing outputs must also match the attempt's recorded Generation ID or Output ID. Keep the platform source_asset_id separate from the repository asset_id used for filename prefixes. Incomplete provenance stays in intake and must not trigger relocation. An item marked `.takeout/images/unclassified` is converted by the same normal Action, but its original remains in intake and its WebP remains under `.takeout/images/webp/unclassified/`. The processor does not classify it, invent provenance, relocate it, or edit project indexes.
+
+## Workflow ownership
+
+The Worker owns image inspection, provenance, processing, original preservation, and publication verification. The Action uses:
+
+- Processor: [`process_takeout.py`](../../.agent/skills/the-worker/scripts/process_takeout.py).
+- Workflow: [`convert-images-to-webp.yml`](../../.github/workflows/convert-images-to-webp.yml).
+- 
+
+See the sections below for intake rules, the `HANDOFF.yml` schema, conversion profiles, staging and retry behavior, reports, manifest updates, and published-blob checks.
+
+Drawing attempt records and daily indexes link to verified WebP delivery files. Original masters remain preserved separately. See the [Drawing archive and delivery rules](../../.agent/skills/drawing/references/archive-and-delivery.md) for session-specific records.
+
+## Documentation standard
+
+Apply the repository [ASD-STE100 writing policy](../../.agent/skills/asd-ste100/references/repository-writing-policy.md) when you revise this README.
+
+
+# Intake and processing
 
 Use this directory as the single intake location for images that need repository retention.
 
@@ -7,7 +42,7 @@ Images may belong to a novel, a drawing session, a visual-reference collection, 
 ## Upload rules
 
 - Upload each image directly to `.takeout/images/`.
-- Keep the repository-owned `README-1.md`, `README-2.md`, and `HANDOFF.yml` at the intake root. The processor also ignores the `.gitkeep` marker. It rejects any other non-image file.
+- Keep the repository-owned ``README.md` and `HANDOFF.yml` at the intake root. The processor also ignores the `.gitkeep` marker. It rejects any other non-image file.
 - Do not create upload subfolders.
 - Incoming filenames may use any name. The user does not need to rename them.
 - Do not place uploads in `history/`, `original/`, or `webp/`. The Action manages these reserved directories.
@@ -139,7 +174,7 @@ This naming rule preserves the source extension. It also prevents collisions bet
 
 The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs when new intake files or conversation-integrity records change. A hand-off change does not trigger a push run. You can also start it manually on branch `gpt`.
 
-The normal workflow processes a Ready hand-off as one transaction. It requires exact coverage of every top-level intake image. The repository-owned `README-1.md`, `README-2.md`, `.gitkeep`, and `HANDOFF.yml` are recognized metadata files and are not counted as uploads; any other non-image file is rejected. It validates each mapped item against its conversation-integrity record and, for drawing outputs, the referenced attempt note. It converts and relocates only provenance-mapped items. It also converts items whose exact destination is `.takeout/images/unclassified`, but it never relocates those originals or derivatives. It stores those derivatives under `.takeout/images/webp/unclassified/attempt-NNN/` and leaves the original files in intake. On success, it archives the complete original hand-off and reports, then leaves the unclassified entries in a residual Draft hand-off. Any validation or conversion failure preserves the Ready hand-off and all source files. The processor retains successful WebP outputs in their respective staging directories for inspection.
+The normal workflow processes a Ready hand-off as one transaction. It requires exact coverage of every top-level intake image. The repository-owned `README.md, `.gitkeep`, and `HANDOFF.yml` are recognized metadata files and are not counted as uploads; any other non-image file is rejected. It validates each mapped item against its conversation-integrity record and, for drawing outputs, the referenced attempt note. It converts and relocates only provenance-mapped items. It also converts items whose exact destination is `.takeout/images/unclassified`, but it never relocates those originals or derivatives. It stores those derivatives under `.takeout/images/webp/unclassified/attempt-NNN/` and leaves the original files in intake. On success, it archives the complete original hand-off and reports, then leaves the unclassified entries in a residual Draft hand-off. Any validation or conversion failure preserves the Ready hand-off and all source files. The processor retains successful WebP outputs in their respective staging directories for inspection.
 
 A Ready-state change in `HANDOFF.yml` does not trigger a push run. Manually dispatch **Process Image Takeout and Create WebP Derivatives** on branch `gpt` after the Ready hand-off and processor changes are committed. This prevents a status-only push from starting an unreviewed batch.
 

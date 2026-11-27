@@ -89,7 +89,7 @@ Keep the Illustration Note and Illustration Prompt Record in the scene-local `il
 
 Each retained illustration has an unchanged PNG/JPEG master under `original/` and a separate WebP delivery file in the destination root. Do not place the master beside the WebP or link the master in the attempt index.
 
-All new uploads use the shared flat `.takeout/images/` intake. The Worker owns inspection, provenance, processing, original preservation, and publication verification. Use the [Image Takeout procedure](../../.takeout/images/README-2.md) for the exact hand-off schema and processing steps. Use the [Drawing archive rules](../../.agent/skills/drawing/references/archive-and-delivery.md) for attempt links and session-manifest requirements.
+All new uploads use the shared flat `.takeout/images/` intake. The Worker owns inspection, provenance, processing, original preservation, and publication verification. Use the [Image Takeout procedure](../../.takeout/images/README.md) for the exact hand-off schema and processing steps. Use the [Drawing archive rules](../../.agent/skills/drawing/references/archive-and-delivery.md) for attempt links and session-manifest requirements.
 
 ## Document responsibilities
 

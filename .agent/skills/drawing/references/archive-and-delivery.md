@@ -12,7 +12,7 @@ Store each retained output separately. Use attempt-XX.webp for one image and num
 
 ## Shared intake
 
-All new retained uploads enter through the flat `.takeout/images/` intake. Follow the Worker's [image provenance and WebP procedure](../../the-worker/references/image-provenance-and-webp.md) and [Image Takeout guide](../../../../.takeout/images/README-2.md).
+All new retained uploads enter through the flat `.takeout/images/` intake. Follow the Worker's [image provenance and WebP procedure](../../the-worker/references/image-provenance-and-webp.md) and [Image Takeout guide](../../../../.takeout/images/README.md).
 
 For a non-novel drawing output, include the attempt number in the hand-off and set the destination to `area/drawing/YYYY-MM-DD/images/`. The processor requires this field before it updates the attempt record, daily index, or session manifest. Do not move or convert uploaded files manually.
 

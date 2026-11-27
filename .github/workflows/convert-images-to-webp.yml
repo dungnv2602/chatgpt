@@ -9,8 +9,8 @@ on:
       # test, or workflow edits require an explicit manual dispatch.
       - '.takeout/images/*'
       - '!.takeout/images/HANDOFF.yml'
-      - '!.takeout/images/README-1.md'
-      - '!.takeout/images/README-2.md'
+      - '!.takeout/images/README.md'
+      - '!.takeout/images/README.md'
       - '!.takeout/images/.gitkeep'
       - 'area/drawing/history/*-conversation-integrity.md'
       - 'area/novel/**/conversation-integrity.md'
