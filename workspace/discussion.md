@@ -27,3 +27,5 @@
 
 - **2026-11-27:** Created independent parents `20261127-173000` (Refactor Skills) and `20261127-173100` (Template Fix). Reparented the former document-governance parent `20261127-102301` under Refactor Skills, preserving its partial consolidation and nested implementation record. Template Fix has children for creating a task-board template and auditing repository template coverage/remediating confirmed gaps.
 - **2026-11-27:** Reparented objective-based workflow correction `20261127-102300` as Refactor Skills subtask `20261127-173000-03`, preserving its original prompt and implementation/evidence notes. Deferred its remaining audit/closeout behind the mandatory P0 queue.
+
+- **2026-11-27 18:20 UTC:** Remediated and read back source changes for P0 editorial children 04–20. Two P0 tasks remain blocked by missing immutable diagnostic details under the no-hosted-CI-review rule. Board now shows no eligible P0 tasks and no Current Execution.
