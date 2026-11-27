@@ -59,7 +59,7 @@ The Worker has not selected the next task. The ordered eligible queue remains un
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-50 | CI remediation — Fix lint tooling check: Markdown links and heading anchors | P0 | Paused | Approved | User superseded the startup remediation queue to prioritize Worker consolidation. | [subtask](tasks/20261127-173000/subtasks/50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
+
 
 ### Proposed — decision pending
 

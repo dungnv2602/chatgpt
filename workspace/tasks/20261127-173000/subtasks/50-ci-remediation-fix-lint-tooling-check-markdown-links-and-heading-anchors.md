@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-50
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** Blocked
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
+- **Eligibility / deferral reason:** Blocked — the referenced report JSON files were removed during the user-directed history reset. The shared index is empty. The current source, regression test, and workflow do not identify the exact failing target or anchor.
 - **Required:** Yes
 - **Created:** 2026-11-27 12:58 UTC
-- **Updated:** 2026-11-27 15:20 UTC
+- **Updated:** 2026-11-27 16:55 UTC
 - **Ledger group:** `ci-ace4e198cb6445b7`
 - **Legacy Task IDs:** None
 
@@ -55,10 +55,10 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 ## 6. State and Evidence
 
 - **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
+- **Changed paths:** None. Reviewed `.agent/skills/asd-ste100/scripts/check_markdown_anchors.py`, `.agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py`, `.agent/skills/asd-ste100/scripts/ste-lint-repository.sh`, `.github/workflows/ste-lint-changed.yml`, and `.github/workflows/ste-lint-full-docs.yml`.
+- **Readback:** Confirmed `.takeout/reports/index.json` contains no runs and `.takeout/reports/history/` has no retained evidence files.
 - **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
+- **Limitations:** The task record and Ledger retain the finding title and report paths, but not the failing Markdown target, fragment, or diagnostic output. The report paths no longer exist. No hosted CI results were inspected.
 
 ## 7. Completion
 
@@ -77,7 +77,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.
+Resume when a future complete, indexed lint report retains the failing target, fragment, and diagnostic output. Then trace and fix the cause. Do not inspect hosted CI results without explicit user authorization.
 
 ## 10. Ledger Findings
 

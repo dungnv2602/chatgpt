@@ -54,6 +54,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
+### 2026-11-27T16:55:00Z — startup P0 batch review
+
+- **Action:** Reviewed the complete available Ledger, shared index, task index, and the source, regression test, and workflows for the Markdown-link tooling finding.
+- **Result:** Closed child 26 after fixing its still-present long sentence. Closed child 52 after rewriting its passive-voice statements. Blocked child 50 because the user-directed history reset removed the exact diagnostic report. The Ledger retains only the finding title and report paths. No failing target or fragment remains to diagnose.
+- **Evidence:** Child 26 commits `f846ae05b042128428fd47cf3ec2698381c4b771` and `7cbd0d3c8db8d2292bb87bb2d11c8a635924acb3`. Child 52 commit `7dff15afc14bf4f110709c011bea291b77da81ad`.
+- **Validation:** No local tests or hosted CI results were inspected.
+
+
 ### 2026-11-27T16:50:00Z — startup P0 child 26 closeout
 
 - **Action:** Split the remaining long sentence in `.agent/SESSION_START.md` into four sentences. The earlier closeout had not changed this sentence.
