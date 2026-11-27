@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[Refactor Skills — P0](tasks/20261127-173000/task.md), with completed child 01 closed; parent task remains Current Execution.
+[Refactor Skills — P0](tasks/20261127-173000/task.md), a persistent skills-refactoring parent; completed child 01 closed. Keep this parent open for future skills-refactoring subtasks.
 
 ## Ordered Eligible Execution Queue
 
