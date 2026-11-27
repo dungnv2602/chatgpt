@@ -24,6 +24,18 @@
 
 ## 2. Subsequent Instructions
 
+### 2026-11-27 17:05 UTC
+
+> `.takeout/reports/latest-lint-report.json`
+>
+> Delete this as we agreed on the format
+>
+> Then proceed to the task "refactor skills"
+>
+> /start
+
+- **Action:** Remove the standalone latest lint report JSON. Use the unified index as the only run locator. Continue the Refactor Skills workstream after this correction.
+
 ### 2026-11-27 18:27 UTC
 
 > workspace/tasks/20261127-173000/task.md Make this task P0, we focus on this task from now on.
@@ -53,6 +65,13 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27T17:05:00Z — latest lint pointer removal
+
+- **Action:** Created child 54 to remove the standalone latest lint JSON and migrate its consumers to the unified index.
+- **Result:** Selected child 54 as Current Execution under the user's explicit instruction. The startup P0 batch ended with child 50 blocked by missing diagnostic evidence.
+- **Next:** Remove the file, update the generator and workflow baseline lookup, then continue with Refactor Skills child 04.
+
 
 ### 2026-11-27T16:55:00Z — startup P0 batch review
 

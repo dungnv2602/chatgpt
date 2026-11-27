@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-None. Task 53 is complete; the next eligible task remains at the top of the ordered queue.
+[20261127-173000-54: Remove latest lint report copy and use the unified index](tasks/20261127-173000/subtasks/54-remove-latest-lint-report-copy.md) — P0, In Progress, Approved.
 
 ## Ordered Eligible Execution Queue
 
@@ -23,7 +23,7 @@ None. Task 53 is complete; the next eligible task remains at the top of the orde
 
 ## Next Task
 
-The Worker has not selected the next task. The ordered eligible queue remains unchanged.
+[20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — next within the Refactor Skills workstream after child 54 closes.
 
 ## Deferred Work
 

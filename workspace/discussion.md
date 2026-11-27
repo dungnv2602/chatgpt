@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T16:30:00Z**: `/start` initiated. Removing the obsolete latest-lint-report JSON pointer, then loading the Worker baseline and mandatory CI references before reviewing the startup P0 batch and proceeding with Refactor Skills.
+- **2026-11-27T17:05:00Z**: Startup P0 batch reviewed. Child 26 and 52 closed; child 50 blocked by the user-directed history reset. Child 54 is Current Execution to remove the standalone latest lint JSON and use the unified index. Next: continue with Refactor Skills child 04.
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.
 
