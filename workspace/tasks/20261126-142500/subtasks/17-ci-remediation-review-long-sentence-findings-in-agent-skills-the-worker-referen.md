@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261126-142500-17
 - **Parent Task ID:** 20261126-142500
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** [Exact scope and authorization source]
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** [Eligible or exact reason]
+- **Eligibility / deferral reason:** Remediated and remotely read back
 - **Required:** Yes
 - **Created:** 2026-11-27 09:53 UTC
-- **Updated:** 2026-11-27 09:53 UTC
+- **Updated:** 2026-11-27 18:20 UTC
 - **Ledger group:** `ci-d540b06a72ede2b1`
 - **Legacy Task IDs:** None
 
@@ -46,21 +46,23 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 ## 5. Decisions and Progress
 
 - **Execution:** P0 and Approved under standing authorization.
+- **Result:** The identified wording was revised in the shared target file. The target was read back after the intended-branch commit.
+- **Commit:** 6dfd4d5b81cf0b6288fe7219fd98f8c9c5a30157
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
+- **Commit SHA:** 6dfd4d5b81cf0b6288fe7219fd98f8c9c5a30157
+- **Changed paths:** .agent/skills/the-worker/references/conversation-mode.md
+- **Readback:** Remotely read back after commit.
+- **Checks:** Not performed. Hosted results were not inspected.
 - **Limitations:** The report establishes a finding, not its root cause.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 18:20 UTC
+- **Completion basis:** Intended-branch fix commit and remote readback. Hosted validation is separate.
 
 The Worker marks the child Done only after its acceptance criteria pass and the result is recorded. CI remediation Done requires the verified intended-branch fix commit and SHA/summary. Hosted validation is separate metadata and does not gate completion.
 
@@ -73,7 +75,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.
+Commit-based remediation is recorded. Hosted CI results were not inspected.
 
 ## 10. Ledger Findings
 
