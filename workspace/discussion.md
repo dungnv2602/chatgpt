@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Ledger archive reading now supports indexed folder and historical flat records, and recurrence links retained prior archives. Finish subtask 06 by reading back every changed path, checking the ADR Confirmation matrix, and recording unrun tests. Do not inspect hosted results. Preserve the deferred hosted-results-review boundary.
+Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Ledger archive reading now supports indexed folder and historical flat records. Two sampled non-expired historical task paths are missing from the retention index's referenced files. Add a fail-closed check for missing retained indexed files without rewriting archives or pruning their entries. Then finish the ADR evidence audit. Do not inspect hosted results. Preserve the deferred hosted-results-review boundary.
 
 ## Open Discussions
 
