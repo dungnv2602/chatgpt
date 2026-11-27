@@ -75,7 +75,7 @@ Use the same assessment dimensions for each option:
 9. Supporting evidence and confidence rationale.
 10. Evidence limitations, untested conditions, assumptions, and unknowns.
 
-Do not use generic claims such as "easy", "flexible", "scalable", "secure", or "better" without explaining the mechanism, scope, and consequence. Use Unknown or Not established when evidence is unavailable; do not fill gaps with plausible-sounding estimates. Keep the level of detail proportional to the decision, but do not omit a material assessment dimension without explaining why it is not applicable.
+Do not use generic claims such as "easy", "flexible", "scalable", "secure", or "better" without explaining the mechanism, scope, and consequence. Use Unknown or Not established when evidence is unavailable. Do not fill gaps with plausible-sounding estimates. Keep the level of detail proportional to the decision, but do not omit a material assessment dimension without explaining why it is not applicable.
 
 ### Comparative assessment
 
@@ -122,7 +122,7 @@ Link each Draft under review from its own Open Discussions item in workspace/dis
 2. Inspect exact repository evidence and owner files.
 3. Identify every materially viable option and relevant variant, including no change when viable.
 4. Define decision drivers and apply the required option-assessment dimensions consistently.
-5. Build a comparative matrix when multiple viable options exist; explain why a matrix is inapplicable when only one option is viable.
+5. Build a comparative matrix when multiple viable options exist. Explain why a matrix is inapplicable when only one option is viable.
 6. Capture exact evidence locators, source versions/dates/commits, confidence rationale, and evidence limitations.
 7. Tie the recommendation to the decision drivers and compare it with the strongest alternative.
 8. Identify affected paths, dependencies, migration, maintenance, risks, safeguards, and validation needs.
