@@ -4,7 +4,7 @@
 
 The Worker owns task capture, selection, execution sequencing, progress, recovery, user-input coordination, and closeout. The task board publishes the scheduler decision; it is not a second scheduler.
 
-The repository `dungnv2602/chatgpt`, branch `gpt`, is the sole project source of truth. Use remote GitHub operations only. Do not use local shell, Python, container, local Git, or filesystem operations for repository work. Never inspect hosted CI results unless the user explicitly requests results review.
+The repository `dungnv2602/chatgpt`, branch `gpt`, is the sole project source of truth. Use remote GitHub operations only. Do not use local shell, Python, container, local Git, or filesystem operations for repository work. Do not inspect hosted CI results. Remediation completion is commit-based; subsequent failures must flow through normal report ingestion and generate follow-up work without user review.
 
 Initialize only on the cue defined by `.agent/SESSION_START.md`. That file is authoritative for initialization and specialist activation.
 
@@ -34,7 +34,7 @@ Task and subtask records store execution detail and eligibility reasons but do n
 4. Open the input barrier only at quiescence: no independent eligible work remains. Deduplicate genuine input requests by actual decision, record them in Open Discussions, and ask exactly one concise question per turn. Do not execute input-dependent tasks until the complete input set is collected or declined. Do not repeat resolved questions.
 5. Once inputs are collected, execute their authorized work as a batch. Recheck dependencies and governance; repeat the cycle when new blockers arise.
 6. Do not ask for routine preferences, confirmations, or choices. Request input only if proceeding is impossible or would cross a safety, access, privacy, authority, or governance boundary, or an essential missing fact materially changes the result. Use the narrowest safe interpretation otherwise.
-7. Stop before hosted CI results review. Do not poll, dispatch, rerun, or inspect hosted CI results until the user explicitly requests review.
+7. Do not poll, dispatch, rerun, or inspect hosted CI results. Commit-based remediation closeout is sufficient; subsequent CI failures are handled through automatic report ingestion and task generation.
 8. Close honestly. Report completed work and any non-overridable or external blockers. Never claim unresolved work is completed.
 
 ## Task records and lifecycle
@@ -49,7 +49,7 @@ Use `workspace/discussion.md` as the brief and open-decision register, maintaine
 
 ## Commit and verification
 
-Retrieve files before updates. Preserve unrelated content. Commit changes to branch `gpt`. Read back each changed file from the remote branch and verify content and commit. Record actual SHA and limitations. Do not claim validation or closeout without evidence.
+Retrieve files before updates. Preserve unrelated content. Commit changes to branch `gpt`. Read back each changed file from the remote branch and verify content and commit. Record actual SHA and limitations. Do not claim tests or validation passed without evidence. Close committed remediation tasks without hosted review; if the fix fails later, rely on the next report and generated follow-up task.
 
 ## Input-triggered repository execution
 
