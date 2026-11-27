@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261126-142500-23
 - **Parent Task ID:** 20261126-142500
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** Blocked
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — CI/reporting repair; review governance boundaries before any architecture change
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
+- **Eligibility / deferral reason:** Blocked — repository report files do not expose the regression-test failure detail. Hosted CI review remains prohibited.
 - **Required:** Yes
 - **Created:** 2026-11-27 10:20 UTC
 - **Updated:** 2026-11-27 10:42 UTC
@@ -54,7 +54,7 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 
 - **Commit SHA:** Not committed.
 - **Changed paths:** None.
-- **Readback:** Not performed.
+- **Readback:** Read linked repository report files. They do not provide the failing test details.
 - **Checks:** Not performed.
 - **Limitations:** The report establishes a finding, not its root cause.
 
@@ -62,7 +62,7 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 
 - **Status:** Not Done
 - **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Completion basis:** Blocked pending exact failure evidence.
 
 The Worker marks the child Done only after its acceptance criteria pass and the intended-branch commit is read back. For CI remediation, commit-based completion is separate from hosted validation.
 
