@@ -12,15 +12,13 @@ This file is the single index for active task records. Each active task is a fol
 
 ## Current Execution
 
-| ID | Title | Priority | Status | Approval | Task record |
-|---|---|---:|---|---|---|
 [20261126-142500 — Repair CI task generation and clear active reports](tasks/20261126-142500/task.md)
 
 ## Ordered Eligible Execution Queue
 
 <text>Ranked by the Worker's scheduler. Only eligible candidates are listed.</text>
 
-_No eligible tasks. The board was reconciled after the ADR editorial commits and cancellation/deletion of search task 20261126-090154. Remaining work is deferred by ADR-governance records and the paused P1 task; no cancelled task is queued._
+_No eligible tasks. The board was reconciled after the ADR editorial commits and cancellation/deletion of search task 20261126-090154. Any deferred work must be listed by its exact task record and reason; no cancelled task is queued._
 
 ## Next Task
 
