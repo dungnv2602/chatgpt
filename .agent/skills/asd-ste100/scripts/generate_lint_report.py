@@ -387,17 +387,18 @@ def main():
             "advisory_findings", "new_findings", "recurring_findings",
         )
     }
+    entry["history_path"] = output.relative_to(Path(__file__).resolve().parents[4] / ".takeout" / "reports").as_posix()
     entry["resolved_findings_count"] = len(resolved)
     index["schema_version"] = SCHEMA_VERSION
     index["runs"] = [
         row for row in index["runs"]
-        if (row.get("run_id"), row.get("attempt", 1)) != (args.run_id, attempt)
+        if (row.get("family"), row.get("run_id"), row.get("attempt", 1)) != ("lint", args.run_id, attempt)
     ]
     index["runs"].append(entry)
     index["runs"].sort(
         key=lambda row: (
+            str(row.get("generated_at_utc") or row.get("captured_at_utc") or row.get("created_at") or ""),
             safe_int(row.get("run_number")), safe_int(row.get("attempt"), 1),
-            str(row.get("generated_at_utc", "")),
         ),
         reverse=True,
     )

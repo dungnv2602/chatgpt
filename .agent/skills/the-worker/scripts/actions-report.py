@@ -580,14 +580,15 @@ def save_json(path, value):
 
 
 def sort_key(item):
-    return (timestamp(item.get("created_at")), int(item.get("attempt") or 1),
-            2 if item.get("capture_stage") == "post_run" else 1,
-            timestamp(item.get("captured_at_utc")))
+    return (timestamp(item.get("generated_at_utc") or item.get("captured_at_utc") or item.get("created_at")),
+            int(item.get("run_number") or 0), int(item.get("attempt") or 1),
+            2 if item.get("capture_stage") == "post_run" else 1)
 
 
 def index_record(report):
     run, capture = report["source_run"], report["capture"]
     return {
+        "family": "actions",
         "workflow_id": run["workflow_id"], "workflow_name": run["workflow_name"],
         "run_id": run["id"], "run_number": run["number"], "attempt": run["attempt"],
         "capture_stage": capture["stage"], "created_at": run["created_at"],

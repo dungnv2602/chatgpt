@@ -147,7 +147,11 @@ def indexed_reports(root):
             raise LedgerError("Invalid attempt in unified index")
         if family == "lint":
             history = row.get("history_path")
-            candidate = base / Path(*PurePosixPath(safe_relative_path(history, "history/")).parts) / "report.json" if history else base / "history" / (run_id + "-attempt-" + str(attempt)) / "report.json"
+            history = safe_relative_path(history, "history/")
+            expected = "history/" + run_id + "-attempt-" + str(attempt)
+            if history != expected:
+                raise LedgerError("Lint history path identity mismatch: " + history)
+            candidate = base / Path(*PurePosixPath(history).parts) / "report.json"
             if not candidate.is_file():
                 raise LedgerError("Indexed lint report missing: " + str(candidate))
             found.append(("lint", candidate.relative_to(root).as_posix(), row))
