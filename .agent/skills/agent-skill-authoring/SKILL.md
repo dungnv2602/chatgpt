@@ -169,7 +169,7 @@ Agent Skill Authoring is task-specific. It applies to skill creation and mainten
 
 ### Activation is not initialization
 
-Agent Skills metadata helps a compatible client discover a skill. It does not itself change this repository's activation cues or prove that a skill has been loaded. Repository-specific loading must be explicitly connected to the authoritative initialization procedure.
+Agent Skills metadata helps a compatible client discover a skill. It does not itself change this repository's activation cues or prove that a client loaded a skill. Repository-specific loading must be explicitly connected to the authoritative initialization procedure.
 
 ## 7. ASD-STE100 technical writing standard
 
@@ -243,7 +243,7 @@ Before considering a skill complete, check all of the following:
 - [ ] Critical instructions are in `SKILL.md`, not hidden in optional references.
 - [ ] The main file is concise enough to activate without unnecessary context burden.
 - [ ] Supporting resources are focused and loaded only as needed.
-- [ ] No contradictory, duplicated, stale, or unrequested rules have been introduced.
+- [ ] Do not introduce contradictory, duplicated, stale, or unrequested rules.
 - [ ] Use the applicable ASD-STE100 mode for skill and technical documentation.
 - [ ] Sentence length, paragraph structure, and punctuation follow the repository writing policy.
 - [ ] Every rewrite preserves facts, conditions, scope, and modality.
@@ -252,9 +252,9 @@ Before considering a skill complete, check all of the following:
 ### Integration and integrity
 - [ ] The skill is connected to the intended activation path.
 - [ ] Foundational loading remains conditional on the user's established cues.
-- [ ] No unrelated specialist skill has been made foundational.
+- [ ] Do not make an unrelated specialist skill foundational.
 - [ ] Every referenced local file exists and every relative link resolves.
-- [ ] The exact committed file has been read back and verified.
+- [ ] Read back and verify the exact committed file.
 - [ ] The final report distinguishes completed checks from checks that were unavailable.
 
 When the official `skills-ref` validator is available, run `skills-ref check path/to/skill-folder`. If it is unavailable, perform the checks above directly and state that the official validator was not run. Never claim tool-based validation that did not occur.

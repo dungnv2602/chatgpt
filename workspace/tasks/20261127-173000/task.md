@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 11:53 UTC
+- **Updated:** 2026-11-27 11:56 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -53,6 +53,16 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27 11:56 UTC
+
+- **Action:** Closed Subtask 02 after completing the specialist-skill consolidation. Resolved the related P0 link finding in child 25. Started the first remaining P0 remediation child, 05.
+- **Result:** The Worker now owns document governance, GitHub Actions, CI Ledger, and decision governance. The three specialist skill files are removed. The active callers and navigation paths now point to Worker-owned references. The one repository-wide broken link now points to the Worker reference.
+- **Evidence:** Consolidation commit `80819ac6f8d3640671dd3b550ac2008cf3a0acc5`; Ledger path correction `8a00ccfe91f0acfea20bb03a0a01d7203ac3836a`; broken-link repair `75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064`.
+- **Readback:** Read back all changed files. Confirmed the three deleted specialist skill paths return not found. Checked local Markdown links in the changed navigation and reference files. Confirmed the repaired target exists.
+- **Checks:** No local tests or linter run. No hosted run pages or logs inspected. Repository-published reports were read.
+- **Queue:** The Ledger generated P0 remediation children 05–46. Child 25 is resolved. Child 05 is now active. The remaining P0 children precede the P1 queue.
+
 
 ### 2026-11-27 11:42 UTC
 

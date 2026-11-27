@@ -9,7 +9,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-05
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27 11:53 UTC
+- **Updated:** 2026-11-27 11:56 UTC
 - **Ledger group:** `ci-026a54a131300af4`
 - **Legacy Task IDs:** None
 
@@ -49,16 +49,23 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 ## 5. Decisions and Progress
 
+### 2026-11-27 11:56 UTC — execution started
+
+- **Action:** Selected the first eligible P0 remediation child under standing authorization. Read the committed changed-file report and the four findings for this file.
+- **Result:** Rewrote four present-perfect constructions as simple past or direct instructions. The changes preserve the original activation and validation rules.
+- **Evidence:** `.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json`, run `45992769255`.
+- **Next:** Read back the committed source and record the commit SHA. Do not inspect hosted run pages or run the linter locally.
+
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
+- **Commit SHA:** Pending this commit.
+- **Changed paths:** `.agent/skills/agent-skill-authoring/SKILL.md`.
+- **Readback:** Pending commit readback.
+- **Checks:** No local linter or hosted run review.
+- **Limitations:** No local linter or hosted run page was used.
 
 ## 7. Completion
 
