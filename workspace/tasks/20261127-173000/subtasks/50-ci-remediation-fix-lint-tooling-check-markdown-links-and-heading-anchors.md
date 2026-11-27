@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-50
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Blocked
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — the referenced report JSON files were removed during the user-directed history reset. The shared index is empty. The current source, regression test, and workflow do not identify the exact failing target or anchor.
+- **Eligibility / deferral reason:** In Progress — recovered report 45911866106 through its historical Git blob. Its diagnostic identifies `workspace/TASK_TEMPLATE.md` → `subtasks/README.md`. The canonical template now lives at `.agent/skills/the-worker/assets/TASK_TEMPLATE.md`, but the resolver only exempts the legacy path.
 - **Required:** Yes
 - **Created:** 2026-11-27 12:58 UTC
-- **Updated:** 2026-11-27 16:55 UTC
+- **Updated:** 2026-11-27 23:12 UTC
 - **Ledger group:** `ci-ace4e198cb6445b7`
 - **Legacy Task IDs:** None
 
@@ -55,10 +55,10 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 ## 6. State and Evidence
 
 - **Commit SHA:** Not committed.
-- **Changed paths:** None. Reviewed `.agent/skills/asd-ste100/scripts/check_markdown_anchors.py`, `.agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py`, `.agent/skills/asd-ste100/scripts/ste-lint-repository.sh`, `.github/workflows/ste-lint-changed.yml`, and `.github/workflows/ste-lint-full-docs.yml`.
-- **Readback:** Confirmed `.takeout/reports/index.json` contains no runs and `.takeout/reports/history/` has no retained evidence files.
+- **Changed paths:** `.agent/skills/asd-ste100/scripts/check_markdown_anchors.py` and `.agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py`.
+- **Readback:** Historical report blob `0cf5194494a6b8845621c1af67b519dcd1a65fc9` from commit `91a51c0d202bd183c2e503e5e8ef8571b21f5e93` supplied the exact failure. Current source readback shows the canonical task template still needs the same exemption.
 - **Checks:** Not performed.
-- **Limitations:** The task record and Ledger retain the finding title and report paths, but not the failing Markdown target, fragment, or diagnostic output. The report paths no longer exist. No hosted CI results were inspected.
+- **Limitations:** Later report JSON files are no longer retained in the current index. This fix addresses the recovered missing-target diagnostic and the current canonical template path. No local scripts, tests, or lint were run. Hosted CI results were not inspected.
 
 ## 7. Completion
 

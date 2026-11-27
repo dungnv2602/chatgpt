@@ -16,7 +16,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. No Ready child remains.
+**P0** — [20261127-173000-50: Fix Markdown-link tooling for the canonical task template](tasks/20261127-173000/subtasks/50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) — Approved, In Progress, no dependencies. Parent: [Refactor Skills](tasks/20261127-173000/task.md).
 
 ## Ordered Eligible Execution Queue
 
@@ -24,7 +24,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-Child 27 is the active Refactor Skills execution. After it closes, the global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+Child 50 is the active Refactor Skills execution. After it closes, the global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 

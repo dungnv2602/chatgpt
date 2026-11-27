@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 23:09 UTC
+- **Updated:** 2026-11-27 23:12 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -72,6 +72,12 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27T23:12:40.445Z — resumed Markdown-anchor tooling remediation child 50
+
+- Recovered historical report `45911866106` through its Git blob. Its diagnostic identified the unresolved template link `workspace/TASK_TEMPLATE.md` → `subtasks/README.md`.
+- The active template now lives at `.agent/skills/the-worker/assets/TASK_TEMPLATE.md`, but the resolver exempts only the legacy root path. The regression test also covers only that legacy path.
+- Updated the resolver and test to exempt both template locations. Commit and readback pending.
 
 ### 2026-11-27T23:08:59.100Z — CI remediation child 27 closeout
 

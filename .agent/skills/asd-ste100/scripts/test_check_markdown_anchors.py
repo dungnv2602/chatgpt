@@ -26,14 +26,19 @@ class MarkdownAnchorTests(unittest.TestCase):
             )
 
     def test_task_template_child_index_resolves_after_instantiation(self):
-        self.assertIsNone(
-            MODULE.resolve_markdown_target(
-                "workspace/TASK_TEMPLATE.md",
-                "subtasks/README.md",
-                {"workspace/TASK_TEMPLATE.md"},
-                {"workspace/TASK_TEMPLATE.md"},
-            )
-        )
+        for source in (
+            "workspace/TASK_TEMPLATE.md",
+            ".agent/skills/the-worker/assets/TASK_TEMPLATE.md",
+        ):
+            with self.subTest(source=source):
+                self.assertIsNone(
+                    MODULE.resolve_markdown_target(
+                        source,
+                        "subtasks/README.md",
+                        {source},
+                        {source},
+                    )
+                )
 
     def test_literal_local_targets_are_still_resolved(self):
         self.assertEqual(
