@@ -14,6 +14,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 EXCLUDED_PREFIXES = (
+    ".archive/",
     ".takeout/reports/lint_reports/",
     "workspace/tasks/",
     "workspace/discussion.md",
