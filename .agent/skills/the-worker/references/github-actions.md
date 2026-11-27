@@ -191,9 +191,9 @@ Use these questions when implementing an optimization:
 
 ## Worker ownership and retained implementation paths
 
-The Worker owns Actions diagnosis, workflow remediation, operational policy, and report review. The diagnostic workflow, composite capture action, report generator, schema, template, report index, and immutable history remain in `.github/workflows/` and `.takeout/reports/gh_ac_reports/`. The report generator and Ledger share eligibility logic in `.takeout/reports/shared/eligibility.py`. These are Worker-governed implementation assets with stable caller contracts, not separate skills or operational owners. Relocation requires coordinated changes to workflow callers, scripts, schemas, tests, and indexes.
+The Worker owns Actions diagnosis, workflow remediation, operational policy, and report review. The diagnostic workflow, capture workflow, report generator, schema, template, report index, and immutable history remain in `.github/workflows/` and `.takeout/reports/gh_ac_reports/`. The report generator and Ledger share eligibility logic in `.takeout/reports/shared/eligibility.py`. These are Worker-governed implementation assets with stable caller contracts, not separate skills or operational owners. Relocation requires coordinated changes to workflow callers, scripts, schemas, tests, and indexes.
 
 
 ## Canonical implementation
 
-The Actions report producer, regression suite, shared eligibility policy, schema, and report template are maintained under `.agent/skills/the-worker/scripts/` and `.agent/skills/the-worker/assets/`. The capture action invokes these canonical scripts. Report indexes and immutable history remain in report-family paths.
+The Actions report producer, regression suite, shared eligibility policy, schema, and report template are maintained under `.agent/skills/the-worker/scripts/` and `.agent/skills/the-worker/assets/`. The capture workflow invokes these canonical scripts. Report indexes and immutable history remain in report-family paths.
