@@ -16,15 +16,15 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. No Ready child remains.
+**P1** — [20261127-173000-58: Recover task materials and clean temporary artifacts automatically](tasks/20261127-173000/subtasks/58-recover-materials-cleanup.md) — Approved, In Progress, within the standing Refactor Skills focus.
 
 ## Ordered Eligible Execution Queue
 
-1. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
+_No eligible task is queued while Current Execution is in progress._
 
 ## Next Task
 
-No Ready child remains under Refactor Skills. The global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+Current Execution child 58 is in progress under the user's standing Refactor Skills focus.
 
 ## Deferred Work
 
