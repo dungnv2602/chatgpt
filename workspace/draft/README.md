@@ -9,6 +9,8 @@ This folder stores proposals that require a user decision.
 
 ## Current Drafts
 
+- [DRAFT-0006 — Make Session Start and Conversation Mode lean](DRAFT-0006-lean-session-start-and-conversation-mode.md) — Revision 1 in review. Proposes a Worker-owned operating model, a cue-pointer-only Session Start, and a presentation-settings-only Conversation Mode. Approval is pending.
+
 - [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](DRAFT-0005-unified-index-without-latest-lint-copy.md) — Revision 1 in review. Proposes to remove the standalone latest lint JSON and resolve the previous report from the unified index. Requires user approval because it changes accepted ADR-0003.
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 4. Style-only wording update. The discussion register records approval of Option 3 with added requirements. The Draft metadata and task record still show review-pending state. Reconcile the exact approved revision and scope before ADR promotion.
