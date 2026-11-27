@@ -32,17 +32,18 @@ A successful ADR promotion deletes the source Draft after the provisional and ac
 - Retry only source deletion. After deletion succeeds, remove the cleanup-pending entry and read back the Draft and ADR indexes.
 - This rule applies only to successful ADR promotion. It does not change retention for rejected, withdrawn, or superseded Drafts.
 
-## Task resolution and Ledger retirement
+## Task resolution and Ledger retention
 
-The active CI issue Ledger is an operational backlog, not a permanent archive.
+The active CI issue Ledger keeps finding identity and history. Task archival does not retire or delete findings.
 
-1. Before closing a Ledger-generated task as Done, verify that every finding in its Ledger Findings section is terminal: resolved, accepted, false_positive, or duplicate. Each status must satisfy the Ledger schema's evidence requirements.
-2. Move report files needed for the historical handoff to .archive/reports/, preserving their relative paths. Update the task's evidence links to the new archive paths before writing its final archive copy.
-3. Archive the completed task and register its exact path in .github/archive-retention-index.json.
-4. The archive-task push triggers the normal diagnostics sweep. The Ledger reads only indexed task archives and removes the covered terminal findings from the active .takeout/reports/triage/ledger.json. Findings remain active until that event-driven retirement runs.
-5. Do not manually delete resolved findings from the Ledger or run a periodic retirement scan. The archived task record and its report references preserve the audit trail.
+1. Before closing a Ledger-generated task as Done, verify that every finding in its Ledger Findings section is terminal. Valid states are resolved, accepted, false_positive, and duplicate.
+2. Move report files needed for the historical handoff to `.archive/reports/`. Preserve their report-family paths. Update the task's evidence links before you prepare its final archive copy.
+3. Archive the complete task folder at `.archive/task/<task-id>/`. Include `task.md`, `subtasks/README.md`, and every child record.
+4. Add one retention-index entry for every exact archived file path. Use one shared `archived_at_utc` timestamp for all files in the task folder.
+5. Read back every archived file and verify every index entry before you delete the active task folder.
+6. Keep finding IDs, resolution history, and prior task references in the Ledger after task archival. A later observation can reopen the same finding identity and link new remediation work.
 
-A task with any open or non-terminal finding must not be closed as Done. Cancelled tasks do not retire open findings.
+A task with any open or non-terminal finding must not be closed as Done. Cancelled tasks do not change open finding state.
 
 ## Normal report filing and retention
 
@@ -53,7 +54,7 @@ When a report is no longer required by an open finding or active investigation:
 3. Do not archive a file still referenced by an open finding or active investigation.
 4. Do not manually delete an indexed archived file. The weekly retention workflow deletes each exact indexed file after 90 days from its own archive timestamp.
 
-Task and report archives use the same index, schedule, cleanup script, and 90-day per-file retention policy.
+New task-folder archives use one shared timestamp and expire as a complete folder group. The index must include task.md, subtasks/README.md, and every child record. Cleanup removes the exact indexed files together after 90 days. Historical flat task archives and report files retain individual 90-day periods.
 
 ## Explicit clean-start reset
 
@@ -74,11 +75,13 @@ This explicit reset is the only exception to the normal immutable report-period 
 
 ## Retention policy
 
-GitHub Actions checks the shared retention index weekly. It retains each indexed file for at least 90 days from its UTC archive timestamp.
+GitHub Actions checks the shared retention index weekly. It retains task-folder archives and individual legacy/report files for at least 90 days.
 
-- The index is .github/archive-retention-index.json. Entries reference one exact file under  .archive/task/ or .archive/reports/.
+- The index is .github/archive-retention-index.json. Each entry references one exact file under .archive/task/ or .archive/reports/.
+- A folder archive requires indexed task.md and subtasks/README.md entries plus every child record. All entries for that folder must share one UTC timestamp.
 - The cleanup script reads the index only. It does not list, scan, or read either archive directory.
-- When an indexed file reaches 90 days, the workflow deletes only that exact path and removes its index entry.
+- When a task folder reaches 90 days, the workflow deletes all exact indexed files in that folder as one unit. It fails closed if required entries or the shared timestamp are missing.
+- Historical flat task files and report files expire individually from their own timestamps.
 - Preserve .gitkeep. Never delete an unindexed record except during the explicit user-authorized clean-start reset described above.
 - Legacy unindexed records remain protected unless their exact path and archive timestamp are verified.
 - The cleanup workflow checks out gpt, verifies that main is an ancestor, and atomically fast-forwards main to the resulting gpt commit. It does not force-push.
