@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T14:52:52Z",
+  "updated_at_utc": "2026-11-27T15:13:52Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -12239,8 +12239,8 @@
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-26T23:36:16.808147+00:00",
-      "last_seen_utc": "2026-11-27T14:52:04.316151+00:00",
-      "occurrence_count": 38,
+      "last_seen_utc": "2026-11-27T15:12:56.990047+00:00",
+      "occurrence_count": 39,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45911866106-attempt-1/report.json",
@@ -12252,17 +12252,6 @@
           "parent_task_id": null,
           "attribution_status": "historical_unattributed",
           "source_commit_sha": null
-        },
-        {
-          "report_path": ".takeout/reports/lint_reports/on_changed/history/46008770801-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46008770801",
-          "observed_at_utc": "2026-11-27T13:38:18.716138+00:00",
-          "note": "on_changed · Markdown links and heading anchors",
-          "observation_id": "lint_tooling:46008770801:1",
-          "source_task_id": "20261127-173000-26",
-          "parent_task_id": "20261127-173000",
-          "attribution_status": "linked",
-          "source_commit_sha": "feb9767d6a61ce9d32cd53b251afaace810ca515"
         },
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/46014585047-attempt-1/report.json",
@@ -12296,6 +12285,17 @@
           "parent_task_id": null,
           "attribution_status": "missing_marker",
           "source_commit_sha": "9c2adb27eff65c81b7bb768cf9f6dab9196db481"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/46020530596-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46020530596",
+          "observed_at_utc": "2026-11-27T15:12:56.990047+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:46020530596:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "missing_marker",
+          "source_commit_sha": "14d4c19a70bf36217313b3a7dc1a84401d0f9113"
         }
       ],
       "resolution": null,
@@ -23787,6 +23787,7 @@
       ".takeout/reports/lint_reports/on_changed/history/46015025342-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/46015641759-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/46019304454-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/46020530596-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json",
