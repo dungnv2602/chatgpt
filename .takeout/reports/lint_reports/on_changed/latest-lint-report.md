@@ -2,30 +2,30 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#1003](https://github.com/dungnv2602/chatgpt/actions/runs/46003913637)
-- **Run ID / attempt:** 46003913637 / 1
+- **Run:** [#1004](https://github.com/dungnv2602/chatgpt/actions/runs/46004321587)
+- **Run ID / attempt:** 46004321587 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / eb780b92aa048fdaf2c9bc6a1e1783c8bc2adceb
-- **Source task:** 20261127-173000-11
+- **Branch / commit:** gpt / f62d4cc6692f764cad57f1a291066c8af0966ca0
+- **Source task:** 20261127-173000-12
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 8324ee76f6ba30cbe04ca8b82414b2d51e98cdd0
-- **Linter source SHA:** eb780b92aa048fdaf2c9bc6a1e1783c8bc2adceb
-- **Generated (UTC):** 2026-11-27T13:04:56.091255+00:00
+- **Baseline SHA:** eb780b92aa048fdaf2c9bc6a1e1783c8bc2adceb
+- **Linter source SHA:** f62d4cc6692f764cad57f1a291066c8af0966ca0
+- **Generated (UTC):** 2026-11-27T13:07:26.379760+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 2 |
-| Files that failed | 1 |
+| Files that failed | 2 |
 | Files with findings | 2 |
-| Total findings | 3 |
-| Hard findings | 2 |
-| Advisory findings | 1 |
-| New findings | 1 |
+| Total findings | 19 |
+| Hard findings | 11 |
+| Advisory findings | 8 |
+| New findings | 17 |
 | Recurring findings | 2 |
-| Resolved findings | 2 |
+| Resolved findings | 1 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -40,7 +40,7 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- .agent/skills/agent-skill-authoring/SKILL.md
+- .agent/skills/the-worker/SKILL.md
 - workspace/task_board.md
 
 ## 4. Per-file result matrix
@@ -49,8 +49,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/agent-skill-authoring/SKILL.md | PASS | 1 | 1 | 6 | 2256 | 0.0 | 0 |
-| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1604 | 0.1 | 1 |
+| .agent/skills/the-worker/SKILL.md | FAIL | 17 | 10 | 0 | 2539 | 0.7 | 1 |
+| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1570 | 0.1 | 1 |
 
 ## 5. Findings by rule
 
@@ -58,8 +58,9 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| synonym-rotation | 2 |
-| passive-voice | 1 |
+| passive-voice | 8 |
+| synonym-rotation | 7 |
+| long-sentence | 4 |
 
 ## 6. Workflow and validation checks
 
@@ -91,7 +92,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.477s
+Ran 6 tests in 0.431s
 
 OK
 ~~~
@@ -124,9 +125,8 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 2 changed Markdown sources (440 available as link targets) and 46 local Markdown links.
-Found 37 unresolved local Markdown targets or anchors.
-workspace/task_board.md: missing Markdown file: 12-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md
+Scanned 2 changed Markdown sources (440 available as link targets) and 43 local Markdown links.
+Found 36 unresolved local Markdown targets or anchors.
 workspace/task_board.md: missing Markdown file: 13-ci-remediation-review-synonym-rotation-findings-in-agent-session-start-md.md
 workspace/task_board.md: missing Markdown file: 14-ci-remediation-review-phrasal-verb-findings-in-agent-skills-asd-ste100-skill-md.md
 workspace/task_board.md: missing Markdown file: 15-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md
@@ -171,53 +171,193 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · .agent/skills/agent-skill-authoring/SKILL.md:223:46 · **new** · fingerprint: 78a70aacc34addace6e797ec
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:36:83 · **new** · fingerprint: 7b14acb1f2bd5527bba85225
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:61:141 · **new** · fingerprint: 41c8fb47b6b000b0b2e47dfc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:67:10 · **new** · fingerprint: 0ccd1f7c4af982aef5659c2d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are Proposed
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:85:91 · **new** · fingerprint: 0aaa53d17394c2697ff91643
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is read
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:112:3 · **new** · fingerprint: 29bf7cd1e44f6d01fc347374
   - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:116:70 · **new** · fingerprint: 030301d369a6833422178b29
+  - **Level:** advisory-free
+  - **Message:** Sentence has 42 words (cap 25). Split it.
+  - **Matched text:** 42 words
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:116:330 · **new** · fingerprint: e749a89a221be9cabe94904f
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** remove
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:124:139 · **new** · fingerprint: 90e6b7d1bbc5bc36ea42d40b
+  - **Level:** advisory-free
+  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** modifying
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:124:169 · **new** · fingerprint: 9a91179e5c545e21411d154c
+  - **Level:** advisory-free
+  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** begin
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:125:182 · **new** · fingerprint: 6ceec6aac665e34ceb1f916d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 33 words (cap 25). Split it.
+  - **Matched text:** 33 words
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:125:201 · **new** · fingerprint: d04c76628166e8796dcfc446
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validated
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:155:129 · **new** · fingerprint: 50c502e6476c7d33f9c052f6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is activated
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:171:286 · **new** · fingerprint: f071e35d93664b24286e6bb7
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'correct' name the same action. Pick one and use it every time.
+  - **Matched text:** repair
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:172:302 · **new** · fingerprint: 5d8336dc915865ae43f6b3a8
+  - **Level:** advisory-free
+  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
+  - **Matched text:** fetch
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:174:100 · **new** · fingerprint: e5c16c0bb6df9d137ce2bf13
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are exhausted
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:174:142 · **new** · fingerprint: ca1db01f7b11a29a176a2e86
+  - **Level:** advisory-free
+  - **Message:** Sentence has 29 words (cap 25). Split it.
+  - **Matched text:** 29 words
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:174:228 · **new** · fingerprint: 961e310a4d56d86392dd989d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were examined
 
 ### Recurring findings
 
-- **synonym-rotation** · workspace/task_board.md:81:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:80:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
-- **passive-voice** · workspace/task_board.md:81:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:80:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
 
 ### Resolved findings
 
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **resolved** · fingerprint: b705ef6f747ccfaf4dd42d95
+- **synonym-rotation** · .agent/skills/agent-skill-authoring/SKILL.md:223:46 · **resolved** · fingerprint: 78a70aacc34addace6e797ec
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **resolved** · fingerprint: b705ef6f747ccfaf4dd42d95
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### .agent/skills/agent-skill-authoring/SKILL.md
+### .agent/skills/the-worker/SKILL.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 1
-- **Hard findings:** 1
-- **Baseline:** 6
-- **Words:** 2256
-- **Findings per 100 words:** 0.0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 17
+- **Hard findings:** 10
+- **Baseline:** 0
+- **Words:** 2539
+- **Findings per 100 words:** 0.7
 
 #### Complete diagnostics
 
-- **synonym-rotation** · .agent/skills/agent-skill-authoring/SKILL.md:223:46 · **new** · fingerprint: 78a70aacc34addace6e797ec
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:36:83 · **new** · fingerprint: 7b14acb1f2bd5527bba85225
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:61:141 · **new** · fingerprint: 41c8fb47b6b000b0b2e47dfc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:67:10 · **new** · fingerprint: 0ccd1f7c4af982aef5659c2d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are Proposed
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:85:91 · **new** · fingerprint: 0aaa53d17394c2697ff91643
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is read
+
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:112:3 · **new** · fingerprint: 29bf7cd1e44f6d01fc347374
   - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:116:70 · **new** · fingerprint: 030301d369a6833422178b29
+  - **Level:** advisory-free
+  - **Message:** Sentence has 42 words (cap 25). Split it.
+  - **Matched text:** 42 words
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:116:330 · **new** · fingerprint: e749a89a221be9cabe94904f
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** remove
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:124:139 · **new** · fingerprint: 90e6b7d1bbc5bc36ea42d40b
+  - **Level:** advisory-free
+  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** modifying
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:124:169 · **new** · fingerprint: 9a91179e5c545e21411d154c
+  - **Level:** advisory-free
+  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** begin
+
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:125:182 · **new** · fingerprint: 6ceec6aac665e34ceb1f916d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 33 words (cap 25). Split it.
+  - **Matched text:** 33 words
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:125:201 · **new** · fingerprint: d04c76628166e8796dcfc446
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validated
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:155:129 · **new** · fingerprint: 50c502e6476c7d33f9c052f6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is activated
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:171:286 · **new** · fingerprint: f071e35d93664b24286e6bb7
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'correct' name the same action. Pick one and use it every time.
+  - **Matched text:** repair
+
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:172:302 · **new** · fingerprint: 5d8336dc915865ae43f6b3a8
+  - **Level:** advisory-free
+  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
+  - **Matched text:** fetch
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:174:100 · **new** · fingerprint: e5c16c0bb6df9d137ce2bf13
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are exhausted
+
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:174:142 · **new** · fingerprint: ca1db01f7b11a29a176a2e86
+  - **Level:** advisory-free
+  - **Message:** Sentence has 29 words (cap 25). Split it.
+  - **Matched text:** 29 words
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:174:228 · **new** · fingerprint: 961e310a4d56d86392dd989d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were examined
 
 
 ### workspace/task_board.md
@@ -227,17 +367,17 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 2
 - **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1604
+- **Words:** 1570
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/task_board.md:81:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:80:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
 
-- **passive-voice** · workspace/task_board.md:81:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:80:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
