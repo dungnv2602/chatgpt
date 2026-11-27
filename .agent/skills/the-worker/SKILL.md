@@ -413,6 +413,8 @@ The Worker closes a parent task only after every required subtask is Done, the c
 
 **Archive gate — do not mark an active parent Done prematurely.** Keep the active parent In Progress / Archived: No until the complete folder archive exists and matches the prepared final folder. Prepare final Done/Cancelled and Archived: Yes metadata only in the archive copy. Archive the complete directory, including task.md, subtasks/README.md, and every child record. Read back every file. Register each exact archived file path and timestamp in the retention index. Only after all copies and index entries verify may you delete the active task folder and reconcile the board. Move the board row to Historical only after the archive commit exists and link that commit. If any step fails, leave the task open and report the exact blocker.
 
+**Archive compatibility:** New task archives use `.archive/task/<task-id>/`. Include the parent, subtask index, and every child record. Use one UTC archive timestamp for every file. The cleanup workflow retains and deletes the folder as one unit. Historical flat task archives remain immutable and readable at their exact paths. Never convert or rewrite them. See `.archive/README.md`.
+
 When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence. For Ledger-generated tasks, require terminal status and valid resolution, accepted-risk, false-positive, or duplicate evidence for every linked finding. A grouped task with any non-terminal finding cannot close as Done.
@@ -438,7 +440,7 @@ Treat the task record, archive path, and task board as one logical transaction e
 
 If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree. Do not ask the user to approve routine archival or board maintenance. The approved task requires this archival and board maintenance.
 
-Follow .archive/README.md for the 90-day per-record retention policy. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only the scheduled GitHub Actions retention workflow may delete indexed archived records.
+Follow .archive/README.md for 90-day retention. New task-folder archives expire as one unit. Historical flat task archives and report files expire individually. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only scheduled retention may delete indexed records.
 
 ## Conversation and drawing-session archives
 
