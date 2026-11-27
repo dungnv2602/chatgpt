@@ -38,7 +38,7 @@ class LedgerAttributionTests(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
-    def add_parent(self, task_id, status="In Progress", origin="User", priority="P1"):
+    def add_parent(self, task_id, status="In Progress", origin="User", priority="P1", governing="None"):
         folder = self.root / "workspace" / "tasks" / task_id
         subtasks = folder / "subtasks"
         subtasks.mkdir(parents=True, exist_ok=True)
@@ -52,6 +52,7 @@ class LedgerAttributionTests(unittest.TestCase):
             "- **Status:** " + status + "\n"
             "- **Origin:** " + origin + "\n"
             "- **Priority:** " + priority + "\n"
+            "- **Governing ADR(s):** " + governing + "\n"
             "- **Updated:** 2026-11-27 09:00 UTC\n"
             "- **Approval:** Approved\n\n"
             "## 10. Ledger Findings\n\n"
