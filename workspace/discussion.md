@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27:** `/start` initialization. Verify CI workflow invariants: CI tasks are children only; PI/CI-generated P0 children must be Ready rather than Proposed unless governed; Ledger intake and generation must create P0 children for new errors. Startup P0 batch follows mandatory Worker procedure.
+- **2026-11-27:** Execute authorized workflow refactor in [task 20261126-142500](tasks/20261126-142500/task.md), [subtask 20261126-142500-01](tasks/20261126-142500/subtasks/20261126-142500-01.md). Enforce universal prompt capture, genuine parent/follow-up attribution, CI remediation as children of the originating task, and simplify the end-to-end lifecycle. Parent is Current Execution.
 
 ## Open Discussions
 
