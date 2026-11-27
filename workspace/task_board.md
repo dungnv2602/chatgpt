@@ -10,13 +10,12 @@ This file is the single index for active and retained task records. Each active 
 
 ## Current Execution
 
-[20261127-033914 — Next P0 CI remediation](tasks/20261127-033914/task.md)
+[20261127-023803 — Next P0 CI remediation](tasks/20261127-023803/task.md)
 
 ## Ready — Mandatory CI P0
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-033914 | Improve .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:56 UTC | [Task record](tasks/20261127-033914/task.md) |
 | 20261127-023803 | Improve .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 03:56 UTC | [Task record](tasks/20261127-023803/task.md) |
 | 20261127-033914-02 | Improve workspace/SUBTASK\_TEMPLATE.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:39 UTC | [Task record](tasks/20261127-033914-02/task.md) |
 | 20261127-013646 | Review synonym-rotation findings in workspace/task\_board.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013646/task.md) |
@@ -90,6 +89,7 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261127-033914 | Improve .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-033914/task.md) | [6bef9e8](https://github.com/dungnv2602/chatgpt/commit/6bef9e8d5d730f412b131aa653754fce50e0f398) |
 | 20261127-033914-01 | Improve workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-033914-01/task.md) | [7fbb27c](https://github.com/dungnv2602/chatgpt/commit/7fbb27cea4c9e8d8a5e69788e192615363310650) |
 | 20261126-170259-03 | Review long sentence in ADR-0003 | P0 | Done | Assistant | Approved | Pending | 2026-11-27 05:15 UTC | [Archived task](../.archive/task/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md) | [5c19c16](https://github.com/dungnv2602/chatgpt/commit/5c19c163c9487bf064140fa10f4f3a7217fd4a3e) |
 | 20261126-224100 | Apply CI P0 batch execution to session startup | P1 | Done | User | Approved | — | 2026-11-26 22:46 UTC | [Archived task](../.archive/task/20261126-224100-apply-ci-p0-batch-to-session-start.md) | [ae5bf33](https://github.com/dungnv2602/chatgpt/commit/ae5bf33e284c534b867e9635d59de6847a7f9645) |
