@@ -20,6 +20,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 1. **P1** — [20261127-173000-02: Consolidate specialist skills into The Worker](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) — Approved, Ready, dependencies satisfied. Selected next under the user-prioritized Refactor Skills parent.
 2. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
+3. **P1** — [20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — Approved, Ready, no dependencies.
 
 ## Next Task
 
