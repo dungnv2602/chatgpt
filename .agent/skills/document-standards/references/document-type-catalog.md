@@ -1,7 +1,7 @@
 # Document Type Catalog
 
-**Catalog version:** 1.19
-**Latest tree inventory:** A recursive tree audit of branch `gpt` at commit `315615e944ed55925a6aa72c59fd6401bdcc912b` counted 297 Markdown files outside root `master/` and `.archive/`, including the permanent ` .archive/adr/` records. This is an inventory count only. Catalog coverage simulation, the validator, and regression tests were not run for this inventory.
+**Catalog version:** 1.20
+**Previous tree inventory:** The last recursive audit at commit `315615e944ed55925a6aa72c59fd6401bdcc912b` counted 297 Markdown files outside root `master/` and `.archive/`. That historical count predates the ADR-0004 task-folder migration. This task did not run a new recursive inventory, catalog simulation, validator, or tests.
 **Source branch:** `gpt`
 
 This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Skill-owned copy-ready templates belong in the owning skill's `assets/` directory. Explanatory references belong in `references/`. Project-level templates may use the owning project's designated template directory.
@@ -136,9 +136,9 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/ADR_TEMPLATE.md` | Exempt | Active | `workspace/ADR_TEMPLATE.md` | Canonical accepted decision template source, not a decision record. |
 | `workspace/ANALYSIS_TEMPLATE.md` | Exempt | Active | `workspace/ANALYSIS_TEMPLATE.md` | Canonical analysis template source, not an analysis record. |
 | `workspace/DRAFT_TEMPLATE.md` | Exempt | Active | `workspace/DRAFT_TEMPLATE.md` | Canonical Draft template source, not a proposal record. |
-| `workspace/tasks/*.md` | Template required | Active | Legacy task record format in `workspace/TASK_TEMPLATE.md` v1.3 | Transitional flat active task records. Migrate to task folders under ADR-0004; do not create new flat task records. |
-| `workspace/tasks/*/task.md` | Template required | Active | `workspace/TASK_TEMPLATE.md` v2.0 | Parent task records in task folders. |
-| `workspace/tasks/*/subtasks/*.md` | Template required | Active | `workspace/SUBTASK_TEMPLATE.md` v1.0 | Child subtask records physically contained by their parent task folder. |
+| `workspace/tasks/*/task.md` | Template required | Active | `workspace/TASK_TEMPLATE.md` v2.0 | Authoritative parent record. Every task folder also contains `subtasks/README.md`. Parent Done requires every required child Done. |
+| `workspace/tasks/*/subtasks/README.md` | Embedded contract | Active | `workspace/tasks/*/subtasks/README.md` and `.agent/skills/the-worker/SKILL.md` | Required child index. Link the parent task and list every child subtask. |
+| `workspace/tasks/*/subtasks/[0-9][0-9]-*.md` | Template required | Active | `workspace/SUBTASK_TEMPLATE.md` v1.0 | Child subtask records. Each record has a stable ID, parent ID, type, status, acceptance criteria, evidence, and completion record. |
 | `workspace/analysis/README.md` | Embedded contract | Active | `.agent/skills/decision-governance/SKILL.md` and `workspace/analysis/README.md` | Repository-analysis navigation, review cadence, evidence requirements, and boundaries. |
 | `workspace/analysis/ANALYSIS-20??Q?*.md` | Template required | Reserved | `workspace/ANALYSIS_TEMPLATE.md` | Quarterly and event-triggered repository analysis snapshots. Activate this rule with the first real analysis record. |
 | `workspace/draft/README.md` | Embedded contract | Active | `.agent/skills/decision-governance/SKILL.md` and `workspace/draft/README.md` | Draft folder navigation, status transitions, and promotion rules. |
@@ -212,7 +212,7 @@ The following records predate the current templates. Preserve them as historical
 | Historical conversation indexes and transcript segments | `area/drawing/history/conversation-2026-11-12-intimacy-and-portrait.md`, `area/drawing/history/conversation-2026-11-12-starry-night-verbatim-available.md`, and `area/drawing/history/conversation-2026-11-12-verbatim-available-record.md` | These are legacy navigation/source records for past conversations, not a new recurring authoring type. | Preserve them. New conversation archive records use the conversation-integrity template and do not require separate index or transcript templates. |
 | Legacy standalone drawing prompt notes | `area/drawing/history/cozy-bedroom-painterly-attempt-27-2026-11-12.md` and `area/drawing/history/cozy-bedroom-cream-cardigan-navy-polo-2026-11-12.md` | These standalone prompt notes predate the one-record-per-attempt workflow. | Preserve them. New drawing attempts use the canonical attempt template. |
 | Novel illustration prompt records | `area/novel/Novel-01/Arc-01/Scene-003/illustrations/illustration-01-prompt.md`, `area/novel/Novel-01/Arc-01/Scene-004/illustrations/illustration-01-prompt.md`, and `area/novel/Novel-01/Arc-01/Scene-005/illustrations/illustration-01-prompt.md` | Scene-003 declares Version 1.0. Scene-004 and Scene-005 lack version frontmatter and use earlier custom layouts. | Preserve the historical records. Use the canonical Version 1.1 template for new prompt records and material revisions. |
-| Legacy workspace task record | No retained representative record. The previously listed task path is absent from the current branch. | The historical record is not available for inspection. Its contents and template version cannot be verified from the current tree. | Do not restore or reconstruct the missing record. New task records use `workspace/TASK_TEMPLATE.md` Version 1.3. |
+| Legacy workspace task record | No retained active flat record. Historical flat task archives remain under `.archive/task/`. | Active task records now use ID folders. Historical flat archives remain immutable and readable at their exact paths. | Do not restore or create active flat task notes. New active task records use `workspace/TASK_TEMPLATE.md` Version 2.0. |
 | Agent Skill definitions | Existing skill files under `.agent/skills/` | Many skills predate the reusable Agent Skill template. | Do not mass-convert existing skills. Use the canonical template for new skills and material rewrites. |
 
 This review did not require a new session summary or conversation-integrity record. Their templates remain available for future sessions.
