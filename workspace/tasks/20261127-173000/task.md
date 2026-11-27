@@ -73,6 +73,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
+### 2026-11-28T06:53:02+07:00 — Session Start and Conversation Mode architecture audit
+
+- Created child 59 to prepare the decision Draft for the user's requested workflow refactor.
+- The audit found conflicting blocker instructions in Session Start step 8 and step 10. The first resumes after one call. The second requires collecting all calls before execution.
+- The audit also found duplicate ownership for recovery cleanup, task progression, blocker handling, approval cues, startup CI, skill loading, the discussion register, repository discipline, and delivery.
+- Child 59 is authorized to prepare and present a Draft only. Implementation requires an accepted ADR.
+- Task record commit: `860edbb617ce3f848f3eef18643ce10ea4ae447e`.
+
 ### 2026-11-27T23:27:17.109Z — first remaining blocker at quiescence
 
 - The focused queue contains no Ready child. Child 28 is the first blocked child in index order.
@@ -431,7 +439,7 @@ Open or deferred:
 - Children 27–50 are Blocked. Child 50 awaits a complete diagnostic report with its failing Markdown target and anchor.
 - The latest-lint-report deletion is separate under parent 20261127-173500. It remains Proposed pending DRAFT-0005 approval.
 
-No Ready child remains under Refactor Skills. Keep this parent open. Do not retire or delete it.
+Child 59 is In Progress and prepares the decision Draft for the Session Start and Conversation Mode refactor. Keep this parent open. Do not retire or delete it.
 
 ## 7. Verification and Evidence
 
