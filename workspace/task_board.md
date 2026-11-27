@@ -2,13 +2,13 @@
 
 ## Scheduler contract
 
-The Worker is the sole scheduler. This board publishes the Worker's current selection and ordered eligible queue; it is not a second scheduler. Reconcile the board against the task records and child indexes before declaring the queue empty.
+The Worker is the sole scheduler. This board publishes its current selection and ordered eligible queue. It is not a second scheduler. Compare the board with task records and child indexes before declaring the queue empty.
 
-Eligibility is checked before priority and age: dependencies must be satisfied, execution authorized, and status Ready. Ready tasks are ranked by priority (P0 first), then age within equal priority unless a documented dependency or material constraint changes ordering. Ineligible tasks must not appear in the queue; list them under the appropriate deferred section with the precise reason.
+Check eligibility before priority or age. Dependencies must be satisfied, execution must be authorized, and status must be Ready. Rank eligible tasks by priority (P0 first), then age within the same priority unless a documented dependency or material constraint changes the order. Keep ineligible tasks out of the queue. List them in the appropriate deferred section with the exact reason.
 
-**Approval:** Approved records explicit authorization for the documented scope or applicable standing authorization. Pending means execution authorization is not granted; Declined means rejected. Approval is independent of status and eligibility.
+**Approval:** Approved records explicit authorization for the documented scope or applicable standing authorization. Pending means the user has not authorized execution. Declined means the user rejected the proposal. Approval does not depend on status or eligibility.
 
-This is the single index of active task parents. Every parent folder contains `task.md` and `subtasks/README.md`; substantive children are listed in the parent index. Board links point to parent tasks, except Current Execution may point directly to the selected child. The parent cannot be Done while a required child remains open. The Worker owns status, selection, and direct deletion at closeout.
+This is the sole index of active task parents. Each parent folder contains `task.md` and `subtasks/README.md`. The parent index lists substantive children. Board links point to parents, except Current Execution may link to the selected child. Keep a parent open while a required child remains open. The Worker owns status, selection, and deletion at closeout.
 
 ## Current Execution
 
@@ -18,7 +18,7 @@ Parent: [20261126-142500 — Repair CI task generation and clear active reports]
 
 ## Ordered Eligible Execution Queue
 
-<text>Ordered by the Worker. P0 tasks precede lower priorities; age breaks ties among eligible tasks.</text>
+<text>Ordered by the Worker. P0 tasks precede lower priorities. age breaks ties among eligible tasks.</text>
 
 | Rank | ID | Title | Priority | Status | Approval | Record |
 |---:|---|---|---|---|---|---|
@@ -50,7 +50,7 @@ Parent: [20261126-142500 — Repair CI task generation and clear active reports]
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | Immutable report evidence was unavailable through remote readback; do not infer a fix or substitute hosted result review. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
+| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | Immutable report evidence was unavailable through remote readback. do not infer a fix or substitute hosted result review. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 
 ### Proposed — decision pending
 
@@ -60,8 +60,8 @@ _No proposed tasks._
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-03 | Correct objective-based task parent selection | P1 | Paused | Approved | Reparented under Refactor Skills; remaining audit deferred behind P0 queue. | [subtask](tasks/20261127-173000/subtasks/03-correct-objective-based-task-parent-selection.md) |
-| 20261127-173000-02 | Consolidate specialist skills into The Worker | P1 | Paused | Approved | Refactor Skills child; deferred behind mandatory P0 queue. | [subtask](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) |
+| 20261127-173000-03 | Correct objective-based task parent selection | P1 | Paused | Approved | Reparented under Refactor Skills. remaining audit deferred behind P0 queue. | [subtask](tasks/20261127-173000/subtasks/03-correct-objective-based-task-parent-selection.md) |
+| 20261127-173000-02 | Consolidate specialist skills into The Worker | P1 | Paused | Approved | Refactor Skills child. deferred behind mandatory P0 queue. | [subtask](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) |
 
 
 ### Dependency-waiting
