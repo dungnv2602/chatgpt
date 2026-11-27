@@ -6,7 +6,6 @@ Parent: [task.md](../task.md)
 |---|---|---|---|
 | 20261126-142500-01 | Audit universal prompt-to-task workflow rules | Done | [01-audit-prompt-capture-rules.md](01-audit-prompt-capture-rules.md) |
 | 20261126-142500-02 | Enforce prompt capture and refactor task/CI workflow | In Progress | [02-refactor-task-ci-lifecycle.md](02-refactor-task-ci-lifecycle.md) |
-| 20261126-142500-03 | CI remediation — Fix lint tooling check: Markdown links and heading anchors | Blocked | [03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md](03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 | 20261126-142500-04 | CI remediation — Review semicolon findings in .agent/skills/github-actions/SKILL.md | Done | [04-ci-remediation-review-semicolon-findings-in-agent-skills-github-actions-skill-m.md](04-ci-remediation-review-semicolon-findings-in-agent-skills-github-actions-skill-m.md) |
 | 20261126-142500-05 | CI remediation — Review semicolon findings in .agent/skills/the-worker/SKILL.md | Done | [05-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md](05-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md) |
 | 20261126-142500-06 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/SKILL.md | Done | [06-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md](06-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md) |
@@ -25,6 +24,5 @@ Parent: [task.md](../task.md)
 | 20261126-142500-19 | CI remediation — Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | Done | [19-ci-remediation-review-semicolon-findings-in-agent-skills-ci-ledger-skill-md.md](19-ci-remediation-review-semicolon-findings-in-agent-skills-ci-ledger-skill-md.md) |
 
 | 20261126-142500-20 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/references/conversation-mode.md | Done | [20-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-references.md](20-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-references.md) |
-| 20261126-142500-23 | CI remediation — Fix lint tooling check: Lint report regression tests | Blocked | [23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md](23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
 
 The parent cannot be Done while a required child is open. CI remediation is commit-based; hosted validation is separate metadata.
