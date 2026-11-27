@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:22:30Z",
+  "updated_at_utc": "2026-11-27T13:22:44Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -4763,7 +4763,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T22:27:57.020756+00:00",
@@ -4826,7 +4826,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "f63fb0023e2c2c4fe78cf71fa7edc50ad0aa2b17",
+        "resolved_at_utc": "2026-11-27T13:22:44Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The user cue now names the actor in both novelist and drawing-session instructions. The novelist occurrence was fixed in commit 6f6b9431e93ed833611fefcf1eda03cae25499f0. The drawing-session occurrence was fixed in commit f63fb0023e2c2c4fe78cf71fa7edc50ad0aa2b17."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -4847,7 +4858,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T22:27:57.020756+00:00",
@@ -4910,7 +4921,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "6f6b9431e93ed833611fefcf1eda03cae25499f0",
+        "resolved_at_utc": "2026-11-27T13:22:44Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The Worker reference-fetch instruction now states that the user must verify the files in this conversation. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
