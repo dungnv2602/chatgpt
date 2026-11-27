@@ -1,6 +1,6 @@
 # Subtask: Audit universal prompt-to-task workflow rules
 
-**Template version:** 1.3
+**Template version:** 1.4
 
 ## Metadata
 
@@ -62,4 +62,4 @@ The workflow was only partially aligned. Existing task templates preserved paren
 
 ## 8. Handoff
 
-Implementation and workflow repair are tracked separately in subtask [20261126-142500-02](20261126-142500-02.md).
+Implementation and workflow repair are tracked separately in subtask [20261126-142500-02](02-refactor-task-ci-lifecycle.md).
