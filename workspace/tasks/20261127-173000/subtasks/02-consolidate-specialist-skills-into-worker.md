@@ -7,17 +7,17 @@
 - **ID:** 20261127-173000-02
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Paused
+- **Status:** Ready
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit user instruction to consolidate .agent/skills/github-actions, ci-ledger, decision-governance, and document-standards into The Worker and remove those separate skills.
 - **Governing ADR(s):** None
-- **Dependencies:** 20261127-173000-01; mandatory P0 queue
-- **Eligibility / deferral reason:** Paused behind mandatory P0 queue
+- **Dependencies:** None — child 01 is complete and the mandatory startup P0 batch is complete
+- **Eligibility / deferral reason:** Eligible — Ready, approved, dependencies satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 18:00 UTC
-- **Updated:** 2026-11-27 18:00 UTC
+- **Updated:** 2026-11-27 11:08 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -61,7 +61,13 @@ Move all necessary operational rules and responsibilities from the four speciali
 - **Action:** Captured the requested consolidation as a subtask of Refactor Skills.
 - **Result:** Approved scope recorded; execution deferred behind mandatory P0 queue.
 - **References:** The four skill paths named in the original prompt.
-- **Next:** When eligible, compare each specialist skill and its referenced assets/callers against The Worker, consolidate carefully, then delete redundant skill folders and reconcile references.
+- **Next:** Compare each specialist skill and its referenced assets/callers against The Worker. Consolidate carefully, then delete redundant skill folders and reconcile references.
+
+### 2026-11-27 11:08 UTC — startup P0 batch complete
+
+- **Action:** Reconciled all currently indexed CI-generated P0 children. The P0 remediation work is committed and its task records have been closed and deleted under the normal lifecycle.
+- **Result:** This child’s prerequisites are satisfied. It is now Ready under the persistent Refactor Skills parent.
+- **Next:** Begin the approved specialist-skill consolidation when selected for execution.
 
 ## 6. State and Evidence
 
