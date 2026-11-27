@@ -6,6 +6,8 @@ CI Ledger-generated P0 parents and children are mandatory and execution-approved
 
 
 
+**Approval column:** Approved records explicit authorization for the task's documented scope or applicable standing authorization. Pending means execution authorization is not granted; Declined means the scope was rejected. Approval is independent of status and eligibility; Proposed may be Approved while governance gates remain unmet. Record approval scope/source in task records.
+
 This file is the single index for active task records. Each active task is a folder that contains task.md and subtasks/README.md. Child records live under subtasks/. Board links point to the parent task.md. The parent cannot be Done while any required child remains open. No active flat task notes remain. The Worker owns task status, selection, and direct deletion at closeout.
 
 ## Current Execution
