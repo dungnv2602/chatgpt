@@ -59,14 +59,6 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
-- **Limitations:** The linked report is unavailable in the repository; root cause cannot be established without it. Hosted results cannot be used as a substitute.
-
-## 6. State and Evidence
-
 - **Commit SHA:** `22907d4bfb9905ee155d0d16164982c96d415762`
 - **Changed paths:** `.takeout/reports/README.md`; `workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md`; `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md`
 - **Readback:** Verified all three changed files and the two replacement link targets on branch `gpt`.
