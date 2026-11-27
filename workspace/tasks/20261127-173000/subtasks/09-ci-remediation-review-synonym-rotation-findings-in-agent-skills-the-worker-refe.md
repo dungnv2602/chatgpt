@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** Blocked — source fix is committed. Ledger resolution and closeout require full Ledger read/write access.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27
+- **Updated:** 2026-11-27 (commit-trailer correction)
 - **Ledger group:** `ci-2b8a7e756f8e7691`
 - **Legacy Task IDs:** None
 
