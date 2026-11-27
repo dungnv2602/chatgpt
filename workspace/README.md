@@ -44,7 +44,7 @@ The decision-governance skill owns Draft, ADR, and repository-analysis lifecycle
 2. Record the user's request, scope, constraints, approval, priority, dependencies, and acceptance criteria.
 3. Select one current execution task. Follow explicit user direction, then dependencies, priority, and age.
 4. Record meaningful actions, decisions, verification, and blockers in the task record. Keep the board as an index.
-5. Close only after all acceptance criteria pass and every required subtask is Done. Archive the complete task folder, including task.md, subtasks/README.md, and every child record. Read back every file and index every exact archive path before you delete the active folder. Update the board with the archive path and commit.
+5. Close only after the Worker checks every acceptance criterion and marks each required subtask Done. Archive the complete task folder, including task.md, subtasks/README.md, and every child record. Read back every file and index every exact archive path before you delete the active folder. Update the board with the archive path and commit.
 
 Task IDs use UTC YYYYMMDD-HHMMSS. Use only the statuses Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Optional assistant improvements remain Proposed until approved. Necessary follow-ups may be created automatically within the approved scope.
 
@@ -56,11 +56,11 @@ The first complete tooling-valid full audit in each lint scope establishes a bas
 
 A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
 
-A CI remediation subtask becomes Done when its intended-branch fix commit is verified and its SHA and summary are recorded. Hosted validation is separate metadata. A parent task cannot close until all required subtasks are Done. The Ledger retains terminal finding identities, resolution history, and prior task references after task archival. A later observation can reopen the same finding and link new remediation. Do not delete terminal Ledger findings solely because a task was archived.
+The Worker marks a CI remediation subtask Done after committing its fix to the intended branch. The Worker checks the commit and records its SHA and summary. Hosted validation remains separate metadata. The Worker closes a parent only after every required subtask reaches Done. The Ledger retains terminal finding identities, resolution history, and prior task references after the Worker archives a task. A later observation can reopen the same finding and link new remediation. Do not delete terminal Ledger findings solely because the Worker archived a task.
 
 A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `.archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See .takeout/reports/triage/README.md and .archive/README.md for exact reset and closeout rules.
 
-Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A finding becomes resolved when the intended-branch fix commit is verified and its SHA, remediation summary, and UTC resolution timestamp are recorded. Hosted validation is separate metadata. A pending or failed hosted run does not reopen completed remediation.
+Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A finding becomes resolved after the Worker checks the intended-branch fix commit and records its SHA, remediation summary, and UTC resolution timestamp. Hosted validation is separate metadata. A pending or failed hosted run does not reopen completed remediation.
 
 The changed-document lint workflow uses GitHub Actions concurrency to cancel superseded push runs. Do not add a separate run-list preflight guard. GitHub may not list the current run when its first job queries the run list, which can cause the guard to cancel the current run.
 

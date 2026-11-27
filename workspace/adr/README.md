@@ -62,11 +62,11 @@ Never add ADRs to .github/archive-retention-index.json. The archive retention wo
 
 ## Current Accepted ADRs
 
-- [ADR-0004 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) — Accepted Option 3. Implementation not started; create the linked implementation task before modifying task/Ledger implementation files.
+- [ADR-0004 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) — Accepted Option 3. Implementation remains unstarted. Create the linked implementation task before changing task/Ledger implementation files.
 
 - [ADR-0003 — Canonical GitHub Actions Diagnostic Report Artifact Layout](0003-canonical-github-actions-diagnostic-report-artifact-layout.md) — Accepted Option 3. Implementation remains outstanding under P0 task 20261126-090154.
 
 ## Archived ADRs
 
-- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](../../.archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted; implementation complete and all Confirmation criteria passed.
+- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](../../.archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted. Implementation is complete. All Confirmation criteria passed.
 - [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) — Accepted; implementation complete and all Confirmation criteria passed. ADR-0002 supersedes only its source-Draft preservation rule.
