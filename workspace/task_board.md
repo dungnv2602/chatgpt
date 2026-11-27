@@ -8,7 +8,53 @@ This file is the single index for active and retained task records. Each active 
 
 ## Proposed
 
-_No tasks._
+| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
+|---|---|---:|---|---|---|---|---|---|
+| 20261127-013151-44 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-44/task.md) |
+| 20261127-013151-43 | Review passive-voice findings in workspace/README.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-43/task.md) |
+| 20261127-013151-42 | Review present-perfect findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-42/task.md) |
+| 20261127-013151-41 | Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-41/task.md) |
+| 20261127-013151-40 | Review passive-voice findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-40/task.md) |
+| 20261127-013151-39 | Review semicolon findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-39/task.md) |
+| 20261127-013151-38 | Fix lint tooling check: Markdown links and heading anchors | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-38/task.md) |
+| 20261127-013151-37 | Review synonym-rotation findings in workspace/adr/README.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-37/task.md) |
+| 20261127-013151-36 | Review semicolon findings in workspace/draft/README.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-36/task.md) |
+| 20261127-013151-35 | Review semicolon findings in workspace/adr/README.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-35/task.md) |
+| 20261127-013151-34 | Review present-perfect findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-34/task.md) |
+| 20261127-013151-33 | Review synonym-rotation findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-33/task.md) |
+| 20261127-013151-32 | Review semicolon findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-32/task.md) |
+| 20261127-013151-31 | Review passive-voice findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-31/task.md) |
+| 20261127-013151-30 | Review long-sentence findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-30/task.md) |
+| 20261127-013151-29 | Review synonym-rotation findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-29/task.md) |
+| 20261127-013151-28 | Review semicolon findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-28/task.md) |
+| 20261127-013151-27 | Review present-perfect findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-27/task.md) |
+| 20261127-013151-26 | Review passive-voice findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-26/task.md) |
+| 20261127-013151-25 | Review long-sentence findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-25/task.md) |
+| 20261127-013151-24 | Review present-perfect findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-24/task.md) |
+| 20261127-013151-23 | Review passive-voice findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-23/task.md) |
+| 20261127-013151-22 | Review semicolon findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-22/task.md) |
+| 20261127-013151-21 | Review long-sentence findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-21/task.md) |
+| 20261127-013151-20 | Review synonym-rotation findings in .agent/INITIALIZATION\_POLICY.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-20/task.md) |
+| 20261127-013151-19 | Review synonym-rotation findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-19/task.md) |
+| 20261127-013151-18 | Review passive-voice findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-18/task.md) |
+| 20261127-013151-17 | Review long-sentence findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-17/task.md) |
+| 20261127-013151-16 | Review long-sentence findings in .agent/SESSION\_START.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-16/task.md) |
+| 20261127-013151-15 | Review synonym-rotation findings in .agent/SESSION\_START.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-15/task.md) |
+| 20261127-013151-14 | Review passive-voice findings in .agent/SESSION\_START.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-14/task.md) |
+| 20261127-013151-13 | Review present-perfect findings in .agent/SESSION\_START.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-13/task.md) |
+| 20261127-013151-12 | Review long-sentence findings in .agent/INITIALIZATION\_POLICY.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-12/task.md) |
+| 20261127-013151-11 | Review passive-voice findings in .agent/INITIALIZATION\_POLICY.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-11/task.md) |
+| 20261127-013151-10 | Review present-perfect findings in .agent/INITIALIZATION\_POLICY.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-10/task.md) |
+| 20261127-013151-09 | Review semicolon findings in .agent/skills/github-actions/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-09/task.md) |
+| 20261127-013151-08 | Review long-sentence findings in .agent/skills/github-actions/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-08/task.md) |
+| 20261127-013151-07 | Review synonym-rotation findings in .agent/skills/github-actions/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-07/task.md) |
+| 20261127-013151-06 | Review present-perfect findings in .agent/skills/github-actions/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-06/task.md) |
+| 20261127-013151-05 | Review passive-voice findings in .agent/skills/github-actions/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-05/task.md) |
+| 20261127-013151-04 | Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-04/task.md) |
+| 20261127-013151-03 | Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-03/task.md) |
+| 20261127-013151-02 | Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-02/task.md) |
+| 20261127-013151-01 | Review passive-voice findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-01/task.md) |
+| 20261127-013151 | Review long-sentence findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151/task.md) |
 
 ## Ready
 
@@ -19,9 +65,9 @@ _No tasks._
 |---|---|---:|---|---|---|---|---|---|
 | 20261126-232913 | Implement ADR-0004 task folders and CI Ledger lifecycle | P0 | In Progress | User | Approved | ADR-0004 | 2026-11-26 23:29 UTC | [Task record](tasks/20261126-232913/task.md) |
 
-| 20261126-170259-02 | Review semicolon findings in ADR-0003 | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 21:57 UTC | [Task record](tasks/20261126-170259-02/task.md) |
-| 20261126-170259-01 | Review passive voice in ADR-0003 | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 21:57 UTC | [Task record](tasks/20261126-170259-01/task.md) |
-| 20261126-170259 | Review synonym rotation in ADR-0003 | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 21:57 UTC | [Task record](tasks/20261126-170259/task.md) |
+| 20261126-170259-02 | Review semicolon findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259-02/task.md) |
+| 20261126-170259-01 | Review passive-voice findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259-01/task.md) |
+| 20261126-170259 | Review synonym-rotation findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259/task.md) |
 | 20261126-145133 | Review publication\_or\_push failures in STE Lint Changed Documentation / Lint changed Markdown files and publish detailed | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 15:18 UTC | [Task record](tasks/20261126-145133/task.md) |
 | 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 17:04 UTC | [Task record](tasks/20261126-090154/task.md) |
 
