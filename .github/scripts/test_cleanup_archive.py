@@ -29,17 +29,39 @@ class ArchiveRetentionTests(unittest.TestCase):
   self.write([]); deleted,changed=self.run_clean()
   self.assertEqual(deleted,[]); self.assertFalse(changed); self.assertTrue(p.exists())
  def test_only_individually_due_task_and_report_files_are_deleted(self):
-  task=self.root/".archive"/"task"/"due.md"
+  legacy_task=self.root/".archive"/"task"/"due-legacy.md"
+  task_folder=self.root/".archive"/"task"/"20261127-010000"
+  child_folder=task_folder/"subtasks"
+  child_folder.mkdir(parents=True)
+  task=task_folder/"task.md"
+  subtask_index=child_folder/"README.md"
+  subtask=child_folder/"01-main-work.md"
+  later_subtask=child_folder/"02-later.md"
   report=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"report.md"
   later=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"later.json"
   legacy=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"legacy.log"
-  for p in (task,report,later,legacy): p.write_text(p.name)
-  self.write([self.rec(".archive/task/due.md","2026-01-01T00:00:00Z"),self.rec(".archive/reports/lint_reports/run-1/report.md","2026-01-01T00:00:00Z"),self.rec(".archive/reports/lint_reports/run-1/later.json","2026-12-01T00:00:00Z")])
+  for p in (legacy_task,task,subtask_index,subtask,later_subtask,report,later,legacy): p.write_text(p.name)
+  self.write([
+   self.rec(".archive/task/due-legacy.md","2026-01-01T00:00:00Z"),
+   self.rec(".archive/task/20261127-010000/task.md","2026-01-01T00:00:00Z"),
+   self.rec(".archive/task/20261127-010000/subtasks/README.md","2026-01-01T00:00:00Z"),
+   self.rec(".archive/task/20261127-010000/subtasks/01-main-work.md","2026-01-01T00:00:00Z"),
+   self.rec(".archive/task/20261127-010000/subtasks/02-later.md","2026-12-01T00:00:00Z"),
+   self.rec(".archive/reports/lint_reports/run-1/report.md","2026-01-01T00:00:00Z"),
+   self.rec(".archive/reports/lint_reports/run-1/later.json","2026-12-01T00:00:00Z")
+  ])
   deleted,changed=self.run_clean()
-  self.assertEqual(set(deleted),{".archive/task/due.md",".archive/reports/lint_reports/run-1/report.md"})
-  self.assertTrue(changed); self.assertFalse(task.exists()); self.assertFalse(report.exists())
-  self.assertTrue(later.exists()); self.assertTrue(legacy.exists())
-  self.assertEqual(len(json.loads(self.index.read_text())["records"]),1)
+  self.assertEqual(set(deleted),{
+   ".archive/task/due-legacy.md",
+   ".archive/task/20261127-010000/task.md",
+   ".archive/task/20261127-010000/subtasks/README.md",
+   ".archive/task/20261127-010000/subtasks/01-main-work.md",
+   ".archive/reports/lint_reports/run-1/report.md"
+  })
+  self.assertTrue(changed); self.assertFalse(legacy_task.exists()); self.assertFalse(task.exists())
+  self.assertFalse(subtask_index.exists()); self.assertFalse(subtask.exists())
+  self.assertTrue(later_subtask.exists()); self.assertTrue(later.exists()); self.assertTrue(legacy.exists())
+  self.assertEqual(len(json.loads(self.index.read_text())["records"]),2)
  def test_missing_expired_file_prunes_index_entry(self):
   self.write([self.rec(".archive/reports/absent.json","2026-01-01T00:00:00Z")])
   deleted,changed=self.run_clean(); self.assertEqual(deleted,[]); self.assertTrue(changed)
@@ -58,7 +80,7 @@ class ArchiveRetentionTests(unittest.TestCase):
   with self.assertRaises(RuntimeError): cleanup.require_scheduled_event("schedule","false")
   cleanup.require_scheduled_event("schedule","true")
  def test_unsafe_paths_rejected(self):
-  for p in (".archive/reports/../../outside.md",".archive/task/../.archive/reports/x.md",".archive/reports/.gitkeep",".archive/task/"):
+  for p in (".archive/reports/../../outside.md",".archive/task/../.archive/reports/x.md",".archive/reports/.gitkeep",".archive/task/",".archive/task/20261127-010000",".archive/task/20261127-010000/subtasks"):
    self.write([self.rec(p,"2026-01-01T00:00:00Z")])
    with self.assertRaises(ValueError): self.run_clean()
 

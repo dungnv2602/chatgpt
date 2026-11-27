@@ -32,7 +32,7 @@ def validate_record(record: Any) -> tuple[str, datetime]:
     parts = pure.parts
     if str(pure) != path or len(parts) < 3 or parts[0] != ".archive" or parts[1] not in {"task", "reports"}:
         raise ValueError(f"Invalid indexed archive path: {path!r}")
-    if any(part in {"", ".", ".."} for part in parts[2:]) or parts[-1] == ".gitkeep" or path.endswith("/"):
+    if any(part in {"", ".", ".."} for part in parts[2:]) or parts[-1] == ".gitkeep" or path.endswith("/") or not pure.suffix:
         raise ValueError(f"Indexed path must identify an individual file: {path!r}")
     return path, parse_utc_timestamp(record["archived_at_utc"])
 
