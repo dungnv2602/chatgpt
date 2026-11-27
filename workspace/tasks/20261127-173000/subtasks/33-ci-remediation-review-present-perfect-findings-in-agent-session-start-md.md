@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-33
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** Blocked
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
+- **Eligibility / deferral reason:** Blocked — complete CI Ledger and report evidence are unavailable through the GitHub connector.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27 11:53 UTC
+- **Updated:** 2026-11-27
 - **Ledger group:** `ci-fdf6b5d1123ee5c9`
 - **Legacy Task IDs:** None
 
@@ -52,13 +52,19 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
 
+### Shared startup blocker
+
+- **Action:** Paused execution before source changes.
+- **Reason:** The complete CI Ledger fetch returns an empty content body. The Worker cannot safely inspect the full finding evidence, preserve Ledger integrity, or complete remediation closeout.
+- **Required:** Restore complete repository-file retrieval for `.takeout/reports/triage/ledger.json`.
+
 ## 6. State and Evidence
 
 - **Commit SHA:** Not committed.
 - **Changed paths:** None.
 - **Readback:** Not performed.
 - **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
+- **Limitations:** The GitHub connector returns an empty content body for the complete CI Ledger. The Worker cannot inspect all finding evidence or update Ledger resolutions safely. No hosted CI results were inspected.
 
 ## 7. Completion
 
