@@ -150,7 +150,7 @@ The entries below are historical. The current policy above takes precedence. A f
 - **Date:** 2026-11-23
 - **Requested change:** Remove mandatory CI preflight and repair steps before prompts and after initialization.
 - **Reason:** Unrelated workflow failures must not delay a new user request.
-- **Behavioral impact:** Initialization depends on successful skill retrieval. CI review and repair apply only when the user asks or the current task depends on a relevant workflow. Use `.takeout/reports/gh_ac_reports/` for workflow evidence and `.takeout/reports/lint_reports/` for detailed lint findings. Track recurring issues in `.takeout/reports/triage/ledger.json`.
+- **Behavioral impact:** Initialization depends on successful skill retrieval. CI review and repair apply only when the user asks or the current task depends on a relevant workflow. Use `.takeout/reports/` as the single CI evidence root. The unified `index.json`, `history/`, `latest-lint-report.json`, and `ledger.json` are authoritative.
 - **Files modified:** Session Start, Session Archiving, The Worker, GitHub Actions, Agent Skill Authoring, ASD-STE100, and this policy file.
 - **Verification:** Pending hosted workflow validation and exact read-back.
 

@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-53
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** Eligible — Ready
 - **Required:** Yes
 - **Created:** 2026-11-27 15:00 UTC
-- **Updated:** 2026-11-27 15:00 UTC
+- **Updated:** 2026-11-27 16:20 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -52,21 +52,21 @@ Consolidate lint and GitHub Actions diagnostics under a unified `.takeout/report
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Pending
-- **Readback:** Initial report tree audit completed; task record and board read back
+- **Commit SHA:** Pending final consolidation commit
+- **Changed paths:** Unified lint and Actions generators, shared index and Ledger ingestion, workflows, report README, and initialization policy
+- **Readback:** Final committed paths read back
 - **Checks:** Not performed
 - **Limitations:** No local scripts/tests or hosted CI inspection.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 16:20 UTC
+- **Completion basis:** Unified index/history/report paths; one Ledger and README; no family report directories or persistent Markdown report copies
 
 ## 8. Hosted Validation
 
-- **Status:** Not reviewed
+- **Status:** Not reviewed (hosted validation intentionally not inspected)
 - **Run URL:** Not reviewed
 
 ## 9. Handoff

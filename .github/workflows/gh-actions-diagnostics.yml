@@ -59,11 +59,11 @@ jobs:
           python3 -m py_compile .agent/skills/the-worker/scripts/actions-report.py .agent/skills/the-worker/scripts/ledger.py .github/scripts/cleanup-archive.py
           python3 .github/scripts/test_cleanup_archive.py
           python3 -m unittest discover \
-            -s  .takeout/reports/history/scripts \
-            -p 'test_report.py' \
+            -s .agent/skills/the-worker/scripts \
+            -p 'test_actions-report.py' \
             -v
           python3 -m unittest discover \
-            -s  .takeout/reports/scripts \
+            -s .agent/skills/the-worker/scripts \
             -p 'test_ledger.py' \
             -v
 
@@ -74,7 +74,7 @@ jobs:
         run: python3 .agent/skills/the-worker/scripts/actions-report.py --mode sweep --repo "$GITHUB_REPOSITORY"
 
       - name: Ingest centralized CI issues
-        run: python3 .takeout/reports/triage/scripts/ledger.py --mode ingest
+        run: python3 .agent/skills/the-worker/scripts/ledger.py --mode ingest
 
       - name: Publish diagnostic backfill and Worker tasks
         if: always()

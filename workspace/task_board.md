@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-53: Simplify CI report structure](tasks/20261127-173000/subtasks/53-simplify-ci-report-structure.md) — consolidate report families and state into one reports tree.
+None. Task 53 is complete; the next eligible task remains at the top of the ordered queue.
 
 ## Ordered Eligible Execution Queue
 
@@ -23,7 +23,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-No task is selected as Current Execution. The ordered eligible queue remains unchanged.
+The Worker has not selected the next task. The ordered eligible queue remains unchanged.
 
 ## Deferred Work
 

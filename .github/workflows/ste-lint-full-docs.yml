@@ -126,7 +126,7 @@ jobs:
           SELFTEST_EXIT: ${{ steps.tooling.outputs.linter_selftest_exit }}
         run: |
           set -euo pipefail
-          mkdir -p .lint-report-records  .takeout/reports/history/lint/on_repo/history
+          mkdir -p .lint-report-records  .takeout/reports/history
           anchor_status=0
           python3 .agent/skills/asd-ste100/scripts/check_markdown_anchors.py \
             > .lint-report-records/anchor-check.log 2>&1 || anchor_status=$?
@@ -263,7 +263,7 @@ jobs:
           TOOLING_FAILED: ${{ steps.tooling.outputs.failed }}
         run: |
           if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then
-            echo "::error::The full audit found lint or validation failures. See  .takeout/reports/history/lint/on_repo/."
+            echo "::error::The full audit found lint or validation failures. See  .takeout/reports/history/."
             exit 1
           fi
           echo "All full-audit checks passed."
