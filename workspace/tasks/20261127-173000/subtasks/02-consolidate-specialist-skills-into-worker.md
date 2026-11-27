@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-02
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** Eligible — Ready, approved, dependencies satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 18:00 UTC
-- **Updated:** 2026-11-27 11:08 UTC
+- **Updated:** 2026-11-27 11:42 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -55,6 +55,13 @@ Move all necessary operational rules and responsibilities from the four speciali
 6. Changes are committed on branch gpt, all changed paths are read back, and acceptance evidence is recorded.
 
 ## 5. Decisions and Progress
+
+### 2026-11-27 11:42 UTC — execution started
+
+- **Action:** Began the approved consolidation after the user said “Proceed”. Fast-forwarded `gpt` to the merged `main` commit. Read the skill template, Worker skill, session-start procedure, initialization policy, catalog, and affected indexes.
+- **Result:** The three specialist directories contain only `SKILL.md`. Their procedures will move into Worker-owned references. Document governance remains in The Worker.
+- **References:** Merge commit `ff863c96e0c64cd6aef2ee8ff60242af288deb00`; `.agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`.
+- **Next:** Finish the reference migration and reconcile every active caller before deleting the specialist skill files.
 
 ### 2026-11-27 18:00 UTC
 

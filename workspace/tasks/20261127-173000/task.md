@@ -6,9 +6,9 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 11:08 UTC
+- **Updated:** 2026-11-27 11:42 UTC
 - **Priority:** P0
-- **Status:** Ready
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create the Refactor Skills task and place workspace/tasks/20261127-102301 beneath it.
@@ -53,6 +53,13 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27 11:42 UTC
+
+- **Action:** Started the approved specialist-skill consolidation after the user said “Proceed”. Fast-forwarded `gpt` to the merged `main` commit before implementation.
+- **Result:** Confirmed the canonical skill template and relevant task templates. Mapped the three remaining specialist skills and their active activation/navigation references. The Worker will own their detailed procedures through references, not separate skills.
+- **References:** Subtask `20261127-173000-02`; commit `ff863c96e0c64cd6aef2ee8ff60242af288deb00`; `.agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`.
+- **Next:** Consolidate procedures, update activation and navigation references, remove the specialist skill files, then read back every changed path.
 
 ### 2026-11-27 18:29 UTC
 

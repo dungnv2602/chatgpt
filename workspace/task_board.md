@@ -14,17 +14,16 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[Refactor Skills — persistent P0 parent](tasks/20261127-173000/task.md). The parent remains selected by the user's explicit priority instruction and must stay open for future skills-refactoring subtasks.
+[20261127-173000-02: Consolidate specialist skills into The Worker](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md). This child is active under the persistent Refactor Skills parent.
 
 ## Ordered Eligible Execution Queue
 
-1. **P1** — [20261127-173000-02: Consolidate specialist skills into The Worker](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) — Approved, Ready, dependencies satisfied. Selected next under the user-prioritized Refactor Skills parent.
-2. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
-3. **P1** — [20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — Approved, Ready, no dependencies.
+1. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
+2. **P1** — [20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — Approved, Ready, no dependencies.
 
 ## Next Task
 
-[20261127-173000-02](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) is next under the selected Refactor Skills parent.
+[20261127-173100-02](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) is next after the active consolidation child.
 
 ## Deferred Work
 

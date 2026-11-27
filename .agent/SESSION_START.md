@@ -23,7 +23,7 @@ When the user says `/start`:
 2. Retrieve and read `.agent/skills/the-worker/SKILL.md` from branch `gpt`.
 3. Retrieve and read `.agent/skills/the-worker/references/conversation-mode.md`. This is a mandatory component of The Worker.
 4. Verify the two baseline components and record them in the per-conversation verified-load ledger below.
-5. Activate the CI Ledger and GitHub Actions skills for the mandatory startup batch. Activate other domain skills only when the tasks require them.
+5. Load the Worker's `references/ci-ledger.md` and `references/github-actions.md` for the mandatory startup batch. Load other Worker references and domain skills only when the tasks require them.
 6. Before you inspect or execute CI-generated P0 tasks, send the user this notice in every conversation mode:
 
    **CI P0 batch execution starting.** I’m processing all eligible CI-generated P0 tasks before taking your prompt. Please wait until I say I am ready.
@@ -38,14 +38,14 @@ Baseline initialization is The Worker and its mandatory Conversation Mode refere
 
 If a required component is missing or cannot be verified, report its exact path and stop foundational initialization. Do not substitute memory, previous-conversation reads, or Library copies.
 
-Do not run a CI preflight after cue-triggered skill loading. Initialization is complete after you fetch and read the required skills. CI status is separate and task-scoped under `.agent/skills/github-actions/SKILL.md`.
+Do not run a CI preflight after cue-triggered skill loading. Initialization is complete after you fetch and read the required skills. CI status is separate and task-scoped under `.agent/skills/the-worker/references/github-actions.md`.
 
 ## Domain skill activation after baseline initialization
 
 After `/start` passes, load domain skills only as the task requires:
 
-- **CI Ledger:** Mandatory during every `/start` for the CI-generated P0 batch. Retrieve `.agent/skills/ci-ledger/SKILL.md` before batch selection.
-- **GitHub Actions:** Mandatory during every `/start` for technical CI remediation. Retrieve `.agent/skills/github-actions/SKILL.md` before batch execution. It also governs CI diagnostics, workflow changes, recurrence prevention, and validation procedure.
+- **Worker-owned CI Ledger:** Load `.agent/skills/the-worker/references/ci-ledger.md` during every `/start` before selecting CI-generated P0 tasks.
+- **Worker-owned GitHub Actions:** Load `.agent/skills/the-worker/references/github-actions.md` during every `/start` before executing the P0 batch. It governs CI diagnostics, workflow changes, recurrence prevention, and validation procedures.
 - **ASD-STE100:** skill or technical-document authoring/revision, including when a domain skill requires its writing standard.
 - **Agent Skill Authoring:** skill creation, revision, integration, or validation.
 
@@ -299,9 +299,9 @@ The repository policy is in `.agent/skills/asd-ste100/references/repository-writ
 
 Neither the skill nor the linter certifies a document as fully ASD-STE100 compliant. The repository does not contain the official controlled dictionary.
 
-### GitHub Actions workflow operations
+### Worker-owned GitHub Actions operations
 
-`.agent/skills/github-actions/SKILL.md` is task-activated. Load it for CI diagnostics, workflow changes, CI-generated remediation, recurrence prevention, or workflow validation.
+`.agent/skills/the-worker/references/github-actions.md` is an on-demand Worker reference. Load it for CI diagnostics, workflow changes, CI-generated remediation, recurrence prevention, or workflow validation.
 
 Use it when you create, revise, optimize, secure, or check GitHub Actions workflows. It defines workflow triggers, concurrency, incremental checks, caching, runners, permissions, artifacts, and validation.
 

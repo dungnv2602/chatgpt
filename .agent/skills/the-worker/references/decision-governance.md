@@ -1,22 +1,16 @@
----
-name: decision-governance
-description: Manage repository decision Drafts, accepted ADRs, implementation links, confirmation, permanent ADR archiving, and evidence-based repository analysis. Use when proposing or reviewing durable repository decisions or conducting repository analysis.
-metadata:
-  project-role: task-specific
-  format: agentskills
----
+# Decision Governance Operations
 
-# Decision Governance
+> Worker-owned reference. The Worker controls activation. This file is not a standalone skill.
 
 ## Purpose and activation
 
-This skill governs repository decision Drafts, accepted ADRs, and repository analysis.
+This reference defines procedures for repository decision Drafts, accepted ADRs, and repository analysis. The Worker owns these responsibilities.
 
 Load it when a task creates, revises, reviews, approves, rejects, or promotes a Draft. Load it when a task creates, updates, supersedes, confirms, or archives an ADR. Load it for repository analysis or decision-basis reviews.
 
 Do not load it during foundational initialization. Do not add it to `.agent/SESSION_START.md` or `.agent/INITIALIZATION_POLICY.md`.
 
-The Worker owns task selection, execution approval, progress, and closeout. Document Standards owns document format. This skill owns decision governance.
+The Worker owns task selection, execution approval, progress, document governance, decision governance, and closeout. This reference supplies the detailed decision-governance procedures.
 
 ## Authority and boundaries
 
@@ -31,7 +25,7 @@ The Worker owns task selection, execution approval, progress, and closeout. Docu
 9. Do not rewrite an accepted decision to hide a later change.
 10. Never add ADR paths to the archive-retention index.
 
-Use Document Standards before creating or revising governance records. Use canonical templates in workspace/: DRAFT_TEMPLATE.md, ADR_TEMPLATE.md, and ANALYSIS_TEMPLATE.md.
+Apply the Worker's document-governance procedure before creating or revising governance records. Use canonical templates in workspace/: DRAFT_TEMPLATE.md, ADR_TEMPLATE.md, and ANALYSIS_TEMPLATE.md.
 
 ## Record ownership
 

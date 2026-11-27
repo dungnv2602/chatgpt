@@ -1,16 +1,10 @@
----
-name: github-actions
-description: Design, maintain, optimize, and secure GitHub Actions workflows. Use when work changes CI workflows, triggers, path filters, concurrency, incremental checks, caching, runners, permissions, artifacts, or deployment automation.
-metadata:
-  project-role: task-specific
-  format: agentskills
----
+# GitHub Actions and CI Operations
 
-# GitHub Actions
+> Worker-owned reference. The Worker controls activation. This file is not a standalone skill.
 
 ## 1. Purpose and boundaries
 
-This skill governs workflow design and technical remediation. The Worker owns prompt capture, task hierarchy, scheduling, approval, and closeout.
+This reference governs workflow design and technical remediation. The Worker owns prompt capture, task hierarchy, scheduling, approval, and closeout.
 
 - Work only on branch `gpt` through remote GitHub operations. Do not use local repository tools.
 - Inspect workflow definitions, source files, report schemas, and indexed immutable reports when the task requires them.

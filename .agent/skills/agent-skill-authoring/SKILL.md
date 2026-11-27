@@ -270,7 +270,7 @@ For this project:
 - Make sequential writes to the same path.
 - Do not change `main` or unrelated files.
 - After each important write, fetch the same path and check the expected content.
-- Follow the task-scoped CI policy in `../github-actions/SKILL.md` when skill changes affect CI or the user requests CI diagnosis.
+- Follow the task-scoped CI policy in `../the-worker/references/github-actions.md` when skill changes affect CI or the user requests CI diagnosis.
 - Follow the repository execution efficiency workflow in `../the-worker/references/conversation-mode.md`. Batch related edits, avoid redundant tool calls, and preserve exact commit-to-check attribution.
 - Do not report a commit or verification as successful unless the tool result and read-back support that statement.
 

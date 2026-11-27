@@ -1,6 +1,22 @@
+---
+name: the-worker
+description: Manage repository sessions, task operations, document governance, CI, and decision records. Use for /start, repository work, task management, CI remediation, or governance tasks.
+metadata:
+  project-role: foundational
+  format: agentskills
+---
+
 # The Worker
 
-## Authority
+## Purpose
+
+The Worker is the sole operational entry point for repository work. It owns session continuity, task operations, document governance, GitHub Actions, CI Ledger, and decision governance.
+
+## Activation
+
+Load The Worker during `/start`. Use it as the sole skill for cross-cutting repository operations. Load its domain references only when the current task activates them.
+
+## Authority and scope
 
 The Worker owns request capture, task hierarchy, selection, execution, continuity, and closeout. The task board is its published schedule, not a second scheduler.
 
@@ -123,6 +139,28 @@ The Worker owns document governance and must apply this gate before creating, mo
 Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required. explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
 The catalog and validator are integral Worker-owned assets in the Worker's `references/` and `scripts/` directories. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage; it does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+
+## Worker-owned domain operations
+
+The Worker is the sole activation and governance entry point for document governance, GitHub Actions, CI Ledger operations, and decision governance.
+
+These procedures are Worker-owned references, not separate Agent Skills. Do not activate them as standalone skills.
+
+Load the relevant reference only when the task requires it:
+
+- `references/ci-ledger.md` for the startup P0 batch, report intake, finding attribution, grouping, lifecycle, or Ledger integrity.
+- `references/github-actions.md` for workflow design, diagnostics, technical remediation, or validation procedures. Load it with the CI Ledger reference for the startup P0 batch.
+- `references/decision-governance.md` for Drafts, ADRs, repository analysis, implementation linkage, or Confirmation.
+
+The Worker owns document governance in this file and its canonical document-type catalog. No separate document-governance skill is activated.
+
+Keep these decision controls in force:
+
+- Decision approval and task execution approval are separate.
+- Do not implement a proposal before the user approves its exact Draft revision and scope and its ADR reaches accepted status.
+- Every new implementation task must link one or more accepted ADRs. Grandfather existing tasks.
+- Keep accepted ADR context, options, and outcomes immutable. Use a new Draft and ADR when a decision changes.
+- P0 priority does not bypass decision governance.
 
 ## Diagnostic investigation before blockers
 

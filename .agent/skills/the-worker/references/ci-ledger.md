@@ -1,16 +1,10 @@
----
-name: ci-ledger
-description: Govern CI report intake, finding identity, evidence, attribution to genuine user tasks, remediation child creation, commit-based resolution, recurrence, and Ledger integrity.
-metadata:
-  project-role: task-specific
-  format: agentskills
----
+# CI Ledger Operations
 
-# CI Ledger
+> Worker-owned reference. The Worker controls activation. This file is not a standalone skill.
 
 ## Ownership
 
-The Ledger owns finding identity, report intake, classification, evidence, recurrence, and remediation-child linkage. The Worker owns request capture, parent identity, approval, scheduling, status, and closeout. GitHub Actions owns technical diagnosis and workflow operation.
+The Ledger owns finding identity, report intake, classification, evidence, recurrence, and remediation-child linkage. The Worker owns request capture, parent identity, approval, scheduling, status, and closeout. The Worker's GitHub Actions reference governs technical diagnosis and workflow operation.
 
 The Ledger never creates a parent task. Use a user-created task as the genuine parent for follow-ups and CI remediation.
 

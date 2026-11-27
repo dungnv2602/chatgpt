@@ -4,9 +4,9 @@ The CI Ledger records lint and Actions findings, their evidence, attribution, re
 
 ## Ownership
 
-- [CI Ledger skill](../../../.agent/skills/ci-ledger/SKILL.md): finding identity, intake, attribution, child linkage, recurrence, and integrity.
-- [The Worker](../../../.agent/skills/the-worker/SKILL.md): prompt capture, genuine parent tasks, task status, scheduling, and closeout.
-- [GitHub Actions](../../../.agent/skills/github-actions/SKILL.md): technical diagnosis, remediation, and workflow operation.
+- [The Worker](../../../.agent/skills/the-worker/SKILL.md): task ownership, scheduling, closeout, and activation of all operational references.
+- [CI Ledger reference](../../../.agent/skills/the-worker/references/ci-ledger.md): finding identity, intake, attribution, child linkage, recurrence, and integrity.
+- [GitHub Actions reference](../../../.agent/skills/the-worker/references/github-actions.md): technical diagnosis, remediation, and workflow operation.
 
 ## Data
 

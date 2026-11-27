@@ -13,7 +13,7 @@ This file records the repository's conditional initialization policy. Operationa
 - Mandatory Conversation Mode component: `.agent/skills/the-worker/references/conversation-mode.md`
 - Agent Skills format, loaded on demand: `.agent/skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `.agent/skills/asd-ste100/SKILL.md`
-- Document governance, task-activated: `.agent/skills/document-standards/SKILL.md`
+- Document governance: `.agent/skills/the-worker/SKILL.md` and `.agent/skills/the-worker/references/document-type-catalog.md`
 - Canonical novelist procedure: the Novelist role initialization section in `.agent/SESSION_START.md`
 - Drawing tier: The Worker's archive/media references and `.agent/skills/drawing/SKILL.md`, loaded for a drawing session or novelist initialization
 
@@ -57,9 +57,15 @@ A specialist-role request does not change or satisfy the `/start` cue. It does n
 Load domain skills progressively when the task activates them:
 
 - ASD-STE100 for skill or technical documentation.
-- GitHub Actions for CI, workflow operations, CI-generated remediation, recurrence prevention, and validation procedure.
-- Document Standards for recurring document or structured-record governance.
 - Agent Skill Authoring for skill maintenance.
+
+Load Worker-owned references only when the task requires them:
+
+- `references/ci-ledger.md` and `references/github-actions.md` for the startup P0 batch and other CI work.
+- `references/decision-governance.md` for Drafts, ADRs, and repository analysis.
+- The Worker's document-governance procedure and catalog for recurring documents and structured records.
+
+Do not activate separate CI Ledger, GitHub Actions, decision-governance, or document-governance skills.
 
 Retrieve supporting catalogs, references, templates, and schemas only when required. This preserves the template-first and writing standards without loading unrelated skills at startup.
 
@@ -215,7 +221,9 @@ Use this template:
 - [ ] The pre-batch notice and readiness message appear in both conversation modes.
 - [ ] Other domain skills activate only when the current task requires them.
 - [ ] Agent Skill Authoring loads only on demand.
-- [ ] Document Standards loads only when document governance activates.
+- [ ] Document governance runs through The Worker without a separate skill activation.
+- [ ] The Worker loads its CI Ledger and GitHub Actions references for the startup P0 batch.
+- [ ] The Worker loads its decision-governance reference only when required.
 - [ ] The Worker's archive/media references load only when required.
 - [ ] ASD-STE100 loads only when skill or technical documentation activates.
 - [ ] Skill and technical documentation use the approved writing mode.
