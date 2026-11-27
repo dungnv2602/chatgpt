@@ -11,7 +11,7 @@ metadata:
 
 ## 1. Purpose and authority
 
-Use this skill whenever a skill folder or any of its operational instructions are created, revised, reorganized, checked, or integrated into the repository's loading workflow.
+Use this skill whenever you create, revise, reorganize, check, or integrate a skill folder or any of its operational instructions into the repository's loading workflow.
 
 The Agent Skills open specification is the format authority:
 - Specification: https://agentskills.io/specification
@@ -156,20 +156,20 @@ To make a skill foundational:
 2. Add the skill to the canonical loading sequence in `.agent/SESSION_START.md` only when it must load before ordinary project work.
 3. Record the dependency in `.agent/INITIALIZATION_POLICY.md` when it changes the initialization contract.
 4. Keep activation conditional on the project's explicit initialization cues. Do not introduce automatic loading at the beginning of every conversation unless the user explicitly requests that policy.
-5. Define whether the skill is loaded once per conversation, refreshed only when changed, or consulted on demand. Avoid redundant retrievals.
+5. Define whether to load the skill once per conversation, refresh it only when it changes, or consult it on demand. Avoid redundant retrievals.
 6. Check that the new dependency does not activate a specialist role or load unrelated task-specific materials.
 
 This skill is task-specific. Load it when you create, revise, check, reorganize, or integrate a skill. Do not load it during ordinary foundational initialization. The Worker owns the baseline session and collaboration rules.
 
 ### Task-specific skill
 
-A task-specific skill is loaded when a request matches its description or when a relevant initiation procedure explicitly requires it. Do not add task-specific skills to universal startup merely to make them discoverable.
+Load a task-specific skill when a request matches its description or when a relevant initiation procedure explicitly requires it. Do not add task-specific skills to universal startup merely to make them discoverable.
 
 Agent Skill Authoring is task-specific. It applies to skill creation and maintenance. The Agent Skills format does not make the authoring skill a prerequisite for unrelated project work.
 
 ### Activation is not initialization
 
-Agent Skills metadata helps a compatible client discover a skill. It does not itself change this repository's activation cues or prove that a client loaded a skill. Repository-specific loading must be explicitly connected to the authoritative initialization procedure.
+Agent Skills metadata helps a compatible client discover a skill. It does not itself change this repository's activation cues or prove that a client loaded a skill. The authoritative initialization procedure must explicitly define repository-specific loading.
 
 ## 7. ASD-STE100 technical writing standard
 
@@ -182,7 +182,7 @@ Choose the mode before you write:
 
 Apply these rules in both modes:
 
-1. Use active voice when the actor is known and relevant.
+1. Use active voice when you know the actor and the actor matters.
 2. Put one instruction in each sentence.
 3. Keep instructions within 20 words.
 4. Keep descriptive sentences within 25 words.
@@ -220,7 +220,7 @@ Do not claim certified ASD-STE100 compliance. The repository does not contain th
 - Avoid long chains where one reference points to another reference that points elsewhere.
 - Check every local link after moving or renaming files.
 - Keep each canonical policy in one location. Other skills should link to that policy rather than copy it.
-- Do not link to a file that has not been created and verified.
+- Do not link to a file until you create and verify it.
 - If a skill depends on external standards, name the canonical source and summarize the rules needed for reliable local execution.
 
 ## 9. Validation checklist
@@ -242,7 +242,7 @@ Before considering a skill complete, check all of the following:
 - [ ] Mandatory instructions are distinguishable from recommendations.
 - [ ] Critical instructions are in `SKILL.md`, not hidden in optional references.
 - [ ] The main file is concise enough to activate without unnecessary context burden.
-- [ ] Supporting resources are focused and loaded only as needed.
+- [ ] Focus supporting resources. Load them only as needed.
 - [ ] Do not introduce contradictory, duplicated, stale, or unrequested rules.
 - [ ] Use the applicable ASD-STE100 mode for skill and technical documentation.
 - [ ] Sentence length, paragraph structure, and punctuation follow the repository writing policy.
@@ -250,7 +250,7 @@ Before considering a skill complete, check all of the following:
 - [ ] Do not wait for CI, poll for results, or run lint and CI workflows locally.
 
 ### Integration and integrity
-- [ ] The skill is connected to the intended activation path.
+- [ ] Connect the skill to the intended activation path.
 - [ ] Foundational loading remains conditional on the user's established cues.
 - [ ] Do not make an unrelated specialist skill foundational.
 - [ ] Every referenced local file exists and every relative link resolves.
