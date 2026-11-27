@@ -14,7 +14,7 @@ runs:
         python3 -m py_compile .agent/skills/the-worker/scripts/actions-report.py .agent/skills/the-worker/scripts/ledger.py
         python3 -m unittest discover \
           -s .agent/skills/the-worker/scripts \
-          -p 'test_report.py' \
+          -p 'test_actions-report.py' \
           -v
         python3 -m unittest discover \
           -s .agent/skills/the-worker/scripts \
@@ -24,7 +24,7 @@ runs:
     - name: Update central CI issue ledger
       if: always()
       shell: bash
-      run: python3 .takeout/reports/triage/scripts/ledger.py --mode ingest
+      run: python3 .agent/skills/the-worker/scripts/ledger.py --mode ingest
 
     - name: Publish diagnostic evidence and Worker tasks
       if: always()
