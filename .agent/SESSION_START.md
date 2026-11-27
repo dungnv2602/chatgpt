@@ -19,9 +19,9 @@ This file is the sole authority for session-start cues and the foundational load
 
 When the user says `/start`:
 
-1. Record a startup notice in `workspace/discussion.md`. Commit and read back the register before skill retrieval. In Default Mode, also state that foundational retrieval is starting and link the register. In Condensed Mode, provide only the direct register link.
-2. Retrieve and read `.agent/skills/the-worker/SKILL.md` from branch `gpt`.
-3. Retrieve and read `.agent/skills/the-worker/references/conversation-mode.md`. This is a mandatory component of The Worker.
+1. Record a startup notice in `workspace/discussion.md`. Commit and read back the register before fetching the required skills. In Default Mode, also state that the Worker and Conversation Mode reference are being fetched and link the register. In Condensed Mode, provide only the direct register link.
+2. Fetch and read `.agent/skills/the-worker/SKILL.md` from branch `gpt`.
+3. Fetch and read `.agent/skills/the-worker/references/conversation-mode.md`. This is a mandatory component of The Worker.
 4. Verify the two baseline components and record them in the per-conversation verified-load ledger below.
 5. Load the Worker's `references/ci-ledger.md` and `references/github-actions.md` for the mandatory startup batch. Load other Worker references and domain skills only when the tasks require them.
 6. Before you inspect or execute CI-generated P0 tasks, send the user this notice in every conversation mode:
@@ -34,7 +34,7 @@ When the user says `/start`:
 10. After the batch ends, tell the user: **Ready to take your prompt.** State any remaining blockers. Do not claim hosted validation or task closeout.
 11. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Use existing Ledger records for batch selection. Review hosted CI results only under the rule in step 9.
 
-Baseline initialization is The Worker and its mandatory Conversation Mode reference only. Load ASD-STE100 when revising technical or skill documentation. Load GitHub Actions when CI or workflow work activates it. Load Agent Skill Authoring only when skill creation or maintenance activates it. Retrieve supporting references only when needed. The Worker's archive and media references remain task-triggered components.
+Baseline initialization is The Worker and its mandatory Conversation Mode reference only. Load ASD-STE100 when revising technical or skill documentation. Load GitHub Actions when CI or workflow work activates it. Load Agent Skill Authoring only when skill creation or maintenance activates it. Fetch supporting references only when needed. The Worker's archive and media references remain task-triggered components.
 
 If a required component is missing or cannot be verified, report its exact path and stop foundational initialization. Do not substitute memory, previous-conversation reads, or Library copies.
 
@@ -49,7 +49,7 @@ After `/start` passes, load domain skills only as the task requires:
 - **ASD-STE100:** skill or technical-document authoring/revision, including when a domain skill requires its writing standard.
 - **Agent Skill Authoring:** skill creation, revision, integration, or validation.
 
-Do not load unrelated skills. Check the current-session verified-load ledger first and refresh only when justified.
+Do not load unrelated skills. Verify the current-session verified-load ledger first and refresh only when justified.
 
 ## Novelist role initialization
 
@@ -88,11 +88,11 @@ Use this order:
 
 Before novelist work:
 
-1. Check whether foundational initialization passed in the current conversation.
-2. If it did not pass, stop novelist initialization and ask the user to say `/start`. Do not retrieve foundational or specialist skills until that explicit cue is given.
-3. Retrieve the relevant Worker references when they have not been verified in this conversation: `.agent/skills/the-worker/references/archive-records-and-image-prompts.md` and, when needed, `drawing-session-closeout.md` and `image-provenance-and-webp.md`. These define the session-brief, archive, and prompt-provenance procedures.
-4. Check whether the Drawing skill and each required reference were successfully read in this conversation. Retrieve only files that are not already verified.
-5. Check whether `.agent/skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Retrieve it only if it is not already verified.
+1. Verify whether foundational initialization passed in the current conversation.
+2. If it did not pass, stop novelist initialization and ask the user to say `/start`. Do not fetch foundational or specialist skills until that explicit cue is given.
+3. Fetch the relevant Worker references when they have not been verified in this conversation: `.agent/skills/the-worker/references/archive-records-and-image-prompts.md` and, when needed, `drawing-session-closeout.md` and `image-provenance-and-webp.md`. These define the session-brief, archive, and prompt-provenance procedures.
+4. Verify whether the Drawing skill and each required reference were successfully read in this conversation. Fetch only files that are not already verified.
+5. Verify whether `.agent/skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Fetch it only if it is not already verified.
 6. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
 7. After all required novelist skills load, do not run a CI preflight. Review CI only when the requested novelist task depends on a specific workflow or the user asks for CI diagnostics.
 
@@ -163,16 +163,16 @@ The Romantic Storyteller skill governs scene writing and visual storytelling.
 - Do not generate an image solely because role initialization starts.
 - A genuine safety or technical blocker may prevent image generation. Report the exact blocker.
 - Before visual planning or image generation, follow the Drawing skill and its required references.
-- Before each image attempt, archive the exact prompt. Check its commit.
+- Before each image attempt, archive the exact prompt. Verify its commit.
 - After generation, inspect the returned image. Record the actual result.
 - Preserve all established character and wardrobe constraints.
 - For Maya, consult the canonical identity and wardrobe references. Treat her face and outfit as constraints that must remain unchanged.
 
 For a prose-only task, follow the novel-record workflow. Do not start an image-generation or prompt-archival cycle.
 
-#### 7. Check readiness and report the result
+#### 7. Verify readiness and report the result
 
-Before you report completion, check these items:
+Before you report completion, verify these items:
 
 - You retrieved and read every required skill and reference.
 - You identified the active novel.
@@ -207,9 +207,9 @@ If the user's instruction already includes a writing task, start that task after
 - Skills: `.agent/skills/`
 - Prompt history and session records: `area/drawing/`
 
-Retrieve each target file before you update it. Preserve unrelated content.
+Fetch each target file before you update it. Preserve unrelated content.
 
-After each write, retrieve the exact path. Check its contents. Commit all changes to `gpt`.
+After each write, fetch the exact path. Verify its contents. Commit all changes to `gpt`.
 
 Never claim a commit or verification that did not occur.
 
@@ -233,11 +233,11 @@ The separate drawing-session cue is **`start a drawing session`**. Treat it as a
 
 This cue starts a new drawing session. It does not replace the foundational initialization procedure.
 
-1. Check whether foundational initialization passed in the current conversation.
-2. If it has not passed, stop drawing-session initialization and ask the user to say `/start`. Do not retrieve foundational or Drawing skills until that explicit cue is given.
+1. Verify whether foundational initialization passed in the current conversation.
+2. If it has not passed, stop drawing-session initialization and ask the user to say `/start`. Do not fetch foundational or Drawing skills until that explicit cue is given.
 3. If foundational initialization already passed, reuse the verified foundational files. Do not load them again without a reason.
 4. Load The Worker's `references/archive-records-and-image-prompts.md` and any other required archive/media references when they are not already verified. The Worker owns the session-brief, archive, and prompt-provenance procedures used by Drawing.
-5. Retrieve and read `.agent/skills/drawing/SKILL.md` and its required references: `.agent/skills/drawing/references/style-guide.md` and `.agent/skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
+5. Fetch and read `.agent/skills/drawing/SKILL.md` and its required references: `.agent/skills/drawing/references/style-guide.md` and `.agent/skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
 6. Do not run a CI preflight after the Drawing skill loads. Review CI only when the drawing task changes or depends on a specific workflow, or when the user asks for CI diagnostics.
 7. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
 8. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
@@ -259,10 +259,10 @@ Use this order whenever a task requires specialist skills:
 
 Maintain a simple internal ledger of skill and reference paths successfully retrieved and read in the current conversation.
 
-- Before retrieving a required file, check the ledger.
-- If the file is already verified, reuse it. Do not retrieve or read it again solely because the workflow moved to the next tier.
-- Mark a path verified only after you retrieve it from the current branch and read its contents.
-- If retrieval or reading failed, do not mark the path verified. Report the exact missing path.
+- Before retrieving a required file, verify the ledger.
+- If the file is already verified, reuse it. Do not fetch or read it again solely because the workflow moved to the next tier.
+- Mark a path verified only after you fetch it from the current branch and read its contents.
+- If fetching or reading failed, do not mark the path verified. Report the exact missing path.
 - A new conversation starts a new ledger. Do not treat memory or a prior conversation's reads as current verification.
 - Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the authoritative current file.
 - When refreshing one file, do not reload unrelated skills or the entire tier.
@@ -285,7 +285,7 @@ The Worker owns conversation archives, drawing-session closeout, image provenanc
 
 ### Agent Skill Authoring
 
-`.agent/skills/agent-skill-authoring/SKILL.md` is an on-demand skill. Load it when you create, revise, check, reorganize, or integrate a skill. It defines the repository's Agent Skills implementation.
+`.agent/skills/agent-skill-authoring/SKILL.md` is an on-demand skill. Load it when you create, revise, verify, reorganize, or integrate a skill. It defines the repository's Agent Skills implementation.
 
 ### ASD-STE100 technical writing
 
@@ -303,7 +303,7 @@ Neither the skill nor the linter certifies a document as fully ASD-STE100 compli
 
 `.agent/skills/the-worker/references/github-actions.md` is an on-demand Worker reference. Load it for CI diagnostics, workflow changes, CI-generated remediation, recurrence prevention, or workflow validation.
 
-Use it when you create, revise, optimize, secure, or check GitHub Actions workflows. It defines workflow triggers, concurrency, incremental checks, caching, runners, permissions, artifacts, and validation.
+Use it when you create, revise, optimize, secure, or verify GitHub Actions workflows. It defines workflow triggers, concurrency, incremental validation, caching, runners, permissions, artifacts, and validation.
 
 ## Source-of-truth rule
 
