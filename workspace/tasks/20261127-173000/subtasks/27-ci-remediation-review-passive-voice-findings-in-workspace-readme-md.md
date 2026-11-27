@@ -9,7 +9,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-27
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** In Progress — recovered the complete Ledger by blob SHA and retrieved historical/current source for both findings.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27 23:07 UTC
+- **Updated:** 2026-11-27 23:08 UTC
 - **Ledger group:** `ci-c8106d6c6053ab98`
 - **Legacy Task IDs:** None
 
@@ -61,17 +61,17 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Pending.
-- **Changed paths:** `workspace/README.md` and this task record. The Ledger update follows after the source commit.
-- **Readback:** Historical source and current source readback completed. Commit readback pending.
+- **Commit SHA:** `677b5de451f70246cfb0d3ededb9ec8f908e19fd` (source fix).
+- **Changed paths:** `workspace/README.md`, `.takeout/reports/ledger.json`, this task record, the parent task, the subtask index, the task board, and the discussion register.
+- **Readback:** Source commit read back. The Ledger closeout commit is recorded in the parent progress record after readback.
 - **Checks:** No local scripts, tests, or lint were run. Hosted CI results were not inspected.
-- **Limitations:** Historical report JSON files are not retained in the current report index. The Ledger and source history supplied sufficient evidence for these two edits.
+- **Limitations:** Historical report JSON files are not retained in the current report index. The recovered Ledger and historical/current source evidence identify both affected constructions.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 23:08 UTC
+- **Completion basis:** Both finding-specific constructions were rewritten. The source fix commit was read back. The two corresponding Ledger findings now carry the source commit as their resolution evidence.
 
 The Worker marks the child Done only after its acceptance criteria pass and the intended-branch commit is read back. For CI remediation, commit-based completion is separate from hosted validation.
 
@@ -84,7 +84,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.
+Closed after source commit, Ledger resolution, and readback. Hosted CI results were not inspected.
 
 ## 10. Ledger Findings
 

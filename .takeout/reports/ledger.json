@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T16:50:00Z",
+  "updated_at_utc": "2026-11-27T23:08:59.100Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -14174,7 +14174,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T01:19:44.607923+00:00",
@@ -14215,7 +14215,15 @@
           "source_commit_sha": "f75ec2958ef664727a643062ef601400c0bcd45e"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "677b5de451f70246cfb0d3ededb9ec8f908e19fd",
+        "resolved_at_utc": "2026-11-27T23:08:59.100Z",
+        "validation": {
+          "status": "not_run",
+          "note": "No local scripts, tests, or lint were run. Hosted CI results were not inspected."
+        },
+        "note": "Rewrote the passive constructions in workspace/README.md with named actors and active verbs. Verified the intended-branch source commit and readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -14232,7 +14240,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T01:19:44.607923+00:00",
@@ -14273,7 +14281,15 @@
           "source_commit_sha": "f75ec2958ef664727a643062ef601400c0bcd45e"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "677b5de451f70246cfb0d3ededb9ec8f908e19fd",
+        "resolved_at_utc": "2026-11-27T23:08:59.100Z",
+        "validation": {
+          "status": "not_run",
+          "note": "No local scripts, tests, or lint were run. Hosted CI results were not inspected."
+        },
+        "note": "Rewrote the passive constructions in workspace/README.md with named actors and active verbs. Verified the intended-branch source commit and readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,

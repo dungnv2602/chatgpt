@@ -16,7 +16,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [20261127-173000-27: CI remediation — Review passive-voice findings in workspace/README.md](tasks/20261127-173000/subtasks/27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md) — Approved, In Progress, no dependencies. Parent: [Refactor Skills](tasks/20261127-173000/task.md).
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. No Ready child remains.
 
 ## Ordered Eligible Execution Queue
 

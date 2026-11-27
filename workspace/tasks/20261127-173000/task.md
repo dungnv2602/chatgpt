@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 23:07 UTC
+- **Updated:** 2026-11-27 23:08 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -73,11 +73,11 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
-### 2026-11-27T23:07:31.778Z — resumed CI remediation child 27
+### 2026-11-27T23:08:59.100Z — CI remediation child 27 closeout
 
-- Recovered the complete Ledger via blob SHA after the file-content endpoint returned an empty body.
-- Matched the two open passive-voice findings to historical and current `workspace/README.md` source.
-- Reactivated child 27 and started source remediation. Commit pending.
+- Recovered the complete Ledger via blob SHA after the file-content endpoint returned an empty body. The two target findings were `lint-66ac36e2cdb3db3683c0c8f2` and `lint-bdeb2ff1622490b994e19f76`.
+- Rewrote both passive constructions in `workspace/README.md`. The source fix commit is `677b5de451f70246cfb0d3ededb9ec8f908e19fd`.
+- Set both findings to resolved in the Ledger with commit-based evidence. This commit closes and records the child.
 
 ### 2026-11-28 — autonomous execution workflow
 
