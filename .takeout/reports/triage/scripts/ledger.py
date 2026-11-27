@@ -93,11 +93,15 @@ def validate_schema(value, schema, path="$"):
 def safe_relative_path(value, prefix):
     if not isinstance(value, str) or not value:
         raise LedgerError("An index contains an empty report path")
+    if "\\" in value or "\x00" in value or ":" in value or value.startswith("/"):
+        raise LedgerError("Unsafe report path in index: " + value)
+    parts = value.split("/")
+    if any(part in ("", ".", "..") for part in parts) or not value.startswith(prefix):
+        raise LedgerError("Unsafe report path in index: " + value)
     candidate = PurePosixPath(value)
-    if candidate.is_absolute() or ".." in candidate.parts or not value.startswith(prefix):
+    if candidate.is_absolute() or ".." in candidate.parts:
         raise LedgerError("Unsafe report path in index: " + value)
     return value
-
 def normalize_report_path(value, allow_archived=True):
     """Normalize legacy report references to repository-relative paths."""
     if not isinstance(value, str) or not value.strip() or "\\" in value:
@@ -121,7 +125,7 @@ def read_json(path):
         raise LedgerError("Cannot read JSON file " + str(path) + ": " + str(exc)) from exc
 
 def indexed_reports(root):
-    """Resolve report files only through the published family indexes."""
+    """Resolve only complete, well-formed report records published by family indexes."""
     found = []
     for scope in ("on_changed", "on_repo"):
         index_path = root / ".takeout" / "reports" / "lint_reports" / scope / "index.json"
@@ -131,17 +135,28 @@ def indexed_reports(root):
         if not isinstance(index, dict) or not isinstance(index.get("runs"), list):
             raise LedgerError("Invalid lint report index: " + str(index_path))
         for row in index["runs"]:
-            if not isinstance(row, dict) or not row.get("run_id"):
+            if not isinstance(row, dict):
                 raise LedgerError("Invalid run entry in " + str(index_path))
-            run_id = str(row["run_id"])
+            raw_run_id = row.get("run_id")
+            if isinstance(raw_run_id, bool) or not re.fullmatch(r"[0-9]{1,20}", str(raw_run_id or "")) or int(raw_run_id) < 1:
+                raise LedgerError("Invalid run ID in " + str(index_path))
+            run_id = str(raw_run_id)
             attempt = row.get("attempt", 1)
-            if not isinstance(attempt, int) or attempt < 1:
+            if isinstance(attempt, bool) or not isinstance(attempt, int) or attempt < 1:
                 raise LedgerError("Invalid attempt in " + str(index_path))
             base = root / ".takeout" / "reports" / "lint_reports" / scope / "history"
-            candidates = [base / (run_id + "-attempt-" + str(attempt)) / "report.json", base / run_id / "report.json"]
+            candidates = [
+                base / (run_id + "-attempt-" + str(attempt)) / "report.json",
+                base / run_id / "report.json",
+            ]
             report_path = next((item for item in candidates if item.is_file()), None)
-            if report_path is not None:
-                found.append(("lint", report_path.relative_to(root).as_posix(), row))
+            if report_path is None:
+                raise LedgerError(
+                    "Indexed complete lint report is missing: scope=" + scope
+                    + ", run_id=" + run_id + ", attempt=" + str(attempt)
+                )
+            found.append(("lint", report_path.relative_to(root).as_posix(), row))
+
     gh_index_path = root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
     if gh_index_path.is_file():
         index = read_json(gh_index_path)
@@ -150,16 +165,39 @@ def indexed_reports(root):
         for row in index["runs"]:
             if not isinstance(row, dict):
                 raise LedgerError("Invalid GitHub Actions report index entry")
+            report_status = row.get("report_status")
+            capture_stage = row.get("capture_stage")
+            source_status = row.get("source_status")
+            if report_status is not None and report_status != "Complete":
+                # Incomplete/failed captures remain eligible for the reporter's bounded retry.
+                continue
+            if capture_stage != "post_run" or source_status != "completed":
+                # Pre-finalizer and non-final captures are not Ledger inputs.
+                continue
+            workflow_id = row.get("workflow_id")
+            run_id = row.get("run_id")
+            attempt = row.get("attempt", 1)
+            for label, value in (("workflow ID", workflow_id), ("run ID", run_id)):
+                if isinstance(value, bool) or not re.fullmatch(r"[0-9]{1,20}", str(value or "")) or int(value) < 1:
+                    raise LedgerError("Invalid GitHub Actions " + label + " in report index")
+            if isinstance(attempt, bool) or not isinstance(attempt, int) or attempt < 1:
+                raise LedgerError("Invalid GitHub Actions attempt in report index")
             history = row.get("history_path")
             if not history:
-                continue
+                raise LedgerError("Complete GitHub Actions index entry is missing history_path: " + str(run_id))
             history = safe_relative_path(history, "history/")
+            expected_history = (
+                "history/" + str(workflow_id) + "/" + str(run_id)
+                + "-attempt-" + str(attempt) + "-post_run"
+            )
+            if history != expected_history:
+                raise LedgerError("GitHub Actions history_path does not match its run identity: " + history)
             report_path = root / ".takeout" / "reports" / "gh_ac_reports" / Path(*PurePosixPath(history).parts) / "report.json"
-            if report_path.is_file():
-                found.append(("github_actions", report_path.relative_to(root).as_posix(), row))
+            if not report_path.is_file():
+                raise LedgerError("Indexed complete GitHub Actions report is missing: " + str(report_path.relative_to(root)))
+            found.append(("github_actions", report_path.relative_to(root).as_posix(), row))
     unique = {path: (family, path, row) for family, path, row in found}
     return sorted(unique.values(), key=lambda item: (item[2].get("generated_at_utc") or item[2].get("captured_at_utc") or "", item[1]))
-
 def bootstrap_state(root, timestamp=None):
     paths = [path for _, path, _ in indexed_reports(root)]
     return {"bootstrap_at_utc": timestamp or utc_now(), "processed_reports": sorted(set(paths))}
@@ -373,6 +411,16 @@ def lint_observations(report, report_path):
             "comparison": item.get("comparison", "new"),
         }
     return list(result.values())
+
+def actions_capture_is_complete(report):
+    capture = report.get("capture") or {}
+    source = report.get("source_run") or {}
+    return (
+        capture.get("stage") == "post_run"
+        and source.get("status") == "completed"
+        and capture.get("completeness") == "Complete"
+    )
+
 
 def actions_observations(report, report_path, root):
     capture, source = report.get("capture") or {}, report.get("source_run") or {}
