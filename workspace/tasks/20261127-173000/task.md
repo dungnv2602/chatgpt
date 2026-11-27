@@ -68,9 +68,16 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **References:** Existing task ID 20261127-102301.
 - **Next:** Reconcile hierarchy and board.
 
+### 2026-11-27 11:02 UTC — startup P0 child 04 remediation
+
+- **Action:** Completed CI remediation child `20261127-173000-04`. Updated the two stale Markdown assertions in `.agent/skills/asd-ste100/scripts/test_generate_lint_report.py` to match the canonical `- **Source task:**` template label.
+- **Result:** Commit `1e697f0e5167e9c0778cadef69d7cf084249be27` contains the test correction. Remote readback confirmed both assertions and the unchanged report template. No tests or scripts were run. Hosted CI results were not inspected.
+- **References:** Child diagnostic/progress commit `418d2e0d1a1e845bf834799f915984983da68fa0`; implementation commit `1e697f0e5167e9c0778cadef69d7cf084249be27`; child completion/evidence commits `c27098af28f5581feb16b784fa67184b19256920` and `531e52bd0ce6239484a553a5d31209cbe13a290b`; child index commit `3f9867a5bc0e42df2828b361468aa2c2eb0e1e59`; board selection commit `40cbc1c4354d3c61dd5ff0d7df2c20c5b5b15b5a`.
+- **Next:** Complete child-record deletion and index reconciliation. Continue the startup P0 batch with the remaining eligible and newly unblocked Ledger children.
+ 
 ## 6. Current State and Remaining Work
 
-This parent remains open as the persistent skills-refactoring workstream. Child 01 (document governance consolidation) has been completed and closed. Children 02 and 03 remain tracked as Paused. Future skills-refactoring requests that fit this scope must be captured as new child subtasks under this parent. Do not retire this parent when the current children are complete.
+This parent remains open as the persistent skills-refactoring workstream. Child 01 (document governance consolidation) has been completed and closed. Child 04 (the lint report regression-test remediation) has been completed by commit `1e697f0e5167e9c0778cadef69d7cf084249be27` and is undergoing record closeout. Children 02 and 03 remain Paused. Future skills-refactoring requests that fit this scope must be captured as new child subtasks under this parent. Do not retire this parent when the current children are complete.
 
 ## 7. Verification and Evidence
 
