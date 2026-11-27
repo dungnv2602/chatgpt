@@ -66,6 +66,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
+### 2026-11-27T18:20:00Z — Refactor Skills child 56 closeout
+
+- **Action:** Updated the Skills Directory index to include all 17 active skills exactly once. Corrected ASD-STE100's activation metadata and moved Prompt Master's version into the Agent Skills metadata mapping.
+- **Result:** Read back all three changed skill files. Confirmed 17 unique skill links and that every target exists. Closed and removed child 56.
+- **Evidence:** Commits `8031e2f7312592343ba638ceb7a75054e95caa18` and `b76e45b7e8d37fa24ae01cbd7b3355f676596b36`.
+- **Validation:** No local scripts, tests, or lint were run. Hosted CI results were not inspected.
+
+
 ### 2026-11-27T18:05:00Z — skill portfolio audit complete
 
 - **Inventory:** 17 active skill directories contain 17 `SKILL.md` files. Every `name` matches its directory. Every skill has a non-empty description under the 1,024-character limit. The scan found 26 local Markdown links in skill definitions. All 26 targets exist.
@@ -362,21 +370,26 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 6. Current State and Remaining Work
 
-This parent remains open as the persistent Refactor Skills workstream. The Worker and Agent Skill Authoring now enforce the approved template-first gate.
+This parent remains open as the persistent Refactor Skills workstream. The Worker and Agent Skill Authoring enforce the approved template-first gate.
 
-Current child state:
+Completed:
+- Child 04 — template-first governance.
+- Child 26 — startup long-sentence remediation.
+- Child 52 — Actions report template wording.
+- Child 53 — initial CI report consolidation.
+- Child 55 — 17-skill portfolio audit.
+- Child 56 — complete skill index and metadata reconciliation.
+
+Open or deferred:
 - Child 03 is Paused.
 - Children 27–50 are Blocked. Child 50 awaits a complete diagnostic report with its failing Markdown target and anchor.
-- Child 53 is Done.
-- Child 55 completed the portfolio audit. Its findings and recommendations are recorded above.
-- Child 56 is the current implementation child. It reconciles the skill index and activation metadata.
-- The latest-lint-report deletion request remains separate under parent 20261127-173500. It is Proposed pending DRAFT-0005 approval.
+- The latest-lint-report deletion is separate under parent 20261127-173500. It remains Proposed pending DRAFT-0005 approval.
 
-Continue with new child subtasks for distinct skills-refactoring deliverables. Keep this parent open. Do not retire or delete it.
+No Ready child remains under Refactor Skills. Keep this parent open. Do not retire or delete it.
 
 ## 7. Verification and Evidence
 
-- **Commit SHA:** `1e6800f40e4c1bf1e15263f0a479a54afe81468a` (parent priority/current-execution); `24f697da8a75972ff7f6a0dca7302a125e63499c` (child 01 activation); `3f0101796d08a5eba78dfe2fd4120b7445bf5c62` (subtask index); `91ca878a4c151aeb65d3f5ff78b438af8e437aa3` (board); `ebc73c9a3f3f69d21d218d2a271c02aad1145d38` (template-first governance); audit commit pending
+- **Commit SHA:** `1e6800f40e4c1bf1e15263f0a479a54afe81468a` (parent priority/current-execution); `24f697da8a75972ff7f6a0dca7302a125e63499c` (child 01 activation); `3f0101796d08a5eba78dfe2fd4120b7445bf5c62` (subtask index); `91ca878a4c151aeb65d3f5ff78b438af8e437aa3` (board); `ebc73c9a3f3f69d21d218d2a271c02aad1145d38` (template-first governance); `307fd54d494897450919ffdc47cef70f4cbd66e6` (skill portfolio audit); `8031e2f7312592343ba638ceb7a75054e95caa18` and `b76e45b7e8d37fa24ae01cbd7b3355f676596b36` (skill index and metadata)
 - **Changed paths:** `workspace/tasks/20261127-173000/task.md`; `workspace/tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md`; `workspace/tasks/20261127-173000/subtasks/README.md`; `workspace/task_board.md`
 - **Readback:** Verified all four paths on branch `gpt`.
 - **Checks:** Not performed

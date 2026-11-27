@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-56: Reconcile the skill directory index and activation metadata](tasks/20261127-173000/subtasks/56-reconcile-skill-directory-index.md) — P1, In Progress, Approved.
+None. Refactor Skills has no Ready child. The parent remains open.
 
 ## Ordered Eligible Execution Queue
 
@@ -22,7 +22,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-[20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — next eligible task while Refactor Skills has no Ready child.
+No Ready child remains under Refactor Skills. The global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 
