@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T12:02:14Z",
+  "updated_at_utc": "2026-11-27T12:16:26Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -14538,8 +14538,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T01:19:44.607923+00:00",
-      "last_seen_utc": "2026-11-27T11:52:49.207098+00:00",
-      "occurrence_count": 5,
+      "last_seen_utc": "2026-11-27T12:15:54.197301+00:00",
+      "occurrence_count": 6,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45921789448-attempt-1/report.json",
@@ -14547,17 +14547,6 @@
           "observed_at_utc": "2026-11-27T01:19:44.607923+00:00",
           "note": "on_changed · workspace/README.md:63:202",
           "observation_id": "lint:45921789448:1",
-          "source_task_id": null,
-          "parent_task_id": null,
-          "attribution_status": "historical_unattributed",
-          "source_commit_sha": null
-        },
-        {
-          "report_path": ".takeout/reports/lint_reports/on_changed/history/45929248916-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45929248916",
-          "observed_at_utc": "2026-11-27T02:37:46.036675+00:00",
-          "note": "on_changed · workspace/README.md:63:202",
-          "observation_id": "lint:45929248916:1",
           "source_task_id": null,
           "parent_task_id": null,
           "attribution_status": "historical_unattributed",
@@ -14595,6 +14584,17 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45996975058-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45996975058",
+          "observed_at_utc": "2026-11-27T12:15:54.197301+00:00",
+          "note": "on_changed · workspace/README.md:44:209",
+          "observation_id": "lint:45996975058:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "missing_marker",
+          "source_commit_sha": "290a1cdb82ed7e73c4f41a86db286bdd0b6528af"
         }
       ],
       "resolution": null,
@@ -14622,8 +14622,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T01:19:44.607923+00:00",
-      "last_seen_utc": "2026-11-27T11:52:49.207098+00:00",
-      "occurrence_count": 5,
+      "last_seen_utc": "2026-11-27T12:15:54.197301+00:00",
+      "occurrence_count": 6,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45921789448-attempt-1/report.json",
@@ -14631,17 +14631,6 @@
           "observed_at_utc": "2026-11-27T01:19:44.607923+00:00",
           "note": "on_changed · workspace/README.md:63:277",
           "observation_id": "lint:45921789448:1",
-          "source_task_id": null,
-          "parent_task_id": null,
-          "attribution_status": "historical_unattributed",
-          "source_commit_sha": null
-        },
-        {
-          "report_path": ".takeout/reports/lint_reports/on_changed/history/45929248916-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45929248916",
-          "observed_at_utc": "2026-11-27T02:37:46.036675+00:00",
-          "note": "on_changed · workspace/README.md:63:277",
-          "observation_id": "lint:45929248916:1",
           "source_task_id": null,
           "parent_task_id": null,
           "attribution_status": "historical_unattributed",
@@ -14679,6 +14668,17 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45996975058-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45996975058",
+          "observed_at_utc": "2026-11-27T12:15:54.197301+00:00",
+          "note": "on_changed · workspace/README.md:24:210",
+          "observation_id": "lint:45996975058:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "missing_marker",
+          "source_commit_sha": "290a1cdb82ed7e73c4f41a86db286bdd0b6528af"
         }
       ],
       "resolution": null,
@@ -18867,8 +18867,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T09:36:47.784752+00:00",
-      "last_seen_utc": "2026-11-27T11:52:49.207098+00:00",
-      "occurrence_count": 3,
+      "last_seen_utc": "2026-11-27T12:15:54.197301+00:00",
+      "occurrence_count": 4,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45974724264-attempt-1/report.json",
@@ -18902,6 +18902,17 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45996975058-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45996975058",
+          "observed_at_utc": "2026-11-27T12:15:54.197301+00:00",
+          "note": "on_changed · workspace/README.md:44:220",
+          "observation_id": "lint:45996975058:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "missing_marker",
+          "source_commit_sha": "290a1cdb82ed7e73c4f41a86db286bdd0b6528af"
         }
       ],
       "resolution": null,
@@ -22800,6 +22811,74 @@
       "legacy_task_refs": [],
       "task_group": "ci-00205ad33751b7c1",
       "parent_group": "ci-0135600b6b17110f"
+    },
+    {
+      "finding_id": "lint-73f84711409e6a9439c2bf01",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-27T12:15:54.197301+00:00",
+      "last_seen_utc": "2026-11-27T12:15:54.197301+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45996975058-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45996975058",
+          "observed_at_utc": "2026-11-27T12:15:54.197301+00:00",
+          "note": "on_changed · workspace/templates/DISCUSSION_TEMPLATE.md:11:135",
+          "observation_id": "lint:45996975058:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "missing_marker",
+          "source_commit_sha": "290a1cdb82ed7e73c4f41a86db286bdd0b6528af"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "task_group": "ci-0a053667020ea8bf",
+      "parent_group": "ci-be7bc6e9c195a9ea"
+    },
+    {
+      "finding_id": "lint-ed3909a3a29b635e81f1697c",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-27T12:15:54.197301+00:00",
+      "last_seen_utc": "2026-11-27T12:15:54.197301+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45996975058-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45996975058",
+          "observed_at_utc": "2026-11-27T12:15:54.197301+00:00",
+          "note": "on_changed · workspace/templates/DISCUSSION_TEMPLATE.md:19:77",
+          "observation_id": "lint:45996975058:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "missing_marker",
+          "source_commit_sha": "290a1cdb82ed7e73c4f41a86db286bdd0b6528af"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "task_group": "ci-0a053667020ea8bf",
+      "parent_group": "ci-be7bc6e9c195a9ea"
     }
   ],
   "ingestion_state": {
@@ -22919,6 +22998,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45994577533-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45994942334-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45995191222-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45996975058-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json",
