@@ -42,7 +42,7 @@ Before creating a record, inspect active task records and the board. Reuse a par
 
 ## Persistent skills-refactoring parent exception
 
-The user has explicitly designated `workspace/tasks/20261127-173000/task.md` (Refactor Skills) as a persistent parent for skills refactoring now and in the future. For requests that genuinely concern refactoring repository skills, create a distinct child subtask under this parent using `workspace/SUBTASK_TEMPLATE.md`; do not create a replacement parent merely because the request is a new deliverable or a future phase. Keep its subtask index and board reconciled. Close and delete completed child records under normal closeout, but **never mark this parent Done or Cancelled and never delete its task folder** unless the user explicitly instructs otherwise. This is a narrow, user-authorized exception to ordinary objective-based parent selection; it does not authorize placing unrelated work under this parent.
+The user has explicitly designated `workspace/tasks/20261127-173000/task.md` (Refactor Skills) as a persistent parent for skills refactoring now and in the future. For requests that genuinely concern refactoring repository skills, create a distinct child subtask under this parent using `workspace/SUBTASK_TEMPLATE.md`. Do not create a replacement parent merely because the request is a new deliverable or a future phase. Keep its subtask index and board reconciled. Close and delete completed child records under normal closeout. **Never mark this parent Done or Cancelled and never delete its task folder** unless the user explicitly instructs otherwise. This is a narrow, user-authorized exception to ordinary objective-based parent selection. It does not authorize placing unrelated work under this parent.
 
 ## Task hierarchy and CI attribution
 
@@ -69,9 +69,9 @@ Statuses are Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled.
 The Worker is the sole scheduler. Check eligibility and dependencies first, then priority and age. Keep dependency-waiting work out of the eligible queue. Detect cycles. do not repeatedly retry an impossible dependency chain. Correct an edge only when the error is clear and authorized. Ask for essential input only at quiescence.
 
 The board publishes:
-- one Current Execution pointer, or none;
-- the ordered eligible queue;
-- the next task;
+- one Current Execution pointer, or none.
+- the ordered eligible queue.
+- the next task.
 - deferred tasks and their reasons.
 
 Do not duplicate the queue in task records, README files, or skill references. The Ledger does not schedule.
@@ -138,7 +138,7 @@ The Worker owns document governance and must apply this gate before creating, mo
 
 Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required. explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
-The catalog and validator are integral Worker-owned assets in the Worker's `references/` and `scripts/` directories. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage; it does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+The catalog and validator are integral Worker-owned assets in the Worker's `references/` and `scripts/` directories. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
 
 ## Worker-owned domain operations
 
