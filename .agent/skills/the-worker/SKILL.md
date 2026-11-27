@@ -387,7 +387,7 @@ The Ledger creates Proposed parent task folders with CI remediation subtasks in 
 8. **Closeout gate:** A CI remediation subtask becomes Done after its own commit-based acceptance criteria pass and evidence is recorded. Before archiving the parent task as Done, check that every required subtask is Done and every linked finding has a valid terminal/resolution record. Do not close a parent while any required child remains open.
 9. **Finding history retention:** Archiving a parent task does not delete terminal findings from the Ledger. Retain finding identity, resolution history, and prior task references so recurrence can reopen the same finding and link new remediation work. Do not retire or delete terminal finding identities solely because their task was archived.
 
-The capture and sweep publishers use the shared non-cancelling `gh-ac-report-writer` concurrency group. They update report indexes, the Ledger, task files, the task board, and task references. The diagnostics sweep ignores Ledger-only and task-board-only publication to prevent recursive triggers. It must process `.archive/task/**` because task archival triggers retirement of resolved findings. The scheduled archive cleanup writer uses the same group.
+The capture and sweep publishers use the shared non-cancelling `gh-ac-report-writer` concurrency group. They update report indexes, the Ledger, task files, the task board, and task references. The diagnostics sweep ignores Ledger-only and task-board-only publication to prevent recursive triggers. A task-archive push may trigger the sweep, but archival never retires terminal Ledger findings; the sweep must preserve finding identity, resolution history, and task_refs. The scheduled archive cleanup writer uses the same group.
 
 ### Explicit clean-start reset
 
@@ -432,7 +432,7 @@ When acceptance criteria are met:
 10. Retrieve the committed task board. Check that the closed task is absent from active sections and appears exactly once in Historical. Check its links to the archive path and archival commit. Check that Current Execution matches the selection rules.
 11. Check that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to check its content or recover board details. Do not change the archived record.
 12. Only after these checks, report the task as closed and provide the appropriate handoff.
-13. For a Done Ledger-generated task, allow the natural diagnostics sweep triggered by the committed `.archive/task/**` path to retire its terminal findings from the active Ledger. Check the `findings_retired` result when the diagnostics sweep reports it. Do not poll, dispatch, or manually edit the Ledger. If retirement is not observed, record it as a handoff blocker and preserve the archived task and evidence.
+13. For a Done Ledger-generated task, verify that each linked terminal finding remains in the Ledger with its resolution, resolution_history, and prior task_refs intact. No `findings_retired` result is expected. Do not poll, dispatch, or manually edit the Ledger. If a finding identity or its history is missing, record it as an integrity blocker and preserve the archived task and evidence.
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
 
