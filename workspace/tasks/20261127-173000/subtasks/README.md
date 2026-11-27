@@ -30,3 +30,5 @@ Parent: [task.md](../task.md)
 
 
 The parent cannot be Done while a required child is open. CI remediation is commit-based; hosted validation is separate metadata.
+
+| 20261127-173000-58 | Recover task materials and clean temporary artifacts automatically | In Progress | [58-recover-materials-cleanup.md](58-recover-materials-cleanup.md) |
