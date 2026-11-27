@@ -33,6 +33,8 @@ If source deletion fails after acceptance, retain the Draft temporarily. Record 
 
 Only accepted ADRs can govern implementation tasks. Keep task execution approval separate from the ADR's decision approval.
 
+**Approval semantics:** Approved means explicit user authorization for the presented scope or applicable documented standing authorization. Pending means authorization is not granted; Declined means the scope was rejected. A concise "Approve" authorizes the immediately preceding proposal within its stated scope, not unrelated or materially expanded work. Approval is distinct from task status and eligibility: an approved task may remain Proposed until governance and dependencies are satisfied. Record the source and scope of approval. Never infer approval from Ready, In Progress, priority, or origin.
+
 Keep every accepted ADR permanently in the flat `workspace/adr/` folder. When implementation and Confirmation finish, update its implementation status and lifecycle history. Do not move it to a separate archive folder or add it to the 90-day task/report retention index.
 
 The decision-governance skill owns Draft, ADR, and repository-analysis lifecycles. Load it only when a task requires decision governance. Do not add it to foundational initialization.
