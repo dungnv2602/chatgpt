@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-04
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
+- **Eligibility / deferral reason:** Selected — Current Execution in the mandatory startup P0 batch
 - **Required:** Yes
 - **Created:** 2026-11-27 11:02 UTC
-- **Updated:** 2026-11-27 11:02 UTC
+- **Updated:** 2026-11-27 11:01 UTC
 - **Ledger group:** `ci-71de99e18bb591b4`
 - **Legacy Task IDs:** None
 
@@ -51,6 +51,14 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
+
+### 2026-11-27 11:01 UTC — startup diagnostic review
+
+- **Action:** Read the latest indexed changed-document report `.takeout/reports/lint_reports/on_changed/history/45986815109-attempt-1/report.json`.
+- **Evidence:** The report identifies two failing assertions in `.agent/skills/asd-ste100/scripts/test_generate_lint_report.py`: `test_scheduled_report_does_not_claim_a_task` and `test_source_task_id_is_recorded_for_push_commit`. Both expect the plain substring `Source task: ...`. The canonical report template renders `- **Source task:** {source_task_id}`, so the bold markers split the expected substring. The JSON source-task values are correct. Other listed checks passed.
+- **Diagnosis:** The regression assertions are stale. Update the two Markdown assertions to match the canonical template. Do not change the generator or report format.
+- **Next:** Update the test assertions, commit with this child Task-ID, and read back the test file and task records.
+
 
 ## 6. State and Evidence
 
