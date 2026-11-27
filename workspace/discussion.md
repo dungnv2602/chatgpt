@@ -9,8 +9,10 @@ _No active step._
 - **2026-11-27:** User confirmed permanent removal of `workspace/archive/` and retirement of task/report archiving. Completed or cancelled task folders must be deleted directly after closeout checks. No archive copy, retention index, scheduled cleanup, or Historical board row is permitted.
 - **2026-11-27:** User authorized editing accepted ADRs directly; superseding Drafts DRAFT-0006 and DRAFT-0007 are obsolete and were deleted. ADR-0003/0004 can be updated directly as required to reconcile editorial issues and task deletion policy.
 - **2026-11-27 05:31 UTC:** [20261126-090154](tasks/20261126-090154/task.md) is Blocked. Five of six ADR-0003 confirmation criteria are verified. Criterion 4 requires an explicit user-authorized read-only full-repository reference search.
-- **2026-11-27 05:31 UTC:** [20261126-232913](tasks/20261126-232913/task.md) has all six implementation subtasks Done. ADR-0004 confirmation criterion 16 is Verified. Criterion 15 remains Pending until the user explicitly triggers hosted Ledger regression and Document Type Catalog results review.
+- **2026-11-27:** User removed hosted-results-review as a remediation closeout gate. A CI fix closes after commit verification and task deletion; later failures must automatically create follow-up remediation tasks. Do not inspect hosted results or remind the user about review.
 - **2026-11-27:** DRAFT-0002 revision 4 remains in review. Its wording corrections passed hosted lint. The decision and implementation scope remain unapproved.
+
+- **2026-11-27:** CI tooling failure root cause identified: incremental Markdown source validation did not exclude `.archive/` paths, so the test case `.archive/adr/old.md` was accepted as active. Added the `.archive/` source exclusion while retaining archive paths as link targets. Also repaired a stale ADR-0003 task link to a deleted task.
 
 ## Reports
 
