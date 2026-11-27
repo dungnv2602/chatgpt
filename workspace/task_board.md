@@ -60,7 +60,7 @@ _No proposed tasks._
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-102300 | Correct objective-based task parent selection | P1 | In Progress | Approved | Workflow correction and hierarchy reconciliation underway. | [task](tasks/20261127-102300/task.md) |
+| 20261127-102300 | Correct objective-based task parent selection | P1 | Paused | Approved | Hierarchy correction started; remaining index reconciliation deferred behind P0 queue. | [task](tasks/20261127-102300/task.md) |
 | 20261127-102301 | Consolidate Document Standards into The Worker | P1 | Paused | Approved | Independent document-governance objective; deferred behind current P0 queue. | [task](tasks/20261127-102301/task.md) |
 
 ### Dependency-waiting
