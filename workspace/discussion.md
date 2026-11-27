@@ -1,7 +1,7 @@
 # Discussion Register
 
 ## Current Step
-Archive-root migration is committed and verified. The former root archive is removed; 285 task/report files remain byte-identical under workspace/archive; ADR-0001 and ADR-0002 are in workspace/adr. The remapped retention index still has 52 missing files (36 task, 16 reports) and remains fail-closed. Next: exact-path history recovery or separate user approval for index correction. DRAFT-0006 and DRAFT-0007 revision 1 are approved; successor ADR promotion remains separate. Preserve the authorization gates for tasks 20261126-090154 and 20261126-232913.
+Identify all eligible CI Ledger-generated P0 tasks from the active task board and Ledger linkage, inspect their authoritative records and governing constraints, then execute eligible remediations sequentially. Do not inspect hosted CI results.
 
 ## Open Discussions
 
