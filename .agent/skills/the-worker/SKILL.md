@@ -48,8 +48,8 @@ When the CI Ledger generates P0 tasks, The Worker must execute them under the us
 4. Commit each coherent fix and update the task record and board. Record evidence and a checkpoint before switching tasks.
 5. Do not wait for validation of one task before continuing with other independent eligible tasks when the user's deferred-results-review instruction applies. Respect shared-file conflicts and dependencies.
 6. If one task is blocked by an exceptional gate, record the exact blocker. Continue with independent eligible tasks.
-7. After all eligible batch remediation commits are complete, stop. Do not poll, dispatch, rerun, or inspect hosted CI results until the user triggers the results-review phase.
-8. Keep tasks open until the deferred validation review and required closeout. Report committed remediation without claiming validation or completion.
+7. Immediately after each coherent fix commit, verify the intended-branch commit, read back every changed path, and record the full SHA plus remediation summary in the CI child record. Mark that child Done and update the task board in the same task-maintenance pass. Do not wait for hosted validation.
+8. When every required child under a parent is Done, complete the parent closeout transaction and mark the parent Done only after its archive, retention-index entries, and board read-back verify. Do not keep a completed child open for deferred validation. Do not poll, dispatch, rerun, or inspect hosted CI results unless the user explicitly requests results review. If later CI identifies remaining errors, let Ledger ingestion create or reopen the corresponding finding and remediation task; do not retroactively reopen a completed child solely because hosted validation is pending or failed.
 
 ### User notice and prompt gate
 
