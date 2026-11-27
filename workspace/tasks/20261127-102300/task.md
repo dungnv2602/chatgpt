@@ -50,9 +50,16 @@ Add an objective-based parent-selection test, prevent active-parent bias, and de
 - **References:** `.agent/skills/the-worker/SKILL.md`
 - **Next:** Correct task 22 parentage and reconcile the task-board/index references.
 
+### 2026-11-27 10:25 UTC
+
+- **Action:** Added the parent-selection test to both task templates, created distinct parents for this correction and the document-governance consolidation, migrated the consolidation record, removed its old path, and updated board/index references.
+- **Result:** Remote readback confirmed the Worker, both templates, task board, parent indexes, migrated record, and discussion register. The old misparented record path no longer exists.
+- **References:** Worker commit `0b7f1b5b2c340fa59e718aa650d2e55fbc2b00d8`; task template `9488c10f150ca0a8d2e7bf02668ee7d52bb1a0df`; subtask template `871743475e325dce4098df5256df8d91f99dfb66`; hierarchy/index commits recorded in the branch.
+- **Next:** After the P0 queue, audit parentage and reconcile any remaining indexes or rules, then read back and close.
+
 ## 6. Current State and Remaining Work
 
-Workflow text updated. Task 22 was incorrectly nested under a CI/reporting parent and must be moved to its own genuine document-governance parent.
+Workflow and task templates now enforce objective-based parent selection. Task 22 was moved from the CI/reporting parent to a separate document-governance parent. Remaining closeout/reconciliation is deferred behind the P0 queue.
 
 ## 7. Verification and Evidence
 
