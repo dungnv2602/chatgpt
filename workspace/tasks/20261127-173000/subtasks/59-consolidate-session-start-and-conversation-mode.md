@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** In Progress — preparing the decision Draft under the user's direct instruction.
 - **Required:** Yes
 - **Created:** 2026-11-27 23:53 UTC
-- **Updated:** 2026-11-27 23:53 UTC
+- **Updated:** 2026-11-27 23:55 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -56,6 +56,18 @@ This task authorizes Draft preparation and presentation only. It does not author
 
 ## 5. Decisions and Progress
 
+### 2026-11-27T23:55:36Z — Draft prepared and indexed
+
+- Created DRAFT-0006 Revision 1 using the canonical Draft template. The proposal recommends a Worker-owned operating model, a cue-pointer-only Session Start, and a settings-only Conversation Mode.
+- Readback confirmed the Draft includes all three options, the exact approval gate, impact map, implementation outline, and evidence register.
+- Draft commit: `dd2e36a071f1214fd23bc83b97e47fe18986eb24`.
+- Draft index commit: `d7ad84f13339b8fe958921d3ad88f8237113d75a`.
+- Discussion register commit: `a8f17f4b3fbd056bba3eee9f0e0cc7966e9366e3`.
+- Task index commit: `ce8f9981f2b61c4bc4914ea67ff3d89217a65ca0`.
+- Task board commit: `a48f629e360e5e5e8410ddad61187d89a47ebb07`.
+- Parent progress commit: `d2c2a63741c2ee2777a79eb60ac01a49b3fc264c`.
+- Next: present the exact Draft for user approval. No implementation is authorized yet.
+
 ### 2026-11-27T23:53:02Z — task captured
 
 - Created this decision-preparation child under the persistent Refactor Skills parent.
@@ -66,9 +78,9 @@ This task authorizes Draft preparation and presentation only. It does not author
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** This task record, its parent subtask index, task board, parent progress record, and the decision Draft.
-- **Readback:** Pending.
+- **Commit SHA:** Draft `dd2e36a071f1214fd23bc83b97e47fe18986eb24`; supporting task and register commits listed in Decisions and Progress.
+- **Changed paths:** This subtask record, parent task, parent subtask index, task board, DRAFT-0006, draft index, and workspace/discussion.md.
+- **Readback:** Draft, draft index, discussion register, task index, task board, parent task, and this subtask were fetched from branch gpt after their writes. Draft content and key approval markers were confirmed.
 - **Checks:** Repository source review only. No scripts, tests, lint, or hosted CI review.
 - **Limitations:** The audit establishes the content and contradictions in the retrieved branch files. It does not establish hosted validation results or client-side skill-loader behavior.
 
@@ -87,7 +99,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Present DRAFT-0006 for approval. If the user approves its exact revision and scope, promote it to an accepted ADR, then create a separate implementation child linked to that ADR. Do not implement the proposed refactor before that gate passes.
+DRAFT-0006 Revision 1 is in review and linked from workspace/discussion.md. Await the user's decision. If approved, follow the Worker execution cue and decision-governance gate. Promote the exact revision to an accepted ADR before creating a separate implementation child. Do not implement the proposed refactor before that gate passes.
 
 ## 10. Ledger Findings
 
