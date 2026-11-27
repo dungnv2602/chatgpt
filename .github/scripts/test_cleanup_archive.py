@@ -28,40 +28,63 @@ class ArchiveRetentionTests(unittest.TestCase):
   p=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"legacy.md"; p.write_text("legacy")
   self.write([]); deleted,changed=self.run_clean()
   self.assertEqual(deleted,[]); self.assertFalse(changed); self.assertTrue(p.exists())
- def test_only_individually_due_task_and_report_files_are_deleted(self):
+ def test_task_folder_archive_expires_as_one_unit_and_legacy_files_remain_individual(self):
   legacy_task=self.root/".archive"/"task"/"due-legacy.md"
-  task_folder=self.root/".archive"/"task"/"20261127-010000"
-  child_folder=task_folder/"subtasks"
-  child_folder.mkdir(parents=True)
-  task=task_folder/"task.md"
-  subtask_index=child_folder/"README.md"
-  subtask=child_folder/"01-main-work.md"
-  later_subtask=child_folder/"02-later.md"
+  due_folder=self.root/".archive"/"task"/"20261127-010000"
+  later_folder=self.root/".archive"/"task"/"20261127-020000"
   report=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"report.md"
-  later=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"later.json"
-  legacy=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"legacy.log"
-  for p in (legacy_task,task,subtask_index,subtask,later_subtask,report,later,legacy): p.write_text(p.name)
-  self.write([
-   self.rec(".archive/task/due-legacy.md","2026-01-01T00:00:00Z"),
-   self.rec(".archive/task/20261127-010000/task.md","2026-01-01T00:00:00Z"),
-   self.rec(".archive/task/20261127-010000/subtasks/README.md","2026-01-01T00:00:00Z"),
-   self.rec(".archive/task/20261127-010000/subtasks/01-main-work.md","2026-01-01T00:00:00Z"),
-   self.rec(".archive/task/20261127-010000/subtasks/02-later.md","2026-12-01T00:00:00Z"),
-   self.rec(".archive/reports/lint_reports/run-1/report.md","2026-01-01T00:00:00Z"),
-   self.rec(".archive/reports/lint_reports/run-1/later.json","2026-12-01T00:00:00Z")
+  later_report=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"later.json"
+  legacy_report=self.root/".archive"/"reports"/"lint_reports"/"run-1"/"legacy.log"
+  due_paths=[due_folder/"task.md",due_folder/"subtasks"/"README.md",due_folder/"subtasks"/"01-main-work.md"]
+  later_paths=[later_folder/"task.md",later_folder/"subtasks"/"README.md",later_folder/"subtasks"/"01-main-work.md"]
+  for folder,paths in ((due_folder,due_paths),(later_folder,later_paths)):
+   (folder/"subtasks").mkdir(parents=True)
+   for item in paths: item.write_text(item.name)
+  for item in (legacy_task,report,later_report,legacy_report): item.write_text(item.name)
+  due_stamp="2026-01-01T00:00:00Z"
+  later_stamp="2026-02-01T00:00:00Z"
+  records=[self.rec(".archive/task/due-legacy.md",due_stamp)]
+  records.extend(self.rec(item.relative_to(self.root).as_posix(),due_stamp) for item in due_paths)
+  records.extend(self.rec(item.relative_to(self.root).as_posix(),later_stamp) for item in later_paths)
+  records.extend([
+   self.rec(".archive/reports/lint_reports/run-1/report.md",due_stamp),
+   self.rec(".archive/reports/lint_reports/run-1/later.json",later_stamp)
   ])
+  self.write(records)
   deleted,changed=self.run_clean()
-  self.assertEqual(set(deleted),{
-   ".archive/task/due-legacy.md",
-   ".archive/task/20261127-010000/task.md",
-   ".archive/task/20261127-010000/subtasks/README.md",
-   ".archive/task/20261127-010000/subtasks/01-main-work.md",
-   ".archive/reports/lint_reports/run-1/report.md"
-  })
-  self.assertTrue(changed); self.assertFalse(legacy_task.exists()); self.assertFalse(task.exists())
-  self.assertFalse(subtask_index.exists()); self.assertFalse(subtask.exists())
-  self.assertTrue(later_subtask.exists()); self.assertTrue(later.exists()); self.assertTrue(legacy.exists())
-  self.assertEqual(len(json.loads(self.index.read_text())["records"]),2)
+  expected={".archive/task/due-legacy.md",*(item.relative_to(self.root).as_posix() for item in due_paths),".archive/reports/lint_reports/run-1/report.md"}
+  self.assertEqual(set(deleted),expected)
+  self.assertTrue(changed)
+  self.assertFalse(legacy_task.exists())
+  self.assertTrue(all(not item.exists() for item in due_paths))
+  self.assertTrue(all(item.exists() for item in later_paths))
+  self.assertTrue(later_report.exists())
+  self.assertTrue(legacy_report.exists())
+  self.assertEqual(
+   {item["path"] for item in json.loads(self.index.read_text())["records"]},
+   {*(item.relative_to(self.root).as_posix() for item in later_paths),".archive/reports/lint_reports/run-1/later.json"}
+  )
+
+ def test_task_folder_archive_requires_parent_and_subtask_index_entries(self):
+  folder=self.root/".archive"/"task"/"incomplete"
+  (folder/"subtasks").mkdir(parents=True)
+  (folder/"task.md").write_text("parent")
+  self.write([self.rec(".archive/task/incomplete/task.md","2026-01-01T00:00:00Z")])
+  with self.assertRaisesRegex(ValueError,"index is incomplete"):
+   self.run_clean()
+
+ def test_task_folder_archive_requires_one_timestamp(self):
+  folder=self.root/".archive"/"task"/"mixed"
+  (folder/"subtasks").mkdir(parents=True)
+  (folder/"task.md").write_text("parent")
+  (folder/"subtasks"/"README.md").write_text("index")
+  self.write([
+   self.rec(".archive/task/mixed/task.md","2026-01-01T00:00:00Z"),
+   self.rec(".archive/task/mixed/subtasks/README.md","2026-01-02T00:00:00Z")
+  ])
+  with self.assertRaisesRegex(ValueError,"must share one archived_at_utc timestamp"):
+   self.run_clean()
+
  def test_missing_expired_file_prunes_index_entry(self):
   self.write([self.rec(".archive/reports/absent.json","2026-01-01T00:00:00Z")])
   deleted,changed=self.run_clean(); self.assertEqual(deleted,[]); self.assertTrue(changed)
