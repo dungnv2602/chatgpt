@@ -35,6 +35,10 @@ CI is not a gate that must be fixed before every user prompt or after skill init
 7. Never wait for or poll CI. Do not manually dispatch or rerun a workflow unless the user asks or the current task explicitly requires it.
 8. Never run the STE linter, CI workflows, CI test suites, or repository scripts locally. Use GitHub-hosted Actions only.
 9. If GitHub Actions or report evidence is unavailable, record the exact limitation and mark the result unverified. Continue unless the task directly depends on that evidence. Do not claim that CI passed.
+### Autonomous P0 remediation; no unnecessary user interruptions
+
+For CI-generated P0 remediation covered by the user's standing authorization, execute without soliciting per-finding approval or routine preferences. The Worker batch authorization persists through task creation, implementation, commit, read-back, task/board/Ledger reconciliation, and closeout. Ask for input only if a genuinely essential fact cannot be recovered or safely inferred and proceeding would cross a defined authority, safety, privacy, access, or governance boundary or materially change the outcome. Otherwise make the narrowest safe decision, document rationale, and proceed. If one finding is genuinely blocked, isolate it and continue independent eligible remediation. Do not repeat previously answered questions or present menus as a substitute for autonomous decisions.
+
 ### Technical remediation for CI findings
 
 The Worker owns task selection, batch sequencing, task records, task-board updates, and deferred results-review. Use the Worker's batch procedure for orchestration.
