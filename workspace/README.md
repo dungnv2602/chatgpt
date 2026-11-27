@@ -50,7 +50,7 @@ Task IDs use UTC YYYYMMDD-HHMMSS. Use only the statuses Proposed, Ready, In Prog
 
 ## CI issue workflow
 
-GitHub Actions publishes diagnostic evidence into the lint and Actions report families. The event-driven Ledger creates Proposed parent task folders with typed CI remediation subtasks for newly identified actionable findings. Every folder contains task.md and subtasks/README.md. The Ledger links stable parent Task IDs through task_refs. The Worker retains ADR review, prioritization, execution approval, remediation, verification, and parent closeout. P0 priority does not grant execution approval.
+GitHub Actions publishes diagnostic evidence into the lint and Actions report families. The event-driven Ledger creates one Proposed parent per affected file or workflow and typed CI remediation child subtasks for each stable finding group. It never creates standalone per-rule, per-step, or per-finding CI tasks. Every parent folder contains task.md and subtasks/README.md. The Ledger stores parent Task IDs in task_refs, child IDs in subtask_refs, and migrated former IDs in legacy_task_refs. The Worker retains ADR review, prioritization, execution approval, remediation, verification, and parent closeout. P0 priority does not grant execution approval.
 
 The first complete tooling-valid full audit in each lint scope establishes a baseline without creating tasks. Later runs create tasks only for genuinely new actionable findings. Recurring untracked baseline findings do not flood the backlog. The Ledger retains at most five evidence paths per finding while preserving cumulative occurrence counts.
 
