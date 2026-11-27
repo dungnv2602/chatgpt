@@ -1,6 +1,6 @@
 # Task Folder: [Title]
 
-**Template version:** 2.3
+**Template version:** 2.4
 
 Create one directory per task: `workspace/tasks/<task-id>/`. Store this template as `task.md`. Every task directory must also contain `subtasks/README.md` and zero or more subtask records copied from `workspace/SUBTASK_TEMPLATE.md`.
 
@@ -17,12 +17,15 @@ Create one directory per task: `workspace/tasks/<task-id>/`. Store this template
 - **Governing ADR(s):** None — non-implementation task
 - **Current execution:** No
 - **Dependencies:** None
+- **Eligibility / deferral reason:** [Eligible / reason it is deferred]
 - **Related tasks:** None
 - **Ledger parent group:** None
 
 Approval is authorization, not status or eligibility. Approved means explicit authorization for the recorded scope or applicable standing authorization; Pending means not authorized; Declined means rejected. Record approval scope/source. A concise "Approve" authorizes the immediately preceding proposal only within its stated scope. Do not infer approval from task status.
 
 For Ledger-generated P0 tasks, set Approval to Approved under the standing authorization. Keep Status Proposed when Governing ADR(s) is Pending. Move the task to Ready only after accepted ADR linkage exists or decision approval is not required.
+
+The task board publishes scheduling order; do not store or independently calculate queue rank in task records. The Worker alone selects tasks. Set `Current execution` only for the task currently selected. The board distinguishes eligible queue entries from deferred statuses/reasons.
 
 <!-- Lifecycle invariant: parent Done requires every required subtask Done. After closeout checks, delete the complete task folder and remove its board row. Do not create an archive copy, retention entry, or Historical row. -->
 
