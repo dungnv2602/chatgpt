@@ -280,6 +280,9 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
         self.assertIn("- **Priority:** P0", task_text)
+        self.assertIn("- **Status:** Proposed", task_text)
+        self.assertIn("- **Approval:** Pending — Worker review required", task_text)
+        self.assertIn("- **Governing ADR(s):** Pending — Worker review required before approval", task_text)
         self.assertIn("lint-a1b2c3d4e5f6", task_text)
         self.assertIn("lint-b2c3d4e5f6a7", task_text)
         self.assertEqual(task_files[0].parent.name, task_id)
@@ -646,21 +649,43 @@ class LedgerTests(unittest.TestCase):
         LEDGER.ingest(self.root)
         path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
         ledger = json.loads(path.read_text())
+        finding = ledger["findings"][0]
+        old_task_id = finding["task_refs"][0]
+        old_task = self.root / "workspace" / "tasks" / old_task_id
+        parent_path = old_task / "task.md"
+        parent = parent_path.read_text(encoding="utf-8").replace("- **Status:** Proposed","- **Status:** Done")
+        parent_path.write_text(parent,encoding="utf-8")
+        child_path = old_task / "subtasks" / "01-ci-remediation.md"
+        child = child_path.read_text(encoding="utf-8").replace("- **Status:** Proposed","- **Status:** Done")
+        child = child.replace("- **Status:** Not Done","- **Status:** Done")
+        child_path.write_text(child,encoding="utf-8")
         resolution = {
             "fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z",
             "validation":{"run_url":"https://example.invalid/actions/runs/9","conclusion":"success","validated_at_utc":"2026-11-23T07:14:00Z"},
             "note":"Verified the fix.",
         }
-        ledger["findings"][0]["status"]="resolved"
-        ledger["findings"][0]["resolution"]=resolution
+        finding["status"]="resolved"
+        finding["resolution"]=resolution
         path.write_text(json.dumps(ledger),encoding="utf-8")
         self.add_lint("on_changed","301","2026-11-23T07:20:00Z")
         LEDGER.ingest(self.root)
-        finding = self.read_ledger()["findings"][0]
-        self.assertEqual(finding["status"],"open")
-        self.assertIsNone(finding["resolution"])
-        self.assertEqual(finding["resolution_history"],[resolution])
-        self.assertEqual(finding["occurrence_count"],2)
+        reopened = self.read_ledger()["findings"][0]
+        self.assertEqual(reopened["status"],"open")
+        self.assertIsNone(reopened["resolution"])
+        expected_resolution = dict(resolution)
+        expected_validation = dict(resolution["validation"])
+        expected_validation["status"] = "passed"
+        expected_resolution["validation"] = expected_validation
+        self.assertEqual(reopened["resolution_history"],[expected_resolution])
+        self.assertEqual(reopened["occurrence_count"],2)
+        self.assertEqual(reopened["task_refs"][0],old_task_id)
+        self.assertEqual(len(reopened["task_refs"]),2)
+        new_task_id = reopened["task_refs"][1]
+        self.assertNotEqual(new_task_id,old_task_id)
+        new_parent = self.root / "workspace" / "tasks" / new_task_id / "task.md"
+        self.assertTrue(new_parent.is_file())
+        self.assertIn("- **Status:** Proposed",new_parent.read_text(encoding="utf-8"))
+        self.assertEqual(LEDGER.task_metadata(parent_path.read_text(encoding="utf-8"),"Status"),"Done")
 
     def test_curated_owner_severity_status_title_and_risk_are_preserved(self):
         finding = {
