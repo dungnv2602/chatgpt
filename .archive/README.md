@@ -82,6 +82,7 @@ GitHub Actions checks the shared retention index weekly. It retains task-folder 
 - A folder archive requires indexed task.md and subtasks/README.md entries plus every child record. All entries for that folder must share one UTC timestamp.
 - The cleanup script reads the index only. It does not list, scan, or read either archive directory.
 - When a task folder reaches 90 days, the workflow deletes all exact indexed files in that folder as one unit. It fails closed if required entries or the shared timestamp are missing.
+- A missing indexed file before its retention period expires is an archive-integrity error. Do not silently prune the entry or reconstruct historical content.
 - Historical flat task files and report files expire individually from their own timestamps.
 - Preserve .gitkeep. Never delete an unindexed record except during the explicit user-authorized clean-start reset described above.
 - Legacy unindexed records remain protected unless their exact path and archive timestamp are verified.
