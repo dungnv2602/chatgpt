@@ -388,7 +388,7 @@ def main():
             "advisory_findings", "new_findings", "recurring_findings",
         )
     }
-    entry["history_path"] = output.relative_to(Path(__file__).resolve().parents[4] / ".takeout" / "reports").as_posix()
+    entry["history_path"] = output.relative_to(reports_root).as_posix()
     entry["resolved_findings_count"] = len(resolved)
     index["schema_version"] = SCHEMA_VERSION
     index["runs"] = [
