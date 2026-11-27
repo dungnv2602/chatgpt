@@ -10,17 +10,17 @@ Initialize only on the cue in `.agent/SESSION_START.md`. That file owns session 
 
 ## Prompt capture — mandatory
 
-Before answering or performing a user request with an identifiable outcome, find or create its task record. This includes questions, research, advice, writing, creative work, and project changes. Do not deliver the requested result before capture.
+Before answering or acting on a request with an identifiable outcome, find or create its task record. Capture questions, research, advice, writing, creative work, and project changes before delivering the result.
 
 - **New objective:** create a parent task folder from `workspace/TASK_TEMPLATE.md`.
 - **Follow-up, correction, extension, or next step of an existing objective:** create a separate child record under that genuine parent from `workspace/SUBTASK_TEMPLATE.md`. Do not overwrite an earlier prompt or silently enlarge its record.
 - **Several related requirements in one prompt:** preserve the full prompt once in the parent and split its independently completable deliverables into child records. Unrelated objectives receive separate parents.
 
-- **Clarification, decision, or approval that changes scope, priority, or authorization but adds no deliverable:** append the exact wording and UTC timestamp to the relevant record's Subsequent Instructions. If it adds work, create a child.
+- **Clarification, decision, or approval that changes scope, priority, or authorization without adding a deliverable:** append its exact wording and UTC timestamp to Subsequent Instructions. Create a child when it adds work.
 - **Greeting, reaction, or acknowledgement with no request or decision:** no task is needed.
 - **Unclear parentage:** do not guess. Preserve the request in the discussion register and ask one concise question at quiescence.
 
-Preserve every request with an identifiable outcome verbatim in its own parent task or follow-up subtask under Original Request/Original Prompt. Preserve non-deliverable clarifications, constraints, decisions, and approvals verbatim under Subsequent Instructions. Link the record from its parent index and keep the task board current. A request is not tracked merely because its words appear in chat, the parent summary, or the discussion register.
+Preserve every request with an identifiable outcome verbatim in its own parent task or follow-up subtask under Original Request/Original Prompt. Preserve non-deliverable clarifications, constraints, decisions, and approvals verbatim under Subsequent Instructions. Link the record from its parent index and keep the task board current. A request is not tracked solely because it appears in chat, a parent summary, or the discussion register.
 
 Before creating a record, inspect active task records and the board. Reuse a parent only when the objective is genuinely the same. A substantive follow-up still receives its own child record. Never place unrelated requests under one parent to reduce task count.
 
@@ -42,11 +42,11 @@ CI remediation children are P0, Approved, and Ready under the standing authoriza
 
 ## Status, approval, and scheduling
 
-Approval records authority for a scope. It is independent of status and priority. Record the approval source and scope. Never infer approval from status.
+Approval records authority for a scope. It does not depend on status or priority. Record its source and scope. Never infer approval from status.
 
-Statuses are Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Ready requires satisfied dependencies and any real decision gate. Use Blocked only for a genuine external or user-resolvable blocker. Use Paused only for intentional suspension.
+Statuses are Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Ready requires satisfied dependencies and any real decision gate. Use Blocked for a genuine external or user-resolvable blocker. Use Paused for intentional suspension.
 
-The Worker is the sole scheduler. Check eligibility and dependencies first, then priority and age. Keep dependency-waiting work out of the eligible queue. Detect cycles; do not repeatedly retry an impossible dependency chain. Correct an edge only when the error is clear and authorized. Ask for essential input only at quiescence.
+The Worker is the sole scheduler. Check eligibility and dependencies first, then priority and age. Keep dependency-waiting work out of the eligible queue. Detect cycles. do not repeatedly retry an impossible dependency chain. Correct an edge only when the error is clear and authorized. Ask for essential input only at quiescence.
 
 The board publishes:
 - one Current Execution pointer, or none;
@@ -54,7 +54,7 @@ The board publishes:
 - the next task;
 - deferred tasks and their reasons.
 
-Do not duplicate the queue in task records, README files, or skill references. The Ledger never schedules.
+Do not duplicate the queue in task records, README files, or skill references. The Ledger does not schedule.
 
 ## Execution and closeout
 
@@ -62,11 +62,11 @@ Do not duplicate the queue in task records, README files, or skill references. T
 2. Execute approved work to quiescence. Do not interrupt for routine choices or a blocker isolated to one task.
 3. Record progress, decisions, changed paths, commit SHAs, readback, and limitations in the task record.
 4. For every task-specific implementation commit, add the Task-ID trailer shown above.
-5. Close a subtask only after its acceptance criteria pass and the intended-branch commit is read back. CI remediation completion is commit-based; hosted validation is separate metadata.
+5. Close a subtask only after its acceptance criteria pass and the intended-branch commit is read back. CI remediation completion is commit-based. hosted validation is separate metadata.
 6. A parent cannot be Done while a required child remains open.
-7. After closeout checks, delete the completed or cancelled task folder and remove its board row. Do not archive it, create a retention copy, or add a Historical row. Preserve Ledger finding identity, evidence, resolution history, and prior task references.
+7. After closeout checks, delete the completed or cancelled task folder and its board row. Do not archive it, create a retention copy, or add a Historical row. Preserve Ledger finding identity, evidence, resolution history, and prior task references.
 
-Do not claim tests or validation passed unless they were executed and observed. Do not run repository scripts, tests, or lint locally. Use hosted workflows only when required; do not inspect their results unless the user explicitly requests that review.
+Claim validation only when you observed it. Do not run repository scripts, tests, or lint locally. Use hosted workflows only when required. Do not inspect their results unless the user explicitly requests review.
 
 ## Run-to-quiescence and user input
 
@@ -88,7 +88,7 @@ Create a parent task for each distinct user objective. Do not treat the active p
 
 Before selecting parent or child, compare the requested outcome against the candidate parent's original objective and acceptance criteria:
 
-- **Same objective:** the request advances, completes, corrects, or extends an outcome already defined by that parent. Create a child when it is a distinct deliverable or substantive follow-up; record a non-deliverable decision/clarification in Subsequent Instructions.
+- **Same objective:** the request advances, completes, corrects, or extends an outcome already defined by that parent. Create a child when it is a distinct deliverable or substantive follow-up. record a non-deliverable decision/clarification in Subsequent Instructions.
 - **Different objective:** the request creates an independently valuable outcome, changes a separate system or concern, or does not materially contribute to the candidate parent's acceptance criteria. Create a new parent, even when another parent is active or the work touches the same repository, files, or broad theme.
 - **CI remediation exception:** CI findings may be children only of the genuine user task attributed by the source commit's Task-ID trailer, as governed above. This attribution rule does not authorize ordinary user work to be nested under that task.
 - **Uncertain relationship:** compare objectives and criteria explicitly. If no genuine parent can be established without guesswork, leave parentage unassigned and ask at quiescence. Do not default to the current parent.
@@ -102,9 +102,9 @@ The Worker owns document governance and must apply this gate before creating, mo
 1. Identify the target path, document owner, and type.
 2. Read the current catalog entry in `.agent/skills/document-standards/references/document-type-catalog.md`. Match Markdown against the path-coverage register and structured records against the exact schema, processor, generator, and tests.
 3. Read the owner's instructions and retrieve the applicable canonical template, schema, or embedded contract and relevant tests **before modifying the target**. Never begin target edits before reading its template.
-4. If the format or coverage rule is missing, define it first. Place templates in the canonical owner assets directory. Update the catalog, owner index/workflow, and coverage rule. Use Reserved for a validated Markdown family with no current record, commit and read back the format setup first, then change Reserved to Active in the same commit that creates its first record. Use Active for existing families; Optional only for eligible generator-owned outputs.
+4. If the format or coverage rule is missing, define it first. Place templates in the canonical owner assets directory. Update the catalog, owner index/workflow, and coverage rule. Use Reserved for a validated Markdown family with no current record, commit and read back the format setup first, then change Reserved to Active in the same commit that creates its first record. Use Active for existing families. Optional only for eligible generator-owned outputs.
 5. Create or revise from the canonical format. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable, remove unused placeholders, and do not invent approvals or values. For existing documents, update the canonical format before migrating the target. Do not mass-migrate untouched history.
-6. Update indexes and cross-links. Check the target against its format, workflow, and writing/data standard. Read back every changed path and commit. Run structural validation only through authorized hosted workflows; do not run repository scripts locally.
+6. Update indexes and cross-links. Check the target against its format, workflow, and writing/data standard. Read back every changed path and commit. Run structural validation only through authorized hosted workflows. do not run repository scripts locally.
 7. For one-off or exempt documents, use a lightweight pattern and record the exemption when it affects maintenance. Do not force templates onto creative writing. Do not create a template when an embedded contract or generator already owns the format.
 
 ### Document-format classes
@@ -116,6 +116,6 @@ The Worker owns document governance and must apply this gate before creating, mo
 - **Lightweight pattern:** Use a small structure for a low-risk or one-off note.
 - **Exempt:** Preserve creative freedom or an external format.
 
-Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required; explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
+Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required. explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
-Catalog validator and tests remain supporting infrastructure under `.agent/skills/document-standards/`; they are assets, not a separately activated skill. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage; it does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+Catalog validator and tests remain supporting infrastructure under `.agent/skills/document-standards/`. they are assets, not a separately activated skill. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. it does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
