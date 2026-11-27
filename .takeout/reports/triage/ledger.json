@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.6.0",
-  "updated_at_utc": "2026-11-27T01:49:57Z",
+  "schema_version": "1.7.0",
+  "updated_at_utc": "2026-11-27T02:24:31Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -67,7 +67,10 @@
       "task_refs": [
         "20261126-090154"
       ],
-      "task_group": "ci-020528f498f632ac"
+      "task_group": "ci-020528f498f632ac",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-3637a5b727e634a0"
     },
     {
       "finding_id": "gha-f0819737f55322e2610a7544",
@@ -106,7 +109,10 @@
       "task_refs": [
         "20261126-090154"
       ],
-      "task_group": "ci-020528f498f632ac"
+      "task_group": "ci-020528f498f632ac",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-3637a5b727e634a0"
     },
     {
       "finding_id": "gha-7993fcb8b815dfeed2652722",
@@ -173,7 +179,10 @@
       "task_refs": [
         "20261126-090154"
       ],
-      "task_group": "ci-020528f498f632ac"
+      "task_group": "ci-020528f498f632ac",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-3637a5b727e634a0"
     },
     {
       "finding_id": "gha-2d60ec5e9828ec1309dc2013",
@@ -212,7 +221,10 @@
       "task_refs": [
         "20261126-090154"
       ],
-      "task_group": "ci-020528f498f632ac"
+      "task_group": "ci-020528f498f632ac",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-3637a5b727e634a0"
     },
     {
       "finding_id": "gha-f04b588b537a96b00c56b6ae",
@@ -241,7 +253,10 @@
       "task_refs": [
         "20261126-145133"
       ],
-      "task_group": "ci-f0a95a498ae3bd8a"
+      "task_group": "ci-f0a95a498ae3bd8a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-0051a9b5a5cff55f"
     },
     {
       "finding_id": "lint-3d753fd2c4828ff430fdb6c2",
@@ -277,7 +292,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-0642057a58aa1965274b9762",
@@ -320,7 +338,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-f331458e480ad4445c592130",
@@ -370,7 +391,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-869c8495109dea6f34af871c",
@@ -413,7 +437,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-0d416a176834b9a3c1481769",
@@ -456,7 +483,10 @@
       "task_refs": [
         "20261126-170259-02"
       ],
-      "task_group": "ci-7b9ecf332f1a5c6d"
+      "task_group": "ci-7b9ecf332f1a5c6d",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-c165f6e8824400b2723a92ab",
@@ -492,7 +522,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-0ee5ca333d00a4f63756c25b",
@@ -535,7 +568,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-96c00d0b1528652722c7e2e3",
@@ -578,7 +614,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-3a2d463bad961d4a2f26d082",
@@ -621,7 +660,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-6a75e8e708a43c0d36cdde23",
@@ -664,7 +706,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-421ce0d953be11182d9e810a",
@@ -707,7 +752,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-6937ea80a6afca82e7f414d5",
@@ -750,7 +798,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-2e0dfecf96eeb4735f44ac24",
@@ -793,7 +844,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-f8411801c3d8953cd8c2acbe",
@@ -829,7 +883,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-a0bfc1f95f604fc3f864783e",
@@ -865,7 +922,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-0da19e7aab04deb7911a62a5",
@@ -901,7 +961,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-fa6c012aa723a1be302eb24c",
@@ -937,7 +1000,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-4d9fcdb8f2b29ee7904ba6a4",
@@ -973,7 +1039,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-87a065e710f1792ecf1034fc",
@@ -1016,7 +1085,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-051c97c1441fc96df828d5f6",
@@ -1052,7 +1124,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-6f3d1a1473ce547dba606827",
@@ -1095,7 +1170,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-494f747b32f0b27099114e91",
@@ -1138,7 +1216,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-0dc1b5fa54679407d060b44e",
@@ -1177,7 +1258,10 @@
       "task_refs": [
         "20261126-170259-03"
       ],
-      "task_group": "ci-fc198b531d856964"
+      "task_group": "ci-fc198b531d856964",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-6d4df52d9a6f40d7fd4657d2",
@@ -1220,7 +1304,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-ca82b6e19a6f4ef4347ae654",
@@ -1263,7 +1350,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-6b4576cd5b0f0b9ac4699130",
@@ -1299,7 +1389,10 @@
       "task_refs": [
         "20261126-170259-01"
       ],
-      "task_group": "ci-4d6f166cf391fc16"
+      "task_group": "ci-4d6f166cf391fc16",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-3f34a81299a3d18ae26e4279",
@@ -1342,7 +1435,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-c71ff84334a10d7dd38255c9",
@@ -1378,7 +1474,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-d2ff8094ef84d15b57e688d1",
@@ -1407,7 +1506,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-a5b303c3291ad245c6135b6c",
@@ -1436,7 +1538,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-8647e8d8e7c0939979ecdb3d",
@@ -1493,7 +1598,10 @@
       "task_refs": [
         "20261127-013151"
       ],
-      "task_group": "ci-5659fdc8fa91a17c"
+      "task_group": "ci-5659fdc8fa91a17c",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-16e209ae50310c87"
     },
     {
       "finding_id": "lint-857e0d2fef3568ba9dff44ac",
@@ -1550,7 +1658,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-bca5f43ed3545a47de04d134",
@@ -1607,7 +1718,10 @@
       "task_refs": [
         "20261127-013151-02"
       ],
-      "task_group": "ci-9d7a16162351a43b"
+      "task_group": "ci-9d7a16162351a43b",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-563af8dd74cf1ba4bd074708",
@@ -1643,7 +1757,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-d12eb5aac33ab414d203a6d5",
@@ -1700,7 +1817,10 @@
       "task_refs": [
         "20261127-013151-02"
       ],
-      "task_group": "ci-9d7a16162351a43b"
+      "task_group": "ci-9d7a16162351a43b",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-e65e3922aa38293af2adc5e0",
@@ -1729,7 +1849,10 @@
       "task_refs": [
         "20261126-170259"
       ],
-      "task_group": "ci-028a93f7d5bcbb2a"
+      "task_group": "ci-028a93f7d5bcbb2a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e01815da2c2f7f4e"
     },
     {
       "finding_id": "lint-e1589b5207c7991dd0eac000",
@@ -1758,7 +1881,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-5524d0b44a548a67e3636a68",
@@ -1787,7 +1913,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-b1e35b2851bbde31553d9cfc",
@@ -1816,7 +1945,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-d04c76628166e8796dcfc446",
@@ -1845,7 +1977,10 @@
       "task_refs": [
         "20261127-013151-03"
       ],
-      "task_group": "ci-72bec6c4d1d3df9e"
+      "task_group": "ci-72bec6c4d1d3df9e",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-c9f0d9a4ac52efda5b4f9aea",
@@ -1902,7 +2037,10 @@
       "task_refs": [
         "20261127-013151-04"
       ],
-      "task_group": "ci-2e6e55c5823c1856"
+      "task_group": "ci-2e6e55c5823c1856",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-15a39e78d06fa29daf65aba3",
@@ -1931,7 +2069,10 @@
       "task_refs": [
         "20261127-013151-03"
       ],
-      "task_group": "ci-72bec6c4d1d3df9e"
+      "task_group": "ci-72bec6c4d1d3df9e",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-ce5c879312639d5e4a37c1f2",
@@ -1988,7 +2129,10 @@
       "task_refs": [
         "20261127-013151-05"
       ],
-      "task_group": "ci-852a3502279b4624"
+      "task_group": "ci-852a3502279b4624",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-5ef6ce13baf5600a1694be8b",
@@ -2045,7 +2189,10 @@
       "task_refs": [
         "20261127-013151-05"
       ],
-      "task_group": "ci-852a3502279b4624"
+      "task_group": "ci-852a3502279b4624",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-e8019ef8bf6c31ab6be19a58",
@@ -2102,7 +2249,10 @@
       "task_refs": [
         "20261127-013151-06"
       ],
-      "task_group": "ci-a10e84aebccdceac"
+      "task_group": "ci-a10e84aebccdceac",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-cffdf948bb88f727bace9878",
@@ -2159,7 +2309,10 @@
       "task_refs": [
         "20261127-013151-07"
       ],
-      "task_group": "ci-5991cb56f6047563"
+      "task_group": "ci-5991cb56f6047563",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-c6e235b6dc722173c0472c52",
@@ -2202,7 +2355,10 @@
       "task_refs": [
         "20261127-013151-05"
       ],
-      "task_group": "ci-852a3502279b4624"
+      "task_group": "ci-852a3502279b4624",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-5bc051350b900cffa5093b16",
@@ -2245,7 +2401,10 @@
       "task_refs": [
         "20261127-013151-08"
       ],
-      "task_group": "ci-46b1082d5f924607"
+      "task_group": "ci-46b1082d5f924607",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-c154d25ce626bcc916fa24de",
@@ -2302,7 +2461,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-4baec72a55fa29cd2e674673",
@@ -2359,7 +2521,10 @@
       "task_refs": [
         "20261127-013151-08"
       ],
-      "task_group": "ci-46b1082d5f924607"
+      "task_group": "ci-46b1082d5f924607",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-37b04b4859601e36ccef7b3a",
@@ -2416,7 +2581,10 @@
       "task_refs": [
         "20261127-013151-09"
       ],
-      "task_group": "ci-2bf45872b5cb47c9"
+      "task_group": "ci-2bf45872b5cb47c9",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-585f1dd2fc6ade752cecb1db",
@@ -2473,7 +2641,10 @@
       "task_refs": [
         "20261127-013151-07"
       ],
-      "task_group": "ci-5991cb56f6047563"
+      "task_group": "ci-5991cb56f6047563",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-069c795a0a52ebd5721e8aa1",
@@ -2530,7 +2701,10 @@
       "task_refs": [
         "20261127-013151-08"
       ],
-      "task_group": "ci-46b1082d5f924607"
+      "task_group": "ci-46b1082d5f924607",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-da3efccaf70f209c43bc39f7",
@@ -2573,7 +2747,10 @@
       "task_refs": [
         "20261127-013151-07"
       ],
-      "task_group": "ci-5991cb56f6047563"
+      "task_group": "ci-5991cb56f6047563",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-ef1c126313fcc76c2583dac7",
@@ -2630,7 +2807,10 @@
       "task_refs": [
         "20261127-013151-07"
       ],
-      "task_group": "ci-5991cb56f6047563"
+      "task_group": "ci-5991cb56f6047563",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-cd7ba366b1a6c942aa7fd8b1",
@@ -2687,7 +2867,10 @@
       "task_refs": [
         "20261127-013151-05"
       ],
-      "task_group": "ci-852a3502279b4624"
+      "task_group": "ci-852a3502279b4624",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-82d53272cc36ef4ea58a00e3",
@@ -2744,7 +2927,10 @@
       "task_refs": [
         "20261127-013151-07"
       ],
-      "task_group": "ci-5991cb56f6047563"
+      "task_group": "ci-5991cb56f6047563",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-7f75534bb1aa53c4310430aa",
@@ -2801,7 +2987,10 @@
       "task_refs": [
         "20261127-013151-07"
       ],
-      "task_group": "ci-5991cb56f6047563"
+      "task_group": "ci-5991cb56f6047563",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-ca1db01f7b11a29a176a2e86",
@@ -2844,7 +3033,10 @@
       "task_refs": [
         "20261127-013151-02"
       ],
-      "task_group": "ci-9d7a16162351a43b"
+      "task_group": "ci-9d7a16162351a43b",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-a68d4b2091de8244b08b0984",
@@ -2880,7 +3072,10 @@
       "task_refs": [
         "20261127-013151-10"
       ],
-      "task_group": "ci-ee19cfddcffb2815"
+      "task_group": "ci-ee19cfddcffb2815",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-99bdc1d6ee8fd232"
     },
     {
       "finding_id": "lint-cc8f76f7786acf5d8492b443",
@@ -2916,7 +3111,10 @@
       "task_refs": [
         "20261127-013151-11"
       ],
-      "task_group": "ci-a16985fc36d0cdf8"
+      "task_group": "ci-a16985fc36d0cdf8",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-99bdc1d6ee8fd232"
     },
     {
       "finding_id": "lint-18db183bae30a8739132c97b",
@@ -2952,7 +3150,10 @@
       "task_refs": [
         "20261127-013151-12"
       ],
-      "task_group": "ci-58b2770aa3d39469"
+      "task_group": "ci-58b2770aa3d39469",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-99bdc1d6ee8fd232"
     },
     {
       "finding_id": "lint-0bd04eaf142f6db0f46ab9bd",
@@ -2988,7 +3189,10 @@
       "task_refs": [
         "20261127-013151-11"
       ],
-      "task_group": "ci-a16985fc36d0cdf8"
+      "task_group": "ci-a16985fc36d0cdf8",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-99bdc1d6ee8fd232"
     },
     {
       "finding_id": "lint-7e401b80fb2469d88b8b16c6",
@@ -3024,7 +3228,10 @@
       "task_refs": [
         "20261127-013151-13"
       ],
-      "task_group": "ci-fdf6b5d1123ee5c9"
+      "task_group": "ci-fdf6b5d1123ee5c9",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-65e01e8ee980bec2c691cd07",
@@ -3060,7 +3267,10 @@
       "task_refs": [
         "20261127-013151-14"
       ],
-      "task_group": "ci-7a1433ef5a2f6f00"
+      "task_group": "ci-7a1433ef5a2f6f00",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-0934ec0e9cbf6427170b249c",
@@ -3096,7 +3306,10 @@
       "task_refs": [
         "20261127-013151-15"
       ],
-      "task_group": "ci-32fca53843526034"
+      "task_group": "ci-32fca53843526034",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-6df4df8dd70ff7a6b7fcd357",
@@ -3132,7 +3345,10 @@
       "task_refs": [
         "20261127-013151-14"
       ],
-      "task_group": "ci-7a1433ef5a2f6f00"
+      "task_group": "ci-7a1433ef5a2f6f00",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-8e21e03238dfdcddd1f2d77d",
@@ -3168,7 +3384,10 @@
       "task_refs": [
         "20261127-013151-14"
       ],
-      "task_group": "ci-7a1433ef5a2f6f00"
+      "task_group": "ci-7a1433ef5a2f6f00",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-89880d1a1650656e6b26d226",
@@ -3204,7 +3423,10 @@
       "task_refs": [
         "20261127-013151-13"
       ],
-      "task_group": "ci-fdf6b5d1123ee5c9"
+      "task_group": "ci-fdf6b5d1123ee5c9",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-85322c6fe1ce661af2777338",
@@ -3240,7 +3462,10 @@
       "task_refs": [
         "20261127-013151-16"
       ],
-      "task_group": "ci-bf0aaa28d344e1b2"
+      "task_group": "ci-bf0aaa28d344e1b2",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-7c9bb193d72e7abcbed9fe07",
@@ -3276,7 +3501,10 @@
       "task_refs": [
         "20261127-013151-15"
       ],
-      "task_group": "ci-32fca53843526034"
+      "task_group": "ci-32fca53843526034",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-680438813b21edc564ef265e",
@@ -3333,7 +3561,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-e25170de63660ceb2bb6b239",
@@ -3362,7 +3593,10 @@
       "task_refs": [
         "20261127-013151-17"
       ],
-      "task_group": "ci-206eea75f3a12bfd"
+      "task_group": "ci-206eea75f3a12bfd",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-0f6a0a839cf9723f76ad08cf",
@@ -3419,7 +3653,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-c6700813c1ef8a45b5212e0b",
@@ -3476,7 +3713,10 @@
       "task_refs": [
         "20261127-013151-19"
       ],
-      "task_group": "ci-d51257d755305965"
+      "task_group": "ci-d51257d755305965",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-bbd8f7f08837e2060f7f4d03",
@@ -3533,7 +3773,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-120777a1feeba73d7b56cd81",
@@ -3562,7 +3805,10 @@
       "task_refs": [
         "20261127-013151-19"
       ],
-      "task_group": "ci-d51257d755305965"
+      "task_group": "ci-d51257d755305965",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-a9bf21d3ce104680e2d861b6",
@@ -3591,7 +3837,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-1129812f092e8f4918e212e2",
@@ -3620,7 +3869,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-4b1b6661164047c147b88a63",
@@ -3677,7 +3929,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-e33864bf535bd38a67ecac68",
@@ -3734,7 +3989,10 @@
       "task_refs": [
         "20261127-013151-17"
       ],
-      "task_group": "ci-206eea75f3a12bfd"
+      "task_group": "ci-206eea75f3a12bfd",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-489f962a46e94a58519c7e2a",
@@ -3763,7 +4021,10 @@
       "task_refs": [
         "20261127-013151-19"
       ],
-      "task_group": "ci-d51257d755305965"
+      "task_group": "ci-d51257d755305965",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-0d79d452758ac898f00007d1",
@@ -3792,7 +4053,10 @@
       "task_refs": [
         "20261127-013151-11"
       ],
-      "task_group": "ci-a16985fc36d0cdf8"
+      "task_group": "ci-a16985fc36d0cdf8",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-99bdc1d6ee8fd232"
     },
     {
       "finding_id": "lint-33a3f9c5452d51f7c5c89fda",
@@ -3821,7 +4085,10 @@
       "task_refs": [
         "20261127-013151-12"
       ],
-      "task_group": "ci-58b2770aa3d39469"
+      "task_group": "ci-58b2770aa3d39469",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-99bdc1d6ee8fd232"
     },
     {
       "finding_id": "lint-88ebd6db25291d630f2b140f",
@@ -3850,7 +4117,10 @@
       "task_refs": [
         "20261127-013151-20"
       ],
-      "task_group": "ci-04b2ffcb77f32772"
+      "task_group": "ci-04b2ffcb77f32772",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-99bdc1d6ee8fd232"
     },
     {
       "finding_id": "lint-77f3c453c24559d624144da4",
@@ -3879,7 +4149,10 @@
       "task_refs": [
         "20261127-013151-15"
       ],
-      "task_group": "ci-32fca53843526034"
+      "task_group": "ci-32fca53843526034",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-f17a4a727fe8e547"
     },
     {
       "finding_id": "lint-952a5f851897b7d21a178421",
@@ -3936,7 +4209,10 @@
       "task_refs": [
         "20261127-013151-03"
       ],
-      "task_group": "ci-72bec6c4d1d3df9e"
+      "task_group": "ci-72bec6c4d1d3df9e",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-d6fb83cbafb61644c729d606",
@@ -3965,7 +4241,10 @@
       "task_refs": [
         "20261127-013151-21"
       ],
-      "task_group": "ci-d540b06a72ede2b1"
+      "task_group": "ci-d540b06a72ede2b1",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-7b11bbeb7d4a010ad6e77377",
@@ -3994,7 +4273,10 @@
       "task_refs": [
         "20261127-013151-22"
       ],
-      "task_group": "ci-d4aa932754ef4f93"
+      "task_group": "ci-d4aa932754ef4f93",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-50194bcb1c09593a6b8df74f",
@@ -4023,7 +4305,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-51c26b485146b0f7ad913711",
@@ -4052,7 +4337,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-01c59b00a54bee35fe1936cf",
@@ -4081,7 +4369,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-13168d32e5aeb357a6f05047",
@@ -4110,7 +4401,10 @@
       "task_refs": [
         "20261127-013151-24"
       ],
-      "task_group": "ci-3d8e36fabc7fde35"
+      "task_group": "ci-3d8e36fabc7fde35",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-2d62a35466a8134401aac697",
@@ -4139,7 +4433,10 @@
       "task_refs": [
         "20261127-013151-24"
       ],
-      "task_group": "ci-3d8e36fabc7fde35"
+      "task_group": "ci-3d8e36fabc7fde35",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-2deb4746f57db62d7bedde8b",
@@ -4168,7 +4465,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-a49119a4bb942d7711bad4ec",
@@ -4197,7 +4497,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-3ca196dd83b56964e6c9c511",
@@ -4226,7 +4529,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-4012e882a41727aa31e45e80",
@@ -4255,7 +4561,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-8b93e6445dd13d5345069497",
@@ -4284,7 +4593,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-b8c8647d519418bedc546521",
@@ -4313,7 +4625,10 @@
       "task_refs": [
         "20261127-013151-24"
       ],
-      "task_group": "ci-3d8e36fabc7fde35"
+      "task_group": "ci-3d8e36fabc7fde35",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-f70f53510f186a20aefa39a5",
@@ -4342,7 +4657,10 @@
       "task_refs": [
         "20261127-013151-24"
       ],
-      "task_group": "ci-3d8e36fabc7fde35"
+      "task_group": "ci-3d8e36fabc7fde35",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-9c5f95ce73981d93b428a229",
@@ -4371,7 +4689,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-d3280be9a8e338d6afc3f804",
@@ -4400,7 +4721,10 @@
       "task_refs": [
         "20261127-013151-23"
       ],
-      "task_group": "ci-fec522450a3c4807"
+      "task_group": "ci-fec522450a3c4807",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-1c9052e7a4fa8f81"
     },
     {
       "finding_id": "lint-bcc3f5cbc1b36a79fcfd3820",
@@ -4443,7 +4767,10 @@
       "task_refs": [
         "20261127-013151-25"
       ],
-      "task_group": "ci-fbcd929376672335"
+      "task_group": "ci-fbcd929376672335",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-5dbe85a2d279c9e37746c54f",
@@ -4486,7 +4813,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-6632b8c3a3e24051ebb4fe6f",
@@ -4529,7 +4859,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-d80b27d8af07a4cd2dd2c3f5",
@@ -4572,7 +4905,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-c97e767cb9843ded52e4fede",
@@ -4615,7 +4951,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-555b7d1b34070e0fcefba6fe",
@@ -4658,7 +4997,10 @@
       "task_refs": [
         "20261127-013151-25"
       ],
-      "task_group": "ci-fbcd929376672335"
+      "task_group": "ci-fbcd929376672335",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-d6b185b2e5bb512468c2157a",
@@ -4701,7 +5043,10 @@
       "task_refs": [
         "20261127-013151-27"
       ],
-      "task_group": "ci-d041440c7e52347d"
+      "task_group": "ci-d041440c7e52347d",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-ed24b1a0740d9d55206dc200",
@@ -4744,7 +5089,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-a3aa8b746f180874d9b3c9c4",
@@ -4787,7 +5135,10 @@
       "task_refs": [
         "20261127-013151-25"
       ],
-      "task_group": "ci-fbcd929376672335"
+      "task_group": "ci-fbcd929376672335",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-d3a49d96b2c17affd57ea894",
@@ -4830,7 +5181,10 @@
       "task_refs": [
         "20261127-013151-28"
       ],
-      "task_group": "ci-93a6f11f59d61102"
+      "task_group": "ci-93a6f11f59d61102",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-3f04a05c2e4ffc9df9aecbe0",
@@ -4873,7 +5227,10 @@
       "task_refs": [
         "20261127-013151-27"
       ],
-      "task_group": "ci-d041440c7e52347d"
+      "task_group": "ci-d041440c7e52347d",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-50fd0f89e13b2fbf3704e92e",
@@ -4916,7 +5273,10 @@
       "task_refs": [
         "20261127-013151-29"
       ],
-      "task_group": "ci-c25ec2348a01a3dc"
+      "task_group": "ci-c25ec2348a01a3dc",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-8fa75e6dbb443176cb11ae03",
@@ -4959,7 +5319,10 @@
       "task_refs": [
         "20261127-013151-27"
       ],
-      "task_group": "ci-d041440c7e52347d"
+      "task_group": "ci-d041440c7e52347d",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-9a037c3dfb0b87b2416b2d6c",
@@ -5002,7 +5365,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-5cb4751a6d7a706b68f12c4a",
@@ -5045,7 +5411,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-c754123627116ff089527886",
@@ -5088,7 +5457,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-4a013c458f338e21fc2cb2ad",
@@ -5131,7 +5503,10 @@
       "task_refs": [
         "20261127-013151-27"
       ],
-      "task_group": "ci-d041440c7e52347d"
+      "task_group": "ci-d041440c7e52347d",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-210e1b3c071a67505270f98d",
@@ -5174,7 +5549,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-079f0a3110d4ec8aa2d4cea4",
@@ -5217,7 +5595,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-2c2fa3d2f02ff411b4f673be",
@@ -5260,7 +5641,10 @@
       "task_refs": [
         "20261127-013151-25"
       ],
-      "task_group": "ci-fbcd929376672335"
+      "task_group": "ci-fbcd929376672335",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-85d93bf35bb8290fcf54a490",
@@ -5303,7 +5687,10 @@
       "task_refs": [
         "20261127-013151-25"
       ],
-      "task_group": "ci-fbcd929376672335"
+      "task_group": "ci-fbcd929376672335",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-7d8eca9780cbf3a0caf3f001",
@@ -5346,7 +5733,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-f32969cb9983abe468ae91b0",
@@ -5389,7 +5779,10 @@
       "task_refs": [
         "20261127-013151-29"
       ],
-      "task_group": "ci-c25ec2348a01a3dc"
+      "task_group": "ci-c25ec2348a01a3dc",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-752674fcbab77386e46ebff5",
@@ -5432,7 +5825,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-7de773ca6e62e73114f05039",
@@ -5475,7 +5871,10 @@
       "task_refs": [
         "20261127-013151-29"
       ],
-      "task_group": "ci-c25ec2348a01a3dc"
+      "task_group": "ci-c25ec2348a01a3dc",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-ca93e4f6775c5cf5cea3ffee",
@@ -5518,7 +5917,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-e6bb5b60b326834b61ea7abc",
@@ -5561,7 +5963,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-996bb414e149d2389d660cfc",
@@ -5604,7 +6009,10 @@
       "task_refs": [
         "20261127-013151-25"
       ],
-      "task_group": "ci-fbcd929376672335"
+      "task_group": "ci-fbcd929376672335",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-8c15dd97dc803e7c655de541",
@@ -5647,7 +6055,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-2cdbf09aa94c3b46ae7d0d99",
@@ -5690,7 +6101,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-f55ef373734a566dd63dd73d",
@@ -5733,7 +6147,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-2d4b741072c9fe1d5df25429",
@@ -5776,7 +6193,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-a3ff8de2308d17a5e1829153",
@@ -5819,7 +6239,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-553855d05070d56a49f81ab7",
@@ -5862,7 +6285,10 @@
       "task_refs": [
         "20261127-013151-25"
       ],
-      "task_group": "ci-fbcd929376672335"
+      "task_group": "ci-fbcd929376672335",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-528486d396f1e1c4cf4fc4df",
@@ -5905,7 +6331,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-f1894d8d369e16bd231840cc",
@@ -5948,7 +6377,10 @@
       "task_refs": [
         "20261127-013151-29"
       ],
-      "task_group": "ci-c25ec2348a01a3dc"
+      "task_group": "ci-c25ec2348a01a3dc",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-23ba89c188bd721485225ac0",
@@ -5991,7 +6423,10 @@
       "task_refs": [
         "20261127-013151-30"
       ],
-      "task_group": "ci-8a73649b176678d5"
+      "task_group": "ci-8a73649b176678d5",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-71fd369fd4ce87f3145d3f61",
@@ -6034,7 +6469,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-235b8a3528fa8a066c7b86a4",
@@ -6077,7 +6515,10 @@
       "task_refs": [
         "20261127-013151-32"
       ],
-      "task_group": "ci-40216cede5e43e87"
+      "task_group": "ci-40216cede5e43e87",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-0b78e160768da5f8fc81245e",
@@ -6120,7 +6561,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-f344f235da524619c5f3958e",
@@ -6163,7 +6607,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-b6f783768f9aa08d96bf979c",
@@ -6206,7 +6653,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-9997ef7899ffcdb243897741",
@@ -6249,7 +6699,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-8d237e4d80507b6e1ceceb31",
@@ -6292,7 +6745,10 @@
       "task_refs": [
         "20261127-013151-30"
       ],
-      "task_group": "ci-8a73649b176678d5"
+      "task_group": "ci-8a73649b176678d5",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-b29e4df2ee98e11a4663446d",
@@ -6335,7 +6791,10 @@
       "task_refs": [
         "20261127-013151-30"
       ],
-      "task_group": "ci-8a73649b176678d5"
+      "task_group": "ci-8a73649b176678d5",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-9943dcb3a220dcbe0a08ff17",
@@ -6378,7 +6837,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-3d99cf816793019bd73c4f70",
@@ -6421,7 +6883,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-6ecaad7e08b08c8dc23c4ac5",
@@ -6464,7 +6929,10 @@
       "task_refs": [
         "20261127-013151-33"
       ],
-      "task_group": "ci-58850f244ec87197"
+      "task_group": "ci-58850f244ec87197",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-d88c984bfabc22fedfc1df95",
@@ -6507,7 +6975,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-6a157062d0e778513b660642",
@@ -6550,7 +7021,10 @@
       "task_refs": [
         "20261127-013151-34"
       ],
-      "task_group": "ci-e9ea5614f5298964"
+      "task_group": "ci-e9ea5614f5298964",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-579e397c39954135265f1d98",
@@ -6593,7 +7067,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-911fad1e156f4210f836f36c",
@@ -6636,7 +7113,10 @@
       "task_refs": [
         "20261127-013151-30"
       ],
-      "task_group": "ci-8a73649b176678d5"
+      "task_group": "ci-8a73649b176678d5",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-14114c25a67a248bad384f1b",
@@ -6679,7 +7159,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-e9365b9cbb59d135219ec64e",
@@ -6722,7 +7205,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-8529e180856bf3676ae3fab0",
@@ -6765,7 +7251,10 @@
       "task_refs": [
         "20261127-013151-30"
       ],
-      "task_group": "ci-8a73649b176678d5"
+      "task_group": "ci-8a73649b176678d5",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-13f3933d006440387035088b",
@@ -6808,7 +7297,10 @@
       "task_refs": [
         "20261127-013151-30"
       ],
-      "task_group": "ci-8a73649b176678d5"
+      "task_group": "ci-8a73649b176678d5",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-3d2b37a88e8f61e65de9b8fa",
@@ -6851,7 +7343,10 @@
       "task_refs": [
         "20261127-013151-30"
       ],
-      "task_group": "ci-8a73649b176678d5"
+      "task_group": "ci-8a73649b176678d5",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-1667b4bb6e8771c9446dd6e3",
@@ -6894,7 +7389,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-94d4b6dd593fe428491082fb",
@@ -6937,7 +7435,10 @@
       "task_refs": [
         "20261127-013151-33"
       ],
-      "task_group": "ci-58850f244ec87197"
+      "task_group": "ci-58850f244ec87197",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-dbe769c0dba8d9167f6f8147",
@@ -6980,7 +7481,10 @@
       "task_refs": [
         "20261127-013151-33"
       ],
-      "task_group": "ci-58850f244ec87197"
+      "task_group": "ci-58850f244ec87197",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-5f28eccd4c78ef590e0860cb",
@@ -7009,7 +7513,10 @@
       "task_refs": [
         "20261127-013151-25"
       ],
-      "task_group": "ci-fbcd929376672335"
+      "task_group": "ci-fbcd929376672335",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-5d319d6cb73d5677e0792bac",
@@ -7038,7 +7545,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-9353e734a04d139bb1c54709",
@@ -7067,7 +7577,10 @@
       "task_refs": [
         "20261127-013151-26"
       ],
-      "task_group": "ci-86fbf39c32077068"
+      "task_group": "ci-86fbf39c32077068",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-96a83232823f7370"
     },
     {
       "finding_id": "lint-0927b4ce823c0e0c8d5570fa",
@@ -7103,7 +7616,10 @@
       "task_refs": [
         "20261127-013151-35"
       ],
-      "task_group": "ci-d5c947489f0d1b67"
+      "task_group": "ci-d5c947489f0d1b67",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e2022fdfbd20fc06"
     },
     {
       "finding_id": "lint-388932780643d2141e1a4492",
@@ -7132,7 +7648,10 @@
       "task_refs": [
         "20261127-013151-36"
       ],
-      "task_group": "ci-408b51e71141d6f6"
+      "task_group": "ci-408b51e71141d6f6",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-244534faafc07c69"
     },
     {
       "finding_id": "lint-95b3ae27d255dd6d3908c02c",
@@ -7168,7 +7687,10 @@
       "task_refs": [
         "20261127-013151-30"
       ],
-      "task_group": "ci-8a73649b176678d5"
+      "task_group": "ci-8a73649b176678d5",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-e9a8ebb703f48aa4c6b3f8f5",
@@ -7204,7 +7726,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-87531091dab5fb40e4c2d4ea",
@@ -7240,7 +7765,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-dfff58b82bd3b79192dfa4bf",
@@ -7276,7 +7804,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-298a9b83f5adba5f46527b78",
@@ -7312,7 +7843,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-0ed0ae36b993057bc70765a0",
@@ -7348,7 +7882,10 @@
       "task_refs": [
         "20261127-013151-33"
       ],
-      "task_group": "ci-58850f244ec87197"
+      "task_group": "ci-58850f244ec87197",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-f85e8d2b3bb15312e48006c0",
@@ -7384,7 +7921,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-3c01363d8fccb6632309a933",
@@ -7420,7 +7960,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-0a8fdd51c323d7e6c5184e93",
@@ -7456,7 +7999,10 @@
       "task_refs": [
         "20261127-013151-31"
       ],
-      "task_group": "ci-6cc94b37b5790dba"
+      "task_group": "ci-6cc94b37b5790dba",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-de92bd816462c66ade721476",
@@ -7492,7 +8038,10 @@
       "task_refs": [
         "20261127-013151-33"
       ],
-      "task_group": "ci-58850f244ec87197"
+      "task_group": "ci-58850f244ec87197",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-55c612e336ddbaa5"
     },
     {
       "finding_id": "lint-449e093455ce762981bcb545",
@@ -7521,7 +8070,10 @@
       "task_refs": [
         "20261127-013151-37"
       ],
-      "task_group": "ci-7556d1c46cdc6168"
+      "task_group": "ci-7556d1c46cdc6168",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e2022fdfbd20fc06"
     },
     {
       "finding_id": "lint-tooling-2c26d8bc14fd4d4bbe314234",
@@ -7557,7 +8109,10 @@
       "task_refs": [
         "20261127-013151-38"
       ],
-      "task_group": "ci-ace4e198cb6445b7"
+      "task_group": "ci-ace4e198cb6445b7",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-c22cfa3d350aa1a7"
     },
     {
       "finding_id": "lint-de2e6ff859150e25d2ddbdf7",
@@ -7600,7 +8155,10 @@
       "task_refs": [
         "20261127-013151-05"
       ],
-      "task_group": "ci-852a3502279b4624"
+      "task_group": "ci-852a3502279b4624",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-ebe73caf7cb37aa94e730288",
@@ -7643,7 +8201,10 @@
       "task_refs": [
         "20261127-013151-05"
       ],
-      "task_group": "ci-852a3502279b4624"
+      "task_group": "ci-852a3502279b4624",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-70d702d2f48b407e4ddfc138",
@@ -7686,7 +8247,10 @@
       "task_refs": [
         "20261127-013151-05"
       ],
-      "task_group": "ci-852a3502279b4624"
+      "task_group": "ci-852a3502279b4624",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-0141c0cfbe133e92bf61057a",
@@ -7715,7 +8279,10 @@
       "task_refs": [
         "20261127-013151-39"
       ],
-      "task_group": "ci-66923e8434cd7e1f"
+      "task_group": "ci-66923e8434cd7e1f",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-16e209ae50310c87"
     },
     {
       "finding_id": "lint-2e2452378860adcb5f140771",
@@ -7744,7 +8311,10 @@
       "task_refs": [
         "20261127-013151-40"
       ],
-      "task_group": "ci-ec825d4d86907bf8"
+      "task_group": "ci-ec825d4d86907bf8",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-16e209ae50310c87"
     },
     {
       "finding_id": "lint-b21e8e6015efba9bf5396408",
@@ -7801,7 +8371,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-0ae22a9c140235350291bdfa",
@@ -7858,7 +8431,10 @@
       "task_refs": [
         "20261127-013151-41"
       ],
-      "task_group": "ci-efafc72e64463f6c"
+      "task_group": "ci-efafc72e64463f6c",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-5cf426c5bfea3e66e249b0eb",
@@ -7915,7 +8491,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-75a6091a01c4060c972ae09a",
@@ -7972,7 +8551,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-06781e91b8c02b9bfbcc5637",
@@ -8029,7 +8611,10 @@
       "task_refs": [
         "20261127-013151-19"
       ],
-      "task_group": "ci-d51257d755305965"
+      "task_group": "ci-d51257d755305965",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-b15b11ac85d2fcdf68c941a9",
@@ -8086,7 +8671,10 @@
       "task_refs": [
         "20261127-013151-19"
       ],
-      "task_group": "ci-d51257d755305965"
+      "task_group": "ci-d51257d755305965",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-e9e6a23d2f10dd7ba3a83f2d",
@@ -8143,7 +8731,10 @@
       "task_refs": [
         "20261127-013151-42"
       ],
-      "task_group": "ci-eaf22e630fa8b428"
+      "task_group": "ci-eaf22e630fa8b428",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-c1fc8e55e266407cd9fce7f0",
@@ -8200,7 +8791,10 @@
       "task_refs": [
         "20261127-013151-18"
       ],
-      "task_group": "ci-91fe436623d092ea"
+      "task_group": "ci-91fe436623d092ea",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-62caae9adf1fe0478e35b91e",
@@ -8250,7 +8844,10 @@
       "task_refs": [
         "20261127-013151-19"
       ],
-      "task_group": "ci-d51257d755305965"
+      "task_group": "ci-d51257d755305965",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-678ab67701d0d18a96087add",
@@ -8307,7 +8904,10 @@
       "task_refs": [
         "20261127-013151-02"
       ],
-      "task_group": "ci-9d7a16162351a43b"
+      "task_group": "ci-9d7a16162351a43b",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-2a95aa3417dfc57540b6934b",
@@ -8364,7 +8964,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-5136594700cf7f963a8796c4",
@@ -8421,7 +9024,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-b31436362c5e38fa10263166",
@@ -8478,7 +9084,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-59b99e3464ed064af8bfc971",
@@ -8535,7 +9144,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-ce2bd2aefd327fda5d21b1cd",
@@ -8592,7 +9204,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-30a5f5010d39a09d4d44c82a",
@@ -8649,7 +9264,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-0903f3b4306b2fc6c361a363",
@@ -8706,7 +9324,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-12a0c65c6ffb1f23bd33659b",
@@ -8763,7 +9384,10 @@
       "task_refs": [
         "20261127-013151-02"
       ],
-      "task_group": "ci-9d7a16162351a43b"
+      "task_group": "ci-9d7a16162351a43b",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-b7a2bc4c1fde83c1a7f84a08",
@@ -8820,7 +9444,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-f2c0edb97a4132169f97b4ea",
@@ -8877,7 +9504,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-1b18d543a8c344d3fcfffc26",
@@ -8934,7 +9564,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-6e2f9b805be9c08510010f85",
@@ -8991,7 +9624,10 @@
       "task_refs": [
         "20261127-013151-03"
       ],
-      "task_group": "ci-72bec6c4d1d3df9e"
+      "task_group": "ci-72bec6c4d1d3df9e",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-a67c2e85b92372da8a36a067",
@@ -9048,7 +9684,10 @@
       "task_refs": [
         "20261127-013151-01"
       ],
-      "task_group": "ci-3ce140e6800ecc9a"
+      "task_group": "ci-3ce140e6800ecc9a",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-52ba35678185966f3e495ffc",
@@ -9077,7 +9716,10 @@
       "task_refs": [
         "20261127-013151-43"
       ],
-      "task_group": "ci-c8106d6c6053ab98"
+      "task_group": "ci-c8106d6c6053ab98",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-734fd09a7bba3561"
     },
     {
       "finding_id": "lint-bdeb2ff1622490b994e19f76",
@@ -9106,7 +9748,10 @@
       "task_refs": [
         "20261127-013151-43"
       ],
-      "task_group": "ci-c8106d6c6053ab98"
+      "task_group": "ci-c8106d6c6053ab98",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-734fd09a7bba3561"
     },
     {
       "finding_id": "lint-66ac36e2cdb3db3683c0c8f2",
@@ -9135,7 +9780,10 @@
       "task_refs": [
         "20261127-013151-43"
       ],
-      "task_group": "ci-c8106d6c6053ab98"
+      "task_group": "ci-c8106d6c6053ab98",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-734fd09a7bba3561"
     },
     {
       "finding_id": "lint-bd41e95b24e62139f9055fb7",
@@ -9164,7 +9812,10 @@
       "task_refs": [
         "20261127-013151-43"
       ],
-      "task_group": "ci-c8106d6c6053ab98"
+      "task_group": "ci-c8106d6c6053ab98",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-734fd09a7bba3561"
     },
     {
       "finding_id": "lint-eb43c2017cbbb6f4ef69df3f",
@@ -9193,7 +9844,10 @@
       "task_refs": [
         "20261127-013151-43"
       ],
-      "task_group": "ci-c8106d6c6053ab98"
+      "task_group": "ci-c8106d6c6053ab98",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-734fd09a7bba3561"
     },
     {
       "finding_id": "lint-00ff55742e1a76adf05e8f19",
@@ -9229,7 +9883,10 @@
       "task_refs": [
         "20261127-013151-07"
       ],
-      "task_group": "ci-5991cb56f6047563"
+      "task_group": "ci-5991cb56f6047563",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e736b94d271eef98"
     },
     {
       "finding_id": "lint-e2e4500a529bb5cf3751722a",
@@ -9258,7 +9915,10 @@
       "task_refs": [
         "20261127-013151-44"
       ],
-      "task_group": "ci-c0a053e5e2ad23eb"
+      "task_group": "ci-c0a053e5e2ad23eb",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-e47f50ed85420281"
     },
     {
       "finding_id": "lint-fe0043dd1c2c55650b8f76ae",
@@ -9294,7 +9954,10 @@
       "task_refs": [
         "20261127-013646"
       ],
-      "task_group": "ci-7dfbd5dc4403acee"
+      "task_group": "ci-7dfbd5dc4403acee",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-16e209ae50310c87"
     },
     {
       "finding_id": "lint-3fef11eb6c41031d7263429e",
@@ -9330,7 +9993,10 @@
       "task_refs": [
         "20261127-013151-42"
       ],
-      "task_group": "ci-eaf22e630fa8b428"
+      "task_group": "ci-eaf22e630fa8b428",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     },
     {
       "finding_id": "lint-e749a89a221be9cabe94904f",
@@ -9359,7 +10025,10 @@
       "task_refs": [
         "20261127-013151-03"
       ],
-      "task_group": "ci-72bec6c4d1d3df9e"
+      "task_group": "ci-72bec6c4d1d3df9e",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-7d49af0ce94de93a"
     },
     {
       "finding_id": "lint-b22fc281e33d4abf19ef71ef",
@@ -9388,7 +10057,10 @@
       "task_refs": [
         "20261127-013151-19"
       ],
-      "task_group": "ci-d51257d755305965"
+      "task_group": "ci-d51257d755305965",
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "parent_group": "ci-6835b1ef0d75e5f9"
     }
   ],
   "ingestion_state": {
