@@ -1,0 +1,19 @@
+# The Worker assets
+
+Canonical copy-ready templates and supporting static formats owned by The Worker.
+
+| Asset | Purpose | Canonical consumer |
+|---|---|---|
+| [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Parent task record | `workspace/tasks/<task-id>/task.md` |
+| [SUBTASK_TEMPLATE.md](SUBTASK_TEMPLATE.md) | Child task record | `workspace/tasks/<parent>/subtasks/NN-*.md` |
+| [TASK_BOARD_TEMPLATE.md](TASK_BOARD_TEMPLATE.md) | Scheduler board structure | `workspace/task_board.md` |
+| [DISCUSSION_TEMPLATE.md](DISCUSSION_TEMPLATE.md) | Discussion register structure | `workspace/discussion.md` |
+| [ADR_TEMPLATE.md](ADR_TEMPLATE.md) | Accepted decision record | `workspace/adr/` |
+| [DRAFT_TEMPLATE.md](DRAFT_TEMPLATE.md) | Proposed decision record | `workspace/draft/` |
+| [ANALYSIS_TEMPLATE.md](ANALYSIS_TEMPLATE.md) | Repository analysis snapshot | `workspace/analysis/` |
+| [actions-report-template.md](actions-report-template.md) | Diagnostic report | Generated report family |
+| [session-brief-template.md](session-brief-template.md) | Session brief | Drawing session records |
+| [session-summary-template.md](session-summary-template.md) | Session closeout summary | Drawing session closeout |
+| [conversation-integrity-template.md](conversation-integrity-template.md) | Conversation integrity record | Conversation archive |
+
+Catalog and governance: [document-type-catalog.md](../references/document-type-catalog.md). Templates are static assets; scripts and explanatory reference documents remain in their respective directories.
