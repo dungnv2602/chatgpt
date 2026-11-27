@@ -83,6 +83,7 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261127-033729 | Improve .agent/skills/ci-ledger/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:24 UTC | [Archived task](../.archive/task/20261127-033729/task.md) | [0aeb9b8](https://github.com/dungnv2602/chatgpt/commit/0aeb9b8af16f0ae86a0478fc06f92d657f711281) |
 | 20261127-013151 | Review long-sentence findings in workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-013151/task.md) | [d35af42](https://github.com/dungnv2602/chatgpt/commit/d35af420de991a90b8d1ef2320e9e14aaec678fd) |
 | 20261127-013646 | Review synonym-rotation findings in workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-013646/task.md) | [d35af42](https://github.com/dungnv2602/chatgpt/commit/d35af420de991a90b8d1ef2320e9e14aaec678fd) |
 | 20261127-013151-39 | Review semicolon findings in workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-013151-39/task.md) | [d35af42](https://github.com/dungnv2602/chatgpt/commit/d35af420de991a90b8d1ef2320e9e14aaec678fd) |
