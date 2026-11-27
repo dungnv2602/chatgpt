@@ -207,7 +207,7 @@ CI review is task-scoped. Inspect the relevant workflow only in these cases:
 - The skill-authoring task changes validation or workflow configuration.
 - A known result directly blocks the task.
 
-Use `.takeout/reports/gh_ac_reports/` for workflow evidence and `.takeout/reports/lint_reports/` for lint findings. Track cross-family issues in `.takeout/reports/triage/ledger.json`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
+Use `.takeout/reports/` as the single CI evidence root. Read its `README.md`, `index.json`, and `ledger.json`; inspect canonical evidence under `history/`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
 
 The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 
