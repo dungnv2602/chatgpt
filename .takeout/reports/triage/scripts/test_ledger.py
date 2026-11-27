@@ -301,6 +301,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("- **Approval:** Pending — Worker review required", ci_text)
         self.assertIn("verified intended-branch commit", ci_text)
         self.assertIn("Hosted validation is separate metadata", ci_text)
+        self.assertIn("## 9. Hosted Validation\n\n- **Status:** Pending", ci_text)
         self.assertTrue((task_files[0].parent / "subtasks" / "README.md").is_file())
         index_text = (task_files[0].parent / "subtasks" / "README.md").read_text(encoding="utf-8")
         self.assertIn("Parent: [task.md](../task.md)", index_text)
