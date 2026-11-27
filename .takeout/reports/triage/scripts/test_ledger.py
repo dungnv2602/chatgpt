@@ -396,9 +396,10 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("one shared UTC archive timestamp", github_actions)
         self.assertIn("expire as a complete folder group", archive)
         self.assertIn("No active flat task notes remain", board)
-        self.assertNotIn("| workspace/tasks/*.md |", catalog)
-        self.assertIn("| workspace/tasks/*/subtasks/README.md |", catalog)
-        self.assertIn("| workspace/tasks/*/subtasks/[0-9][0-9]-*.md |", catalog)
+        tick = chr(96)
+        self.assertNotIn("| " + tick + "workspace/tasks/*.md" + tick + " |", catalog)
+        self.assertIn("| " + tick + "workspace/tasks/*/subtasks/README.md" + tick + " |", catalog)
+        self.assertIn("| " + tick + "workspace/tasks/*/subtasks/[0-9][0-9]-*.md" + tick + " |", catalog)
 
     def test_low_confidence_actions_findings_create_tasks(self):
         issue = {
