@@ -54,6 +54,8 @@ GitHub Actions publishes diagnostic evidence into the lint and Actions report fa
 
 The first complete tooling-valid full audit in each lint scope establishes a baseline without creating tasks. Later runs create tasks only for genuinely new actionable findings. Recurring untracked baseline findings do not flood the backlog. The Ledger retains at most five evidence paths per finding while preserving cumulative occurrence counts.
 
+The user's standing instruction makes CI-generated P0 remediation mandatory and execution-approved. The Worker checks whether an accepted ADR covers each finding. Link the accepted ADR before moving a task to Ready or In Progress. Keep the task Proposed while Governing ADR(s) is Pending. If no accepted ADR covers the work, prepare a Draft and wait for user approval and ADR acceptance. P0 does not bypass decision governance.
+
 A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
 
 The Worker marks a CI remediation subtask Done after committing its fix to the intended branch. The Worker checks the commit and records its SHA and summary. Hosted validation remains separate metadata. The Worker closes a parent only after every required subtask reaches Done. The Ledger retains terminal finding identities, resolution history, and prior task references after the Worker archives a task. A later observation can reopen the same finding and link new remediation. Do not delete terminal Ledger findings solely because the Worker archived a task.
