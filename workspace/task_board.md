@@ -10,13 +10,12 @@ This file is the single index for active and retained task records. Each active 
 
 ## Current Execution
 
-[20261127-033914-02 — Next P0 CI remediation](tasks/20261127-033914-02/task.md)
+[20261127-013646 — Next P0 CI remediation](tasks/20261127-013646/task.md)
 
 ## Ready — Mandatory CI P0
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-033914-02 | Improve workspace/SUBTASK\_TEMPLATE.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:39 UTC | [Task record](tasks/20261127-033914-02/task.md) |
 | 20261127-013646 | Review synonym-rotation findings in workspace/task\_board.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013646/task.md) |
 | 20261127-013151-42 | Review present-perfect findings in .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-42/task.md) |
 | 20261127-013151-41 | Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-41/task.md) |
@@ -88,6 +87,7 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261127-033914-02 | Improve workspace/SUBTASK\_TEMPLATE.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:18 UTC | [Archived task](../.archive/task/20261127-033914-02/task.md) | [f35425c](https://github.com/dungnv2602/chatgpt/commit/f35425c74f1077a8929f0b688a074864b2bc1988) |
 | 20261127-023803 | Improve .agent/skills/the-worker/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:16 UTC | [Archived task](../.archive/task/20261127-023803/task.md) | [16b0d66](https://github.com/dungnv2602/chatgpt/commit/16b0d66b991c1647042445ab4b59df00a416e244) |
 | 20261127-033914 | Improve .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-033914/task.md) | [6bef9e8](https://github.com/dungnv2602/chatgpt/commit/6bef9e8d5d730f412b131aa653754fce50e0f398) |
 | 20261127-033914-01 | Improve workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-033914-01/task.md) | [7fbb27c](https://github.com/dungnv2602/chatgpt/commit/7fbb27cea4c9e8d8a5e69788e192615363310650) |
