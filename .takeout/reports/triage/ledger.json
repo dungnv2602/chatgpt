@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T09:53:40Z",
+  "updated_at_utc": "2026-11-27T10:12:55Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -11802,8 +11802,8 @@
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-26T23:36:16.808147+00:00",
-      "last_seen_utc": "2026-11-27T09:47:09.597146+00:00",
-      "occurrence_count": 12,
+      "last_seen_utc": "2026-11-27T10:12:36.665960+00:00",
+      "occurrence_count": 13,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45911866106-attempt-1/report.json",
@@ -11815,17 +11815,6 @@
           "parent_task_id": null,
           "attribution_status": "historical_unattributed",
           "source_commit_sha": null
-        },
-        {
-          "report_path": ".takeout/reports/lint_reports/on_changed/history/45967546887-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45967546887",
-          "observed_at_utc": "2026-11-27T08:42:10.894767+00:00",
-          "note": "on_changed · Markdown links and heading anchors",
-          "observation_id": "lint_tooling:45967546887:1",
-          "source_task_id": null,
-          "parent_task_id": null,
-          "attribution_status": "missing_marker",
-          "source_commit_sha": "7fd5385e0be58b1b86f105e1c9dd8f214021d677"
         },
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45968726096-attempt-1/report.json",
@@ -11859,6 +11848,17 @@
           "parent_task_id": "20261126-142500",
           "attribution_status": "linked",
           "source_commit_sha": "a402ee053a69da401090aec406d88919ddbabc0e"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45979960470-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45979960470",
+          "observed_at_utc": "2026-11-27T10:12:36.665960+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:45979960470:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "missing_marker",
+          "source_commit_sha": "a41f781b95481f42bed9fd2c151241d7be40a372"
         }
       ],
       "resolution": null,
@@ -18391,6 +18391,40 @@
       "legacy_task_refs": [],
       "task_group": "ci-91fe436623d092ea",
       "parent_group": "ci-6835b1ef0d75e5f9"
+    },
+    {
+      "finding_id": "lint-tooling-fd63ee164167664baaa97d9b",
+      "source_family": "lint",
+      "category": "lint_tooling",
+      "title": "Lint tooling check failed: Lint report regression tests",
+      "status": "open",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-27T10:12:36.665960+00:00",
+      "last_seen_utc": "2026-11-27T10:12:36.665960+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45979960470-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45979960470",
+          "observed_at_utc": "2026-11-27T10:12:36.665960+00:00",
+          "note": "on_changed · Lint report regression tests",
+          "observation_id": "lint_tooling:45979960470:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "missing_marker",
+          "source_commit_sha": "a41f781b95481f42bed9fd2c151241d7be40a372"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [],
+      "task_group": "ci-71de99e18bb591b4",
+      "parent_group": "ci-c22cfa3d350aa1a7"
     }
   ],
   "ingestion_state": {
@@ -18496,6 +18530,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45970411285-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45974724264-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45977120769-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45979960470-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json",
