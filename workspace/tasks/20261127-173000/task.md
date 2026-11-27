@@ -73,6 +73,13 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
+### 2026-11-28T06:55:36+07:00 — DRAFT-0006 prepared
+
+- Child 59 prepared DRAFT-0006 Revision 1 and placed it in review. The proposal recommends a single Worker operating authority, a pointer-only Session Start, and a settings-only Conversation Mode.
+- The Draft compares the current split, moving all procedures into the Worker body, and the Worker-with-focused-owners model.
+- Draft commit: `dd2e36a071f1214fd23bc83b97e47fe18986eb24`. Draft index: `d7ad84f13339b8fe958921d3ad88f8237113d75a`. Discussion register: `a8f17f4b3fbd056bba3eee9f0e0cc7966e9366e3`.
+- Child 59 remains In Progress pending the user's decision. No operational implementation has started.
+
 ### 2026-11-28T06:53:02+07:00 — Session Start and Conversation Mode architecture audit
 
 - Created child 59 to prepare the decision Draft for the user's requested workflow refactor.
@@ -439,7 +446,7 @@ Open or deferred:
 - Children 27–50 are Blocked. Child 50 awaits a complete diagnostic report with its failing Markdown target and anchor.
 - The latest-lint-report deletion is separate under parent 20261127-173500. It remains Proposed pending DRAFT-0005 approval.
 
-Child 59 is In Progress and prepares the decision Draft for the Session Start and Conversation Mode refactor. Keep this parent open. Do not retire or delete it.
+Child 59 is In Progress. DRAFT-0006 Revision 1 is in review and awaits the user's decision before ADR promotion or implementation. Keep this parent open. Do not retire or delete it.
 
 ## 7. Verification and Evidence
 
