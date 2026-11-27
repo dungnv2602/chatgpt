@@ -12,7 +12,7 @@ The Worker owns task capture, hierarchy, scheduling, progress, handoff, closeout
 | [TASK_BOARD_TEMPLATE.md](TASK_BOARD_TEMPLATE.md) | Canonical task-board structure and scheduler contract |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Parent task folder |
 | [SUBTASK_TEMPLATE.md](SUBTASK_TEMPLATE.md) | Follow-up and remediation child |
-| [tasks/](tasks/) | Active task folders; each has task.md and subtasks/README.md |
+| [tasks/](tasks/) | Active task folders. Each folder has task.md and subtasks/README.md |
 | [draft/](draft/README.md) | Decision proposals |
 | [adr/](adr/README.md) | Accepted decisions |
 | [analysis/](analysis/README.md) | Evidence-based repository analysis |
@@ -22,7 +22,7 @@ The Worker owns task capture, hierarchy, scheduling, progress, handoff, closeout
 
 1. Before substantive work, inspect active tasks and capture the actionable prompt verbatim.
 2. A new objective creates a parent task. A substantive follow-up, correction, or scope extension creates its own subtask under the genuine parent. Clarifications and approvals with no independent deliverable are recorded verbatim as subsequent instructions. Greetings and acknowledgements need no task.
-3. Split independent objectives. Do not attach unrelated requests to one parent. Do not guess parentage; record uncertain requests and resolve attribution at quiescence.
+3. Split independent objectives. Do not attach unrelated requests to one parent. Do not guess parentage. Record uncertain requests and resolve attribution at quiescence.
 4. Keep parent and child indexes current. The Worker alone schedules and updates `task_board.md`.
 5. Record commits, readback, checks, decisions, and limitations. Every task-specific implementation commit includes `Task-ID: <task-id>`.
 6. A parent cannot be Done while a required child is open. After closeout, delete the complete task folder and board row. Do not archive or retain a copy.
@@ -31,7 +31,7 @@ Approval is scope authorization, not status. Use Proposed only when a required d
 
 ## Decision records
 
-Use a Draft for a proposed decision. Do not implement the proposal before approval. After approval, promote it to an accepted ADR only after the full rationale and completeness review. Keep accepted ADRs in `workspace/adr/`; do not create archive folders or historical copies.
+Use a Draft for a proposed decision. Do not implement the proposal before approval. After approval, promote it to an accepted ADR only after the full rationale and completeness review. Keep accepted ADRs in `workspace/adr/`. Do not create archive folders or historical copies.
 
 ## CI lifecycle
 
@@ -41,6 +41,6 @@ If attribution is missing, invalid, inactive, or points to a deleted task, keep 
 
 Lint baselines, finding identity, grouped remediation, bounded evidence, and occurrence history prevent repeat reports from flooding the queue. The same active finding group under the same parent reuses its child. A recurrence after resolution preserves history and creates/reuses a follow-up under the task identified by that run's commit.
 
-The Ledger owns finding state and child evidence. The Worker owns task status, selection, approval checks, parent/child completion, and direct deletion. CI remediation closes after the intended-branch commit is verified; hosted validation is optional metadata. Do not inspect hosted results unless the user explicitly asks.
+The Ledger owns finding state and child evidence. The Worker owns task status, selection, approval checks, parent/child completion, and direct deletion. CI remediation closes after the intended-branch commit is verified. Hosted validation is optional metadata. Do not inspect hosted results unless the user explicitly asks.
 
 See [The Worker](../.agent/skills/the-worker/SKILL.md), [CI Ledger reference](../.agent/skills/the-worker/references/ci-ledger.md), [GitHub Actions reference](../.agent/skills/the-worker/references/github-actions.md), [decision-governance reference](../.agent/skills/the-worker/references/decision-governance.md), and [.takeout report navigation](../.takeout/reports/README.md).
