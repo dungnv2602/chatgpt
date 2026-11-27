@@ -33,7 +33,7 @@ Before answering or acting on a request with an identifiable outcome, find or cr
 - **Several related requirements in one prompt:** preserve the full prompt once in the parent and split its independently completable deliverables into child records. Unrelated objectives receive separate parents.
 
 - **Clarification, decision, or approval that changes scope, priority, or authorization without adding a deliverable:** append its exact wording and UTC timestamp to Subsequent Instructions. Create a child when it adds work.
-- **Greeting, reaction, or acknowledgement with no request or decision:** no task is needed.
+- **Greeting, reaction, or acknowledgement with no request or decision:** do not create a task.
 - **Unclear parentage:** do not guess. Preserve the request in the discussion register and ask one concise question at quiescence.
 
 Preserve every request with an identifiable outcome verbatim in its own parent task or follow-up subtask under Original Request/Original Prompt. Preserve non-deliverable clarifications, constraints, decisions, and approvals verbatim under Subsequent Instructions. Link the record from its parent index and keep the task board current. A request is not tracked solely because it appears in chat, a parent summary, or the discussion register.
@@ -58,13 +58,13 @@ The CI report must preserve this source task ID. If it names a subtask, resolve 
 
 The CI Ledger owns finding identity, evidence, grouping, and child creation. It may update only the attributed parent’s finding summary, its child records, and its subtask index. It must not create parent tasks, change parent status/priority/current execution, or edit the task board.
 
-CI remediation children are P0, Approved, and Ready under the standing authorization. Use Proposed only when a specific unresolved decision is required for that remediation. Routine implementation does not need a new ADR merely because it changes code. Keep a genuine decision gate narrow to the dependent work.
+CI remediation children are P0, Approved, and Ready under the standing authorization. Use Proposed only when that remediation requires a specific unresolved decision. Routine implementation does not need a new ADR merely because it changes code. Keep a genuine decision gate narrow to the dependent work.
 
 ## Status, approval, and scheduling
 
 Approval records authority for a scope. It does not depend on status or priority. Record its source and scope. Never infer approval from status.
 
-Statuses are Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Ready requires satisfied dependencies and any real decision gate. Use Blocked for a genuine external or user-resolvable blocker. Use Paused for intentional suspension.
+Use these statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Ready requires satisfied dependencies and any real decision gate. Use Blocked for a genuine external or user-resolvable blocker. Use Paused for intentional suspension.
 
 The Worker is the sole scheduler. Check eligibility and dependencies first, then priority and age. Keep dependency-waiting work out of the eligible queue. Detect cycles. do not repeatedly retry an impossible dependency chain. Correct an edge only when the error is clear and authorized. Ask for essential input only at quiescence.
 
@@ -82,7 +82,7 @@ Do not duplicate the queue in task records, README files, or skill references. T
 2. Execute approved work to quiescence. Do not interrupt for routine choices or a blocker isolated to one task.
 3. Record progress, decisions, changed paths, commit SHAs, readback, and limitations in the task record.
 4. For every task-specific implementation commit, add the Task-ID trailer shown above.
-5. Close a subtask only after its acceptance criteria pass and the intended-branch commit is read back. CI remediation completion is commit-based. hosted validation is separate metadata.
+5. Close a subtask only after its acceptance criteria pass and you read back the intended-branch commit. CI remediation completion is commit-based. hosted validation is separate metadata.
 6. A parent cannot be Done while a required child remains open.
 7. After closeout checks, delete the completed or cancelled task folder and its board row. Do not archive it, create a retention copy, or add a Historical row. Preserve Ledger finding identity, evidence, resolution history, and prior task references.
 
@@ -152,7 +152,7 @@ Load the relevant reference only when the task requires it:
 - `references/github-actions.md` for workflow design, diagnostics, technical remediation, or validation procedures. Load it with the CI Ledger reference for the startup P0 batch.
 - `references/decision-governance.md` for Drafts, ADRs, repository analysis, implementation linkage, or Confirmation.
 
-The Worker owns document governance in this file and its canonical document-type catalog. No separate document-governance skill is activated.
+The Worker owns document governance in this file and its canonical document-type catalog. The Worker does not activate a separate document-governance skill.
 
 Keep these decision controls in force:
 
@@ -171,7 +171,7 @@ When a task depends on CI-generated or workflow diagnostic evidence, exhaust the
 3. **Trace the diagnosis in repository source.** Follow diagnostic locations and output into the affected workflow, script, generator, tests, configuration, or report producer. Read relevant source and tests. Use repository evidence to establish the cause and scope before proposing a repair.
 4. **Separate committed diagnostics from hosted CI access.** A diagnostic report or log committed to the repository is repository evidence. Reading it is not hosted CI result inspection. The restriction against hosted CI inspection does not prohibit reading already-published repository files. Do not fetch, poll, dispatch, rerun, or inspect hosted CI unless explicitly authorized.
 5. **Investigate reporting gaps as defects.** If a report, capture, or summary omits information needed to diagnose a failure, investigate the reporting/capture mechanism and repair or taskify that defect. Do not automatically block the original remediation solely because the summary is insufficient. Continue with independent source investigation where possible.
-6. **Blocker discipline.** Declare Blocked only after repository evidence and source investigation are exhausted within the permitted scope. State precisely which evidence or access is missing, what paths and diagnostic fields were examined, why further repository-side investigation cannot proceed, and the specific external or user input needed. Uncertainty alone is not a blocker.
+6. **Blocker discipline.** Declare Blocked only after you exhaust repository evidence and source investigation within the permitted scope. State precisely which evidence or access you lack, which paths and diagnostic fields you examined, why you cannot continue repository-side investigation, and what specific external or user input you need. Uncertainty alone is not a blocker.
 7. **Read back and record.** Read back the exact relevant repository sources and task records after changes. Record examined report paths, concrete diagnostic details, source locations, commit SHAs, and limitations. Do not claim validation that was not performed.
 
 This procedure applies before task selection, status changes, blocker declarations, and remediation closeout. It does not authorize local execution, hosted CI review, or any other restricted action.
