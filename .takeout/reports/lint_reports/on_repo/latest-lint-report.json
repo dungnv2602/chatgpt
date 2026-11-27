@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_repo",
-  "run_id": "45957807234",
-  "run_number": 213,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45957807234",
+  "run_id": "45958081480",
+  "run_number": 215,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45958081480",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "cf40560361853df9a6b2550e72e55d236a1aace9",
+  "commit_sha": "2ae31d2ed356edc660d6708a6340f8c450705f5d",
   "event": "push",
   "workflow": "STE Lint Full Technical Documentation",
   "runner_os": "Linux",
   "execution_mode": "repository-wide",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-27T07:21:47.330983+00:00",
+  "generated_at_utc": "2026-11-27T07:25:40.380221+00:00",
   "status": "Failed",
-  "linter_source_sha": "547370b37c7b268230e4b5b5c36867d5e6d7c47e",
+  "linter_source_sha": "680a5b226775a803eb8d45e5e27f46d786154e40",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -162,14 +162,14 @@
     ".agent/skills/the-worker/assets/conversation-integrity-template.md"
   ],
   "files_with_findings": 71,
-  "total_findings": 729,
-  "hard_findings": 314,
+  "total_findings": 730,
+  "hard_findings": 315,
   "advisory_findings": 415,
   "findings_by_rule": {
-    "synonym-rotation": 71,
+    "synonym-rotation": 70,
     "passive-voice": 367,
     "present-perfect": 48,
-    "semicolon": 102,
+    "semicolon": 104,
     "long-sentence": 128,
     "marketing-adjective": 6,
     "phrasal-verb": 5,
@@ -3670,28 +3670,28 @@
         },
         {
           "file": ".agent/skills/the-worker/SKILL.md",
-          "line": 395,
-          "col": 513,
+          "line": 401,
+          "col": 33,
           "rule": "synonym-rotation",
           "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
+          "match": "confirm",
+          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
         },
         {
           "file": ".agent/skills/the-worker/SKILL.md",
-          "line": 397,
-          "col": 717,
-          "rule": "synonym-rotation",
+          "line": 405,
+          "col": 317,
+          "rule": "semicolon",
           "level": "advisory-free",
-          "match": "confirms",
-          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
       "count": 8,
       "hard_count": 4,
       "baseline": 0,
-      "words": 5893,
-      "per_100_words": 0.1,
+      "words": 5186,
+      "per_100_words": 0.2,
       "path": ".agent/skills/the-worker/SKILL.md",
       "exit_code": 1
     },
@@ -5391,6 +5391,15 @@
       "violations": [
         {
           "file": ".agent/skills/ci-ledger/SKILL.md",
+          "line": 44,
+          "col": 118,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": ".agent/skills/ci-ledger/SKILL.md",
           "line": 67,
           "col": 5,
           "rule": "synonym-rotation",
@@ -5426,10 +5435,10 @@
           "message": "'verify' and 'check' name the same action. Pick one and use it every time."
         }
       ],
-      "count": 4,
-      "hard_count": 4,
+      "count": 5,
+      "hard_count": 5,
       "baseline": 0,
-      "words": 2250,
+      "words": 2255,
       "per_100_words": 0.2,
       "path": ".agent/skills/ci-ledger/SKILL.md",
       "exit_code": 1
@@ -11519,7 +11528,7 @@
       "match": "Remove",
       "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
       "fingerprint": "1ead56a935297678d525088d",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/the-worker/SKILL.md",
@@ -11530,7 +11539,7 @@
       "match": "are deleted",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "58a47654e8fe2ff210753ac7",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/the-worker/SKILL.md",
@@ -11541,7 +11550,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/the-worker/SKILL.md",
@@ -11552,7 +11561,7 @@
       "match": "is deleted",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "448e62e062b885437ed3015e",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/the-worker/SKILL.md",
@@ -11578,24 +11587,24 @@
     },
     {
       "file": ".agent/skills/the-worker/SKILL.md",
-      "line": 395,
-      "col": 513,
+      "line": 401,
+      "col": 33,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "6e2f9b805be9c08510010f85",
-      "comparison": "recurring"
+      "match": "confirm",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "952a5f851897b7d21a178421",
+      "comparison": "new"
     },
     {
       "file": ".agent/skills/the-worker/SKILL.md",
-      "line": 397,
-      "col": 717,
-      "rule": "synonym-rotation",
+      "line": 405,
+      "col": 317,
+      "rule": "semicolon",
       "level": "advisory-free",
-      "match": "confirms",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "9cca8e1414feae74d470296b",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
       "comparison": "recurring"
     },
     {
@@ -12586,7 +12595,7 @@
       "match": "are deleted",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ac368e93f103960466ae58d7",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/document-standards/references/document-type-catalog.md",
@@ -12597,7 +12606,7 @@
       "match": "are deleted",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ac368e93f103960466ae58d7",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/document-standards/references/document-type-catalog.md",
@@ -12608,7 +12617,7 @@
       "match": "checks",
       "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
       "fingerprint": "4fc10f3be849a3fb43a60d2a",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/draft/DRAFT-0006-editorial-successor-for-adr-0003.md",
@@ -13338,6 +13347,17 @@
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
+      "line": 44,
+      "col": 118,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0ae22a9c140235350291bdfa",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/ci-ledger/SKILL.md",
       "line": 67,
       "col": 5,
       "rule": "synonym-rotation",
@@ -13367,7 +13387,7 @@
       "match": "26 words",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "fingerprint": "6f358d459967131650a4170d",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/ci-ledger/SKILL.md",
@@ -13708,7 +13728,7 @@
       "match": "remove",
       "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
       "fingerprint": "3a0997aa00ae589847e48a35",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/TASK_TEMPLATE.md",
@@ -14698,7 +14718,7 @@
       "match": "Remove",
       "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
       "fingerprint": "d8d5bdd914126f90076410ea",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
@@ -15790,51 +15810,29 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 10,
-  "recurring_findings": 719,
+  "new_findings": 2,
+  "recurring_findings": 728,
   "resolved_findings": [
     {
-      "file": ".agent/skills/github-actions/SKILL.md",
-      "line": 36,
-      "col": 65,
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 395,
+      "col": 513,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "remove",
-      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
-      "fingerprint": "3729cd2e886059e21da61ef7",
+      "match": "verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "6e2f9b805be9c08510010f85",
       "comparison": "resolved"
     },
     {
-      "file": "workspace/task_board.md",
-      "line": 73,
-      "col": 41,
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 397,
+      "col": 717,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "check",
-      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "8940fe614ee1d534bedb13a4",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/task_board.md",
-      "line": 105,
-      "col": 88,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "validate",
-      "message": "'validate' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "e62ca06f23c949cf9f748c10",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/TASK_TEMPLATE.md",
-      "line": 25,
-      "col": 159,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is written",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "5275280719ed16d2a5b7ad67",
+      "match": "confirms",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "9cca8e1414feae74d470296b",
       "comparison": "resolved"
     }
   ],
@@ -15855,7 +15853,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.336s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.356s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -15873,7 +15871,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Failed",
       "exit_code": 1,
-      "output": "Scanned 196 all active Markdown sources (364 available as link targets) and 384 local Markdown links.\nFound 5 unresolved local Markdown targets or anchors.\n.takeout/reports/README.md: missing Markdown file: ../../workspace/archive/README.md\nworkspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\nworkspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\nworkspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md: missing Markdown file: ../tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md\nworkspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md\n"
+      "output": "Scanned 196 all active Markdown sources (366 available as link targets) and 384 local Markdown links.\nFound 5 unresolved local Markdown targets or anchors.\n.takeout/reports/README.md: missing Markdown file: ../../workspace/archive/README.md\nworkspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\nworkspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\nworkspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md: missing Markdown file: ../tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md\nworkspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md\n"
     }
   ],
   "failed_checks": [
