@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 23:17 UTC
+- **Updated:** 2026-11-27 23:27 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -72,6 +72,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27T23:27:17.109Z — first remaining blocker at quiescence
+
+- The focused queue contains no Ready child. Child 28 is the first blocked child in index order.
+- All five finding IDs in child 28 are absent from the current published Ledger blob `3ea2ea3d92db8de368d263b61054f6b4aecb0de9`.
+- CI Ledger policy prohibits historical scanning or backfill without separate explicit authorization. The child record and task board now state the exact blocker.
+- One decision is required: authorize or decline restoration of the five missing finding identities and available evidence.
+
 
 ### 2026-11-27T23:17:11.683Z — CI remediation child 50 closeout
 

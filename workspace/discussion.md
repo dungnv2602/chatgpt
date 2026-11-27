@@ -2,6 +2,9 @@
 
 ## Current Step
 
+- **2026-11-27T23:27:17.109Z**: Refactor Skills reached quiescence. Child 28 is the first blocked child. Its five finding IDs are absent from the published Ledger, and the CI Ledger policy requires explicit authorization before historical backfill. Awaiting that single decision.
+
+
 - **2026-11-27T23:17:47.504Z**: Child 50 completed, the Ledger finding resolved, and the task record/index row deleted under the standing parent lifecycle. Source fix: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`. Documentation fixes: `6057e5596021b84a70a7201875c2f7bd3d1890b0`. Ledger closeout: `f7a5c764c99b1a070b9c84ffeed6af1673b606e3`.
 
 
