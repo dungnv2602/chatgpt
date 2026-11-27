@@ -62,11 +62,11 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
+- **Commit SHA:** `1e697f0e5167e9c0778cadef69d7cf084249be27`
+- **Changed paths:** `.agent/skills/asd-ste100/scripts/test_generate_lint_report.py`
+- **Readback:** Confirmed both assertions match the canonical template text. Confirmed the template remains unchanged.
+- **Checks:** Not performed. No local scripts, tests, or hosted CI were run or inspected.
+- **Limitations:** The repository commit and readback establish the test correction. They do not establish a subsequent hosted test result.
 
 ## 7. Completion
 
