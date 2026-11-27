@@ -13,6 +13,10 @@ Use Default Mode for detailed final delivery and Condensed Mode for concise fina
 
 Keep task-level details in task records. The Worker’s mandatory Prompt capture rule governs every request. this brief is not a substitute for a task or subtask record. Before each meaningful step, replace Current Step with the current task and action. Record progress and commits in the task record.
 
+## Material recovery and cleanup
+
+Recover materials required by an authorized task without asking for permission solely for retrieval. Use canonical sources and avoid redundant copies. Delete temporary downloads, extracts, copies, and staging artifacts immediately after their last use, and verify/record cleanup at closeout. This does not authorize deleting canonical repository content, user-owned originals, required evidence, or governed retention material. Preserve those. If uncertain about ownership or retention, do not delete.
+
 ## User-input coordination
 
 The Worker owns task selection and queue progression. This reference controls user-facing interruptions.
