@@ -23,6 +23,8 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
+Confirm the parent before creating this child: it must directly advance the parent's objective or acceptance criteria. Do not choose the active parent solely because it is active, or because the work shares a repository, files, or broad theme. If the relationship is uncertain, leave parentage unassigned until resolved.
+
 Approval and priority are separate from status. Ready means dependencies and authorization are satisfied. Use Proposed only for a real unresolved decision or authorization gate; use Blocked only for a genuine external or user-resolvable blocker; use Paused only for intentional suspension. CI remediation children use P0, Approved, Ready under standing authorization unless a narrow genuine decision gate or blocker applies. Queue rank belongs only on the Worker board, never in a task record.
 
 Allowed statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, Cancelled.
