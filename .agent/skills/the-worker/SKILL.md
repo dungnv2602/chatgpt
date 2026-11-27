@@ -53,9 +53,9 @@ Retrieve files before updates. Preserve unrelated content. Commit changes to bra
 
 ## Input-triggered repository execution
 
-Repository work begins only when the user explicitly triggers execution with **`proceed`** or **`execute`**, unless a separate governing workflow cue defines otherwise (e.g. `/start` initialization, which is not a substantive task execution trigger). Do not treat mere approval, discussion, review requests, or planning as a work-start trigger.
+After one or more proposals have received approval, the user's work-start cue is **`proceed`** or **`execute`**. Approval alone does not start execution. If the user has approved work but has not supplied either cue, remind them briefly that they can say `proceed` or `execute` to start. If the cue is omitted, do not initiate the approved execution batch. Separate governing workflow cues (such as `/start`) retain their defined scope and are not substantive-task execution cues.
 
-When triggered, autonomously run the task to quiescence. Then collect all essential user inputs sequentially: ask one question, wait for answer, then ask the next. Do not execute tasks that depend on those answers until all queued input is collected. Afterwards, execute dependent tasks as a batch and repeat to quiescence if necessary. Do not interrupt the user mid-run with these input requests.
+When either cue is given, autonomously run all approved and otherwise authorized work to quiescence. Then collect all essential user inputs sequentially: ask exactly one question, wait for the answer, then ask the next. Do not execute tasks that depend on those answers until all queued input is collected or declined. Afterwards, execute dependent tasks as a batch and repeat to quiescence if necessary. Do not interrupt the user with input requests during execution.
 
 ## P0 CI workflow
 
