@@ -1,7 +1,7 @@
 # Discussion Register
 
 ## Current Step
-Identify the complete eligible CI-generated P0 batch from the current task board, active task records, and CI Ledger linkage; then establish execution order and task dependencies. Scope: approved workspace task records and triage Ledger only. Expected result: a verified newest-first batch inventory with blocked decision-governed items isolated.
+Review the governing ADR and decision-governance rules for the active P0 task groups, then classify each group as independently executable or blocked. Scope: ADR-0003, ADR-0004, their exact linked task/subtask records, and applicable governance skills. Expected result: a safe execution plan that preserves accepted decisions and separates user-decision blockers.
 
 ## Open Discussions
 
