@@ -177,7 +177,7 @@ class ReportGeneratorTests(unittest.TestCase):
             report = json.loads((output / "report.json").read_text(encoding="utf-8"))
             markdown = (output / "report.md").read_text(encoding="utf-8")
             self.assertEqual(report["source_task_id"], "20261127-090000")
-            self.assertIn("Source task: 20261127-090000", markdown)
+            self.assertIn("- **Source task:** 20261127-090000", markdown)
 
     def test_scheduled_report_does_not_claim_a_task(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -190,7 +190,7 @@ class ReportGeneratorTests(unittest.TestCase):
             report = json.loads((output / "report.json").read_text(encoding="utf-8"))
             markdown = (output / "report.md").read_text(encoding="utf-8")
             self.assertIsNone(report["source_task_id"])
-            self.assertIn("Source task: Unassigned", markdown)
+            self.assertIn("- **Source task:** Unassigned", markdown)
 
 
 if __name__=="__main__":
