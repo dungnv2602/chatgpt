@@ -10,7 +10,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "1.7.0"
+      "const": "1.8.0"
     },
     "updated_at_utc": {
       "type": [
@@ -176,6 +176,31 @@
                 "observation_id": {
                   "type": "string",
                   "minLength": 1
+                },
+                "source_task_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                },
+                "parent_task_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                },
+                "attribution_status": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_commit_sha": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^[0-9a-fA-F]{7,40}$"
                 }
               },
               "additionalProperties": false
@@ -358,7 +383,7 @@
           },
           "task_refs": {
             "type": "array",
-            "description": "Stable parent Task IDs containing remediation work. CI child IDs are stored separately in subtask_refs.",
+            "description": "Genuine user-originated parent task IDs attributed from the source commit Task-ID trailer.",
             "items": {
               "type": "string",
               "minLength": 1
@@ -374,11 +399,11 @@
           "parent_group": {
             "type": "string",
             "pattern": "^ci-[0-9a-f]{16}$",
-            "description": "Stable work-target parent group (one affected file or workflow)."
+            "description": "Legacy work-target grouping key retained for migration only. It does not identify or create a task parent."
           },
           "subtask_refs": {
             "type": "array",
-            "description": "Stable child subtask IDs for the linked remediation groups.",
+            "description": "CI remediation child IDs created under the genuine parent task.",
             "items": {
               "type": "string",
               "minLength": 1
@@ -387,7 +412,7 @@
           },
           "legacy_task_refs": {
             "type": "array",
-            "description": "Retired standalone CI task IDs retained for migration provenance after their records move into child subtasks.",
+            "description": "Retired synthetic task IDs retained as historical provenance; never used as current parent links.",
             "items": {
               "type": "string",
               "minLength": 1
