@@ -11,7 +11,7 @@ consulted: []
 informed: []
 source_draft: "DRAFT-0005"
 source_draft_revision: 1
-approved_scope: "Option 3 as modified by the user on 2026-11-27: task folders with nested subtasks; commit-based CI remediation completion with separate hosted validation metadata; recurrence identity/history retention; ingestion-integrity and report-path hardening; Worker selection preservation; decision-governance gating; active-task migration; and direct deletion of completed/cancelled task folders without archiving."
+approved_scope: "Option 3 as modified by the user on 2026-11-27: task folders with nested subtasks. commit-based CI remediation completion with separate hosted validation metadata. recurrence identity/history retention. ingestion-integrity and report-path hardening. Worker selection preservation. decision-governance gating. active-task migration. and direct deletion of completed/cancelled task folders without archiving."
 related_adrs:
   - "ADR-0003"
 supersedes: []
@@ -34,20 +34,20 @@ The repository's active task and CI Ledger contracts use flat Markdown task note
 
 The static repository review at branch `gpt`, commit `44ff7e7b956209266951a290fd10080418bb2eec`, identified the following concrete mismatches:
 
-- `workspace/tasks/` contains flat Markdown task records; `workspace/TASK_TEMPLATE.md` is version 1.3.
+- `workspace/tasks/` contains flat Markdown task records. `workspace/TASK_TEMPLATE.md` is version 1.3.
 - `.takeout/reports/triage/scripts/ledger.py` generates flat task notes, scans only `workspace/tasks/*.md`, and writes flat paths into the task board.
 - Generated task acceptance criteria require successful hosted validation before a finding can be resolved.
-- `validate_semantics()` rejects a resolved finding unless successful validation URL and timestamp evidence exist.
+- `confirm_semantics()` rejects a resolved finding unless successful validation URL and timestamp evidence exist.
 - `retire_completed_task_findings()` removes terminal findings from the active Ledger after task archival, risking loss of finding identity and prior remediation links when the same issue recurs.
 - Report-processing exceptions are surfaced as warnings while the command can still exit successfully, making partial ingestion appear successful.
 - Incomplete Actions captures can be marked processed despite the capture policy requiring them to remain retryable.
 - The task-board writer can make the last generated P0 task Current Execution, displacing a task selected by Worker priority-and-age rules.
 - Task archive procedures and the Ledger archive reader assume archived task notes remain discoverable. The user later retired task archiving and authorized direct deletion at closeout.
-- The generator can mark tasks Approved and In Progress while Governing ADR(s) is Pending. Decision Governance requires accepted ADR linkage before a task becomes Ready or In Progress; standing P0 authorization does not bypass this gate.
+- The generator can mark tasks Approved and In Progress while Governing ADR(s) is Pending. Decision Governance requires accepted ADR linkage before a task becomes Ready or In Progress. standing P0 authorization does not bypass this gate.
 
 There are two existing decision relationships to preserve:
 
-1. Accepted ADR-0003 defines the canonical GitHub Actions diagnostic report artifact layout and explicitly excludes task generation and Ledger task linkage from that decision. ADR-0004 authorizes only the separate task and Ledger lifecycle changes described here; it does not rewrite ADR-0003.
+1. Accepted ADR-0003 defines the canonical GitHub Actions diagnostic report artifact layout and explicitly excludes task generation and Ledger task linkage from that decision. ADR-0004 authorizes only the separate task and Ledger lifecycle changes described here. it does not rewrite ADR-0003.
 2. DRAFT-0003 proposes broader Area/Project/task architecture and a different boundary in which independently managed subtasks have separate Task IDs and folders. ADR-0004 decides only the task-folder and nested-subtask lifecycle described here. It does not approve DRAFT-0003's broader Area/Project architecture. The Worker must reconcile the two records without silently promoting or implementing DRAFT-0003.
 
 Without a consistent contract, the Worker, generator, Ledger schema, task board, and archive workflow can disagree about whether work is complete. That makes the CI P0 workflow unreliable.
@@ -69,15 +69,15 @@ Without a consistent contract, the Worker, generator, Ledger schema, task board,
 
 Keep one Markdown file per task under `workspace/tasks/`, add linked child notes and a CI-specific note format, and retain flat board/archive paths. Implement commit-based completion and recurrence retention without changing physical task paths.
 
-- **Good:** Lowest structural migration; existing task links and archive paths remain valid; current Worker readers need fewer path changes.
+- **Good:** Lowest structural migration. existing task links and archive paths remain valid. current Worker readers need fewer path changes.
 - **Neutral:** Child notes can have independent acceptance criteria, but parent-child discovery depends on synchronized links and naming conventions.
-- **Bad:** A task remains a note, not a folder. Child records are not physically contained by the parent; evidence and work can become scattered. This fails the user's explicit task-folder requirement.
-- **Repository fit and evidence:** Strong compatibility with the current generator, board, and archive reader, which all assume flat files. No prototype tested this alternative.
-- **Cost, dependencies, and risks:** Lower path migration cost, but still requires lifecycle, recurrence, ingestion, and governance fixes. Link drift can hide incomplete child work; schema-like references and tests reduce but do not eliminate this structural weakness.
+- **Bad:** A task remains a note, not a folder. Child records are not physically contained by the parent. evidence and work can become scattered. This fails the user's explicit task-folder requirement.
+- **Repository fit and evidence:** Strong compatibility with the current generator, board, and archive reader, which all assume flat files. No prototype tested this changenative.
+- **Cost, dependencies, and risks:** Lower path migration cost, but still requires lifecycle, recurrence, ingestion, and governance fixes. Link drift can hide incomplete child work. schema-like references and tests reduce but do not eliminate this structural weakness.
 
 ### Option 2 — Task folders with hosted-validation-gated CI subtasks
 
-Store each task in `workspace/tasks/<task-id>/task.md` with child records under `subtasks/`. A CI remediation subtask remains open until hosted CI reports success; the parent remains open until all children, including hosted validation, are complete.
+Store each task in `workspace/tasks/<task-id>/task.md` with child records under `subtasks/`. A CI remediation subtask remains open until hosted CI reports success. the parent remains open until all children, including hosted validation, are complete.
 
 - **Good:** Done would imply both committed remediation and successful hosted validation.
 - **Neutral:** Worker operations must separate source remediation from asynchronous hosted validation even though both are represented by one subtask status.
@@ -90,11 +90,11 @@ Store each task in `workspace/tasks/<task-id>/task.md` with child records under 
 Store each task in `workspace/tasks/<task-id>/task.md`. Every task folder contains `subtasks/README.md` and zero or more child records. CI remediation is a typed child record. Mark it Done only after the fix commit exists on the intended branch, the Worker verifies the commit and reads back the changed files, and the commit SHA plus concise remediation summary are recorded. Hosted validation is separate metadata with states such as pending, passed, or failed. The parent task becomes Done only when every required child subtask is Done.
 
 - **Good:** Parent outcome and child work have distinct acceptance boundaries. CI remediation can finish without waiting for hosted validation, allowing independent work to continue. Validation remains visible without redefining task completion. A task folder is a stable recovery and deletion unit.
-- **Neutral:** A parent can be Done while hosted validation metadata is Pending or Failed. Readers must distinguish the two states; this is intentional.
+- **Neutral:** A parent can be Done while hosted validation metadata is Pending or Failed. Readers must distinguish the two states. this is intentional.
 - **Bad:** A commit may later fail hosted validation. The workflow must create or link a new recurrence/remediation record without rewriting the completed historical subtask. Done means authorized remediation work is complete, not that every external validation system is green.
-- **Repository fit and evidence:** Matches the user's explicit task-folder hierarchy and selected commit-based completion rule. Static review identified the generator, schema, Worker, board, and archive reader as the main enforcement points. The existing `upsert_finding()` can preserve resolution history on recurrence, but current retirement deletes the identity.
+- **Repository fit and evidence:** Matches the user's explicit task-folder hierarchy and selected commit-based completion rule. Static review identified the generator, schema, Worker, board, and archive reader as the main enforcement points. The existing `upsert_finding()` can preserve resolution history on recurrence, but current retirement removes the identity.
 - **Cost, dependencies, and risks:** Highest initial migration cost. Requires coordinated template, generator, schema, test, skill, board, catalog, and lifecycle changes. Commit verification on the intended branch is required. Hosted validation is metadata and remains subject to explicit user-triggered results review.
-- **Evidence limitations:** No hosted regression run or production recurrence replay has validated this design. Archive cleanup compatibility for nested paths must be tested before rollout.
+- **Evidence limitations:** No hosted regression run or production recurrence replay has confirmd this design. Archive cleanup compatibility for nested paths must be tested before rollout.
 
 ### Comparative Assessment
 
@@ -112,10 +112,10 @@ Option 1 has the lowest migration cost but fails the required physical containme
 
 ## Assessment Basis and Evidence Limits
 
-- **Scope of comparison:** Flat task notes with linked child notes; task folders with validation-gated CI subtasks; task folders with commit-complete CI subtasks and separate validation metadata.
+- **Scope of comparison:** Flat task notes with linked child notes. task folders with validation-gated CI subtasks. task folders with commit-complete CI subtasks and separate validation metadata.
 - **Method:** Static inspection of the task generator, schema, regression tests, Worker, CI Ledger and GitHub Actions skills, board, templates, archive conventions, and related decision records at the reviewed branch commit.
 - **Evidence classes:** The flat-file paths, validation gate, finding retirement, ingestion error handling, incomplete-capture handling, and board update behavior are repository facts. The task-folder hierarchy and commit-based completion rule are user-approved requirements. Improved lifecycle clarity and recurrence traceability are architectural inferences.
-- **Confidence:** High for the identified code and policy mismatches because the owning files were inspected. Moderate for migration and runtime behavior until the hosted regression suite validates the implementation.
+- **Confidence:** High for the identified code and policy mismatches because the owning files were inspected. Moderate for migration and runtime behavior until the hosted regression suite confirms the implementation.
 - **Limits:** No tests were run during Draft assessment. No production recurrence was replayed. No hosted CI results were inspected. Do not treat static inspection as runtime validation.
 
 ## Risks and Safeguards
@@ -123,15 +123,15 @@ Option 1 has the lowest migration cost but fails the required physical containme
 | Risk | Impact | Safeguard | Residual exposure |
 |---|---|---|---|
 | Parent closes while a required child remains open | High | Worker closeout enumerates every required child and blocks parent Done until all are Done | An omitted child registration can still hide work |
-| CI subtask marked Done without a real commit | High | Verify commit existence on intended branch, read back changed files, and record SHA plus summary | Later history rewrite requires separate authorization |
+| CI subtask marked Done without a real commit | High | Confirm commit existence on intended branch, read back changed files, and record SHA plus summary | Later history rewrite requires separate authorization |
 | Hosted validation is confused with remediation completion | High | Keep validation metadata separate from task/subtask status and label both explicitly | Consumers may still conflate the fields |
-| Recurrence loses prior finding identity | High | Retain terminal finding identity and resolution history; append new task references on recurrence | Ledger identity history grows; evidence retention must remain bounded |
+| Recurrence loses prior finding identity | High | Retain terminal finding identity and resolution history. append new task references on recurrence | Ledger identity history grows. evidence retention must remain bounded |
 | Partial ingestion appears successful | High | Surface structured errors, return non-zero, and leave failed reports retryable while publishing safe partial progress | Failed reports require a later retry |
 | Incomplete capture is consumed | High | Do not mark incomplete or pre-finalizer captures processed | Such entries may be reconsidered on subsequent sweeps |
 | Missing or unsafe indexed report path is accepted | High | Validate identifiers, reject traversal, and fail closed on missing indexed complete reports | Index producer remains a trust boundary |
 | New task displaces Worker-selected Current Execution | Medium | Preserve a valid current task and delegate selection to Worker priority-and-age rules | Concurrent publisher races still require regression coverage |
-| Generated task bypasses decision governance | High | Keep tasks Proposed while Governing ADR(s) is Pending; require accepted ADR linkage before Ready/In Progress | Work may wait for a new Draft/ADR |
-| Direct deletion loses task-file detail | High | Preserve stable Task IDs and Ledger finding identity/resolution history; keep relevant commit/report evidence in canonical locations | Deleted task contents are not retained as task archives |
+| Generated task bypasses decision governance | High | Keep tasks Proposed while Governing ADR(s) is Pending. require accepted ADR linkage before Ready/In Progress | Work may wait for a new Draft/ADR |
+| Direct deletion loses task-file detail | High | Preserve stable Task IDs and Ledger finding identity/resolution history. keep relevant commit/report evidence in canonical locations | Removed task contents are not retained as task archives |
 | Active-task migration loses history or links | High | Preserve task IDs and content, migrate only active records, update relative links, and read back every destination | External references outside the repository may remain stale |
 
 ## Decision Outcome
@@ -155,14 +155,14 @@ The user's approval of DRAFT-0005 revision 1 on 2026-11-27 authorized this decis
 5. A CI remediation subtask becomes Done only after the remediation is committed to the intended branch, the Worker verifies the commit and reads back the changed files, and the commit SHA and remediation summary are recorded.
 6. Hosted validation is separate metadata (for example Pending, Passed, or Failed). It is not a prerequisite for CI remediation subtask Done and does not retroactively change that subtask's completion.
 7. A later CI observation is a new recurrence/remediation record linked to the prior finding and remediation. Do not rewrite a completed prior remediation as incomplete merely because later validation fails or the issue recurs.
-8. Ledger `task_refs` identify stable parent Task IDs; `subtask_refs` identify child IDs. The Ledger retains terminal finding identity and resolution history after task deletion. Deletion must not erase a finding's identity or prior parent/child references.
+8. Ledger `task_refs` identify stable parent Task IDs. `subtask_refs` identify child IDs. The Ledger retains terminal finding identity and resolution history after task deletion. Deletion must not erase a finding's identity or prior parent/child references.
 9. When a resolved finding recurs, preserve its previous resolution in `resolution_history`, reopen the same finding identity, and append the new parent and child references. If the prior parent is no longer active, create or reuse the appropriate work-target parent and add a new CI remediation child.
 10. Report-ingestion errors must be surfaced as errors and produce a non-zero command result. Safe partial progress may be published, but failed reports remain retryable.
 11. Incomplete or pre-finalizer Actions captures remain unprocessed and eligible for retry.
 12. Validate report-index identifiers before constructing paths. Missing indexed complete reports and unsafe identifiers fail closed.
 13. Creating a new P0 task must not displace a valid Current Execution task selected under Worker priority-and-age rules.
 14. A Ledger-generated implementation task with Governing ADR(s) Pending remains Proposed and is not executable. The Worker must link an accepted ADR before moving it to Ready or In Progress. P0 priority does not bypass decision governance.
-15. At closeout, delete the complete task folder directly after acceptance checks. Remove its board entry. Do not create an archive copy, retention entry, or Historical board row. Keep Ledger finding identity, resolution history, Task IDs, and evidence references intact.
+15. At closeout, remove the complete task folder directly after acceptance checks. Remove its board entry. Do not create an archive copy, retention entry, or Historical board row. Keep Ledger finding identity, resolution history, Task IDs, and evidence references intact.
 16. Preserve existing report capture classification, error eligibility, lint baselines, report retention, shared report-writer architecture, and the explicit user-triggered hosted-results-review boundary.
 
 ### Confirmation
@@ -172,16 +172,16 @@ The implementation is complete only when the repository provides observable evid
 - [ ] Every active task is a folder containing `task.md` and `subtasks/`.
 - [ ] Every task folder has a subtask index. Every child record has an ID, type, status, acceptance criteria, evidence, and completion record.
 - [ ] The Ledger groups CI remediation children under work-target parents (one affected file or workflow per parent) and never creates standalone per-rule, per-step, or per-finding CI tasks.
-- [ ] Ledger `task_refs` identify stable parent Task IDs and `subtask_refs` identify child IDs; parent Done is blocked while any required child is not Done.
+- [ ] Ledger `task_refs` identify stable parent Task IDs and `subtask_refs` identify child IDs. parent Done is blocked while any required child is not Done.
 - [ ] A CI remediation subtask can be Done with a verified commit SHA and remediation summary while hosted validation remains Pending.
-- [ ] The Ledger accepts commit-based resolution without hosted validation; optional validation metadata is schema-validated.
+- [ ] The Ledger accepts commit-based resolution without hosted validation. optional validation metadata is schema-confirmd.
 - [ ] Recurrence reopens the same finding identity, preserves the prior resolution in `resolution_history`, and creates a new task/subtask when the prior task is no longer active.
-- [ ] Task deletion does not delete finding identity or prior task references.
-- [ ] Malformed indexed reports produce visible errors and a non-zero command result; safe partial changes remain publishable and failed reports remain retryable.
+- [ ] Task deletion does not remove finding identity or prior task references.
+- [ ] Malformed indexed reports produce visible errors and a non-zero command result. safe partial changes remain publishable and failed reports remain retryable.
 - [ ] Incomplete or pre-finalizer Actions captures are not marked processed.
 - [ ] Missing indexed complete reports and unsafe run identifiers fail closed.
 - [ ] New P0 task creation does not displace a valid Worker-selected Current Execution task.
-- [ ] Completed and cancelled task folders are deleted directly at closeout. No task archive or retention index is created.
+- [ ] Completed and cancelled task folders are removed directly at closeout. No task archive or retention index is created.
 - [ ] Generated tasks with Governing ADR(s) Pending remain Proposed and cannot execute until accepted ADR linkage exists.
 - [ ] The hosted Ledger regression suite and Document Type Catalog validation pass. No test result is claimed until observed.
 - [ ] Active task folders, board links, and discussion register remain consistent after migration and closeout.
@@ -198,27 +198,27 @@ The implementation is complete only when the repository provides observable evid
 
 - **Good:** CI subtask Done would imply hosted validation success as well as committed remediation.
 - **Neutral:** A single status combines local remediation and external validation.
-- **Bad:** Blocks completion and independent work on asynchronous hosted results; conflicts with the user's approved completion rule and review boundary.
+- **Bad:** Blocks completion and independent work on asynchronous hosted results. conflicts with the user's approved completion rule and review boundary.
 
 ### Option 3 — Task folders with commit-complete CI subtasks
 
 - **Good:** Meets the task-folder requirement, separates parent and child completion, enables commit-driven remediation completion, and preserves recurrence history.
-- **Neutral:** Done remediation can coexist with Pending or Failed hosted validation; consumers must keep those states distinct.
+- **Neutral:** Done remediation can coexist with Pending or Failed hosted validation. consumers must keep those states distinct.
 - **Bad:** Requires coordinated migration and may leave external validation pending after task completion.
 
 ## Implementation Scope
 
-- **In scope:** Task and subtask templates; active flat-task migration; task-board paths; Worker parent/child lifecycle and direct deletion closeout; CI Ledger task generation, schema, recurrence, resolution, and ingestion integrity; GitHub Actions remediation guidance; Document Type Catalog; workspace and triage documentation; regression tests.
-- **Out of scope:** Rewriting historical archived task records; changing report capture classification, report eligibility, lint baselines, report retention, or the shared report-writer architecture; automatically polling, dispatching, rerunning, or inspecting hosted CI results; approving or implementing DRAFT-0003's broader Area/Project architecture; weakening tests or protections; changing ADR-0003's report-artifact decision.
+- **In scope:** Task and subtask templates. active flat-task migration. task-board paths. Worker parent/child lifecycle and direct deletion closeout. CI Ledger task generation, schema, recurrence, resolution, and ingestion integrity. GitHub Actions remediation guidance. Document Type Catalog. workspace and triage documentation. regression tests.
+- **Out of scope:** Rewriting historical archived task records. changing report capture classification, report eligibility, lint baselines, report retention, or the shared report-writer architecture. automatically polling, dispatching, rerunning, or inspecting hosted CI results. approving or implementing DRAFT-0003's broader Area/Project architecture. weakening tests or protections. changing ADR-0003's report-artifact decision.
 - **Tasks:** Implementation task 20261126-232913 links to ADR-0004. It maps applicable Confirmation criteria to acceptance criteria. User authorization on 2026-11-27 also permits direct amendment of this accepted ADR to retire task archiving.
 - **Dependencies:** ADR-0003 remains authoritative for canonical report artifact layout. Decision Governance and Document Standards govern task/ADR format and execution approval. DRAFT-0003 remains a separate in-review proposal and must not be treated as accepted.
-- **Migration / rollback:** Migrate only active flat task records to ID folders while preserving task IDs and record content; update board and relative links. Roll back by restoring previous active paths and board references from the pre-migration commit. The user later retired archival and authorized direct deletion of completed task folders.
+- **Migration / rollback:** Migrate only active flat task records to ID folders while preserving task IDs and record content. update board and relative links. Roll back by restoring previous active paths and board references from the pre-migration commit. The user later retired archival and authorized direct deletion of completed task folders.
 
 ## More Information
 
-- **Source Draft:** DRAFT-0005, revision 1, approved by the user on 2026-11-27. The source Draft is deleted after successful promotion; its ID and revision remain here as provenance.
+- **Source Draft:** DRAFT-0005, revision 1, approved by the user on 2026-11-27. The source Draft is removed after successful promotion. its ID and revision remain here as provenance.
 - **Approved scope:** Option 3 and the complete scope of DRAFT-0005 revision 1, as later amended by the user to retire task archiving and require direct deletion at closeout.
-- **Related ADRs:** ADR-0003 defines diagnostic report artifact layout; this ADR authorizes separate task/Ledger lifecycle changes without altering ADR-0003. DRAFT-0003 is a related proposal only, not an accepted ADR.
+- **Related ADRs:** ADR-0003 defines diagnostic report artifact layout. this ADR authorizes separate task/Ledger lifecycle changes without changing ADR-0003. DRAFT-0003 is a related proposal only, not an accepted ADR.
 - **Evidence:**
   - `.takeout/reports/triage/scripts/ledger.py`, branch `gpt`, reviewed commit `44ff7e7b956209266951a290fd10080418bb2eec`: flat task generation and parsing, validation-gated resolution, finding retirement, ingestion error handling, report-index path use, and Current Execution update behavior.
   - `.takeout/reports/triage/ledger-schema.json`, schema 1.5.0 at the same commit: resolved finding validation requirements.
@@ -242,9 +242,9 @@ The user explicitly retired task archiving and authorized direct deletion of com
 
 The user clarified that CI remediation work must never be represented as standalone tasks. The Ledger groups findings by their work target: one parent task per affected file (or lint-tooling work target) and one parent per Actions workflow. Each stable remediation group is a typed child subtask under that parent. It must not create a separate parent for each lint rule, Actions step, or individual finding.
 
-For each finding, `task_refs` contains parent Task IDs, `subtask_refs` contains child IDs, and `legacy_task_refs` retains retired standalone IDs after migration. Finding identity and the existing `task_group` remain unchanged. This clarification refines the implementation of the accepted parent/child lifecycle; it does not authorize unrelated task execution.
+For each finding, `task_refs` contains parent Task IDs, `subtask_refs` contains child IDs, and `legacy_task_refs` retains retired standalone IDs after migration. Finding identity and the existing `task_group` remain unchanged. This clarification refines the implementation of the accepted parent/child lifecycle. it does not authorize unrelated task execution.
 
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
-| 2026-11-27 | Accepted | User approved DRAFT-0005 revision 1 and its full scope. The provisional ADR passed the source-Draft completeness comparison and read-back; ADR-0004 is now the accepted decision. |
+| 2026-11-27 | Accepted | User approved DRAFT-0005 revision 1 and its full scope. The provisional ADR passed the source-Draft completeness comparison and read-back. ADR-0004 is now the accepted decision. |
