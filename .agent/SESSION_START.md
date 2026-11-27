@@ -267,7 +267,7 @@ Maintain a simple internal ledger of skill and reference paths successfully retr
 - Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the authoritative current file.
 - When refreshing one file, do not reload unrelated skills or the entire tier.
 
-Entering a higher tier does not restart lower tiers. For example, if you loaded Drawing and its references for a drawing session, a later `Be the novelist` request loads only the missing novelist skill and novel records. If the user starts a drawing session after novelist initialization, reuse the already verified foundational, Drawing, and novelist skills as applicable.
+Entering a higher tier does not restart lower tiers. For example, you may load Drawing and its references for a drawing session. If the user later requests the novelist role, load only the missing novelist skill and novel records. If the user starts a drawing session after novelist initialization, reuse the foundational, Drawing, and novelist skills that you already verified.
 
 ## Foundational standards
 

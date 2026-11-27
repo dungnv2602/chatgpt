@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T11:13:42Z",
+  "updated_at_utc": "2026-11-27T16:50:00Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -4803,7 +4803,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 27 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T22:27:57.020756+00:00",
@@ -4844,7 +4844,14 @@
           "source_commit_sha": "eef01bf946dff4bcbfc285e2f07607271a896074"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "PENDING",
+        "resolved_at_utc": "2026-11-27T16:50:00Z",
+        "validation": {
+          "status": "not_run"
+        },
+        "note": "The long sentence at .agent/SESSION_START.md was split into four clear sentences. No hosted validation was inspected."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
