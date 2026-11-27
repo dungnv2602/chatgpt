@@ -2,11 +2,14 @@
 
 ## Current Step
 
-- **2026-11-27T17:05:00Z**: Startup P0 batch reviewed. Child 26 and 52 closed; child 50 blocked by the user-directed history reset. Child 54 is Current Execution to remove the standalone latest lint JSON and use the unified index. Next: continue with Refactor Skills child 04.
+- **2026-11-27T17:15:00Z**: Startup P0 batch reviewed. Child 26 and 52 closed; child 50 remains blocked by the history reset. DRAFT-0005 revision 1 is in review because removing the latest lint JSON changes accepted ADR-0003. Child 04 is Current Execution for Refactor Skills.
+
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.
 
 ## Open Discussions
+
+- **2026-11-27:** [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](draft/DRAFT-0005-unified-index-without-latest-lint-copy.md), revision 1. Decision required: remove the standalone latest lint JSON and make the shared index the only latest-report locator. ADR-0003 currently requires the file. User approval of this exact Draft revision is pending.
 
 - **2026-11-27:** Completed/cancelled task folders must be deleted directly after closeout. Do not create task or report archives, retention copies, cleanup schedules, or Historical board rows.
 - **2026-11-27:** Do not inspect, poll, dispatch, or rerun hosted CI. Commit/readback is the completion evidence; later failures flow through automatic report ingestion.

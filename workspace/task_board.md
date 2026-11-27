@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-54: Remove latest lint report copy and use the unified index](tasks/20261127-173000/subtasks/54-remove-latest-lint-report-copy.md) — P0, In Progress, Approved.
+[20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — P1, In Progress, Approved.
 
 ## Ordered Eligible Execution Queue
 
@@ -23,7 +23,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-[20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — next within the Refactor Skills workstream after child 54 closes.
+[20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — next eligible task after child 04.
 
 ## Deferred Work
 
@@ -63,7 +63,9 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ### Proposed — decision pending
 
-_No proposed tasks._
+| ID | Title | Priority | Status | Approval | Reason | Task record |
+|---|---|---:|---|---|---|---|
+| 20261127-173000-54 | Remove latest lint report copy and use the unified index | P0 | Proposed | Approved | DRAFT-0005 revision 1 must receive user approval and become an accepted ADR before implementation. | [subtask](tasks/20261127-173000/subtasks/54-remove-latest-lint-report-copy.md) |
 
 ### Paused
 

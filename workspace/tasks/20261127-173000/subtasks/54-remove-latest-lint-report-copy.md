@@ -7,17 +7,17 @@
 - **ID:** 20261127-173000-54
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Proposed
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to delete `.takeout/reports/latest-lint-report.json` and continue the Refactor Skills workstream.
-- **Governing ADR(s):** None
+- **Governing ADR(s):** Pending — DRAFT-0005
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — selected under the user's explicit execution instruction.
+- **Eligibility / deferral reason:** Proposed — changing accepted ADR-0003 requires approval of DRAFT-0005 revision 1 and promotion to a new accepted ADR before implementation.
 - **Required:** Yes
 - **Created:** 2026-11-27 17:05 UTC
-- **Updated:** 2026-11-27 17:05 UTC
+- **Updated:** 2026-11-27 17:15 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -52,14 +52,14 @@ Update every active producer, consumer, workflow, regression fixture, and operat
 ## 6. State and Evidence
 
 - **Commit SHA:** Not committed.
-- **Changed paths:** Pending.
+- **Changed paths:** Draft only: `workspace/draft/DRAFT-0005-unified-index-without-latest-lint-copy.md`.
 - **Readback:** Pending.
 - **Checks:** Not performed.
-- **Limitations:** Hosted CI results and local test execution are outside scope.
+- **Limitations:** The accepted ADR-0003 still requires the file. Implementation is not authorized until the user approves the exact Draft revision and the resulting ADR reaches accepted status.
 
 ## 7. Completion
 
-- **Status:** Not Done
+- **Status:** Proposed
 - **Completed at:** Not applicable
 - **Completion basis:** Not applicable
 
@@ -70,7 +70,7 @@ Update every active producer, consumer, workflow, regression fixture, and operat
 
 ## 9. Handoff
 
-After this correction, continue the Refactor Skills workstream. Select the next eligible child under this parent.
+Wait for user approval of DRAFT-0005 revision 1. Do not delete the file or change its consumers before the resulting ADR reaches accepted status. Child 04 is independent and remains the next Refactor Skills task.
 
 ## 10. Ledger Findings
 
