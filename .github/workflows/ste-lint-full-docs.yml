@@ -126,7 +126,7 @@ jobs:
           SELFTEST_EXIT: ${{ steps.tooling.outputs.linter_selftest_exit }}
         run: |
           set -euo pipefail
-          mkdir -p .lint-report-records .takeout/reports/lint_reports/on_repo/history
+          mkdir -p .lint-report-records  .takeout/reports/history/lint/on_repo/history
           anchor_status=0
           python3 .agent/skills/asd-ste100/scripts/check_markdown_anchors.py \
             > .lint-report-records/anchor-check.log 2>&1 || anchor_status=$?
@@ -225,7 +225,7 @@ jobs:
           if [[ "$GITHUB_EVENT_NAME" == "push" ]]; then
             task_id="$(git show -s --format=%B "$GITHUB_SHA" | sed -nE 's/^Task-ID:[[:space:]]*([0-9]{8}-[0-9]{6}(-[0-9]{2})*)[[:space:]]*$/\1/p' | paste -sd, -)"
           fi
-          history=".takeout/reports/lint_reports/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
+          history=" .takeout/reports/history/lint/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
           generator_status=0
           python3 .agent/skills/asd-ste100/scripts/generate_lint_report.py \
             --scope on_repo --records-dir .lint-report-records \
@@ -236,16 +236,16 @@ jobs:
             --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
             --mode repository-wide --status "$report_status" \
             --checks-file .lint-report-checks.json \
-            --previous-report .takeout/reports/lint_reports/on_repo/latest-lint-report.json \
+            --previous-report  .takeout/reports/history/lint/on_repo/ \
             --linter-source-sha "$(git rev-parse HEAD)" --task-id "$task_id" || generator_status=$?
           if [[ "$generator_status" -ne 0 ]]; then
             echo "::error::The shared lint report generator failed with exit $generator_status."
             failed=1
           else
-            cp .takeout/reports/lint_reports/on_repo/latest-lint-report.md .takeout/reports/lint_reports/latest-lint-report.md
+            cp  .takeout/reports/history/lint/on_repo/  .takeout/reports/history/lint/
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add .takeout/reports/lint_reports/on_repo .takeout/reports/lint_reports/latest-lint-report.md
+            git add  .takeout/reports/history/lint/on_repo  .takeout/reports/history/lint/
             if ! git diff --cached --quiet; then
               git commit -m "Publish repository-wide lint evidence"
               git pull --rebase origin gpt
@@ -263,7 +263,7 @@ jobs:
           TOOLING_FAILED: ${{ steps.tooling.outputs.failed }}
         run: |
           if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then
-            echo "::error::The full audit found lint or validation failures. See .takeout/reports/lint_reports/on_repo/latest-lint-report.md."
+            echo "::error::The full audit found lint or validation failures. See  .takeout/reports/history/lint/on_repo/."
             exit 1
           fi
           echo "All full-audit checks passed."
@@ -292,4 +292,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./.takeout/reports/gh_ac_reports/actions/capture
+        uses: ./.github/workflows/gh-actions-capture

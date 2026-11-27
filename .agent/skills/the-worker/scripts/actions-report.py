@@ -16,7 +16,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-ROOT = Path(__file__).resolve().parents[4] / ".takeout" / "reports" / "gh_ac_reports"
+ROOT = Path(__file__).resolve().parents[4] / ".takeout" / "reports"
 SHARED_ELIGIBILITY_PATH = Path(__file__).resolve().parent
 if str(SHARED_ELIGIBILITY_PATH) not in sys.path:
     sys.path.insert(0, str(SHARED_ELIGIBILITY_PATH))
@@ -546,9 +546,9 @@ def render_markdown(report):
         coverage = "One or more evidence sources were unavailable. This report is Incomplete.\n\n" + coverage
     path = run["workflow_path"].lower()
     if "ste-lint-changed" in path:
-        lint = "[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_changed/latest-lint-report.md)"
+        lint = "[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/history/lint/on_changed)"
     elif "ste-lint-full-docs" in path:
-        lint = "[Repository-wide lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_repo/latest-lint-report.md)"
+        lint = "[Repository-wide lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/history/lint/on_repo)"
     else:
         lint = "No separate lint report applies to this workflow."
     values = {

@@ -370,7 +370,7 @@ def main():
     (output / "report.md").write_text(markdown, encoding="utf-8")
     (output / "report.json").write_text(report_json, encoding="utf-8")
 
-    index_path = scope_root / "index.json"
+    index_path = Path(__file__).resolve().parents[4] / ".takeout" / "reports" / "index.json"
     try:
         index = json.loads(index_path.read_text(encoding="utf-8"))
         if not isinstance(index, dict) or not isinstance(index.get("runs"), list):
@@ -380,6 +380,7 @@ def main():
     except (OSError, ValueError) as exc:
         raise SystemExit("Cannot read report index: " + str(exc))
     entry = {
+        "family": "lint",
         key: data[key] for key in (
             "scope", "run_id", "run_number", "run_url", "attempt", "commit_sha",
             "generated_at_utc", "status", "execution_mode", "files_evaluated_count",
