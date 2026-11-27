@@ -251,14 +251,14 @@ Grandfather existing tasks. Do not mass-migrate them.
 
 ### CI Ledger handoffs
 
-The Ledger may create Proposed tasks before Worker review.
+The user's standing P0 directive makes every CI-generated P0 remediation task mandatory and execution-approved. This authorization does not provide decision approval or waive accepted ADR constraints.
 
-- Set Governing ADR(s) to Pending — Worker review required before approval.
-- Set the task board ADR cell to Pending.
 - The Worker determines whether an accepted ADR covers the finding.
-- Link that ADR before moving the task to Ready.
-- If no ADR covers the work, prepare a Draft. Keep the task Proposed until the user accepts the decision.
-- Task creation does not authorize remediation.
+- Link the accepted ADR before moving the task to Ready or In Progress.
+- If Governing ADR(s) is Pending, keep the task Proposed.
+- If no accepted ADR covers the work, prepare a Draft. Keep the task Proposed until the user approves the Draft and the resulting ADR reaches accepted status.
+- Do not edit accepted ADR context, options, or decision outcome to satisfy a finding. Prepare a separate Draft when the requested change needs a new decision.
+- P0 priority does not bypass decision governance.
 
 The Ledger remains the source of truth for CI finding identity and evidence.
 
