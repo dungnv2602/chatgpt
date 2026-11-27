@@ -2,19 +2,16 @@
 
 ## Current Step
 
-- **2026-11-27:** Execute authorized workflow refactor in [task 20261126-142500](tasks/20261126-142500/task.md), [subtask 20261126-142500-01](tasks/20261126-142500/subtasks/20261126-142500-01.md). Enforce universal prompt capture, genuine parent/follow-up attribution, CI remediation as children of the originating task, and simplify the end-to-end lifecycle. Parent is Current Execution.
+- **2026-11-27:** Implement [subtask 20261126-142500-02](tasks/20261126-142500/subtasks/02-refactor-task-ci-lifecycle.md) under [parent task 20261126-142500](tasks/20261126-142500/task.md). Audit child 01 is Done. Current focus: prompt capture gate, Task-ID provenance, genuine-parent CI child generation, Ledger schema/generator/tests, and concise aligned templates/skills.
 
 ## Open Discussions
 
-- **2026-11-27:** User confirmed permanent removal of `workspace/archive/` and retirement of task/report archiving. Completed or cancelled task folders must be deleted directly after closeout checks. No archive copy, retention index, scheduled cleanup, or Historical board row is permitted.
-- **2026-11-27:** User authorized editing accepted ADRs directly; superseding Drafts DRAFT-0006 and DRAFT-0007 are obsolete and were deleted. ADR-0003/0004 can be updated directly as required to reconcile editorial issues and task deletion policy.
-- **2026-11-27 05:31 UTC:** [20261126-090154](tasks/20261126-090154/task.md) is Blocked. Five of six ADR-0003 confirmation criteria are verified. Criterion 4 requires an explicit user-authorized read-only full-repository reference search.
-- **2026-11-27:** User removed hosted-results-review as a remediation closeout gate. A CI fix closes after commit verification and task deletion; later failures must automatically create follow-up remediation tasks. Do not inspect hosted results or remind the user about review.
-- **2026-11-27:** DRAFT-0002 revision 4 remains in review. Its wording corrections passed hosted lint. The decision and implementation scope remain unapproved.
-
-- **2026-11-27:** CI tooling failure root cause identified: incremental Markdown source validation did not exclude `.archive/` paths, so the test case `.archive/adr/old.md` was accepted as active. Added the `.archive/` source exclusion while retaining archive paths as link targets. Also repaired a stale ADR-0003 task link to a deleted task.
+- **2026-11-27:** Completed/cancelled task folders must be deleted directly after closeout. Do not create task or report archives, retention copies, cleanup schedules, or Historical board rows.
+- **2026-11-27:** Do not inspect, poll, dispatch, or rerun hosted CI. Commit/readback is the completion evidence; later failures flow through automatic report ingestion.
+- **2026-11-27:** User authorized direct execution of this task's full prompt-capture and CI lifecycle refactor.
 
 ## Reports
+
 
 - **2026-11-27 08:50 UTC:** Reconciled and directly closed eight P0 editorial task groups covering ADR-0003/0004. Wording edits committed (ADR-0003: `4a5e17764a173f519846a5a542902921bc296a0b`; ADR-0004: `bd89ad40440ee10c83b2e6a08770f082dc184fb3`). Ledger commit `5dbb6c6f80be3e79bdff62bf665611b5755570ab` resolved 65 findings with validation metadata Pending; hosted results were not inspected. Task folders were deleted directly under ADR-0004 lifecycle rules; finding identity and historical task references remain in Ledger.
 
