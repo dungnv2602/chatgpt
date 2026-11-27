@@ -830,22 +830,41 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
     created = parse_time(timestamp).strftime("%Y-%m-%d %H:%M UTC")
     legacy_text = ", ".join(sorted(set(legacy_task_ids or []))) or "None"
     finding_ids = ", ".join(sorted({str(item.get("finding_id")) for item in findings}))
+    parent, _ = active_genuine_parent(root, parent_id)
+    if not parent:
+        raise LedgerError("Cannot render CI child without a verified genuine parent: " + parent_id)
+    parent_status = task_metadata(parent["content"], "Status")
+    parent_governance = task_metadata(parent["content"], "Governing ADR(s)") or "None"
+    child_status = "Ready"
+    eligibility = "Eligible — no dependencies or unresolved decision gate."
+    governing_adrs = parent_governance
+    if parent_governance.lower().startswith("pending"):
+        child_status = "Proposed"
+        eligibility = "Proposed — parent governance decision is pending."
+    elif parent_status == "Proposed":
+        child_status = "Proposed"
+        eligibility = "Proposed — parent task is not yet approved for execution."
+    elif parent_status in ("Blocked", "Paused"):
+        child_status = parent_status
+        eligibility = child_status + " — parent task is " + parent_status.lower() + "."
+    if governing_adrs in ("None", "None — non-implementation task"):
+        governing_adrs = "None — no separate decision required"
     replacements = {
         "# Subtask: [Title]": "# Subtask: CI remediation — " + markdown_cell(title),
         "- **ID:** <parent-task-id>-NN": "- **ID:** " + subtask_id,
         "- **Parent Task ID:** YYYYMMDD-HHMMSS": "- **Parent Task ID:** " + parent_id,
         "- **Type:** Implementation": "- **Type:** CI remediation",
-        "- **Status:** Ready": "- **Status:** Ready",
+        "- **Status:** Ready": "- **Status:** " + child_status,
         "- **Priority:** P2": "- **Priority:** P0",
         "- **Origin:** User": "- **Origin:** Assistant",
         "- **Approval:** Approved": "- **Approval:** Approved",
         "- **Approval scope/source:** [Exact scope and authorization source]": "- **Approval scope/source:** Standing authorization for CI remediation.",
-        "- **Governing ADR(s):** [Accepted ADR IDs, or None]": "- **Governing ADR(s):** None — no separate decision required",
+        "- **Governing ADR(s):** [Accepted ADR IDs, or None]": "- **Governing ADR(s):** " + governing_adrs,
         "- **Created:** YYYY-MM-DD HH:MM UTC": "- **Created:** " + created,
         "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
         "- **Ledger group:** None": "- **Ledger group:** " + chr(96) + group_id + chr(96),
         "- **Legacy Task IDs:** None": "- **Legacy Task IDs:** " + legacy_text,
-        "- **Eligibility / deferral reason:** [Eligible or exact reason]": "- **Eligibility / deferral reason:** Eligible — no dependencies or unresolved decision gate.",
+        "- **Eligibility / deferral reason:** [Eligible or exact reason]": "- **Eligibility / deferral reason:** " + eligibility,
         "[Preserve this follow-up request verbatim.]":
             "Automated remediation request from CI report ingestion for parent task " + parent_id + ". Finding IDs: " + finding_ids + ".",
         "[Preserve later clarifications, constraints, decisions, and approvals verbatim with UTC timestamps.]":
@@ -865,10 +884,12 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
         if old in content:
             content = content.replace(old, new, 1)
     if (
-        "- **Status:** Ready" not in content
-        or "- **Type:** CI remediation" not in content
-        or "- **Priority:** P0" not in content
-        or "- **Approval:** Approved" not in content
+        task_metadata(content, "Status") not in ("Proposed", "Ready", "Blocked", "Paused")
+        or task_metadata(content, "Type") != "CI remediation"
+        or task_metadata(content, "Priority") != "P0"
+        or task_metadata(content, "Approval") != "Approved"
+        or not task_metadata(content, "Approval scope/source")
+        or not task_metadata(content, "Eligibility / deferral reason")
         or "[Exact scope and authorization source]" in content
         or "[Eligible or exact reason]" in content
     ):
