@@ -1,5 +1,11 @@
 # Task Board
 
+## CI-generated P0 execution policy
+
+CI Ledger-generated P0 remediation parents and children are mandatory, Approved, and Ready under standing authorization. Execute without separate task approval or hosted-CI validation gates. Mark children Done when their fix commit is verified, changed files read back, and SHA and remediation summary recorded; parent closure follows child completion. Safety, scope, and accepted decision constraints remain in force. Do not inspect hosted results absent an explicit results-review request.
+
+
+
 This file is the single index for active and retained task records. Each active task is a folder that contains task.md and subtasks/README.md. Child records live under subtasks/. Board links point to the parent task.md. The parent cannot be Done while any required child remains open. No active flat task notes remain. The Worker owns task status, selection, and closeout.
 
 ## Current Execution
@@ -10,7 +16,7 @@ This file is the single index for active and retained task records. Each active 
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-023803 | Improve .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 03:37 UTC | [Task record](tasks/20261127-023803/task.md) |
+| 20261127-023803 | Improve .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 02:38 UTC | [Task record](tasks/20261127-023803/task.md) |
 | 20261127-013646 | Review synonym-rotation findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013646/task.md) |
 | 20261127-013151-44 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-44/task.md) |
 | 20261127-013151-43 | Review passive-voice findings in workspace/README.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-43/task.md) |
@@ -60,9 +66,7 @@ This file is the single index for active and retained task records. Each active 
 
 ## Ready
 
-| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
-|---|---|---:|---|---|---|---|---|---|
-| 20261127-033729 | Improve .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:37 UTC | [Task record](tasks/20261127-033729/task.md) |
+_No tasks._
 
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |

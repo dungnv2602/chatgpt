@@ -77,7 +77,7 @@ Conditional: CI remediation subtask only.
 - **Run URL:** Not reviewed
 - **Reviewed at:** Not reviewed
 
-Hosted validation is separate from remediation completion. Do not keep a CI remediation subtask open solely because hosted validation is pending. Do not inspect hosted results until the user explicitly triggers results review.
+For CI-generated P0 remediation, intake is Approved and Ready under the standing authorization; no separate task approval/ADR-review gate applies to independently safe work. Completion requires the intended-branch commit to be verified, changed files read back, and the SHA and summary recorded. Hosted validation is separate and is not a completion gate. Do not inspect hosted results until the user explicitly triggers results review.
 
 ## 10. Handoff
 
