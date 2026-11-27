@@ -3,7 +3,7 @@ name: asd-ste100
 description: "Use when English text needs clear wording without human clarification. Covers tool descriptions, errors, inter-agent instructions, system prompts, and status reports where misreading has a real cost. Triggers: disambiguate, STE100 rewrite, apply Simplified Technical English, plain-language rewrite, controlled-language rewrite, rewrite so an agent cannot misread this. Not for creative or marketing copy."
 metadata:
   version: 0.4.0
-  project-role: foundational
+  project-role: task-specific
   format: agentskills
 ---
 

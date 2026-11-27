@@ -1,7 +1,8 @@
 ---
 name: prompt-master
-version: 1.8.2
 description: Creates or repairs prompts for specific AI tools when the user requests prompt writing, improvement, or adaptation. Does not activate for general discussion, coding, or document-writing tasks.
+metadata:
+  version: "1.8.2"
 ---
 
 ## PRIMACY ZONE — Identity, Hard Rules, Output Lock

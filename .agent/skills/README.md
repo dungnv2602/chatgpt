@@ -39,15 +39,24 @@ Use the per-conversation verified-load ledger in [SESSION_START.md](../SESSION_S
 
 ## Task-specific skills
 
-Load these skills only when the request or an explicit role-initiation procedure requires them.
+Load these skills only when the request or an explicit role-initiation procedure requires them. The descriptions below identify each skill's distinct scope. The skill's own activation rules remain authoritative.
 
 | Skill | Activation |
 |---|---|
-| [philosophy-religion-asceticism](philosophy-religion-asceticism/SKILL.md) | Philosophy, religion, theology, asceticism, or contemplative-tradition research |
-| [prompt-master](prompt-master/SKILL.md) | Prompt analysis, design, adaptation, or optimization |
-| [agent-skill-authoring](agent-skill-authoring/SKILL.md) | Creating, revising, checking, or integrating Agent Skills definitions |
-| [romantic-storyteller-visual-artist](romantic-storyteller-visual-artist/SKILL.md) | Romantic narrative or visual storytelling. The Drawing skill is a prerequisite for novelist-role initialization and governs visual work. |
-| [asd-ste100](asd-ste100/SKILL.md) | Skill or technical documentation authoring and clarity rewrites. |
+| [agent-skill-authoring](agent-skill-authoring/SKILL.md) | Create, revise, check, or integrate Agent Skill definitions. This skill defines the repository's canonical skill format and authoring procedure. |
+| [asd-ste100](asd-ste100/SKILL.md) | Rewrite technical English, skill instructions, tool descriptions, errors, and operational reports for clarity. Do not use for creative or marketing copy. |
+| [define-goal](define-goal/SKILL.md) | Define or refine a concrete, measurable goal. Goal creation requires a compatible goal-tool integration. |
+| [discernment-nudge](discernment-nudge/SKILL.md) | Add one brief set of fact-checking or reasoning questions after a substantive answer when its exclusions do not apply. |
+| [doc-coauthoring](doc-coauthoring/SKILL.md) | Guide substantial documentation, proposal, or specification work through iterative co-authoring. Its current workflow contains Claude-specific artifact and sub-agent steps. |
+| [grilling](grilling/SKILL.md) | Stress-test a plan, decision, or idea when the user explicitly asks to be grilled. Its fact-gathering procedure assumes sub-agent support. |
+| [internal-comms](internal-comms/SKILL.md) | Draft internal status reports, leadership updates, newsletters, FAQs, project updates, and incident reports using the matching example. |
+| [migrate-to-rust](migrate-to-rust/SKILL.md) | Plan and execute legacy-codebase migrations to Rust when the required repository access and Rust toolchain are available. |
+| [pdf](pdf/SKILL.md) | Read, extract, create, convert, annotate, or fill PDF files. |
+| [philosophy-religion-asceticism](philosophy-religion-asceticism/SKILL.md) | Research philosophy, religion, theology, asceticism, and contemplative traditions. |
+| [prompt-master](prompt-master/SKILL.md) | Create, repair, adapt, or optimize prompts for a specified AI tool. Do not use for general coding or document writing. |
+| [skill-creator](skill-creator/SKILL.md) | Create or improve skills and evaluate skill behavior or trigger descriptions. Use Agent Skill Authoring for repository format and integration. Its current evaluation workflow includes Claude/Cowork-specific steps. |
+| [theme-factory](theme-factory/SKILL.md) | Apply or create visual themes for slides, documents, and other artifacts. |
+| [xlsx](xlsx/SKILL.md) | Read, create, edit, validate, or convert spreadsheet files and tabular data. |
 
 
 ## Foundational initialization
