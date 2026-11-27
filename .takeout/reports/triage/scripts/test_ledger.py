@@ -399,7 +399,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("one shared UTC archive timestamp", github_actions)
         self.assertIn("expire as a complete folder group", archive)
         self.assertIn("No active flat task notes remain", board)
-        self.assertIn("every required subtask is Done", workspace_readme)
+        self.assertIn("all required subtasks are Done", workspace_readme)
         self.assertIn("Archiving never removes terminal finding identities", triage_readme)
         self.assertIn("one shared UTC timestamp", triage_readme)
         tick = chr(96)
