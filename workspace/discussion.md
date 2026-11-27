@@ -2,11 +2,11 @@
 
 ## Current Step
 
+- **2026-11-27:** Session initialization started by `/start`. Created and indexed the canonical discussion-register template at [templates/DISCUSSION_TEMPLATE.md](templates/DISCUSSION_TEMPLATE.md). Next: retrieve and verify The Worker and its mandatory Conversation Mode reference, then load the required startup CI references and process the eligible P0 batch. Hosted CI results remain out of scope.
+
 - **2026-11-27 18:01 +07:00:** Startup CI P0 batch complete. The report-template assertions were corrected in commit `1e697f0e5167e9c0778cadef69d7cf084249be27`; the four stale Markdown links were corrected in commits `f514ad0dfc46bca10ab5d9cae95d609d26b8a704`, `60ec079dbb8aaa6db97d8b717af9fc3b95962826`, and `22907d4bfb9905ee155d0d16164982c96d415762`. The latest inspected indexed report records six regression tests passed but predates the link fixes. No local tests were run and no hosted CI results were inspected. No eligible CI-generated P0 tasks remain in the inspected active task indexes. Next selected task: Refactor Skills child `20261127-173000-02`.
 - **2026-11-27:** Correcting task-parent selection: independent objectives require separate parents; Document Standards consolidation was misparented under the CI/reporting task and is now tracked under its own parent.
 - **2026-11-27:** Consolidation request captured as paused subtask `20261127-173000-02` under Refactor Skills: merge GitHub Actions, CI Ledger, Decision Governance, and Document Standards into The Worker and delete the separate skill directories, deferred behind P0.
-
-- **2026-11-27:** Implement [subtask 20261126-142500-02](tasks/20261126-142500/subtasks/02-refactor-task-ci-lifecycle.md) under [parent task 20261126-142500](tasks/20261126-142500/task.md). Audit child 01 is Done. Current focus: prompt capture gate, Task-ID provenance, genuine-parent CI child generation, Ledger schema/generator/tests, and concise aligned templates/skills.
 
 ## Open Discussions
 
