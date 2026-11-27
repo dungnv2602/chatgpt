@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173100
 - **Created:** 2026-11-27 17:31 UTC
-- **Updated:** 2026-11-27 10:52 UTC
+- **Updated:** 2026-11-27 11:08 UTC
 - **Priority:** P1
 - **Status:** Ready
 - **Origin:** User
@@ -49,9 +49,16 @@ Improve template coverage for task-board and repository document types.
 - **References:** Parent and subtask index.
 - **Next:** Execute children in Worker queue order.
 
+### 2026-11-27 11:08 UTC — shared P0 remediation closeout
+
+- **Action:** Closed CI child `20261127-173100-03` using the shared report-test correction completed under Refactor Skills child `20261127-173000-04`.
+- **Result:** Commit `1e697f0e5167e9c0778cadef69d7cf084249be27` corrects both stale assertions. The indexed repository report `45987814713` records all six lint-report regression tests as Passed. Remote readback confirmed the test assertions and canonical template.
+- **Limitations:** No local tests or scripts were run. No hosted CI result page or logs were inspected.
+- **Next:** Continue child 02, the repository template coverage audit.
+
 ## 6. Current State and Remaining Work
 
-Both children are Ready. No template work or repository audit has yet been performed.
+Child 01 (canonical task-board template) is Done. Child 03 (duplicate P0 lint-report remediation) is complete and closed through shared commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Child 02 (repository template coverage audit and missing-template remediation) remains Ready. The repository-wide coverage audit has not started.
 
 ## 7. Verification and Evidence
 
