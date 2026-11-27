@@ -275,7 +275,11 @@ Entering a higher tier does not restart lower tiers. For example, if you loaded 
 
 `.agent/skills/the-worker/SKILL.md` is the required baseline skill. Load it during `/start` initialization.
 
-The Worker manages task continuity, task selection, progress, handoffs, recovery, and collaboration modes. It maintains the discussion register and archives task records. It also manages conversation and drawing-session records, image provenance, WebP delivery, and media workflows.
+The Worker manages task continuity, selection, progress, handoffs, recovery, and collaboration modes.
+
+It maintains the discussion register and archives task records.
+
+It also manages conversation and drawing-session records, image provenance, WebP delivery, and media workflows.
 
 Load `.agent/skills/the-worker/references/conversation-mode.md` with The Worker. This reference defines Default Mode, Condensed Mode, the discussion-register contract, and user-visible output rules. Do not load Conversation Mode as a separate skill.
 
