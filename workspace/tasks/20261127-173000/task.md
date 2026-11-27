@@ -57,7 +57,7 @@ Serve as the persistent, open parent task and coordination point for skills refa
 ### 2026-11-27 18:29 UTC
 
 - **Action:** Set this parent to P0 and selected it as Current Execution. Activated child 01 and reconciled the board and child index.
-- **Result:** Readback confirmed parent, child, index, and board state. Children 02 and 03 remain Paused.
+- **Result:** Readback confirmed parent, child, index, and board state. Child 02 (consolidate specialist skills into The Worker) is Ready after the mandatory startup P0 batch. Child 03 (objective-based task-parent selection) remains Paused.
 - **References:** Commit `1e6800f40e4c1bf1e15263f0a479a54afe81468a`; child `24f697da8a75972ff7f6a0dca7302a125e63499c`; index `3f0101796d08a5eba78dfe2fd4120b7445bf5c62`; board `91ca878a4c151aeb65d3f5ff78b438af8e437aa3`.
 - **Next:** Execute child 01.
 
@@ -88,6 +88,12 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Result:** The four unresolved local targets from report `45987814713` now resolve to current repository paths or no longer appear as links. Remote readback confirmed all three changed files and both new link targets. No linter or tests were run.
 - **References:** Report README commit `f514ad0dfc46bca10ab5d9cae95d609d26b8a704`; ADR-0001 commit `60ec079dbb8aaa6db97d8b717af9fc3b95962826`; DRAFT-0002 commit `22907d4bfb9905ee155d0d16164982c96d415762`; child completion commit `f6359e9507f8b383b1000488da06ee233c9c514b`; report `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json`.
 - **Next:** Close and delete child 05. Reconcile duplicate P0 remediation children under their other genuine parents. Then resume the approved Refactor Skills workstream.
+
+### 2026-11-27 11:08 UTC — startup P0 batch completed
+
+- **Action:** Processed every eligible CI-generated P0 child in the currently published task indexes. Closed the duplicate P0 children under the CI workflow and Template Fix parents using the shared verified remediation commits.
+- **Result:** No eligible CI-generated P0 tasks remain in the inspected active parent indexes. The completed P0 remediation records were removed after parent/index reconciliation. No local tests were run and no hosted CI results were inspected.
+- **Next:** Child `20261127-173000-02` is Ready as the next Refactor Skills deliverable. Child `20261127-173000-03` remains Paused.
 
 ## 6. Current State and Remaining Work
 
