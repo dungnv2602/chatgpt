@@ -14,24 +14,22 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[Refactor Skills — P0](tasks/20261127-173000/task.md) — [child 05: Markdown links and heading anchors](tasks/20261127-173000/subtasks/05-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md). The parent is persistent and remains open for future skills-refactoring subtasks.
+[Refactor Skills — persistent P0 parent](tasks/20261127-173000/task.md). The parent remains selected by the user's explicit priority instruction and must stay open for future skills-refactoring subtasks.
 
 ## Ordered Eligible Execution Queue
 
-1. **P0** — [20261127-173100-03: Fix lint report regression tests](tasks/20261127-173100/subtasks/03-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) — Approved, Ready, no dependencies. This task is next after the selected child.
+1. **P1** — [20261127-173000-02: Consolidate specialist skills into The Worker](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) — Approved, Ready, dependencies satisfied. Selected next under the user-prioritized Refactor Skills parent.
+2. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
 
 ## Next Task
 
-[20261127-173100-03](tasks/20261127-173100/subtasks/03-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) is next after the current Refactor Skills child.
+[20261127-173000-02](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) is next under the selected Refactor Skills parent.
 
 ## Deferred Work
 
 ### Blocked
 
-| ID | Title | Priority | Status | Approval | Reason | Task record |
-|---|---|---:|---|---|---|---|
-| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | Repository diagnostic evidence is now available in the indexed on_repo report. Re-evaluate the prior path/availability blocker and inspect current source links before scheduling. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
-| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | Latest indexed report contains complete output for both failed regression assertions. Re-evaluate the blocker against the current generator, template, and test source. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
+_No blocked tasks._
 
 ### Proposed — decision pending
 
@@ -41,8 +39,7 @@ _No proposed tasks._
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-03 | Correct objective-based task parent selection | P1 | Paused | Approved | Reparented under Refactor Skills. Remaining audit is deferred behind P0 work. | [subtask](tasks/20261127-173000/subtasks/03-correct-objective-based-task-parent-selection.md) |
-| 20261127-173000-02 | Consolidate specialist skills into The Worker | P1 | Paused | Approved | Refactor Skills child. Deferred behind P0 work. | [subtask](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) |
+| 20261127-173000-03 | Correct objective-based task parent selection | P1 | Paused | Approved | Remaining audit is deferred behind the current Refactor Skills consolidation. | [subtask](tasks/20261127-173000/subtasks/03-correct-objective-based-task-parent-selection.md) |
 
 ### Dependency-waiting
 
