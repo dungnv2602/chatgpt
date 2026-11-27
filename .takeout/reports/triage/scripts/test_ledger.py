@@ -441,6 +441,7 @@ class LedgerTests(unittest.TestCase):
         root = SCRIPT.parents[4]
         parent_template = (root / "workspace" / "TASK_TEMPLATE.md").read_text(encoding="utf-8")
         subtask_template = (root / "workspace" / "SUBTASK_TEMPLATE.md").read_text(encoding="utf-8")
+        ledger_source = (root / ".takeout" / "reports" / "triage" / "scripts" / "ledger.py").read_text(encoding="utf-8")
         worker = (root / ".agent" / "skills" / "the-worker" / "SKILL.md").read_text(encoding="utf-8")
         ci_ledger = (root / ".agent" / "skills" / "ci-ledger" / "SKILL.md").read_text(encoding="utf-8")
         github_actions = (root / ".agent" / "skills" / "github-actions" / "SKILL.md").read_text(encoding="utf-8")
@@ -454,6 +455,11 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("A regular subtask is Done when its own acceptance criteria are satisfied", subtask_template)
         self.assertIn("every required subtask is Done", worker)
         self.assertIn("New task-folder entries share one UTC timestamp", worker)
+        self.assertIn("def read_archived_task(root, task_id):", ledger_source)
+        archive_reader = ledger_source.split("def read_archived_task(root, task_id):", 1)[1].split("def upsert_task_board_row", 1)[0]
+        self.assertNotIn(".glob(", archive_reader)
+        self.assertNotIn(".rglob(", archive_reader)
+        self.assertIn("Related tasks", ledger_source)
         self.assertIn("Historical flat archive files remain immutable and readable", ci_ledger)
         self.assertIn("one shared UTC timestamp", ci_ledger)
         self.assertIn("one shared UTC archive timestamp", github_actions)
