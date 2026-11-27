@@ -10,10 +10,11 @@ This file is the single index for active and retained task records. Each active 
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
+| 20261127-013646 | Review synonym-rotation findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013646/task.md) |
 | 20261127-013151-44 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-44/task.md) |
 | 20261127-013151-43 | Review passive-voice findings in workspace/README.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-43/task.md) |
-| 20261127-013151-42 | Review present-perfect findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-42/task.md) |
-| 20261127-013151-41 | Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-41/task.md) |
+| 20261127-013151-42 | Review present-perfect findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-42/task.md) |
+| 20261127-013151-41 | Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-41/task.md) |
 | 20261127-013151-40 | Review passive-voice findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-40/task.md) |
 | 20261127-013151-39 | Review semicolon findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-39/task.md) |
 | 20261127-013151-38 | Fix lint tooling check: Markdown links and heading anchors | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-38/task.md) |
@@ -35,9 +36,9 @@ This file is the single index for active and retained task records. Each active 
 | 20261127-013151-22 | Review semicolon findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-22/task.md) |
 | 20261127-013151-21 | Review long-sentence findings in .agent/skills/the-worker/references/conversation-mode.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-21/task.md) |
 | 20261127-013151-20 | Review synonym-rotation findings in .agent/INITIALIZATION\_POLICY.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-20/task.md) |
-| 20261127-013151-19 | Review synonym-rotation findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-19/task.md) |
-| 20261127-013151-18 | Review passive-voice findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-18/task.md) |
-| 20261127-013151-17 | Review long-sentence findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-17/task.md) |
+| 20261127-013151-19 | Review synonym-rotation findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-19/task.md) |
+| 20261127-013151-18 | Review passive-voice findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-18/task.md) |
+| 20261127-013151-17 | Review long-sentence findings in .agent/skills/ci-ledger/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-17/task.md) |
 | 20261127-013151-16 | Review long-sentence findings in .agent/SESSION\_START.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-16/task.md) |
 | 20261127-013151-15 | Review synonym-rotation findings in .agent/SESSION\_START.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-15/task.md) |
 | 20261127-013151-14 | Review passive-voice findings in .agent/SESSION\_START.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-14/task.md) |
@@ -50,11 +51,11 @@ This file is the single index for active and retained task records. Each active 
 | 20261127-013151-07 | Review synonym-rotation findings in .agent/skills/github-actions/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-07/task.md) |
 | 20261127-013151-06 | Review present-perfect findings in .agent/skills/github-actions/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-06/task.md) |
 | 20261127-013151-05 | Review passive-voice findings in .agent/skills/github-actions/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-05/task.md) |
-| 20261127-013151-04 | Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-04/task.md) |
-| 20261127-013151-03 | Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-03/task.md) |
-| 20261127-013151-02 | Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-02/task.md) |
-| 20261127-013151-01 | Review passive-voice findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-01/task.md) |
-| 20261127-013151 | Review long-sentence findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151/task.md) |
+| 20261127-013151-04 | Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-04/task.md) |
+| 20261127-013151-03 | Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-03/task.md) |
+| 20261127-013151-02 | Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-02/task.md) |
+| 20261127-013151-01 | Review passive-voice findings in .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151-01/task.md) |
+| 20261127-013151 | Review long-sentence findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:36 UTC | [Task record](tasks/20261127-013151/task.md) |
 
 ## Ready
 
