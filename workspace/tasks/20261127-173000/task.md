@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 17:30 UTC
+- **Updated:** 2026-11-27 18:10 UTC
 - **Priority:** P1
 - **Status:** Ready
 - **Origin:** User
@@ -28,11 +28,12 @@ None.
 
 ## 3. Objective and Acceptance Criteria
 
-Coordinate skills refactoring, beginning with the existing Document Standards consolidation.
+Coordinate skills refactoring, including consolidations into The Worker and workflow/hierarchy improvements.
 
 1. Existing task 20261127-102301 is reparented as a subtask of this task, with progress and original record evidence preserved.
 2. Child index and board reflect the new hierarchy.
 3. Parent and subtask paths are read back after commit.
+4. The objective-based task-parent-selection correction is preserved as subtask 03.
 
 ## 4. Decisions
 
@@ -49,7 +50,7 @@ Coordinate skills refactoring, beginning with the existing Document Standards co
 
 ## 6. Current State and Remaining Work
 
-Reparenting and index/board reconciliation remain.
+Subtasks 01, 02, and 03 are tracked. Subtask 03 preserves the former 20261127-102300 record. Reconciliation is deferred behind the mandatory P0 queue.
 
 ## 7. Verification and Evidence
 
@@ -61,7 +62,7 @@ Reparenting and index/board reconciliation remain.
 
 ## 8. Handoff
 
-Reconcile the existing task and board; read back changes.
+Execute the mandatory P0 queue, then resume paused children and read back changes.
 
 ## 9. Subtasks
 
