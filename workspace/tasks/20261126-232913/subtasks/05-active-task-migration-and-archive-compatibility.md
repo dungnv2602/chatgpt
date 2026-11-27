@@ -25,7 +25,7 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 ## 3. Acceptance Criteria
 1. Migrate every active flat task record to workspace/tasks/<task-id>/task.md while preserving task IDs, content, status, approval, progress, evidence, and relative links.
 2. Give every migrated task a subtasks/README.md and preserve existing task links.
-3. Archive new tasks as complete folders under .archive/task/<task-id>/ with task.md as the indexed parent record.
+3. Archive new tasks as complete folders under workspace/archive/task/<task-id>/ with task.md as the indexed parent record.
 4. Read both folder archives and historical flat-file archives without rewriting historical archives.
 5. Update retention index entries and cleanup logic to retain child records and remove only the intended complete task folder.
 6. Read back all active task folders, board links, archive paths, and retention entries.
@@ -48,7 +48,7 @@ Done. Active task migration, folder retention, Ledger archive reading, historica
 ### 2026-11-27 01:10 UTC
 - **Action:** Implemented `read_archived_task()` in the Ledger. It resolves folder archives and historical flat archives through exact retention-index paths. It validates the folder parent, subtask index, shared timestamp, task ID, path safety, symlink boundaries, and file existence. Recurrence now adds a Related tasks link to any retained prior archive.
 - **Result:** Added regression coverage for folder and compact-ID flat archives, unindexed files, incomplete folder indexes, and recurrence links. Historical archive files remain unchanged. Also repaired a malformed function boundary in `ledger.py` that had concatenated a return statement and the next function definition.
-- **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.archive/task/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md`; `.github/archive-retention-index.json`; commits `7632ed1`, `5e7d051`, `6a443e7`, `9933ded`, `13132e7`, `0763c16`.
+- **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `workspace/archive/task/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md`; `.github/archive-retention-index.json`; commits `7632ed1`, `5e7d051`, `6a443e7`, `9933ded`, `13132e7`, `0763c16`.
 - **Next:** Finish subtask 06 and map every ADR-0004 Confirmation criterion. Hosted results remain unreviewed.
 
 

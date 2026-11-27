@@ -7,7 +7,7 @@ import re
 import sys
 from pathlib import Path
 
-ALLOWED_ROOTS = {".agent", ".github", ".takeout", "area", "archive", "images", "workspace", "master", ".archive"}
+ALLOWED_ROOTS = {".agent", ".github", ".takeout", "area", "archive", "images", "workspace", "master"}
 KNOWN_CLASSES = {
     "Embedded contract",
     "Generator-owned",
@@ -145,16 +145,16 @@ def read_coverage(content: str) -> tuple[list[dict[str, str]], list[str]]:
 
 
 def find_markdown_documents(root: Path) -> list[str]:
-    """List repository Markdown files, excluding root master/, .archive/, and .git/."""
+    """List repository Markdown files, excluding root master/, workspace/archive/, and .git/."""
     documents: list[str] = []
     for candidate in root.iterdir():
-        if candidate.name in {"master", ".archive", ".git"}:
+        if candidate.name in {"master", ".git"}:
             continue
         if candidate.is_dir():
             documents.extend(
                 path.relative_to(root).as_posix()
                 for path in candidate.rglob("*.md")
-                if path.is_file()
+                if path.is_file() and path.relative_to(root).parts[:2] != ("workspace", "archive")
             )
         elif candidate.is_file() and candidate.suffix.casefold() == ".md":
             documents.append(candidate.relative_to(root).as_posix())
@@ -212,7 +212,8 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
             pattern.startswith("/")
             or any(part in {"", ".", ".."} for part in parts)
             or parts[0] not in ALLOWED_ROOTS
-            or parts[0] in {"master", ".archive"}
+            or parts[0] == "master"
+            or parts[:2] == ["workspace", "archive"]
         ):
             errors.append(f"Line {line}: unsafe or excluded Markdown coverage pattern '{pattern}'.")
             continue
@@ -239,7 +240,8 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
                 or any(part in {"", ".", ".."} for part in raw_parts)
                 or not path.parts
                 or path.parts[0] not in ALLOWED_ROOTS
-                or path.parts[0] in {"master", ".archive"}
+                or path.parts[0] == "master"
+                or path.parts[:2] == ("workspace", "archive")
                 or path_text.strip() != path_text
             ):
                 errors.append(f"Line {line}: unsafe or excluded authority path '{path_text}'.")

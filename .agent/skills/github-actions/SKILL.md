@@ -28,7 +28,7 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 - Run the schedule from the repository default branch because GitHub scheduled events only run there.
 - Check out `gpt`, which is the working/source branch.
-- Read only `.github/archive-retention-index.json`. Never list or scan `.archive/task/`.
+- Read only `.github/archive-retention-index.json`. Never list or scan `workspace/archive/task/`.
 - Retain each new task-folder archive for at least 90 days from its shared UTC archive timestamp. Require indexed task.md, subtasks/README.md, and every child record.
 - Treat all indexed files in one task folder as a single retention unit. Fail closed if required entries or the shared timestamp are missing.
 - Delete only the exact indexed files in a due folder. Delete their index entries in the same cleanup operation.
@@ -43,7 +43,7 @@ GitHub Actions runs the scheduled archive-retention workflow.
 ## 3. Report triage and archive retention
 
 - Start at `.takeout/reports/README.md`. Maintain cross-family issue state in `.takeout/reports/triage/ledger.json`.
-- Resolved report files belong in `.archive/reports/`, not in a report-root archive folder.
+- Resolved report files belong in `workspace/archive/reports/`, not in a report-root archive folder.
 - New task-folder archives expire as one indexed group after 90 days. Historical flat task archive files and report files expire individually. Cleanup deletes only exact indexed paths and never scans archive directories.
 - The index is `.github/archive-retention-index.json`. Preserve unindexed legacy files.
 
@@ -93,12 +93,12 @@ The Worker completes a CI remediation after committing the immediate defect chan
 
 ### Archive boundary for Markdown checks
 
-- Exclude all paths under `.archive/` from full-document and changed-document lint.
+- Exclude all paths under `workspace/archive/` from full-document and changed-document lint.
 - Exclude archived Markdown files from link-source and heading-anchor checks.
-- For links from active documents to `.archive/`, check whether the target path exists during routine lint. Ignore fragments for these targets.
+- For links from active documents to `workspace/archive/`, check whether the target path exists during routine lint. Ignore fragments for these targets.
 - Do not read archived files solely for routine link or heading-anchor checks. You may read an exact archived record when a task requires its content.
 - Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete archived records.
-- Do not add an `.archive/README.md` lint exception. The entire `.archive/` tree is outside lint scope.
+- Do not add an `workspace/archive/README.md` lint exception. The entire `workspace/archive/` tree is outside lint scope.
 
 Before changing a workflow, identify its events, branch/path filters, jobs, dependencies, permissions, concurrency, runner, timeout, cache, artifact behavior, and scripts. Identify which checks cover which files.
 

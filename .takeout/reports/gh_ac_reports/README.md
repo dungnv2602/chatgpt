@@ -107,7 +107,7 @@ A complete capture is never rewritten or duplicated, even when a manual request 
 
 ## Reporting periods
 
-A clean-start reset requires explicit user authorization. It deletes active generated report payloads, workflow snapshots, latest pointers, request queues, and all previous `.archive/reports/**` period snapshots. It resets the repository-wide index and request state to an empty reporting period with a new UTC watermark. It does not delete scripts, schemas, templates, assets, workflow definitions, operator guides, or task archives.
+A clean-start reset requires explicit user authorization. It deletes active generated report payloads, workflow snapshots, latest pointers, request queues, and all previous `workspace/archive/reports/**` period snapshots. It resets the repository-wide index and request state to an empty reporting period with a new UTC watermark. It does not delete scripts, schemas, templates, assets, workflow definitions, operator guides, or task archives.
 
 The first report captures source runs created after the reset watermark. Do not carry pending runs or import old reports into the new period. Use the normal report indexes and immutable post-reset capture paths from then onward.
 

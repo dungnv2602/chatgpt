@@ -41,7 +41,7 @@ Load this skill for Ledger ingestion, reconciliation, finding identity, eligibil
 ## Ingestion and publication
 
 1. Read report paths only from published lint and Actions indexes. Do not scan report history directories or modify source reports.
-2. Use repository-relative paths under `.takeout/reports/` for active evidence. Use `.archive/reports/` for archived evidence. Normalize legacy paths during migration.
+2. Use repository-relative paths under `.takeout/reports/` for active evidence. Use `workspace/archive/reports/` for archived evidence. Normalize legacy paths during migration.
 3. Keep the shared writer concurrency group non-cancelling and queued. Preserve the established `gh-ac-report-writer` contract.
 4. Publish report indexes, Ledger, task files, task board, and task links atomically through the existing commit/rebase/push flow.
 5. Ignore Ledger-only, task-board-only, discussion-only, and report-archive-only pushes during diagnostics sweeps. Follow the established archive-index trigger rules.
@@ -117,7 +117,7 @@ Mark a CI remediation subtask Done after the Worker commits its fix to the inten
 2. Store hosted validation separately as optional metadata. A Pending, Failed, or not-yet-reviewed hosted run does not keep the remediation subtask open and does not change its Done state.
 3. On a new observation after resolution, reopen the same finding identity, preserve the previous resolution in `resolution_history`, and increment occurrence count for the new observation.
 4. If the previous remediation task is no longer active, read its retained archive through the exact paths in `.github/archive-retention-index.json`. Support folder archives and historical flat task files. Link any retained prior archive in the new parent's Related tasks field. Do not scan archive directories. If an indexed archive file is missing or its folder index is incomplete, fail closed and surface the integrity error. Do not delete the index entry or fabricate a link. If retention expired, keep the prior Task ID in `task_refs` without inventing an archive link. Create or reuse the work-target parent. Append its Task ID to `task_refs`. Append the child ID to `subtask_refs`. If the prior parent is no longer active, create a new parent with the recurring remediation child.
-5. Archive complete task folders under `.archive/task/<task-id>/`. Index `task.md`, `subtasks/README.md`, and every child record by exact path. Use one shared UTC timestamp for every file in the folder. The cleanup workflow retains and deletes the folder as one unit. Historical flat archive files remain immutable and readable.
+5. Archive complete task folders under `workspace/archive/task/<task-id>/`. Index `task.md`, `subtasks/README.md`, and every child record by exact path. Use one shared UTC timestamp for every file in the folder. The cleanup workflow retains and deletes the folder as one unit. Historical flat archive files remain immutable and readable.
 6. Archiving a task never removes terminal findings, resolution history, or prior task references. Do not implement destructive finding retirement or retirement scans.
 
 Finding status and task status remain distinct. A finding becomes resolved after the Worker records the fix commit. Hosted validation remains independent. Later recurrence creates or reopens finding work through Ledger ingestion. It does not rewrite the prior Done record.

@@ -92,7 +92,7 @@ The task-activated [CI Ledger skill](../ci-ledger/SKILL.md) governs finding inta
 The repository on GitHub is the only project workspace. Do not assume that a local checkout or local execution environment exists.
 
 - Read, search, inspect, create, update, move, and delete repository files through the GitHub connector and GitHub APIs. Use exact paths and branch `gpt`.
-- The only archive-retention index exception is `.github/archive-retention-index.json`. Read or update it only to register the exact path and UTC archive timestamp of a task record during closeout. Never enumerate `.archive/task/` to backfill the index.
+- The only archive-retention index exception is `.github/archive-retention-index.json`. Read or update it only to register the exact path and UTC archive timestamp of a task record during closeout. Never enumerate `workspace/archive/task/` to backfill the index.
 - Never use local shell, Git, Python, container, filesystem, or similar execution tools to clone, pull, checkout, inspect, edit, test, build, or commit repository work.
 - Create commits and update refs through GitHub's remote APIs. Read back every changed path and check the resulting branch head.
 - Run repository scripts, tests, and validation only on GitHub-hosted Actions runners when an approved workflow invokes them. Inspect their results through GitHub Actions logs and artifacts. Do not reproduce them locally.
@@ -101,11 +101,11 @@ This rule is mandatory because the user has not provided a local project workspa
 
 ## Approved repository workspace boundary
 
-**Standing default:** All repository file work must stay inside the reconstructed approved project directories: `.takeout/images/`, `area/`, `.agent/`, `.takeout/`, `.archive/`, `workspace/`, and the narrowly authorized `.github/` workflow, scripts, and retention-index paths defined below. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
+**Standing default:** All repository file work must stay inside the reconstructed approved project directories: `.takeout/images/`, `area/`, `.agent/`, `.takeout/`, `workspace/archive/`, `workspace/`, and the narrowly authorized `.github/` workflow, scripts, and retention-index paths defined below. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
 
 **Authorized archive-retention index exception:**
 
-The user authorized exact read/write access to `.github/archive-retention-index.json` to register every archived file path. New task-folder entries share one UTC timestamp. Historical flat task and report entries keep individual timestamps. Do not list or scan `.archive/task/` or `.archive/reports/` to backfill this index.
+The user authorized exact read/write access to `.github/archive-retention-index.json` to register every archived file path. New task-folder entries share one UTC timestamp. Historical flat task and report entries keep individual timestamps. Do not list or scan `workspace/archive/task/` or `workspace/archive/reports/` to backfill this index.
 
 **Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These permissions do not authorize unrelated workflow changes.
 
@@ -122,14 +122,14 @@ This boundary applies to every future task and every tool call, not only archivi
   - `area/drawing/` — session records and prompt history
   - `.agent/skills/` — reusable skills and supporting references
   - `workspace/` — active task board and task records
-  - `.archive/task/` and `.archive/reports/` — time-limited task and report archives
+  - `workspace/archive/task/` and `workspace/archive/reports/` — time-limited task and report archives
   - `.takeout/reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
   - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics and shared archive-retention scope or another user-authorized workflow change
   - `.github/scripts/cleanup-archive.py` and `.github/scripts/test_cleanup_archive.py` — shared 90-day exact-file archive retention and its regression tests
   - `.github/archive-retention-index.json` — exact task/report archive file paths. New task-folder entries share one timestamp. Legacy flat task and report entries use individual timestamps.
 - Read and write files only by exact paths beginning with one of those approved directory names.
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
-- Do not use repository-wide code search or recursive root-tree listings unless the user explicitly requests a full-repository audit. That request authorizes read-only tree inventory and exact-path retrieval within the stated scope, including .archive contents only when the request expressly includes them. It does not authorize writes or override archive immutability. Use exact paths for all writes.
+- Do not use repository-wide code search or recursive root-tree listings unless the user explicitly requests a full-repository audit. That request authorizes read-only tree inventory and exact-path retrieval within the stated scope, including workspace/archive contents only when the request expressly includes them. It does not authorize writes or override archive immutability. Use exact paths for all writes.
 - Do not follow Markdown links outside the approved directories. If an essential reference is outside them and is not supplied in this conversation, explain the limitation. Ask the user to place it in an approved directory or provide it in chat.
 - A request to use an outside reference does not silently change this boundary. Ask for explicit permission before accessing an outside repository path.
 - Repository and branch identifiers may be used to direct GitHub operations, but this does not authorize reading or writing files outside the approved directories.
@@ -145,17 +145,16 @@ This boundary applies to every future task and every tool call, not only archivi
 - workspace/SUBTASK_TEMPLATE.md defines child subtask records.
 - workspace/tasks/ contains active task folders. Legacy flat task records remain only during the ADR-0004 migration.
 - workspace/draft/ contains proposals that need user review.
-- workspace/adr/ contains accepted ADRs awaiting implementation or confirmation.
+- workspace/adr/ contains all accepted ADRs, including completed historical decisions. Keep them in the flat folder permanently.
 - workspace/analysis/ contains evidence-based repository analysis snapshots.
-- .archive/adr/ contains permanent, immutable ADRs after confirmation.
-- .archive/README.md defines archive retention.
-- .archive/task/ contains completed or cancelled task records during retention.
-- Treat `.archive/` as read-only after each record's initial archive write. You may read an exact archived record when a task requires its content. Do not perform broad archive scans or audits unless the user asks.
-- Create the final task record in `.archive/task/` as the initial archive write.
+- workspace/archive/README.md defines archive retention.
+- workspace/archive/task/ contains completed or cancelled task records during retention.
+- Treat `workspace/archive/` as read-only after each task or report archive write. Read exact records when needed. Do not scan archive directories during routine work.
+- Create the final task record in `workspace/archive/task/` as the initial archive write.
   - Read back that exact path and check its complete content.
   - After verification, never edit, replace, rename, move, or manually delete the archived record.
   - Update the active task board with a link to the archived record and the archival commit.
-  - Only the scheduled retention workflow may delete expired .archive contents.
+  - Only the scheduled retention workflow may delete expired indexed task and report files under workspace/archive. It never deletes ADRs.
   - For links from active documents to archived paths, check path existence. Read the target when the task requires its content.
 
 Do not create a conversation transcript. The discussion register is a temporary record of open discussions and a short success-report window, not a transcript or task history.
@@ -393,7 +392,7 @@ The capture and sweep publishers share the non-cancelling `gh-ac-report-writer` 
 
 A full report reset is destructive and requires explicit user authorization. On approval:
 
-- Delete generated active report payloads, latest pointers, per-workflow snapshots, queued/processed request files, and all prior `.archive/reports/**` content.
+- Delete generated active report payloads, latest pointers, per-workflow snapshots, queued/processed request files, and all prior `workspace/archive/reports/**` content.
 - Reset the Actions and lint indexes and replace the Ledger with an empty, schema-valid state: no findings, no processed-report paths, and both lint baselines unseeded.
 - Delete report entries from the shared archive-retention index.
 - Preserve scripts, schemas, templates, assets, workflows, operating guides, task archives, task retention entries, and unrelated user tasks.
@@ -413,16 +412,16 @@ The Worker closes a parent task after every required subtask reaches Done. The W
 
 **Archive gate — do not mark an active parent Done prematurely.** Keep the active parent In Progress / Archived: No until the complete folder archive exists and matches the prepared final folder. Prepare final Done/Cancelled and Archived: Yes metadata only in the archive copy. Archive the complete directory, including task.md, subtasks/README.md, and every child record. Read back every file. Register each exact archived file path and timestamp in the retention index. Only after all copies and index entries verify may you delete the active task folder and reconcile the board. Move the board row to Historical only after the archive commit exists and link that commit. If any step fails, leave the task open and report the exact blocker.
 
-**Archive compatibility:** New task archives use `.archive/task/<task-id>/`. Include the parent, subtask index, and every child record. Use one UTC archive timestamp for every file. The cleanup workflow retains and deletes the folder as one unit. Historical flat task archives remain immutable and readable at their exact paths. Never convert or rewrite them. The Ledger resolves retained archives through exact index entries and adds a Related tasks link when recurrence creates a new parent. It does not scan archive directories. If an indexed file is missing, stop and report the integrity error. Do not rewrite or reconstruct the archive. Delete a stale index entry only after exact-path history lookup confirms that the original is unrecoverable and the user explicitly approves the index correction. Record the disposition in the discussion register and parent task. See `.archive/README.md`.
+**Archive compatibility:** New task archives use `workspace/archive/task/<task-id>/`. Include the parent, subtask index, and every child record. Use one UTC archive timestamp for every file. The cleanup workflow retains and deletes the folder as one unit. Historical flat task archives remain immutable and readable at their exact paths. Never convert or rewrite them. The Ledger resolves retained archives through exact index entries and adds a Related tasks link when recurrence creates a new parent. It does not scan archive directories. If an indexed file is missing, stop and report the integrity error. Do not rewrite or reconstruct the archive. Delete a stale index entry only after exact-path history lookup confirms that the original is unrecoverable and the user explicitly approves the index correction. Record the disposition in the discussion register and parent task. See `workspace/archive/README.md`.
 
 When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence. For Ledger-generated tasks, require terminal status and valid resolution, accepted-risk, false-positive, or duplicate evidence for every linked finding. A grouped task with any non-terminal finding cannot close as Done.
-2. Before you prepare the archive copy, move any report files that the historical record needs to `.archive/reports/`. Register each exact path and timestamp. Update the task's report links to the archive paths. Then prepare the final archive copy with status Done or Cancelled. Add its UTC archive timestamp in `YYYY-MM-DDTHH:MM:SSZ` format. Include complete verification and a final handoff. Set Archived to Yes only in that archive copy.
-3. Check whether `.archive/task/<task-id>/task.md` or any expected child path already exists. Read existing exact paths and compare complete content. Reuse only exact matches. Stop on differences. Never overwrite an archive record.
+2. Before you prepare the archive copy, move any report files that the historical record needs to `workspace/archive/reports/`. Register each exact path and timestamp. Update the task's report links to the archive paths. Then prepare the final archive copy with status Done or Cancelled. Add its UTC archive timestamp in `YYYY-MM-DDTHH:MM:SSZ` format. Include complete verification and a final handoff. Set Archived to Yes only in that archive copy.
+3. Check whether `workspace/archive/task/<task-id>/task.md` or any expected child path already exists. Read existing exact paths and compare complete content. Reuse only exact matches. Stop on differences. Never overwrite an archive record.
 4. If no archive folder exists, create the complete folder once, preserving the task ID, filenames, and child structure.
 5. Read back every archived file. Compare each with its prepared final content and verify the archive commit and changed-path metadata.
-6. Add one retention-index entry for each exact archived file path, including parent and child records, with its UTC archive timestamp. Preserve existing entries. Do not enumerate `.archive/task/` or backfill unrelated records.
+6. Add one retention-index entry for each exact archived file path, including parent and child records, with its UTC archive timestamp. Preserve existing entries. Do not enumerate `workspace/archive/task/` or backfill unrelated records.
 7. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete indexed archived records.
 8. Only after every archive file and retention-index entry verifies, delete the complete active task folder from `workspace/tasks/<task-id>/`. Keep the active parent In Progress / Archived: No until deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive without rewriting it.
 9. Update `workspace/task_board.md` in the same closeout pass:
@@ -440,7 +439,7 @@ Treat the task record, archive path, and task board as one logical transaction e
 
 If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree. Do not ask the user to approve routine archival or board maintenance. The approved task requires this archival and board maintenance.
 
-Follow .archive/README.md for 90-day retention. New task-folder archives expire as one unit. Historical flat task archives and report files expire individually. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only scheduled retention may delete indexed records.
+Follow workspace/archive/README.md for 90-day retention. New task-folder archives expire as one unit. Historical flat task archives and report files expire individually. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only scheduled retention may delete indexed records.
 
 ## Conversation and drawing-session archives
 

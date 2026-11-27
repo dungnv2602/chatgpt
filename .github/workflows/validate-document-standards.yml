@@ -18,7 +18,7 @@ on:
       - '.takeout/reports/gh_ac_reports/assets/**'
       - '.takeout/reports/gh_ac_reports/actions/**'
       # Enforce catalog coverage whenever any active document family changes.
-      # master/ and .archive/ remain outside this inventory scan.
+      # master/ and workspace/archive/ remain outside this inventory scan.
       - 'area/drawing/**/*.md'
       - 'area/novel/**/*.md'
       - '.takeout/reports/**/*.md'
@@ -33,6 +33,7 @@ on:
       - '!.takeout/reports/lint_reports/on_*/history/**'
       - '!.takeout/reports/lint_reports/on_*/latest-lint-report.md'
       - 'workspace/**/*.md'
+      - '!workspace/archive/**'
       - '!workspace/discussion.md'
       - '!workspace/tasks/**'
       - '!workspace/task_board.md'

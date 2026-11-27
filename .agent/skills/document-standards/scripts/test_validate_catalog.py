@@ -254,21 +254,18 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_master_and_archive_markdown_are_excluded_from_coverage(self):
         self.set_catalog(self.valid_rows())
         self.write("master/new-reference.md")
-        self.write(".archive/old-record.md")
+        self.write("workspace/archive/old-record.md")
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
-    def test_permanent_adr_and_task_archives_are_covered(self):
-        self.write("archive/adr/README.md")
-        self.write("archive/adr/0001-historical-decision.md")
-        self.write("archive/tasks/20261124-103354-historical-task.md")
-        self.write("workspace/TASK_TEMPLATE.md")
+    def test_historical_adrs_remain_in_workspace_adr_and_task_archives_are_excluded(self):
+        self.write("workspace/adr/README.md")
+        self.write("workspace/adr/0001-historical-decision.md")
+        self.write("workspace/archive/task/20261124-103354/task.md")
+        self.write("workspace/ADR_TEMPLATE.md")
         self.set_catalog(self.valid_rows(), [
-            "| `archive/adr/*.md` | Embedded contract | Active |"
-            "`archive/adr/README.md` and `.agent/skills/example/SKILL.md` | "
-            "Permanent accepted decision records. |",
-            "| `archive/tasks/*.md` | Template required | Active |"
-            "`workspace/TASK_TEMPLATE.md` | Permanent archived task records. |",
+            "| `workspace/adr/*.md` | Template required | Active |"
+            "`workspace/ADR_TEMPLATE.md` | Historical and active ADRs share one flat folder. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
@@ -406,7 +403,7 @@ class CatalogValidatorTests(unittest.TestCase):
         rows = self.valid_rows()
         rows[0] = (
             "| Example template | Template required | "
-            "`.agent/skills/../.archive/template.md` | Unsafe. |"
+            "`.agent/skills/../workspace/archive/template.md` | Unsafe. |"
         )
         self.set_catalog(rows)
         errors, _, _ = validate_catalog(self.root, self.catalog)

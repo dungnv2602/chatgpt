@@ -114,7 +114,7 @@ The implementation task must collect evidence for every criterion.
 - [x] The decision-governance skill, workspace analysis area, and permanent ADR archive guidance exist.
 - [x] The Document Type Catalog contains all required active and reserved path rules.
 - [x] Relevant hosted Document Standards and Ledger validation pass.
-- [x] The implementation task is complete and archived. This ADR is now moved to ` .archive/adr/`.
+- [x] The implementation task is complete and archived. This ADR is now moved to `workspace/adr/`.
 
 ## Pros and Cons of the Options
 

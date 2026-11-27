@@ -163,7 +163,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(
             [item["report_path"] for item in migrated["findings"][0]["evidence"]],
             [".takeout/reports/lint_reports/on_repo/history/1-attempt-1/report.json",
-             ".archive/reports/triage/old-report.json"],
+             "workspace/archive/reports/triage/old-report.json"],
         )
         self.assertEqual(
             migrated["ingestion_state"]["processed_reports"],
@@ -406,7 +406,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("[Task record](tasks/" + task_id + "/task.md)", board)
         self.assertEqual(list((self.root / "workspace" / "tasks").glob("*/task.md")), [parent])
     def test_archived_task_reader_supports_folder_and_legacy_flat_files(self):
-        archive_root = self.root / ".archive" / "task"
+        archive_root = self.root / "workspace/archive" / "task"
         folder_id = "20261122-030000"
         folder = archive_root / folder_id
         subtasks = folder / "subtasks"
@@ -434,10 +434,10 @@ class LedgerTests(unittest.TestCase):
             "schema_version": 1,
             "unindexed_records": "preserve",
             "records": [
-                {"path": ".archive/task/" + folder_id + "/task.md", "archived_at_utc": stamp},
-                {"path": ".archive/task/" + folder_id + "/subtasks/README.md", "archived_at_utc": stamp},
-                {"path": ".archive/task/" + folder_id + "/subtasks/01-child.md", "archived_at_utc": stamp},
-                {"path": ".archive/task/" + flat_id + "-legacy-task.md", "archived_at_utc": stamp},
+                {"path": "workspace/archive/task/" + folder_id + "/task.md", "archived_at_utc": stamp},
+                {"path": "workspace/archive/task/" + folder_id + "/subtasks/README.md", "archived_at_utc": stamp},
+                {"path": "workspace/archive/task/" + folder_id + "/subtasks/01-child.md", "archived_at_utc": stamp},
+                {"path": "workspace/archive/task/" + flat_id + "-legacy-task.md", "archived_at_utc": stamp},
             ],
         }
         index_path.write_text(json.dumps(index), encoding="utf-8")
@@ -451,14 +451,14 @@ class LedgerTests(unittest.TestCase):
         folder_result = LEDGER.read_archived_task(self.root, folder_id)
         flat_result = LEDGER.read_archived_task(self.root, flat_id)
         self.assertEqual(folder_result["archive_type"], "folder")
-        self.assertEqual(folder_result["parent_path"], ".archive/task/" + folder_id + "/task.md")
+        self.assertEqual(folder_result["parent_path"], "workspace/archive/task/" + folder_id + "/task.md")
         self.assertEqual(set(folder_result["files"]), {
-            ".archive/task/" + folder_id + "/task.md",
-            ".archive/task/" + folder_id + "/subtasks/README.md",
-            ".archive/task/" + folder_id + "/subtasks/01-child.md",
+            "workspace/archive/task/" + folder_id + "/task.md",
+            "workspace/archive/task/" + folder_id + "/subtasks/README.md",
+            "workspace/archive/task/" + folder_id + "/subtasks/01-child.md",
         })
         self.assertEqual(flat_result["archive_type"], "flat")
-        self.assertEqual(flat_result["parent_path"], ".archive/task/" + flat_id + "-legacy-task.md")
+        self.assertEqual(flat_result["parent_path"], "workspace/archive/task/" + flat_id + "-legacy-task.md")
         self.assertIsNone(LEDGER.read_archived_task(self.root, unindexed_id))
         self.assertEqual(before["folder_parent"], (folder / "task.md").read_text(encoding="utf-8"))
         self.assertEqual(before["folder_index"], (subtasks / "README.md").read_text(encoding="utf-8"))
@@ -472,7 +472,7 @@ class LedgerTests(unittest.TestCase):
         index_path.write_text(json.dumps({
             "schema_version": 1,
             "records": [{
-                "path": ".archive/task/" + task_id + "-missing.md",
+                "path": "workspace/archive/task/" + task_id + "-missing.md",
                 "archived_at_utc": "2026-11-22T07:00:00Z",
             }],
         }), encoding="utf-8")
@@ -481,7 +481,7 @@ class LedgerTests(unittest.TestCase):
 
     def test_archived_task_reader_rejects_incomplete_folder_archive(self):
         task_id = "20261122-060000"
-        folder = self.root / ".archive" / "task" / task_id
+        folder = self.root / "workspace/archive" / "task" / task_id
         folder.mkdir(parents=True)
         parent = folder / "task.md"
         parent.write_text("# Task: Incomplete archive\n\n- **ID:** " + task_id + "\n", encoding="utf-8")
@@ -490,7 +490,7 @@ class LedgerTests(unittest.TestCase):
         index_path.write_text(json.dumps({
             "schema_version": 1,
             "records": [{
-                "path": ".archive/task/" + task_id + "/task.md",
+                "path": "workspace/archive/task/" + task_id + "/task.md",
                 "archived_at_utc": "2026-11-22T06:00:00Z",
             }],
         }), encoding="utf-8")
@@ -505,7 +505,7 @@ class LedgerTests(unittest.TestCase):
         worker = (root / ".agent" / "skills" / "the-worker" / "SKILL.md").read_text(encoding="utf-8")
         ci_ledger = (root / ".agent" / "skills" / "ci-ledger" / "SKILL.md").read_text(encoding="utf-8")
         github_actions = (root / ".agent" / "skills" / "github-actions" / "SKILL.md").read_text(encoding="utf-8")
-        archive = (root / ".archive" / "README.md").read_text(encoding="utf-8")
+        archive = (root / "workspace/archive" / "README.md").read_text(encoding="utf-8")
         board = (root / "workspace" / "task_board.md").read_text(encoding="utf-8")
         workspace_readme = (root / "workspace" / "README.md").read_text(encoding="utf-8")
         triage_readme = (root / ".takeout" / "reports" / "triage" / "README.md").read_text(encoding="utf-8")
@@ -668,7 +668,7 @@ class LedgerTests(unittest.TestCase):
         report = json.loads(report_path.read_text(encoding="utf-8"))
         report["checks"][-1].update({
             "status":"Failed","exit_code":1,
-            "output":"Found 1 unresolved local Markdown target. Missing Markdown file: ../../.archive/adr/0001.md",
+            "output":"Found 1 unresolved local Markdown target. Missing Markdown file: ../../workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
         })
         report_path.write_text(json.dumps(report),encoding="utf-8")
         ledger = self.read_ledger()
@@ -704,7 +704,7 @@ class LedgerTests(unittest.TestCase):
             report = json.loads(report_path.read_text(encoding="utf-8"))
             report["checks"][-1].update({
                 "status":"Failed","exit_code":1,
-                "output":"Found 1 unresolved local Markdown target. Missing Markdown file: ../../.archive/adr/0001.md",
+                "output":"Found 1 unresolved local Markdown target. Missing Markdown file: ../../workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
             })
             report_path.write_text(json.dumps(report),encoding="utf-8")
         ledger = self.read_ledger()
@@ -874,7 +874,7 @@ class LedgerTests(unittest.TestCase):
         child = child_path.read_text(encoding="utf-8").replace("- **Status:** Proposed","- **Status:** Done")
         child = child.replace("- **Status:** Not Done","- **Status:** Done")
         child_path.write_text(child,encoding="utf-8")
-        archive_folder = self.root / ".archive" / "task" / old_task_id
+        archive_folder = self.root / "workspace/archive" / "task" / old_task_id
         archive_subtasks = archive_folder / "subtasks"
         archive_subtasks.mkdir(parents=True)
         archive_parent = parent.replace("- **Archived:** No", "- **Archived:** Yes")
@@ -889,9 +889,9 @@ class LedgerTests(unittest.TestCase):
             "schema_version": 1,
             "unindexed_records": "preserve",
             "records": [
-                {"path": ".archive/task/" + old_task_id + "/task.md", "archived_at_utc": archive_stamp},
-                {"path": ".archive/task/" + old_task_id + "/subtasks/README.md", "archived_at_utc": archive_stamp},
-                {"path": ".archive/task/" + old_task_id + "/subtasks/01-ci-remediation.md", "archived_at_utc": archive_stamp},
+                {"path": "workspace/archive/task/" + old_task_id + "/task.md", "archived_at_utc": archive_stamp},
+                {"path": "workspace/archive/task/" + old_task_id + "/subtasks/README.md", "archived_at_utc": archive_stamp},
+                {"path": "workspace/archive/task/" + old_task_id + "/subtasks/01-ci-remediation.md", "archived_at_utc": archive_stamp},
             ],
         }), encoding="utf-8")
         resolution = {
@@ -921,7 +921,7 @@ class LedgerTests(unittest.TestCase):
         self.assertTrue(new_parent.is_file())
         new_parent_text = new_parent.read_text(encoding="utf-8")
         self.assertIn("- **Status:** Proposed",new_parent_text)
-        self.assertIn("- **Related tasks:** [" + old_task_id + "](../../../.archive/task/" + old_task_id + "/task.md)",new_parent_text)
+        self.assertIn("- **Related tasks:** [" + old_task_id + "](../../../workspace/archive/task/" + old_task_id + "/task.md)",new_parent_text)
         self.assertEqual((archive_folder / "task.md").read_text(encoding="utf-8"),archive_parent)
         self.assertEqual(LEDGER.task_metadata(parent_path.read_text(encoding="utf-8"),"Status"),"Done")
 
@@ -1369,9 +1369,9 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("Ingest centralized CI issues", sweep)
         self.assertIn("      - name: Publish diagnostic backfill and Worker tasks\n        if: always()", sweep)
         ignored = sweep.split("paths-ignore:", 1)[1].split("concurrency:", 1)[0]
-        self.assertIn(".archive/reports/**", ignored)
+        self.assertIn("workspace/archive/reports/**", ignored)
         self.assertNotIn(".github/archive-retention-index.json", ignored)
-        self.assertNotIn(".archive/task/**", ignored)
+        self.assertNotIn("workspace/archive/task/**", ignored)
         self.assertIn("      - '!workspace/discussion.md'", standards)
         self.assertLess(
             standards.index("      - 'workspace/**/*.md'"),

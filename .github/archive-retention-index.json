@@ -3,1343 +3,1343 @@
   "unindexed_records": "preserve",
   "records": [
     {
-      "path": ".archive/task/20261123-041640-worker-mode-independent-and-lint-report-formats.md",
+      "path": "workspace/archive/task/20261123-041640-worker-mode-independent-and-lint-report-formats.md",
       "archived_at_utc": "2026-11-23T04:21:54Z"
     },
     {
-      "path": ".archive/task/20261123043747-audit-template-placement-and-enforce-template-first-workflow.md",
+      "path": "workspace/archive/task/20261123043747-audit-template-placement-and-enforce-template-first-workflow.md",
       "archived_at_utc": "2026-11-23T04:58:41Z"
     },
     {
-      "path": ".archive/task/20261123-051200-repair-lint-report-evidence-workflow.md",
+      "path": "workspace/archive/task/20261123-051200-repair-lint-report-evidence-workflow.md",
       "archived_at_utc": "2026-11-23T05:31:45Z"
     },
     {
-      "path": ".archive/task/20261123-071000-centralized-ci-issue-ledger.md",
+      "path": "workspace/archive/task/20261123-071000-centralized-ci-issue-ledger.md",
       "archived_at_utc": "2026-11-23T09:23:00Z"
     },
     {
-      "path": ".archive/task/20261123-112100-consolidate-foundational-skills-into-worker.md",
+      "path": "workspace/archive/task/20261123-112100-consolidate-foundational-skills-into-worker.md",
       "archived_at_utc": "2026-11-23T11:48:29Z"
     },
     {
-      "path": ".archive/task/20261123-115700-consolidate-session-archiving-into-worker.md",
+      "path": "workspace/archive/task/20261123-115700-consolidate-session-archiving-into-worker.md",
       "archived_at_utc": "2026-11-23T12:04:00Z"
     },
     {
-      "path": ".archive/task/20261123-120700-promote-document-standards-to-foundational.md",
+      "path": "workspace/archive/task/20261123-120700-promote-document-standards-to-foundational.md",
       "archived_at_utc": "2026-11-23T12:09:00Z"
     },
     {
-      "path": ".archive/task/20261123-123459-audit-document-templates-and-enforce-inventory-coverage.md",
+      "path": "workspace/archive/task/20261123-123459-audit-document-templates-and-enforce-inventory-coverage.md",
       "archived_at_utc": "2026-11-23T16:09:08Z"
     },
     {
-      "path": ".archive/task/20261123-230158-01-review-semicolon-findings-in-skills-the-worker-references-conver.md",
+      "path": "workspace/archive/task/20261123-230158-01-review-semicolon-findings-in-skills-the-worker-references-conver.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-02-review-synonym-rotation-findings-in-skills-the-worker-references.md",
+      "path": "workspace/archive/task/20261123-230158-02-review-synonym-rotation-findings-in-skills-the-worker-references.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-03-review-long-sentence-findings-in-skills-the-worker-skill-md.md",
+      "path": "workspace/archive/task/20261123-230158-03-review-long-sentence-findings-in-skills-the-worker-skill-md.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-04-review-semicolon-findings-in-skills-the-worker-references-archiv.md",
+      "path": "workspace/archive/task/20261123-230158-04-review-semicolon-findings-in-skills-the-worker-references-archiv.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-05-review-long-sentence-findings-in-skills-the-worker-references-ar.md",
+      "path": "workspace/archive/task/20261123-230158-05-review-long-sentence-findings-in-skills-the-worker-references-ar.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-06-review-synonym-rotation-findings-in-skills-the-worker-references.md",
+      "path": "workspace/archive/task/20261123-230158-06-review-synonym-rotation-findings-in-skills-the-worker-references.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-07-review-semicolon-findings-in-skills-the-worker-assets-conversati.md",
+      "path": "workspace/archive/task/20261123-230158-07-review-semicolon-findings-in-skills-the-worker-assets-conversati.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-08-review-semicolon-findings-in-images-readme-md.md",
+      "path": "workspace/archive/task/20261123-230158-08-review-semicolon-findings-in-images-readme-md.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-09-review-semicolon-findings-in-skills-the-worker-references-image.md",
+      "path": "workspace/archive/task/20261123-230158-09-review-semicolon-findings-in-skills-the-worker-references-image.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-10-review-checkout-or-action-download-failures-in-process-image-tak.md",
+      "path": "workspace/archive/task/20261123-230158-10-review-checkout-or-action-download-failures-in-process-image-tak.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-11-review-publication-or-push-failures-in-convert-unclassified-take.md",
+      "path": "workspace/archive/task/20261123-230158-11-review-publication-or-push-failures-in-convert-unclassified-take.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-12-review-validation-or-test-failures-in-process-image-takeout-and.md",
+      "path": "workspace/archive/task/20261123-230158-12-review-validation-or-test-failures-in-process-image-takeout-and.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-230158-review-long-sentence-findings-in-skills-the-worker-references-co.md",
+      "path": "workspace/archive/task/20261123-230158-review-long-sentence-findings-in-skills-the-worker-references-co.md",
       "archived_at_utc": "2026-11-23T23:16:19Z"
     },
     {
-      "path": ".archive/task/20261123-162826-enforce-conversation-integrity-before-image-relocation.md",
+      "path": "workspace/archive/task/20261123-162826-enforce-conversation-integrity-before-image-relocation.md",
       "archived_at_utc": "2026-11-24T03:41:00Z"
     },
     {
-      "path": ".archive/task/20261123-100738-remediate-hard-ste-lint-findings.md",
+      "path": "workspace/archive/task/20261123-100738-remediate-hard-ste-lint-findings.md",
       "archived_at_utc": "2026-11-24T06:00:32Z"
     },
     {
-      "path": ".archive/task/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md",
+      "path": "workspace/archive/task/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md",
       "archived_at_utc": "2026-11-24T07:05:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/logs/job-138240737323.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/logs/job-138240737323.log",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/logs/job-138245808224.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/logs/job-138245808224.log",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/logs/job-138256135715.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/logs/job-138256135715.log",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/logs/job-138258048097.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/logs/job-138258048097.log",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-24T07:16:36Z"
     },
     {
-      "path": ".archive/task/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md",
+      "path": "workspace/archive/task/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md",
       "archived_at_utc": "2026-11-24T07:19:17Z"
     },
     {
-      "path": ".archive/task/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md",
+      "path": "workspace/archive/task/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md",
       "archived_at_utc": "2026-11-24T07:19:17Z"
     },
     {
-      "path": ".archive/task/20261124-093000-add-approval-gated-drawing-pattern-learning.md",
+      "path": "workspace/archive/task/20261124-093000-add-approval-gated-drawing-pattern-learning.md",
       "archived_at_utc": "2026-11-24T09:42:19Z"
     },
     {
-      "path": ".archive/task/20261123-225745-repair-ci-ledger-task-generation-workflow.md",
+      "path": "workspace/archive/task/20261123-225745-repair-ci-ledger-task-generation-workflow.md",
       "archived_at_utc": "2026-11-24T10:49:00Z"
     },
     {
-      "path": ".archive/task/20261124-111700-resolve-ci-discussion-items.md",
+      "path": "workspace/archive/task/20261124-111700-resolve-ci-discussion-items.md",
       "archived_at_utc": "2026-11-24T11:44:00Z"
     },
     {
-      "path": ".archive/task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "path": "workspace/archive/task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
       "archived_at_utc": "2026-11-24T15:18:14Z"
     },
     {
-      "path": ".archive/task/20261124-160500-implement-verified-source-draft-retirement.md",
+      "path": "workspace/archive/task/20261124-160500-implement-verified-source-draft-retirement.md",
       "archived_at_utc": "2026-11-24T17:21:00Z"
     },
     {
-      "path": ".archive/task/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md",
+      "path": "workspace/archive/task/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md",
       "archived_at_utc": "2026-11-24T18:13:35Z"
     },
     {
-      "path": ".archive/task/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md",
+      "path": "workspace/archive/task/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md",
       "archived_at_utc": "2026-11-24T18:13:35Z"
     },
     {
-      "path": ".archive/task/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md",
+      "path": "workspace/archive/task/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md",
       "archived_at_utc": "2026-11-24T18:13:35Z"
     },
     {
-      "path": ".archive/task/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md",
+      "path": "workspace/archive/task/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md",
       "archived_at_utc": "2026-11-24T18:13:35Z"
     },
     {
-      "path": ".archive/task/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md",
+      "path": "workspace/archive/task/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md",
       "archived_at_utc": "2026-11-24T18:13:35Z"
     },
     {
-      "path": ".archive/task/20261124-181746-reconcile-final-adr-0002-ledger-finding.md",
+      "path": "workspace/archive/task/20261124-181746-reconcile-final-adr-0002-ledger-finding.md",
       "archived_at_utc": "2026-11-24T18:18:43Z"
     },
     {
-      "path": ".archive/task/20261124-183017-repair-adr-catalog-rule-and-ci-follow-through.md",
+      "path": "workspace/archive/task/20261124-183017-repair-adr-catalog-rule-and-ci-follow-through.md",
       "archived_at_utc": "2026-11-24T18:56:28Z"
     },
     {
-      "path": ".archive/task/20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md",
+      "path": "workspace/archive/task/20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md",
       "archived_at_utc": "2026-11-25T02:40:00Z"
     },
     {
-      "path": ".archive/task/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md",
+      "path": "workspace/archive/task/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md",
       "archived_at_utc": "2026-11-26T06:44:14Z"
     },
     {
-      "path": ".archive/task/20261126-064951-complete-non-image-repository-adaptation.md",
+      "path": "workspace/archive/task/20261126-064951-complete-non-image-repository-adaptation.md",
       "archived_at_utc": "2026-11-26T07:12:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/logs/job-139908514957.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/logs/job-139908514957.log",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/logs/job-139912392690.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/logs/job-139912392690.log",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/logs/job-139916921529.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/logs/job-139916921529.log",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/logs/job-139936004964.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/logs/job-139936004964.log",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/logs/job-139949149577.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/logs/job-139949149577.log",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/task/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md",
+      "path": "workspace/archive/task/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md",
       "archived_at_utc": "2026-11-26T13:57:00Z"
     },
     {
-      "path": ".archive/task/20261126-143747-01-review-semicolon-findings-in-workspace-draft-readme-md.md",
+      "path": "workspace/archive/task/20261126-143747-01-review-semicolon-findings-in-workspace-draft-readme-md.md",
       "archived_at_utc": "2026-11-26T15:19:00Z"
     },
     {
-      "path": ".archive/task/20261126-143747-02-review-long-sentence-findings-in-workspace-draft-readme-md.md",
+      "path": "workspace/archive/task/20261126-143747-02-review-long-sentence-findings-in-workspace-draft-readme-md.md",
       "archived_at_utc": "2026-11-26T15:19:00Z"
     },
     {
-      "path": ".archive/task/20261126-143747-03-review-passive-voice-findings-in-workspace-draft-readme-md.md",
+      "path": "workspace/archive/task/20261126-143747-03-review-passive-voice-findings-in-workspace-draft-readme-md.md",
       "archived_at_utc": "2026-11-26T15:19:00Z"
     },
     {
-      "path": ".archive/task/20261126-143747-review-synonym-rotation-findings-in-workspace-task-board-md.md",
+      "path": "workspace/archive/task/20261126-143747-review-synonym-rotation-findings-in-workspace-task-board-md.md",
       "archived_at_utc": "2026-11-26T15:19:00Z"
     },
     {
-      "path": ".archive/task/20261126-142112-01-review-semicolon-findings-in-workspace-draft-draft-0002-phase-aw.md",
+      "path": "workspace/archive/task/20261126-142112-01-review-semicolon-findings-in-workspace-draft-draft-0002-phase-aw.md",
       "archived_at_utc": "2026-11-26T15:20:00Z"
     },
     {
-      "path": ".archive/task/20261126-142112-review-passive-voice-findings-in-workspace-draft-draft-0002-phas.md",
+      "path": "workspace/archive/task/20261126-142112-review-passive-voice-findings-in-workspace-draft-draft-0002-phas.md",
       "archived_at_utc": "2026-11-26T15:20:00Z"
     },
     {
-      "path": ".archive/task/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md",
+      "path": "workspace/archive/task/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md",
       "archived_at_utc": "2026-11-26T15:21:00Z"
     },
     {
-      "path": ".archive/task/20261126-142112-02-review-long-sentence-findings-in-workspace-draft-draft-0002-phas.md",
+      "path": "workspace/archive/task/20261126-142112-02-review-long-sentence-findings-in-workspace-draft-draft-0002-phas.md",
       "archived_at_utc": "2026-11-26T15:21:00Z"
     },
     {
-      "path": ".archive/task/20261126-142112-03-review-present-perfect-findings-in-workspace-draft-draft-0002-ph.md",
+      "path": "workspace/archive/task/20261126-142112-03-review-present-perfect-findings-in-workspace-draft-draft-0002-ph.md",
       "archived_at_utc": "2026-11-26T15:21:00Z"
     },
     {
-      "path": ".archive/task/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md",
+      "path": "workspace/archive/task/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md",
       "archived_at_utc": "2026-11-26T15:21:00Z"
     },
     {
-      "path": ".archive/task/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md",
+      "path": "workspace/archive/task/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md",
       "archived_at_utc": "2026-11-26T15:22:00Z"
     },
     {
-      "path": ".archive/task/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md",
+      "path": "workspace/archive/task/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md",
       "archived_at_utc": "2026-11-26T15:22:00Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/logs/job-139802010290.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/logs/job-139802010290.log",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/logs/job-139825082027.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/logs/job-139825082027.log",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/logs/job-139825848472.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/logs/job-139825848472.log",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/logs/job-139831656699.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/logs/job-139831656699.log",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/report.md",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45804845399-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45804845399-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45814417490-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45814417490-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45814417490-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45814417490-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45814417490-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45814417490-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45821860683-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45821860683-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45823182226-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45823182226-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45823182226-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45823182226-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45823182226-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45823182226-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45837905119-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45837905119-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45840589283-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45840589283-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45841101397-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45841101397-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45843115356-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45843115356-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45843767623-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45843767623-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45844123288-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45844123288-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45844123288-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45844123288-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45844123288-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45844123288-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_repo/history/45794619503-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_repo/history/45794619503-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/task-evidence/style-and-ci-p0-2026-11-26.md",
+      "path": "workspace/archive/reports/task-evidence/style-and-ci-p0-2026-11-26.md",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/triage/ledger-20261126-151030Z.json",
+      "path": "workspace/archive/reports/triage/ledger-20261126-151030Z.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.json",
       "archived_at_utc": "2026-11-26T16:36:58Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.md",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.md",
       "archived_at_utc": "2026-11-26T16:37:01Z"
     },
     {
-      "path": ".archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/integrity.json",
+      "path": "workspace/archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T16:37:05Z"
     },
     {
-      "path": ".archive/task/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md",
+      "path": "workspace/archive/task/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md",
       "archived_at_utc": "2026-11-26T16:42:50Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:51:24Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:51:24Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/logs/job-139792144266.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/logs/job-139792144266.log",
       "archived_at_utc": "2026-11-26T16:51:24Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:51:37Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:51:37Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/logs/job-139799397409.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/logs/job-139799397409.log",
       "archived_at_utc": "2026-11-26T16:51:37Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:52:54Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:52:54Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/logs/job-139809411914.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/logs/job-139809411914.log",
       "archived_at_utc": "2026-11-26T16:52:54Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:53:01Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:53:01Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/logs/job-139809861997.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/logs/job-139809861997.log",
       "archived_at_utc": "2026-11-26T16:53:01Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:53:18Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:53:18Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/logs/job-139813521101.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/logs/job-139813521101.log",
       "archived_at_utc": "2026-11-26T16:53:18Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:53:35Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:53:35Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/logs/job-139808933101.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/logs/job-139808933101.log",
       "archived_at_utc": "2026-11-26T16:53:35Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:53:52Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:53:52Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/logs/job-139815417727.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/logs/job-139815417727.log",
       "archived_at_utc": "2026-11-26T16:53:52Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:54:07Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:54:07Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/logs/job-139822003602.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/logs/job-139822003602.log",
       "archived_at_utc": "2026-11-26T16:54:07Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:54:24Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:54:24Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/logs/job-139833644328.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/logs/job-139833644328.log",
       "archived_at_utc": "2026-11-26T16:54:24Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:54:40Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:54:40Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/logs/job-139835107726.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/logs/job-139835107726.log",
       "archived_at_utc": "2026-11-26T16:54:40Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:54:57Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:54:57Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/logs/job-139915873455.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/logs/job-139915873455.log",
       "archived_at_utc": "2026-11-26T16:54:57Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
       "archived_at_utc": "2026-11-26T16:55:13Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/integrity.json",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/integrity.json",
       "archived_at_utc": "2026-11-26T16:55:13Z"
     },
     {
-      "path": ".archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/logs/job-139837019100.log",
+      "path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/logs/job-139837019100.log",
       "archived_at_utc": "2026-11-26T16:55:13Z"
     },
     {
-      "path": ".archive/task/20261126-223106-promote-ci-ledger-skill-and-worker-batch-execution.md",
+      "path": "workspace/archive/task/20261126-223106-promote-ci-ledger-skill-and-worker-batch-execution.md",
       "archived_at_utc": "2026-11-26T22:34:07Z"
     },
     {
-      "path": ".archive/task/20261126-224100-apply-ci-p0-batch-to-session-start.md",
+      "path": "workspace/archive/task/20261126-224100-apply-ci-p0-batch-to-session-start.md",
       "archived_at_utc": "2026-11-26T22:46:04Z"
     },
     {
-      "path": ".archive/task/20261127-033914-01/task.md",
+      "path": "workspace/archive/task/20261127-033914-01/task.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-033914-01/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-033914-01/subtasks/README.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-033914-01/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914-01/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-033914-01/subtasks/02-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914-01/subtasks/02-ci-remediation.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-033914-01/subtasks/03-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914-01/subtasks/03-ci-remediation.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-033914-01/subtasks/04-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914-01/subtasks/04-ci-remediation.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-033914/task.md",
+      "path": "workspace/archive/task/20261127-033914/task.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-033914/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-033914/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-033914/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-033914/subtasks/02-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914/subtasks/02-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-033914/subtasks/03-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914/subtasks/03-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-033914/subtasks/04-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914/subtasks/04-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-023803/task.md",
+      "path": "workspace/archive/task/20261127-023803/task.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-023803/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-023803/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-023803/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-023803/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-023803/subtasks/02-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-023803/subtasks/02-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-023803/subtasks/03-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-023803/subtasks/03-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-023803/subtasks/04-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-023803/subtasks/04-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-033914-02/task.md",
+      "path": "workspace/archive/task/20261127-033914-02/task.md",
       "archived_at_utc": "2026-11-27T04:18:41Z"
     },
     {
-      "path": ".archive/task/20261127-033914-02/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-033914-02/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:18:41Z"
     },
     {
-      "path": ".archive/task/20261127-033914-02/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914-02/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:18:41Z"
     },
     {
-      "path": ".archive/task/20261127-033914-02/subtasks/02-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033914-02/subtasks/02-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:18:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151/task.md",
+      "path": "workspace/archive/task/20261127-013151/task.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013151/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151/subtasks/README.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013151/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013646/task.md",
+      "path": "workspace/archive/task/20261127-013646/task.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013646/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013646/subtasks/README.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013646/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013646/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013151-39/task.md",
+      "path": "workspace/archive/task/20261127-013151-39/task.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013151-39/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-39/subtasks/README.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013151-39/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-39/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013151-40/task.md",
+      "path": "workspace/archive/task/20261127-013151-40/task.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013151-40/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-40/subtasks/README.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-013151-40/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-40/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T03:59:53Z"
     },
     {
-      "path": ".archive/task/20261127-033729/task.md",
+      "path": "workspace/archive/task/20261127-033729/task.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-033729/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-033729/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-033729/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033729/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-033729/subtasks/02-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-033729/subtasks/02-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-42/task.md",
+      "path": "workspace/archive/task/20261127-013151-42/task.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-42/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-42/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-42/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-42/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-41/task.md",
+      "path": "workspace/archive/task/20261127-013151-41/task.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-41/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-41/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-41/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-41/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-19/task.md",
+      "path": "workspace/archive/task/20261127-013151-19/task.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-19/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-19/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-19/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-19/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-18/task.md",
+      "path": "workspace/archive/task/20261127-013151-18/task.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-18/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-18/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-18/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-18/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-17/task.md",
+      "path": "workspace/archive/task/20261127-013151-17/task.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-17/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-17/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-17/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-17/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:24:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-09/task.md",
+      "path": "workspace/archive/task/20261127-013151-09/task.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-09/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-09/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-09/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-09/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-08/task.md",
+      "path": "workspace/archive/task/20261127-013151-08/task.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-08/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-08/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-08/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-08/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-07/task.md",
+      "path": "workspace/archive/task/20261127-013151-07/task.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-07/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-07/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-07/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-07/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-05/task.md",
+      "path": "workspace/archive/task/20261127-013151-05/task.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-05/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-05/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-05/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-05/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-06/task.md",
+      "path": "workspace/archive/task/20261127-013151-06/task.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-06/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-06/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-06/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-06/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
     },
     {
-      "path": ".archive/task/20261127-013151-04/task.md",
+      "path": "workspace/archive/task/20261127-013151-04/task.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-04/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-04/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-04/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-04/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-03/task.md",
+      "path": "workspace/archive/task/20261127-013151-03/task.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-03/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-03/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-03/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-03/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-02/task.md",
+      "path": "workspace/archive/task/20261127-013151-02/task.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-02/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-02/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-02/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-02/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-01/task.md",
+      "path": "workspace/archive/task/20261127-013151-01/task.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-01/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-01/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-01/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-01/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:16:41Z"
     },
     {
-      "path": ".archive/task/20261127-013151-44/task.md",
+      "path": "workspace/archive/task/20261127-013151-44/task.md",
       "archived_at_utc": "2026-11-27T04:33:58Z"
     },
     {
-      "path": ".archive/task/20261127-013151-44/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-44/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:33:58Z"
     },
     {
-      "path": ".archive/task/20261127-013151-44/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-44/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:33:58Z"
     },
     {
-      "path": ".archive/task/20261127-013151-43/task.md",
+      "path": "workspace/archive/task/20261127-013151-43/task.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-43/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-43/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-43/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-43/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-37/task.md",
+      "path": "workspace/archive/task/20261127-013151-37/task.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-37/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-37/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-37/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-37/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-35/task.md",
+      "path": "workspace/archive/task/20261127-013151-35/task.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-35/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-35/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-35/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-35/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:36:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-38/task.md",
+      "path": "workspace/archive/task/20261127-013151-38/task.md",
       "archived_at_utc": "2026-11-27T04:39:33Z"
     },
     {
-      "path": ".archive/task/20261127-013151-38/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-38/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:39:33Z"
     },
     {
-      "path": ".archive/task/20261127-013151-38/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-38/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:39:33Z"
     },
     {
-      "path": ".archive/task/20261127-013151-36/task.md",
+      "path": "workspace/archive/task/20261127-013151-36/task.md",
       "archived_at_utc": "2026-11-24T16:43:18Z"
     },
     {
-      "path": ".archive/task/20261127-013151-36/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-36/subtasks/README.md",
       "archived_at_utc": "2026-11-24T16:43:18Z"
     },
     {
-      "path": ".archive/task/20261127-013151-36/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-36/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-24T16:43:18Z"
     },
     {
-      "path": ".archive/task/20261127-013151-29/task.md",
+      "path": "workspace/archive/task/20261127-013151-29/task.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-29/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-29/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-29/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-29/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-28/task.md",
+      "path": "workspace/archive/task/20261127-013151-28/task.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-28/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-28/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-28/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-28/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-27/task.md",
+      "path": "workspace/archive/task/20261127-013151-27/task.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-27/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-27/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-27/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-27/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-26/task.md",
+      "path": "workspace/archive/task/20261127-013151-26/task.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-26/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-26/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-26/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-26/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-25/task.md",
+      "path": "workspace/archive/task/20261127-013151-25/task.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-25/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-25/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-25/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-25/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:42:00Z"
     },
     {
-      "path": ".archive/task/20261127-013151-24/task.md",
+      "path": "workspace/archive/task/20261127-013151-24/task.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-24/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-24/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-24/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-24/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-23/task.md",
+      "path": "workspace/archive/task/20261127-013151-23/task.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-23/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-23/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-23/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-23/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-22/task.md",
+      "path": "workspace/archive/task/20261127-013151-22/task.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-22/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-22/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-22/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-22/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-21/task.md",
+      "path": "workspace/archive/task/20261127-013151-21/task.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-21/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-21/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-21/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-21/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:47:36Z"
     },
     {
-      "path": ".archive/task/20261127-013151-20/task.md",
+      "path": "workspace/archive/task/20261127-013151-20/task.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-20/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-20/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-20/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-20/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-12/task.md",
+      "path": "workspace/archive/task/20261127-013151-12/task.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-12/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-12/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-12/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-12/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-11/task.md",
+      "path": "workspace/archive/task/20261127-013151-11/task.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-11/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-11/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-11/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-11/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-10/task.md",
+      "path": "workspace/archive/task/20261127-013151-10/task.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-10/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-10/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-10/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-10/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-16/task.md",
+      "path": "workspace/archive/task/20261127-013151-16/task.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-16/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-16/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-16/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-16/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-15/task.md",
+      "path": "workspace/archive/task/20261127-013151-15/task.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-15/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-15/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-15/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-15/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-14/task.md",
+      "path": "workspace/archive/task/20261127-013151-14/task.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-14/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-14/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-14/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-14/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-13/task.md",
+      "path": "workspace/archive/task/20261127-013151-13/task.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-13/subtasks/README.md",
+      "path": "workspace/archive/task/20261127-013151-13/subtasks/README.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261127-013151-13/subtasks/01-ci-remediation.md",
+      "path": "workspace/archive/task/20261127-013151-13/subtasks/01-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:52:10Z"
     },
     {
-      "path": ".archive/task/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md",
+      "path": "workspace/archive/task/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md",
       "archived_at_utc": "2026-11-27T05:15:00Z"
     },
     {
-      "path": ".archive/task/20261126-145133/task.md",
+      "path": "workspace/archive/task/20261126-145133/task.md",
       "archived_at_utc": "2026-11-26T15:10:11Z"
     },
     {
-      "path": ".archive/task/20261126-145133/subtasks/README.md",
+      "path": "workspace/archive/task/20261126-145133/subtasks/README.md",
       "archived_at_utc": "2026-11-26T15:10:11Z"
     }
   ]

@@ -109,11 +109,11 @@ def normalize_report_path(value, allow_archived=True):
     if value.startswith("reports/"):
         value = ".takeout/" + value
     elif value.startswith("archive/reports/"):
-        value = ".archive/" + value[len("archive/"):]
+        value = "workspace/archive/" + value[len("archive/"): ]
     candidate = PurePosixPath(value)
     if candidate.is_absolute() or ".." in candidate.parts:
         raise LedgerError("Unsafe report path in ledger: " + value)
-    prefixes = (".takeout/reports/", ".archive/reports/") if allow_archived else (".takeout/reports/",)
+    prefixes = (".takeout/reports/", "workspace/archive/reports/") if allow_archived else (".takeout/reports/",)
     if not value.startswith(prefixes):
         raise LedgerError("Unsupported report path in ledger: " + value)
     return candidate.as_posix()
@@ -837,7 +837,7 @@ def read_archived_task(root, task_id):
     if not isinstance(records, list):
         raise LedgerError("Archive retention index has no valid records list")
 
-    folder_prefix = ".archive/task/" + task_id + "/"
+    folder_prefix = "workspace/archive/task/" + task_id + "/"
     folder_records, flat_records, seen = [], [], set()
     for record in records:
         if not isinstance(record, dict):
@@ -850,7 +850,7 @@ def read_archived_task(root, task_id):
         parts = pure.parts
         if pure.is_absolute() or str(pure) != path or "\\" in path or any(part in (".", "..") for part in parts):
             raise LedgerError("Archive retention index contains an unsafe path: " + path)
-        if len(parts) < 2 or parts[:2] != (".archive", "task"):
+        if len(parts) < 3 or parts[:3] != ("workspace", "archive", "task"):
             continue
         if not path.endswith(".md"):
             raise LedgerError("Task archive index path is not a Markdown record: " + path)
@@ -860,7 +860,7 @@ def read_archived_task(root, task_id):
         parsed_timestamp = parse_time(archived_at)
         if path.startswith(folder_prefix):
             folder_records.append((record, parsed_timestamp))
-        elif len(parts) == 3 and (parts[2] == task_id + ".md" or parts[2].startswith(task_id + "-") and parts[2].endswith(".md")):
+        elif len(parts) == 4 and (parts[3] == task_id + ".md" or parts[3].startswith(task_id + "-") and parts[3].endswith(".md")):
             flat_records.append((record, parsed_timestamp))
 
     if folder_records and flat_records:

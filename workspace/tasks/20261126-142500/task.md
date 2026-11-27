@@ -39,7 +39,7 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - Generate or repair task handoff for applicable findings.
 - Resolve all actionable errors in reports, using hosted validation only.
 - Archive resolved report evidence according to the existing policy and retention index.
-- Clear generated active reports, latest pointers, request queues, report indexes, and `.archive/reports/**` snapshots as prescribed by the reset policy; reinitialize the Ledger and unseed lint baselines.
+- Clear generated active reports, latest pointers, request queues, report indexes, and `workspace/archive/reports/**` snapshots as prescribed by the reset policy; reinitialize the Ledger and unseed lint baselines.
 - Do not edit archived records. Do not create root README.md.
 - Do not run tests, lint, CI, or scripts locally. GitHub-hosted workflows are the permitted execution environment. Do not poll or wait for CI.
 
@@ -118,7 +118,7 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 
 Paused under the permanent P0-first rule. The clean-start reset and static repairs remain recorded below. No end-to-end completion or hosted validation is claimed.
 
-Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
+Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `workspace/archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
 ## 8. Remaining Work
 

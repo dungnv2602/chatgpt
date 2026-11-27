@@ -18,7 +18,7 @@ The workspace is the task-management and conversation-navigation area. The Worke
 | [adr/](adr/README.md) | Accepted decisions awaiting implementation and confirmation |
 | [analysis/](analysis/README.md) | Evidence-based repository analysis snapshots |
 | [../.takeout/reports/README.md](../.takeout/reports/README.md) | Lint, Actions, and issue-ledger navigation |
-| [../.archive/README.md](../.archive/README.md) | Archive and retention policy |
+| [archive/README.md](../workspace/archive/README.md) | Archive and retention policy |
 
 ## Draft and ADR workflow
 
@@ -28,13 +28,13 @@ After the user approves the exact Draft, create a provisional ADR with status pr
 
 Read back the provisional ADR. Change its status to accepted only after the completeness check passes. Read back the accepted ADR before deleting the source Draft.
 
-After successful promotion, delete the source Draft. Keep its ID and approved revision as ADR provenance. Do not link the ADR to a source file that no longer exists. Do not create a `.archive/draft/` folder or a Promoted Drafts index.
+After successful promotion, delete the source Draft. Keep its ID and approved revision as ADR provenance. Do not link the ADR to a source file that no longer exists. Do not create a `workspace/archive/draft/` folder or a Promoted Drafts index.
 
 If source deletion fails after acceptance, retain the Draft temporarily. Record the resulting ADR ID and cleanup reason in its metadata. List it only under Promotion Cleanup Pending. Retry deletion without creating another ADR or repeating approval.
 
 Only accepted ADRs can govern implementation tasks. Keep task execution approval separate from the ADR's decision approval.
 
-When all implementation tasks and the ADR's confirmation checks pass, move the ADR to `.archive/adr/`. Keep archived ADRs permanently. Never add them to the 90-day task/report retention index.
+Keep every accepted ADR permanently in the flat `workspace/adr/` folder. When implementation and Confirmation finish, update its implementation status and lifecycle history. Do not move it to a separate archive folder or add it to the 90-day task/report retention index.
 
 The decision-governance skill owns Draft, ADR, and repository-analysis lifecycles. Load it only when a task requires decision governance. Do not add it to foundational initialization.
 
@@ -60,7 +60,7 @@ A lint report can seed a baseline when every required tooling check passes, even
 
 The Worker marks a CI remediation subtask Done after committing its fix to the intended branch. The Worker checks the commit and records its SHA and summary. Hosted validation remains separate metadata. The Worker closes a parent only after every required subtask reaches Done. The Ledger retains terminal finding identities, resolution history, and prior task references after the Worker archives a task. A later observation can reopen the same finding and link new remediation. Do not delete terminal Ledger findings solely because the Worker archived a task.
 
-A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `.archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See .takeout/reports/triage/README.md and .archive/README.md for exact reset and closeout rules.
+A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `workspace/archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See .takeout/reports/triage/README.md and workspace/archive/README.md for exact reset and closeout rules.
 
 Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A finding becomes resolved after the Worker checks the intended-branch fix commit and records its SHA, remediation summary, and UTC resolution timestamp. Hosted validation is separate metadata. A pending or failed hosted run does not reopen completed remediation.
 

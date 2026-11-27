@@ -318,4 +318,4 @@ Do not create, copy, upload, or synchronize project materials in ChatGPT Library
 
 If a required repository file is missing, report that fact. Do not reconstruct it from Library.
 
-The current repository roots used by the workflows are `.agent/skills/`, `.archive/`, `.takeout/images/`, `.takeout/reports/`, `area/`, `master/`, and `workspace/`. Novel and drawing records live under `area/novel/` and `area/drawing/`. Do not use the obsolete root paths `images/`, `archive/`, `reports/`, or the `ChatGPT/` wrapper.
+The current repository roots used by the workflows are `.agent/skills/`, `workspace/archive/`, `.takeout/images/`, `.takeout/reports/`, `area/`, `master/`, and `workspace/`. Novel and drawing records live under `area/novel/` and `area/drawing/`. Do not use the obsolete root paths `images/`, `archive/`, `reports/`, or the `ChatGPT/` wrapper.

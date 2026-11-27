@@ -16,7 +16,7 @@ on:
     branches:
       - gpt
     paths-ignore:
-      - '.archive/reports/**'
+      - 'workspace/archive/reports/**'
       - '.takeout/reports/gh_ac_reports/history/**'
       - '.takeout/reports/gh_ac_reports/index.json'
       - '.takeout/reports/gh_ac_reports/requests/processed/**'

@@ -30,7 +30,7 @@ def validate_record(record: Any) -> tuple[str, datetime]:
         raise ValueError("Archive path must be a safe POSIX repository path.")
     pure = PurePosixPath(path)
     parts = pure.parts
-    if str(pure) != path or len(parts) < 3 or parts[0] != ".archive" or parts[1] not in {"task", "reports"}:
+    if str(pure) != path or len(parts) < 4 or parts[:2] != ("workspace", "archive") or parts[2] not in {"task", "reports"}:
         raise ValueError(f"Invalid indexed archive path: {path!r}")
     if any(part in {"", ".", ".."} for part in parts[2:]) or parts[-1] == ".gitkeep" or path.endswith("/") or not pure.suffix:
         raise ValueError(f"Indexed path must identify an individual file: {path!r}")
@@ -63,8 +63,8 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
     for record in data["records"]:
         path, archived_at = validate_record(record)
         parts = PurePosixPath(path).parts
-        if parts[1] == "task" and len(parts) >= 4:
-            folder = PurePosixPath(*parts[:3]).as_posix()
+        if parts[2] == "task" and len(parts) >= 5:
+            folder = PurePosixPath(*parts[:4]).as_posix()
             task_folders.setdefault(folder, []).append((record, archived_at))
         else:
             individual_records.append((record, path, archived_at))
@@ -99,7 +99,7 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
         else:
             retained.append(record)
 
-    archive_root = repository_root / ".archive"
+    archive_root = repository_root / "workspace" / "archive"
     for family in ("task", "reports"):
         family_dir = archive_root / family
         if archive_root.is_symlink() or family_dir.is_symlink():
@@ -128,7 +128,7 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
             cursor = cursor / component
             if cursor.is_symlink():
                 raise ValueError(f"Refusing to follow a symlink in indexed path: {path}")
-        folder_archive = PurePosixPath(path).parts[1] == "task" and len(PurePosixPath(path).parts) >= 4
+        folder_archive = PurePosixPath(path).parts[2] == "task" and len(PurePosixPath(path).parts) >= 5
         if folder_archive and not target.exists():
             raise ValueError(f"Task-folder archive file is missing: {path}")
         if target.exists() and not target.is_file():

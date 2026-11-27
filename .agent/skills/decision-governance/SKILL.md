@@ -185,8 +185,8 @@ If the ADR omits important rationale:
 - Do not mark promotion complete.
 - Add the missing rationale before the user accepts the ADR.
 - Repeat the full comparison and read-back.
-- If the missing information would require changing an accepted or archived decision, keep the Draft. Prepare a separate proposal for the required migration.
-- Do not edit an archived ADR unless the user explicitly authorizes a narrow correction.
+- If the missing information would require changing an accepted decision, keep the Draft. Prepare a separate proposal for the required migration.
+- Keep accepted ADR decision content immutable. The user may explicitly authorize a narrow reference-only correction or a path migration.
 
 ### Partial promotion and recovery
 
@@ -207,7 +207,7 @@ A cleanup-pending entry is a temporary recovery aid. It is not a historical Draf
 Review each existing promoted Draft individually. Do not assume its ADR contains all material rationale.
 
 For DRAFT-0001:
-1. Compare the complete approved source with archived ADR-0001.
+1. Compare the complete approved source with historical ADR-0001.
 2. Record a coverage result for each completeness criterion.
 3. Identify material rationale that appears only in the source Draft.
 4. Preserve any missing material rationale in a valid permanent decision record.
@@ -262,7 +262,7 @@ The user's standing P0 directive makes every CI-generated P0 remediation task ma
 
 The Ledger remains the source of truth for CI finding identity and evidence.
 
-## Confirmation and permanent ADR archive
+## Confirmation and permanent ADR retention
 
 A Done task does not by itself prove that the repository applies an ADR correctly.
 
@@ -270,12 +270,11 @@ A Done task does not by itself prove that the repository applies an ADR correctl
 2. Gather evidence from task records, repository files, hosted validation, and operational logs.
 3. Set implementation status to complete only after every criterion passes.
 4. For not-required, confirm that the decision itself is in effect.
-5. Resolve linked implementation tasks before archival.
-6. Move the ADR to `. .archive/adr/` with its ID and filename unchanged.
-7. Read back the archive copy after its initial write.
-8. Keep archived ADRs immutable.
+5. Keep every ADR permanently in the flat `workspace/adr/` folder. Use implementation status and lifecycle metadata to distinguish active decisions from completed historical records.
+6. Preserve the ADR ID and filename. Do not move completed ADRs into a separate archive directory.
+7. Keep accepted decision content immutable. Update only lifecycle metadata, task links, review history, and Confirmation evidence under the ADR lifecycle rules.
 
-Never add ADRs to .github/archive-retention-index.json. The 90-day task and report retention process does not apply to ADRs.
+Never add ADRs to .github/archive-retention-index.json. The 90-day task and report retention process applies only to `workspace/archive/task/` and `workspace/archive/reports/`.
 
 ## Repository analysis
 
@@ -289,7 +288,7 @@ Do not make code changes from an analysis record. Create a Draft when a finding 
 
 Perform one manual repository review each quarter. Also review after major changes, significant incidents, repeated failures, major dependency or platform changes, failed ADR confirmation, or user request. Do not schedule automated reviews in the first release. Review the cadence after two quarterly cycles.
 
-Keep completed snapshots in workspace/analysis/. Do not create `.archive/analysis/` in the first release.
+Keep completed snapshots in workspace/analysis/. Do not create `workspace/archive/analysis/` in the first release.
 
 ## Discussion register and completion
 

@@ -22,7 +22,7 @@ Create one directory per task: `workspace/tasks/<task-id>/`. Store this template
 
 For Ledger-generated P0 tasks, set Approval to Approved under the standing authorization. Keep Status Proposed when Governing ADR(s) is Pending. Move the task to Ready only after accepted ADR linkage exists or decision approval is not required.
 
-<!-- Lifecycle invariant: parent Done requires every required subtask Done. Keep the active task In Progress / Archived: No until the complete folder archive is written and read back. Archive the complete folder at .archive/task/<task-id>/, including task.md and every child record. Register each exact archived file path and timestamp in the retention index. Keep historical flat archive files immutable and readable. Delete the active folder only after archive read-back and index verification. -->
+<!-- Lifecycle invariant: parent Done requires every required subtask Done. Keep the active task In Progress / Archived: No until the complete folder archive is written and read back. Archive the complete folder at workspace/archive/task/<task-id>/, including task.md and every child record. Register each exact archived file path and timestamp in the retention index. Keep historical flat archive files immutable and readable. Delete the active folder only after archive read-back and index verification. -->
 
 ## 1. Original Request
 

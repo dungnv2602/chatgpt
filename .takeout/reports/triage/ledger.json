@@ -15,35 +15,35 @@
       "occurrence_count": 11,
       "evidence": [
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45785802198",
           "observed_at_utc": "2026-11-26T09:01:17Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45785802198:1"
         },
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45787937573",
           "observed_at_utc": "2026-11-26T09:01:53Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45787937573:1"
         },
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45790913652",
           "observed_at_utc": "2026-11-26T10:13:25Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45790913652:1"
         },
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45791049057",
           "observed_at_utc": "2026-11-26T10:13:29Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45791049057:1"
         },
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45792129692",
           "observed_at_utc": "2026-11-26T10:13:33Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
@@ -85,7 +85,7 @@
       "occurrence_count": 1,
       "evidence": [
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45789951589",
           "observed_at_utc": "2026-11-26T10:13:20Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
@@ -127,35 +127,35 @@
       "occurrence_count": 10,
       "evidence": [
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45792688463",
           "observed_at_utc": "2026-11-26T10:13:37Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45792688463:1"
         },
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794626105",
           "observed_at_utc": "2026-11-26T10:14:21Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45794626105:1"
         },
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798032838",
           "observed_at_utc": "2026-11-26T10:14:58Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45798032838:1"
         },
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798459536",
           "observed_at_utc": "2026-11-26T10:15:02Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
           "observation_id": "github_actions:427313089:45798459536:1"
         },
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45821860845",
           "observed_at_utc": "2026-11-26T12:43:00Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",
@@ -197,7 +197,7 @@
       "occurrence_count": 1,
       "evidence": [
         {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
+          "report_path": "workspace/archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798838831",
           "observed_at_utc": "2026-11-26T10:15:11Z",
           "note": "validate-document-standards / Run CI Ledger regression tests",

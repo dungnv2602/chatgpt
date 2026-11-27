@@ -51,6 +51,6 @@ An incomplete report or a report with failed tooling checks cannot seed a baseli
 
 ## Reporting periods
 
-A user-authorized clean-start reset removes the generated report history and all prior `.archive/reports/**` snapshots. It empties the active indexes and Ledger and marks both lint baselines as unseeded. The first complete tooling-valid full audit in each scope then seeds the new baseline without task creation.
+A user-authorized clean-start reset removes the generated report history and all prior `workspace/archive/reports/**` snapshots. It empties the active indexes and Ledger and marks both lint baselines as unseeded. The first complete tooling-valid full audit in each scope then seeds the new baseline without task creation.
 
 Normal rollover preserves open-finding evidence and does not clear the Ledger. See `.takeout/reports/triage/README.md` for the complete reset, ingestion, and retirement rules.
