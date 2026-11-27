@@ -30,6 +30,8 @@ Finding IDs and report paths are stable references. Evidence rows retain the sou
 - The Worker closes a parent only after every required subtask is Done and the complete folder archive is verified.
 - New task archives include the parent, subtask index, and every child record. Index every exact file path with one shared UTC timestamp. Cleanup retains and deletes the folder as one unit.
 - Historical flat task archives remain immutable and readable. Do not convert them.
+- The Ledger resolves retained prior task archives through exact paths in the retention index. It reads both folder archives and historical flat task files. It does not scan archive directories.
+- When recurrence creates a new parent, the Ledger links any retained prior archive in Related tasks. It keeps prior task references even after archive retention expires.
 - Archiving never removes terminal finding identities, resolution history, or prior task references. New evidence can reopen the same finding identity.
 
 
