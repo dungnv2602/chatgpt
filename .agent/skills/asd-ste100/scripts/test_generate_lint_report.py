@@ -17,7 +17,7 @@ REPORT_SCHEMA = ASSET_DIR / "lint-report-schema.json"
 
 class ReportGeneratorTests(unittest.TestCase):
     def run_report(self, root, scope, run_id, run_number, attempt, records,
-                   previous="", checks=None, status="Passed"):
+                   previous="", checks=None, status="Passed", task_id=""):
         records_dir = root / ("records-" + run_id + "-" + str(attempt))
         records_dir.mkdir()
         for name, value in records.items():
@@ -36,6 +36,8 @@ class ReportGeneratorTests(unittest.TestCase):
             "--baseline", "" if scope == "on_repo" else "base123",
             "--status", status, "--checks-file", str(checks_file),
         ]
+        if task_id:
+            command += ["--task-id", task_id]
         if previous:
             command += ["--previous-report", previous]
         env = dict(os.environ)
@@ -67,7 +69,7 @@ class ReportGeneratorTests(unittest.TestCase):
             self.assertTrue(REPORT_TEMPLATE.is_file())
             self.assertIn("on_changed",schema["properties"]["scope"]["enum"])
             self.assertIn("on_repo",schema["properties"]["scope"]["enum"])
-            self.assertEqual(report["schema_version"],"1.1.0")
+            self.assertEqual(report["schema_version"],"1.2.0")
             self.assertEqual(report["scope"],"on_changed")
             self.assertEqual(report["files_evaluated"],["docs/a.md"])
             self.assertEqual(report["files_evaluated_count"],1)
