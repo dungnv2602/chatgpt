@@ -302,6 +302,14 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("verified intended-branch commit", ci_text)
         self.assertIn("Hosted validation is separate metadata", ci_text)
         self.assertTrue((task_files[0].parent / "subtasks" / "README.md").is_file())
+        index_text = (task_files[0].parent / "subtasks" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("Parent: [task.md](../task.md)", index_text)
+        self.assertIn("01-ci-remediation.md", index_text)
+        child_id = LEDGER.task_metadata(ci_text, "ID")
+        self.assertNotIn(child_id, first_finding["task_refs"])
+        board = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
+        self.assertIn("[Task record](tasks/" + task_id + "/task.md)", board)
+        self.assertFalse((self.root / "workspace" / "tasks" / (task_id + ".md")).exists())
 
     def test_active_legacy_flat_task_is_reused_during_migration(self):
         group_id = LEDGER.task_group_key("lint", "semicolon", "docs/example.md")
@@ -326,6 +334,71 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["tasks_created"], 0)
         self.assertEqual(list((self.root / "workspace" / "tasks").glob("*/task.md")), [])
         self.assertIn("lint-c3d4e5f6a7b8", legacy.read_text(encoding="utf-8"))
+
+    def test_active_folder_task_is_reused_by_ledger(self):
+        group_id = LEDGER.task_group_key("lint", "semicolon", "docs/folder-example.md")
+        task_id = "20261122-020000"
+        folder = self.root / "workspace" / "tasks" / task_id
+        subtasks = folder / "subtasks"
+        subtasks.mkdir(parents=True)
+        parent = folder / "task.md"
+        parent.write_text(
+            "# Task: Existing folder task\n\n"
+            "- **ID:** " + task_id + "\n"
+            "- **Priority:** P0\n"
+            "- **Status:** In Progress\n"
+            "- **Origin:** Assistant\n"
+            "- **Approval:** Approved\n"
+            "- **Governing ADR(s):** ADR-0004\n"
+            "- **Current execution:** No\n"
+            "- **Updated:** 2026-11-22 02:00 UTC\n"
+            "- **Ledger group:** " + group_id + "\n",
+            encoding="utf-8",
+        )
+        (subtasks / "README.md").write_text(
+            "# Subtasks — " + task_id + "\n\nParent: [task.md](../task.md)\n",
+            encoding="utf-8",
+        )
+        (subtasks / "01-ci-remediation.md").write_text(
+            "# Subtask: Existing CI remediation\n\n"
+            "- **ID:** " + task_id + "-01\n"
+            "- **Parent Task ID:** " + task_id + "\n"
+            "- **Type:** CI remediation\n",
+            encoding="utf-8",
+        )
+        self.add_lint("on_changed", "113", "2026-11-23T07:16:00Z",
+                      fingerprint="d4e5f6a7b8c9", file_path="docs/folder-example.md", rule="semicolon")
+        result = LEDGER.ingest(self.root, now="2026-11-23T07:17:00Z")
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(finding["task_refs"], [task_id])
+        self.assertEqual(result["tasks_created"], 0)
+        self.assertIn("lint-d4e5f6a7b8c9", parent.read_text(encoding="utf-8"))
+        board = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
+        self.assertIn("[Task record](tasks/" + task_id + "/task.md)", board)
+        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*/task.md")), [parent])
+
+    def test_task_folder_and_archive_contract_is_consistent_across_docs(self):
+        root = SCRIPT.parents[4]
+        parent_template = (root / "workspace" / "TASK_TEMPLATE.md").read_text(encoding="utf-8")
+        subtask_template = (root / "workspace" / "SUBTASK_TEMPLATE.md").read_text(encoding="utf-8")
+        worker = (root / ".agent" / "skills" / "the-worker" / "SKILL.md").read_text(encoding="utf-8")
+        ci_ledger = (root / ".agent" / "skills" / "ci-ledger" / "SKILL.md").read_text(encoding="utf-8")
+        github_actions = (root / ".agent" / "skills" / "github-actions" / "SKILL.md").read_text(encoding="utf-8")
+        archive = (root / ".archive" / "README.md").read_text(encoding="utf-8")
+        board = (root / "workspace" / "task_board.md").read_text(encoding="utf-8")
+        catalog = (root / ".agent" / "skills" / "document-standards" / "references" / "document-type-catalog.md").read_text(encoding="utf-8")
+        self.assertIn("subtasks/README.md", parent_template)
+        self.assertIn("required subtask is not Done", parent_template)
+        self.assertIn("A regular subtask is Done when its own acceptance criteria are satisfied", subtask_template)
+        self.assertIn("every required subtask is Done", worker)
+        self.assertIn("Historical flat archive files remain immutable and readable", ci_ledger)
+        self.assertIn("one shared UTC timestamp", ci_ledger)
+        self.assertIn("one shared UTC archive timestamp", github_actions)
+        self.assertIn("expire as a complete folder group", archive)
+        self.assertIn("No active flat task notes remain", board)
+        self.assertNotIn("| workspace/tasks/*.md |", catalog)
+        self.assertIn("| workspace/tasks/*/subtasks/README.md |", catalog)
+        self.assertIn("| workspace/tasks/*/subtasks/[0-9][0-9]-*.md |", catalog)
 
     def test_low_confidence_actions_findings_create_tasks(self):
         issue = {
