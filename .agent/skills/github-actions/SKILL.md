@@ -33,6 +33,7 @@ GitHub Actions runs the scheduled archive-retention workflow.
 - Treat all indexed files in one task folder as a single retention unit. Fail closed if required entries or the shared timestamp are missing.
 - Delete only the exact indexed files in a due folder. Remove their index entries in the same cleanup operation.
 - Retain historical flat task archives and report files individually for at least 90 days from each file's own timestamp.
+- A missing retained indexed file fails the cleanup job. Do not remove its index entry or recreate the historical file.
 - Preserve `.gitkeep`. Unindexed legacy records remain protected and must not be discovered by a directory scan.
 - Allow only the native `schedule` event. The cleanup script must reject every other GitHub event.
 - After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
