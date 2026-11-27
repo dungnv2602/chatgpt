@@ -13,11 +13,14 @@ Create one directory per task: `workspace/tasks/<task-id>/`. Store this template
 - **Status:** Ready
 - **Origin:** User
 - **Approval:** Approved
+- **Approval scope/source:** [Exact scope authorized and approval source, or standing authorization reference]
 - **Governing ADR(s):** None — non-implementation task
 - **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger parent group:** None
+
+Approval is authorization, not status or eligibility. Approved means explicit authorization for the recorded scope or applicable standing authorization; Pending means not authorized; Declined means rejected. Record approval scope/source. A concise "Approve" authorizes the immediately preceding proposal only within its stated scope. Do not infer approval from task status.
 
 For Ledger-generated P0 tasks, set Approval to Approved under the standing authorization. Keep Status Proposed when Governing ADR(s) is Pending. Move the task to Ready only after accepted ADR linkage exists or decision approval is not required.
 
