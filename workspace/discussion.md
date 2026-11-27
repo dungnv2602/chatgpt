@@ -2,7 +2,7 @@
 
 ## Current Step
 
-_No active step._
+- **2026-11-27:** `/start` initialization. Verify CI workflow invariants: CI tasks are children only; PI/CI-generated P0 children must be Ready rather than Proposed unless governed; Ledger intake and generation must create P0 children for new errors. Startup P0 batch follows mandatory Worker procedure.
 
 ## Open Discussions
 
