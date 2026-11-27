@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:30:08Z",
+  "updated_at_utc": "2026-11-27T13:30:31Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -18986,7 +18986,7 @@
       "source_family": "lint",
       "category": "semicolon",
       "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T09:36:47.784752+00:00",
@@ -19038,7 +19038,18 @@
           "source_commit_sha": "290a1cdb82ed7e73c4f41a86db286bdd0b6528af"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "50b029374102b3a593c5e63dd38f54586158ac8e",
+        "resolved_at_utc": "2026-11-27T13:30:31Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "All four semicolon constructions in the workspace README were split into separate sentences. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,

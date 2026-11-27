@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-22
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Blocked
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — complete CI Ledger and report evidence are unavailable through the GitHub connector.
+- **Eligibility / deferral reason:** In Progress — selected as the current P0 child. The complete Ledger and indexed report evidence are now available.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
 - **Updated:** 2026-11-27
@@ -48,6 +48,13 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 3. Mark Done after these checks; hosted validation is separate metadata.
 
 ## 5. Decisions and Progress
+
+### 2026-11-27T13:30:31Z — execution started
+
+- **Action:** Retrieved the complete Ledger and reviewed the single synonym-rotation finding in the GitHub Actions reference.
+- **Result:** The reference uses `Remove` for an action also named `delete`. The Worker skill already standardizes on `delete`.
+- **Next:** Replace `Remove` with `Delete` and read back the target.
+
 
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
