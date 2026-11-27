@@ -2,30 +2,30 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#1002](https://github.com/dungnv2602/chatgpt/actions/runs/46003502143)
-- **Run ID / attempt:** 46003502143 / 1
+- **Run:** [#1003](https://github.com/dungnv2602/chatgpt/actions/runs/46003913637)
+- **Run ID / attempt:** 46003913637 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 8324ee76f6ba30cbe04ca8b82414b2d51e98cdd0
-- **Source task:** 20261127-173000-10
+- **Branch / commit:** gpt / eb780b92aa048fdaf2c9bc6a1e1783c8bc2adceb
+- **Source task:** 20261127-173000-11
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 1a82e58b4d88cd86fd9f5c120f17ac22ca23d7a0
-- **Linter source SHA:** 8324ee76f6ba30cbe04ca8b82414b2d51e98cdd0
-- **Generated (UTC):** 2026-11-27T13:01:48.808449+00:00
+- **Baseline SHA:** 8324ee76f6ba30cbe04ca8b82414b2d51e98cdd0
+- **Linter source SHA:** eb780b92aa048fdaf2c9bc6a1e1783c8bc2adceb
+- **Generated (UTC):** 2026-11-27T13:04:56.091255+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 2 |
-| Files that failed | 2 |
+| Files that failed | 1 |
 | Files with findings | 2 |
-| Total findings | 4 |
-| Hard findings | 3 |
+| Total findings | 3 |
+| Hard findings | 2 |
 | Advisory findings | 1 |
 | New findings | 1 |
-| Recurring findings | 3 |
-| Resolved findings | 7 |
+| Recurring findings | 2 |
+| Resolved findings | 2 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -40,7 +40,7 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- .agent/skills/the-worker/references/decision-governance.md
+- .agent/skills/agent-skill-authoring/SKILL.md
 - workspace/task_board.md
 
 ## 4. Per-file result matrix
@@ -49,8 +49,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/the-worker/references/decision-governance.md | FAIL | 2 | 2 | 0 | 2991 | 0.1 | 1 |
-| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1638 | 0.1 | 1 |
+| .agent/skills/agent-skill-authoring/SKILL.md | PASS | 1 | 1 | 6 | 2256 | 0.0 | 0 |
+| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1604 | 0.1 | 1 |
 
 ## 5. Findings by rule
 
@@ -58,9 +58,8 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| semicolon | 2 |
+| synonym-rotation | 2 |
 | passive-voice | 1 |
-| synonym-rotation | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -92,7 +91,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.328s
+Ran 6 tests in 0.477s
 
 OK
 ~~~
@@ -105,7 +104,7 @@ OK
 ~~~text
 ........
 ----------------------------------------------------------------------
-Ran 8 tests in 0.006s
+Ran 8 tests in 0.007s
 
 OK
 ~~~
@@ -125,9 +124,8 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 2 changed Markdown sources (440 available as link targets) and 45 local Markdown links.
-Found 38 unresolved local Markdown targets or anchors.
-workspace/task_board.md: missing Markdown file: 11-ci-remediation-review-passive-voice-findings-in-agent-skills-agent-skill-author.md
+Scanned 2 changed Markdown sources (440 available as link targets) and 46 local Markdown links.
+Found 37 unresolved local Markdown targets or anchors.
 workspace/task_board.md: missing Markdown file: 12-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md
 workspace/task_board.md: missing Markdown file: 13-ci-remediation-review-synonym-rotation-findings-in-agent-session-start-md.md
 workspace/task_board.md: missing Markdown file: 14-ci-remediation-review-phrasal-verb-findings-in-agent-skills-asd-ste100-skill-md.md
@@ -173,82 +171,53 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · workspace/task_board.md:82:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · .agent/skills/agent-skill-authoring/SKILL.md:223:46 · **new** · fingerprint: 78a70aacc34addace6e797ec
   - **Level:** advisory-free
-  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** Correct
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
 
 ### Recurring findings
 
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **recurring** · fingerprint: b705ef6f747ccfaf4dd42d95
+- **synonym-rotation** · workspace/task_board.md:81:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **recurring** · fingerprint: b705ef6f747ccfaf4dd42d95
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/task_board.md:82:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Correct
+- **passive-voice** · workspace/task_board.md:81:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
 
 ### Resolved findings
 
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:103:34 · **resolved** · fingerprint: c7517e9068fe8c09010e809b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is included
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:47 · **resolved** · fingerprint: 3cfa441ce1b36c919b05cc87
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are stated
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:102 · **resolved** · fingerprint: a5f01370d23783e6b0e83a7e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is implied
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:111:86 · **resolved** · fingerprint: 24b3d9a71feccea3fb1206db
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are addressed
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **resolved** · fingerprint: 20a3b946ee1ae4877e53e449
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **resolved** · fingerprint: 02e6a360a86d394444d7be9c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unassigned
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **resolved** · fingerprint: aa0de8573960d54a21c2d1d2
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **resolved** · fingerprint: b705ef6f747ccfaf4dd42d95
   - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changed
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **resolved** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### .agent/skills/the-worker/references/decision-governance.md
+### .agent/skills/agent-skill-authoring/SKILL.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 2
-- **Hard findings:** 2
-- **Baseline:** 0
-- **Words:** 2991
-- **Findings per 100 words:** 0.1
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 1
+- **Hard findings:** 1
+- **Baseline:** 6
+- **Words:** 2256
+- **Findings per 100 words:** 0.0
 
 #### Complete diagnostics
 
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **recurring** · fingerprint: b705ef6f747ccfaf4dd42d95
+- **synonym-rotation** · .agent/skills/agent-skill-authoring/SKILL.md:223:46 · **new** · fingerprint: 78a70aacc34addace6e797ec
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **recurring** · fingerprint: b705ef6f747ccfaf4dd42d95
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
 
 
 ### workspace/task_board.md
@@ -258,17 +227,17 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 2
 - **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1638
+- **Words:** 1604
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/task_board.md:82:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:81:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
 
-- **passive-voice** · workspace/task_board.md:82:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:81:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
