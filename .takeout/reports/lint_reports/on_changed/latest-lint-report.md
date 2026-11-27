@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#1021](https://github.com/dungnv2602/chatgpt/actions/runs/46015641759)
-- **Run ID / attempt:** 46015641759 / 1
+- **Run:** [#1023](https://github.com/dungnv2602/chatgpt/actions/runs/46019304454)
+- **Run ID / attempt:** 46019304454 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / e5c48e2efe3b9d1e1ffeaca1acca1f370dc242cd
-- **Source task:** 20261127-173000-51
+- **Branch / commit:** gpt / 9c2adb27eff65c81b7bb768cf9f6dab9196db481
+- **Source task:** Unassigned
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 7744b9fccf0f5671054a0e9d4031c0bb3ff1ab29
-- **Linter source SHA:** e5c48e2efe3b9d1e1ffeaca1acca1f370dc242cd
-- **Generated (UTC):** 2026-11-27T14:27:41.634087+00:00
+- **Baseline SHA:** e5c48e2efe3b9d1e1ffeaca1acca1f370dc242cd
+- **Linter source SHA:** 9c2adb27eff65c81b7bb768cf9f6dab9196db481
+- **Generated (UTC):** 2026-11-27T14:52:04.316151+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 4 |
-| Files that failed | 4 |
-| Files with findings | 4 |
-| Total findings | 11 |
-| Hard findings | 6 |
-| Advisory findings | 5 |
-| New findings | 11 |
-| Recurring findings | 0 |
+| Files evaluated | 3 |
+| Files that failed | 3 |
+| Files with findings | 3 |
+| Total findings | 9 |
+| Hard findings | 5 |
+| Advisory findings | 4 |
+| New findings | 1 |
+| Recurring findings | 8 |
 | Resolved findings | 3 |
 | Failed workflow checks | 1 |
 
@@ -43,7 +43,6 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - .agent/skills/the-worker/SKILL.md
 - .agent/skills/the-worker/references/github-actions.md
 - workspace/task_board.md
-- .agent/skills/the-worker/references/ci-ledger.md
 
 ## 4. Per-file result matrix
 
@@ -52,9 +51,8 @@ The table includes every evaluated file, including files with zero findings and 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | .agent/skills/the-worker/SKILL.md | FAIL | 3 | 3 | 0 | 2664 | 0.1 | 1 |
-| .agent/skills/the-worker/references/github-actions.md | FAIL | 2 | 1 | 0 | 1964 | 0.1 | 1 |
-| workspace/task_board.md | FAIL | 3 | 1 | 0 | 1158 | 0.3 | 1 |
-| .agent/skills/the-worker/references/ci-ledger.md | FAIL | 3 | 1 | 0 | 791 | 0.4 | 1 |
+| .agent/skills/the-worker/references/github-actions.md | FAIL | 2 | 1 | 0 | 1963 | 0.1 | 1 |
+| workspace/task_board.md | FAIL | 4 | 1 | 0 | 1166 | 0.3 | 1 |
 
 ## 5. Findings by rule
 
@@ -62,9 +60,9 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 5 |
+| passive-voice | 4 |
 | long-sentence | 3 |
-| synonym-rotation | 3 |
+| synonym-rotation | 2 |
 
 ## 6. Workflow and validation checks
 
@@ -96,7 +94,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.461s
+Ran 6 tests in 0.477s
 
 OK
 ~~~
@@ -109,7 +107,7 @@ OK
 ~~~text
 ........
 ----------------------------------------------------------------------
-Ran 8 tests in 0.011s
+Ran 8 tests in 0.006s
 
 OK
 ~~~
@@ -129,7 +127,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 4 changed Markdown sources (445 available as link targets) and 29 local Markdown links.
+Scanned 3 changed Markdown sources (445 available as link targets) and 30 local Markdown links.
 Found 23 unresolved local Markdown targets or anchors.
 workspace/task_board.md: missing Markdown file: 27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md
 workspace/task_board.md: missing Markdown file: 28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md
@@ -162,69 +160,60 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **new** · fingerprint: 4900e43fc0a2db0bbbee87ae
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **new** · fingerprint: 009f1803dee803be87a4fa14
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:183:108 · **new** · fingerprint: 6ceec6aac665e34ceb1f916d
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-- **long-sentence** · .agent/skills/the-worker/references/github-actions.md:45:3 · **new** · fingerprint: 933a579fb10c54b6f0b0201a
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **passive-voice** · .agent/skills/the-worker/references/github-actions.md:199:103 · **new** · fingerprint: 2ae048d7121a7648e37f1f35
+- **passive-voice** · workspace/task_board.md:17:137 · **new** · fingerprint: 92838e68c54a583cee272835
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are maintained
-- **passive-voice** · workspace/task_board.md:26:9 · **new** · fingerprint: ed2247bc287f94142d470682
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is selected
-- **synonym-rotation** · workspace/task_board.md:73:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
-  - **Level:** advisory-free
-  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** Correct
-- **passive-voice** · workspace/task_board.md:73:113 · **new** · fingerprint: 9db0ccdc5f344a34e6b09777
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deferred
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **new** · fingerprint: aa0de8573960d54a21c2d1d2
-  - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changed
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:71:129 · **new** · fingerprint: f38fd9757fb22b64d1875b01
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are maintained
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:76:76 · **new** · fingerprint: f38fd9757fb22b64d1875b01
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are maintained
+  - **Matched text:** is closed
 
 ### Recurring findings
 
-None.
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **recurring** · fingerprint: 4900e43fc0a2db0bbbee87ae
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **recurring** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:183:108 · **recurring** · fingerprint: 6ceec6aac665e34ceb1f916d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 33 words (cap 25). Split it.
+  - **Matched text:** 33 words
+- **long-sentence** · .agent/skills/the-worker/references/github-actions.md:45:3 · **recurring** · fingerprint: 933a579fb10c54b6f0b0201a
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **passive-voice** · .agent/skills/the-worker/references/github-actions.md:199:103 · **recurring** · fingerprint: 2ae048d7121a7648e37f1f35
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are maintained
+- **passive-voice** · workspace/task_board.md:26:9 · **recurring** · fingerprint: ed2247bc287f94142d470682
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is selected
+- **synonym-rotation** · workspace/task_board.md:73:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+  - **Level:** advisory-free
+  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Correct
+- **passive-voice** · workspace/task_board.md:73:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deferred
 
 ### Resolved findings
 
-- **passive-voice** · .agent/skills/the-worker/assets/actions-report-template.md:15:175 · **resolved** · fingerprint: c4694e88f04cd654220cc23d
+- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **resolved** · fingerprint: aa0de8573960d54a21c2d1d2
+  - **Level:** advisory-free
+  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
+  - **Matched text:** changed
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:71:129 · **resolved** · fingerprint: f38fd9757fb22b64d1875b01
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is retained
-- **passive-voice** · .agent/skills/the-worker/assets/actions-report-template.md:15:263 · **resolved** · fingerprint: c4694e88f04cd654220cc23d
+  - **Matched text:** are maintained
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:76:76 · **resolved** · fingerprint: f38fd9757fb22b64d1875b01
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is retained
-- **passive-voice** · .agent/skills/the-worker/assets/actions-report-template.md:15:393 · **resolved** · fingerprint: 4d345e231ac14cad2ca77be0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are excluded
+  - **Matched text:** are maintained
 
 ## 8. Complete per-file diagnostics
 
@@ -242,17 +231,17 @@ This section includes every normalized finding with its rule, level, source loca
 
 #### Complete diagnostics
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **new** · fingerprint: 4900e43fc0a2db0bbbee87ae
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **recurring** · fingerprint: 4900e43fc0a2db0bbbee87ae
   - **Level:** advisory-free
   - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
   - **Matched text:** checks
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **new** · fingerprint: 009f1803dee803be87a4fa14
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **recurring** · fingerprint: 009f1803dee803be87a4fa14
   - **Level:** advisory-free
   - **Message:** Sentence has 27 words (cap 25). Split it.
   - **Matched text:** 27 words
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:183:108 · **new** · fingerprint: 6ceec6aac665e34ceb1f916d
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:183:108 · **recurring** · fingerprint: 6ceec6aac665e34ceb1f916d
   - **Level:** advisory-free
   - **Message:** Sentence has 33 words (cap 25). Split it.
   - **Matched text:** 33 words
@@ -265,17 +254,17 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 2
 - **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1964
+- **Words:** 1963
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **long-sentence** · .agent/skills/the-worker/references/github-actions.md:45:3 · **new** · fingerprint: 933a579fb10c54b6f0b0201a
+- **long-sentence** · .agent/skills/the-worker/references/github-actions.md:45:3 · **recurring** · fingerprint: 933a579fb10c54b6f0b0201a
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
 
-- **passive-voice** · .agent/skills/the-worker/references/github-actions.md:199:103 · **new** · fingerprint: 2ae048d7121a7648e37f1f35
+- **passive-voice** · .agent/skills/the-worker/references/github-actions.md:199:103 · **recurring** · fingerprint: 2ae048d7121a7648e37f1f35
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are maintained
@@ -285,56 +274,33 @@ This section includes every normalized finding with its rule, level, source loca
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 3
+- **Findings:** 4
 - **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1158
+- **Words:** 1166
 - **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
 
-- **passive-voice** · workspace/task_board.md:26:9 · **new** · fingerprint: ed2247bc287f94142d470682
+- **passive-voice** · workspace/task_board.md:17:137 · **new** · fingerprint: 92838e68c54a583cee272835
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is closed
+
+- **passive-voice** · workspace/task_board.md:26:9 · **recurring** · fingerprint: ed2247bc287f94142d470682
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is selected
 
-- **synonym-rotation** · workspace/task_board.md:73:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:73:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
 
-- **passive-voice** · workspace/task_board.md:73:113 · **new** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:73:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
-
-
-### .agent/skills/the-worker/references/ci-ledger.md
-
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 3
-- **Hard findings:** 1
-- **Baseline:** 0
-- **Words:** 791
-- **Findings per 100 words:** 0.4
-
-#### Complete diagnostics
-
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **new** · fingerprint: aa0de8573960d54a21c2d1d2
-  - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changed
-
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:71:129 · **new** · fingerprint: f38fd9757fb22b64d1875b01
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are maintained
-
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:76:76 · **new** · fingerprint: f38fd9757fb22b64d1875b01
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are maintained
 
 ## 9. Structured evidence and integrity
 
