@@ -32,7 +32,7 @@ Every task-specific source commit must include one trailer:
 
 For attributed findings, group by genuine parent ID and stable `task_group`. Create or reuse one P0 CI remediation child per active group under that parent's `subtasks/` directory. Use `NN-ci-remediation-<slug>.md` and ID `<parent-id>-NN`.
 
-Set new CI children to P0, Approved, Ready under the standing authorization. Use Proposed only when a specific unresolved decision is required. Routine implementation does not need an ADR just because the code differs. Keep a real decision gate limited to the dependent child.
+Set new CI children to P0, Approved, Ready under the standing authorization. Use Proposed only when the user must resolve a specific decision before implementation. Routine implementation does not need an ADR just because the code differs. Keep a real decision gate limited to the dependent child.
 
 Store genuine parent IDs in `task_refs` and child IDs in `subtask_refs`. Keep retired synthetic IDs in `legacy_task_refs`. Never add a synthetic parent, modify parent status or priority, select work, or edit `task_board.md` or Current Execution.
 
@@ -45,7 +45,7 @@ Update the parent's Ledger Findings section without modifying its priority. Upda
 - Repeated observations update the same finding and child. do not create a new child for each run.
 - Keep the first and four most recent distinct evidence paths. Preserve total occurrences and timestamps.
 - Baseline comparisons suppress recurring untracked lint findings.
-- Reopen a resolved finding while preserving its earlier resolution. Use the new observation's Task-ID attribution. If that observation is unassigned, do not reuse an older parent link.
+- Reopen a resolved finding while preserving its earlier resolution. Use the new observation's Task-ID attribution. If the Ledger cannot attribute that observation, do not reuse an older parent link.
 - Do not poll, scan old history, or backfill. Historical backfill and clean reset need separate explicit authorization.
 
 ## Finding lifecycle
