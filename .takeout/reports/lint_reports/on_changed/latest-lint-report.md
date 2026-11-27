@@ -2,16 +2,16 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#1008](https://github.com/dungnv2602/chatgpt/actions/runs/46006086414)
-- **Run ID / attempt:** 46006086414 / 1
+- **Run:** [#1010](https://github.com/dungnv2602/chatgpt/actions/runs/46006471167)
+- **Run ID / attempt:** 46006471167 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / a3603c9582a13695e52730d8b5f6d8911d7b5b03
-- **Source task:** 20261127-173000-17
+- **Branch / commit:** gpt / f63fb0023e2c2c4fe78cf71fa7edc50ad0aa2b17
+- **Source task:** 20261127-173000-18
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** ecf0a00796997d7ca6c76e96232632680e6268af
-- **Linter source SHA:** a3603c9582a13695e52730d8b5f6d8911d7b5b03
-- **Generated (UTC):** 2026-11-27T13:19:47.334625+00:00
+- **Baseline SHA:** a3603c9582a13695e52730d8b5f6d8911d7b5b03
+- **Linter source SHA:** f63fb0023e2c2c4fe78cf71fa7edc50ad0aa2b17
+- **Generated (UTC):** 2026-11-27T13:23:22.178695+00:00
 
 ## 1. Executive summary
 
@@ -20,12 +20,12 @@
 | Files evaluated | 2 |
 | Files that failed | 2 |
 | Files with findings | 2 |
-| Total findings | 8 |
-| Hard findings | 7 |
-| Advisory findings | 1 |
-| New findings | 6 |
+| Total findings | 6 |
+| Hard findings | 3 |
+| Advisory findings | 3 |
+| New findings | 4 |
 | Recurring findings | 2 |
-| Resolved findings | 0 |
+| Resolved findings | 6 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -40,7 +40,7 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- .agent/skills/the-worker/SKILL.md
+- .agent/SESSION_START.md
 - workspace/task_board.md
 
 ## 4. Per-file result matrix
@@ -49,8 +49,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/the-worker/SKILL.md | FAIL | 6 | 6 | 0 | 2548 | 0.2 | 1 |
-| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1400 | 0.1 | 1 |
+| .agent/SESSION_START.md | FAIL | 4 | 2 | 0 | 2936 | 0.1 | 1 |
+| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1366 | 0.1 | 1 |
 
 ## 5. Findings by rule
 
@@ -58,9 +58,10 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| long-sentence | 5 |
+| passive-voice | 2 |
 | synonym-rotation | 2 |
-| passive-voice | 1 |
+| long-sentence | 1 |
+| present-perfect | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -92,7 +93,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.379s
+Ran 6 tests in 0.375s
 
 OK
 ~~~
@@ -126,8 +127,7 @@ selftest OK
 
 ~~~text
 Scanned 2 changed Markdown sources (440 available as link targets) and 38 local Markdown links.
-Found 31 unresolved local Markdown targets or anchors.
-workspace/task_board.md: missing Markdown file: 18-ci-remediation-review-passive-voice-findings-in-agent-session-start-md.md
+Found 30 unresolved local Markdown targets or anchors.
 workspace/task_board.md: missing Markdown file: 19-ci-remediation-review-passive-voice-findings-in-agent-skills-asd-ste100-skill-m.md
 workspace/task_board.md: missing Markdown file: 20-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md
 workspace/task_board.md: missing Markdown file: 21-ci-remediation-review-semicolon-findings-in-workspace-readme-md.md
@@ -166,91 +166,96 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **new** · fingerprint: 4900e43fc0a2db0bbbee87ae
+- **passive-voice** · .agent/SESSION_START.md:22:209 · **new** · fingerprint: 00654de2a95772d4a870e55f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** being fetched
+- **synonym-rotation** · .agent/SESSION_START.md:177:7 · **new** · fingerprint: 93101ce1787c7b9208b4031d
   - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:112:3 · **new** · fingerprint: 29bf7cd1e44f6d01fc347374
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:116:70 · **new** · fingerprint: 030301d369a6833422178b29
-  - **Level:** advisory-free
-  - **Message:** Sentence has 42 words (cap 25). Split it.
-  - **Matched text:** 42 words
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:125:182 · **new** · fingerprint: 6ceec6aac665e34ceb1f916d
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **new** · fingerprint: 009f1803dee803be87a4fa14
+  - **Message:** 'retrieve' and 'fetch' name the same action. Pick one and use it every time.
+  - **Matched text:** retrieved
+- **present-perfect** · .agent/SESSION_START.md:253:154 · **new** · fingerprint: 89880d1a1650656e6b26d226
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have passed
+- **long-sentence** · .agent/SESSION_START.md:278:1 · **new** · fingerprint: 85322c6fe1ce661af2777338
   - **Level:** advisory-free
   - **Message:** Sentence has 27 words (cap 25). Split it.
   - **Matched text:** 27 words
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:174:140 · **new** · fingerprint: f32bb2e57cc49f8136c280d8
-  - **Level:** advisory-free
-  - **Message:** Sentence has 30 words (cap 25). Split it.
-  - **Matched text:** 30 words
 
 ### Recurring findings
 
-- **synonym-rotation** · workspace/task_board.md:75:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:74:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
-- **passive-voice** · workspace/task_board.md:75:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:74:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
 
 ### Resolved findings
 
-None.
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **resolved** · fingerprint: 4900e43fc0a2db0bbbee87ae
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:112:3 · **resolved** · fingerprint: 29bf7cd1e44f6d01fc347374
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:116:70 · **resolved** · fingerprint: 030301d369a6833422178b29
+  - **Level:** advisory-free
+  - **Message:** Sentence has 42 words (cap 25). Split it.
+  - **Matched text:** 42 words
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:125:182 · **resolved** · fingerprint: 6ceec6aac665e34ceb1f916d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 33 words (cap 25). Split it.
+  - **Matched text:** 33 words
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **resolved** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:174:140 · **resolved** · fingerprint: f32bb2e57cc49f8136c280d8
+  - **Level:** advisory-free
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### .agent/skills/the-worker/SKILL.md
+### .agent/SESSION_START.md
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 6
-- **Hard findings:** 6
+- **Findings:** 4
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 2548
-- **Findings per 100 words:** 0.2
+- **Words:** 2936
+- **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **new** · fingerprint: 4900e43fc0a2db0bbbee87ae
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
+- **passive-voice** · .agent/SESSION_START.md:22:209 · **new** · fingerprint: 00654de2a95772d4a870e55f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** being fetched
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:112:3 · **new** · fingerprint: 29bf7cd1e44f6d01fc347374
+- **synonym-rotation** · .agent/SESSION_START.md:177:7 · **new** · fingerprint: 93101ce1787c7b9208b4031d
   - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
+  - **Message:** 'retrieve' and 'fetch' name the same action. Pick one and use it every time.
+  - **Matched text:** retrieved
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:116:70 · **new** · fingerprint: 030301d369a6833422178b29
-  - **Level:** advisory-free
-  - **Message:** Sentence has 42 words (cap 25). Split it.
-  - **Matched text:** 42 words
+- **present-perfect** · .agent/SESSION_START.md:253:154 · **new** · fingerprint: 89880d1a1650656e6b26d226
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have passed
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:125:182 · **new** · fingerprint: 6ceec6aac665e34ceb1f916d
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **new** · fingerprint: 009f1803dee803be87a4fa14
+- **long-sentence** · .agent/SESSION_START.md:278:1 · **new** · fingerprint: 85322c6fe1ce661af2777338
   - **Level:** advisory-free
   - **Message:** Sentence has 27 words (cap 25). Split it.
   - **Matched text:** 27 words
-
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:174:140 · **new** · fingerprint: f32bb2e57cc49f8136c280d8
-  - **Level:** advisory-free
-  - **Message:** Sentence has 30 words (cap 25). Split it.
-  - **Matched text:** 30 words
 
 
 ### workspace/task_board.md
@@ -260,17 +265,17 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 2
 - **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1400
+- **Words:** 1366
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/task_board.md:75:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:74:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
 
-- **passive-voice** · workspace/task_board.md:75:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:74:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
