@@ -42,7 +42,7 @@ Load these skills only when the request or an explicit role-initiation procedure
 | [ci-ledger](ci-ledger/SKILL.md) | Ledger ingestion, finding governance, evidence, task handoff, lifecycle, and retirement. |
 | [github-actions](github-actions/SKILL.md) | CI diagnostics, workflow changes, CI-generated remediation, recurrence prevention, and validation procedures. |
 | [asd-ste100](asd-ste100/SKILL.md) | Skill or technical documentation authoring and clarity rewrites. |
-| [document-standards](document-standards/SKILL.md) | Recurring document or structured-record governance, templates, and validation. |
+| Document governance | The Worker owns template-first authoring, format classification, catalog/coverage integrity, migration, and validation. |
 
 ## Foundational initialization
 
