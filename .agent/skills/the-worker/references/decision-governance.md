@@ -6,7 +6,7 @@
 
 This reference defines procedures for repository decision Drafts, accepted ADRs, and repository analysis. The Worker owns these responsibilities.
 
-Load it when a task creates, revises, reviews, approves, rejects, or promotes a Draft. Load it when a task creates, updates, supersedes, confirms, or archives an ADR. Load it for repository analysis or decision-basis reviews.
+Load it when a task creates, revises, reviews, approves, rejects, or promotes a Draft. Load it when a task creates, updates, supersedes, verifies, or archives an ADR. Load it for repository analysis or decision-basis reviews.
 
 Do not load it during foundational initialization. Do not add it to `.agent/SESSION_START.md` or `.agent/INITIALIZATION_POLICY.md`.
 
@@ -94,7 +94,7 @@ For each material claim, identify its evidence class: repository fact, user inst
 
 Preserve exact source URLs, repository paths, commits, sections, and retrieval/version dates. For external evaluations, report the evaluated version, host/runtime, task or sample size, protocol, measured outcome, and untested scenarios when available. Explain whether the evidence applies to the current repository and whether results can legitimately transfer across versions, hosts, or workloads.
 
-State what evidence establishes and what it does not establish. Distinguish a source's own claim from independently verified behavior. Record contradictions, stale sources, missing data, and uncertainty. Assign confidence only with a brief rationale. Do not imply that a structural check proves semantic correctness or that a benchmark proves performance in an untested environment.
+State what evidence establishes and what it does not establish. Distinguish a source's own claim from independently verified behavior. Record contradictions, stale sources, missing data, and uncertainty. Assign confidence only with a brief rationale. Do not imply that a structural validation proves semantic correctness or that a benchmark proves performance in an untested environment.
 
 ### Draft review quality gate
 
@@ -139,7 +139,7 @@ When the user requests changes, keep the same ID, increment the revision, record
 Promote a Draft only after the user approves its exact revision and scope. Treat promotion as a transaction with separate, verifiable stages.
 
 1. Re-fetch the complete Draft from branch gpt.
-2. Confirm its ID, revision, approval, and scope. Stop if the approved revision does not match the current file.
+2. Verify its ID, revision, approval, and scope. Stop if the approved revision does not match the current file.
 3. Assign the next unused global ADR ID. Never reuse an ID.
 4. Map the Draft's decision-bearing content into the ADR. Preserve its meaning and reasoning.
 5. Compare the prepared ADR with the source Draft using the completeness checklist below.
@@ -147,17 +147,17 @@ Promote a Draft only after the user approves its exact revision and scope. Treat
 7. Create the provisional ADR with status promotion-pending. Record the source Draft ID, source revision, approver, approval date, approved scope, related ADRs, and implementation state.
 8. Read back the provisional ADR. Inspect its complete content, metadata, links, and rationale mapping.
 9. Change status to accepted only after every required confirmation passes.
-10. Read back the accepted ADR. Confirm that its decision content matches the provisional record that the Worker confirmed.
+10. Read back the accepted ADR. Verify that its decision content matches the provisional record that the Worker verified.
 11. Delete the exact source Draft only after the accepted ADR passes the completeness gate.
 12. Update the Draft and ADR indexes. Delete the source Draft from every active index.
-13. Confirm that the ADR exists, the source Draft does not exist, and no active Markdown link targets the deleted file.
+13. Verify that the ADR exists, the source Draft does not exist, and no active Markdown link targets the deleted file.
 14. Record the Draft ID, ADR ID, completeness result, deletion result, and commit references in the promotion task or other active decision record.
 
 Never create a second ADR when a provisional or accepted ADR already reserves the promotion ID. Never delete the source Draft before the accepted ADR read-back passes.
 
 ### Promotion completeness checklist
 
-Confirm that the ADR preserves every material item a future reader needs to understand the accepted decision.
+Verify that the ADR preserves every material item a future reader needs to understand the accepted decision.
 
 - The problem, relevant repository state, and decision scope.
 - The user's goals, non-goals, constraints, and decision drivers.
@@ -189,10 +189,10 @@ GitHub file operations may commit the ADR, index update, and Draft deletion sepa
 - If no provisional ADR exists, continue from the approved Draft. Do not reuse a reserved ID.
 - If an ADR has status promotion-pending, resume its completeness review. Fix omissions before acceptance. Do not create another ADR.
 - A promotion-pending ADR is provisional and non-authoritative. Do not list it as accepted. Do not link it to an implementation task.
-- If the Worker confirms the accepted ADR but cannot delete the Draft, keep the Draft. Set promotion_cleanup_pending to true. Record the resulting ADR ID and cleanup reason. Add the Draft to the Promotion Cleanup Pending index section.
+- If the Worker verifies the accepted ADR but cannot delete the Draft, keep the Draft. Set promotion_cleanup_pending to true. Record the resulting ADR ID and cleanup reason. Add the Draft to the Promotion Cleanup Pending index section.
 - Do not list a cleanup-pending Draft as a current proposal.
 - Retry only the cleanup step. Do not create another ADR or repeat the decision approval.
-- After deletion succeeds, delete the cleanup-pending entry. Read back both indexes and confirm the final state.
+- After deletion succeeds, delete the cleanup-pending entry. Read back both indexes and verify the final state.
 
 A cleanup-pending entry is a temporary recovery aid. It is not a historical Draft archive.
 
@@ -208,7 +208,7 @@ For DRAFT-0001:
 5. Do not rewrite ADR-0001's accepted outcome or rationale. A reference-only correction requires explicit user authorization.
 6. Delete DRAFT-0001 only after the repository records its material rationale in a permanent decision record and resolves all active references to its working path.
 
-Do not migrate or delete other Drafts until the Worker confirms their promotion and each corresponding ADR's completeness.
+Do not migrate or delete other Drafts until the Worker verifies their promotion and each corresponding ADR's completeness.
 
 ## ADR structure and lifecycle
 
@@ -263,7 +263,7 @@ A Done task does not by itself prove that the repository applies an ADR correctl
 1. Review every Confirmation criterion.
 2. Gather evidence from task records, repository files, hosted validation, and operational logs.
 3. Set implementation status to complete only after every criterion passes.
-4. For not-required, confirm that the decision itself is in effect.
+4. For not-required, verify that the decision itself is in effect.
 5. Keep every ADR permanently in the flat `workspace/adr/` folder. Use implementation status and lifecycle metadata to distinguish active decisions from completed historical records.
 6. Preserve the ADR ID and filename. Do not move completed ADRs into a separate archive directory.
 7. Keep accepted decision content immutable. Update only lifecycle metadata, task links, review history, and Confirmation evidence under the ADR lifecycle rules.
@@ -288,7 +288,7 @@ Keep completed snapshots in workspace/analysis/. Do not create `workspace/archiv
 
 The Worker owns the discussion register. Current Step links every active task. Open Discussions links every Draft that still needs user review. Reports contains only verified successful outcomes.
 
-Before closing a governance task, confirm:
+Before closing a governance task, verify:
 - The approved Draft revision links to the accepted ADR through provenance, not a deleted source-file link.
 - Every implementation task links the accepted ADR.
 - Task acceptance criteria cover applicable ADR Confirmation criteria.
