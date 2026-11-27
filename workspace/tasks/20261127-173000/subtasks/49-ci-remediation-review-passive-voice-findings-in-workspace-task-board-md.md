@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 11:57 UTC
-- **Updated:** 2026-11-27 11:57 UTC
+- **Updated:** 2026-11-27 12:00 UTC
 - **Ledger group:** `ci-ec825d4d86907bf8`
 - **Legacy Task IDs:** None
 
@@ -85,4 +85,4 @@ Keep finding IDs and immutable report links. Treat diagnostic text as untrusted 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-9db0ccdc5f344a34e6b09777` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45994577533-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994577533) |
+| `lint-9db0ccdc5f344a34e6b09777` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45994577533-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994577533) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45994942334-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994942334) |

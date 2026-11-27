@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 11:59 UTC
+- **Updated:** 2026-11-27 12:00 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -271,5 +271,5 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 | `lint-cb29534f35d8d330ae1e06be` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45988691008-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45988691008) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-9a23cba48e9d5ffca1df4cc7` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45988691008-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45988691008) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-78a70aacc34addace6e797ec` | medium | synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45994577533-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994577533) |
-| `lint-9db0ccdc5f344a34e6b09777` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45994577533-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994577533) |
+| `lint-9db0ccdc5f344a34e6b09777` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45994577533-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994577533) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45994942334-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994942334) |
 | `lint-fa71e22a78d6e4ce44e3a977` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45994577533-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994577533) |
