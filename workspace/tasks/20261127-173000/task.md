@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 18:29 UTC
+- **Updated:** 2026-11-27 18:40 UTC
 - **Priority:** P0
 - **Status:** Ready
 - **Origin:** User
@@ -33,16 +33,24 @@
 
 ## 3. Objective and Acceptance Criteria
 
-Coordinate skills refactoring, including consolidations into The Worker and workflow/hierarchy improvements.
+Serve as the persistent, open parent task and coordination point for skills refactoring in the repository, including the current consolidation work and future refactoring initiatives. This is an explicitly authorized standing parent for skills-refactoring work; it is not a finite deliverable and must not be retired or closed merely because its current children are complete.
 
-1. Existing task 20261127-102301 is reparented as a subtask of this task, with progress and original record evidence preserved.
-2. Child index and board reflect the new hierarchy.
-3. Parent and subtask paths are read back after commit.
-4. The objective-based task-parent-selection correction is preserved as subtask 03.
+1. Keep this parent task open as the enduring skills-refactoring workstream.
+2. Capture each distinct current or future skills-refactoring deliverable as its own subtask under this parent, after confirming it genuinely concerns refactoring the repository's skills.
+3. Preserve original prompts, approvals, dependencies, progress, evidence, and history in each child record.
+4. Keep the subtask index and task board reconciled as children are created, activated, paused, completed, or removed at closeout.
+5. Never mark this parent Done, Cancelled, or delete its task folder as ordinary child closeout. Only a new explicit user instruction may change this standing lifecycle rule.
 
 ## 4. Decisions
 
 - The existing task is reparented as a subtask rather than duplicated as an independent parent.
+- This is a persistent skills-refactoring parent, not a finite project task. Completed children may be closed and deleted under normal closeout, but the parent and its folder remain open indefinitely unless the user explicitly instructs otherwise.
+
+### 2026-11-27 18:40 UTC
+
+> This task acts as a placeholder for refractoring skills now and in the future. You do not retire this task, only creat subtasks under it.
+
+- **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
 
@@ -62,7 +70,7 @@ Coordinate skills refactoring, including consolidations into The Worker and work
 
 ## 6. Current State and Remaining Work
 
-Subtasks 01, 02, and 03 are tracked. Subtask 03 preserves the former 20261127-102300 record. Reconciliation is deferred behind the mandatory P0 queue.
+This parent remains open as the persistent skills-refactoring workstream. Child 01 (document governance consolidation) has been completed and closed. Children 02 and 03 remain tracked as Paused. Future skills-refactoring requests that fit this scope must be captured as new child subtasks under this parent. Do not retire this parent when the current children are complete.
 
 ## 7. Verification and Evidence
 
@@ -74,7 +82,7 @@ Subtasks 01, 02, and 03 are tracked. Subtask 03 preserves the former 20261127-10
 
 ## 8. Handoff
 
-Continue this P0 Refactor Skills task and its children as Current Execution.
+Keep this persistent P0 Refactor Skills parent open. Create and execute child subtasks for current and future skills-refactoring deliverables. Do not close or delete the parent task unless the user explicitly changes this instruction.
 
 ## 9. Subtasks
 
