@@ -7,7 +7,7 @@ The workspace is the task-management and conversation-navigation area. The Worke
 | Path | Purpose |
 |---|---|
 | [discussion.md](discussion.md) | Current-step brief, open discussions, and the three latest verified success reports |
-| [task_board.md](task_board.md) | Task index, priorities, states, and current execution |
+| [task_board.md](task_board.md) | Live scheduler view: Current Execution, ordered eligible queue, Next Task, and deferred work |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Canonical parent task-folder record format |
 | [SUBTASK_TEMPLATE.md](SUBTASK_TEMPLATE.md) | Canonical child subtask format |
 | [DRAFT_TEMPLATE.md](DRAFT_TEMPLATE.md) | Canonical decision-draft format |
@@ -43,8 +43,8 @@ The decision-governance skill owns Draft, ADR, and repository-analysis lifecycle
 
 1. Check the board and active records before creating work. Update an existing task when the objective continues. Otherwise, create a distinct task.
 2. Record the user's request, scope, constraints, approval, priority, dependencies, and acceptance criteria.
-3. Select one current execution task. Follow explicit user direction, then dependencies, priority, and age.
-4. Record meaningful actions, decisions, verification, and blockers in the task record. Keep the board as an index.
+3. The Worker alone schedules. Check eligibility and dependencies first, then rank eligible work according to governing priority and age rules. The board publishes the decision through Current Execution, an ordered eligible queue, and Next Task. Deferred work remains outside the queue with its status and reason. Do not maintain a duplicate queue in this README or task records.
+4. Record meaningful actions, decisions, verification, and blockers in task records. The board is a concise scheduling view, not a duplicate detail store.
 5. Close only after the Worker checks every acceptance criterion and marks each required subtask Done. Delete the complete task folder, including task.md, subtasks/README.md, and every child record. Remove the task from the board. Do not create a copy, archive, retention entry, or Historical row.
 
 Task IDs use UTC YYYYMMDD-HHMMSS. Use only the statuses Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Optional assistant improvements remain Proposed until approved. Necessary follow-ups may be created automatically within the approved scope.
