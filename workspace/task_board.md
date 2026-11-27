@@ -41,12 +41,6 @@ These approved P0 task groups remain Proposed because accepted ADR coverage is p
 | 20261126-170259-01 | Review passive-voice findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261126-170259-01/task.md) |
 | 20261126-170259 | Review synonym-rotation findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261126-170259/task.md) |
 
-### Blocked — user authorization required
-
-| ID | Title | Priority | Status | Approval | ADR(s) | Reason | Task record |
-|---|---|---:|---|---|---|---|---|
-| 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | Blocked | Approved | ADR-0003 | Confirmation criterion requires explicit authorization for a read-only full-repository reference search | [Task record](tasks/20261126-090154/task.md) |
-
 ### Paused
 
 | ID | Title | Priority | Status | Approval | Task record |
