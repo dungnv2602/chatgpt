@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 11:57 UTC
+- **Updated:** 2026-11-27 11:59 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -53,6 +53,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27 11:59 UTC
+
+- **Action:** Closed P0 child 05 after readback. Started P0 child 06.
+- **Result:** Child 05 corrected four present-perfect constructions in the Agent Skill Authoring skill. The source file and task state were read back. The current eligible P0 child is 06.
+- **Evidence:** Commit `b7de07d9138d3095e8b590f19a1a22da24595361`. Child 05 record removed at closeout.
+- **Next:** Standardize the initialization policy's use of `fetch` and continue the ordered P0 queue.
+
 
 ### 2026-11-27 11:56 UTC
 

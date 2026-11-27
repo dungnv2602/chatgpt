@@ -67,13 +67,13 @@ Load Worker-owned references only when the task requires them:
 
 Do not activate separate CI Ledger, GitHub Actions, decision-governance, or document-governance skills.
 
-Retrieve supporting catalogs, references, templates, and schemas only when required. This preserves the template-first and writing standards without loading unrelated skills at startup.
+Fetch supporting catalogs, references, templates, and schemas only when required. This preserves the template-first and writing standards without loading unrelated skills at startup.
 
 The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load it only after foundational initialization passes. The Worker owns the archive/media procedures used by Drawing. A drawing-session or novelist request does not trigger foundational initialization. Its required references are `.agent/skills/drawing/references/style-guide.md` and `.agent/skills/drawing/references/image-editing-protocol.md`.
 
 Novelist initialization is tier 3. Load `.agent/skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
 
-Maintain a per-conversation verified-load ledger for baseline and task-activated skills. Retrieve and read each file once. Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the current file. Do not reload unrelated files.
+Maintain a per-conversation verified-load ledger for baseline and task-activated skills. Fetch and read each file once. Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the current file. Do not reload unrelated files.
 
 The ASD-STE100 skill governs skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
 

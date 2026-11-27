@@ -9,7 +9,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-06
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27 11:53 UTC
+- **Updated:** 2026-11-27 11:59 UTC
 - **Ledger group:** `ci-04b2ffcb77f32772`
 - **Legacy Task IDs:** None
 
@@ -49,16 +49,23 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 ## 5. Decisions and Progress
 
+### 2026-11-27 11:59 UTC — execution started
+
+- **Action:** Selected this first remaining P0 child after closing child 05. Read the full committed repository report and the exact matching finding.
+- **Result:** The document used `fetch` and `retrieve` for the same action. Standardized both current instructions on `fetch`.
+- **Evidence:** `.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json`, finding `lint-4e20a50af596bd1c8120efea`.
+- **Next:** Commit the wording change and read back the source and task record.
+
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
+- **Commit SHA:** Pending this commit.
+- **Changed paths:** `.agent/INITIALIZATION_POLICY.md`.
+- **Readback:** Pending commit readback.
+- **Checks:** No local linter or hosted run review.
+- **Limitations:** No local linter or hosted run page was used.
 
 ## 7. Completion
 
