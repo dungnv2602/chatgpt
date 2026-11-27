@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-05
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Selected — Current Execution under the persistent Refactor Skills P0 parent
+- **Eligibility / deferral reason:** Completed — corrected all four indexed missing local links and verified changed files by remote readback
 - **Required:** Yes
 - **Created:** 2026-11-27 11:08 UTC
 - **Updated:** 2026-11-27 11:08 UTC
@@ -65,17 +65,17 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
+- **Commit SHA:** `22907d4bfb9905ee155d0d16164982c96d415762`
+- **Changed paths:** `.takeout/reports/README.md`; `workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md`; `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md`
+- **Readback:** Confirmed the report README links to the current workspace guide. Confirmed ADR-0001 retains task ID `20261124-103354` without linking to a missing task file. Confirmed DRAFT-0002 links to the current ADR path. Confirmed the new link targets exist.
+- **Checks:** Not performed. No local linter, scripts, tests, or hosted CI were run or inspected.
+- **Limitations:** Remote readback and path inspection establish the four link corrections. They do not establish a subsequent hosted link-check result or validate every repository link.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 11:08 UTC
+- **Completion basis:** Committed all four link corrections and verified the changed files and target paths on branch `gpt`. Hosted validation remains separate metadata.
 
 The Worker marks the child Done only after its acceptance criteria pass and the intended-branch commit is read back. For CI remediation, commit-based completion is separate from hosted validation.
 
@@ -88,7 +88,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.
+No implementation work remains in this child. Hosted validation is separate metadata. Do not inspect hosted CI results.
 
 ## 10. Ledger Findings
 
