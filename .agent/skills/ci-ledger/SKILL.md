@@ -51,7 +51,7 @@ Update the existing parent's Ledger Findings section without changing its priori
 - Repeated observations update the same finding and child; do not create a new child for each run.
 - Keep the first and four most recent distinct evidence paths. Preserve total occurrences and timestamps.
 - Baseline comparisons suppress recurring untracked lint findings.
-- A resolved finding reopens with its earlier resolution retained. A new observation uses its own Task-ID attribution.
+- A resolved finding reopens with its earlier resolution retained. A new observation uses its own Task-ID attribution. If the latest observation is unassigned, do not reuse an older parent link for new task creation.
 - Do not poll, scan old history, or backfill. Historical backfill and clean reset need separate explicit authorization.
 
 ## Finding lifecycle
