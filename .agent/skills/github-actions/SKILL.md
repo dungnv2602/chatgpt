@@ -29,8 +29,10 @@ GitHub Actions runs the scheduled archive-retention workflow.
 - Run the schedule from the repository default branch because GitHub scheduled events only run there.
 - Check out `gpt`, which is the working/source branch.
 - Read only `.github/archive-retention-index.json`. Never list or scan `.archive/task/`.
-- Retain each indexed record for at least 90 days from its UTC archive timestamp.
-- Delete only exact indexed paths that have reached 90 days. Delete their index entries after processing.
+- Retain each new task-folder archive for at least 90 days from its shared UTC archive timestamp. Require indexed task.md, subtasks/README.md, and every child record.
+- Treat all indexed files in one task folder as a single retention unit. Fail closed if required entries or the shared timestamp are missing.
+- Delete only the exact indexed files in a due folder. Remove their index entries in the same cleanup operation.
+- Retain historical flat task archives and report files individually for at least 90 days from each file's own timestamp.
 - Preserve `.gitkeep`. Unindexed legacy records remain protected and must not be discovered by a directory scan.
 - Allow only the native `schedule` event. The cleanup script must reject every other GitHub event.
 - After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
@@ -41,7 +43,7 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 - Start at `.takeout/reports/README.md`. Maintain cross-family issue state in `.takeout/reports/triage/ledger.json`.
 - Resolved report files belong in `.archive/reports/`, not in a report-root archive folder.
-- The shared archive-retention workflow retains each exact indexed file for 90 days and deletes only that file after expiry. It does not scan archive directories.
+- New task-folder archives expire as one indexed group after 90 days. Historical flat task archive files and report files expire individually. Cleanup deletes only exact indexed paths and never scans archive directories.
 - The index is `.github/archive-retention-index.json`. Preserve unindexed legacy files.
 
 ## 4. Task-scoped CI diagnostics and repair
