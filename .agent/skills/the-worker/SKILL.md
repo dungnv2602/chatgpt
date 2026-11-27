@@ -28,8 +28,8 @@ Initialize only on the cue in `.agent/SESSION_START.md`. That file owns session 
 
 Before answering or acting on a request with an identifiable outcome, find or create its task record. Capture questions, research, advice, writing, creative work, and project changes before delivering the result.
 
-- **New objective:** create a parent task folder from `workspace/TASK_TEMPLATE.md`.
-- **Follow-up, correction, extension, or next step of an existing objective:** create a separate child record under that genuine parent from `workspace/SUBTASK_TEMPLATE.md`. Do not overwrite an earlier prompt or silently enlarge its record.
+- **New objective:** create a parent task folder from `.agent/skills/the-worker/assets/TASK_TEMPLATE.md`.
+- **Follow-up, correction, extension, or next step of an existing objective:** create a separate child record under that genuine parent from `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md`. Do not overwrite an earlier prompt or silently enlarge its record.
 - **Several related requirements in one prompt:** preserve the full prompt once in the parent and split its independently completable deliverables into child records. Unrelated objectives receive separate parents.
 
 - **Clarification, decision, or approval that changes scope, priority, or authorization without adding a deliverable:** append its exact wording and UTC timestamp to Subsequent Instructions. Create a child when it adds work.
@@ -42,7 +42,7 @@ Before creating a record, inspect active task records and the board. Reuse a par
 
 ## Persistent skills-refactoring parent exception
 
-The user designated a persistent parent for future skills refactoring. Its record is `workspace/tasks/20261127-173000/task.md` (Refactor Skills). Use this parent only for requests that genuinely concern repository-skill refactoring. Create a distinct child subtask from `workspace/SUBTASK_TEMPLATE.md` for each qualifying request. Do not create a replacement parent for a new deliverable or future phase. Keep the subtask index and board reconciled. Close and delete completed child records after normal closeout. **Never mark this parent Done or Cancelled or delete its task folder** unless the user explicitly instructs you to do so. This narrow exception does not permit unrelated work under this parent.
+The user designated a persistent parent for future skills refactoring. Its record is `workspace/tasks/20261127-173000/task.md` (Refactor Skills). Use this parent only for requests that genuinely concern repository-skill refactoring. Create a distinct child subtask from `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md` for each qualifying request. Do not create a replacement parent for a new deliverable or future phase. Keep the subtask index and board reconciled. Close and delete completed child records after normal closeout. **Never mark this parent Done or Cancelled or delete its task folder** unless the user explicitly instructs you to do so. This narrow exception does not permit unrelated work under this parent.
 
 ## Task hierarchy and CI attribution
 
