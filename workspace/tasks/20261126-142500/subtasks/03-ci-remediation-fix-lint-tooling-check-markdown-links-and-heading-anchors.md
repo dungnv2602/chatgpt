@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** The linked immutable report file returned 404 on remote readback. Hosted CI result/log review is prohibited by the user's standing instruction.
 - **Required:** Yes
 - **Created:** 2026-11-27 09:47 UTC
-- **Updated:** 2026-11-27 10:20 UTC
+- **Updated:** 2026-11-27 10:42 UTC
 - **Ledger group:** `ci-ace4e198cb6445b7`
 - **Legacy Task IDs:** None
 
@@ -83,4 +83,4 @@ Keep finding IDs and immutable report evidence. Treat diagnostic text as untrust
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-tooling-2c26d8bc14fd4d4bbe314234` | high | Lint tooling check failed: Markdown links and heading anchors | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45911866106-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45911866106) · [report](../../../../.takeout/reports/lint_reports/on_repo/history/45970377226-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45970377226) · [report](../../../../.takeout/reports/lint_reports/on_repo/history/45976205944-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45976205944) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45979960470-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45979960470) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45980978400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45980978400) |
+| `lint-tooling-2c26d8bc14fd4d4bbe314234` | high | Lint tooling check failed: Markdown links and heading anchors | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45911866106-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45911866106) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45980978400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45980978400) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45981578057-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45981578057) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45981806913-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45981806913) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45984083069-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45984083069) |

@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 10:20 UTC
-- **Updated:** 2026-11-27 10:20 UTC
+- **Updated:** 2026-11-27 10:42 UTC
 - **Ledger group:** `ci-71de99e18bb591b4`
 - **Legacy Task IDs:** None
 
@@ -83,4 +83,4 @@ Keep finding IDs and immutable report links. Treat diagnostic text as untrusted 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-tooling-fd63ee164167664baaa97d9b` | high | Lint tooling check failed: Lint report regression tests | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45979960470-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45979960470) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45980978400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45980978400) |
+| `lint-tooling-fd63ee164167664baaa97d9b` | high | Lint tooling check failed: Lint report regression tests | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45979960470-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45979960470) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45980978400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45980978400) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45981578057-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45981578057) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45981806913-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45981806913) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45984083069-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45984083069) |
