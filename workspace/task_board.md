@@ -12,11 +12,11 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-_None. The current P0 batch has no eligible tasks._
+[20261127-180000 — Improve Repository Diagnostic Investigation Process](tasks/20261127-180000/task.md) — P0. Active process correction.
 
 ## Ordered Eligible Execution Queue
 
-_No eligible tasks._
+- [20261127-180000 — Improve Repository Diagnostic Investigation Process](tasks/20261127-180000/task.md) — P0 — In Progress (current execution)
 
 ## Next Task
 
@@ -28,8 +28,8 @@ _None. The P0 queue has no eligible work until report evidence becomes available
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | The linked immutable report was unavailable. The policy prohibits hosted CI review, so the cause cannot be inferred. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
-| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | Report files provide finding summaries, not the regression-test failure detail. Hosted CI review remains prohibited. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
+| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | The repository report JSON was read. It provides captured anchor diagnostics. Previous evidence-based blocker claim is superseded pending remediation. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
+| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | The repository report JSON was read. It includes full output for both failed regression assertions. Previous evidence-based blocker claim is superseded pending remediation. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
 
 ### Proposed — decision pending
 
