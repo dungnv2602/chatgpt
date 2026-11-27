@@ -82,9 +82,16 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Evidence:** `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json`; child `20261127-173000-05`; report index run `45987814713`. No hosted Actions results were inspected.
 - **Next:** Close and delete completed child 04. Execute child 05 by correcting the four stale local links after checking current canonical paths.
 
+### 2026-11-27 11:08 UTC — startup P0 child 05 remediation
+
+- **Action:** Completed child `20261127-173000-05`. Corrected the report navigation/lifecycle guidance, removed two stale links to the deleted task record from ADR-0001 while preserving task ID `20261124-103354`, and corrected DRAFT-0002's ADR link.
+- **Result:** The four unresolved local targets from report `45987814713` now resolve to current repository paths or no longer appear as links. Remote readback confirmed all three changed files and both new link targets. No linter or tests were run.
+- **References:** Report README commit `f514ad0dfc46bca10ab5d9cae95d609d26b8a704`; ADR-0001 commit `60ec079dbb8aaa6db97d8b717af9fc3b95962826`; DRAFT-0002 commit `22907d4bfb9905ee155d0d16164982c96d415762`; child completion commit `f6359e9507f8b383b1000488da06ee233c9c514b`; report `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json`.
+- **Next:** Close and delete child 05. Reconcile duplicate P0 remediation children under their other genuine parents. Then resume the approved Refactor Skills workstream.
+
 ## 6. Current State and Remaining Work
 
-This parent remains open as the persistent skills-refactoring workstream. Child 01 (document governance consolidation) has been completed and closed. Child 04 (the lint report regression-test remediation) is complete by commit `1e697f0e5167e9c0778cadef69d7cf084249be27` and its child record is closed. Child 05 (Markdown links and heading anchors) is Ready under the Ledger's latest report. Children 02 and 03 remain Paused. Future skills-refactoring requests that fit this scope must be captured as new child subtasks under this parent. Do not retire this parent when the current children are complete.
+This parent remains open as the persistent skills-refactoring workstream. Child 01 (document governance consolidation) has been completed and closed. Child 04 (the lint report regression-test remediation) is complete by commit `1e697f0e5167e9c0778cadef69d7cf084249be27` and its child record is closed. Child 05 (Markdown links and heading anchors) is complete by commits `f514ad0dfc46bca10ab5d9cae95d609d26b8a704`, `60ec079dbb8aaa6db97d8b717af9fc3b95962826`, and `22907d4bfb9905ee155d0d16164982c96d415762` and is undergoing record closeout. Children 02 and 03 remain Paused. Future skills-refactoring requests that fit this scope must be captured as new child subtasks under this parent. Do not retire this parent when the current children are complete.
 
 ## 7. Verification and Evidence
 
