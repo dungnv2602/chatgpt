@@ -15,6 +15,8 @@ Each report run has an immutable history directory containing:
 - `report.json`: the structured record. It retains original per-file linter JSON payloads, normalized findings, fingerprints, check output, exact paths, runtime metadata, and execution results.
 - `integrity.json`: SHA-256 checksums for the Markdown and JSON reports.
 
+The structured report records the source commit Task-ID only for push-triggered runs. The Ledger resolves that marker to a genuine user task; absent or invalid attribution leaves findings unassigned.
+
 Each scope also maintains:
 
 - `latest-lint-report.md` and `latest-lint-report.json`: latest completed report, including failures.
