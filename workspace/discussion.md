@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-01 — task folder templates and Worker lifecycle. Preserve the deferred hosted-results-review boundary.
+Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Inspect the child record and exact migration/archive contracts; continue only this parent task. Preserve the deferred hosted-results-review boundary.
 
 ## Open Discussions
 
