@@ -781,6 +781,30 @@
     {
       "path": ".archive/task/20261127-033914/subtasks/04-ci-remediation.md",
       "archived_at_utc": "2026-11-27T04:12:35Z"
+    },
+    {
+      "path": ".archive/task/20261127-023803/task.md",
+      "archived_at_utc": "2026-11-27T04:16:41Z"
+    },
+    {
+      "path": ".archive/task/20261127-023803/subtasks/README.md",
+      "archived_at_utc": "2026-11-27T04:16:41Z"
+    },
+    {
+      "path": ".archive/task/20261127-023803/subtasks/01-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T04:16:41Z"
+    },
+    {
+      "path": ".archive/task/20261127-023803/subtasks/02-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T04:16:41Z"
+    },
+    {
+      "path": ".archive/task/20261127-023803/subtasks/03-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T04:16:41Z"
+    },
+    {
+      "path": ".archive/task/20261127-023803/subtasks/04-ci-remediation.md",
+      "archived_at_utc": "2026-11-27T04:16:41Z"
     }
   ]
 }
