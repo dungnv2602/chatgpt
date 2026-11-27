@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261126-142500-03
 - **Parent Task ID:** 20261126-142500
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** Blocked
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
-- **Approval scope/source:** [Exact scope and authorization source]
+- **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** [Eligible or exact reason]
+- **Eligibility / deferral reason:** The linked immutable report file returned 404 on remote readback. Hosted CI result/log review is prohibited by the user's standing instruction.
 - **Required:** Yes
 - **Created:** 2026-11-27 09:47 UTC
 - **Updated:** 2026-11-27 09:47 UTC
@@ -46,7 +46,9 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 ## 5. Decisions and Progress
 
 - **Execution:** P0 and Approved under standing authorization.
-- **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
+- **Attribution:** Correctly linked to genuine parent `20261126-142500`.
+- **Evidence blocker:** The latest linked repository report `.takeout/reports/lint_reports/on_changed/history/45976205944-attempt-1/report.json` returned 404 during remote readback. No hosted Actions result, log, or artifact was inspected.
+- **Decision gate:** None. Do not infer a diagnosis without the immutable report evidence.
 
 ## 6. State and Evidence
 
@@ -54,11 +56,11 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 - **Changed paths:** None.
 - **Readback:** Not performed.
 - **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
+- **Limitations:** The linked report is unavailable in the repository; root cause cannot be established without it. Hosted results cannot be used as a substitute.
 
 ## 7. Completion
 
-- **Status:** Not Done
+- **Status:** Blocked
 - **Completed at:** Not applicable
 - **Completion basis:** Not applicable
 
@@ -73,7 +75,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.
+Resume when the immutable report evidence is available through the repository's normal ingestion path. Then diagnose the exact failure, fix within scope, commit, read back, and record the SHA. Do not inspect hosted CI results.
 
 ## 10. Ledger Findings
 
