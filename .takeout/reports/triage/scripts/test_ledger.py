@@ -155,7 +155,7 @@ class LedgerAttributionTests(unittest.TestCase):
                 "workflow_id": workflow_id, "workflow_name": "Example CI",
                 "workflow_path": ".github/workflows/example.yml",
                 "run_url": "https://example.invalid/actions/runs/" + str(run_id),
-                "status": source_status, "conclusion": conclusion,
+                "status": source_status, "conclusion": conclusion, "event": "push",
                 "head_sha": "b" * 40,
                 "head_commit_message": task_message,
             },
