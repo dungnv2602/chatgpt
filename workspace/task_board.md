@@ -14,15 +14,15 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[Refactor Skills — P0](tasks/20261127-173000/task.md), a persistent skills-refactoring parent; completed child 01 closed. Keep this parent open for future skills-refactoring subtasks.
+[Refactor Skills — P0](tasks/20261127-173000/task.md) — [child 04: lint report regression tests](tasks/20261127-173000/subtasks/04-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md). The parent is persistent and remains open for future skills-refactoring subtasks.
 
 ## Ordered Eligible Execution Queue
 
-_No additional eligible tasks; the selected P0 task is in Current Execution._
+1. **P0** — [20261127-173100-03: Fix lint report regression tests](tasks/20261127-173100/subtasks/03-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) — Approved, Ready, no dependencies. This task is next after the selected child.
 
 ## Next Task
 
-Current execution: Refactor Skills (P0). Child 01 completed. Remaining children are paused; no additional eligible child.
+[20261127-173100-03](tasks/20261127-173100/subtasks/03-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) is next after the current Refactor Skills child.
 
 ## Deferred Work
 
@@ -30,8 +30,8 @@ Current execution: Refactor Skills (P0). Child 01 completed. Remaining children 
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | The repository report JSON was read. It provides captured anchor diagnostics. Blocker status requires re-evaluation; captured diagnostics are available for remediation. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
-| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | The repository report JSON was read. It includes full output for both failed regression assertions. Blocker status requires re-evaluation; captured diagnostics are available for remediation. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
+| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | Repository diagnostic evidence is now available in the indexed on_repo report. Re-evaluate the prior path/availability blocker and inspect current source links before scheduling. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
+| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | Latest indexed report contains complete output for both failed regression assertions. Re-evaluate the blocker against the current generator, template, and test source. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
 
 ### Proposed — decision pending
 
