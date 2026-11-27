@@ -6,6 +6,7 @@
 - **Run ID / attempt:** {run_id} / {attempt}
 - **Workflow:** {workflow}
 - **Branch / commit:** {branch} / {commit}
+- **Source task:** {source_task_id}
 - **Event:** {event}
 - **Execution mode:** {mode}
 - **Baseline SHA:** {baseline_sha}
