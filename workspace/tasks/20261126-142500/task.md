@@ -6,13 +6,13 @@
 - **Folder migration:** ADR-0004, 2026-11-27
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-26 10:44 UTC
+- **Updated:** 2026-11-27 09:22 UTC
 - **Priority:** P1
-- **Status:** Paused
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Governing ADR(s):** None — CI/reporting repair; review governance boundaries before any architecture change
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
 - **Ledger group:** CI report task-generation failure and active report backlog
@@ -114,9 +114,16 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** `workspace/task_board.md`; P0 tasks `20261126-101512-01`, `20261126-101512`, and `20261126-090154`.
 - **Next:** Resume only after the P0 queue is resolved. Re-check current repository state before continuing.
 
+### 2026-11-27 09:22 UTC — prompt capture and workflow refactor
+
+- **Action:** Created required subtask `20261126-142500-01` under this existing genuine CI/report workflow task before implementation. Resumed the parent from Paused to In Progress and set it as Current Execution.
+- **Result:** The user's current request is now tracked as a required P1 child. Its scope expands the existing task to cover the complete prompt-to-task lifecycle, follow-up attribution, CI remediation parentage, scheduler/board consistency, flooding/deadlock prevention, and streamlined templates/skills.
+- **References:** `workspace/tasks/20261126-142500/subtasks/20261126-142500-01.md`; `workspace/tasks/20261126-142500/subtasks/README.md`; `workspace/task_board.md`.
+- **Next:** Audit authoritative task lifecycle, CI Ledger, GitHub Actions, templates, schemas, generator, and regression coverage.
+
 ## 7. Current State
 
-Paused under the permanent P0-first rule. The clean-start reset and static repairs remain recorded below. No end-to-end completion or hosted validation is claimed.
+Resumed for the approved workflow continuation. The clean-start reset and static repairs remain recorded below. The new required subtask tracks universal prompt capture, genuine parent attribution, CI child generation, workflow simplification, and template/skill alignment. The parent remains incomplete until all required subtasks and its original report-ingestion acceptance criteria are closed. No end-to-end completion or hosted validation is claimed.
 
 Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `workspace/archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
