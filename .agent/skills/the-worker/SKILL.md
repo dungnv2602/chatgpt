@@ -105,7 +105,7 @@ This rule is mandatory because the user has not provided a local project workspa
 
 **Authorized archive-retention index exception:**
 
-The user authorized exact read/write access to `.github/archive-retention-index.json` to register each archived task or resolved report file's exact path and individual UTC archive timestamp. Do not list or scan `.archive/task/` or `.archive/reports/` to backfill this index.
+The user authorized exact read/write access to `.github/archive-retention-index.json` to register every archived file path. New task-folder entries share one UTC timestamp. Historical flat task and report entries keep individual timestamps. Do not list or scan `.archive/task/` or `.archive/reports/` to backfill this index.
 
 **Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These permissions do not authorize unrelated workflow changes.
 
@@ -126,7 +126,7 @@ This boundary applies to every future task and every tool call, not only archivi
   - `.takeout/reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
   - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics and shared archive-retention scope or another user-authorized workflow change
   - `.github/scripts/cleanup-archive.py` and `.github/scripts/test_cleanup_archive.py` — shared 90-day exact-file archive retention and its regression tests
-  - `.github/archive-retention-index.json` — exact task/report archive file paths and individual UTC timestamps
+  - `.github/archive-retention-index.json` — exact task/report archive file paths. New task-folder entries share one timestamp. Legacy flat task and report entries use individual timestamps.
 - Read and write files only by exact paths beginning with one of those approved directory names.
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
 - Do not use repository-wide code search or recursive root-tree listings unless the user explicitly requests a full-repository audit. That request authorizes read-only tree inventory and exact-path retrieval within the stated scope, including .archive contents only when the request expressly includes them. It does not authorize writes or override archive immutability. Use exact paths for all writes.
