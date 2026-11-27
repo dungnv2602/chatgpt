@@ -438,6 +438,20 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(before["child"], (subtasks / "01-child.md").read_text(encoding="utf-8"))
         self.assertEqual(before["flat"], flat_path.read_text(encoding="utf-8"))
 
+    def test_archived_task_reader_fails_closed_for_missing_indexed_flat_file(self):
+        task_id = "20261122-070000"
+        index_path = self.root / ".github" / "archive-retention-index.json"
+        index_path.parent.mkdir(parents=True, exist_ok=True)
+        index_path.write_text(json.dumps({
+            "schema_version": 1,
+            "records": [{
+                "path": ".archive/task/" + task_id + "-missing.md",
+                "archived_at_utc": "2026-11-22T07:00:00Z",
+            }],
+        }), encoding="utf-8")
+        with self.assertRaisesRegex(LEDGER.LedgerError, "Indexed task archive file is missing"):
+            LEDGER.read_archived_task(self.root, task_id)
+
     def test_archived_task_reader_rejects_incomplete_folder_archive(self):
         task_id = "20261122-060000"
         folder = self.root / ".archive" / "task" / task_id
