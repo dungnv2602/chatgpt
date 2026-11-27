@@ -55,7 +55,7 @@ Apply the structural rules with confidence. Apply the lexical rules as a directi
 | Rule | Do | Don't |
 |---|---|---|
 | Active voice | "The agent removes the file." | "The file is removed (by the agent)." — unless the actor is genuinely unknown or irrelevant |
-| No phrasal verbs (Rule 9.3) | "Remove the panel." / "Start the job." | "Take off the panel." / "Spin up the job." — a two-word verb has meanings the parts do not predict |
+| No phrasal verbs (Rule 9.3) | "Remove the panel." / "Start the job." | "Use a verb plus a particle for the job." — a multiword verb can have a meaning the parts do not predict |
 | One instruction per sentence | "Open the file. Read line 3." | "Open the file and read line 3, then check if it matches." |
 | Sentence length | ≤20 words for instructions/procedures, ≤25 words for descriptions | Long compound/subordinate-clause sentences |
 | No semicolons (Rule 8.1) | Split into separate sentences | Any semicolon at all — STE bans the mark outright, not only as a clause join. (Rule 8.1 permits every other standard punctuation mark. The em dash is *not* banned by STE, though it often signals a sentence that should be split.) |
@@ -89,7 +89,7 @@ These six habits cover most of what makes machine-written English hard to parse.
 3. **Nominalization** — an action frozen into a noun ("perform an analysis of", "provides assistance to"). Fix: use the verb ("analyze", "helps").
 4. **Marketing adjectives** — words that claim quality instead of showing it: seamless, robust, powerful, cutting-edge, effortless, blazing-fast. Fix: remove, or replace with the measurement that earns the claim.
 5. **Run-on sentences** — several ideas joined by semicolons or em dashes. Fix: one idea per sentence.
-6. **Soft phrasal verbs** — spin up, reach out, dive into, kick off. Fix: use the single plain verb (start, contact, read).
+6. **Soft phrasal verbs** — multiword verb forms that add a meaning beyond their component words. Fix: use one plain verb, such as start, contact, or read.
 
 ## Process
 
