@@ -11,13 +11,13 @@ runs:
     - name: Compile and test cancellation-safe diagnostic reporting
       shell: bash
       run: |
-        python3 -m py_compile .takeout/reports/gh_ac_reports/scripts/report.py .takeout/reports/triage/scripts/ledger.py
+        python3 -m py_compile .agent/skills/the-worker/scripts/actions-report.py .agent/skills/the-worker/scripts/ledger.py
         python3 -m unittest discover \
-          -s .takeout/reports/gh_ac_reports/scripts \
+          -s .agent/skills/the-worker/scripts \
           -p 'test_report.py' \
           -v
         python3 -m unittest discover \
-          -s .takeout/reports/triage/scripts \
+          -s .agent/skills/the-worker/scripts \
           -p 'test_ledger.py' \
           -v
 
