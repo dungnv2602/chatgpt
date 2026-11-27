@@ -16,7 +16,7 @@ This file is the single index for active and retained task records. Each active 
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-023803 | Improve .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 03:46 UTC | [Task record](tasks/20261127-023803/task.md) |
+| 20261127-023803 | Improve .agent/skills/the-worker/SKILL.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 03:56 UTC | [Task record](tasks/20261127-023803/task.md) |
 | 20261127-013646 | Review synonym-rotation findings in workspace/task\_board.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013646/task.md) |
 | 20261127-013151-44 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-44/task.md) |
 | 20261127-013151-43 | Review passive-voice findings in workspace/README.md | P0 | Proposed | Assistant | Pending — Worker review required | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-43/task.md) |
@@ -69,8 +69,8 @@ This file is the single index for active and retained task records. Each active 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
 | 20261127-033914-02 | Improve workspace/SUBTASK\_TEMPLATE.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:39 UTC | [Task record](tasks/20261127-033914-02/task.md) |
-| 20261127-033914-01 | Improve workspace/task\_board.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:46 UTC | [Task record](tasks/20261127-033914-01/task.md) |
-| 20261127-033914 | Improve .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:39 UTC | [Task record](tasks/20261127-033914/task.md) |
+| 20261127-033914-01 | Improve workspace/task\_board.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:56 UTC | [Task record](tasks/20261127-033914-01/task.md) |
+| 20261127-033914 | Improve .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:56 UTC | [Task record](tasks/20261127-033914/task.md) |
 
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
