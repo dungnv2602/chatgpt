@@ -7,14 +7,14 @@
 - **ID:** 20261126-142500-22
 - **Parent Task ID:** 20261126-142500
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Paused
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User approval to template-first workflow correction and explicit request to consolidate Document Standards into The Worker.
 - **Governing ADR(s):** None
 - **Dependencies:** 20261126-142500-02
-- **Eligibility / deferral reason:** In Progress — approved consolidation under active workflow refactor.
+- **Eligibility / deferral reason:** Paused — partial consolidation committed; finishing remaining catalog and index reconciliation after the current P0 queue.
 - **Required:** Yes
 - **Created:** 2026-11-27 UTC
 - **Updated:** 2026-11-27 UTC
@@ -46,16 +46,16 @@ Consolidate document-format governance and template-first execution guidance int
 
 ## 5. Decisions and Progress
 
-- **Action:** Captured this approved consolidation as a subtask under the genuine workflow-refactor parent.
-- **Result:** Execution started. Template-first gate is the immediate explicit correction, followed by consolidation and reference reconciliation.
+- **Action:** Consolidated template-first gate and governance requirements into The Worker. Replaced the standalone Document Standards skill body with a redirect stub; retained catalog and validator assets. Removed separate skill activation from session start and index references, and updated task board and parent child index.
+- **Result:** Remote readback confirms the Worker gate, redirect stub, README, session-start, board, and child index updates. Further reconciliation of catalog/owner references and final closeout remains.
 - **References:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/document-standards/SKILL.md`; `.agent/skills/document-standards/references/document-type-catalog.md`; `.agent/skills/README.md`; `.agent/SESSION_START.md`.
 - **Next:** Reconcile remaining catalog references and task-board structure, commit, and read back.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Not yet
-- **Readback:** Pending
+- **Commit SHA:** Multiple commits; see consolidation commits in this conversation
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/README.md`; `.agent/SESSION_START.md`; `.agent/skills/document-standards/SKILL.md`; `workspace/task_board.md`; parent subtask index; `workspace/discussion.md`
+- **Readback:** Readback confirmed updated Worker, redirect, README, session start, board, and child index
 - **Checks:** Not performed
 - **Limitations:** No hosted CI results will be inspected.
 
