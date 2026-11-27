@@ -183,7 +183,7 @@ The implementation is complete only when the repository provides observable evid
 - [ ] New P0 task creation does not displace a valid Worker-selected Current Execution task.
 - [ ] Completed and cancelled task folders are removed directly at closeout. No task archive or retention index is created.
 - [ ] Generated tasks with Governing ADR(s) Pending remain Proposed and cannot execute until accepted ADR linkage exists.
-- [ ] The hosted Ledger regression suite and Document Type Catalog validation pass. No test result is claimed until observed.
+- [x] Hosted validation is optional and never gates remediation completion. The Worker verifies the intended-branch commit and changed-file readback, records the SHA and summary, closes the task, and deletes its task folder. Subsequent failures flow through normal report ingestion into follow-up remediation tasks. This is the user's standing lifecycle instruction; no hosted results are inspected or requested.
 - [ ] Active task folders, board links, and discussion register remain consistent after migration and closeout.
 
 ## Pros and Cons of the Options
