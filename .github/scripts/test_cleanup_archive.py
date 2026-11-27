@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tests for exact-path, 90-day individual archive retention."""
+"""Tests for exact-path, 90-day task-folder and individual archive retention."""
 from __future__ import annotations
 import importlib.util, json, tempfile, unittest
 from datetime import datetime, timezone
@@ -103,6 +103,14 @@ class ArchiveRetentionTests(unittest.TestCase):
   self.assertTrue(parent.exists())
   self.assertTrue(index.exists())
   self.assertEqual(len(json.loads(self.index.read_text())["records"]),3)
+
+ def test_missing_nonexpired_indexed_file_fails_closed(self):
+  missing=self.root/".archive"/"task"/"20261122-070000-missing.md"
+  stamp="2026-02-01T00:00:00Z"
+  self.write([self.rec(".archive/task/20261122-070000-missing.md",stamp)])
+  with self.assertRaisesRegex(ValueError,"missing before retention expiry"):
+   self.run_clean()
+  self.assertEqual(len(json.loads(self.index.read_text())["records"]),1)
 
  def test_missing_expired_file_prunes_index_entry(self):
   self.write([self.rec(".archive/reports/absent.json","2026-01-01T00:00:00Z")])
