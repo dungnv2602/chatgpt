@@ -44,7 +44,7 @@ The CI Ledger governs finding identity, eligibility, and ADR constraints; GitHub
 
 ### Run-to-quiescence protocol
 
-1. **Build and persist the queue.** Select only active CI-generated P0 parents/children linked from current task records and the Ledger. Do not run Ledger intake, scan historical reports, or include unrelated P0 tasks. Keep one Current Execution pointer on the board. Store the resumable batch cursor and distinct pending decisions in `workspace/discussion.md`; task records hold technical detail. Reuse stable task/finding IDs.
+1. **Build and persist the queue.** Select only active CI-generated P0 parents/children linked from current task records and the Ledger. Do not run Ledger intake, scan historical reports, or include unrelated P0 tasks. Keep one Current Execution pointer on the board. Publish the ranked eligible queue and Next Task; keep Proposed, Blocked, Paused, dependency-waiting, and gated tasks in deferred sections with reasons. Store the resumable batch cursor and distinct pending decisions in `workspace/discussion.md`; task records hold technical detail. Reuse stable task/finding IDs.
 2. **Classify without interrupting.**
    - Ready with satisfied dependencies: eligible for execution.
    - Waiting on another task: defer it, process its prerequisite, then reconsider it. Recheck after each completion; do not queue a downstream decision before its prerequisites are complete. For a dependency cycle, repair only a demonstrably stale or incorrect edge within authority; otherwise isolate the cycle and never wait-loop. Queue one decision only if the user can break it; otherwise report it as non-actionable.
