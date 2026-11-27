@@ -17,7 +17,7 @@ REPORT_SCHEMA = ASSET_DIR / "lint-report-schema.json"
 
 class ReportGeneratorTests(unittest.TestCase):
     def run_report(self, root, scope, run_id, run_number, attempt, records,
-                   previous="", checks=None, status="Passed", task_id=""):
+                   previous="", checks=None, status="Passed", task_id="", event="push"):
         records_dir = root / ("records-" + run_id + "-" + str(attempt))
         records_dir.mkdir()
         for name, value in records.items():
@@ -31,7 +31,7 @@ class ReportGeneratorTests(unittest.TestCase):
             "--run-id", run_id, "--run-number", str(run_number),
             "--run-url", "https://example.invalid/run/" + run_id,
             "--attempt", str(attempt), "--branch", "gpt", "--commit", "abc123",
-            "--event", "push", "--mode",
+            "--event", event, "--mode",
             "repository-wide" if scope == "on_repo" else "incremental",
             "--baseline", "" if scope == "on_repo" else "base123",
             "--status", status, "--checks-file", str(checks_file),
