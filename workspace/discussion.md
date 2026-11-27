@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Inspect the child record and exact migration/archive contracts; continue only this parent task. Preserve the deferred hosted-results-review boundary.
+Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Inventory every board-indexed active flat task, inspect Ledger retention-index structure and cleanup behavior, and map the safe folder migration/archive change set. Scope: ADR-0004 subtask 05 only. Preserve the deferred hosted-results-review boundary.
 
 ## Open Discussions
 
