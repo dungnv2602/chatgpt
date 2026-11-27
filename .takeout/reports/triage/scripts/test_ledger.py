@@ -377,6 +377,66 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("[Task record](tasks/" + task_id + "/task.md)", board)
         self.assertEqual(list((self.root / "workspace" / "tasks").glob("*/task.md")), [parent])
 
+    def test_archived_task_reader_supports_folder_and_legacy_flat_files(self):
+        archive_root = self.root / ".archive" / "task"
+        folder_id = "20261122-030000"
+        folder = archive_root / folder_id
+        subtasks = folder / "subtasks"
+        subtasks.mkdir(parents=True)
+        folder_parent = "# Task: Folder archive\n\n- **ID:** " + folder_id + "\n"
+        folder_index = "# Subtasks — " + folder_id + "\n\nParent: [task.md](../task.md)\n"
+        child_id = folder_id + "-01"
+        child = "# Subtask: Child\n\n- **ID:** " + child_id + "\n- **Parent Task ID:** " + folder_id + "\n"
+        (folder / "task.md").write_text(folder_parent, encoding="utf-8")
+        (subtasks / "README.md").write_text(folder_index, encoding="utf-8")
+        (subtasks / "01-child.md").write_text(child, encoding="utf-8")
+
+        flat_id = "20261122-040000"
+        flat_path = archive_root / (flat_id + "-legacy-task.md")
+        flat_content = "# Task: Historical flat archive\n\n- **ID:** " + flat_id + "\n"
+        flat_path.write_text(flat_content, encoding="utf-8")
+        unindexed_id = "20261122-050000"
+        unindexed_path = archive_root / (unindexed_id + "-unindexed.md")
+        unindexed_path.write_text("# Unindexed archive\n", encoding="utf-8")
+
+        stamp = "2026-11-22T05:00:00Z"
+        index_path = self.root / ".github" / "archive-retention-index.json"
+        index_path.parent.mkdir(parents=True, exist_ok=True)
+        index = {
+            "schema_version": 1,
+            "unindexed_records": "preserve",
+            "records": [
+                {"path": ".archive/task/" + folder_id + "/task.md", "archived_at_utc": stamp},
+                {"path": ".archive/task/" + folder_id + "/subtasks/README.md", "archived_at_utc": stamp},
+                {"path": ".archive/task/" + folder_id + "/subtasks/01-child.md", "archived_at_utc": stamp},
+                {"path": ".archive/task/" + flat_id + "-legacy-task.md", "archived_at_utc": stamp},
+            ],
+        }
+        index_path.write_text(json.dumps(index), encoding="utf-8")
+        before = {
+            "folder_parent": (folder / "task.md").read_text(encoding="utf-8"),
+            "folder_index": (subtasks / "README.md").read_text(encoding="utf-8"),
+            "child": (subtasks / "01-child.md").read_text(encoding="utf-8"),
+            "flat": flat_path.read_text(encoding="utf-8"),
+        }
+
+        folder_result = LEDGER.read_archived_task(self.root, folder_id)
+        flat_result = LEDGER.read_archived_task(self.root, flat_id)
+        self.assertEqual(folder_result["archive_type"], "folder")
+        self.assertEqual(folder_result["parent_path"], ".archive/task/" + folder_id + "/task.md")
+        self.assertEqual(set(folder_result["files"]), {
+            ".archive/task/" + folder_id + "/task.md",
+            ".archive/task/" + folder_id + "/subtasks/README.md",
+            ".archive/task/" + folder_id + "/subtasks/01-child.md",
+        })
+        self.assertEqual(flat_result["archive_type"], "flat")
+        self.assertEqual(flat_result["parent_path"], ".archive/task/" + flat_id + "-legacy-task.md")
+        self.assertIsNone(LEDGER.read_archived_task(self.root, unindexed_id))
+        self.assertEqual(before["folder_parent"], (folder / "task.md").read_text(encoding="utf-8"))
+        self.assertEqual(before["folder_index"], (subtasks / "README.md").read_text(encoding="utf-8"))
+        self.assertEqual(before["child"], (subtasks / "01-child.md").read_text(encoding="utf-8"))
+        self.assertEqual(before["flat"], flat_path.read_text(encoding="utf-8"))
+
     def test_task_folder_and_archive_contract_is_consistent_across_docs(self):
         root = SCRIPT.parents[4]
         parent_template = (root / "workspace" / "TASK_TEMPLATE.md").read_text(encoding="utf-8")
@@ -747,6 +807,26 @@ class LedgerTests(unittest.TestCase):
         child = child_path.read_text(encoding="utf-8").replace("- **Status:** Proposed","- **Status:** Done")
         child = child.replace("- **Status:** Not Done","- **Status:** Done")
         child_path.write_text(child,encoding="utf-8")
+        archive_folder = self.root / ".archive" / "task" / old_task_id
+        archive_subtasks = archive_folder / "subtasks"
+        archive_subtasks.mkdir(parents=True)
+        archive_parent = parent.replace("- **Archived:** No", "- **Archived:** Yes")
+        (archive_folder / "task.md").write_text(archive_parent, encoding="utf-8")
+        archive_index_text = (old_task / "subtasks" / "README.md").read_text(encoding="utf-8")
+        (archive_subtasks / "README.md").write_text(archive_index_text, encoding="utf-8")
+        (archive_subtasks / "01-ci-remediation.md").write_text(child, encoding="utf-8")
+        archive_stamp = "2026-11-23T07:15:00Z"
+        retention_index = self.root / ".github" / "archive-retention-index.json"
+        retention_index.parent.mkdir(parents=True, exist_ok=True)
+        retention_index.write_text(json.dumps({
+            "schema_version": 1,
+            "unindexed_records": "preserve",
+            "records": [
+                {"path": ".archive/task/" + old_task_id + "/task.md", "archived_at_utc": archive_stamp},
+                {"path": ".archive/task/" + old_task_id + "/subtasks/README.md", "archived_at_utc": archive_stamp},
+                {"path": ".archive/task/" + old_task_id + "/subtasks/01-ci-remediation.md", "archived_at_utc": archive_stamp},
+            ],
+        }), encoding="utf-8")
         resolution = {
             "fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z",
             "validation":{"run_url":"https://example.invalid/actions/runs/9","conclusion":"success","validated_at_utc":"2026-11-23T07:14:00Z"},
@@ -772,7 +852,10 @@ class LedgerTests(unittest.TestCase):
         self.assertNotEqual(new_task_id,old_task_id)
         new_parent = self.root / "workspace" / "tasks" / new_task_id / "task.md"
         self.assertTrue(new_parent.is_file())
-        self.assertIn("- **Status:** Proposed",new_parent.read_text(encoding="utf-8"))
+        new_parent_text = new_parent.read_text(encoding="utf-8")
+        self.assertIn("- **Status:** Proposed",new_parent_text)
+        self.assertIn("- **Related tasks:** [" + old_task_id + "](../../../.archive/task/" + old_task_id + "/task.md)",new_parent_text)
+        self.assertEqual((archive_folder / "task.md").read_text(encoding="utf-8"),archive_parent)
         self.assertEqual(LEDGER.task_metadata(parent_path.read_text(encoding="utf-8"),"Status"),"Done")
 
     def test_curated_owner_severity_status_title_and_risk_are_preserved(self):
