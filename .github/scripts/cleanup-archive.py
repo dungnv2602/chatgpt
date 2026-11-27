@@ -124,7 +124,7 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
             deleted.append(path)
     data["records"] = retained
     temporary = index_path.with_name(index_path.name + ".tmp")
-    temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temporary.replace(index_path)
     return deleted, True
 
