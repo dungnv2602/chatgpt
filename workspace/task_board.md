@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[Refactor Skills — P0](tasks/20261127-173000/task.md), executing child [01 — Consolidate Document Standards into The Worker](tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md).
+[Refactor Skills — P0](tasks/20261127-173000/task.md), with completed child 01 closed; parent task remains Current Execution.
 
 ## Ordered Eligible Execution Queue
 
@@ -22,7 +22,7 @@ _No additional eligible tasks; the selected P0 task is in Current Execution._
 
 ## Next Task
 
-Current execution: Refactor Skills (P0). Continue with child 01.
+Current execution: Refactor Skills (P0). Child 01 completed. Remaining children are paused; no additional eligible child.
 
 ## Deferred Work
 
