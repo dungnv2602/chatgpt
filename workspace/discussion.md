@@ -1,7 +1,7 @@
 # Discussion Register
 
 ## Current Step
-Align the CI Ledger, Decision Governance, workspace guide, task board, and subtask template so mandatory P0 authorization is distinct from accepted-ADR execution eligibility. Scope: `.agent/skills/ci-ledger/SKILL.md`, `.agent/skills/decision-governance/SKILL.md`, `workspace/README.md`, `workspace/task_board.md`, and `workspace/SUBTASK_TEMPLATE.md`. Affected task groups: [ADR-0004 P0 tasks](tasks/20261127-013151-34/task.md), [ADR-0003 P0 tasks](tasks/20261126-170259/task.md). Expected result: consistent instructions that keep tasks Proposed when no accepted ADR covers the change.
+Align CI P0 governance across the CI Ledger and Decision Governance skills, workspace guidance, task board, canonical task templates, and Document Type Catalog. Scope: `.agent/skills/ci-ledger/SKILL.md`, `.agent/skills/decision-governance/SKILL.md`, `workspace/README.md`, `workspace/task_board.md`, `workspace/TASK_TEMPLATE.md`, `workspace/SUBTASK_TEMPLATE.md`, and the catalog. Expected result: P0 work remains mandatory and approved while tasks stay Proposed until accepted-ADR coverage exists.
 
 ## Open Discussions
 
