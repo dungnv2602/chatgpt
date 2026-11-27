@@ -6,12 +6,12 @@
 - **Folder migration:** ADR-0004, 2026-11-27
 - **ID:** 20261126-170259-02
 - **Created:** 2026-11-26 17:02 UTC
-- **Updated:** 2026-11-27 01:31 UTC
+- **Updated:** 2026-11-27 05:31 UTC
 - **Priority:** P0
-- **Status:** In Progress
+- **Status:** Proposed
 - **Origin:** Assistant
 - **Approval:** Approved
-- **Governing ADR(s):** Pending — Worker review required before approval
+- **Governing ADR(s):** Pending — no accepted ADR authorizes edits to immutable decision content. User decision required.
 - **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
@@ -27,6 +27,8 @@ Automated CI Ledger capture: actionable findings were recorded during event-driv
 ## 2. Subsequent Instructions
 
 - **Standing instruction:** Every CI Ledger-generated task is P0, approved for remediation, and must be resolved before non-P0 work. Event-driven ingestion, no periodic polling.
+
+- **2026-11-27 user instruction:** “Resolve all P0 CI tasks.” This keeps the task in the mandatory P0 batch and execution-approved. It does not waive accepted-ADR content immutability or the requirement for accepted governing ADR linkage.
 
 ## 3. Objective
 
@@ -55,19 +57,23 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** .takeout/reports/triage/ledger.json and the evidence links below.
 - **Next:** Inspect evidence, remediate, and verify before starting non-P0 work.
 
-## 7. Current State
+### 2026-11-27 05:31 UTC
 
-The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.
+- **Action:** Reviewed the finding group and target ADR under Decision Governance.
+- **Result:** The findings target accepted ADR-0003 decision content. Decision Governance permits lifecycle metadata, task links, review history, and Confirmation evidence only. The requested wording edits are not authorized by an accepted ADR. The user's standing P0 instruction authorizes mandatory processing, but it does not waive this governance boundary. No source change or fix commit was made. Keep this task Proposed until the user approves a separate Draft/ADR that covers the change.
+- **References:** `.agent/skills/decision-governance/SKILL.md`; `workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md`; `.takeout/reports/triage/ledger.json`.
+- **Next:** Obtain the user's decision on a separate Draft/ADR or withdrawal of these editorial findings.
+
+## 7. Current State
+Proposed. The P0 task remains mandatory and execution-approved. The required governing ADR is not available because the target is immutable accepted decision content. No remediation commit exists.
 
 ## 8. Remaining Work
-
-- Inspect linked evidence, remediate, and validate.
-- No validation or resolution is claimed until evidence is recorded.
+- User decision on whether to prepare a separate Draft/ADR for the requested wording changes.
+- Accepted ADR linkage before any source edit or remediation commit.
 
 ## 9. Next Actions
-
-1. Inspect linked reports and diagnostics.
-2. Remediate and verify under the standing P0 approval.
+1. Ask the user whether to prepare a separate Draft/ADR that covers editorial changes to accepted ADR-0003.
+2. Keep this task Proposed until an accepted decision covers the work.
 
 ## 10. References
 
@@ -82,8 +88,7 @@ The Ledger recorded findings. Root cause, remediation, and validation remain to 
 - **Limitations:** This does not verify root cause or remediation.
 
 ## 12. Handoff Instructions
-
-Treat this as P0, approved, and In Progress. Inspect evidence, remediate, and verify before starting non-P0 work. Do not poll CI or run periodic ledger scans.
+Keep this task Proposed. Do not edit accepted ADR-0003 decision content. Resume only after the user approves a separate Draft/ADR and it reaches accepted status. Do not inspect hosted CI results.
 
 ## 13. Ledger Findings
 
