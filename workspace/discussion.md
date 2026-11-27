@@ -5,6 +5,7 @@ Archive-root migration is committed and verified. The former root archive is rem
 
 ## Open Discussions
 
+- **2026-11-27 07:10 UTC:** Session startup. User requests deletion of `workspace/archive/`, retirement of all archiving behavior, and a workflow update so completed/deleted items are deleted rather than archived. Pending repository policy and dependency review.
 - **2026-11-27 06:10 UTC:** Prepared [DRAFT-0007 revision 1](draft/DRAFT-0007-editorial-successor-for-adr-0004.md) for the 34 ADR-0004 editorial findings. It proposes a superseding editorial successor while preserving the accepted outcome, scope, lifecycle rules, and Confirmation states. User approved revision 1 and Option 3; promotion remains a separate governance step.
 - **2026-11-27 06:10 UTC:** Prepared [DRAFT-0006 revision 1](draft/DRAFT-0006-editorial-successor-for-adr-0003.md) for the 31 ADR-0003 editorial findings. It proposes a superseding editorial successor while preserving the accepted outcome, scope, and Confirmation states. User approved revision 1 and Option 3; promotion remains a separate governance step. Task 170259-03 is Done and remains closed.
 - **2026-11-27 05:31 UTC:** [20261126-090154](tasks/20261126-090154/task.md) is Blocked. Five of six ADR-0003 Confirmation criteria are verified. Criterion 4 requires an explicit user-authorized read-only full-repository reference search.
