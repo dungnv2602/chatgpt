@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-08
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** Blocked
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
+- **Eligibility / deferral reason:** Blocked — source fix is committed. Ledger resolution and closeout require full Ledger read/write access.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27 11:53 UTC
+- **Updated:** 2026-11-27
 - **Ledger group:** `ci-1aa93a8127ea2cd0`
 - **Legacy Task IDs:** None
 
@@ -52,13 +52,20 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
 
+### 2026-11-27 — source remediation committed
+
+- **Action:** Committed the source wording remediation and read back the exact target path.
+- **Result:** The target file contains the intended wording changes.
+- **Commit:** [e1658a2dc41dffffe10d6563c5a7158f580c4918](https://github.com/dungnv2602/chatgpt/commit/e1658a2dc41dffffe10d6563c5a7158f580c4918)
+- **Blocker:** The source fix is committed and read back. Closeout is blocked because GitHub fetch_file returns empty content for `.takeout/reports/triage/ledger.json` (blob SHA `fb9d20cd5dd1aac8232cb9036498a330019da58c`). The Worker cannot safely update finding resolution or preserve Ledger integrity without the complete current file.
+
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
+- **Commit SHA:** e1658a2dc41dffffe10d6563c5a7158f580c4918
+- **Changed paths:** `.agent/skills/the-worker/references/decision-governance.md`
+- **Readback:** Passed. Remote readback confirmed the committed target file.
+- **Checks:** No local linter or hosted CI review. Source readback passed.
+- **Limitations:** The source fix is committed and read back. Closeout is blocked because GitHub fetch_file returns empty content for `.takeout/reports/triage/ledger.json` (blob SHA `fb9d20cd5dd1aac8232cb9036498a330019da58c`). The Worker cannot safely update finding resolution or preserve Ledger integrity without the complete current file.
 
 ## 7. Completion
 
@@ -77,7 +84,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.
+Resume after the complete Ledger file can be retrieved and updated safely. Resolve the finding group, update parent/index references, complete task closeout, and delete the child record. Do not inspect hosted CI results.
 
 ## 10. Ledger Findings
 
