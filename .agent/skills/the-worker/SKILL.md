@@ -187,7 +187,7 @@ The Worker owns both CI Ledger and GitHub Actions operations. Its references def
 
 - Scripts and regression tests: `.agent/skills/the-worker/scripts/`.
 - Schemas and templates: `.agent/skills/the-worker/assets/`.
-- Capture action: `.takeout/reports/gh_ac_reports/actions/capture/action.yml`.
+- Capture action: `.github/workflows/gh-actions-capture.yml`.
 - Report indexes, history, and Ledger state remain in `.takeout/reports/` as data outputs.
 
-Do not maintain duplicate implementations in report-family script directories. The capture action calls the Worker scripts.
+Do not maintain duplicate implementations in report-family script directories. The capture workflow calls the Worker scripts.
