@@ -45,3 +45,6 @@
 - **2026-11-27:** Reparented objective-based workflow correction `20261127-102300` as Refactor Skills subtask `20261127-173000-03`, preserving its original prompt and implementation/evidence notes. Deferred its remaining audit/closeout behind the mandatory P0 queue.
 
 - **2026-11-27 18:20 UTC:** Remediated and read back source changes for P0 editorial children 04–20. Two P0 tasks remain blocked by missing immutable diagnostic details under the no-hosted-CI-review rule. Board now shows no eligible P0 tasks and no Current Execution.
+
+
+- **2026-11-27T13:48:00Z**: `/start` initialization resumed. Foundational skills and startup CI references loaded; the startup notice is committed before the P0 batch. Hosted CI results remain out of scope.
