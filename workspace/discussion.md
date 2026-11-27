@@ -1,7 +1,7 @@
 # Discussion Register
 
 ## Current Step
-Reconcile the eight active Ledger-generated P0 task records and task board after governance review. Tasks: [20261127-013151-34](tasks/20261127-013151-34/task.md), [20261127-013151-33](tasks/20261127-013151-33/task.md), [20261127-013151-32](tasks/20261127-013151-32/task.md), [20261127-013151-31](tasks/20261127-013151-31/task.md), [20261127-013151-30](tasks/20261127-013151-30/task.md), [20261126-170259](tasks/20261126-170259/task.md), [20261126-170259-01](tasks/20261126-170259-01/task.md), and [20261126-170259-02](tasks/20261126-170259-02/task.md). Preserve their mandatory P0 priority and user execution authorization while keeping tasks Proposed until an accepted ADR covers the requested changes. Expected result: task records and board agree, with the valid Current Execution pointer preserved.
+Align the CI Ledger, Decision Governance, workspace guide, task board, and subtask template so mandatory P0 authorization is distinct from accepted-ADR execution eligibility. Scope: `.agent/skills/ci-ledger/SKILL.md`, `.agent/skills/decision-governance/SKILL.md`, `workspace/README.md`, `workspace/task_board.md`, and `workspace/SUBTASK_TEMPLATE.md`. Affected task groups: [ADR-0004 P0 tasks](tasks/20261127-013151-34/task.md), [ADR-0003 P0 tasks](tasks/20261126-170259/task.md). Expected result: consistent instructions that keep tasks Proposed when no accepted ADR covers the change.
 
 ## Open Discussions
 
