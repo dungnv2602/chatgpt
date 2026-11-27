@@ -4845,7 +4845,7 @@
         }
       ],
       "resolution": {
-        "fix_commit": "PENDING",
+        "fix_commit": "f846ae05b042128428fd47cf3ec2698381c4b771",
         "resolved_at_utc": "2026-11-27T16:50:00Z",
         "validation": {
           "status": "not_run"
