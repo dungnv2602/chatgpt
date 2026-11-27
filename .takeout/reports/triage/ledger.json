@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T11:08:08Z",
+  "updated_at_utc": "2026-11-27T11:13:42Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -18473,10 +18473,11 @@
       ],
       "subtask_refs": [
         "20261126-142500-23",
-        "20261127-173100-03",
+        "20261127-173100-03"
+      ],
+      "legacy_task_refs": [
         "20261127-173000-04"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-71de99e18bb591b4",
       "parent_group": "ci-c22cfa3d350aa1a7"
     }
