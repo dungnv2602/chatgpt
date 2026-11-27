@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Read back every changed subtask-06 file. Map each ADR-0004 Confirmation criterion to concrete regression or repository evidence. Check cross-document consistency and task/catalog paths. Record unrun tests and keep hosted results unreviewed. Scope: ADR-0004 only. Preserve the deferred hosted-results-review boundary.
+Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Reopen subtask 05 and trace the Ledger's task-archive reader. Implement exact-path compatibility for new folder archives and historical flat archives without scanning or rewriting .archive/. Add regression coverage. Then reconcile subtask 06 documentation/tests and map every ADR-0004 Confirmation criterion. Do not inspect hosted results. Preserve the deferred hosted-results-review boundary.
 
 ## Open Discussions
 
