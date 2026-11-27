@@ -9,7 +9,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-50
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** In Progress — recovered all five referenced report artifacts through their historical Git commits. The reports identify the canonical template link, 23 invalid child-record links in the task board, and three obsolete template links in the ADR, analysis, and draft indexes.
 - **Required:** Yes
 - **Created:** 2026-11-27 12:58 UTC
-- **Updated:** 2026-11-27 23:14 UTC
+- **Updated:** 2026-11-27 23:17 UTC
 - **Ledger group:** `ci-ace4e198cb6445b7`
 - **Legacy Task IDs:** None
 
@@ -54,17 +54,17 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
+- **Commit SHA:** `4fc299bdc94bdfea2e5323096d761f4565ad0d24` and `6057e5596021b84a70a7201875c2f7bd3d1890b0`.
 - **Changed paths:** `.agent/skills/asd-ste100/scripts/check_markdown_anchors.py`, `.agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py`, `workspace/task_board.md`, `workspace/adr/README.md`, `workspace/analysis/README.md`, and `workspace/draft/README.md`.
-- **Readback:** Recovered and inspected all five historical report files from their exact publishing commits. Report 459118 identified the legacy task-template link. Reports 460193 and 460237 identified 23 bad child links in the board. Report 460205 identified the canonical task-template link. The full audit 460237 also identified obsolete template links in three index READMEs. Source and regression-test changes are committed in `4fc299bdc94bdfea2e5323096d761f4565ad0d24`. Final board/README readback pending.
+- **Readback:** Recovered and inspected all five historical report files from their exact publishing commits. Read back the resolver and regression test at `4fc299bdc94bdfea2e5323096d761f4565ad0d24`, and the board and three README corrections at `6057e5596021b84a70a7201875c2f7bd3d1890b0`. The current tree contains all 23 task-board link targets and each of the three template files.
 - **Checks:** Not performed.
-- **Limitations:** No local scripts, tests, or lint were run. No hosted CI results were inspected. All diagnostics came from report artifacts stored in repository history.
+- **Limitations:** No local scripts, tests, or lint were run. No hosted CI results were inspected. Readback confirms committed path targets, not runtime test outcomes.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 23:17 UTC
+- **Completion basis:** The canonical template path, 22 current task-board child links, and three index README template links now resolve to tracked targets. The finding has a commit-based Ledger resolution and all intended-branch commits were read back.
 
 The Worker marks the child Done only after its acceptance criteria pass and the intended-branch commit is read back. For CI remediation, commit-based completion is separate from hosted validation.
 
@@ -77,7 +77,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Finish the readback, update the central Ledger with commit-based resolution evidence, and close the child. Do not inspect hosted CI results.
+Closed after source, documentation, and Ledger readback. Do not inspect hosted CI results.
 
 ## 10. Ledger Findings
 

@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 23:14 UTC
+- **Updated:** 2026-11-27 23:17 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -73,11 +73,12 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
-### 2026-11-27T23:14:05.854Z — recovered and fixed historical Markdown-link tooling failures
+### 2026-11-27T23:17:11.683Z — CI remediation child 50 closeout
 
-- Retrieved all five historical report JSON files through Git commit path history. No hosted Actions result was opened.
-- Report 459118 identified the legacy task-template link. Reports 460193 and 460237 identified 23 task-board child links that resolved from the wrong directory. Report 460205 identified the canonical task-template location. Full audit 460237 also identified obsolete template links in the ADR, analysis, and draft indexes.
-- Fixed the resolver and regression test in commit `4fc299bdc94bdfea2e5323096d761f4565ad0d24`. Updated all 22 current child links and corrected the three index README template links. Commit and readback pending.
+- Recovered all five historical check reports through Git commit path history, without opening hosted Actions results.
+- Corrected the canonical task-template exemption and regression test. Fixed all 22 current task-board child links and the three obsolete template links in the ADR, analysis, and draft indexes.
+- Source fix: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`. Documentation fixes: `6057e5596021b84a70a7201875c2f7bd3d1890b0`.
+- Readback confirmed all 23 board link targets and all three template files exist in the current tree. Central Ledger finding `lint-tooling-2c26d8bc14fd4d4bbe314234` was marked resolved with all recovered report references. Closeout commit and readback pending.
 
 ### 2026-11-27T23:12:40.445Z — resumed Markdown-anchor tooling remediation child 50
 

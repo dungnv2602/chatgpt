@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T23:08:59.100Z",
+  "updated_at_utc": "2026-11-27T23:17:11.683Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -11805,12 +11805,12 @@
       "source_family": "lint",
       "category": "lint_tooling",
       "title": "Lint tooling check failed: Markdown links and heading anchors",
-      "status": "open",
+      "status": "resolved",
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-26T23:36:16.808147+00:00",
-      "last_seen_utc": "2026-11-27T11:07:49.812313+00:00",
-      "occurrence_count": 18,
+      "last_seen_utc": "2026-11-27T15:19:31.629341+00:00",
+      "occurrence_count": 22,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45911866106-attempt-1/report.json",
@@ -11866,9 +11866,61 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "1e697f0e5167e9c0778cadef69d7cf084249be27"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/46019304454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46019304454",
+          "observed_at_utc": "2026-11-27T14:52:04.316151+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:46019304454:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "historical_unattributed",
+          "source_commit_sha": "9c2adb27eff65c81b7bb768cf9f6dab9196db481"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/46020530596-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46020530596",
+          "observed_at_utc": "2026-11-27T15:12:56.990047+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:46020530596:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "historical_unattributed",
+          "source_commit_sha": "14d4c19a70bf36217313b3a7dc1a84401d0f9113"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_repo/history/46023746666-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46023746666",
+          "observed_at_utc": "2026-11-27T15:19:13.027274+00:00",
+          "note": "on_repo · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:46023746666:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "historical_unattributed",
+          "source_commit_sha": "82c2e57bd88ead22220b21f7362139507796fc0a"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/46023746732-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46023746732",
+          "observed_at_utc": "2026-11-27T15:19:31.629341+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:46023746732:1",
+          "source_task_id": null,
+          "parent_task_id": null,
+          "attribution_status": "historical_unattributed",
+          "source_commit_sha": "82c2e57bd88ead22220b21f7362139507796fc0a"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "4fc299bdc94bdfea2e5323096d761f4565ad0d24",
+        "resolved_at_utc": "2026-11-27T23:17:11.683Z",
+        "validation": {
+          "status": "not_run",
+          "note": "No local scripts, tests, or lint were run. Hosted CI results were not inspected."
+        },
+        "note": "Fixed the canonical task-template exemption and regression test in 4fc299bdc94bdfea2e5323096d761f4565ad0d24. Fixed 22 current task-board child links and the ADR, analysis, and draft template links in 6057e5596021b84a70a7201875c2f7bd3d1890b0. Recovered all five referenced report artifacts from their publishing commits and read back every changed file. No hosted CI results were reviewed."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11879,7 +11931,8 @@
       "task_group": "ci-ace4e198cb6445b7",
       "subtask_refs": [
         "20261126-142500-03",
-        "20261127-173000-05"
+        "20261127-173000-05",
+        "20261127-173000-50"
       ],
       "legacy_task_refs": [],
       "parent_group": "ci-c22cfa3d350aa1a7"

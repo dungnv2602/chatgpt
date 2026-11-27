@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T23:14:05.854Z**: Recovered all five historical anchor-check reports from Git history. Fixed the task-template exemption, 22 task-board links, and three obsolete template links. Readback pending.
+- **2026-11-27T23:17:11.683Z**: Child 50 completed. The task-template exemption, 22 task-board child links, and three obsolete template links are fixed. The central Ledger now records the Markdown-link tooling finding as resolved. Commits: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`, `6057e5596021b84a70a7201875c2f7bd3d1890b0`.
 
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.
@@ -17,6 +17,7 @@
 
 ## Reports
 
+- **2026-11-27T23:17:11.683Z**: Closed child 50. Recovered all five historical check reports, fixed Markdown target handling and all affected documentation links, and marked the Ledger finding resolved. Commits: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`, `6057e5596021b84a70a7201875c2f7bd3d1890b0`. No tests or hosted CI review performed.
 - **2026-11-27T23:08:59.100Z**: Closed child 27. Corrected two passive-voice findings in `workspace/README.md`. Source commit: `677b5de451f70246cfb0d3ededb9ec8f908e19fd`. The Ledger records both resolutions. No local checks or hosted CI review were performed.
 - **2026-11-27T23:08:59.100Z**: Retrieved the full Ledger through its Git blob SHA after the file-content endpoint returned an empty body. This avoided a false blocker and allowed child 27 to resume.
 - **2026-11-27T23:02:30.332Z**: Completed child 57. Updated and read back the autonomous execution loop, Conversation Mode, Session Start, initialization policy, and scheduler contract. Commit: `c60358df2cc81747a5223f2d5aa5c750bb4773df`. Local scripts, tests, and lint were not run. Hosted CI was not inspected.
