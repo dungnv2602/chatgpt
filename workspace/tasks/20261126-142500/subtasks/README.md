@@ -24,5 +24,6 @@ Parent: [task.md](../task.md)
 | 20261126-142500-18 | CI remediation — Review passive-voice findings in workspace/task\\\_board.md | Ready | [18-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md](18-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md) |
 | 20261126-142500-19 | CI remediation — Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | Ready | [19-ci-remediation-review-semicolon-findings-in-agent-skills-ci-ledger-skill-md.md](19-ci-remediation-review-semicolon-findings-in-agent-skills-ci-ledger-skill-md.md) |
 | 20261126-142500-20 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/references/conversation-mode.md | Ready | [20-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md](20-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md) |
+| 20261126-142500-22 | Consolidate Document Standards into The Worker | Paused | [22-consolidate-document-standards-into-worker.md](22-consolidate-document-standards-into-worker.md) |
 
 The parent cannot be Done while a required child is open. CI remediation is commit-based; hosted validation is separate metadata.
