@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 13:32 UTC
+- **Updated:** 2026-11-27T13:32:13Z
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -53,6 +53,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27T13:32:13Z — startup P0 child 22 closeout
+
+- **Action:** Standardized the deletion verb in the GitHub Actions reference. Verified the target file and resolved the linked Ledger finding.
+- **Result:** Closed and deleted child 22. Activated child 23, the next P0 remediation.
+- **Evidence:** Commit `5305c1b39030c5057eacb1251867ce4fc96d0064`.
+- **Validation:** Hosted validation remains pending. No hosted CI results were inspected.
+
 
 ### 2026-11-27T13:30:31Z — startup P0 child 21 closeout
 
@@ -286,7 +294,6 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 | `lint-3c37bdb100e76e92190f285d` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45995191222-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45995191222) |
 | `lint-635c1984012e0d9f0ec925af` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45995191222-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45995191222) |
 | `lint-6b4e11cdd83b54cefd8c9eb0` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45995191222-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45995191222) |
-| `lint-87c805f0894d01b1d24ca3b6` | medium | synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-933a579fb10c54b6f0b0201a` | medium | long-sentence: Sentence has 26 words \(cap 25\). Split it. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-ba8e0ed371140388669d2100` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-301135338f19f01e083e45ee` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |

@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-22: CI remediation — Review synonym-rotation findings in .agent/skills/the-worker/references/github-actions.md](tasks/20261127-173000/subtasks/22-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-refe.md). This P0 child is active under the persistent Refactor Skills parent.
+[20261127-173000-23: CI remediation — Review long-sentence findings in .agent/skills/the-worker/SKILL.md](tasks/20261127-173000/subtasks/23-ci-remediation-review-long-sentence-findings-in-agent-skills-the-worker-skill-m.md). This P0 child is active under the persistent Refactor Skills parent.
 
 ## Ordered Eligible Execution Queue
 
@@ -32,7 +32,6 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-23 | CI remediation — Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](23-ci-remediation-review-long-sentence-findings-in-agent-skills-the-worker-skill-m.md) |
 | 20261127-173000-24 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/references/document-type-catalog.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](24-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md) |
 | 20261127-173000-26 | CI remediation — Review long-sentence findings in .agent/SESSION\\\_START.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](26-ci-remediation-review-long-sentence-findings-in-agent-session-start-md.md) |
 | 20261127-173000-27 | CI remediation — Review passive-voice findings in workspace/README.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md) |
