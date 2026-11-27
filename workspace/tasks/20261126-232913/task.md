@@ -101,6 +101,12 @@ Implement accepted ADR-0004 completely and restore reliable CI Ledger operation.
 - **References:** Parent Verification matrix; `.github/scripts/cleanup-archive.py`; `.github/scripts/test_cleanup_archive.py`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.github/archive-retention-index.json`.
 - **Next:** Obtain user disposition for missing archive paths, then await explicit hosted-results-review trigger. Do not archive or mark the parent Done yet.
 
+### 2026-11-27 01:10 UTC
+- **Action:** Final archive-index audit found at least two non-expired historical flat task paths that return NOT_FOUND. Added fail-closed validation for missing retained index paths in the cleanup workflow and a regression test. Updated the archive, Worker, CI Ledger, GitHub Actions, and discussion guidance. Reconciled the two migrated task links in the discussion register.
+- **Result:** No historical archive file or retention-index entry was modified. The cleanup workflow now surfaces missing retained files instead of silently passing or pruning them. Parent Confirmation item 16 remains partial pending user direction.
+- **References:** `.github/scripts/cleanup-archive.py`; `.github/scripts/test_cleanup_archive.py`; `.archive/README.md`; `.agent/skills/the-worker/SKILL.md`; `.agent/skills/ci-ledger/SKILL.md`; `.agent/skills/github-actions/SKILL.md`; `workspace/discussion.md`.
+- **Next:** Wait for user direction on recovery or index-entry removal. Do not inspect hosted results.
+
 ## 7. Current State
 - ADR-0004 is accepted and indexed.
 - This task is Approved, P0, In Progress, and Current Execution.
