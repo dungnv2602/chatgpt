@@ -358,3 +358,10 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 | `lint-fa71e22a78d6e4ce44e3a977` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45994577533-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45994577533) |
 | `lint-c4694e88f04cd654220cc23d` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/46015025342-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/46015025342) |
 | `lint-4d345e231ac14cad2ca77be0` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/46015025342-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/46015025342) |
+
+### 2026-11-27 — CI Ledger and GitHub Actions consolidation closeout
+
+- Completed child 51. Consolidated scripts, regression tests, shared eligibility policy, schemas, and report template under `.agent/skills/the-worker/scripts/` and `.agent/skills/the-worker/assets/`.
+- Updated the composite capture action and Worker references. Removed duplicate report-family implementations. Kept report indexes, immutable reports, and Ledger state in their data paths.
+- Read back canonical scripts, regression tests, schemas, template, and capture action. Tests, lint, and hosted CI inspection were not performed, as required.
+- **Commits:** `7744b9f`, `36a6ecc`, `578207a`, `4d86b34`, `6f8adc0`, `e75cf10`, `9b8a88e`, `e5c48e2`.

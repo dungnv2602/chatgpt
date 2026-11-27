@@ -9,7 +9,7 @@ This directory is the review surface for actionable GitHub Actions execution fai
 3. Use the history path to inspect `report.json`, `integrity.json`, and captured job logs.
 4. Render a human-readable Markdown view when needed:
    - Latest report: `python3 .agent/skills/the-worker/scripts/actions-report.py --render-latest`
-   - Exact report: `python3 .takeout/reports/gh_ac_reports/scripts/report.py --render history/<workflow-id>/<run-id>-attempt-<attempt>-<stage>`
+   - Exact report: `python3 .agent/skills/the-worker/scripts/actions-report.py --render history/<workflow-id>/<run-id>-attempt-<attempt>-<stage>`
    Both commands write Markdown to stdout; redirect it to a temporary file if a persistent view is required.
 5. Follow the Actions run URL when GitHub has evidence the reporter cannot access.
 

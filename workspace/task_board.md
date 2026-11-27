@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-None. Subtask 51 is complete.
+[20261127-173000: Refactor Skills](tasks/20261127-173000/task.md). The current skills-refactoring workstream remains active. Subtask 51 is closed.
 
 ## Ordered Eligible Execution Queue
 
