@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[Refactor Skills — P0](tasks/20261127-173000/task.md) — [child 04: lint report regression tests](tasks/20261127-173000/subtasks/04-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md). The parent is persistent and remains open for future skills-refactoring subtasks.
+[Refactor Skills — P0](tasks/20261127-173000/task.md) — [child 05: Markdown links and heading anchors](tasks/20261127-173000/subtasks/05-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md). The parent is persistent and remains open for future skills-refactoring subtasks.
 
 ## Ordered Eligible Execution Queue
 
