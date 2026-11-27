@@ -59,14 +59,6 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Read linked repository report files. They do not provide the failing test details.
-- **Checks:** Not performed.
-- **Limitations:** The report establishes a finding, not its root cause.
-
-## 6. State and Evidence
-
 - **Commit SHA:** `1e697f0e5167e9c0778cadef69d7cf084249be27`
 - **Changed paths:** `.agent/skills/asd-ste100/scripts/test_generate_lint_report.py`
 - **Readback:** Confirmed both assertions match the canonical template text. Confirmed the template remains unchanged.
