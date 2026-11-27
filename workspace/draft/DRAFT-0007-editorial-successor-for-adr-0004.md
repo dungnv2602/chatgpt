@@ -65,7 +65,7 @@ The accepted decision selects Option 3. It uses task folders with nested subtask
 - Change Ledger identity, recurrence, ingestion, retention, or archive behavior.
 - Change Worker selection or accepted-ADR governance.
 - Claim that hosted regression or Document Type Catalog validation passed.
-- Implement any change before the user approves this Draft and its successor ADR.
+- Implementation before the user approves this Draft and its successor ADR.
 
 ## Decision Drivers
 
@@ -81,7 +81,7 @@ The accepted decision selects Option 3. It uses task folders with nested subtask
 
 ## Assessment Basis and Evidence Limits
 
-- **Scope of comparison:** Three viable record-management options. Direct edits to ADR-0004 are excluded because current governance prohibits them.
+- **Scope of comparison:** Three viable record-management options. Current governance prohibits direct edits to ADR-0004. This Draft excludes that option.
 - **Assessment method:** Repository review of ADR-0004, its linked tasks, the CI Ledger, and captured lint reports.
 - **Evidence boundary:** The Ledger records 34 distinct finding IDs across five remediation tasks. It does not establish that every suggested wording change is semantically safe.
 - **Key assumptions:** The user wants the prose findings resolved while preserving the accepted decision.
@@ -108,7 +108,7 @@ The accepted decision selects Option 3. It uses task folders with nested subtask
 - **Repository and environment fit:** The workspace supports Markdown records and linked evidence. The note would not replace the accepted ADR.
 - **Good — strengths:** The note can explain every proposed correction without changing the predecessor.
 - **Neutral — trade-offs:** Readers must consult two files to understand the editorial history.
-- **Bad — weaknesses:** The linter still scans ADR-0004. The original findings remain unresolved.
+- **Bad — weaknesses:** The linter still scans ADR-0004. The linter still reports the original findings.
 - **Implementation and migration cost:** Create one note and add navigation links. Do not change the accepted ADR.
 - **Dependencies and operational burden:** The Worker must maintain the note and keep its links accurate.
 - **Risks and safeguards:** Readers may treat the note as authoritative decision text. Label it as non-authoritative.
@@ -219,7 +219,7 @@ Do not change task scripts, workflows, Ledger schemas, task templates, or implem
 
 | ID | Source / exact locator | Version, date, or commit | Evidence type | Supports which option / claim | Limitations |
 |---|---|---|---|---|---|
-| E1 | [Accepted ADR-0004](../adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) | Branch gpt, current file | Repository fact | Accepted outcome, scope, lifecycle rules, and Confirmation state | Does not authorize direct edits. |
+| E1 | [Accepted ADR-0004](../adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) | Branch gpt, current file | Repository fact | Decision and Confirmation state | Does not authorize direct edits. |
 | E2 | [Long-sentence task](../tasks/20261127-013151-30/task.md) | Current task record | Repository fact | 8 long-sentence findings | Lint flags require human review. |
 | E3 | [Passive-voice task](../tasks/20261127-013151-31/task.md) | Current task record | Repository fact | 19 passive-voice findings | Lint flags require human review. |
 | E4 | [Semicolon task](../tasks/20261127-013151-32/task.md) | Current task record | Repository fact | 1 semicolon finding | Lint flags require human review. |
@@ -228,4 +228,4 @@ Do not change task scripts, workflows, Ledger schemas, task templates, or implem
 | E7 | [STE Lint Changed run 45910973837](https://github.com/dungnv2602/chatgpt/actions/runs/45910973837) | 2026-11-26 | Hosted diagnostic | Initial finding evidence | Does not establish a future patch result. |
 | E8 | [STE Lint Changed run 45911174533](https://github.com/dungnv2602/chatgpt/actions/runs/45911174533) | 2026-11-26 | Hosted diagnostic | Recurring finding evidence | Does not establish a future patch result. |
 | E9 | [STE Lint Changed run 45911611855](https://github.com/dungnv2602/chatgpt/actions/runs/45911611855) | 2026-11-26 | Hosted diagnostic | Recurring finding evidence | Does not establish a future patch result. |
-| E10 | [Decision Governance](../../.agent/skills/decision-governance/SKILL.md) | Branch gpt, current file | Repository policy | Draft approval and ADR immutability | Governs the process, not editorial correctness. |
+| E10 | [Decision Governance](../../.agent/skills/decision-governance/SKILL.md) | Branch gpt, current file | Repository policy | Approval and immutability rules | Governs the process, not editorial correctness. |
