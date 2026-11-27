@@ -10,13 +10,12 @@ This file is the single index for active and retained task records. Each active 
 
 ## Current Execution
 
-[20261127-013151-36 — Next P0 CI remediation](tasks/20261127-013151-36/task.md)
+[20261127-013151-34 — Next P0 CI remediation](tasks/20261127-013151-34/task.md)
 
 ## Ready — Mandatory CI P0
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-013151-36 | Review semicolon findings in workspace/draft/README.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-36/task.md) |
 | 20261127-013151-34 | Review present-perfect findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-34/task.md) |
 | 20261127-013151-33 | Review synonym-rotation findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-33/task.md) |
 | 20261127-013151-32 | Review semicolon findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-32/task.md) |
@@ -64,6 +63,7 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261127-013151-36 | Review semicolon findings in workspace/draft/README.md | P0 | Done | Assistant | Approved | — | 2026-11-24 16:43 UTC | [Archived task](../.archive/task/20261127-013151-36/task.md) | [d696fca](https://github.com/dungnv2602/chatgpt/commit/d696fca89bbeca569a63000adf9a234f104ee1b9) |
 | 20261127-013151-38 | Fix lint tooling check: Markdown links and heading anchors | P0 | Done | Assistant | Approved | — | 2026-11-27 04:39 UTC | [Archived task](../.archive/task/20261127-013151-38/task.md) | [3d04922](https://github.com/dungnv2602/chatgpt/commit/3d049227d9a5d623eb1780bc1de28b3f6dd66cd1) |
 | 20261127-013151-43 | Review passive-voice findings in workspace/README.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:36 UTC | [Archived task](../.archive/task/20261127-013151-43/task.md) | [fd4b4f4](https://github.com/dungnv2602/chatgpt/commit/fd4b4f488897129d26dccef20bdecc6207e37581) |
 | 20261127-013151-37 | Review synonym-rotation findings in workspace/adr/README.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:36 UTC | [Archived task](../.archive/task/20261127-013151-37/task.md) | [fd4b4f4](https://github.com/dungnv2602/chatgpt/commit/fd4b4f488897129d26dccef20bdecc6207e37581) |
