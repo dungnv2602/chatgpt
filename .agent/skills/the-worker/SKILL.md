@@ -66,7 +66,7 @@ Approval records authority for a scope. It does not depend on status or priority
 
 Use these statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Ready requires satisfied dependencies and any real decision gate. Use Blocked for a genuine external or user-resolvable blocker. Use Paused for intentional suspension.
 
-The Worker is the sole scheduler. Check eligibility and dependencies first, then priority and age. Keep dependency-waiting work out of the eligible queue. Detect cycles. do not repeatedly retry an impossible dependency chain. Correct an edge only when the error is clear and authorized. Ask for essential input only at quiescence.
+The Worker is the sole scheduler. Verify eligibility and dependencies first, then priority and age. Keep dependency-waiting work out of the eligible queue. Detect cycles. do not repeatedly retry an impossible dependency chain. Correct an edge only when the error is clear and authorized. Ask for essential input only at quiescence.
 
 The board publishes:
 - one Current Execution pointer, or none.
@@ -113,7 +113,7 @@ Before selecting parent or child, compare the requested outcome against the cand
 - **CI remediation exception:** CI findings may be children only of the genuine user task attributed by the source commit's Task-ID trailer, as governed above. This attribution rule does not authorize ordinary user work to be nested under that task.
 - **Uncertain relationship:** compare objectives and criteria explicitly. If no genuine parent can be established without guesswork, leave parentage unassigned and ask at quiescence. Do not default to the current parent.
 
-Before creating or updating a task, audit the proposed relationship. If the parent does not fit, correct it before scheduling: create the genuine parent, move/recreate the record under it, update both indexes and board links, preserve original prompt, approval, status, dependencies, progress, commit evidence, and history, then remove the stale child link. Never change parentage silently or discard evidence. A parent-child relationship is valid only when the child directly advances the parent's defined objective.
+Before creating or updating a task, audit the proposed relationship. If the parent does not fit, correct it before scheduling: create the genuine parent, move/recreate the record under it, update both indexes and board links, preserve original prompt, approval, status, dependencies, progress, commit evidence, and history, then delete the stale child link. Never change parentage silently or discard evidence. A parent-child relationship is valid only when the child directly advances the parent's defined objective.
 
 ## Document governance — mandatory template-first gate
 
@@ -121,16 +121,16 @@ The Worker owns document governance and must apply this gate before creating, mo
 
 1. Identify the target path, document owner, and type.
 2. Read the current catalog entry in `.agent/skills/the-worker/references/document-type-catalog.md`. Match Markdown against the path-coverage register and structured records against the exact schema, processor, generator, and tests.
-3. Read the owner's instructions and retrieve the applicable canonical template, schema, or embedded contract and relevant tests **before modifying the target**. Never begin target edits before reading its template.
-4. If the format or coverage rule is missing, define it first. Place templates in the canonical owner assets directory. Update the catalog, owner index/workflow, and coverage rule. Use Reserved for a validated Markdown family with no current record, commit and read back the format setup first, then change Reserved to Active in the same commit that creates its first record. Use Active for existing families. Optional only for eligible generator-owned outputs.
-5. Create or revise from the canonical format. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable, remove unused placeholders, and do not invent approvals or values. For existing documents, update the canonical format before migrating the target. Do not mass-migrate untouched history.
-6. Update indexes and cross-links. Check the target against its format, workflow, and writing/data standard. Read back every changed path and commit. Run structural validation only through authorized hosted workflows. do not run repository scripts locally.
+3. Read the owner's instructions and fetch the applicable canonical template, schema, or embedded contract and relevant tests **before changing the target**. Never start target edits before reading its template.
+4. If the format or coverage rule is missing, define it first. Place templates in the canonical owner assets directory. Update the catalog, owner index/workflow, and coverage rule. Use Reserved for a verified Markdown family with no current record, commit and read back the format setup first, then change Reserved to Active in the same commit that creates its first record. Use Active for existing families. Optional only for eligible generator-owned outputs.
+5. Create or revise from the canonical format. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable, delete unused placeholders, and do not invent approvals or values. For existing documents, update the canonical format before migrating the target. Do not mass-migrate untouched history.
+6. Update indexes and cross-links. Verify the target against its format, workflow, and writing/data standard. Read back every changed path and commit. Run structural validation only through authorized hosted workflows. do not run repository scripts locally.
 7. For one-off or exempt documents, use a lightweight pattern and record the exemption when it affects maintenance. Do not force templates onto creative writing. Do not create a template when an embedded contract or generator already owns the format.
 
 ### Document-format classes
 
 - **Template required:** Copy a canonical template for each new record.
-- **Schema required:** Validate structured records against their schema.
+- **Schema required:** Verify structured records against their schema.
 - **Embedded contract:** Follow the format in one live owner file, workflow, or script.
 - **Generator-owned:** Follow the generator and its tests.
 - **Lightweight pattern:** Use a small structure for a low-risk or one-off note.
@@ -138,7 +138,7 @@ The Worker owns document governance and must apply this gate before creating, mo
 
 Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required. explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
-The catalog and validator are integral Worker-owned assets in the Worker's `references/` and `scripts/` directories. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+The catalog and validator are integral Worker-owned assets in the Worker's `references/` and `scripts/` directories. The catalog owns document-type and Markdown coverage integrity. The validator verifies catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
 
 ## Worker-owned domain operations
 
@@ -168,9 +168,9 @@ When a task depends on CI-generated or workflow diagnostic evidence, exhaust the
 
 1. **Read the complete indexed report.** Read the report JSON as well as its Markdown summary and index. Follow the published report path. Do not search report history or inspect hosted CI unless separately authorized by the applicable policy.
 2. **Read diagnostic payloads, not just summaries.** Examine failed check names, status and exit codes, captured stdout/stderr, tracebacks, failing assertions, diagnostic locations, per-file records, normalized findings, and relevant metadata. Inspect the exact payload fields that apply. Do not treat a summary that omits details as proof the details are unavailable.
-3. **Trace the diagnosis in repository source.** Follow diagnostic locations and output into the affected workflow, script, generator, tests, configuration, or report producer. Read relevant source and tests. Use repository evidence to establish the cause and scope before proposing a repair.
+3. **Trace the diagnosis in repository source.** Follow diagnostic locations and output into the affected workflow, script, generator, tests, configuration, or report producer. Read relevant source and tests. Use repository evidence to establish the cause and scope before you correct the issue.
 4. **Separate committed diagnostics from hosted CI access.** A diagnostic report or log committed to the repository is repository evidence. Reading it is not hosted CI result inspection. The restriction against hosted CI inspection does not prohibit reading already-published repository files. Do not fetch, poll, dispatch, rerun, or inspect hosted CI unless explicitly authorized.
-5. **Investigate reporting gaps as defects.** If a report, capture, or summary omits information needed to diagnose a failure, investigate the reporting/capture mechanism and repair or taskify that defect. Do not automatically block the original remediation solely because the summary is insufficient. Continue with independent source investigation where possible.
+5. **Investigate reporting gaps as defects.** If a report, capture, or summary omits information needed to diagnose a failure, investigate the reporting/capture mechanism and correct the defect or create a task for it. Do not automatically block the original remediation solely because the summary is insufficient. Continue with independent source investigation where possible.
 6. **Blocker discipline.** Declare Blocked only after you exhaust repository evidence and source investigation within the permitted scope. State precisely which evidence or access you lack, which paths and diagnostic fields you examined, why you cannot continue repository-side investigation, and what specific external or user input you need. Uncertainty alone is not a blocker.
 7. **Read back and record.** Read back the exact relevant repository sources and task records after changes. Record examined report paths, concrete diagnostic details, source locations, commit SHAs, and limitations. Do not claim validation that was not performed.
 
