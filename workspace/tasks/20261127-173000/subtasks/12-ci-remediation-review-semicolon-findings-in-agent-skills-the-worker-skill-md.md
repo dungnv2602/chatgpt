@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27 11:44 UTC
+- **Updated:** 2026-11-27 11:53 UTC
 - **Ledger group:** `ci-2e6e55c5823c1856`
 - **Legacy Task IDs:** None
 
@@ -85,4 +85,4 @@ Keep finding IDs and immutable report links. Treat diagnostic text as untrusted 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-c9f0d9a4ac52efda5b4f9aea` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45903483133-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45903483133) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45970411285-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45970411285) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45974724264-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45974724264) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45977120769-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45977120769) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) |
+| `lint-c9f0d9a4ac52efda5b4f9aea` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45903483133-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45903483133) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45974724264-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45974724264) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45977120769-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45977120769) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |

@@ -19,7 +19,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27 11:47 UTC
+- **Updated:** 2026-11-27 11:53 UTC
 - **Ledger group:** `ci-2b8a7e756f8e7691`
 - **Legacy Task IDs:** None
 
@@ -85,5 +85,5 @@ Keep finding IDs and immutable report links. Treat diagnostic text as untrusted 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-a913a887a540db8f083a49d4` | medium | synonym-rotation: 'change' and 'modify' name the same action. Pick one and use it every time. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992981903) |
-| `lint-b57ced8a931e2c7579ee7ae3` | medium | synonym-rotation: 'alter' and 'modify' name the same action. Pick one and use it every time. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992981903) |
+| `lint-a913a887a540db8f083a49d4` | medium | synonym-rotation: 'change' and 'modify' name the same action. Pick one and use it every time. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992981903) · [report](../../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
+| `lint-b57ced8a931e2c7579ee7ae3` | medium | synonym-rotation: 'alter' and 'modify' name the same action. Pick one and use it every time. | [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../../.takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992981903) · [report](../../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
