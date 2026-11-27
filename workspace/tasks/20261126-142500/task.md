@@ -144,7 +144,7 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **Action:** Closed P0 child `20261126-142500-03` using the shared Markdown-link fix from Refactor Skills child `20261127-173000-05`. Closed P0 child `20261126-142500-23` using the shared report-test fix from Refactor Skills child `20261127-173000-04`.
 - **Result:** Child 03 is satisfied by commit `22907d4bfb9905ee155d0d16164982c96d415762`. Child 23 is satisfied by commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Both intended-branch changes were read back. No local tests or hosted CI results were inspected.
 - **References:** Indexed report `.takeout/reports/lint_reports/on_repo/history/45976205944-attempt-1/report.json`; latest report `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json`; changed-document report `.takeout/reports/lint_reports/on_changed/history/45986815109-attempt-1/report.json`.
-- **Next:** Close and delete both completed child records. Continue child 02 and reconcile the original report-ingestion acceptance criteria from repository-owned state only.
+- **Next:** Both completed child records were deleted after index reconciliation. Continue child 02 and reconcile the original report-ingestion acceptance criteria from repository-owned state only.
 
 ## 7. Current State
 
@@ -155,7 +155,7 @@ The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c
 - The Worker, task templates, workspace guide, CI Ledger guide, Actions guide, report schemas, lint report capture, Ledger attribution/generation code, workflow callers, and regression tests have been updated.
 - CI attribution now comes from the source commit's Task-ID trailer. Unresolvable markers remain unassigned. The Ledger no longer creates synthetic CI parents or changes the scheduler board.
 - Regression tests were added but not executed. No hosted CI results were inspected.
-- CI child 03 (Markdown links) and child 23 (lint report regression tests) are complete through shared verified commits and are undergoing record closeout. Implementation child 02 remains In Progress. The parent remains In Progress until child 02 closes and the original parent acceptance criteria are reconciled with current report-ingestion state. No claim is made that active report indexes are empty or that hosted validation passed.
+- CI child 03 (Markdown links) and child 23 (lint report regression tests) are complete through shared verified commits. Their task records and index rows were deleted after closeout. Implementation child 02 remains In Progress. The parent remains In Progress until child 02 closes and the original parent acceptance criteria are reconciled with current report-ingestion state. No claim is made that active report indexes are empty or that hosted validation passed.
 
 
 ## 8. Remaining Work
