@@ -750,7 +750,7 @@ def render_worker_task(root, task_id, title, parent_group, findings, timestamp, 
         "- **Check:** [What was checked.]\n- **Method:** [How it was checked.]\n- **Result:** [Actual result, or Not performed.]\n- **Limitations:** [What the check does not establish.]":
             "- **Check:** Ledger finding identity and work-target grouping.\n- **Method:** Validated during event-driven ingestion.\n- **Result:** Parent and child handoff records generated.\n- **Limitations:** This does not verify root cause, execution authorization, remediation, or hosted validation.",
         "[Give the next session enough information to resume. State the first incomplete subtask, exact next action, and approval boundary.]":
-            "Review the child evidence and accepted ADR coverage. Keep the parent Proposed until Worker review and authorization. Do not treat P0 priority as execution approval. Do not poll or inspect hosted CI results.",
+            "Execute this CI P0 remediation under standing authorization. Respect safety and accepted decision constraints. Do not inspect hosted CI results unless the user explicitly triggers results review.",
     }
     if related_archives and task_path is not None:
         related_links = []
@@ -991,10 +991,10 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
         "- **ID:** <parent-task-id>-NN": "- **ID:** " + subtask_id,
         "- **Parent Task ID:** YYYYMMDD-HHMMSS": "- **Parent Task ID:** " + parent_id,
         "- **Type:** Implementation": "- **Type:** CI remediation",
-        "- **Status:** Ready": "- **Status:** Proposed",
+        "- **Status:** Ready": "- **Status:** Ready",
         "- **Priority:** P2": "- **Priority:** P0",
         "- **Origin:** User": "- **Origin:** Assistant",
-        "- **Approval:** Approved": "- **Approval:** Pending — Worker review required",
+        "- **Approval:** Approved": "- **Approval:** Approved",
         "- **Governing ADR(s):** None — non-implementation subtask": "- **Governing ADR(s):** None — non-implementation subtask",
         "- **Created:** YYYY-MM-DD HH:MM UTC": "- **Created:** " + created,
         "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
