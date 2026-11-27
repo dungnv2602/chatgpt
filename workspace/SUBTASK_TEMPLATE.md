@@ -13,6 +13,7 @@ Store this record under its parent task's `subtasks/` directory.
 - **Priority:** P2
 - **Origin:** User
 - **Approval:** Approved
+- **Approval scope/source:** [Exact scope authorized and approval source, or standing authorization reference]
 - **Governing ADR(s):** None — non-implementation subtask
 - **Dependencies:** None
 - **Required:** Yes
@@ -76,6 +77,8 @@ Conditional: CI remediation subtask only.
 - **Status:** Pending
 - **Run URL:** Not reviewed
 - **Reviewed at:** Not reviewed
+
+Approval is authorization, not status or eligibility. Approved means explicit authorization for the recorded scope or applicable standing authorization; Pending means not authorized; Declined means rejected. Record approval scope/source. A concise "Approve" authorizes the immediately preceding proposal only within its stated scope. Do not infer approval from task status.
 
 CI Ledger intake marks generated P0 remediation tasks Approved and mandatory under the standing authorization. Keep a task Proposed when Governing ADR(s) is Pending. Move it to Ready only after accepted ADR linkage exists or decision approval is not required. P0 does not bypass decision governance. The Worker completes remediation after committing the fix to the intended branch. The Worker then checks the commit, reads back the changed files, and records the SHA and summary. Hosted validation is separate metadata. It does not gate completion. Do not inspect hosted results until the user explicitly triggers results review.
 
