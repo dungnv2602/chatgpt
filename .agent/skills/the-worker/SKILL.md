@@ -24,6 +24,15 @@ Use repository `dungnv2602/chatgpt`, branch `gpt`, as the sole project source of
 
 Initialize only on the cue in `.agent/SESSION_START.md`. That file owns session initialization.
 
+
+## Material recovery and immediate cleanup
+
+Recover task-required source material autonomously when it is accessible and within the approved task scope. Do not ask for permission solely to retrieve material needed to complete the task. Use the authoritative source and avoid unnecessary copies.
+
+Treat downloaded, extracted, duplicated, or staged recovery artifacts as temporary. Delete each temporary artifact immediately after its last required use, and clean up all remaining temporary recovery artifacts at task closeout. Verify cleanup when possible and record the outcome. Do not retain temporary copies for convenience or future tasks.
+
+This rule does not authorize deleting canonical repository files, source records, user-owned originals, retained evidence, or files whose preservation is required by an applicable workflow, policy, or explicit instruction. Keep required evidence and canonical materials in place. If an artifact is canonical or its ownership/retention is uncertain, do not delete it; resolve the uncertainty within existing governance or ask only if an essential authority boundary remains.
+
 ## Prompt capture — mandatory
 
 Before answering or acting on a request with an identifiable outcome, find or create its task record. Capture questions, research, advice, writing, creative work, and project changes before delivering the result.
