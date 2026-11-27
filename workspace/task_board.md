@@ -12,7 +12,9 @@ This file is the single index for active task records. Each active task is a fol
 
 ## Current Execution
 
-_No task currently executing._
+| ID | Title | Priority | Status | Approval | Task record |
+|---|---|---:|---|---|---|
+| 20261126-142500 | Repair CI task generation and clear active reports | P1 | In Progress | Approved | [Task record](tasks/20261126-142500/task.md) |
 
 ## Ordered Eligible Execution Queue
 
@@ -39,7 +41,7 @@ _No proposed editorial remediation groups remain._
 
 | ID | Title | Priority | Status | Approval | Task record |
 |---|---|---:|---|---|---|
-| 20261126-142500 | Resolve CI task generation and clear active reports | P1 | Paused | Approved | [Task record](tasks/20261126-142500/task.md) |
+_No tasks currently paused._
 
 ### Dependency-waiting
 
