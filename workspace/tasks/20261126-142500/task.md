@@ -116,9 +116,9 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 
 ### 2026-11-27 09:22 UTC — prompt capture and workflow refactor
 
-- **Action:** Created required subtask `20261126-142500-01` under this existing genuine CI/report workflow task before implementation. Resumed the parent from Paused to In Progress and set it as Current Execution.
-- **Result:** The user's current request is now tracked as a required P1 child. Its scope expands the existing task to cover the complete prompt-to-task lifecycle, follow-up attribution, CI remediation parentage, scheduler/board consistency, flooding/deadlock prevention, and streamlined templates/skills.
-- **References:** `workspace/tasks/20261126-142500/subtasks/20261126-142500-01.md`; `workspace/tasks/20261126-142500/subtasks/README.md`; `workspace/task_board.md`.
+- **Action:** Created and completed audit subtask `20261126-142500-01`, then created implementation subtask `20261126-142500-02` under this existing genuine CI/report workflow task before implementation. Resumed the parent from Paused to In Progress and set it as Current Execution.
+- **Result:** The audit prompt is tracked in child `20261126-142500-01`; the user's current implementation request is tracked as required P1 child `20261126-142500-02`. Its scope expands the existing task to cover the complete prompt-to-task lifecycle, follow-up attribution, CI remediation parentage, scheduler/board consistency, flooding/deadlock prevention, and streamlined templates/skills.
+- **References:** `workspace/tasks/20261126-142500/subtasks/01-audit-prompt-capture-rules.md`; `workspace/tasks/20261126-142500/subtasks/02-refactor-task-ci-lifecycle.md`; `workspace/tasks/20261126-142500/subtasks/README.md`; `workspace/task_board.md`.
 - **Next:** Audit authoritative task lifecycle, CI Ledger, GitHub Actions, templates, schemas, generator, and regression coverage.
 
 ## 7. Current State
