@@ -10,13 +10,12 @@ This file is the single index for active and retained task records. Each active 
 
 ## Current Execution
 
-[20261127-013646 — Next P0 CI remediation](tasks/20261127-013646/task.md)
+[20261127-013151-42 — Next P0 CI remediation](tasks/20261127-013151-42/task.md)
 
 ## Ready — Mandatory CI P0
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261127-013646 | Review synonym-rotation findings in workspace/task\_board.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013646/task.md) |
 | 20261127-013151-42 | Review present-perfect findings in .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-42/task.md) |
 | 20261127-013151-41 | Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-41/task.md) |
 | 20261127-013151-19 | Review synonym-rotation findings in .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-19/task.md) |
@@ -30,11 +29,8 @@ This file is the single index for active and retained task records. Each active 
 | 20261127-013151-03 | Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-03/task.md) |
 | 20261127-013151-02 | Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-02/task.md) |
 | 20261127-013151-01 | Review passive-voice findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151-01/task.md) |
-| 20261127-013151 | Review long-sentence findings in workspace/task\_board.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:49 UTC | [Task record](tasks/20261127-013151/task.md) |
 | 20261127-013151-44 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-44/task.md) |
 | 20261127-013151-43 | Review passive-voice findings in workspace/README.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-43/task.md) |
-| 20261127-013151-40 | Review passive-voice findings in workspace/task\_board.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-40/task.md) |
-| 20261127-013151-39 | Review semicolon findings in workspace/task\_board.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-39/task.md) |
 | 20261127-013151-38 | Fix lint tooling check: Markdown links and heading anchors | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-38/task.md) |
 | 20261127-013151-37 | Review synonym-rotation findings in workspace/adr/README.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-37/task.md) |
 | 20261127-013151-36 | Review semicolon findings in workspace/draft/README.md | P0 | Ready | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261127-013151-36/task.md) |
@@ -87,6 +83,10 @@ _No tasks._
 ## Historical
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
 |---|---|---:|---|---|---|---|---|---|---|
+| 20261127-013151 | Review long-sentence findings in workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-013151/task.md) | [d35af42](https://github.com/dungnv2602/chatgpt/commit/d35af420de991a90b8d1ef2320e9e14aaec678fd) |
+| 20261127-013646 | Review synonym-rotation findings in workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-013646/task.md) | [d35af42](https://github.com/dungnv2602/chatgpt/commit/d35af420de991a90b8d1ef2320e9e14aaec678fd) |
+| 20261127-013151-39 | Review semicolon findings in workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-013151-39/task.md) | [d35af42](https://github.com/dungnv2602/chatgpt/commit/d35af420de991a90b8d1ef2320e9e14aaec678fd) |
+| 20261127-013151-40 | Review passive-voice findings in workspace/task\_board.md | P0 | Done | Assistant | Approved | — | 2026-11-27 03:59 UTC | [Archived task](../.archive/task/20261127-013151-40/task.md) | [d35af42](https://github.com/dungnv2602/chatgpt/commit/d35af420de991a90b8d1ef2320e9e14aaec678fd) |
 | 20261127-033914-02 | Improve workspace/SUBTASK\_TEMPLATE.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:18 UTC | [Archived task](../.archive/task/20261127-033914-02/task.md) | [f35425c](https://github.com/dungnv2602/chatgpt/commit/f35425c74f1077a8929f0b688a074864b2bc1988) |
 | 20261127-023803 | Improve .agent/skills/the-worker/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:16 UTC | [Archived task](../.archive/task/20261127-023803/task.md) | [16b0d66](https://github.com/dungnv2602/chatgpt/commit/16b0d66b991c1647042445ab4b59df00a416e244) |
 | 20261127-033914 | Improve .agent/skills/github-actions/SKILL.md | P0 | Done | Assistant | Approved | — | 2026-11-27 04:12 UTC | [Archived task](../.archive/task/20261127-033914/task.md) | [6bef9e8](https://github.com/dungnv2602/chatgpt/commit/6bef9e8d5d730f412b131aa653754fce50e0f398) |
