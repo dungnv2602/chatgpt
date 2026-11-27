@@ -114,6 +114,9 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
             cursor = cursor / component
             if cursor.is_symlink():
                 raise ValueError(f"Refusing to follow a symlink in indexed path: {path}")
+        folder_archive = PurePosixPath(path).parts[1] == "task" and len(PurePosixPath(path).parts) >= 4
+        if folder_archive and not target.exists():
+            raise ValueError(f"Task-folder archive file is missing: {path}")
         if target.exists() and not target.is_file():
             raise ValueError(f"Indexed archive path is not a regular file: {path}")
         targets.append((path, target))
