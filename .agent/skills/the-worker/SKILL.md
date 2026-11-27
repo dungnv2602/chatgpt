@@ -79,3 +79,29 @@ Ask only when proceeding would cross an authority, governance, safety, access, p
 After a proposal receives approval, wait for `proceed` or `execute` before starting that proposal. Approval alone is not an execution cue. The explicit `/start` procedure is a separate governing workflow cue.
 
 At `/start`, follow `.agent/SESSION_START.md`. The mandatory P0 batch uses the rules above. Do not inspect hosted CI results. At batch completion, state readiness and remaining blockers.
+
+
+## Document governance — mandatory template-first gate
+
+The Worker owns document governance and must apply this gate before creating, moving, renaming, materially revising, or validating a recurring document or structured record.
+
+1. Identify the target path, document owner, and type.
+2. Read the current catalog entry in `.agent/skills/document-standards/references/document-type-catalog.md`. Match Markdown against the path-coverage register and structured records against the exact schema, processor, generator, and tests.
+3. Read the owner's instructions and retrieve the applicable canonical template, schema, or embedded contract and relevant tests **before modifying the target**. Never begin target edits before reading its template.
+4. If the format or coverage rule is missing, define it first. Place templates in the canonical owner assets directory. Update the catalog, owner index/workflow, and coverage rule. Use Reserved for a validated Markdown family with no current record, commit and read back the format setup first, then change Reserved to Active in the same commit that creates its first record. Use Active for existing families; Optional only for eligible generator-owned outputs.
+5. Create or revise from the canonical format. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable, remove unused placeholders, and do not invent approvals or values. For existing documents, update the canonical format before migrating the target. Do not mass-migrate untouched history.
+6. Update indexes and cross-links. Check the target against its format, workflow, and writing/data standard. Read back every changed path and commit. Run structural validation only through authorized hosted workflows; do not run repository scripts locally.
+7. For one-off or exempt documents, use a lightweight pattern and record the exemption when it affects maintenance. Do not force templates onto creative writing. Do not create a template when an embedded contract or generator already owns the format.
+
+### Document-format classes
+
+- **Template required:** Copy a canonical template for each new record.
+- **Schema required:** Validate structured records against their schema.
+- **Embedded contract:** Follow the format in one live owner file, workflow, or script.
+- **Generator-owned:** Follow the generator and its tests.
+- **Lightweight pattern:** Use a small structure for a low-risk or one-off note.
+- **Exempt:** Preserve creative freedom or an external format.
+
+Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required; explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
+
+Catalog validator and tests remain supporting infrastructure under `.agent/skills/document-standards/`; they are assets, not a separately activated skill. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage; it does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
