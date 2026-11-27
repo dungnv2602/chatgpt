@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** Eligible — Ready
 - **Required:** Yes
 - **Created:** 2026-11-27 15:00 UTC
-- **Updated:** 2026-11-27 16:20 UTC
+- **Updated:** 2026-11-27 16:16 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -52,7 +52,7 @@ Consolidate lint and GitHub Actions diagnostics under a unified `.takeout/report
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Pending final consolidation commit
+- **Commit SHA:** e2cb50475e2bb1b96740d745b5cf794583b584fe
 - **Changed paths:** Unified lint and Actions generators, shared index and Ledger ingestion, workflows, report README, and initialization policy
 - **Readback:** Final committed paths read back
 - **Checks:** Not performed
@@ -61,7 +61,7 @@ Consolidate lint and GitHub Actions diagnostics under a unified `.takeout/report
 ## 7. Completion
 
 - **Status:** Done
-- **Completed at:** 2026-11-27 16:20 UTC
+- **Completed at:** 2026-11-27 16:16 UTC
 - **Completion basis:** Unified index/history/report paths; one Ledger and README; no family report directories or persistent Markdown report copies
 
 ## 8. Hosted Validation

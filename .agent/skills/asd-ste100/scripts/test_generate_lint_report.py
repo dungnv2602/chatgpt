@@ -80,9 +80,6 @@ class ReportGeneratorTests(unittest.TestCase):
             self.assertEqual(report["checks"][0]["output"],checks[0]["output"])
             self.assertEqual(report["findings"][0]["comparison"],"new")
             self.assertTrue(report["findings"][0]["fingerprint"])
-                        for heading in ("## 1. Executive summary","## 3. Exact evaluation coverage",
-                            "## 4. Per-file result matrix","## 6. Workflow and validation checks",
-                            "## 8. Complete per-file diagnostics"):
             integrity=json.loads((first/"integrity.json").read_text(encoding="utf-8"))
             self.assertEqual(integrity["files"]["report.json"],
                              hashlib.sha256((first/"report.json").read_bytes()).hexdigest())
@@ -161,7 +158,7 @@ class ReportGeneratorTests(unittest.TestCase):
                 status="Passed", task_id="20261127-090000", event="push",
             )
             report = json.loads((output / "report.json").read_text(encoding="utf-8"))
-                        self.assertEqual(report["source_task_id"], "20261127-090000")
+            self.assertEqual(report["source_task_id"], "20261127-090000")
 
     def test_scheduled_report_does_not_claim_a_task(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -172,7 +169,7 @@ class ReportGeneratorTests(unittest.TestCase):
                 status="Passed", task_id="20261127-090000", event="schedule",
             )
             report = json.loads((output / "report.json").read_text(encoding="utf-8"))
-                        self.assertIsNone(report["source_task_id"])
+            self.assertIsNone(report["source_task_id"])
 
 
 if __name__=="__main__":
