@@ -21,9 +21,9 @@ At quiescence, deduplicate essential input requests. Present exactly one questio
 
 Request input only when necessary to resolve an authority, governance, safety, access, privacy, or materially outcome-changing boundary. Otherwise, decide and proceed within scope.
 
-## Approval
+## Approval and execution cue
 
-Approval is explicit scope authorization, not status or eligibility. A concise `Approve` applies only to the immediately preceding proposal and scope. Record it.
+Approval is explicit scope authorization, not status or eligibility, and does not itself start execution. A concise `Approve` applies only to the immediately preceding proposal and scope. After one or more approvals, wait for the explicit work-start cue `proceed` or `execute`. If the user omits the cue, remind them briefly to provide it; do not start the batch. When the cue is given, run authorized work to quiescence, then present essential input questions one at a time, waiting for each answer before asking the next. Record approval and input scope.
 
 ## Delivery
 
