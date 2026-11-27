@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27 18:01 +07:00:** Session initialization started by `/start`. Recording startup notice before foundational skill retrieval. Mandatory startup CI P0 batch will run under The Worker; hosted CI results remain out of scope.
+- **2026-11-27 18:01 +07:00:** Startup P0 batch: selected Refactor Skills child `20261127-173000-04` for the indexed lint-report regression-test failure. The latest report contains both failed assertions and their complete output. Next: update task selection, inspect the generator/template/test contract, and implement the narrow repair. Hosted CI results remain out of scope.
 - **2026-11-27:** Correcting task-parent selection: independent objectives require separate parents; Document Standards consolidation was misparented under the CI/reporting task and is now tracked under its own parent.
 - **2026-11-27:** Consolidation request captured as paused subtask `20261127-173000-02` under Refactor Skills: merge GitHub Actions, CI Ledger, Decision Governance, and Document Standards into The Worker and delete the separate skill directories, deferred behind P0.
 
