@@ -6,7 +6,7 @@
 - **ID:** 20261126-232913-03
 - **Parent Task ID:** 20261126-232913
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -14,7 +14,7 @@
 - **Dependencies:** 20261126-232913-01
 - **Required:** Yes
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-26 23:31 UTC
+- **Updated:** 2026-11-26 23:50 UTC
 
 ## 1. Objective
 Implement commit-based CI resolution and durable finding identity/history across recurrence.
@@ -43,7 +43,13 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 - **Next:** Execute after dependencies are complete.
 
 ## 6. Current State
-Ready; implementation has not started.
+Done. Commit-based resolution, optional validation metadata, schema migration from 1.5.0, recurrence history retention, and removal of destructive retirement are implemented. Regression coverage is updated but unrun.
+
+## 8. Completion Record
+- **Status:** Done
+- **Completed at:** 2026-11-26 23:50 UTC
+- **Completion basis:** All six acceptance criteria are implemented and regression coverage exists. Remote read-back verified. Tests were not executed.
+- **Evidence:** Ledger SHA e2f423983c7339d746b561f116fe38d0219792c3; schema SHA 2532b58d6dd529e4d22dc755e0247676d2f38231; test SHA b93d6f31e2f0c8b2c3a8d9be06b0bf624cd006b4.
 
 ## 7. Evidence
 - **Commit SHA:** Not applicable yet.
