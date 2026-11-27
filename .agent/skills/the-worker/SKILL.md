@@ -34,22 +34,22 @@ Follow the [GitHub Actions skill](../github-actions/SKILL.md). CI is not an init
 
 Use `.takeout/reports/gh_ac_reports/README.md` for workflow evidence. Use `.takeout/reports/lint_reports/README.md` for lint findings. Do not run repository scripts locally or poll CI.
 
-CI failure remediation, including autonomous execution of CI-generated P0 batches, is governed by the [GitHub Actions skill](../github-actions/SKILL.md). The Worker retains task selection, progress records, board maintenance, task maintenance, and closeout.
+The [GitHub Actions skill](../github-actions/SKILL.md) governs CI failure remediation, including autonomous execution of CI-generated P0 batches. The Worker retains task selection, progress records, board maintenance, task maintenance, and closeout.
 
-Mark a CI remediation subtask Done immediately after its fix is committed to the intended branch, the commit is verified, changed files are read back, and the SHA plus remediation summary are recorded. Hosted validation is never a completion gate; do not inspect hosted results unless the user explicitly triggers results review. A parent task becomes Done only after every required subtask is Done.
+The Worker marks a CI remediation subtask Done after committing its fix to the intended branch, checking the commit, reading back changed files, and recording the SHA plus remediation summary. Hosted validation never gates completion. Do not inspect hosted results unless the user explicitly triggers results review. A parent task becomes Done only after every required subtask reaches Done.
 
 ## CI-generated P0 batch execution
 
 When the CI Ledger generates P0 tasks, The Worker must execute them under the user's standing authorization, without a separate task approval or validation gate. Follow the [CI Ledger skill](../ci-ledger/SKILL.md) for finding governance and the [GitHub Actions skill](../github-actions/SKILL.md) for technical remediation.
 
 1. Identify the eligible batch from current task records and Ledger linkage. Do not scan historical reports or run periodic Ledger intake.
-2. Check scope, dependencies, decision constraints, safety, access, and existing user restrictions. Execute independently safe tasks; block and escalate only tasks requiring a decision or conflicting with an accepted constraint. Standing authorization never overrides safety or governance.
+2. Check scope, dependencies, decision constraints, safety, access, and existing user restrictions. Execute independently safe tasks. Block and escalate only tasks that require a decision or conflict with an accepted constraint. Standing authorization never overrides safety or governance.
 3. Execute eligible tasks sequentially. Keep one task selected as Current Execution at a time. Update the pointer and task markers when switching.
 4. Commit each coherent fix and update the task record and board. Record evidence and a checkpoint before switching tasks.
 5. Do not wait for validation of one task before continuing with other independent eligible tasks when the user's deferred-results-review instruction applies. Respect shared-file conflicts and dependencies.
-6. If one task is blocked by an exceptional gate, record the exact blocker. Continue with independent eligible tasks.
-7. Immediately after each coherent fix commit, verify the intended-branch commit, read back every changed path, and record the full SHA plus remediation summary in the CI child record. Mark that child Done and update the task board in the same task-maintenance pass. Do not wait for hosted validation.
-8. When every required child under a parent is Done, complete the parent closeout transaction and mark the parent Done only after its archive, retention-index entries, and board read-back verify. Do not keep a completed child open for deferred validation. Do not poll, dispatch, rerun, or inspect hosted CI results unless the user explicitly requests results review. If later CI identifies remaining errors, let Ledger ingestion create or reopen the corresponding finding and remediation task; do not retroactively reopen a completed child solely because hosted validation is pending or failed.
+6. If an exceptional gate blocks one task, record the exact blocker. Continue with independent eligible tasks.
+7. After each coherent fix commit, check the intended-branch commit. Read back every changed path. Record the full SHA and remediation summary in the CI child record. Mark the child Done and update the task board in the same task-maintenance pass. Do not wait for hosted validation.
+8. Close a parent only after every required child reaches Done. Complete the parent closeout transaction. Check the archive, retention-index entries, and board read-back. Do not keep a completed child open for deferred validation. Do not poll, dispatch, rerun, or inspect hosted CI results unless the user explicitly requests results review. If later CI identifies remaining errors, let Ledger ingestion create or reopen the corresponding finding and remediation task. Do not retroactively reopen a completed child solely because hosted validation remains pending or fails.
 
 ### User notice and prompt gate
 
@@ -58,11 +58,11 @@ For every `/start`, the assistant must complete the CI-generated P0 batch before
 1. After baseline initialization, activate the CI Ledger and GitHub Actions skills.
 2. Before inspecting or executing the batch, send this notice in every conversation mode:
 
-   **CI P0 batch execution starting.** I’m processing all eligible CI-generated P0 tasks before taking your prompt. Please wait until I confirm that I’m ready.
+   **CI P0 batch execution starting.** I’m processing all eligible CI-generated P0 tasks before taking your prompt. Please wait until I say I am ready.
 
 3. Do not process the user's substantive prompt while the batch is active.
 4. Identify every eligible CI Ledger-generated P0 task from active task records and Ledger linkage. Do not include unrelated P0 tasks.
-5. Execute the eligible tasks under the batch procedure above. Continue independent tasks when a task is blocked.
+5. Execute the eligible tasks under the batch procedure above. Continue independent tasks when an exceptional gate blocks one task.
 6. After all eligible remediation commits are complete, stop before hosted CI results review. Preserve the user's explicit results-review trigger.
 7. Then tell the user: **Ready to take your prompt.** State any blockers. Do not claim hosted validation or task closeout.
 
@@ -83,7 +83,7 @@ The task-activated [CI Ledger skill](../ci-ledger/SKILL.md) governs finding inta
 - Do not load project skills automatically at the start of a new conversation.
 - Follow the explicit initialization cues in .agent/SESSION_START.md.
 - Treat workspace/task_board.md as the task index.
-- Treat each task folder's task.md as the authoritative parent record; child records under subtasks/ are authoritative for their own work units.
+- Treat each task folder's task.md as the authoritative parent record. Child records under subtasks/ are authoritative for their own work units.
 - Follow the user's repository, branch, workspace, and approval restrictions.
 - Do not let a task record override a newer user instruction.
 
@@ -143,7 +143,7 @@ This boundary applies to every future task and every tool call, not only archivi
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
 - workspace/TASK_TEMPLATE.md defines the parent task.md format for task folders.
 - workspace/SUBTASK_TEMPLATE.md defines child subtask records.
-- workspace/tasks/ contains active task folders; legacy flat task records remain only during the ADR-0004 migration.
+- workspace/tasks/ contains active task folders. Legacy flat task records remain only during the ADR-0004 migration.
 - workspace/draft/ contains proposals that need user review.
 - workspace/adr/ contains accepted ADRs awaiting implementation or confirmation.
 - workspace/analysis/ contains evidence-based repository analysis snapshots.
@@ -294,10 +294,10 @@ The Worker operates autonomously by default when the user requests work or gives
 - Make ordinary implementation, sequencing, formatting, and reversible trade-off decisions independently. Choose the option that best satisfies the user's stated goals and established constraints. Do not interrupt the user for routine preferences or decisions that can be made safely from available evidence.
 - Continue through dependent steps and necessary follow-up work. Do not stop at a partial milestone, diagnosis, or handoff when the next steps are authorized and feasible.
 - Reuse standing authorization and approvals that apply to the current scope. Do not request the same approval again. User approval of an objective includes its ordinary, necessary execution and maintenance steps.
-- Interpret repository boundaries and governance gates together with the user's standing and task-specific authorizations. A boundary is a scope constraint, not a reason to request repeated permission when the requested work and an existing explicit authorization already cover the necessary read-only audit, exact-path retrieval, evidence review, or maintenance step. Apply the narrowest authorized scope and record the rationale. Do not expand that authorization to writes, destructive actions, or unrelated audits.
+- Interpret repository boundaries and governance gates together with the user's standing and task-specific authorizations. A boundary constrains scope. Do not request repeated permission when an existing authorization covers the necessary read-only audit, exact-path retrieval, evidence review, or maintenance step. Apply the narrowest authorized scope and record the rationale. Do not expand that authorization to writes, destructive actions, or unrelated audits.
 - When a task's acceptance criteria, an earlier approval, or a standing instruction already authorizes a repository audit or cross-file review, complete it without asking again. Use approved directories and exact-path reads, and do not turn a workflow restriction against unrequested audits into an unnecessary approval prompt.
 - Keep optional scope expansion separate. Do not perform unrelated improvements, materially expand scope, bypass access or safety restrictions, weaken validation, or make irreversible or high-impact changes without the required authorization.
-- Ask for user input only when it is absolutely necessary: a missing essential requirement, unresolved ambiguity that materially changes the outcome, a permission or access boundary, a material risk or irreversible choice, or an explicit policy/governance requirement that cannot be satisfied by existing authorization. Ask one focused question and continue other safe, authorized work where possible.
+- Ask for user input only when a decision requires it. Examples include a missing essential requirement or ambiguity that materially changes the outcome. Ask when a permission boundary, material risk, irreversible choice, or explicit policy/governance requirement prevents safe progress. Use existing authorization when it covers the work. Ask one focused question. Continue other safe, authorized work where possible.
 - If input is not necessary, do not pause, seek confirmation, or offer the user a choice merely to defer a decision. Record the decision and rationale in the task record and proceed.
 - When blocked, complete every independent, safe, authorized step, then record the exact blocker and minimum required user input. Never represent incomplete work as complete.
 
@@ -343,7 +343,7 @@ The task-specific `.agent/skills/decision-governance/SKILL.md` owns Draft, ADR, 
 - Do not move an implementation task to Ready or In Progress without accepted ADR linkage.
 - Create a Draft when no accepted ADR covers the proposed work.
 - Under accepted ADR-0004, migrate active flat task records to task folders while preserving IDs and content. Do not rewrite historical flat archives.
-- Ledger-generated P0 tasks are Approved and Ready under standing authorization; accepted ADR constraints still apply but separate ADR review is not an intake gate.
+- Ledger-generated P0 tasks enter as Approved and Ready under standing authorization. Accepted ADR constraints still apply. Separate ADR review does not gate intake.
 - Keep the task board ADR column aligned with each task record.
 - Archive an ADR only after all linked tasks reach Done status and every Confirmation criterion passes.
 - Never add ADRs to the 90-day archive-retention index.
@@ -383,9 +383,9 @@ The Ledger creates Proposed parent task folders with CI remediation subtasks in 
 4. **Grouping and task creation:** Group lint findings by affected file (or the shared lint-tooling work target) and Actions findings by workflow. Create or reuse one parent task per work target. Each stable remediation group—such as one lint rule for a file or one Actions job/step/category—is a child subtask. Never create a standalone per-rule, per-step, or per-finding CI task. Every generated parent and child is Assistant-originated, P0, Approved, and Ready. Do not wait for separate approval or ADR review. Do not set it as Current Execution during ingestion. Record parent Task IDs in `task_refs`, child IDs in `subtask_refs`, and migrated former standalone IDs in `legacy_task_refs`.
 5. **Recurring evidence:** Later observations refresh an existing linked finding or task. Do not create duplicates. A later ingestion run also links active lint findings that have no task references. Do not scan historical report files or create tasks for untracked recurring baseline findings.
 6. **Evidence bounds:** Keep at most five report references per finding: the first observation and the four most recent distinct report paths. Preserve cumulative occurrence count, first-seen and last-seen timestamps. Task records retain finding IDs and concise evidence links. Never copy complete logs or occurrence histories.
-7. **Resolution:** Set a remediation finding to `resolved` when the intended-branch fix commit is verified and its SHA, remediation summary, and resolved timestamp are recorded. Successful hosted validation is not required for remediation resolution. Store hosted validation separately as optional metadata (Pending, Passed, or Failed). For `accepted`, record risk acceptance. For `false_positive`, add a closure note. For `duplicate`, provide a different valid finding ID. New evidence may reopen the same finding identity while preserving the prior resolution in `resolution_history`.
-8. **Closeout gate:** A CI remediation subtask becomes Done after its own commit-based acceptance criteria pass and evidence is recorded. Before archiving the parent task as Done, check that every required subtask is Done and every linked finding has a valid terminal/resolution record. Do not close a parent while any required child remains open.
-9. **Finding history retention:** Archiving a parent task does not delete terminal findings from the Ledger. Retain finding identity, resolution history, parent `task_refs`, child `subtask_refs`, and migration provenance in `legacy_task_refs` so recurrence can reopen the same finding and link new remediation work. Do not retire or delete terminal finding identities solely because their task was archived.
+7. **Resolution:** Set a remediation finding to `resolved` after the Worker checks the intended-branch fix commit and records its SHA, remediation summary, and resolved timestamp. Successful hosted validation is not required for remediation resolution. Store hosted validation separately as optional metadata (Pending, Passed, or Failed). For `accepted`, record risk acceptance. For `false_positive`, add a closure note. For `duplicate`, provide a different valid finding ID. New evidence may reopen the same finding identity while preserving the prior resolution in `resolution_history`.
+8. **Closeout gate:** A CI remediation subtask reaches Done after its own commit-based acceptance criteria pass and the Worker records the evidence. Before the Worker archives the parent as Done, the Worker checks that every required subtask is Done and every linked finding has a valid terminal/resolution record. Do not close a parent while any required child remains open.
+9. **Finding history retention:** Archiving a parent task does not delete terminal findings from the Ledger. Retain finding identity, resolution history, parent `task_refs`, child `subtask_refs`, and migration provenance in `legacy_task_refs`. These fields let recurrence reopen the same finding and link new remediation work. Do not retire or delete terminal finding identities solely because the Worker archived their task.
 
 The capture and sweep publishers share the non-cancelling `gh-ac-report-writer` concurrency group. They update report indexes, the Ledger, task files, the board, and task links. The diagnostics sweep ignores Ledger-only or board-only publication to prevent recursion. Task-archive pushes may trigger the sweep. However, archives never retire terminal findings. The sweep preserves finding identity, resolution history, `task_refs`, `subtask_refs`, and `legacy_task_refs`. Scheduled archive cleanup also uses this group.
 
@@ -409,17 +409,17 @@ Task closeout is a mandatory workflow transaction. The Worker owns it in every c
 
 Use only the canonical task statuses in this skill: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Do not use alternate values such as "Completed".
 
-The Worker closes a parent task only after every required subtask is Done, the complete task folder is archived and read back, all exact archive files are indexed, and the task board is reconciled.
+The Worker closes a parent task after every required subtask reaches Done. The Worker then reads back the complete task folder archive, checks each exact archive file, registers every archive file in the retention index, and reconciles the task board.
 
 **Archive gate — do not mark an active parent Done prematurely.** Keep the active parent In Progress / Archived: No until the complete folder archive exists and matches the prepared final folder. Prepare final Done/Cancelled and Archived: Yes metadata only in the archive copy. Archive the complete directory, including task.md, subtasks/README.md, and every child record. Read back every file. Register each exact archived file path and timestamp in the retention index. Only after all copies and index entries verify may you delete the active task folder and reconcile the board. Move the board row to Historical only after the archive commit exists and link that commit. If any step fails, leave the task open and report the exact blocker.
 
-**Archive compatibility:** New task archives use `.archive/task/<task-id>/`. Include the parent, subtask index, and every child record. Use one UTC archive timestamp for every file. The cleanup workflow retains and deletes the folder as one unit. Historical flat task archives remain immutable and readable at their exact paths. Never convert or rewrite them. The Ledger resolves retained archives through exact index entries and adds a Related tasks link when recurrence creates a new parent. It does not scan archive directories. If an indexed file is missing, stop and report the integrity error. Do not rewrite or reconstruct the archive. Remove a stale index entry only after exact-path history lookup confirms that the original is unrecoverable and the user explicitly approves the index correction. Record the disposition in the discussion register and parent task. See `.archive/README.md`.
+**Archive compatibility:** New task archives use `.archive/task/<task-id>/`. Include the parent, subtask index, and every child record. Use one UTC archive timestamp for every file. The cleanup workflow retains and deletes the folder as one unit. Historical flat task archives remain immutable and readable at their exact paths. Never convert or rewrite them. The Ledger resolves retained archives through exact index entries and adds a Related tasks link when recurrence creates a new parent. It does not scan archive directories. If an indexed file is missing, stop and report the integrity error. Do not rewrite or reconstruct the archive. Delete a stale index entry only after exact-path history lookup confirms that the original is unrecoverable and the user explicitly approves the index correction. Record the disposition in the discussion register and parent task. See `.archive/README.md`.
 
 When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence. For Ledger-generated tasks, require terminal status and valid resolution, accepted-risk, false-positive, or duplicate evidence for every linked finding. A grouped task with any non-terminal finding cannot close as Done.
 2. Before you prepare the archive copy, move any report files that the historical record needs to `.archive/reports/`. Register each exact path and timestamp. Update the task's report links to the archive paths. Then prepare the final archive copy with status Done or Cancelled. Add its UTC archive timestamp in `YYYY-MM-DDTHH:MM:SSZ` format. Include complete verification and a final handoff. Set Archived to Yes only in that archive copy.
-3. Check whether `.archive/task/<task-id>/task.md` or any expected child path already exists. Read existing exact paths and compare complete content. Reuse only exact matches; stop on differences. Never overwrite an archive record.
+3. Check whether `.archive/task/<task-id>/task.md` or any expected child path already exists. Read existing exact paths and compare complete content. Reuse only exact matches. Stop on differences. Never overwrite an archive record.
 4. If no archive folder exists, create the complete folder once, preserving the task ID, filenames, and child structure.
 5. Read back every archived file. Compare each with its prepared final content and verify the archive commit and changed-path metadata.
 6. Add one retention-index entry for each exact archived file path, including parent and child records, with its UTC archive timestamp. Preserve existing entries. Do not enumerate `.archive/task/` or backfill unrelated records.
@@ -434,7 +434,7 @@ When acceptance criteria are met:
 10. Retrieve the committed task board. Check that the closed task is absent from active sections and appears exactly once in Historical. Check its links to the archive path and archival commit. Check that Current Execution matches the selection rules.
 11. Check that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to check its content or recover board details. Do not change the archived record.
 12. Only after these checks, report the task as closed and provide the appropriate handoff.
-13. For a Done Ledger-generated task, verify that each linked terminal finding remains in the Ledger with its resolution, resolution_history, and prior task_refs intact. No `findings_retired` result is expected. Do not poll, dispatch, or manually edit the Ledger. If a finding identity or its history is missing, record it as an integrity blocker and preserve the archived task and evidence.
+13. For a Done Ledger-generated task, verify that each linked terminal finding remains in the Ledger with its resolution, resolution_history, and prior task_refs intact. Expect no `findings_retired` result. Do not poll, dispatch, or manually edit the Ledger. If a finding identity or its history is missing, record it as an integrity blocker and preserve the archived task and evidence.
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
 
