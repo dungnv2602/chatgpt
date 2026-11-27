@@ -181,3 +181,13 @@ This procedure applies before task selection, status changes, blocker declaratio
 ## CI and Actions operational ownership
 
 The Worker owns both CI Ledger and GitHub Actions operations. Its references define policy and procedures. The report producer, composite action, workflow, report schema, report template, Ledger schema, shared eligibility module, report indexes, and immutable evidence remain in their report-family paths because existing workflows and scripts consume those paths. Treat those paths as Worker-governed implementation assets, not independent operational owners. Consolidation must preserve path contracts until a coordinated migration updates every consumer.
+
+
+## Canonical CI implementation
+
+- Scripts and regression tests: `.agent/skills/the-worker/scripts/`.
+- Schemas and templates: `.agent/skills/the-worker/assets/`.
+- Capture action: `.takeout/reports/gh_ac_reports/actions/capture/action.yml`.
+- Report indexes, history, and Ledger state remain in `.takeout/reports/` as data outputs.
+
+Do not maintain duplicate implementations in report-family script directories. The capture action calls the Worker scripts.

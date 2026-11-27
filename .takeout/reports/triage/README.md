@@ -32,4 +32,4 @@ Read only indexed reports. Do not scan history, backfill, reset, run scripts/tes
 
 ## Worker ownership and implementation locations
 
-The Worker skill and its references govern this report family's operations. The generator, tests, schema, ledger state, and shared eligibility module remain in this directory structure to preserve existing workflow and script path contracts. These locations are implementation assets, not independent operational entry points.
+The Worker skill and its references govern this report family's operations. The Ledger generator, tests, schema, and shared eligibility policy are maintained under `.agent/skills/the-worker/`. Ledger state remains here. This is report data, not an independent operational owner.
