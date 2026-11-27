@@ -2,30 +2,30 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#1011](https://github.com/dungnv2602/chatgpt/actions/runs/46006948660)
-- **Run ID / attempt:** 46006948660 / 1
+- **Run:** [#1012](https://github.com/dungnv2602/chatgpt/actions/runs/46007505787)
+- **Run ID / attempt:** 46007505787 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / d2e5abb40b6df969d74a748df90a135c47b34f59
-- **Source task:** 20261127-173000-20
+- **Branch / commit:** gpt / 50b029374102b3a593c5e63dd38f54586158ac8e
+- **Source task:** 20261127-173000-21
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** f63fb0023e2c2c4fe78cf71fa7edc50ad0aa2b17
-- **Linter source SHA:** d2e5abb40b6df969d74a748df90a135c47b34f59
-- **Generated (UTC):** 2026-11-27T13:26:56.870622+00:00
+- **Baseline SHA:** d2e5abb40b6df969d74a748df90a135c47b34f59
+- **Linter source SHA:** 50b029374102b3a593c5e63dd38f54586158ac8e
+- **Generated (UTC):** 2026-11-27T13:29:51.391862+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 3 |
-| Files that failed | 2 |
-| Files with findings | 3 |
-| Total findings | 14 |
-| Hard findings | 10 |
-| Advisory findings | 4 |
-| New findings | 12 |
+| Files evaluated | 2 |
+| Files that failed | 1 |
+| Files with findings | 2 |
+| Total findings | 4 |
+| Hard findings | 1 |
+| Advisory findings | 3 |
+| New findings | 2 |
 | Recurring findings | 2 |
-| Resolved findings | 4 |
+| Resolved findings | 12 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -41,8 +41,7 @@
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
 - workspace/task_board.md
-- .agent/skills/the-worker/references/ci-ledger.md
-- .agent/skills/asd-ste100/SKILL.md
+- workspace/README.md
 
 ## 4. Per-file result matrix
 
@@ -50,9 +49,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1298 | 0.2 | 1 |
-| .agent/skills/the-worker/references/ci-ledger.md | FAIL | 1 | 1 | 0 | 710 | 0.1 | 1 |
-| .agent/skills/asd-ste100/SKILL.md | PASS | 11 | 8 | 31 | 2615 | 0.4 | 0 |
+| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1264 | 0.2 | 1 |
+| workspace/README.md | PASS | 2 | 0 | 0 | 510 | 0.4 | 0 |
 
 ## 5. Findings by rule
 
@@ -60,11 +58,8 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| marketing-adjective | 5 |
-| present-perfect | 3 |
-| synonym-rotation | 3 |
-| nominalization | 2 |
-| passive-voice | 1 |
+| passive-voice | 3 |
+| synonym-rotation | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -96,7 +91,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.403s
+Ran 6 tests in 0.462s
 
 OK
 ~~~
@@ -109,7 +104,7 @@ OK
 ~~~text
 ........
 ----------------------------------------------------------------------
-Ran 8 tests in 0.002s
+Ran 8 tests in 0.007s
 
 OK
 ~~~
@@ -129,9 +124,8 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 3 changed Markdown sources (439 available as link targets) and 35 local Markdown links.
-Found 28 unresolved local Markdown targets or anchors.
-workspace/task_board.md: missing Markdown file: 21-ci-remediation-review-semicolon-findings-in-workspace-readme-md.md
+Scanned 2 changed Markdown sources (439 available as link targets) and 49 local Markdown links.
+Found 27 unresolved local Markdown targets or anchors.
 workspace/task_board.md: missing Markdown file: 22-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-refe.md
 workspace/task_board.md: missing Markdown file: 23-ci-remediation-review-long-sentence-findings-in-agent-skills-the-worker-skill-m.md
 workspace/task_board.md: missing Markdown file: 24-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md
@@ -167,84 +161,76 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **new** · fingerprint: aa0de8573960d54a21c2d1d2
-  - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changed
-- **synonym-rotation** · .agent/skills/asd-ste100/SKILL.md:73:128 · **new** · fingerprint: 80139a54a075b106eac7c23c
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirm
-- **nominalization** · .agent/skills/asd-ste100/SKILL.md:74:53 · **new** · fingerprint: 7e86fc5d602e4865ed4a0ff6
-  - **Level:** advisory-free
-  - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
-  - **Matched text:** Perform an analysis
-- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:79:203 · **new** · fingerprint: 7a15da17f8212acf9cbcd80a
+- **passive-voice** · workspace/README.md:24:210 · **new** · fingerprint: 66ac36e2cdb3db3683c0c8f2
   - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** have received
-- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:81:140 · **new** · fingerprint: 320768d857c6a3e84654f3f5
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+- **passive-voice** · workspace/README.md:44:209 · **new** · fingerprint: bdeb2ff1622490b994e19f76
   - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has completed
-- **nominalization** · .agent/skills/asd-ste100/SKILL.md:89:56 · **new** · fingerprint: fa833ca0d8a25be575faf6e0
-  - **Level:** advisory-free
-  - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
-  - **Matched text:** perform an analysis
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:79 · **new** · fingerprint: 12a9fb2640f958cc7e75f621
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** seamless
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:89 · **new** · fingerprint: c50be8a609eda6ecc738029b
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** robust
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:107 · **new** · fingerprint: d7e2c69987f9328ac247ac53
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** cutting-edge
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:121 · **new** · fingerprint: 0d5ed7f9257c40733f5c321d
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** effortless
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:133 · **new** · fingerprint: 2673e9a5ae5dd03778f880c9
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** blazing-fast
-- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:113:134 · **new** · fingerprint: 361fe239198e1c7837a878ba
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has stopped
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
 
 ### Recurring findings
 
-- **synonym-rotation** · workspace/task_board.md:72:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:71:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
-- **passive-voice** · workspace/task_board.md:72:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:71:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
 
 ### Resolved findings
 
-- **passive-voice** · .agent/SESSION_START.md:22:209 · **resolved** · fingerprint: 00654de2a95772d4a870e55f
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** being fetched
-- **synonym-rotation** · .agent/SESSION_START.md:177:7 · **resolved** · fingerprint: 93101ce1787c7b9208b4031d
+- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **resolved** · fingerprint: aa0de8573960d54a21c2d1d2
   - **Level:** advisory-free
-  - **Message:** 'retrieve' and 'fetch' name the same action. Pick one and use it every time.
-  - **Matched text:** retrieved
-- **present-perfect** · .agent/SESSION_START.md:253:154 · **resolved** · fingerprint: 89880d1a1650656e6b26d226
+  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
+  - **Matched text:** changed
+- **synonym-rotation** · .agent/skills/asd-ste100/SKILL.md:73:128 · **resolved** · fingerprint: 80139a54a075b106eac7c23c
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** confirm
+- **nominalization** · .agent/skills/asd-ste100/SKILL.md:74:53 · **resolved** · fingerprint: 7e86fc5d602e4865ed4a0ff6
+  - **Level:** advisory-free
+  - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
+  - **Matched text:** Perform an analysis
+- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:79:203 · **resolved** · fingerprint: 7a15da17f8212acf9cbcd80a
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** have passed
-- **long-sentence** · .agent/SESSION_START.md:278:1 · **resolved** · fingerprint: 85322c6fe1ce661af2777338
+  - **Matched text:** have received
+- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:81:140 · **resolved** · fingerprint: 320768d857c6a3e84654f3f5
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has completed
+- **nominalization** · .agent/skills/asd-ste100/SKILL.md:89:56 · **resolved** · fingerprint: fa833ca0d8a25be575faf6e0
   - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
+  - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
+  - **Matched text:** perform an analysis
+- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:79 · **resolved** · fingerprint: 12a9fb2640f958cc7e75f621
+  - **Level:** advisory-free
+  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
+  - **Matched text:** seamless
+- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:89 · **resolved** · fingerprint: c50be8a609eda6ecc738029b
+  - **Level:** advisory-free
+  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
+  - **Matched text:** robust
+- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:107 · **resolved** · fingerprint: d7e2c69987f9328ac247ac53
+  - **Level:** advisory-free
+  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
+  - **Matched text:** cutting-edge
+- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:121 · **resolved** · fingerprint: 0d5ed7f9257c40733f5c321d
+  - **Level:** advisory-free
+  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
+  - **Matched text:** effortless
+- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:133 · **resolved** · fingerprint: 2673e9a5ae5dd03778f880c9
+  - **Level:** advisory-free
+  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
+  - **Matched text:** blazing-fast
+- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:113:134 · **resolved** · fingerprint: 361fe239198e1c7837a878ba
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has stopped
 
 ## 8. Complete per-file diagnostics
 
@@ -257,106 +243,43 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 2
 - **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1298
+- **Words:** 1264
 - **Findings per 100 words:** 0.2
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/task_board.md:72:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:71:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
 
-- **passive-voice** · workspace/task_board.md:72:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:71:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
 
 
-### .agent/skills/the-worker/references/ci-ledger.md
-
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 1
-- **Hard findings:** 1
-- **Baseline:** 0
-- **Words:** 710
-- **Findings per 100 words:** 0.1
-
-#### Complete diagnostics
-
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **new** · fingerprint: aa0de8573960d54a21c2d1d2
-  - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changed
-
-
-### .agent/skills/asd-ste100/SKILL.md
+### workspace/README.md
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 11
-- **Hard findings:** 8
-- **Baseline:** 31
-- **Words:** 2615
+- **Findings:** 2
+- **Hard findings:** 0
+- **Baseline:** 0
+- **Words:** 510
 - **Findings per 100 words:** 0.4
 
 #### Complete diagnostics
 
-- **synonym-rotation** · .agent/skills/asd-ste100/SKILL.md:73:128 · **new** · fingerprint: 80139a54a075b106eac7c23c
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirm
-
-- **nominalization** · .agent/skills/asd-ste100/SKILL.md:74:53 · **new** · fingerprint: 7e86fc5d602e4865ed4a0ff6
-  - **Level:** advisory-free
-  - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
-  - **Matched text:** Perform an analysis
-
-- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:79:203 · **new** · fingerprint: 7a15da17f8212acf9cbcd80a
+- **passive-voice** · workspace/README.md:24:210 · **new** · fingerprint: 66ac36e2cdb3db3683c0c8f2
   - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** have received
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
 
-- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:81:140 · **new** · fingerprint: 320768d857c6a3e84654f3f5
+- **passive-voice** · workspace/README.md:44:209 · **new** · fingerprint: bdeb2ff1622490b994e19f76
   - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has completed
-
-- **nominalization** · .agent/skills/asd-ste100/SKILL.md:89:56 · **new** · fingerprint: fa833ca0d8a25be575faf6e0
-  - **Level:** advisory-free
-  - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
-  - **Matched text:** perform an analysis
-
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:79 · **new** · fingerprint: 12a9fb2640f958cc7e75f621
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** seamless
-
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:89 · **new** · fingerprint: c50be8a609eda6ecc738029b
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** robust
-
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:107 · **new** · fingerprint: d7e2c69987f9328ac247ac53
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** cutting-edge
-
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:121 · **new** · fingerprint: 0d5ed7f9257c40733f5c321d
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** effortless
-
-- **marketing-adjective** · .agent/skills/asd-ste100/SKILL.md:90:133 · **new** · fingerprint: 2673e9a5ae5dd03778f880c9
-  - **Level:** advisory-free
-  - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
-  - **Matched text:** blazing-fast
-
-- **present-perfect** · .agent/skills/asd-ste100/SKILL.md:113:134 · **new** · fingerprint: 361fe239198e1c7837a878ba
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has stopped
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
 
 ## 9. Structured evidence and integrity
 
