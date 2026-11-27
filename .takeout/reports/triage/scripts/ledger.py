@@ -10,7 +10,7 @@ if str(SHARED_ELIGIBILITY_PATH) not in sys.path:
     sys.path.insert(0, str(SHARED_ELIGIBILITY_PATH))
 from eligibility import actions_report_is_eligible, independent_actions_issues
 
-SCHEMA_VERSION = "1.7.0"
+SCHEMA_VERSION = "1.8.0"
 MAX_EVIDENCE_ROWS = 5
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
 LINT_BASELINE_CHECKS = (
@@ -208,24 +208,52 @@ def bootstrap_state(root, timestamp=None):
 
 def migrate_ledger(ledger, root):
     version = ledger.get("schema_version")
-    if version not in ("1.0.0", "1.1.0", "1.2.0", "1.3.0", "1.4.0", "1.5.0", "1.6.0", SCHEMA_VERSION):
+    supported = ("1.0.0", "1.1.0", "1.2.0", "1.3.0", "1.4.0", "1.5.0", "1.6.0", "1.7.0", SCHEMA_VERSION)
+    if version not in supported:
         raise LedgerError("Unsupported ledger schema version: " + str(version))
     if not isinstance(ledger.get("findings"), list):
         raise LedgerError("The ledger findings field must be an array")
-    if version != SCHEMA_VERSION:
-        ledger["schema_version"] = SCHEMA_VERSION
+    ledger["schema_version"] = SCHEMA_VERSION
     for finding in ledger["findings"]:
         if not isinstance(finding, dict):
             raise LedgerError("Every ledger finding must be an object")
         finding.setdefault("resolution_history", [])
         finding.setdefault("duplicate_of", None)
         finding.setdefault("accepted_risk", None)
-        finding.setdefault("task_refs", [])
-        finding.setdefault("subtask_refs", [])
-        finding.setdefault("legacy_task_refs", [])
+        old_task_refs = finding.setdefault("task_refs", [])
+        old_subtask_refs = finding.setdefault("subtask_refs", [])
+        legacy_refs = finding.setdefault("legacy_task_refs", [])
+        if not isinstance(old_task_refs, list) or not isinstance(old_subtask_refs, list) or not isinstance(legacy_refs, list):
+            raise LedgerError("Task references must be arrays: " + str(finding.get("finding_id")))
+        genuine_parents = []
+        for task_id in old_task_refs:
+            parent, _status = active_genuine_parent(root, task_id)
+            if parent:
+                genuine_parents.append(task_id)
+            elif isinstance(task_id, str) and task_id.strip():
+                legacy_refs.append(task_id)
+        genuine_children = []
+        for child_id in old_subtask_refs:
+            matched = False
+            for parent_id in genuine_parents:
+                parent_folder = root / "workspace" / "tasks" / parent_id / "subtasks"
+                for child_path in sorted(parent_folder.glob("[0-9][0-9]-*.md")):
+                    try:
+                        child_content = child_path.read_text(encoding="utf-8")
+                    except (OSError, UnicodeDecodeError):
+                        continue
+                    if task_metadata(child_content, "ID") == child_id and task_metadata(child_content, "Parent Task ID") == parent_id:
+                        genuine_children.append(child_id)
+                        matched = True
+                        break
+                if matched:
+                    break
+            if not matched and isinstance(child_id, str) and child_id.strip():
+                legacy_refs.append(child_id)
+        finding["task_refs"] = list(dict.fromkeys(genuine_parents))
+        finding["subtask_refs"] = list(dict.fromkeys(genuine_children))
+        finding["legacy_task_refs"] = list(dict.fromkeys(item for item in legacy_refs if isinstance(item, str) and item.strip()))
         finding.setdefault("parent_group", parent_group_for_finding(finding))
-        # Migrate the legacy success-only validation object to the explicit
-        # status field used by schema 1.6.0. Hosted validation remains optional.
         resolution_records = [finding.get("resolution")]
         resolution_records.extend(finding.get("resolution_history") or [])
         for resolution_record in resolution_records:
@@ -249,6 +277,10 @@ def migrate_ledger(ledger, root):
                 row = dict(row)
                 if "report_path" in row:
                     row["report_path"] = normalize_report_path(row["report_path"], allow_archived=True)
+                row.setdefault("source_task_id", None)
+                row.setdefault("parent_task_id", None)
+                row.setdefault("attribution_status", "historical_unattributed")
+                row.setdefault("source_commit_sha", None)
             normalized_evidence.append(row)
         finding["evidence"] = compact_evidence(normalized_evidence)
         if "task_group" not in finding:
@@ -263,25 +295,20 @@ def migrate_ledger(ledger, root):
             finding["task_group"] = task_group_key(*group_parts)
         if not isinstance(finding["task_group"], str) or not re.fullmatch(r"ci-[0-9a-f]{16}", finding["task_group"]):
             raise LedgerError("finding task_group must be a stable CI group ID")
-        if not isinstance(finding["task_refs"], list) or not all(
-            isinstance(item, str) and item.strip() for item in finding["task_refs"]
-        ):
-            raise LedgerError("finding task_refs must contain non-empty task IDs")
-        finding["task_refs"] = list(dict.fromkeys(finding["task_refs"]))
-        for field in ("subtask_refs", "legacy_task_refs"):
-            if not isinstance(finding[field], list) or not all(isinstance(item, str) and item.strip() for item in finding[field]):
-                raise LedgerError("finding " + field + " must contain non-empty IDs")
-            finding[field] = list(dict.fromkeys(finding[field]))
+        for field in ("task_refs", "subtask_refs", "legacy_task_refs"):
+            values = finding.get(field, [])
+            if not isinstance(values, list) or not all(isinstance(item, str) and item.strip() for item in values):
+                raise LedgerError("finding " + field + " must contain non-empty task IDs")
+            finding[field] = list(dict.fromkeys(values))
         if not isinstance(finding["parent_group"], str) or not re.fullmatch(r"ci-[0-9a-f]{16}", finding["parent_group"]):
-            raise LedgerError("finding parent_group must be a stable CI parent-group ID")
+            raise LedgerError("finding parent_group must be a stable legacy grouping ID")
     if not isinstance(ledger.get("ingestion_state"), dict):
         ledger["ingestion_state"] = bootstrap_state(root)
     state = ledger["ingestion_state"]
     state.setdefault("bootstrap_at_utc", utc_now())
     state.setdefault("processed_reports", [])
-    legacy_baseline_default = version != SCHEMA_VERSION
     baseline_scopes = state.setdefault("lint_baseline_scopes", {
-        "on_changed": legacy_baseline_default, "on_repo": legacy_baseline_default
+        "on_changed": version != SCHEMA_VERSION, "on_repo": version != SCHEMA_VERSION
     })
     if not isinstance(baseline_scopes, dict):
         raise LedgerError("ingestion_state.lint_baseline_scopes must be an object")
@@ -303,6 +330,7 @@ def migrate_ledger(ledger, root):
         or path in active_actions_paths
     )
     return ledger
+
 
 def normalize_signature(message):
     value = str(message or "").strip().lower()
@@ -329,9 +357,17 @@ def actions_severity(issue):
         return "medium"
     return "low"
 
-def evidence_record(report_path, observed_at, run_url, observation_id, note):
-    return {"report_path": report_path, "run_url": run_url or None, "observed_at_utc": observed_at,
-            "note": note or None, "observation_id": observation_id}
+def evidence_record(report_path, observed_at, run_url, observation_id, note, attribution=None, source_commit_sha=None):
+    attribution = attribution or {}
+    return {
+        "report_path": report_path, "run_url": run_url or None,
+        "observed_at_utc": observed_at, "note": note or None,
+        "observation_id": observation_id,
+        "source_task_id": attribution.get("source_task_id"),
+        "parent_task_id": attribution.get("parent_task_id"),
+        "attribution_status": attribution.get("attribution_status", "missing_marker"),
+        "source_commit_sha": source_commit_sha or None,
+    }
 
 
 def compact_evidence(rows, limit=MAX_EVIDENCE_ROWS):
@@ -347,6 +383,71 @@ def task_group_key(*parts):
     """Return a stable remediation-group ID from structured finding identity."""
     encoded = json.dumps(parts, ensure_ascii=False, separators=(",", ":"))
     return "ci-" + hashlib.sha256(encoded.encode("utf-8")).hexdigest()[:16]
+
+def source_task_id_from_message(message):
+    """Read one unambiguous Task-ID commit trailer."""
+    if not isinstance(message, str):
+        return None, "missing_marker"
+    markers = [line[len("Task-ID:"):].strip() for line in message.splitlines() if line.startswith("Task-ID:")]
+    if not markers:
+        return None, "missing_marker"
+    if len(markers) != 1:
+        return None, "ambiguous_marker"
+    task_id = markers[0]
+    if not re.fullmatch(r"\d{8}-\d{6}(?:-\d{2})*", task_id):
+        return None, "invalid_marker"
+    return task_id, "present"
+
+
+def active_genuine_parent(root, parent_id):
+    """Return an active user-originated parent task. Never infer a substitute."""
+    if not isinstance(parent_id, str) or not re.fullmatch(r"\d{8}-\d{6}(?:-\d{2})*", parent_id):
+        return None, "invalid_task_id"
+    path = root / "workspace" / "tasks" / parent_id / "task.md"
+    if not path.is_file():
+        return None, "parent_missing"
+    try:
+        content = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return None, "parent_unreadable"
+    if task_metadata(content, "ID") != parent_id:
+        return None, "parent_id_mismatch"
+    if task_metadata(content, "Origin") != "User":
+        return None, "parent_not_user_originated"
+    if task_metadata(content, "Status") not in TASK_ACTIVE_STATUSES:
+        return None, "parent_inactive"
+    index_path = path.parent / "subtasks" / "README.md"
+    if not index_path.is_file():
+        return None, "parent_index_missing"
+    return {"id": parent_id, "path": path, "content": content, "index_path": index_path}, "linked"
+
+
+def resolve_task_attribution(root, source_task_id, marker_status="present"):
+    """Resolve a parent or child Task-ID to its genuine active user parent."""
+    if marker_status != "present":
+        return {"source_task_id": source_task_id, "parent_task_id": None, "attribution_status": marker_status}
+    if not isinstance(source_task_id, str) or not re.fullmatch(r"\d{8}-\d{6}(?:-\d{2})*", source_task_id):
+        return {"source_task_id": source_task_id, "parent_task_id": None, "attribution_status": "invalid_task_id"}
+
+    parent, status = active_genuine_parent(root, source_task_id)
+    if parent:
+        return {"source_task_id": source_task_id, "parent_task_id": source_task_id, "attribution_status": "linked"}
+
+    tasks_root = root / "workspace" / "tasks"
+    for child_path in sorted(tasks_root.glob("*/subtasks/[0-9][0-9]-*.md")):
+        try:
+            child_content = child_path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+        if task_metadata(child_content, "ID") != source_task_id:
+            continue
+        parent_id = task_metadata(child_content, "Parent Task ID")
+        parent, parent_status = active_genuine_parent(root, parent_id)
+        if parent:
+            return {"source_task_id": source_task_id, "parent_task_id": parent_id, "attribution_status": "linked"}
+        return {"source_task_id": source_task_id, "parent_task_id": None, "attribution_status": parent_status}
+    return {"source_task_id": source_task_id, "parent_task_id": None, "attribution_status": status if status != "parent_missing" else "task_not_found"}
+
 
 def parent_group_for_finding(finding):
     """Group CI remediation children under the work-target parent."""
@@ -406,7 +507,7 @@ def diagnostic_signature(report, report_path, root, issue):
     return message
 
 
-def lint_observations(report, report_path):
+def lint_observations(report, report_path, root):
     if report.get("status") in IGNORED_LINT_STATUSES:
         return []
     findings = report.get("findings")
@@ -418,6 +519,9 @@ def lint_observations(report, report_path):
     if not run_id or not isinstance(attempt, int):
         raise LedgerError("Lint report has invalid run identity: " + report_path)
     observation_id = "lint:" + run_id + ":" + str(attempt)
+    source_task_id = report.get("source_task_id")
+    attribution = resolve_task_attribution(root, source_task_id, "present" if source_task_id else "missing_marker")
+    source_commit_sha = report.get("commit_sha")
     scope = report.get("scope") or "unknown"
     result = {}
     for item in findings:
@@ -440,7 +544,7 @@ def lint_observations(report, report_path):
             "title": (rule + ": " + message)[:240], "severity": lint_severity(item.get("level")),
             "task_group": task_group_key("lint", rule, PurePosixPath(file_path).as_posix()),
             "parent_group": task_group_key("lint-parent", PurePosixPath(file_path).as_posix()),
-            "evidence": evidence_record(report_path, observed_at, report.get("run_url"), observation_id, note),
+            "evidence": evidence_record(report_path, observed_at, report.get("run_url"), observation_id, note, attribution, source_commit_sha),
             "comparison": item.get("comparison", "new"),
         }
     return list(result.values())
@@ -477,6 +581,9 @@ def actions_observations(report, report_path, root):
     observed_at = capture.get("captured_at_utc")
     parse_time(observed_at)
     observation_id = "github_actions:" + str(workflow_id) + ":" + run_id + ":" + str(attempt)
+    source_task_id, marker_status = source_task_id_from_message(source.get("head_commit_message"))
+    attribution = resolve_task_attribution(root, source_task_id, marker_status)
+    source_commit_sha = source.get("head_sha")
     result = {}
     for issue in independent_actions_issues(report):
         category = str(issue.get("category") or "unknown").strip().lower()
@@ -498,7 +605,7 @@ def actions_observations(report, report_path, root):
             "title": title[:240], "severity": actions_severity(issue),
             "task_group": task_group_key("github_actions", workflow_path, job_name, step_name, category),
             "parent_group": task_group_key("github_actions-parent", workflow_name),
-            "evidence": evidence_record(report_path, observed_at, source.get("run_url"), observation_id, location),
+            "evidence": evidence_record(report_path, observed_at, source.get("run_url"), observation_id, location, attribution, source_commit_sha),
         }
     return list(result.values())
 
@@ -645,7 +752,7 @@ def finding_row(finding, report_prefix="../../"):
         + markdown_cell(finding.get("severity")) + " | "
         + markdown_cell(finding.get("title")) + " | " + evidence_links + " |"
     )
-def update_task_findings(content, findings, timestamp, task_path=None):
+def update_task_findings(content, findings, timestamp, task_path=None, promote_priority=True):
     headings = ("## 14. Ledger Findings", "## 13. Ledger Findings", "## 11. Ledger Findings")
     heading = next((item for item in headings if item in content), None)
     if heading is None:
@@ -681,7 +788,7 @@ def update_task_findings(content, findings, timestamp, task_path=None):
         return content, False
     new_priority = "P0"
     current_priority = re.search(r"(?m)^- \*\*Priority:\*\* (P[0-3])$", content)
-    if current_priority and int(new_priority[1:]) < int(current_priority.group(1)[1:]):
+    if promote_priority and current_priority and int(new_priority[1:]) < int(current_priority.group(1)[1:]):
         content = content[:current_priority.start(1)] + new_priority + content[current_priority.end(1):]
     updated = parse_time(timestamp).strftime("%Y-%m-%d %H:%M UTC")
     new_section = "\n".join(section_lines)
@@ -986,6 +1093,7 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
         raise LedgerError("Cannot read canonical subtask template: " + str(exc)) from exc
     created = parse_time(timestamp).strftime("%Y-%m-%d %H:%M UTC")
     legacy_text = ", ".join(sorted(set(legacy_task_ids or []))) or "None"
+    finding_ids = ", ".join(sorted({str(item.get("finding_id")) for item in findings}))
     replacements = {
         "# Subtask: [Title]": "# Subtask: CI remediation — " + markdown_cell(title),
         "- **ID:** <parent-task-id>-NN": "- **ID:** " + subtask_id,
@@ -995,87 +1103,69 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
         "- **Priority:** P2": "- **Priority:** P0",
         "- **Origin:** User": "- **Origin:** Assistant",
         "- **Approval:** Approved": "- **Approval:** Approved",
-        "- **Governing ADR(s):** None — non-implementation subtask": "- **Governing ADR(s):** None — non-implementation subtask",
+        "- **Governing ADR(s):** [Accepted ADR IDs, or None]": "- **Governing ADR(s):** None — no separate decision required",
         "- **Created:** YYYY-MM-DD HH:MM UTC": "- **Created:** " + created,
         "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
         "- **Ledger group:** None": "- **Ledger group:** " + chr(96) + group_id + chr(96),
         "- **Legacy Task IDs:** None": "- **Legacy Task IDs:** " + legacy_text,
-        "[State this subtask's independently completable outcome.]":
-            "Remediate the stable CI finding group " + group_id + " for the parent work target and record a verified fix commit.",
-        "[Define exact work included and excluded. Link the parent and governing ADR.]":
-            "Inspect the linked report evidence and exact diagnostics. Diagnose this finding group, implement only authorized changes, commit the fix to the intended branch, and record the commit SHA and concise summary. Parent task: " + parent_id + ". Hosted validation is separate metadata.",
+        "[Preserve this follow-up request verbatim.]":
+            "Automated remediation request from CI report ingestion for parent task " + parent_id + ". Finding IDs: " + finding_ids + ".",
+        "[Preserve later clarifications, constraints, decisions, and approvals verbatim with UTC timestamps.]":
+            "No later user clarification is recorded for this generated remediation child.",
+        "[State the independent outcome, exact boundaries, and link to the parent.]":
+            "Fix the linked CI finding group under parent task " + parent_id + ". Inspect exact report evidence, diagnose the cause, implement only authorized changes, commit the fix to the intended branch, and record its SHA and summary.",
         "1. [Observable criterion.]\n2. [Observable criterion.]":
-            "1. Execute under standing authorization, respecting safety and accepted ADR constraints.\n2. The fix is committed to the intended branch and the commit is verified.\n3. The commit SHA and concise remediation summary are recorded.\n4. Mark this subtask Done only after these criteria pass; hosted validation remains separate metadata.",
-        "[Record approved decisions, rationale, and unresolved questions.]":
-            "- **Completion rule:** Commit-based Done under ADR-0004.\n- **Hosted validation:** Separate Pending/Passed/Failed metadata; not a Done gate.",
-        "### YYYY-MM-DD HH:MM UTC\n\n- **Action:** [What changed or was checked.]\n- **Result:** [Observed outcome.]\n- **References:** [Exact paths, commits, URLs, or source IDs.]\n- **Next:** [Next action.]":
-            "### " + created + "\n\n- **Action:** Created or migrated a CI remediation child under parent " + parent_id + ".\n- **Result:** " + str(len(findings)) + " finding(s) linked. Mandatory P0 execution is authorized by standing directive.\n- **References:** .takeout/reports/triage/ledger.json and the evidence table below.\n- **Next:** Execute without separate approval; accepted decision constraints remain applicable.",
-        "[Verified state of this subtask.]": "Ready. Remediation must be executed under standing authorization.",
-        "- **Commit SHA:** [Required for code-remediation completion when applicable.]\n- **Changed paths:** [Exact paths.]\n- **Read-back:** [Exact verification result.]\n- **Other evidence:** [Relevant source or test evidence.]":
-            "- **Commit SHA:** Not available — no remediation commit yet.\n- **Changed paths:** None.\n- **Read-back:** Not performed.\n- **Other evidence:** See the Ledger Findings table and immutable source reports.",
+            "1. Remediation is committed to the intended branch and the commit is verified.\n2. Record the full SHA and concise summary.\n3. Mark Done after these checks; hosted validation is separate metadata.",
+        "[Record decisions and meaningful actions with results, references, and next step. Avoid duplicating the parent history.]":
+            "- **Execution:** P0 and Approved under standing authorization.\n- **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.",
+        "- **Commit SHA:** [Full SHA or Not committed]\n- **Changed paths:** [Exact paths]\n- **Readback:** [Exact result]\n- **Checks:** [Executed result or Not performed]\n- **Limitations:** [What evidence does not establish]":
+            "- **Commit SHA:** Not committed.\n- **Changed paths:** None.\n- **Readback:** Not performed.\n- **Checks:** Not performed.\n- **Limitations:** The report establishes a finding, not its root cause.",
         "[Exact next action, remaining work, dependencies, and constraints.]":
-            "Execute this CI P0 remediation under standing authorization, respect safety and accepted decision constraints, commit the fix, and record SHA and summary. Do not inspect hosted validation results unless the user explicitly triggers results review.",
+            "Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.",
     }
     for old, new in replacements.items():
         if old in content:
             content = content.replace(old, new, 1)
-    if "- **Status:** Ready" not in content or "- **Type:** CI remediation" not in content:
-        raise LedgerError("Canonical subtask template does not support CI remediation handoff")
+    if "- **Status:** Ready" not in content or "- **Type:** CI remediation" not in content or "- **Priority:** P0" not in content or "- **Approval:** Approved" not in content:
+        raise LedgerError("Canonical subtask template does not support approved Ready CI remediation handoff")
     content, _ = update_task_findings(content, findings, timestamp, task_path=task_path)
     return content
 
+
 def render_subtask_index(task_folder, task_id):
-    lines = ["# Subtasks — " + task_id, "", "Parent: [task.md](../task.md)", ""]
-    paths = sorted((task_folder / "subtasks").glob("[0-9][0-9]-*.md"))
+    lines = ["# Subtasks — " + task_id, "", "Parent: [task.md](../task.md)", "", "| ID | Title | Status | Record |", "|---|---|---|---|"]
+    paths = sorted(path for path in (task_folder / "subtasks").glob("*.md") if path.name != "README.md")
     for path in paths:
         content = path.read_text(encoding="utf-8")
         title = content.splitlines()[0].removeprefix("# Subtask: ").strip()
+        child_id = task_metadata(content, "ID") or path.stem
         status = task_metadata(content, "Status") or "Unknown"
-        lines.append("- [" + title + "](" + path.name + ") — " + status)
-    lines.extend([
-        "",
-        "CI P0 remediation children are Approved and Ready under standing authorization. Parent Done requires every required child Done. CI remediation Done requires a verified intended-branch commit and recorded SHA/summary; hosted validation is separate metadata.",
-        "",
-    ])
+        lines.append("| " + child_id + " | " + markdown_cell(title) + " | " + status + " | [" + path.name + "](" + path.name + ") |")
+    lines.extend(["", "The parent cannot be Done while a required child is open. CI remediation is commit-based; hosted validation is separate metadata.", ""])
     return "\n".join(lines)
 
 
-def create_or_update_worker_task(root, parent_group, child_groups, timestamp, active_tasks):
+def create_or_update_worker_subtasks(root, parent_id, child_groups, timestamp):
+    parent, parent_status = active_genuine_parent(root, parent_id)
+    if not parent:
+        raise LedgerError("Cannot create CI child: genuine parent is unavailable (" + parent_status + "): " + parent_id)
+    parent_path = parent["path"]
+    task_folder = parent_path.parent
+    index_path = parent["index_path"]
+    original_parent = parent_path.read_text(encoding="utf-8")
+    original_index = index_path.read_text(encoding="utf-8")
     all_findings = [finding for group in child_groups.values() for finding in group]
-    task = active_tasks.get(parent_group)
-    created = task is None
-    original_parent = task["content"] if task else None
-    if task:
-        task_id, task_path = task["id"], task["path"]
-        task_folder = task_path.parent
-        parent_content, parent_modified = update_task_findings(original_parent, all_findings, timestamp, task_path=task_path)
-        if parent_modified:
-            atomic_write_text(task_path, parent_content)
-            task["content"] = parent_content
-    else:
-        title = task_title_for_parent(all_findings)
-        task_id = task_id_for(root, timestamp)
-        task_folder = root / "workspace" / "tasks" / task_id
-        task_path = task_folder / "task.md"
-        prior_task_ids = sorted({prior_id for finding in all_findings for prior_id in finding.get("task_refs", []) if prior_id})
-        related_archives = []
-        for prior_id in prior_task_ids:
-            archived = read_archived_task(root, prior_id)
-            if archived:
-                related_archives.append(archived)
-        parent_content = render_worker_task(root, task_id, title, parent_group, all_findings, timestamp, task_path=task_path, related_archives=related_archives)
-        atomic_write_text(task_path, parent_content)
-        task = {"id": task_id, "path": task_path, "content": parent_content}
-        parent_modified = True
-
-    index_path = task_folder / "subtasks" / "README.md"
-    original_index = index_path.read_text(encoding="utf-8") if index_path.is_file() else None
+    parent_content, parent_modified = update_task_findings(
+        original_parent, all_findings, timestamp, task_path=parent_path, promote_priority=False
+    )
     existing_subtasks = parse_active_ledger_subtasks(root)
     child_ids, created_paths, original_children = {}, [], {}
     child_created = child_updated = 0
     try:
+        if parent_modified:
+            atomic_write_text(parent_path, parent_content)
         for group_id, findings in sorted(child_groups.items()):
-            existing = existing_subtasks.get((task_id, group_id))
+            existing = existing_subtasks.get((parent_id, group_id))
             if existing:
                 child_id, child_path = existing["id"], existing["path"]
                 original_children[child_path] = existing["content"]
@@ -1090,143 +1180,59 @@ def create_or_update_worker_task(root, parent_group, child_groups, timestamp, ac
                     if match:
                         numbers.append(int(match.group(1)))
                 prefix = str(max(numbers, default=0) + 1).zfill(2)
-                child_id = task_id + "-" + prefix
-                child_path = task_folder / "subtasks" / (prefix + "-ci-remediation.md")
-                child_content = render_worker_ci_subtask(root, task_id, child_id, task_title_for_group(findings), group_id, findings, timestamp, child_path)
+                child_id = parent_id + "-" + prefix
+                slug = task_slug(task_title_for_group(findings))
+                child_path = task_folder / "subtasks" / (prefix + "-ci-remediation-" + slug + ".md")
+                child_content = render_worker_ci_subtask(
+                    root, parent_id, child_id, task_title_for_group(findings), group_id,
+                    findings, timestamp, child_path
+                )
                 atomic_write_text(child_path, child_content)
                 created_paths.append(child_path)
                 child_created += 1
             child_ids[group_id] = child_id
-        atomic_write_text(index_path, render_subtask_index(task_folder, task_id))
-        board_changed = upsert_task_board_row(root, task)
-        active_tasks[parent_group] = task
+        atomic_write_text(index_path, render_subtask_index(task_folder, parent_id))
     except Exception:
-        if original_parent is not None and parent_modified:
-            atomic_write_text(task_path, original_parent)
-            task["content"] = original_parent
-        elif created:
-            task_path.unlink(missing_ok=True)
+        if parent_modified:
+            atomic_write_text(parent_path, original_parent)
         for child_path, child_content in original_children.items():
             atomic_write_text(child_path, child_content)
         for child_path in created_paths:
             child_path.unlink(missing_ok=True)
-        if original_index is None:
-            index_path.unlink(missing_ok=True)
-        else:
-            atomic_write_text(index_path, original_index)
-        if created:
-            try:
-                (task_folder / "subtasks").rmdir()
-                task_folder.rmdir()
-            except OSError:
-                pass
+        atomic_write_text(index_path, original_index)
         raise
-    return task_id, child_ids, created, parent_modified or board_changed, child_created, child_updated
+    return child_ids, parent_modified, child_created, child_updated
 
-def enforce_single_current_execution(root, preferred_task_id=None):
-    """Synchronize Current Execution with an existing Worker selection; never select a new Ledger task."""
-    folder = root / "workspace" / "tasks"
-    if not folder.is_dir():
-        return None
-    paths = sorted(set(folder.glob("*.md")) | set(folder.glob("*/task.md")))
-    active = []
-    executable = {"In Progress", "Ready"}
-    for path in paths:
-        content = path.read_text(encoding="utf-8")
-        task_id = task_metadata(content, "ID")
-        status = task_metadata(content, "Status")
-        if task_id and status in TASK_ACTIVE_STATUSES:
-            active.append({"id": task_id, "path": path, "content": content, "status": status})
-    selected = next((item for item in active if item["id"] == preferred_task_id and item["status"] in executable), None)
-    board_path = root / "workspace" / "task_board.md"
-    board = board_path.read_text(encoding="utf-8") if board_path.is_file() else ""
-    current_section = board.split("## Current Execution", 1)[-1].split("\n## ", 1)[0] if "## Current Execution" in board else ""
-    match = re.search(r"\(tasks/([^)]+)\)", current_section)
-    if selected is None and match:
-        pointer_path = folder / Path(match.group(1))
-        pointer_id = task_metadata(pointer_path.read_text(encoding="utf-8"), "ID") if pointer_path.is_file() else ""
-        selected = next((item for item in active if item["id"] == pointer_id and item["status"] in executable), None)
-    if selected is None:
-        selected = next(
-            (item for item in active if item["status"] in executable
-             and task_metadata(item["content"], "Current execution") == "Yes"),
-            None,
-        )
-    selected_id = selected["id"] if selected else None
-    for item in active:
-        content = item["path"].read_text(encoding="utf-8")
-        desired = "Yes" if selected_id and item["id"] == selected_id else "No"
-        updated = re.sub(
-            r"(?m)^- \*\*Current execution:\*\* (?:Yes|No)$",
-            "- **Current execution:** " + desired,
-            content,
-            count=1,
-        )
-        if updated != content:
-            atomic_write_text(item["path"], updated)
-    if board and "## Current Execution" in board:
-        heading_start = board.index("## Current Execution")
-        section_end = board.find("\n## ", heading_start + len("## Current Execution"))
-        if section_end < 0:
-            section_end = len(board)
-        section = board[heading_start:section_end]
-        pointer = None
-        if selected:
-            task_path = selected["path"]
-            location = task_path.parent.name + "/task.md" if task_path.name == "task.md" else task_path.name
-            pointer = "[" + selected_id + " — " + selected["content"].splitlines()[0].removeprefix("# Task: ").strip() + "](tasks/" + location + ")"
-        existing = next((line for line in section.splitlines()[1:] if line.startswith("[")), None)
-        placeholder = "_No task selected._"
-        if pointer and existing != pointer:
-            if existing:
-                section = section.replace(existing, pointer, 1)
-            elif placeholder in section:
-                section = section.replace(placeholder, pointer, 1)
-            else:
-                section = section.replace("## Current Execution", "## Current Execution\n\n" + pointer, 1)
-        elif not pointer and existing:
-            section = section.replace(existing, placeholder, 1)
-        if section != board[heading_start:section_end]:
-            board = board[:heading_start] + section + board[section_end:]
-            atomic_write_text(board_path, board)
-    return selected_id
+
 def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reopened_ids):
-    """Create work-target parents and typed CI remediation children."""
-    active_tasks = parse_active_ledger_tasks(root)
+    """Create CI remediation children only under the genuine task named by the latest report."""
     grouped = {}
     for finding in ledger["findings"]:
         finding_id = finding.get("finding_id")
-        refs = finding.setdefault("task_refs", [])
-        finding.setdefault("subtask_refs", [])
-        finding.setdefault("legacy_task_refs", [])
-        parent_group = finding.get("parent_group") or parent_group_for_finding(finding)
-        active_task = active_tasks.get(parent_group)
-        unlinked_lint = finding.get("source_family") == "lint" and not refs
-        if finding_id not in candidate_ids and not unlinked_lint:
+        if finding_id not in candidate_ids or finding.get("status") not in TASK_ELIGIBLE_FINDING_STATUSES:
             continue
         if finding.get("source_family") not in ("lint", "github_actions"):
             continue
-        if finding.get("status") not in TASK_ELIGIBLE_FINDING_STATUSES:
+        evidence = finding.get("evidence") or []
+        latest = evidence[-1] if evidence and isinstance(evidence[-1], dict) else {}
+        parent_id = latest.get("parent_task_id")
+        if latest.get("attribution_status") != "linked" or not parent_id:
             continue
-        group_id = finding["task_group"]
-        reopened = finding_id in reopened_ids
-        is_new = finding_id in created_ids
-        if refs and not (active_task or reopened):
+        parent, _status = active_genuine_parent(root, parent_id)
+        if not parent:
             continue
-        if not refs and not (is_new or active_task or reopened or unlinked_lint):
-            continue
-        grouped.setdefault(parent_group, {}).setdefault(group_id, []).append(finding)
+        grouped.setdefault(parent_id, {}).setdefault(finding["task_group"], []).append(finding)
+
     counts = {
         "tasks_created": 0, "tasks_updated": 0, "subtasks_created": 0,
         "subtasks_updated": 0, "findings_linked": 0, "subtasks_linked": 0,
         "changed": False,
     }
-    for parent_group, child_groups in grouped.items():
-        parent_id, child_ids, parent_created, parent_changed, child_created, child_updated = create_or_update_worker_task(root, parent_group, child_groups, timestamp, active_tasks)
-        if parent_created:
-            counts["tasks_created"] += 1
-        elif parent_changed:
-            counts["tasks_updated"] += 1
+    for parent_id, child_groups in sorted(grouped.items()):
+        child_ids, parent_changed, child_created, child_updated = create_or_update_worker_subtasks(
+            root, parent_id, child_groups, timestamp
+        )
+        counts["tasks_updated"] += int(parent_changed)
         counts["subtasks_created"] += child_created
         counts["subtasks_updated"] += child_updated
         for group_id, findings in child_groups.items():
@@ -1242,9 +1248,9 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reo
                     subtask_refs.append(child_id)
                     counts["subtasks_linked"] += 1
                     counts["changed"] = True
-        counts["changed"] = counts["changed"] or parent_changed or parent_created or bool(child_created) or bool(child_updated)
-    enforce_single_current_execution(root)
+        counts["changed"] = counts["changed"] or parent_changed or bool(child_created) or bool(child_updated)
     return counts
+
 
 def lint_tooling_checks_passed(report):
     """Require every report-tooling check to pass before trusting lint findings."""
@@ -1255,7 +1261,7 @@ def lint_tooling_checks_passed(report):
     return all(states.get(name) == "Passed" for name in LINT_TOOLING_CHECKS)
 
 
-def lint_tooling_observations(report, report_path):
+def lint_tooling_observations(report, report_path, root):
     """Create stable findings for failed tooling checks, independently of lint baselines."""
     if report.get("status") not in ("Passed", "Failed"):
         return []
@@ -1286,7 +1292,8 @@ def lint_tooling_observations(report, report_path):
             "task_group": task_group_key("lint_tooling", name),
             "parent_group": task_group_key("lint-parent", "lint-tooling"),
             "evidence": evidence_record(
-                report_path, observed_at, report.get("run_url"), observation_id, scope + " · " + name
+                report_path, observed_at, report.get("run_url"), observation_id, scope + " · " + name,
+                attribution, source_commit_sha
             ),
         }
     return list(result.values())
@@ -1356,7 +1363,7 @@ def ingest(root, now=None):
                 scope = report.get("scope")
                 if scope not in ("on_changed", "on_repo"):
                     raise LedgerError("Lint report has an unsupported scope: " + report_path)
-                tooling_observations = lint_tooling_observations(report, report_path)
+                tooling_observations = lint_tooling_observations(report, report_path, root)
                 for observation in tooling_observations:
                     result = upsert_finding(ledger, observation)
                     if result == "created":
@@ -1394,7 +1401,7 @@ def ingest(root, now=None):
                     counts["reports_processed"] += 1
                     changed = True
                     continue
-                observations = lint_observations(report, report_path)
+                observations = lint_observations(report, report_path, root)
             else:
                 observations = actions_observations(report, report_path, root)
         except (LedgerError, TypeError, KeyError, ValueError, OSError) as exc:
