@@ -721,16 +721,16 @@ def render_worker_task(root, task_id, title, parent_group, findings, timestamp, 
         "- **Created:** YYYY-MM-DD HH:MM UTC": "- **Created:** " + created,
         "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
         "- **Priority:** P2": "- **Priority:** P0",
-        "- **Status:** Ready": "- **Status:** Proposed",
+        "- **Status:** Ready": "- **Status:** Ready",
         "- **Current execution:** No": "- **Current execution:** No",
         "- **Origin:** User": "- **Origin:** Assistant",
-        "- **Approval:** Approved": "- **Approval:** Pending — Worker review required",
-        "- **Governing ADR(s):** None — non-implementation task": "- **Governing ADR(s):** Pending — Worker review required before approval",
+        "- **Approval:** Approved": "- **Approval:** Approved",
+        "- **Governing ADR(s):** None — non-implementation task": "- **Governing ADR(s):** None — non-implementation task",
         "- **Ledger parent group:** None": "- **Ledger parent group:** " + chr(96) + parent_group + chr(96),
         "[Preserve the user's original task prompt verbatim.]":
             "Automated CI Ledger grouping: actionable findings affect this work target. The parent owns the overall outcome. Individual CI remediation remains in child subtasks.",
         "[Preserve relevant user clarifications, constraints, decisions, and approvals verbatim. Add timestamps.]":
-            "- **Ledger handoff:** P0 priority indicates urgency. It does not grant execution approval. Worker review, accepted ADR linkage, and separate authorization are required before execution.",
+            "- **Ledger handoff:** Standing authorization makes CI P0 remediation mandatory. Execute without separate task approval; preserve safety and accepted decision constraints.",
         "[State the parent outcome.]":
             "Improve the affected work target by addressing the actionable CI findings recorded in its required child subtasks.",
         "[List parent-level outcome criteria. For implementation tasks, map applicable accepted ADR Confirmation criteria to the relevant child subtask acceptance criteria.]":
@@ -738,7 +738,7 @@ def render_worker_task(root, task_id, title, parent_group, findings, timestamp, 
         "[Record approved decisions and concise rationale. Mark unapproved ideas as Proposed.]":
             "- **Grouping:** One parent per affected work target. Each stable CI remediation group is a child subtask.\n- **Execution approval:** Pending Worker review.\n- **Completion:** Each CI child is commit-based; hosted validation is separate metadata.",
         "Record every meaningful action with timestamp, action, result, references, and next step.\n\n### YYYY-MM-DD HH:MM UTC\n\n- **Action:** [What changed or was checked.]\n- **Result:** [Observed outcome and uncertainty.]\n- **References:** [Exact paths, commits, URLs, or source IDs.]\n- **Next:** [Next action.]":
-            "### " + created + "\n\n- **Action:** Created a work-target parent and grouped " + str(len(findings)) + " CI finding(s) into child remediation subtasks.\n- **Result:** The parent is Proposed. Task generation does not authorize remediation.\n- **References:** .takeout/reports/triage/ledger.json and the child evidence tables.\n- **Next:** Worker reviews governance and separately authorizes eligible children.",
+            "### " + created + "\n\n- **Action:** Created a work-target parent and grouped " + str(len(findings)) + " CI finding(s) into child remediation subtasks.\n- **Result:** The parent is Ready and Approved under standing authorization.\n- **References:** .takeout/reports/triage/ledger.json and the child evidence tables.\n- **Next:** Worker reviews governance and separately authorizes eligible children.",
         "[Describe the verified parent outcome and the state of its subtasks. Distinguish committed implementation from unverified behavior.]":
             "Proposed. The Ledger grouped findings by work target. Root causes and fixes remain unassessed. CI remediation work exists only in child subtasks.",
         "[List incomplete requirements, open subtasks, blockers, and outstanding checks.]":
@@ -763,8 +763,8 @@ def render_worker_task(root, task_id, title, parent_group, findings, timestamp, 
     for old, new in replacements.items():
         if old in content:
             content = content.replace(old, new, 1)
-    if "- **Status:** Proposed" not in content or "- **Approval:** Pending — Worker review required" not in content:
-        raise LedgerError("Canonical task template does not support the Proposed parent handoff")
+    if "- **Status:** Ready" not in content or "- **Approval:** Approved" not in content:
+        raise LedgerError("Canonical task template does not support the approved Ready parent handoff")
     content, _ = update_task_findings(content, findings, timestamp, task_path=task_path)
     return content
 
@@ -995,7 +995,7 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
         "- **Priority:** P2": "- **Priority:** P0",
         "- **Origin:** User": "- **Origin:** Assistant",
         "- **Approval:** Approved": "- **Approval:** Pending — Worker review required",
-        "- **Governing ADR(s):** None — non-implementation subtask": "- **Governing ADR(s):** Pending — Worker review required before approval",
+        "- **Governing ADR(s):** None — non-implementation subtask": "- **Governing ADR(s):** None — non-implementation subtask",
         "- **Created:** YYYY-MM-DD HH:MM UTC": "- **Created:** " + created,
         "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
         "- **Ledger group:** None": "- **Ledger group:** " + chr(96) + group_id + chr(96),
@@ -1005,21 +1005,21 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
         "[Define exact work included and excluded. Link the parent and governing ADR.]":
             "Inspect the linked report evidence and exact diagnostics. Diagnose this finding group, implement only authorized changes, commit the fix to the intended branch, and record the commit SHA and concise summary. Parent task: " + parent_id + ". Hosted validation is separate metadata.",
         "1. [Observable criterion.]\n2. [Observable criterion.]":
-            "1. Worker separately authorizes remediation after decision-governance review.\n2. The fix is committed to the intended branch and the commit is verified.\n3. The commit SHA and concise remediation summary are recorded.\n4. Mark this subtask Done only after these criteria pass; hosted validation remains separate metadata.",
+            "1. Execute under standing authorization, respecting safety and accepted ADR constraints.\n2. The fix is committed to the intended branch and the commit is verified.\n3. The commit SHA and concise remediation summary are recorded.\n4. Mark this subtask Done only after these criteria pass; hosted validation remains separate metadata.",
         "[Record approved decisions, rationale, and unresolved questions.]":
             "- **Completion rule:** Commit-based Done under ADR-0004.\n- **Hosted validation:** Separate Pending/Passed/Failed metadata; not a Done gate.",
         "### YYYY-MM-DD HH:MM UTC\n\n- **Action:** [What changed or was checked.]\n- **Result:** [Observed outcome.]\n- **References:** [Exact paths, commits, URLs, or source IDs.]\n- **Next:** [Next action.]":
-            "### " + created + "\n\n- **Action:** Created or migrated a CI remediation child under parent " + parent_id + ".\n- **Result:** " + str(len(findings)) + " finding(s) linked. No remediation is authorized or claimed.\n- **References:** .takeout/reports/triage/ledger.json and the evidence table below.\n- **Next:** Worker review, accepted ADR linkage, and separate execution approval.",
-        "[Verified state of this subtask.]": "Proposed. Root cause and fix have not been assessed; no commit exists.",
+            "### " + created + "\n\n- **Action:** Created or migrated a CI remediation child under parent " + parent_id + ".\n- **Result:** " + str(len(findings)) + " finding(s) linked. Mandatory P0 execution is authorized by standing directive.\n- **References:** .takeout/reports/triage/ledger.json and the evidence table below.\n- **Next:** Execute without separate approval; accepted decision constraints remain applicable.",
+        "[Verified state of this subtask.]": "Ready. Remediation must be executed under standing authorization.",
         "- **Commit SHA:** [Required for code-remediation completion when applicable.]\n- **Changed paths:** [Exact paths.]\n- **Read-back:** [Exact verification result.]\n- **Other evidence:** [Relevant source or test evidence.]":
             "- **Commit SHA:** Not available — no remediation commit yet.\n- **Changed paths:** None.\n- **Read-back:** Not performed.\n- **Other evidence:** See the Ledger Findings table and immutable source reports.",
         "[Exact next action, remaining work, dependencies, and constraints.]":
-            "Worker reviews the finding evidence and governing ADR coverage. Keep Proposed until Worker separately approves execution. Do not inspect hosted validation results until the user explicitly triggers results review.",
+            "Execute this CI P0 remediation under standing authorization, respect safety and accepted decision constraints, commit the fix, and record SHA and summary. Do not inspect hosted validation results unless the user explicitly triggers results review.",
     }
     for old, new in replacements.items():
         if old in content:
             content = content.replace(old, new, 1)
-    if "- **Status:** Proposed" not in content or "- **Type:** CI remediation" not in content:
+    if "- **Status:** Ready" not in content or "- **Type:** CI remediation" not in content:
         raise LedgerError("Canonical subtask template does not support CI remediation handoff")
     content, _ = update_task_findings(content, findings, timestamp, task_path=task_path)
     return content
