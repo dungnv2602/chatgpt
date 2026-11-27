@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27:** Consolidating Document Standards into The Worker. The Worker becomes the template-first authoring gate and governance authority; the former standalone skill is a redirect stub and its catalog/validator remain supporting assets.
+- **2026-11-27:** Correcting task-parent selection: independent objectives require separate parents; Document Standards consolidation was misparented under the CI/reporting task and is now tracked under its own parent.
 
 - **2026-11-27:** Implement [subtask 20261126-142500-02](tasks/20261126-142500/subtasks/02-refactor-task-ci-lifecycle.md) under [parent task 20261126-142500](tasks/20261126-142500/task.md). Audit child 01 is Done. Current focus: prompt capture gate, Task-ID provenance, genuine-parent CI child generation, Ledger schema/generator/tests, and concise aligned templates/skills.
 
