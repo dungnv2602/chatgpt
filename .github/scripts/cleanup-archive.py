@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Delete only exact indexed archive files after 90 days of individual retention."""
+"""Delete exact indexed archive files after 90 days with task-folder atomic retention."""
 from __future__ import annotations
 import json, os, subprocess, sys
 from datetime import datetime, timedelta, timezone
