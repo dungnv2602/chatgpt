@@ -29,7 +29,7 @@ _None. The P0 queue has no eligible work until report evidence becomes available
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
 | 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | The linked immutable report was unavailable. The policy prohibits hosted CI review, so the cause cannot be inferred. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
-| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | Report files provide finding summaries, not the regression-test failure detail. Hosted CI review remains prohibited. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-report-regression-tests.md) |
+| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | Report files provide finding summaries, not the regression-test failure detail. Hosted CI review remains prohibited. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
 
 ### Proposed — decision pending
 
