@@ -1,31 +1,31 @@
 # On Changed STE Lint Evidence Report
 
-- **Result:** Passed
+- **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#995](https://github.com/dungnv2602/chatgpt/actions/runs/45994942334)
-- **Run ID / attempt:** 45994942334 / 1
+- **Run:** [#996](https://github.com/dungnv2602/chatgpt/actions/runs/45995191222)
+- **Run ID / attempt:** 45995191222 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 1ac4a9545ec7edf0b1369a3a1ba55c21dce915d7
-- **Source task:** 20261127-173000-06
+- **Branch / commit:** gpt / a5521f4c244720dcb49bfcc92fba1df657160566
+- **Source task:** 20261127-173000-07
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** b7de07d9138d3095e8b590f19a1a22da24595361
-- **Linter source SHA:** 1ac4a9545ec7edf0b1369a3a1ba55c21dce915d7
-- **Generated (UTC):** 2026-11-27T12:00:18.859382+00:00
+- **Baseline SHA:** 1ac4a9545ec7edf0b1369a3a1ba55c21dce915d7
+- **Linter source SHA:** a5521f4c244720dcb49bfcc92fba1df657160566
+- **Generated (UTC):** 2026-11-27T12:01:57.613138+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 2 |
-| Files that failed | 0 |
-| Files with findings | 1 |
-| Total findings | 1 |
-| Hard findings | 0 |
-| Advisory findings | 1 |
-| New findings | 0 |
+| Files that failed | 1 |
+| Files with findings | 2 |
+| Total findings | 8 |
+| Hard findings | 3 |
+| Advisory findings | 5 |
+| New findings | 7 |
 | Recurring findings | 1 |
-| Resolved findings | 9 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -40,7 +40,7 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- .agent/INITIALIZATION_POLICY.md
+- .agent/skills/the-worker/references/document-type-catalog.md
 - workspace/task_board.md
 
 ## 4. Per-file result matrix
@@ -49,8 +49,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/INITIALIZATION_POLICY.md | PASS | 0 | 0 | 4 | 2027 | 0.0 | 0 |
-| workspace/task_board.md | PASS | 1 | 0 | 0 | 1036 | 0.1 | 0 |
+| .agent/skills/the-worker/references/document-type-catalog.md | FAIL | 7 | 3 | 0 | 4578 | 0.2 | 1 |
+| workspace/task_board.md | PASS | 1 | 0 | 0 | 1019 | 0.1 | 0 |
 
 ## 5. Findings by rule
 
@@ -58,7 +58,8 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 1 |
+| passive-voice | 5 |
+| semicolon | 3 |
 
 ## 6. Workflow and validation checks
 
@@ -90,7 +91,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.482s
+Ran 6 tests in 0.283s
 
 OK
 ~~~
@@ -103,7 +104,7 @@ OK
 ~~~text
 ........
 ----------------------------------------------------------------------
-Ran 8 tests in 0.030s
+Ran 8 tests in 0.001s
 
 OK
 ~~~
@@ -123,7 +124,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 2 changed Markdown sources (437 available as link targets) and 48 local Markdown links.
+Scanned 2 changed Markdown sources (437 available as link targets) and 47 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -133,69 +134,96 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-None.
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:43:131 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:44:275 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:131:297 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:145:143 · **new** · fingerprint: 3c37bdb100e76e92190f285d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are completed
+- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:145:228 · **new** · fingerprint: 635c1984012e0d9f0ec925af
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are accepted
+- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:213:89 · **new** · fingerprint: 6b4e11cdd83b54cefd8c9eb0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are deleted
+- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:213:179 · **new** · fingerprint: 6b4e11cdd83b54cefd8c9eb0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are deleted
 
 ### Recurring findings
 
-- **passive-voice** · workspace/task_board.md:84:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:83:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
 
 ### Resolved findings
 
-- **passive-voice** · .agent/skills/agent-skill-authoring/SKILL.md:14:79 · **resolved** · fingerprint: 02b57d3b2df16eb3468595dc
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are created
-- **passive-voice** · .agent/skills/agent-skill-authoring/SKILL.md:159:29 · **resolved** · fingerprint: f2222fc7270c8971f6aea92a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is loaded
-- **passive-voice** · .agent/skills/agent-skill-authoring/SKILL.md:166:23 · **resolved** · fingerprint: f2222fc7270c8971f6aea92a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is loaded
-- **passive-voice** · .agent/skills/agent-skill-authoring/SKILL.md:185:36 · **resolved** · fingerprint: 97f02ce3bcf5b6ef7653d521
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
-- **passive-voice** · .agent/skills/agent-skill-authoring/SKILL.md:223:38 · **resolved** · fingerprint: 6791e38cdf43e2f4c45df46b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been created
-- **passive-voice** · .agent/skills/agent-skill-authoring/SKILL.md:245:28 · **resolved** · fingerprint: eb4ac5866a5a9ae0a950a472
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are focused
-- **passive-voice** · .agent/skills/agent-skill-authoring/SKILL.md:253:17 · **resolved** · fingerprint: bbeb4b1299f984862be3ce2a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is connected
-- **synonym-rotation** · .agent/skills/agent-skill-authoring/SKILL.md:257:21 · **resolved** · fingerprint: 78a70aacc34addace6e797ec
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **passive-voice** · .agent/skills/asd-ste100/references/repository-writing-policy.md:18:36 · **resolved** · fingerprint: fa71e22a78d6e4ce44e3a977
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
+None.
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### .agent/INITIALIZATION_POLICY.md
+### .agent/skills/the-worker/references/document-type-catalog.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 4
-- **Words:** 2027
-- **Findings per 100 words:** 0.0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 7
+- **Hard findings:** 3
+- **Baseline:** 0
+- **Words:** 4578
+- **Findings per 100 words:** 0.2
 
-No STE findings were recorded for this file.
+#### Complete diagnostics
+
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:43:131 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:44:275 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:131:297 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:145:143 · **new** · fingerprint: 3c37bdb100e76e92190f285d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are completed
+
+- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:145:228 · **new** · fingerprint: 635c1984012e0d9f0ec925af
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are accepted
+
+- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:213:89 · **new** · fingerprint: 6b4e11cdd83b54cefd8c9eb0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are deleted
+
+- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:213:179 · **new** · fingerprint: 6b4e11cdd83b54cefd8c9eb0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are deleted
 
 
 ### workspace/task_board.md
@@ -205,12 +233,12 @@ No STE findings were recorded for this file.
 - **Findings:** 1
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 1036
+- **Words:** 1019
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **passive-voice** · workspace/task_board.md:84:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:83:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
