@@ -2,28 +2,28 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#998](https://github.com/dungnv2602/chatgpt/actions/runs/45996975058)
-- **Run ID / attempt:** 45996975058 / 1
+- **Run:** [#999](https://github.com/dungnv2602/chatgpt/actions/runs/45997603698)
+- **Run ID / attempt:** 45997603698 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 290a1cdb82ed7e73c4f41a86db286bdd0b6528af
-- **Source task:** Unassigned
+- **Branch / commit:** gpt / d83971693d6f268f7c52abe117ea00b22cbcd56d
+- **Source task:** 20261127-173000-09
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** a5521f4c244720dcb49bfcc92fba1df657160566
-- **Linter source SHA:** 290a1cdb82ed7e73c4f41a86db286bdd0b6528af
-- **Generated (UTC):** 2026-11-27T12:15:54.197301+00:00
+- **Baseline SHA:** 290a1cdb82ed7e73c4f41a86db286bdd0b6528af
+- **Linter source SHA:** d83971693d6f268f7c52abe117ea00b22cbcd56d
+- **Generated (UTC):** 2026-11-27T12:19:33.427680+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 2 |
+| Files evaluated | 1 |
 | Files that failed | 1 |
-| Files with findings | 2 |
-| Total findings | 8 |
-| Hard findings | 4 |
-| Advisory findings | 4 |
-| New findings | 8 |
+| Files with findings | 1 |
+| Total findings | 3 |
+| Hard findings | 1 |
+| Advisory findings | 2 |
+| New findings | 3 |
 | Recurring findings | 0 |
 | Resolved findings | 8 |
 | Failed workflow checks | 0 |
@@ -40,8 +40,7 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- workspace/templates/DISCUSSION_TEMPLATE.md
-- workspace/README.md
+- .agent/skills/the-worker/references/ci-ledger.md
 
 ## 4. Per-file result matrix
 
@@ -49,8 +48,7 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| workspace/templates/DISCUSSION_TEMPLATE.md | PASS | 2 | 0 | 0 | 175 | 1.1 | 0 |
-| workspace/README.md | FAIL | 6 | 4 | 0 | 509 | 1.2 | 1 |
+| .agent/skills/the-worker/references/ci-ledger.md | FAIL | 3 | 1 | 0 | 705 | 0.4 | 1 |
 
 ## 5. Findings by rule
 
@@ -58,8 +56,8 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 4 |
-| semicolon | 4 |
+| passive-voice | 2 |
+| synonym-rotation | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -91,7 +89,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.469s
+Ran 6 tests in 0.476s
 
 OK
 ~~~
@@ -104,7 +102,7 @@ OK
 ~~~text
 ........
 ----------------------------------------------------------------------
-Ran 8 tests in 0.007s
+Ran 8 tests in 0.005s
 
 OK
 ~~~
@@ -124,7 +122,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 2 changed Markdown sources (439 available as link targets) and 15 local Markdown links.
+Scanned 1 changed Markdown sources (440 available as link targets) and 0 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -134,38 +132,18 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · workspace/templates/DISCUSSION_TEMPLATE.md:11:135 · **new** · fingerprint: 73f84711409e6a9439c2bf01
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **new** · fingerprint: 20a3b946ee1ae4877e53e449
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recorded
-- **passive-voice** · workspace/templates/DISCUSSION_TEMPLATE.md:19:77 · **new** · fingerprint: ed3909a3a29b635e81f1697c
+  - **Matched text:** is required
+- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:39:252 · **new** · fingerprint: a913a887a540db8f083a49d4
+  - **Level:** advisory-free
+  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
+  - **Matched text:** changes
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **new** · fingerprint: 02e6a360a86d394444d7be9c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
-- **semicolon** · workspace/README.md:15:41 · **new** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/README.md:24:210 · **new** · fingerprint: 66ac36e2cdb3db3683c0c8f2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are recorded
-- **semicolon** · workspace/README.md:25:104 · **new** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/README.md:34:224 · **new** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/README.md:44:209 · **new** · fingerprint: bdeb2ff1622490b994e19f76
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-- **semicolon** · workspace/README.md:44:220 · **new** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Matched text:** is unassigned
 
 ### Recurring findings
 
@@ -173,107 +151,69 @@ None.
 
 ### Resolved findings
 
-- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:43:131 · **resolved** · fingerprint: e7ff64fedb3eddf5ee3c1564
+- **passive-voice** · workspace/templates/DISCUSSION_TEMPLATE.md:11:135 · **resolved** · fingerprint: 73f84711409e6a9439c2bf01
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is recorded
+- **passive-voice** · workspace/templates/DISCUSSION_TEMPLATE.md:19:77 · **resolved** · fingerprint: ed3909a3a29b635e81f1697c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is known
+- **semicolon** · workspace/README.md:15:41 · **resolved** · fingerprint: 99ddd247f24032b76e53f957
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:44:275 · **resolved** · fingerprint: e7ff64fedb3eddf5ee3c1564
+- **passive-voice** · workspace/README.md:24:210 · **resolved** · fingerprint: 66ac36e2cdb3db3683c0c8f2
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+- **semicolon** · workspace/README.md:25:104 · **resolved** · fingerprint: 99ddd247f24032b76e53f957
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:131:297 · **resolved** · fingerprint: e7ff64fedb3eddf5ee3c1564
+- **semicolon** · workspace/README.md:34:224 · **resolved** · fingerprint: 99ddd247f24032b76e53f957
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:145:143 · **resolved** · fingerprint: 3c37bdb100e76e92190f285d
+- **passive-voice** · workspace/README.md:44:209 · **resolved** · fingerprint: bdeb2ff1622490b994e19f76
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are completed
-- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:145:228 · **resolved** · fingerprint: 635c1984012e0d9f0ec925af
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are accepted
-- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:213:89 · **resolved** · fingerprint: 6b4e11cdd83b54cefd8c9eb0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are deleted
-- **passive-voice** · .agent/skills/the-worker/references/document-type-catalog.md:213:179 · **resolved** · fingerprint: 6b4e11cdd83b54cefd8c9eb0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are deleted
-- **passive-voice** · workspace/task_board.md:83:113 · **resolved** · fingerprint: 9db0ccdc5f344a34e6b09777
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deferred
+  - **Matched text:** is verified
+- **semicolon** · workspace/README.md:44:220 · **resolved** · fingerprint: 99ddd247f24032b76e53f957
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### workspace/templates/DISCUSSION_TEMPLATE.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 2
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 175
-- **Findings per 100 words:** 1.1
-
-#### Complete diagnostics
-
-- **passive-voice** · workspace/templates/DISCUSSION_TEMPLATE.md:11:135 · **new** · fingerprint: 73f84711409e6a9439c2bf01
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recorded
-
-- **passive-voice** · workspace/templates/DISCUSSION_TEMPLATE.md:19:77 · **new** · fingerprint: ed3909a3a29b635e81f1697c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
-
-
-### workspace/README.md
+### .agent/skills/the-worker/references/ci-ledger.md
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 6
-- **Hard findings:** 4
+- **Findings:** 3
+- **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 509
-- **Findings per 100 words:** 1.2
+- **Words:** 705
+- **Findings per 100 words:** 0.4
 
 #### Complete diagnostics
 
-- **semicolon** · workspace/README.md:15:41 · **new** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/README.md:24:210 · **new** · fingerprint: 66ac36e2cdb3db3683c0c8f2
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **new** · fingerprint: 20a3b946ee1ae4877e53e449
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are recorded
+  - **Matched text:** is required
 
-- **semicolon** · workspace/README.md:25:104 · **new** · fingerprint: 99ddd247f24032b76e53f957
+- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:39:252 · **new** · fingerprint: a913a887a540db8f083a49d4
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
+  - **Matched text:** changes
 
-- **semicolon** · workspace/README.md:34:224 · **new** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/README.md:44:209 · **new** · fingerprint: bdeb2ff1622490b994e19f76
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **new** · fingerprint: 02e6a360a86d394444d7be9c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-
-- **semicolon** · workspace/README.md:44:220 · **new** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Matched text:** is unassigned
 
 ## 9. Structured evidence and integrity
 
