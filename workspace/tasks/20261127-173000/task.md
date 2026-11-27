@@ -6,16 +6,16 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 18:10 UTC
-- **Priority:** P1
+- **Updated:** 2026-11-27 18:27 UTC
+- **Priority:** P0
 - **Status:** Ready
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create the Refactor Skills task and place workspace/tasks/20261127-102301 beneath it.
 - **Governing ADR(s):** None
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready; approved, no dependencies.
+- **Eligibility / deferral reason:** Eligible — Ready; approved, no dependencies. Selected as current execution by user's explicit priority instruction.
 - **Related tasks:** None
 
 ## 1. Original Request
@@ -24,7 +24,12 @@
 
 ## 2. Subsequent Instructions
 
-None.
+### 2026-11-27 18:27 UTC
+
+> workspace/tasks/20261127-173000/task.md Make this task P0, we focus on this task from now on.
+
+- **Action:** Set parent priority to P0 and select it as Current Execution.
+- **Approval:** Explicit authorization to prioritize and focus execution on this task.
 
 ## 3. Objective and Acceptance Criteria
 
@@ -62,7 +67,7 @@ Subtasks 01, 02, and 03 are tracked. Subtask 03 preserves the former 20261127-10
 
 ## 8. Handoff
 
-Execute the mandatory P0 queue, then resume paused children and read back changes.
+Continue this P0 Refactor Skills task and its children as Current Execution.
 
 ## 9. Subtasks
 
