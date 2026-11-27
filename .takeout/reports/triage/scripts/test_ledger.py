@@ -40,7 +40,7 @@ class LedgerTests(unittest.TestCase):
 
     def write_ledger(self, version="1.5.0", findings=None):
         payload = {"schema_version": version, "updated_at_utc": None, "findings": findings or []}
-        if version in ("1.1.0", "1.2.0", "1.3.0", "1.4.0", "1.5.0", "1.6.0"):
+        if version in ("1.1.0", "1.2.0", "1.3.0", "1.4.0", "1.5.0", "1.6.0", "1.7.0"):
             payload["ingestion_state"] = {
                 "bootstrap_at_utc":"2026-11-23T07:00:00Z","processed_reports":[],
                 "lint_baseline_scopes":{"on_changed":True,"on_repo":True},
@@ -159,7 +159,7 @@ class LedgerTests(unittest.TestCase):
             },
         }
         migrated = LEDGER.migrate_ledger(legacy, self.root)
-        self.assertEqual(migrated["schema_version"],"1.6.0")
+        self.assertEqual(migrated["schema_version"],"1.7.0")
         self.assertEqual(
             [item["report_path"] for item in migrated["findings"][0]["evidence"]],
             [".takeout/reports/lint_reports/on_repo/history/1-attempt-1/report.json",
@@ -189,11 +189,11 @@ class LedgerTests(unittest.TestCase):
         self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
         self.assertIn("[report](../../../.takeout/reports/lint_reports/on_changed/history/100-attempt-1/report.json)", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("../../../.takeout/reports/triage/ledger.json", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("**Template version:** 2.0", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("**Template version:** 2.1", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Governing ADR(s):** Pending — Worker review required before approval", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("1. Worker reviews the grouped findings and assigns an applicable accepted ADR or prepares a Draft.", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("1. Worker reviews all child finding groups and assigns applicable accepted ADR coverage.", task_files[0].read_text(encoding="utf-8"))
         self.assertNotIn("[List parent-level outcome criteria.", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("- **Ledger handoff:** P0 priority indicates urgency; it does not grant task execution approval.", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("- **Ledger handoff:** P0 priority indicates urgency. It does not grant execution approval.", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Execution approval:** Pending Worker review.", task_files[0].read_text(encoding="utf-8"))
         self.assertNotIn("[Record approved decisions and concise rationale. Mark unapproved ideas as Proposed.]", task_files[0].read_text(encoding="utf-8"))
         self.assertNotIn("[Preserve relevant user clarifications", task_files[0].read_text(encoding="utf-8"))
@@ -324,7 +324,7 @@ class LedgerTests(unittest.TestCase):
             "- **Approval:** Approved\n"
             "- **Current execution:** No\n"
             "- **Updated:** 2026-11-22 01:00 UTC\n"
-            "- **Ledger group:** " + group_id + "\n",
+            "- **Ledger parent group:** " + LEDGER.task_group_key("lint-parent", "docs/folder-example.md") + "\n",
             encoding="utf-8",
         )
         self.add_lint("on_changed", "112", "2026-11-23T07:14:00Z",
@@ -807,7 +807,7 @@ class LedgerTests(unittest.TestCase):
         }
         ledger["findings"] = [finding]
         migrated = LEDGER.migrate_ledger(ledger,self.root)
-        self.assertEqual(migrated["schema_version"],"1.6.0")
+        self.assertEqual(migrated["schema_version"],"1.7.0")
         self.assertEqual(migrated["findings"][0]["resolution"]["validation"]["status"],"passed")
         self.assertEqual(migrated["findings"][0]["resolution"]["validation"]["conclusion"],"success for targeted finding; workflow overall failed on unrelated recurring findings")
 
@@ -1035,7 +1035,7 @@ class LedgerTests(unittest.TestCase):
         self.write_ledger(version="1.0.0")
         result = LEDGER.ingest(self.root)
         migrated = self.read_ledger()
-        self.assertEqual(migrated["schema_version"],"1.5.0")
+        self.assertEqual(migrated["schema_version"],"1.7.0")
         self.assertEqual(migrated["findings"],[])
         self.assertIn(path,migrated["ingestion_state"]["processed_reports"])
         self.assertEqual(migrated["findings"],[])
@@ -1060,7 +1060,7 @@ class LedgerTests(unittest.TestCase):
         self.write_ledger(version="1.1.0", findings=[finding, second])
         LEDGER.ingest(self.root)
         migrated = self.read_ledger()
-        self.assertEqual(migrated["schema_version"],"1.5.0")
+        self.assertEqual(migrated["schema_version"],"1.7.0")
         self.assertEqual(migrated["findings"][0]["task_group"], migrated["findings"][1]["task_group"])
         task_id = migrated["findings"][0]["task_refs"][0]
         self.assertEqual(migrated["findings"][1]["task_refs"], [task_id])
