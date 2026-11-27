@@ -31,7 +31,7 @@ The Ledger owns finding identity, evidence, and remediation-child publication. T
 2. Trace the failure through the source workflow, capture process, report schema, Ledger, task template, and owning documentation. Distinguish source validation errors from report/capture errors.
 3. Fix the systemic cause within the approved task scope. Keep unrelated failures out of the task.
 4. Add or update a regression test for the failure mode. Preserve fail-closed behavior and validation coverage.
-5. Update the owning source of truth and its callers/templates/schema in the same remediation. Remove stale parallel rules.
+5. Update the owning source of truth and its callers/templates/schema in the same remediation. Delete stale parallel rules.
 6. Commit the fix and prevention control. The Worker verifies the intended-branch SHA and readback, records evidence, and closes the child when its criteria pass. Hosted validation is not a completion gate and is not reviewed.
 
 ## 4. P0 coordination
