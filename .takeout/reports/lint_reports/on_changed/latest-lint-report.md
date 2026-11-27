@@ -2,16 +2,16 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#1014](https://github.com/dungnv2602/chatgpt/actions/runs/46008116185)
-- **Run ID / attempt:** 46008116185 / 1
+- **Run:** [#1015](https://github.com/dungnv2602/chatgpt/actions/runs/46008499310)
+- **Run ID / attempt:** 46008499310 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 239b1acd74e87bfc96a9b6f4ab5d8216603a9789
-- **Source task:** 20261127-173000-23
+- **Branch / commit:** gpt / 80440b3c6a81e440826071a66dd9f9c3a3e38747
+- **Source task:** 20261127-173000-24
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 5305c1b39030c5057eacb1251867ce4fc96d0064
-- **Linter source SHA:** 239b1acd74e87bfc96a9b6f4ab5d8216603a9789
-- **Generated (UTC):** 2026-11-27T13:33:56.728191+00:00
+- **Baseline SHA:** 239b1acd74e87bfc96a9b6f4ab5d8216603a9789
+- **Linter source SHA:** 80440b3c6a81e440826071a66dd9f9c3a3e38747
+- **Generated (UTC):** 2026-11-27T13:36:24.598826+00:00
 
 ## 1. Executive summary
 
@@ -20,12 +20,12 @@
 | Files evaluated | 2 |
 | Files that failed | 2 |
 | Files with findings | 2 |
-| Total findings | 4 |
-| Hard findings | 3 |
+| Total findings | 5 |
+| Hard findings | 4 |
 | Advisory findings | 1 |
-| New findings | 2 |
+| New findings | 3 |
 | Recurring findings | 2 |
-| Resolved findings | 1 |
+| Resolved findings | 2 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -40,7 +40,7 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- .agent/skills/the-worker/SKILL.md
+- .agent/skills/the-worker/references/document-type-catalog.md
 - workspace/task_board.md
 
 ## 4. Per-file result matrix
@@ -49,8 +49,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/the-worker/SKILL.md | FAIL | 2 | 2 | 0 | 2539 | 0.1 | 1 |
-| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1196 | 0.2 | 1 |
+| .agent/skills/the-worker/references/document-type-catalog.md | FAIL | 3 | 3 | 0 | 4583 | 0.1 | 1 |
+| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1162 | 0.2 | 1 |
 
 ## 5. Findings by rule
 
@@ -58,9 +58,9 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| synonym-rotation | 2 |
-| long-sentence | 1 |
+| semicolon | 3 |
 | passive-voice | 1 |
+| synonym-rotation | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -92,7 +92,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.492s
+Ran 6 tests in 0.417s
 
 OK
 ~~~
@@ -105,7 +105,7 @@ OK
 ~~~text
 ........
 ----------------------------------------------------------------------
-Ran 8 tests in 0.065s
+Ran 8 tests in 0.005s
 
 OK
 ~~~
@@ -125,9 +125,8 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 2 changed Markdown sources (439 available as link targets) and 32 local Markdown links.
-Found 25 unresolved local Markdown targets or anchors.
-workspace/task_board.md: missing Markdown file: 24-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md
+Scanned 2 changed Markdown sources (439 available as link targets) and 31 local Markdown links.
+Found 24 unresolved local Markdown targets or anchors.
 workspace/task_board.md: missing Markdown file: 26-ci-remediation-review-long-sentence-findings-in-agent-session-start-md.md
 workspace/task_board.md: missing Markdown file: 27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md
 workspace/task_board.md: missing Markdown file: 28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md
@@ -160,58 +159,71 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **new** · fingerprint: 4900e43fc0a2db0bbbee87ae
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:43:131 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
   - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **new** · fingerprint: 009f1803dee803be87a4fa14
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:44:275 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
   - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:131:297 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ### Recurring findings
 
-- **synonym-rotation** · workspace/task_board.md:69:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:68:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
-- **passive-voice** · workspace/task_board.md:69:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:68:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
 
 ### Resolved findings
 
-- **long-sentence** · .agent/skills/the-worker/references/github-actions.md:45:3 · **resolved** · fingerprint: 933a579fb10c54b6f0b0201a
+- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **resolved** · fingerprint: 4900e43fc0a2db0bbbee87ae
   - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **resolved** · fingerprint: 009f1803dee803be87a4fa14
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### .agent/skills/the-worker/SKILL.md
+### .agent/skills/the-worker/references/document-type-catalog.md
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 2
-- **Hard findings:** 2
+- **Findings:** 3
+- **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 2539
+- **Words:** 4583
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **synonym-rotation** · .agent/skills/the-worker/SKILL.md:87:19 · **new** · fingerprint: 4900e43fc0a2db0bbbee87ae
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:43:131 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
   - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:173:47 · **new** · fingerprint: 009f1803dee803be87a4fa14
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:44:275 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
   - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · .agent/skills/the-worker/references/document-type-catalog.md:131:297 · **new** · fingerprint: e7ff64fedb3eddf5ee3c1564
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 
 ### workspace/task_board.md
@@ -221,17 +233,17 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 2
 - **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1196
+- **Words:** 1162
 - **Findings per 100 words:** 0.2
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/task_board.md:69:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:68:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
 
-- **passive-voice** · workspace/task_board.md:69:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **passive-voice** · workspace/task_board.md:68:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
