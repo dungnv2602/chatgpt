@@ -28,18 +28,12 @@ _No eligible tasks. The board was reconciled after the ADR editorial commits and
 
 ### Proposed — governance decision pending
 
-These approved P0 task groups remain Proposed because accepted ADR coverage is pending. Do not select them until governance permits execution.
+These editorial P0 groups have been remediated and removed at direct closeout. Ledger findings retain stable identities, resolution history, task references, and commit evidence. Hosted validation remains pending user-triggered review.
 
 | ID | Title | Priority | Status | Approval | ADR(s) | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-013151-34 | Review present-perfect findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261127-013151-34/task.md) |
-| 20261127-013151-33 | Review synonym-rotation findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261127-013151-33/task.md) |
-| 20261127-013151-32 | Review semicolon findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261127-013151-32/task.md) |
-| 20261127-013151-31 | Review passive-voice findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261127-013151-31/task.md) |
-| 20261127-013151-30 | Review long-sentence findings in workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261127-013151-30/task.md) |
-| 20261126-170259-02 | Review semicolon findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261126-170259-02/task.md) |
-| 20261126-170259-01 | Review passive-voice findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261126-170259-01/task.md) |
-| 20261126-170259 | Review synonym-rotation findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | Proposed | Approved | Pending | [Task record](tasks/20261126-170259/task.md) |
+
+_No proposed editorial remediation groups remain._
 
 ### Paused
 
