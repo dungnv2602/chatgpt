@@ -5,7 +5,7 @@
 - **ID:** 20261127-082500-01
 - **Parent Task ID:** 20261127-082500
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -14,7 +14,7 @@
 - **Dependencies:** None
 - **Required:** Yes
 - **Created:** 2026-11-27 08:25 UTC
-- **Updated:** 2026-11-27 08:25 UTC
+- **Updated:** 2026-11-27 08:27 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -48,25 +48,30 @@ Use concise rank/order indicators. Deferred work remains outside the executable 
 - **References:** `workspace/task_board.md`, `workspace/README.md`, Document Type Catalog.
 - **Next:** Implement and verify the board.
 
+### 2026-11-27 08:26 UTC
+
+- **Action:** Refactored board sections.
+- **Result:** Acceptance criteria verified through remote readback.
+- **References:** Board commit `517001e947226ab3038f0bcebdab32aa293e6c7a`.
+- **Next:** Close task.
+
 ## 6. Current State
 
-The board is being refactored.
+Acceptance criteria pass. Board changes were committed and read back.
 
 ## 7. Evidence
 
-- **Commit SHA:** Pending.
-- **Changed paths:** Pending.
-- **Read-back:** Pending.
-- **Other evidence:** None.
+- **Commit SHA:** `517001e947226ab3038f0bcebdab32aa293e6c7a`.
+- **Changed paths:** `workspace/task_board.md`.
+- **Read-back:** Verified.
+- **Other evidence:** Board separates execution from deferred work.
 
 ## 8. Completion Record
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
-- **Evidence:** Not applicable
-
-The Worker marks a regular subtask Done after its acceptance criteria pass and the Worker records its work and evidence.
+- **Status:** Done
+- **Completed at:** 2026-11-27 08:27 UTC
+- **Completion basis:** All acceptance criteria verified.
+- **Evidence:** Board commit `517001e947226ab3038f0bcebdab32aa293e6c7a`.
 
 ## 9. Hosted Validation
 
@@ -74,7 +79,7 @@ Not applicable.
 
 ## 10. Handoff
 
-Complete board changes and verify readback. Do not inspect hosted CI results.
+No remaining work.
 
 ## 11. Ledger Findings
 
