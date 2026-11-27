@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Ingest immutable lint and GitHub Actions reports into the central issue ledger."""
 from __future__ import annotations
-import argparse, copy, hashlib, json, re, sys, tempfile
+import argparse, copy, hashlib, json, os, re, sys, tempfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
@@ -663,7 +663,7 @@ def task_title_for_group(findings):
     workflow = str(first.get("title") or "GitHub Actions").split(" / ", 1)[0]
     return ("Review " + category + " failures in " + workflow + " / " + evidence_note)[:120]
 
-def render_worker_task(root, task_id, title, group_id, findings, timestamp, task_path=None):
+def render_worker_task(root, task_id, title, group_id, findings, timestamp, task_path=None, related_archives=None):
     template_path = root / "workspace" / "TASK_TEMPLATE.md"
     try:
         content = template_path.read_text(encoding="utf-8")
@@ -710,6 +710,14 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp, task
         "[Give the next session enough information to resume. State the first incomplete subtask, exact next action, and approval boundary.]":
             "Review the linked evidence and accepted ADR coverage. Keep this task Proposed until the Worker records approval and accepted ADR linkage. Do not treat P0 priority or task creation as authorization to remediate. Do not poll or inspect hosted CI results.",
     }
+    if related_archives and task_path is not None:
+        related_links = []
+        for archived in related_archives:
+            target = root / PurePosixPath(archived["parent_path"])
+            relative = os.path.relpath(target, start=task_path.parent).replace(os.sep, "/")
+            related_links.append("[" + archived["task_id"] + "](" + relative + ")")
+        if related_links:
+            replacements["- **Related tasks:** None"] = "- **Related tasks:** " + ", ".join(related_links)
     for old, new in replacements.items():
         if old not in content:
             continue
@@ -744,6 +752,101 @@ def parse_active_ledger_tasks(root):
     ):
         result.setdefault(group_id, task)
     return result
+def read_archived_task(root, task_id):
+    """Read one indexed task archive without scanning or changing archive directories."""
+    if not isinstance(task_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9-]{5,63}", task_id):
+        raise LedgerError("Invalid archived task ID: " + str(task_id))
+    index_path = root / ".github" / "archive-retention-index.json"
+    if not index_path.is_file():
+        return None
+    try:
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise LedgerError("Cannot read archive retention index: " + str(exc)) from exc
+    records = index.get("records") if isinstance(index, dict) else None
+    if not isinstance(records, list):
+        raise LedgerError("Archive retention index has no valid records list")
+
+    folder_prefix = ".archive/task/" + task_id + "/"
+    folder_records, flat_records, seen = [], [], set()
+    for record in records:
+        if not isinstance(record, dict):
+            raise LedgerError("Archive retention index contains a malformed record")
+        path = record.get("path")
+        archived_at = record.get("archived_at_utc")
+        if not isinstance(path, str) or not isinstance(archived_at, str):
+            raise LedgerError("Archive retention index record has invalid path or timestamp")
+        pure = PurePosixPath(path)
+        parts = pure.parts
+        if pure.is_absolute() or str(pure) != path or "\\" in path or any(part in (".", "..") for part in parts):
+            raise LedgerError("Archive retention index contains an unsafe path: " + path)
+        if len(parts) < 2 or parts[:2] != (".archive", "task"):
+            continue
+        if not path.endswith(".md"):
+            raise LedgerError("Task archive index path is not a Markdown record: " + path)
+        if path in seen:
+            raise LedgerError("Duplicate task archive index path: " + path)
+        seen.add(path)
+        parsed_timestamp = parse_time(archived_at)
+        if path.startswith(folder_prefix):
+            folder_records.append((record, parsed_timestamp))
+        elif len(parts) == 3 and (parts[2] == task_id + ".md" or parts[2].startswith(task_id + "-") and parts[2].endswith(".md")):
+            flat_records.append((record, parsed_timestamp))
+
+    if folder_records and flat_records:
+        raise LedgerError("Task ID has both folder and flat archive records: " + task_id)
+    if not folder_records and not flat_records:
+        return None
+
+    files = {}
+    if folder_records:
+        paths = {record["path"] for record, _stamp in folder_records}
+        parent_path = folder_prefix + "task.md"
+        index_record_path = folder_prefix + "subtasks/README.md"
+        required = {parent_path, index_record_path}
+        if not required.issubset(paths):
+            raise LedgerError("Task-folder archive index is incomplete for " + task_id)
+        timestamps = {stamp for _record, stamp in folder_records}
+        if len(timestamps) != 1:
+            raise LedgerError("Task-folder archive entries have inconsistent timestamps for " + task_id)
+        archived_at = next(iter(timestamps))
+        selected_records = folder_records
+        archive_type = "folder"
+    else:
+        if len(flat_records) != 1:
+            raise LedgerError("Task ID has multiple flat archive records: " + task_id)
+        record, archived_at = flat_records[0]
+        parent_path = record["path"]
+        selected_records = flat_records
+        archive_type = "flat"
+
+    for record, _stamp in selected_records:
+        path = record["path"]
+        target = root / PurePosixPath(path)
+        cursor = root
+        for component in PurePosixPath(path).parts:
+            cursor = cursor / component
+            if cursor.is_symlink():
+                raise LedgerError("Task archive path contains a symlink: " + path)
+        if not target.is_file():
+            raise LedgerError("Indexed task archive file is missing: " + path)
+        try:
+            files[path] = target.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            raise LedgerError("Cannot read indexed task archive file " + path + ": " + str(exc)) from exc
+
+    parent_content = files[parent_path]
+    if task_metadata(parent_content, "ID") != task_id:
+        raise LedgerError("Archived task record ID does not match its indexed task ID: " + task_id)
+    return {
+        "task_id": task_id,
+        "archive_type": archive_type,
+        "parent_path": parent_path,
+        "archived_at_utc": archived_at.isoformat().replace("+00:00", "Z"),
+        "files": files,
+    }
+
+
 def upsert_task_board_row(root, task):
     board_path = root / "workspace" / "task_board.md"
     try:
@@ -870,7 +973,21 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
     task_id = task_id_for(root, timestamp)
     task_folder = root / "workspace" / "tasks" / task_id
     task_path = task_folder / "task.md"
-    content = render_worker_task(root, task_id, title, group_id, findings, timestamp, task_path=task_path)
+    prior_task_ids = sorted({
+        prior_id
+        for finding in findings
+        for prior_id in finding.get("task_refs", [])
+        if prior_id
+    })
+    related_archives = []
+    for prior_id in prior_task_ids:
+        archived = read_archived_task(root, prior_id)
+        if archived:
+            related_archives.append(archived)
+    content = render_worker_task(
+        root, task_id, title, group_id, findings, timestamp,
+        task_path=task_path, related_archives=related_archives
+    )
     subtask_path = task_folder / "subtasks" / "01-ci-remediation.md"
     subtask_content = render_worker_ci_subtask(root, task_id, title, group_id, findings, timestamp)
     subtask_index_path = task_folder / "subtasks" / "README.md"
@@ -897,7 +1014,10 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
                 pass
         raise
     active_tasks[group_id] = task
-    return task_id, True, Truedef enforce_single_current_execution(root, preferred_task_id=None):
+    return task_id, True, True
+
+
+def enforce_single_current_execution(root, preferred_task_id=None):
     """Synchronize Current Execution with an existing Worker selection; never select a new Ledger task."""
     folder = root / "workspace" / "tasks"
     if not folder.is_dir():
