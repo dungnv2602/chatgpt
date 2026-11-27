@@ -1,6 +1,6 @@
 # CI Ledger data and navigation
 
-The CI Ledger tracks distinct findings from lint reports and GitHub Actions diagnostics. It stores active finding state, bounded evidence references, stable parent-task links, resolution history, and separate hosted-validation metadata. The Ledger does not execute remediation. It creates Proposed parent task folders with CI remediation subtasks. P0 is priority, not execution approval. A CI remediation is resolved on a verified fix commit. Hosted validation is separate metadata.
+The CI Ledger tracks distinct findings from lint reports and GitHub Actions diagnostics. It stores active finding state, bounded evidence references, stable parent-task links, resolution history, and separate hosted-validation metadata. The Ledger does not execute remediation. It creates Proposed work-target parent folders with CI remediation subtasks. One parent represents one affected file or workflow; each stable remediation group is a child. P0 is priority, not execution approval. A CI remediation is resolved on a verified fix commit. Hosted validation is separate metadata.
 
 ## Ownership
 
@@ -25,7 +25,8 @@ Finding IDs and report paths are stable references. Evidence rows retain the sou
 ## Task and archive lifecycle
 
 - Every task folder contains `task.md` and `subtasks/README.md`. Child records live under `subtasks/`.
-- The Ledger creates one typed CI remediation child for each generated parent task. The parent remains Proposed until Worker review, accepted ADR linkage, and separate execution approval.
+- The Ledger creates one parent per affected file or workflow and one typed CI remediation child per stable finding group. It never creates standalone per-rule, per-step, or per-finding CI tasks.
+- `task_refs` stores parent IDs, `subtask_refs` stores child IDs, and `legacy_task_refs` preserves IDs retired during hierarchy migration.
 - The Ledger stores stable parent Task IDs in `task_refs`. It does not store child subtask IDs there.
 - The Worker closes a parent only after every required subtask is Done and the complete folder archive is verified.
 - New task archives include the parent, subtask index, and every child record. Index every exact file path with one shared UTC timestamp. Cleanup retains and deletes the folder as one unit.
