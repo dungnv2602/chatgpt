@@ -89,23 +89,27 @@ Implement accepted ADR-0004 completely and restore reliable CI Ledger operation.
 - **References:** ADR-0004 Confirmation criterion 13; `.takeout/reports/triage/scripts/ledger.py`; `.github/archive-retention-index.json`; subtasks 05 and 06.
 - **Next:** Implement the archive reader without scanning or rewriting `.archive/`.
 
+### 2026-11-27 01:10 UTC
+- **Action:** Completed subtask 05 after implementing the Ledger archive reader. The reader resolves retained folder and historical flat task archives through exact retention-index paths. Recurrence adds a Related tasks link when the prior archive remains retained. Fixed the malformed Ledger function boundary found during source inspection.
+- **Result:** Subtask 05 is Done. Regression cases cover both archive formats, no-scan behavior, incomplete indexes, and recurrence links. All relevant files were read back. No tests were run or hosted results reviewed.
+- **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.github/scripts/cleanup-archive.py`; `.github/scripts/test_cleanup_archive.py`; commits `7632ed1`, `5e7d051`, `6a443e7`, `0763c16`.
+- **Next:** Finish subtask 06 and map all Confirmation criteria. Keep hosted-results review deferred.
+
 ## 7. Current State
 - ADR-0004 is accepted and indexed.
 - This task is Approved, P0, In Progress, and Current Execution.
 - Six implementation subtasks are registered in this folder; subtasks 01–04 are Done. Subtasks 05 and 06 are In Progress.
-- The Ledger generator, commit-based resolution/recurrence, ingestion integrity, active-task folder migration, and folder archive retention compatibility are implemented. The final ADR audit found the Ledger archive reader missing. Subtasks 05 and 06 remain in progress.
+- The Ledger generator, commit-based resolution/recurrence, ingestion integrity, active-task folder migration, atomic folder retention, and indexed folder/flat archive reading are implemented. Subtask 06 regression and documentation alignment remain in progress.
 - No hosted workflow has been run or inspected for this implementation.
 
 ## 8. Remaining Work
-- Subtask 05 must implement exact-indexed-path reading for folder and historical flat archives.
-- Subtask 06 must complete regression and documentation/catalog alignment.
+- Subtask 06 must complete final regression and documentation/catalog alignment.
 - Hosted Ledger regression and Document Type Catalog validation results remain intentionally unreviewed pending explicit user trigger.
 
 ## 9. Next Actions
-1. Complete subtask 05 Ledger archive-reader compatibility and regression coverage.
-2. Complete subtask 06 regression and documentation/catalog alignment.
-3. Read back every changed path and map all ADR-0004 Confirmation criteria to repository evidence.
-4. Stop before hosted results review. Keep the parent In Progress until the user explicitly triggers results review.
+1. Complete subtask 06 regression and documentation/catalog alignment.
+2. Read back every changed path and map all ADR-0004 Confirmation criteria to repository evidence.
+3. Stop before hosted results review. Keep the parent In Progress until the user explicitly triggers results review.
 
 ## 10. References
 - [ADR-0004](../../adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md)
