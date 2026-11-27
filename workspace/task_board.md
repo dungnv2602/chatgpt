@@ -18,7 +18,7 @@ _No task currently executing._
 
 <text>Ranked by the Worker's scheduler. Only eligible candidates are listed.</text>
 
-_No eligible tasks. The startup P0 batch reached quiescence. Remaining work is deferred by ADR or user-triggered external-review gates._
+_No eligible tasks. The board was reconciled after the ADR editorial commits and cancellation/deletion of search task 20261126-090154. Remaining work is deferred by ADR-governance records or user-triggered external-review gates; no cancelled task is queued._
 
 ## Next Task
 
