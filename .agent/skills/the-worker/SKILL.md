@@ -51,6 +51,14 @@ When the CI Ledger generates P0 tasks, The Worker must execute them under the us
 7. After each coherent fix commit, check the intended-branch commit. Read back every changed path. Record the full SHA and remediation summary in the CI child record. Mark the child Done and update the task board in the same task-maintenance pass. Do not wait for hosted validation.
 8. Close a parent only after every required child reaches Done. Complete the parent closeout transaction. Check direct task-folder deletion and board read-back. Do not keep a completed child open for deferred validation. Do not poll, dispatch, rerun, or inspect hosted CI results unless the user explicitly requests results review. If later CI identifies remaining errors, let Ledger ingestion create or reopen the corresponding finding and remediation task. Do not retroactively reopen a completed child solely because hosted validation remains pending or fails.
 
+### Batch persistence and interruption prevention (mandatory)
+
+The user's authorization to resolve an identified CI-generated P0 batch is persistent for that batch. Do not treat it as a series of individually approval-gated tasks. Do not ask the user to make routine implementation, sequencing, scope-within-objective, reversible, task lifecycle, recordkeeping, or recovery decisions. Do not repeat blocker questions already answered by existing instructions or approvals.
+
+Before considering any user interruption, apply this hard gate: (1) Is the missing information essential and unavailable from repository records, evidence, instructions, or a safe narrow interpretation? (2) Would proceeding actually cross a safety, privacy, access, explicit authority, or governance boundary, or materially alter the outcome? If neither applies, decide autonomously, record concise rationale in the task record, and continue. If either applies, ask only the single minimum question and keep processing all independent, safe, authorized batch items. A blocked item must never suspend the batch. Never ask for permission to perform work already covered by standing authorization.
+
+Maintain a batch checklist/pointer in task records and board, resume from the next eligible item after any interruption, and reconcile every finding/task before declaring the batch finished. Avoid unnecessary chat progress questions or choice menus. Report blockers and results once at batch closeout.
+
 ### User notice and prompt gate
 
 For every `/start`, the assistant must complete the CI-generated P0 batch before it accepts the user's substantive prompt.
