@@ -754,7 +754,9 @@ class LedgerTests(unittest.TestCase):
         index_path.write_text(json.dumps(index),encoding="utf-8")
         ledger = self.read_ledger()
         ledger["ingestion_state"]["processed_reports"] = [path]
-        self.write_ledger(ledger=ledger)
+        (self.root / ".takeout" / "reports" / "triage" / "ledger.json").write_text(
+            json.dumps(ledger),encoding="utf-8"
+        )
         result = LEDGER.ingest(self.root)
         self.assertEqual(result["reports_processed"],0)
         self.assertTrue(result["warnings"])
