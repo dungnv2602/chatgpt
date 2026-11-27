@@ -93,7 +93,7 @@ Store each task in `workspace/tasks/<task-id>/task.md`. Every task folder contai
 - **Neutral:** A parent can be Done while hosted validation metadata is Pending or Failed. Readers must distinguish the two states. this is intentional.
 - **Bad:** Hosted validation may fail after a commit. The workflow must create or link a recurrence/remediation record without rewriting the completed historical subtask. Done means the authorized remediation is complete; it does not mean every external validation system passed.
 - **Repository fit and evidence:** This option matches the user's task-folder hierarchy and commit-based completion rule. Static review identified the generator, schema, Worker, board, and archive reader as key enforcement points. The existing `upsert_finding()` can preserve resolution history on recurrence, but current retirement removes finding identity.
-- **Cost, dependencies, and risks:** This option has the highest initial migration cost. The migration must coordinate templates, generator, schema, tests, skills, board, catalog, and lifecycle changes. The Worker must verify commits on the intended branch. Hosted validation remains metadata and subject to explicit user-triggered results review.
+- **Cost, dependencies, and risks:** This option has the highest initial migration cost. The migration must coordinate templates, generator, schema, tests, skills, board, catalog, and lifecycle changes. The Worker must verify commits on the intended branch. Hosted validation remains optional metadata; the Worker does not inspect hosted results.
 - **Evidence limitations:** No hosted regression run or production recurrence replay has confirmd this design. Archive cleanup compatibility for nested paths must be tested before rollout.
 
 ### Comparative Assessment
@@ -108,7 +108,7 @@ Store each task in `workspace/tasks/<task-id>/task.md`. Every task folder contai
 | Migration complexity | Lower | High | High |
 | Fit with user direction | Partial | Conflicts with completion rule | Full |
 
-Option 1 has the lowest migration cost but fails the required physical containment. Option 2 provides containment but keeps the rejected hosted-validation gate. Option 3 has the highest initial cost and is the only option that satisfies both task-folder structure and commit-based CI remediation completion while preserving the user's results-review boundary.
+Option 1 has the lowest migration cost but fails the required physical containment. Option 2 provides containment but keeps the rejected hosted-validation gate. Option 3 has the highest initial cost and is the only option that satisfies both task-folder structure and commit-based CI remediation completion while preserving commit-based completion and automatic recurrence handoff.
 
 ## Assessment Basis and Evidence Limits
 
@@ -163,7 +163,7 @@ The user's approval of DRAFT-0005 revision 1 on 2026-11-27 authorized this decis
 13. Creating a new P0 task must not displace a valid Current Execution task selected under Worker priority-and-age rules.
 14. A Ledger-generated implementation task with Governing ADR(s) Pending remains Proposed and is not executable. The Worker must link an accepted ADR before moving it to Ready or In Progress. P0 priority does not bypass decision governance.
 15. At closeout, remove the complete task folder directly after acceptance checks. Remove its board entry. Do not create an archive copy, retention entry, or Historical board row. Keep Ledger finding identity, resolution history, Task IDs, and evidence references intact.
-16. Preserve existing report capture classification, error eligibility, lint baselines, report retention, shared report-writer architecture, and the explicit user-triggered hosted-results-review boundary.
+16. Preserve existing report capture classification, error eligibility, lint baselines, report retention, shared report-writer architecture, and automatic report-to-task recurrence.
 
 ### Confirmation
 
