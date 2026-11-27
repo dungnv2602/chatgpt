@@ -250,11 +250,20 @@ class LedgerAttributionTests(unittest.TestCase):
         self.assertEqual(len(self.child_files()), 2)
 
     def test_unknown_or_inactive_parent_never_creates_synthetic_task(self):
-        self.add_lint("103", source_task_id="20261127-090001")
+        self.add_lint("103", source_task_id="20261127-090001", findings=[{
+            "file": "docs/a.md", "rule": "rule_a", "level": "hard", "message": "A",
+            "fingerprint": "aaaaaaaa1111", "comparison": "new",
+        }])
         self.add_parent("20261127-090002", status="Done")
-        self.add_lint("104", source_task_id="20261127-090002")
+        self.add_lint("104", source_task_id="20261127-090002", findings=[{
+            "file": "docs/b.md", "rule": "rule_b", "level": "hard", "message": "B",
+            "fingerprint": "bbbbbbbb2222", "comparison": "new",
+        }])
         self.add_parent("20261127-090003", origin="Assistant")
-        self.add_lint("105", source_task_id="20261127-090003")
+        self.add_lint("105", source_task_id="20261127-090003", findings=[{
+            "file": "docs/c.md", "rule": "rule_c", "level": "hard", "message": "C",
+            "fingerprint": "cccccccc3333", "comparison": "new",
+        }])
         self.ingest()
         findings = self.read_ledger()["findings"]
         self.assertEqual(len(findings), 3)
