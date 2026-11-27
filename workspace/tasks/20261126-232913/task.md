@@ -4,7 +4,7 @@
 - **Template version:** 2.0
 - **ID:** 20261126-232913
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-27 00:58 UTC
+- **Updated:** 2026-11-27 01:10 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -95,21 +95,27 @@ Implement accepted ADR-0004 completely and restore reliable CI Ledger operation.
 - **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.github/scripts/cleanup-archive.py`; `.github/scripts/test_cleanup_archive.py`; commits `7632ed1`, `5e7d051`, `6a443e7`, `0763c16`.
 - **Next:** Finish subtask 06 and map all Confirmation criteria. Keep hosted-results review deferred.
 
+### 2026-11-27 01:10 UTC
+- **Action:** Completed subtask 06 and mapped all 16 ADR-0004 Confirmation criteria. Added fail-closed checks for missing retained archive-index paths in the cleanup workflow and documented the integrity rule across archive, Worker, CI Ledger, and GitHub Actions guidance.
+- **Result:** All six implementation subtasks are Done. Criteria 1–14 are supported by repository evidence. Criterion 15 remains pending hosted review. Criterion 16 is partial because two sampled non-expired archive-index paths are missing. No historical archive file or index entry was changed.
+- **References:** Parent Verification matrix; `.github/scripts/cleanup-archive.py`; `.github/scripts/test_cleanup_archive.py`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.github/archive-retention-index.json`.
+- **Next:** Obtain user disposition for missing archive paths, then await explicit hosted-results-review trigger. Do not archive or mark the parent Done yet.
+
 ## 7. Current State
 - ADR-0004 is accepted and indexed.
 - This task is Approved, P0, In Progress, and Current Execution.
-- Six implementation subtasks are registered in this folder; subtasks 01–04 are Done. Subtasks 05 and 06 are In Progress.
-- The Ledger generator, commit-based resolution/recurrence, ingestion integrity, active-task folder migration, atomic folder retention, and indexed folder/flat archive reading are implemented. Subtask 06 regression and documentation alignment remain in progress.
-- No hosted workflow has been run or inspected for this implementation.
+- All six required implementation subtasks are Done.
+- The Ledger generator, commit-based resolution/recurrence, ingestion integrity, active-task folder migration, atomic folder retention, indexed folder/flat archive reading, regression coverage, and documentation/catalog alignment are implemented. Parent closeout remains blocked by hosted confirmation and historical archive-index integrity.
+- No local tests were run. Hosted workflows were not inspected. At least two sampled non-expired historical archive paths are missing from the retention index's referenced files.
 
 ## 8. Remaining Work
-- Subtask 06 must complete final regression and documentation/catalog alignment.
+- At least two sampled non-expired historical task paths in the retention index return NOT_FOUND. Their archive contents and index entries were not changed.
 - Hosted Ledger regression and Document Type Catalog validation results remain intentionally unreviewed pending explicit user trigger.
 
 ## 9. Next Actions
-1. Complete subtask 06 regression and documentation/catalog alignment.
-2. Read back every changed path and map all ADR-0004 Confirmation criteria to repository evidence.
-3. Stop before hosted results review. Keep the parent In Progress until the user explicitly triggers results review.
+1. Obtain user direction on the missing historical archive paths. Restore exact originals from repository history if recoverable, or authorize removal of the stale index entries. Do not change either without approval.
+2. Wait for the user's explicit hosted-results-review trigger. Do not inspect or dispatch workflows before it.
+3. Complete parent archive closeout only after Confirmation items 15 and 16 are satisfied.
 
 ## 10. References
 - [ADR-0004](../../adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md)
@@ -125,7 +131,7 @@ Implement accepted ADR-0004 completely and restore reliable CI Ledger operation.
 - **Check:** ADR-0004 promotion, source Draft deletion, and ADR index.
 - **Method:** GitHub branch read-back of the accepted ADR, index, Draft index, and discussion register.
 - **Result:** ADR-0004 accepted; DRAFT-0005 deleted after read-back; indexes updated.
-- **Limitations:** Repository read-back and regression coverage are recorded. No local tests were run. Hosted Ledger regression and Document Type Catalog validation results were not inspected. Parent completion remains blocked by Confirmation item 15 and the required final archive closeout.
+- **Limitations:** Repository read-back and regression coverage are recorded. No local tests were run. Hosted Ledger regression and Document Type Catalog validation results were not inspected. At least two sampled non-expired task archive paths in the retention index are missing. Parent completion remains blocked by Confirmation items 15 and 16.
 
 ### ADR-0004 Confirmation evidence matrix
 
@@ -143,13 +149,13 @@ Implement accepted ADR-0004 completely and restore reliable CI Ledger operation.
 | 10 | Incomplete or pre-finalizer captures remain retryable | Tests `test_incomplete_actions_capture_is_not_ingested`, `test_pre_finalizer_actions_capture_remains_retryable`, and `test_previously_processed_incomplete_actions_capture_is_unprocessed`. | Verified |
 | 11 | Missing indexed complete reports and unsafe IDs fail closed | Tests `test_invalid_lint_run_id_is_rejected_before_path_construction`, `test_missing_indexed_complete_lint_report_fails_closed`, `test_missing_indexed_complete_actions_report_fails_closed`, and `test_unsafe_actions_history_path_is_rejected`. | Verified |
 | 12 | New P0 tasks do not displace valid Current Execution | Test `test_task_generation_preserves_worker_current_execution`. | Verified |
-| 13 | Ledger and retention read folder and historical flat archives | Ledger `read_archived_task()`; tests `test_archived_task_reader_supports_folder_and_legacy_flat_files`, `test_archived_task_reader_rejects_incomplete_folder_archive`, and cleanup tests for atomic folder/legacy flat retention. An indexed historical flat archive was read back without modification. | Verified |
+| 13 | Ledger and retention read folder and historical flat archives | Ledger `read_archived_task()`; tests `test_archived_task_reader_supports_folder_and_legacy_flat_files`, `test_archived_task_reader_rejects_incomplete_folder_archive`, and cleanup tests for atomic folder/legacy flat retention. An indexed historical flat archive was read back without modification. Missing indexed files fail closed. | Verified with integrity exception |
 | 14 | Pending ADR tasks remain Proposed and cannot execute | Test `test_all_lint_severities_create_and_reuse_grouped_tasks`; CI Ledger and Worker governance instructions. | Verified |
 | 15 | Hosted Ledger regression and Document Type Catalog validation pass | Hosted results were not inspected. No pass is claimed. | Pending user-triggered review |
-| 16 | Active folders, board links, discussion register, and retention index agree | Six destination folders and indexes, [task board](../../task_board.md), [discussion register](../../discussion.md), and [retention index](../../../.github/archive-retention-index.json) were read back. The index remains at 183 records. | Verified |
+| 16 | Active folders, board links, discussion register, and retention index agree | Six destination folders and indexes, [task board](../../task_board.md), [discussion register](../../discussion.md), and [retention index](../../../.github/archive-retention-index.json) were read back. The index remains at 183 records, but at least two sampled non-expired flat paths are absent. No index mutation was made. | Partially verified — user disposition required |
 
 ## 12. Handoff Instructions
-Resume from the first incomplete child subtask in `subtasks/README.md`. Follow ADR-0004 and do not expand into DRAFT-0003. Use remote GitHub operations only. Do not run repository scripts locally. Do not dispatch, poll, rerun, or inspect hosted CI results until the user explicitly triggers results review. Commit and read back each coherent change. Keep the parent In Progress until every required child is Done and the folder archive is verified.
+Resume from the first incomplete child subtask in `subtasks/README.md`. Follow ADR-0004 and do not expand into DRAFT-0003. Use remote GitHub operations only. Do not run repository scripts locally. Do not dispatch, poll, rerun, or inspect hosted CI results until the user explicitly triggers results review. Commit and read back each coherent change. Keep the parent In Progress until hosted confirmation is reviewed, missing historical archive paths are resolved or explicitly waived, and the complete folder archive is verified.
 
 ## 13. Subtasks
 See [subtasks/README.md](subtasks/README.md) for the canonical child list and execution order.
