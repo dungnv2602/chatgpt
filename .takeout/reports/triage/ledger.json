@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:34:13Z",
+  "updated_at_utc": "2026-11-27T13:35:02Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -2559,7 +2559,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 35 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T22:10:22.156660+00:00",
@@ -2622,7 +2622,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "239b1acd74e87bfc96a9b6f4ab5d8216603a9789",
+        "resolved_at_utc": "2026-11-27T13:35:02Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five long-sentence constructions were split into shorter sentences. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -4301,7 +4312,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 29 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T22:21:12.472411+00:00",
@@ -4364,7 +4375,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "239b1acd74e87bfc96a9b6f4ab5d8216603a9789",
+        "resolved_at_utc": "2026-11-27T13:35:02Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five long-sentence constructions were split into shorter sentences. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -15266,7 +15288,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 26 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T02:37:46.036675+00:00",
@@ -15329,7 +15351,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "239b1acd74e87bfc96a9b6f4ab5d8216603a9789",
+        "resolved_at_utc": "2026-11-27T13:35:02Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five long-sentence constructions were split into shorter sentences. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -15421,7 +15454,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 33 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T03:37:08.310834+00:00",
@@ -15484,7 +15517,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "239b1acd74e87bfc96a9b6f4ab5d8216603a9789",
+        "resolved_at_utc": "2026-11-27T13:35:02Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five long-sentence constructions were split into shorter sentences. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -20141,7 +20185,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 42 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -20171,7 +20215,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "239b1acd74e87bfc96a9b6f4ab5d8216603a9789",
+        "resolved_at_utc": "2026-11-27T13:35:02Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five long-sentence constructions were split into shorter sentences. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
