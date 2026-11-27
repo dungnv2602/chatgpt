@@ -839,11 +839,13 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
         "- **Priority:** P2": "- **Priority:** P0",
         "- **Origin:** User": "- **Origin:** Assistant",
         "- **Approval:** Approved": "- **Approval:** Approved",
+        "- **Approval scope/source:** [Exact scope and authorization source]": "- **Approval scope/source:** Standing authorization for CI remediation.",
         "- **Governing ADR(s):** [Accepted ADR IDs, or None]": "- **Governing ADR(s):** None — no separate decision required",
         "- **Created:** YYYY-MM-DD HH:MM UTC": "- **Created:** " + created,
         "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
         "- **Ledger group:** None": "- **Ledger group:** " + chr(96) + group_id + chr(96),
         "- **Legacy Task IDs:** None": "- **Legacy Task IDs:** " + legacy_text,
+        "- **Eligibility / deferral reason:** [Eligible or exact reason]": "- **Eligibility / deferral reason:** Eligible — no dependencies or unresolved decision gate.",
         "[Preserve this follow-up request verbatim.]":
             "Automated remediation request from CI report ingestion for parent task " + parent_id + ". Finding IDs: " + finding_ids + ".",
         "[Preserve later clarifications, constraints, decisions, and approvals verbatim with UTC timestamps.]":
@@ -862,10 +864,18 @@ def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findi
     for old, new in replacements.items():
         if old in content:
             content = content.replace(old, new, 1)
-    if "- **Status:** Ready" not in content or "- **Type:** CI remediation" not in content or "- **Priority:** P0" not in content or "- **Approval:** Approved" not in content:
-        raise LedgerError("Canonical subtask template does not support approved Ready CI remediation handoff")
+    if (
+        "- **Status:** Ready" not in content
+        or "- **Type:** CI remediation" not in content
+        or "- **Priority:** P0" not in content
+        or "- **Approval:** Approved" not in content
+        or "[Exact scope and authorization source]" in content
+        or "[Eligible or exact reason]" in content
+    ):
+        raise LedgerError("Canonical subtask template has an unsupported or incomplete CI handoff")
     content, _ = update_task_findings(content, findings, timestamp, task_path=task_path)
     return content
+
 
 
 def render_subtask_index(task_folder, task_id):
