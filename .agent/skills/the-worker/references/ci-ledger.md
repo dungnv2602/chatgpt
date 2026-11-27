@@ -36,7 +36,7 @@ Set new CI children to P0, Approved, Ready under the standing authorization. Use
 
 Store genuine parent IDs in `task_refs` and child IDs in `subtask_refs`. Keep retired synthetic IDs in `legacy_task_refs`. Never add a synthetic parent, modify parent status or priority, select work, or edit `task_board.md` or Current Execution.
 
-Update the parent's Ledger Findings section without modifying its priority. Update the child and `subtasks/README.md`. Preserve manual children. Roll back if child/index publication fails. Commit the Ledger, parent summary, children, and report-index changes in one serialized writer transaction.
+Update the parent's Ledger Findings section without modifying its priority. Update the child and `subtasks/README.md`. Preserve manual children. Roll back if child/index publication fails. Commit the Ledger, parent summary, children, and report-index modifications in one serialized writer transaction.
 
 ## Flood control
 
