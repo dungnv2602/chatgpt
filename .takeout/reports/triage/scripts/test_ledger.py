@@ -188,17 +188,17 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("- **Current execution:** No", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
         self.assertIn("[report](../../../.takeout/reports/lint_reports/on_changed/history/100-attempt-1/report.json)", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("../../.takeout/reports/triage/ledger.json", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("- **Template version:** 1.3", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("../../../.takeout/reports/triage/ledger.json", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("**Template version:** 2.0", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Governing ADR(s):** Pending — Worker review required before approval", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("1. Inspect every linked report and exact diagnostic.", task_files[0].read_text(encoding="utf-8"))
-        self.assertNotIn("[List agreed requirements and acceptance criteria.", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("- **Standing instruction:**", task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("- **Standing approval:** CI Ledger-generated remediation is approved under the user's permanent P0 instruction.", task_files[0].read_text(encoding="utf-8"))
-        self.assertNotIn("[Record approved decisions and concise rationale.", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("1. Worker reviews the grouped findings and assigns an applicable accepted ADR or prepares a Draft.", task_files[0].read_text(encoding="utf-8"))
+        self.assertNotIn("[List parent-level outcome criteria.", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("- **Ledger handoff:** P0 priority indicates urgency; it does not grant task execution approval.", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("- **Execution approval:** Pending Worker review.", task_files[0].read_text(encoding="utf-8"))
+        self.assertNotIn("[Record approved decisions and concise rationale. Mark unapproved ideas as Proposed.]", task_files[0].read_text(encoding="utf-8"))
         self.assertNotIn("[Preserve relevant user clarifications", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(f"| {finding['task_refs'][0]} |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
-        self.assertIn("| Assistant | Approved | Pending |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
+        self.assertIn("| Assistant | Pending — Worker review required | Pending |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
         second = LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
         self.assertFalse(second["changed"])
         self.assertEqual(self.read_ledger()["findings"][0]["occurrence_count"],1)
@@ -735,6 +735,87 @@ class LedgerTests(unittest.TestCase):
         self.add_lint("on_changed","600","2026-11-23T07:10:00Z",status="Incomplete")
         LEDGER.ingest(self.root)
         self.assertEqual(self.read_ledger()["findings"],[])
+
+    def test_pre_finalizer_actions_capture_remains_retryable(self):
+        issue = {"category":"validation_or_test","job_name":"Build","step_name":"Run tests",
+                 "blocking":True,"confidence":"high","message":"ERROR: assertion mismatch"}
+        path = self.add_actions("207","2026-11-23T07:38:00Z",[issue],stage="pre_finalizer")
+        result = LEDGER.ingest(self.root)
+        self.assertEqual(result["reports_processed"],0)
+        self.assertNotIn(path,self.read_ledger()["ingestion_state"]["processed_reports"])
+
+    def test_previously_processed_incomplete_actions_capture_is_unprocessed(self):
+        issue = {"category":"validation_or_test","job_name":"Build","step_name":"Run tests",
+                 "blocking":True,"confidence":"high","message":"ERROR: assertion mismatch"}
+        path = self.add_actions("208","2026-11-23T07:39:00Z",[issue],completeness="Incomplete")
+        index_path = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+        index["runs"][0]["report_status"] = "Complete"
+        index_path.write_text(json.dumps(index),encoding="utf-8")
+        ledger = self.read_ledger()
+        ledger["ingestion_state"]["processed_reports"] = [path]
+        self.write_ledger(ledger=ledger)
+        result = LEDGER.ingest(self.root)
+        self.assertEqual(result["reports_processed"],0)
+        self.assertTrue(result["warnings"])
+        self.assertNotIn(path,self.read_ledger()["ingestion_state"]["processed_reports"])
+
+    def test_invalid_lint_run_id_is_rejected_before_path_construction(self):
+        index_path = self.root / ".takeout" / "reports" / "lint_reports" / "on_changed" / "index.json"
+        index_path.parent.mkdir(parents=True,exist_ok=True)
+        index_path.write_text(json.dumps({"runs":[{"run_id":"../escape","attempt":1}]}),encoding="utf-8")
+        with self.assertRaises(LEDGER.LedgerError):
+            LEDGER.indexed_reports(self.root)
+
+    def test_missing_indexed_complete_lint_report_fails_closed(self):
+        index_path = self.root / ".takeout" / "reports" / "lint_reports" / "on_changed" / "index.json"
+        index_path.parent.mkdir(parents=True,exist_ok=True)
+        index_path.write_text(json.dumps({"runs":[{"run_id":"999","attempt":1}]}),encoding="utf-8")
+        with self.assertRaisesRegex(LEDGER.LedgerError,"Indexed complete lint report is missing"):
+            LEDGER.indexed_reports(self.root)
+
+    def test_complete_actions_index_without_history_path_fails_closed(self):
+        index = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
+        index.parent.mkdir(parents=True,exist_ok=True)
+        index.write_text(json.dumps({"runs":[{
+            "run_id":"100","attempt":1,"workflow_id":55,"report_status":"Complete",
+            "capture_stage":"post_run","source_status":"completed"
+        }]}),encoding="utf-8")
+        with self.assertRaisesRegex(LEDGER.LedgerError,"missing history_path"):
+            LEDGER.indexed_reports(self.root)
+
+    def test_missing_indexed_complete_actions_report_fails_closed(self):
+        index = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
+        index.parent.mkdir(parents=True,exist_ok=True)
+        index.write_text(json.dumps({"runs":[{
+            "run_id":"100","attempt":1,"workflow_id":55,"report_status":"Complete",
+            "capture_stage":"post_run","source_status":"completed",
+            "history_path":"history/55/100-attempt-1-post_run"
+        }]}),encoding="utf-8")
+        with self.assertRaisesRegex(LEDGER.LedgerError,"Indexed complete GitHub Actions report is missing"):
+            LEDGER.indexed_reports(self.root)
+
+    def test_ingestion_continues_after_one_malformed_report_and_returns_error(self):
+        issue = {"category":"validation_or_test","job_name":"Build","step_name":"Run tests",
+                 "blocking":True,"confidence":"high","message":"ERROR: assertion mismatch"}
+        bad_path = self.add_actions("801","2026-11-23T07:40:00Z",[issue])
+        good_path = self.add_actions("802","2026-11-23T07:41:00Z",[issue])
+        (self.root / bad_path).write_text("{broken",encoding="utf-8")
+        result = LEDGER.ingest(self.root)
+        self.assertEqual(result["reports_processed"],1)
+        self.assertEqual(result["findings_created"],1)
+        self.assertEqual(len(result["errors"]),1)
+        self.assertEqual(result["errors"][0]["report_path"],bad_path)
+        self.assertNotIn(bad_path,self.read_ledger()["ingestion_state"]["processed_reports"])
+        self.assertIn(good_path,self.read_ledger()["ingestion_state"]["processed_reports"])
+
+    def test_main_returns_nonzero_when_ingestion_has_report_errors(self):
+        issue = {"category":"validation_or_test","job_name":"Build","step_name":"Run tests",
+                 "blocking":True,"confidence":"high","message":"ERROR: assertion mismatch"}
+        bad_path = self.add_actions("803","2026-11-23T07:42:00Z",[issue])
+        (self.root / bad_path).write_text("{broken",encoding="utf-8")
+        with mock.patch("sys.argv",["ledger.py","--root",str(self.root)]), mock.patch("builtins.print"):
+            self.assertEqual(LEDGER.main(),1)
 
     def test_malformed_report_is_not_marked_processed(self):
         path = self.add_lint("on_changed","700","2026-11-23T07:10:00Z")
