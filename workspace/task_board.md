@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000: Refactor Skills](tasks/20261127-173000/task.md). The current skills-refactoring workstream remains active. Subtask 51 is closed.
+[20261127-173000-53: Simplify CI report structure](tasks/20261127-173000/subtasks/53-simplify-ci-report-structure.md) — consolidate report families and state into one reports tree.
 
 ## Ordered Eligible Execution Queue
 
