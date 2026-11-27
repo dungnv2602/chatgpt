@@ -14,15 +14,15 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-_None. The process correction is committed and read back._
+[Refactor Skills — P0](tasks/20261127-173000/task.md), executing child [01 — Consolidate Document Standards into The Worker](tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md).
 
 ## Ordered Eligible Execution Queue
 
-_No eligible tasks._
+_No additional eligible tasks; the selected P0 task is in Current Execution._
 
 ## Next Task
 
-_None. The P0 queue has no eligible work until report evidence becomes available for blocked remediation._
+Current execution: Refactor Skills (P0). Continue with child 01.
 
 ## Deferred Work
 
@@ -30,8 +30,8 @@ _None. The P0 queue has no eligible work until report evidence becomes available
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | The repository report JSON was read. It provides captured anchor diagnostics. Previous evidence-based blocker claim is superseded pending remediation. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
-| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | The repository report JSON was read. It includes full output for both failed regression assertions. Previous evidence-based blocker claim is superseded pending remediation. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
+| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | The repository report JSON was read. It provides captured anchor diagnostics. Blocker status requires re-evaluation; captured diagnostics are available for remediation. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
+| 20261126-142500-23 | Fix lint tooling check: Lint report regression tests | P0 | Blocked | Approved | The repository report JSON was read. It includes full output for both failed regression assertions. Blocker status requires re-evaluation; captured diagnostics are available for remediation. | [23](tasks/20261126-142500/subtasks/23-ci-remediation-fix-lint-tooling-check-lint-report-regression-tests.md) |
 
 ### Proposed — decision pending
 
