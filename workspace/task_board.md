@@ -14,7 +14,7 @@ This file is the single index for active task records. Each active task is a fol
 
 | ID | Title | Priority | Status | Approval | Task record |
 |---|---|---:|---|---|---|
-| 20261126-142500 | Repair CI task generation and clear active reports | P1 | In Progress | Approved | [Task record](tasks/20261126-142500/task.md) |
+[20261126-142500 — Repair CI task generation and clear active reports](tasks/20261126-142500/task.md)
 
 ## Ordered Eligible Execution Queue
 
