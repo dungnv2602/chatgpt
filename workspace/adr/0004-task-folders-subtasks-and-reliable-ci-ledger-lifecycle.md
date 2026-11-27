@@ -155,8 +155,8 @@ The user's explicit approval of DRAFT-0005 revision 1 on 2026-11-27 authorizes t
 5. A CI remediation subtask becomes Done only after the remediation is committed to the intended branch, the Worker verifies the commit and reads back the changed files, and the commit SHA and remediation summary are recorded.
 6. Hosted validation is separate metadata (for example Pending, Passed, or Failed). It is not a prerequisite for CI remediation subtask Done and does not retroactively change that subtask's completion.
 7. A later CI observation is a new recurrence/remediation record linked to the prior finding and remediation. Do not rewrite a completed prior remediation as incomplete merely because later validation fails or the issue recurs.
-8. Ledger `task_refs` identify stable parent Task IDs. The Ledger retains terminal finding identity and resolution history after task archival; archiving must not delete a finding's identity or prior task references.
-9. When a resolved finding recurs, preserve its previous resolution in `resolution_history`, reopen the same finding identity, and append the new parent task reference. If the prior task is no longer active, create a new parent folder and CI subtask.
+8. Ledger `task_refs` identify stable parent Task IDs; `subtask_refs` identify child IDs. The Ledger retains terminal finding identity and resolution history after task archival; archiving must not delete a finding's identity or prior parent/child references.
+9. When a resolved finding recurs, preserve its previous resolution in `resolution_history`, reopen the same finding identity, and append the new parent and child references. If the prior parent is no longer active, create or reuse the appropriate work-target parent and add a new CI remediation child.
 10. Report-ingestion errors must be surfaced as errors and produce a non-zero command result. Safe partial progress may be published, but failed reports remain retryable.
 11. Incomplete or pre-finalizer Actions captures remain unprocessed and eligible for retry.
 12. Validate report-index identifiers before constructing paths. Missing indexed complete reports and unsafe identifiers fail closed.
@@ -171,8 +171,8 @@ The implementation is complete only when the repository provides observable evid
 
 - [ ] Every active task is a folder containing `task.md` and `subtasks/`.
 - [ ] Every task folder has a subtask index. Every child record has an ID, type, status, acceptance criteria, evidence, and completion record.
-- [ ] The Ledger generates a parent task folder and a CI remediation subtask, not a flat note.
-- [ ] Ledger `task_refs` identify stable parent Task IDs; parent Done is blocked while any required child is not Done.
+- [ ] The Ledger groups CI remediation children under work-target parents (one affected file or workflow per parent) and never creates standalone per-rule, per-step, or per-finding CI tasks.
+- [ ] Ledger `task_refs` identify stable parent Task IDs and `subtask_refs` identify child IDs; parent Done is blocked while any required child is not Done.
 - [ ] A CI remediation subtask can be Done with a verified commit SHA and remediation summary while hosted validation remains Pending.
 - [ ] The Ledger accepts commit-based resolution without hosted validation; optional validation metadata is schema-validated.
 - [ ] Recurrence reopens the same finding identity, preserves the prior resolution in `resolution_history`, and creates a new task/subtask when the prior task is no longer active.
@@ -232,6 +232,13 @@ The implementation is complete only when the repository provides observable evid
 - **Review trigger:** Any recurrence-link loss, partial-ingestion false success, incomplete-capture consumption, completion/validation conflation, task discoverability failure, or archive-retention regression.
 
 ## Decision Lifecycle History
+
+## Implementation Clarification — 2026-11-27
+
+The user clarified that CI remediation work must never be represented as standalone tasks. The Ledger groups findings by their work target: one parent task per affected file (or lint-tooling work target) and one parent per Actions workflow. Each stable remediation group is a typed child subtask under that parent. It must not create a separate parent for each lint rule, Actions step, or individual finding.
+
+For each finding, `task_refs` contains parent Task IDs, `subtask_refs` contains child IDs, and `legacy_task_refs` retains retired standalone IDs after migration. Finding identity and the existing `task_group` remain unchanged. This clarification refines the implementation of the accepted parent/child lifecycle; it does not authorize unrelated task execution.
+
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
