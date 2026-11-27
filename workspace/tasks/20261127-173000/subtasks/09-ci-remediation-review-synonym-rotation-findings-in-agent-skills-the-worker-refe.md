@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-09
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Blocked
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — source fix is committed. Ledger resolution and closeout require full Ledger read/write access.
+- **Eligibility / deferral reason:** In Progress — selected as the current P0 child. Full Ledger access is restored through the Git blob endpoint.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
 - **Updated:** 2026-11-27 (commit-trailer correction)
@@ -48,6 +48,13 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 3. Mark Done after these checks; hosted validation is separate metadata.
 
 ## 5. Decisions and Progress
+
+### 2026-11-27T12:57:07Z — execution resumed
+
+- **Action:** Restored complete Ledger access through the Git blob endpoint and reconciled the earlier blocker.
+- **Result:** Confirmed the synonym-rotation group remains open because the latest indexed report still identifies `changes` in the target reference. The next edit will standardize that wording.
+- **Next:** Correct the remaining synonym and review the separate passive-voice group assigned to child 20.
+
 
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.

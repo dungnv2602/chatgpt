@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-_No Current Execution. All eligible startup P0 children are blocked by the CI Ledger retrieval failure._
+[20261127-173000-09: CI remediation — Review synonym-rotation findings in .agent/skills/the-worker/references/ci-ledger.md](tasks/20261127-173000/subtasks/09-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-refe.md). This P0 child is active under the persistent Refactor Skills parent.
 
 ## Ordered Eligible Execution Queue
 
@@ -31,9 +31,6 @@ _No Current Execution. All eligible startup P0 children are blocked by the CI Le
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-07 | CI remediation — Review synonym-rotation findings in .agent/skills/the-worker/references/document-type-catalog.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](07-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-refe.md) |
-| 20261127-173000-08 | CI remediation — Review synonym-rotation findings in .agent/skills/the-worker/references/decision-governance.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](08-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-refe.md) |
-| 20261127-173000-09 | CI remediation — Review synonym-rotation findings in .agent/skills/the-worker/references/ci-ledger.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](09-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-refe.md) |
 | 20261127-173000-10 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/references/decision-governance.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](10-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md) |
 | 20261127-173000-11 | CI remediation — Review passive-voice findings in .agent/skills/agent-skill-authoring/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](11-ci-remediation-review-passive-voice-findings-in-agent-skills-agent-skill-author.md) |
 | 20261127-173000-12 | CI remediation — Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](12-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md) |
