@@ -119,3 +119,18 @@ The Worker owns document governance and must apply this gate before creating, mo
 Catalog requirements: define purpose and document type, required/conditional/optional/repeatable fields, field names/types/formats/allowed values, status/approval/provenance rules, stable IDs and parent links, version/migration/validation rules, owner, and canonical path. Treat unmarked fields as required. explicitly mark Optional and Conditional. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
 Catalog validator and tests remain supporting infrastructure under `.agent/skills/document-standards/`. they are assets, not a separately activated skill. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. it does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+
+## Diagnostic investigation before blockers
+
+When a task depends on CI-generated or workflow diagnostic evidence, exhaust the evidence already published in the repository before declaring the task Blocked.
+
+1. **Read the complete indexed report.** Read the report JSON as well as its Markdown summary and index. Follow the published report path. Do not search report history or inspect hosted CI unless separately authorized by the applicable policy.
+2. **Read diagnostic payloads, not just summaries.** Examine failed check names, status and exit codes, captured stdout/stderr, tracebacks, failing assertions, diagnostic locations, per-file records, normalized findings, and relevant metadata. Inspect the exact payload fields that apply. Do not treat a summary that omits details as proof the details are unavailable.
+3. **Trace the diagnosis in repository source.** Follow diagnostic locations and output into the affected workflow, script, generator, tests, configuration, or report producer. Read relevant source and tests. Use repository evidence to establish the cause and scope before proposing a repair.
+4. **Separate committed diagnostics from hosted CI access.** A diagnostic report or log committed to the repository is repository evidence. Reading it is not hosted CI result inspection. The restriction against hosted CI inspection does not prohibit reading already-published repository files. Do not fetch, poll, dispatch, rerun, or inspect hosted CI unless explicitly authorized.
+5. **Investigate reporting gaps as defects.** If a report, capture, or summary omits information needed to diagnose a failure, investigate the reporting/capture mechanism and repair or taskify that defect. Do not automatically block the original remediation solely because the summary is insufficient. Continue with independent source investigation where possible.
+6. **Blocker discipline.** Declare Blocked only after repository evidence and source investigation are exhausted within the permitted scope. State precisely which evidence or access is missing, what paths and diagnostic fields were examined, why further repository-side investigation cannot proceed, and the specific external or user input needed. Uncertainty alone is not a blocker.
+7. **Read back and record.** Read back the exact relevant repository sources and task records after changes. Record examined report paths, concrete diagnostic details, source locations, commit SHAs, and limitations. Do not claim validation that was not performed.
+
+This procedure applies before task selection, status changes, blocker declarations, and remediation closeout. It does not authorize local execution, hosted CI review, or any other restricted action.
+
