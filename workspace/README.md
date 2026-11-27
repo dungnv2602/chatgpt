@@ -7,6 +7,7 @@ The Worker owns task capture, hierarchy, scheduling, progress, handoff, closeout
 | Path | Purpose |
 |---|---|
 | [discussion.md](discussion.md) | Current step, open decisions, and three latest success reports |
+| [templates/DISCUSSION_TEMPLATE.md](templates/DISCUSSION_TEMPLATE.md) | Canonical discussion-register structure and entry conventions |
 | [task_board.md](task_board.md) | Current execution, eligible queue, next task, and deferred work |
 | [TASK_BOARD_TEMPLATE.md](TASK_BOARD_TEMPLATE.md) | Canonical task-board structure and scheduler contract |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Parent task folder |
