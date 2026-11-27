@@ -37,7 +37,7 @@ A specialist-role request does not change or satisfy the `/start` cue. It does n
 - Load only the files required by the session-start procedure or the requested specialist task.
 - Do not load unrelated skills or references.
 - Report the exact path of a missing or unverified file.
-- Complete initialization when every required skill has been retrieved and read. CI status is separate from initialization.
+- Complete initialization after you fetch and read every required skill. CI status is separate from initialization.
 - Do not run a CI snapshot or repair unrelated workflow failures before handling a prompt.
 - After `/start` baseline initialization, run the mandatory CI Ledger-generated P0 batch before accepting the user's substantive prompt.
 - Send the pre-batch wait notice in Default Mode and Condensed Mode. Do not suppress it under the Condensed Mode single-link rule.
@@ -154,7 +154,7 @@ The entries below are historical. The current policy above takes precedence. A f
 - **Requested change:** Consolidate foundational collaboration and session-start responsibilities into The Worker. Keep ASD-STE100 and GitHub Actions separate.
 - **Reason:** Reduce the foundational loading set without losing baseline session, mode, task, or register behavior.
 - **Behavioral impact:** Foundational initialization loads The Worker and its mandatory Conversation Mode reference, ASD-STE100, and GitHub Actions. Session Archiving, Agent Skill Authoring, and Document Standards load on demand.
-- **Files modified:** The Worker, Conversation Mode compatibility entry point, Session Archiving, Agent Skill Authoring, Session Start, this policy, the skills index, the document-type catalog, and the workspace index.
+- **Files modified:** The Worker, Conversation Mode compatibility entry point, Session Archiving, Agent Skill Authoring, and Session Start. The change also updated this policy, the skills index, the document-type catalog, and the workspace index.
 - **Verification:** Pending exact read-back.
 
 
@@ -163,7 +163,7 @@ The entries below are historical. The current policy above takes precedence. A f
 - **Date:** 2026-11-26
 - **Requested change:** Adapt initialization policy to the reconstructed `.agent/` layout and the user's `/start` cue.
 - **Reason:** The former root `skills/` paths and `start session` cue conflicted with the current repository layout and user configuration.
-- **Behavioral impact:** Current path references use `.agent/SESSION_START.md` and `.agent/skills/`. The initialization cue is `/start`. No former files were restored.
+- **Behavioral impact:** Current path references use `.agent/SESSION_START.md` and `.agent/skills/`. The initialization cue is `/start`. The migration did not restore any former files.
 - **Files modified:** `.agent/INITIALIZATION_POLICY.md`, `.agent/SESSION_START.md`.
 - **Verification:** Pending committed read-back.
 - **Commit(s):** Read-back verified.
@@ -198,8 +198,8 @@ Use this template:
 
 - **Date:** 2026-11-27
 - **Requested change:** Run the eligible CI-generated P0 batch after every successful `/start` initialization and before accepting the user's substantive prompt. Send a mandatory pre-batch wait notice.
-- **Reason:** The user wants all eligible CI P0 remediation completed before the next prompt is handled.
-- **Behavioral impact:** Session Start activates CI Ledger and GitHub Actions, sends the notice in every conversation mode, runs all eligible Ledger-generated P0 tasks, stops before hosted results review, and then confirms readiness. The Worker owns batch orchestration. Conversation Mode permits the required notice and readiness message in Condensed Mode.
+- **Reason:** The user wants the Worker to complete all eligible CI P0 remediation before the next prompt arrives.
+- **Behavioral impact:** Session Start activates CI Ledger and GitHub Actions. It sends the notice in every conversation mode and runs all eligible Ledger-generated P0 tasks. It stops before hosted results review and then tells the user that it is ready. The Worker owns batch orchestration. Conversation Mode permits the required notice and readiness message in Condensed Mode.
 - **Files modified:** `.agent/SESSION_START.md`, `.agent/INITIALIZATION_POLICY.md`, `.agent/skills/the-worker/SKILL.md`, `.agent/skills/the-worker/references/conversation-mode.md`.
 - **Verification:** Pending committed read-back.
 - **Commit(s):** Pending.

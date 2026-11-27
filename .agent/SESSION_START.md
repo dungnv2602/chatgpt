@@ -26,11 +26,11 @@ When the user says `/start`:
 5. Activate the CI Ledger and GitHub Actions skills for the mandatory startup batch. Activate other domain skills only when the tasks require them.
 6. Before you inspect or execute CI-generated P0 tasks, send the user this notice in every conversation mode:
 
-   **CI P0 batch execution starting.** I’m processing all eligible CI-generated P0 tasks before taking your prompt. Please wait until I confirm that I’m ready.
+   **CI P0 batch execution starting.** I’m processing all eligible CI-generated P0 tasks before taking your prompt. Please wait until I say I am ready.
 
 7. Use The Worker's batch procedure to identify and execute every eligible CI Ledger-generated P0 task. Do not process the user's substantive prompt until the batch ends.
 8. Execute eligible tasks sequentially. Respect each task's scope, dependencies, decision governance, safety, access, and destructive-action restrictions. Record blocked tasks and continue with independent eligible tasks.
-9. After all eligible remediation commits are complete, stop before hosted CI results review. Do not poll, dispatch, rerun, or inspect hosted CI results until the user explicitly triggers results review.
+9. After the Worker commits all eligible remediation changes, stop before hosted CI results review. Do not poll, dispatch, rerun, or inspect hosted CI results until the user explicitly requests results review.
 10. After the batch ends, tell the user: **Ready to take your prompt.** State any remaining blockers. Do not claim hosted validation or task closeout.
 11. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Use existing Ledger records for batch selection. Review hosted CI results only under the rule in step 9.
 
@@ -38,7 +38,7 @@ Baseline initialization is The Worker and its mandatory Conversation Mode refere
 
 If a required component is missing or cannot be verified, report its exact path and stop foundational initialization. Do not substitute memory, previous-conversation reads, or Library copies.
 
-Do not run a CI preflight after cue-triggered skill loading. Initialization is complete when the required skills have been retrieved and read. CI status is separate and task-scoped under `.agent/skills/github-actions/SKILL.md`.
+Do not run a CI preflight after cue-triggered skill loading. Initialization is complete after you fetch and read the required skills. CI status is separate and task-scoped under `.agent/skills/github-actions/SKILL.md`.
 
 ## Domain skill activation after baseline initialization
 
@@ -81,7 +81,7 @@ When the user triggers this procedure:
 
 #### 2. Follow the dependency hierarchy
 
-The required order is:
+Use this order:
 
 1. **Baseline:** The Worker (including its mandatory Conversation Mode reference). Load ASD-STE100, GitHub Actions, and Document Standards when their task-specific activation conditions apply.
 2. **Drawing:** The Worker's archive/media references, Drawing, and its required references.
@@ -226,7 +226,7 @@ If the user also requests the novelist role, complete foundational initializatio
 
 If the user requests the novelist role before session initialization passes, stop and ask the user to say `/start`.
 
-Reuse foundational files that you verified in the current conversation. Do not treat remembered instructions or earlier reads as current-session verification.
+Reuse foundational files after you verify them in the current conversation. Do not treat remembered instructions or earlier reads as current-session verification.
 
 ## Drawing session activation
 
