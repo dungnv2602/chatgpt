@@ -72,9 +72,7 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
     # A folder archive is one immutable snapshot. Require its parent and child
     # index, and one timestamp, before any part of the folder can expire.
     for folder, entries in task_folders.items():
-        paths = {path for _record, path, _stamp in (
-            (record, record["path"], stamp) for record, stamp in entries
-        )}
+        paths = {record["path"] for record, _stamp in entries}
         required = {folder + "/task.md", folder + "/subtasks/README.md"}
         if not required.issubset(paths):
             missing = sorted(required - paths)
@@ -90,7 +88,7 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
             )
         archived_at = next(iter(timestamps))
         if now >= archived_at + RETENTION_PERIOD:
-            due.extend(path for record, stamp in entries for path in (record["path"],))
+            due.extend(record["path"] for record, _stamp in entries)
         else:
             retained.extend(record for record, _stamp in entries)
 
