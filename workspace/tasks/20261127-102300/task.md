@@ -7,14 +7,14 @@
 - **Created:** 2026-11-27 10:23 UTC
 - **Updated:** 2026-11-27 10:23 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Paused
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit instruction to identify workflow gaps and fix the workflow.
 - **Governing ADR(s):** None
 - **Current execution:** No
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — workflow correction initiated.
+- **Eligibility / deferral reason:** Paused — hierarchy correction started; remaining index reconciliation deferred behind P0 queue.
 - **Related tasks:** None
 
 ## 1. Original Request
