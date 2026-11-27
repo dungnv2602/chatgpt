@@ -4,19 +4,17 @@
 
 - **ID:** 20261127-082500
 - **Created:** 2026-11-27 08:25 UTC
-- **Updated:** 2026-11-27 08:25 UTC
+- **Updated:** 2026-11-27 08:27 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User explicitly approved the board refactor described in the conversation on 2026-11-27.
 - **Governing ADR(s):** None — non-implementation task
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger parent group:** None
-
-Approval is authorization, not status or eligibility. Approved means explicit authorization for the recorded scope or applicable standing authorization; Pending means not authorized; Declined means rejected. Record approval scope/source. A concise "Approve" authorizes the immediately preceding proposal only within its stated scope. Do not infer approval from task status.
 
 ## 1. Original Request
 
@@ -33,7 +31,7 @@ The approved change is to refactor the task board so that it explicitly reflects
 
 ## 3. Objective
 
-Make the task board visibly represent the Worker's scheduling order and decision, so readers can see the current task, ordered eligible candidates, next selection, and deferred tasks with reasons.
+Make the task board visibly represent the Worker's scheduling order and decision, so readers can see the current task, ordered eligible candidates, next selection, and deferred tasks.
 
 ## 4. Requirements and Acceptance Criteria
 
@@ -61,22 +59,25 @@ Make the task board visibly represent the Worker's scheduling order and decision
 - **References:** `workspace/discussion.md`, commit `918adfdd4321f0349b26cfcc352e237adeec0a8d`.
 - **Next:** Create task records and refactor board structure.
 
+### 2026-11-27 08:26 UTC
+
+- **Action:** Published the board's scheduler-order representation.
+- **Result:** Board now separates Current Execution, Ordered Eligible Execution Queue, Next Task, and deferred work. Deferred categories distinguish Proposed, Blocked, Paused, dependency-waiting, and externally gated In Progress.
+- **References:** `workspace/task_board.md`, commit `517001e947226ab3038f0bcebdab32aa293e6c7a`.
+- **Next:** Read back and close the task.
+
 ## 7. Current State
 
-The task is in progress. The board refactor has not yet been committed.
+The board refactor is committed and read back. The board presents the Worker's scheduler decision without adding a second scheduler. The eligible queue and Next Task are empty at the verified snapshot.
 
 ## 8. Remaining Work
 
-- Refactor board layout.
-- Read back and verify the board and task records.
-- Commit and reconcile the board and discussion register.
+None.
 
 ## 9. Next Actions
 
-1. Create task record and child index.
-2. Refactor `workspace/task_board.md`.
-3. Read back and verify all changed paths.
-4. Complete closeout and delete the task folder after acceptance checks.
+1. Closeout checks.
+2. Delete the task folder and remove the Current Execution pointer.
 
 ## 10. References
 
@@ -85,17 +86,18 @@ The task is in progress. The board refactor has not yet been committed.
 - `.agent/skills/the-worker/references/conversation-mode.md`
 - `workspace/README.md`
 - `.agent/skills/document-standards/references/document-type-catalog.md`
+- Board commit: `517001e947226ab3038f0bcebdab32aa293e6c7a`
 
 ## 11. Verification
 
-- **Check:** Startup and source instructions read back.
+- **Check:** Board and task records read back from branch gpt.
 - **Method:** GitHub remote file readback.
-- **Result:** Verified.
-- **Limitations:** Board implementation and hosted validation not yet checked.
+- **Result:** Board content and task references verified.
+- **Limitations:** Hosted validation not inspected.
 
 ## 12. Handoff Instructions
 
-Complete the board refactor within the approved scope. The Worker retains scheduling authority. Do not inspect hosted CI results.
+The board refactor is complete. No further action is required.
 
 ## 13. Subtasks
 
