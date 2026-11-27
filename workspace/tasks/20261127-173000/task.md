@@ -75,9 +75,16 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **References:** Child diagnostic/progress commit `418d2e0d1a1e845bf834799f915984983da68fa0`; implementation commit `1e697f0e5167e9c0778cadef69d7cf084249be27`; child completion/evidence commits `c27098af28f5581feb16b784fa67184b19256920` and `531e52bd0ce6239484a553a5d31209cbe13a290b`; child index commit `3f9867a5bc0e42df2828b361468aa2c2eb0e1e59`; board selection commit `40cbc1c4354d3c61dd5ff0d7df2c20c5b5b15b5a`.
 - **Next:** Complete child-record deletion and index reconciliation. Continue the startup P0 batch with the remaining eligible and newly unblocked Ledger children.
  
+### 2026-11-27 11:08 UTC — repository report handoff to child 05
+
+- **Action:** Read the newest indexed on_repo report `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json` for commit `1e697f0e5167e9c0778cadef69d7cf084249be27`.
+- **Result:** All six lint-report regression tests passed. The Markdown link check still found four missing targets across `.takeout/reports/README.md`, ADR-0001, and DRAFT-0002. The Ledger created P0 child `20261127-173000-05` under this persistent parent.
+- **Evidence:** `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json`; child `20261127-173000-05`; report index run `45987814713`. No hosted Actions results were inspected.
+- **Next:** Close and delete completed child 04. Execute child 05 by correcting the four stale local links after checking current canonical paths.
+
 ## 6. Current State and Remaining Work
 
-This parent remains open as the persistent skills-refactoring workstream. Child 01 (document governance consolidation) has been completed and closed. Child 04 (the lint report regression-test remediation) has been completed by commit `1e697f0e5167e9c0778cadef69d7cf084249be27` and is undergoing record closeout. Children 02 and 03 remain Paused. Future skills-refactoring requests that fit this scope must be captured as new child subtasks under this parent. Do not retire this parent when the current children are complete.
+This parent remains open as the persistent skills-refactoring workstream. Child 01 (document governance consolidation) has been completed and closed. Child 04 (the lint report regression-test remediation) is complete by commit `1e697f0e5167e9c0778cadef69d7cf084249be27` and its child record is closed. Child 05 (Markdown links and heading anchors) is Ready under the Ledger's latest report. Children 02 and 03 remain Paused. Future skills-refactoring requests that fit this scope must be captured as new child subtasks under this parent. Do not retire this parent when the current children are complete.
 
 ## 7. Verification and Evidence
 
