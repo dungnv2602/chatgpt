@@ -5,6 +5,7 @@ import json
 import shutil
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 SCRIPT = Path(__file__).with_name("ledger.py")
@@ -99,6 +100,8 @@ class LedgerTests(unittest.TestCase):
         rows = json.loads(index_path.read_text())["runs"] if index_path.exists() else []
         rows.append({
             "run_id":run_id,"attempt":1,"workflow_id":55,"capture_stage":stage,
+            "source_status":"completed",
+            "report_status":"Complete" if completeness == "Complete" else "Incomplete",
             "captured_at_utc":timestamp,"history_path":history.relative_to(index_path.parent).as_posix(),
         })
         index_path.write_text(json.dumps({"schema_version":"1.0.0","runs":rows}), encoding="utf-8")
@@ -123,7 +126,11 @@ class LedgerTests(unittest.TestCase):
         gh_root = self.root / ".takeout" / "reports" / "gh_ac_reports"
         gh_root.mkdir(parents=True, exist_ok=True)
         (gh_root / "index.json").write_text(json.dumps({
-            "runs": [{"history_path": "history/55/100-attempt-1-post_run"}]
+            "runs": [{
+                "run_id":"100","attempt":1,"workflow_id":55,"report_status":"Complete",
+                "capture_stage":"post_run","source_status":"completed",
+                "history_path":"history/55/100-attempt-1-post_run"
+            }]
         }), encoding="utf-8")
         ledger = self.read_ledger()
         ledger["ingestion_state"]["processed_reports"] = [active, stale]
@@ -446,8 +453,8 @@ class LedgerTests(unittest.TestCase):
         path = self.add_actions("206","2026-11-23T07:37:00Z",[issue],completeness="Incomplete")
         result = LEDGER.ingest(self.root)
         self.assertEqual(result["total_findings"],0)
-        self.assertEqual(result["reports_processed"],1)
-        self.assertIn(path,self.read_ledger()["ingestion_state"]["processed_reports"])
+        self.assertEqual(result["reports_processed"],0)
+        self.assertNotIn(path,self.read_ledger()["ingestion_state"]["processed_reports"])
 
     def test_failed_lint_tooling_check_creates_task_without_unbaselined_lint_findings(self):
         path = self.add_lint("on_changed","207","2026-11-23T07:38:00Z",fingerprint="feedface1234")
@@ -734,7 +741,8 @@ class LedgerTests(unittest.TestCase):
         (self.root / path).write_text("{broken",encoding="utf-8")
         result = LEDGER.ingest(self.root)
         self.assertEqual(result["reports_processed"],0)
-        self.assertTrue(result["warnings"])
+        self.assertTrue(result["errors"])
+        self.assertEqual(result["errors"][0]["report_path"],path)
         self.assertNotIn(path,self.read_ledger()["ingestion_state"]["processed_reports"])
 
     def test_bootstrap_migration_does_not_backfill_existing_reports(self):
@@ -932,7 +940,10 @@ class LedgerTests(unittest.TestCase):
     def test_unsafe_actions_history_path_is_rejected(self):
         index = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
         index.parent.mkdir(parents=True,exist_ok=True)
-        index.write_text(json.dumps({"runs":[{"history_path":"history/../../outside"}]}),encoding="utf-8")
+        index.write_text(json.dumps({"runs":[{
+            "run_id":"100","attempt":1,"workflow_id":55,"report_status":"Complete",
+            "capture_stage":"post_run","source_status":"completed","history_path":"history/../../outside"
+        }]}),encoding="utf-8")
         with self.assertRaises(LEDGER.LedgerError):
             LEDGER.indexed_reports(self.root)
 

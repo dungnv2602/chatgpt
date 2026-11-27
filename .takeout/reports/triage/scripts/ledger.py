@@ -168,9 +168,13 @@ def indexed_reports(root):
             report_status = row.get("report_status")
             capture_stage = row.get("capture_stage")
             source_status = row.get("source_status")
+            if report_status is not None and not isinstance(report_status, str):
+                raise LedgerError("Invalid GitHub Actions report_status in index")
             if report_status is not None and report_status != "Complete":
                 # Incomplete/failed captures remain eligible for the reporter's bounded retry.
                 continue
+            if capture_stage is None or source_status is None:
+                raise LedgerError("GitHub Actions index entry lacks capture completion metadata")
             if capture_stage != "post_run" or source_status != "completed":
                 # Pre-finalizer and non-final captures are not Ledger inputs.
                 continue
@@ -413,8 +417,12 @@ def lint_observations(report, report_path):
     return list(result.values())
 
 def actions_capture_is_complete(report):
-    capture = report.get("capture") or {}
-    source = report.get("source_run") or {}
+    if not isinstance(report, dict):
+        return False
+    capture = report.get("capture")
+    source = report.get("source_run")
+    if not isinstance(capture, dict) or not isinstance(source, dict):
+        return False
     return (
         capture.get("stage") == "post_run"
         and source.get("status") == "completed"
@@ -1195,7 +1203,7 @@ def main():
     args = parser.parse_args()
     try:
         result = ingest(args.root)
-    except (LedgerError, ValueError, OSError) as exc:
+    except (LedgerError, TypeError, KeyError, ValueError, OSError) as exc:
         result = {"errors": [{"report_path": None, "error": str(exc)}], "warnings": [], "changed": False}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 1 if result.get("errors") else 0
