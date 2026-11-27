@@ -1,7 +1,7 @@
 name: Scheduled Archive Individual Retention
 
 on:
-  # Check the shared small retention index weekly. The cleanup script never lists archive directories.
+  # Check the shared retention index weekly. The cleanup script deletes only exact indexed task/report paths under workspace/archive and never scans archive directories or ADRs.
   schedule:
     - cron: "0 0 * * 1"
 
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   cleanup:
-    name: Delete individually expired task and report files on gpt and fast-forward main
+    name: Delete expired indexed task/report files under workspace/archive and fast-forward main
     runs-on: ubuntu-latest
     timeout-minutes: 5
     concurrency:
@@ -44,7 +44,7 @@ jobs:
             exit 1
           fi
 
-      - name: Run self-tests and delete individually expired indexed files
+      - name: Run self-tests and delete expired indexed workspace/archive files
         id: cleanup
         run: python3 .github/scripts/cleanup-archive.py
 
