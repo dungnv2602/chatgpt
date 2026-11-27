@@ -1075,16 +1075,35 @@ def ingest(root, now=None):
     validate_semantics(ledger)
     state, processed = ledger["ingestion_state"], set(ledger["ingestion_state"]["processed_reports"])
     counts = {"reports_processed": 0, "findings_created": 0, "findings_updated": 0, "findings_unchanged": 0}
-    changed, warnings = migration_changed, []
+    changed, warnings, errors = migration_changed, [], []
     task_candidates = {"created": set(), "updated": set()}
     reopened_ids = set()
-    for family, report_path, _row in indexed_reports(root):
+    report_rows = indexed_reports(root)
+
+    for family, report_path, row in report_rows:
+        if family == "github_actions" and report_path in processed:
+            # Recheck the completion contract before trusting a legacy processed marker.
+            try:
+                prior_report = read_json(root / report_path)
+            except (LedgerError, TypeError, KeyError, ValueError, OSError) as exc:
+                processed.discard(report_path)
+                errors.append({"report_path": report_path, "error": str(exc)})
+                changed = True
+                continue
+            if not actions_capture_is_complete(prior_report):
+                processed.discard(report_path)
+                warnings.append("Previously processed Actions capture is incomplete; it remains retryable: " + report_path)
+                changed = True
+                continue
         if report_path in processed:
             continue
         try:
             report = read_json(root / report_path)
             if not isinstance(report, dict):
                 raise LedgerError("Report root must be an object")
+            if family == "github_actions" and not actions_capture_is_complete(report):
+                warnings.append("Incomplete or ineligible Actions capture remains unprocessed and retryable: " + report_path)
+                continue
             if family == "lint":
                 scope = report.get("scope")
                 if scope not in ("on_changed", "on_repo"):
@@ -1130,8 +1149,8 @@ def ingest(root, now=None):
                 observations = lint_observations(report, report_path)
             else:
                 observations = actions_observations(report, report_path, root)
-        except (LedgerError, TypeError, KeyError) as exc:
-            warnings.append(str(exc))
+        except (LedgerError, TypeError, KeyError, ValueError, OSError) as exc:
+            errors.append({"report_path": report_path, "error": str(exc)})
             continue
         known_ids = {item.get("finding_id") for item in ledger["findings"]}
         for observation in observations:
@@ -1154,7 +1173,7 @@ def ingest(root, now=None):
         processed.add(report_path)
         counts["reports_processed"] += 1
         changed = True
-    active_index_paths = {path for _family, path, _row in indexed_reports(root)}
+    active_index_paths = {path for _family, path, _row in report_rows}
     processed.intersection_update(active_index_paths)
     state["processed_reports"] = sorted(processed)
     task_result = create_worker_tasks(
@@ -1168,14 +1187,17 @@ def ingest(root, now=None):
         atomic_write(ledger_path, ledger)
     return {**counts, **{key: value for key, value in task_result.items() if key != "changed"},
             "total_findings": len(ledger["findings"]),
-            "warnings": warnings, "changed": changed}
-
+            "warnings": warnings, "errors": errors, "changed": changed}
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("ingest",), default="ingest")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[4])
     args = parser.parse_args()
-    print(json.dumps(ingest(args.root), ensure_ascii=False, indent=2))
-
+    try:
+        result = ingest(args.root)
+    except (LedgerError, ValueError, OSError) as exc:
+        result = {"errors": [{"report_path": None, "error": str(exc)}], "warnings": [], "changed": False}
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 1 if result.get("errors") else 0
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
