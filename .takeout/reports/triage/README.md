@@ -11,9 +11,9 @@ The CI Ledger records lint and Actions findings, their evidence, attribution, re
 ## Data
 
 - `ledger.json`: active finding state.
-- `ledger-schema.json`: current Ledger schema.
-- `scripts/ledger.py`: event-driven ingestion and child generation.
-- `scripts/test_ledger.py`: regression coverage.
+- `.agent/skills/the-worker/assets/ledger-schema.json`: canonical Ledger schema.
+- `.agent/skills/the-worker/scripts/ledger.py`: event-driven ingestion and child generation.
+- `.agent/skills/the-worker/scripts/test_ledger.py`: regression coverage.
 
 Evidence retains the immutable report path, run URL, observation time, source task marker, resolved genuine parent when known, and attribution state. Finding IDs and report paths remain stable.
 

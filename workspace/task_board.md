@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-51: Consolidate CI Ledger and GitHub Actions operational assets into The Worker](tasks/20261127-173000/subtasks/51-consolidate-ci-ledger-and-github-actions-operational-assets.md). This P0 consolidation is active under the persistent Refactor Skills parent.
+None. Subtask 51 is complete.
 
 ## Ordered Eligible Execution Queue
 
@@ -23,7 +23,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-The Worker consolidation child 51 is Current Execution. The remaining eligible queue follows after it.
+No task is selected as Current Execution. The ordered eligible queue remains unchanged.
 
 ## Deferred Work
 
