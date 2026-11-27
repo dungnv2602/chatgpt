@@ -6,7 +6,7 @@
 - **ID:** 20261126-232913-06
 - **Parent Task ID:** 20261126-232913
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -49,13 +49,21 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 - **Next:** Map every ADR-0004 Confirmation criterion to concrete evidence and perform final read-back. Do not inspect hosted results.
 
 ## 6. Current State
-In Progress. Regression and documentation changes are committed and read back. Final ADR confirmation mapping and task closeout remain.
+Done. Regression coverage, documentation/catalog alignment, remote read-back, and the ADR-0004 Confirmation evidence matrix are complete.
+
+### 2026-11-27 01:10 UTC
+- **Action:** Completed the ADR-0004 Confirmation evidence matrix in the parent task. Reconciled all lifecycle documents and added regression coverage for folder and legacy archive reading, archive retention integrity, recurrence links, parent/child references, governance, hosted-validation separation, and existing ingestion/security protections.
+- **Result:** All six subtask records and the task index are consistent. Every changed file was read back. The task and subtask templates already meet the folder contract. No tests were run. Hosted results remain unreviewed.
+- **References:** Parent task section 11; `.takeout/reports/triage/scripts/test_ledger.py`; `.github/scripts/test_cleanup_archive.py`; CI Ledger, Worker, and GitHub Actions skills; workspace/triage/archive READMEs; task board; Document Type Catalog.
+- **Next:** Parent closeout remains blocked by Confirmation item 15 and the missing historical archive paths recorded in item 16. Obtain user direction before changing historical archive files or index entries.
+
+
 
 ## 7. Evidence
-- **Commit SHA:** Multiple remote commits. Key commits include `79cda7d`, `7632ed1`, `5e7d051`, `6a443e7`, `13132e7`, `0763c16`, and the documentation commits recorded in history.
+- **Commit SHA:** Multiple remote commits. Key commits include `4c9e22c`, `35dcb49`, `1244a94`, `3eb4445`, `df3f594`, `714c9a3`, `ad3710a`, `f366ab7`, and `5142cfe`.
 - **Changed paths:** Ledger and archive regression suites, Ledger archive reader, cleanup script, CI Ledger/Worker/GitHub Actions skills, workspace and triage READMEs, archive README, task board, Document Type Catalog, parent/subtask records, and discussion register.
 - **Read-back:** Every changed file was read back after its update. Task and subtask templates were checked and already satisfy ADR-0004.
-- **Other evidence:** No local tests or scripts were executed. Hosted results remain unreviewed by explicit instruction.
+- **Other evidence:** No local tests or scripts were executed. Hosted results remain unreviewed by explicit instruction. The parent task remains In Progress because hosted confirmation and historical archive integrity are unresolved.
 
 ## 8. Completion Record
 - **Status:** Ready
