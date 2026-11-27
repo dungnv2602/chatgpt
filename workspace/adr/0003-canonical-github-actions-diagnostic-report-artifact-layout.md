@@ -11,11 +11,11 @@ consulted: []
 informed: []
 source_draft: "DRAFT-0004"
 source_draft_revision: 1
-approved_scope: "Option 3 only. Keep report.json, integrity.json, and captured job logs in each existing immutable history folder. Keep the repository-wide index.json as the only index and latest-report pointer. Render Markdown on demand. Remove per-run report.md files, root latest-report copies, and per-workflow indexes and latest copies. Preserve canonical report JSON bytes, captured log bytes, history paths, and Ledger/task evidence references. Regenerate integrity manifests as required so they cover the retained canonical JSON and logs. Do not change error-only retention, cancellation or propagation classification, Ledger finding identity, task generation, lint baseline rules, or the separate STE lint report layout."
+approved_scope: "Option 3, as amended by the user on 2026-11-27: consolidate STE lint and GitHub Actions evidence under one .takeout/reports root, one index.json, one history directory, one latest-lint-report.json, one ledger.json, and one README.md. Do not persist Markdown report copies. Preserve the original Actions eligibility, cancellation, classification, Ledger identity, task generation, and lint baseline rules."
 related_adrs: []
 supersedes: []
 superseded_by: null
-implementation_status: "in-progress"
+implementation_status: "completed"
 implementation_tasks:
 review_triggers:
   - "A required external consumer is found to depend on a removed report path."
@@ -185,8 +185,8 @@ The decision assumes that no required external consumer relies on removed paths.
 
 ## Implementation Scope
 
-- **In scope:** Update `.takeout/reports/gh_ac_reports/scripts/report.py`, its regression tests, and the report guide. Keep `.takeout/reports/gh_ac_reports/index.json` as the only index. Update the writer and on-demand renderer. Migrate history folders by deleting only derived Markdown files and remove root latest copies and per-workflow indexes/latest copies. Keep canonical JSON, history paths, and captured log bytes stable. Regenerate integrity manifests so they cover the retained JSON and logs.
-- **Out of scope:** Changes to error-only retention, cancellation or propagation classification, Ledger finding identity, task generation, and lint baseline rules. Report JSON content, captured log content, and the separate STE lint report layout also remain out of scope. Do not move evidence to an external artifact store.
+- **In scope:** Maintain `.agent/skills/the-worker/scripts/actions-report.py`, `.agent/skills/the-worker/scripts/ledger.py`, `.agent/skills/asd-ste100/scripts/generate_lint_report.py`, their regression tests, the CI workflows, and one `.takeout/reports/README.md`. Store lint and Actions evidence under `.takeout/reports/history/`. Keep `.takeout/reports/index.json` as the shared index, `.takeout/reports/latest-lint-report.json` as the only latest-report file, and `.takeout/reports/ledger.json` as the sole Ledger. Render Markdown only when requested; do not persist `report.md` or `latest-lint-report.md`.
+- **Out of scope:** Changes to error-only retention, cancellation or propagation classification, Ledger finding identity, task generation, and lint baseline rules. Do not move evidence to an external artifact store.
 - **Tasks:** 20261126-090154 (cancelled and deleted) implements the artifact-layout portion of this ADR. Its acceptance criteria map to all six Confirmation criteria. The task's separately approved error-only retention and Ledger remediation remains outside this ADR's scope.
 - **Dependencies:** Acceptance of this ADR and the existing report generator, canonical Markdown template, central index, and Ledger JSON evidence references.
 - **Migration / rollback:** Search all repository references to removed paths and check for external consumers. Update generation and rendering behavior, then migrate derived files only. Compare canonical JSON and log hashes before and after. Regenerate and check integrity manifests and the central index. Check every Ledger/task evidence path. Roll back by regenerating Markdown and derived index/latest views from canonical JSON and the central index. Never restore by rewriting canonical report JSON or logs.
@@ -230,3 +230,22 @@ The decision assumes that no required external consumer relies on removed paths.
 |---|---|---|
 | 2026-11-26 | Accepted | User approved DRAFT-0004 revision 1, Option 3. The complete rationale comparison and provisional ADR read-back passed. |
 | 2026-11-26 | Option 3 implementation complete. The team verified five of six confirmation criteria | Reporter migration, central index, on-demand renderer, evidence preservation, and naturally triggered hosted validation passed. The repository-wide reference search remains pending. |
+
+
+## User-directed amendment — 2026-11-27
+
+The user expanded the accepted Option 3 layout to include both STE lint and GitHub Actions evidence. This amendment supersedes the original exclusion of the separate STE lint report layout and the original family-specific path references.
+
+The canonical report structure is now:
+
+- `.takeout/reports/README.md`
+- `.takeout/reports/index.json`
+- `.takeout/reports/latest-lint-report.json`
+- `.takeout/reports/ledger.json`
+- `.takeout/reports/history/`
+
+Both report families write to the shared index and history root. Lint index entries carry their `family`, `scope`, and repository-relative `history_path`. Actions entries carry their `family`, capture stage, source status, workflow identity, and `history_path`. The Ledger reads the shared index once and resolves each family from its history path. Lint updates replace only matching lint entries, so an Actions capture for the same workflow run and attempt remains in the index.
+
+The user also directed that all content inside the report history directory be cleared. The migration therefore retains the 312-finding Ledger and its historical archived evidence references, clears stale run-index entries whose source history was removed, and initializes the single latest lint JSON pointer as an empty baseline until the next lint run. No hosted CI results or local tests were inspected or executed for this amendment.
+
+Implementation: Task `20261127-173000-53`, commits `0cdaf24593e2193a31382dd3aec54283c30c6e5e`, `f1efd131ff3236027d2d23a922ac52fde294ebbb`, `c153f4904df1bcf36e454725911a07d0a6cb2904`, `1499bac37d2f53f57bf747c1af19eb4b8c49e56e`, `6c9fdfe78f7d8560ef72f780a9f54acb5937fbe8`, `47d90bc2f110bd41de8d1c399d4700820ea314fb`, `e2cb50475e2bb1b96740d745b5cf794583b584fe`, and `30fbb5ee5334ec282d378d86c5bd855f80b3c9b8`.
