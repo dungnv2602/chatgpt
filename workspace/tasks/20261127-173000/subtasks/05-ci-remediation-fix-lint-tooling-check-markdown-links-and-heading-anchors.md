@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-05
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
+- **Eligibility / deferral reason:** Selected — Current Execution under the persistent Refactor Skills P0 parent
 - **Required:** Yes
 - **Created:** 2026-11-27 11:08 UTC
 - **Updated:** 2026-11-27 11:08 UTC
@@ -51,6 +51,17 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
+
+### 2026-11-27 11:08 UTC — indexed report diagnosis
+
+- **Action:** Read indexed on_repo report `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json` for commit `1e697f0e5167e9c0778cadef69d7cf084249be27`.
+- **Evidence:** The report records all six lint-report regression tests as Passed. The Markdown link check failed with four missing local targets:
+  1. `.takeout/reports/README.md` links to missing `../../workspace/archive/README.md`.
+  2. ADR-0001 contains two links to the deleted task record at `../task/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md`.
+  3. DRAFT-0002 links to missing `../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md`.
+- **Diagnosis:** The report README points to a removed workspace archive guide and retains an obsolete report-retention description. ADR-0001 points to a completed task record that is no longer present. DRAFT-0002 points to an obsolete ADR archive path. The current workspace guide and accepted ADR paths exist.
+- **Next:** Update the report navigation and lifecycle wording, retain historical task ID references without broken task-file links, and point DRAFT-0002 to the current ADR path. Read back all changed files.
+
 
 ## 6. State and Evidence
 
