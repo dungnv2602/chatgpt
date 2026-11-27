@@ -64,7 +64,7 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-232913 | Implement ADR-0004 task folders and CI Ledger lifecycle | P0 | In Progress | User | Approved | ADR-0004 | 2026-11-26 23:29 UTC | [Task record](tasks/20261126-232913/task.md) |
+| 20261126-232913 | Implement ADR-0004 task folders and CI Ledger lifecycle | P0 | In Progress | User | Approved | ADR-0004 | 2026-11-27 01:10 UTC | [Task record](tasks/20261126-232913/task.md) |
 
 | 20261126-170259-02 | Review semicolon findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259-02/task.md) |
 | 20261126-170259-01 | Review passive-voice findings in workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-27 01:31 UTC | [Task record](tasks/20261126-170259-01/task.md) |
