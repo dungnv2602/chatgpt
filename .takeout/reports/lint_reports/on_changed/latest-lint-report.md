@@ -2,30 +2,30 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#1001](https://github.com/dungnv2602/chatgpt/actions/runs/46003026376)
-- **Run ID / attempt:** 46003026376 / 1
+- **Run:** [#1002](https://github.com/dungnv2602/chatgpt/actions/runs/46003502143)
+- **Run ID / attempt:** 46003502143 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 1a82e58b4d88cd86fd9f5c120f17ac22ca23d7a0
-- **Source task:** 20261127-173000-09
+- **Branch / commit:** gpt / 8324ee76f6ba30cbe04ca8b82414b2d51e98cdd0
+- **Source task:** 20261127-173000-10
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** d83971693d6f268f7c52abe117ea00b22cbcd56d
-- **Linter source SHA:** 1a82e58b4d88cd86fd9f5c120f17ac22ca23d7a0
-- **Generated (UTC):** 2026-11-27T12:58:27.961721+00:00
+- **Baseline SHA:** 1a82e58b4d88cd86fd9f5c120f17ac22ca23d7a0
+- **Linter source SHA:** 8324ee76f6ba30cbe04ca8b82414b2d51e98cdd0
+- **Generated (UTC):** 2026-11-27T13:01:48.808449+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 3 |
+| Files evaluated | 2 |
 | Files that failed | 2 |
-| Files with findings | 3 |
-| Total findings | 11 |
-| Hard findings | 4 |
-| Advisory findings | 7 |
-| New findings | 9 |
-| Recurring findings | 2 |
-| Resolved findings | 1 |
+| Files with findings | 2 |
+| Total findings | 4 |
+| Hard findings | 3 |
+| Advisory findings | 1 |
+| New findings | 1 |
+| Recurring findings | 3 |
+| Resolved findings | 7 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -42,7 +42,6 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 
 - .agent/skills/the-worker/references/decision-governance.md
 - workspace/task_board.md
-- .agent/skills/the-worker/references/ci-ledger.md
 
 ## 4. Per-file result matrix
 
@@ -50,9 +49,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/the-worker/references/decision-governance.md | FAIL | 7 | 3 | 0 | 2988 | 0.2 | 1 |
-| workspace/task_board.md | PASS | 1 | 0 | 0 | 1654 | 0.1 | 0 |
-| .agent/skills/the-worker/references/ci-ledger.md | FAIL | 3 | 1 | 0 | 705 | 0.4 | 1 |
+| .agent/skills/the-worker/references/decision-governance.md | FAIL | 2 | 2 | 0 | 2991 | 0.1 | 1 |
+| workspace/task_board.md | FAIL | 2 | 1 | 0 | 1638 | 0.1 | 1 |
 
 ## 5. Findings by rule
 
@@ -60,8 +58,8 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 7 |
-| semicolon | 3 |
+| semicolon | 2 |
+| passive-voice | 1 |
 | synonym-rotation | 1 |
 
 ## 6. Workflow and validation checks
@@ -94,7 +92,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.414s
+Ran 6 tests in 0.328s
 
 OK
 ~~~
@@ -107,7 +105,7 @@ OK
 ~~~text
 ........
 ----------------------------------------------------------------------
-Ran 8 tests in 0.005s
+Ran 8 tests in 0.006s
 
 OK
 ~~~
@@ -127,9 +125,8 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 3 changed Markdown sources (439 available as link targets) and 45 local Markdown links.
-Found 39 unresolved local Markdown targets or anchors.
-workspace/task_board.md: missing Markdown file: 10-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md
+Scanned 2 changed Markdown sources (440 available as link targets) and 45 local Markdown links.
+Found 38 unresolved local Markdown targets or anchors.
 workspace/task_board.md: missing Markdown file: 11-ci-remediation-review-passive-voice-findings-in-agent-skills-agent-skill-author.md
 workspace/task_board.md: missing Markdown file: 12-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md
 workspace/task_board.md: missing Markdown file: 13-ci-remediation-review-synonym-rotation-findings-in-agent-session-start-md.md
@@ -176,60 +173,56 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+- **synonym-rotation** · workspace/task_board.md:82:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:103:34 · **new** · fingerprint: c7517e9068fe8c09010e809b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is included
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:47 · **new** · fingerprint: 3cfa441ce1b36c919b05cc87
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are stated
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:109:57 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:102 · **new** · fingerprint: a5f01370d23783e6b0e83a7e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is implied
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:111:86 · **new** · fingerprint: 24b3d9a71feccea3fb1206db
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are addressed
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/task_board.md:82:113 · **new** · fingerprint: 9db0ccdc5f344a34e6b09777
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deferred
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **new** · fingerprint: aa0de8573960d54a21c2d1d2
-  - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changed
+  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Correct
 
 ### Recurring findings
 
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **recurring** · fingerprint: 20a3b946ee1ae4877e53e449
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **recurring** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **recurring** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/task_board.md:82:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **recurring** · fingerprint: 02e6a360a86d394444d7be9c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unassigned
+  - **Matched text:** is deferred
 
 ### Resolved findings
 
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:39:252 · **resolved** · fingerprint: a913a887a540db8f083a49d4
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:103:34 · **resolved** · fingerprint: c7517e9068fe8c09010e809b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is included
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:47 · **resolved** · fingerprint: 3cfa441ce1b36c919b05cc87
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are stated
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:102 · **resolved** · fingerprint: a5f01370d23783e6b0e83a7e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is implied
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:111:86 · **resolved** · fingerprint: 24b3d9a71feccea3fb1206db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are addressed
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **resolved** · fingerprint: 20a3b946ee1ae4877e53e449
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **resolved** · fingerprint: 02e6a360a86d394444d7be9c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unassigned
+- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **resolved** · fingerprint: aa0de8573960d54a21c2d1d2
   - **Level:** advisory-free
   - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changes
+  - **Matched text:** changed
 
 ## 8. Complete per-file diagnostics
 
@@ -239,45 +232,20 @@ This section includes every normalized finding with its rule, level, source loca
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 7
-- **Hard findings:** 3
+- **Findings:** 2
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 2988
-- **Findings per 100 words:** 0.2
+- **Words:** 2991
+- **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **recurring** · fingerprint: b705ef6f747ccfaf4dd42d95
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:103:34 · **new** · fingerprint: c7517e9068fe8c09010e809b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is included
-
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:47 · **new** · fingerprint: 3cfa441ce1b36c919b05cc87
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are stated
-
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:109:57 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:102 · **new** · fingerprint: a5f01370d23783e6b0e83a7e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is implied
-
-- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:111:86 · **new** · fingerprint: 24b3d9a71feccea3fb1206db
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are addressed
-
-- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **recurring** · fingerprint: b705ef6f747ccfaf4dd42d95
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -285,48 +253,25 @@ This section includes every normalized finding with its rule, level, source loca
 
 ### workspace/task_board.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 1
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 2
+- **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1654
+- **Words:** 1638
 - **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **passive-voice** · workspace/task_board.md:82:113 · **new** · fingerprint: 9db0ccdc5f344a34e6b09777
+- **synonym-rotation** · workspace/task_board.md:82:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
+  - **Level:** advisory-free
+  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Correct
+
+- **passive-voice** · workspace/task_board.md:82:113 · **recurring** · fingerprint: 9db0ccdc5f344a34e6b09777
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deferred
-
-
-### .agent/skills/the-worker/references/ci-ledger.md
-
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 3
-- **Hard findings:** 1
-- **Baseline:** 0
-- **Words:** 705
-- **Findings per 100 words:** 0.4
-
-#### Complete diagnostics
-
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **recurring** · fingerprint: 20a3b946ee1ae4877e53e449
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **recurring** · fingerprint: 02e6a360a86d394444d7be9c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unassigned
-
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **new** · fingerprint: aa0de8573960d54a21c2d1d2
-  - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changed
 
 ## 9. Structured evidence and integrity
 
