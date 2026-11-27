@@ -2,47 +2,64 @@
 
 ## Scheduler contract
 
-The Worker is the sole scheduler. This board publishes the Worker's current selection and ordered candidates. It does not independently calculate or override working order.
+The Worker is the sole scheduler. This board publishes the Worker's current selection and ordered eligible queue; it is not a second scheduler. Reconcile the board against the task records and child indexes before declaring the queue empty.
 
-The Worker selects by eligibility first. It then respects dependencies, priority, and age. Only eligible tasks appear in the execution queue. Deferred work stays outside that queue and includes its reason.
+Eligibility is checked before priority and age: dependencies must be satisfied, execution authorized, and status Ready. Ready tasks are ranked by priority (P0 first), then age within equal priority unless a documented dependency or material constraint changes ordering. Ineligible tasks must not appear in the queue; list them under the appropriate deferred section with the precise reason.
 
-**Approval column:** Approved records explicit authorization for the task's documented scope or applicable standing authorization. Pending means execution authorization is not granted; Declined means the scope was rejected. Approval is independent of status and eligibility. Record approval scope/source in task records.
+**Approval:** Approved records explicit authorization for the documented scope or applicable standing authorization. Pending means execution authorization is not granted; Declined means rejected. Approval is independent of status and eligibility.
 
-This file is the single index for active task records. Each active task is a folder that contains task.md and subtasks/README.md. Child records live under subtasks/. Board links point to parent task.md. The parent cannot be Done while any required child remains open. The Worker owns task status, selection, and direct deletion at closeout.
+This is the single index of active task parents. Every parent folder contains `task.md` and `subtasks/README.md`; substantive children are listed in the parent index. Board links point to parent tasks, except Current Execution may point directly to the selected child. The parent cannot be Done while a required child remains open. The Worker owns status, selection, and direct deletion at closeout.
 
 ## Current Execution
 
-[20261126-142500 — Repair CI task generation and clear active reports](tasks/20261126-142500/task.md)
+[20261126-142500-21 — Reconcile task board scheduling and task templates](tasks/20261126-142500/subtasks/21-reconcile-task-board-and-task-templates.md)
+
+Parent: [20261126-142500 — Repair CI task generation and clear active reports](tasks/20261126-142500/task.md)
 
 ## Ordered Eligible Execution Queue
 
-<text>Ranked by the Worker's scheduler. Only eligible candidates are listed.</text>
+<text>Ordered by the Worker. P0 tasks precede lower priorities; age breaks ties among eligible tasks.</text>
 
-_No eligible tasks. The board was reconciled after the ADR editorial commits and cancellation/deletion of search task 20261126-090154. Any deferred work must be listed by its exact task record and reason; no cancelled task is queued._
+| Rank | ID | Title | Priority | Status | Approval | Record |
+|---:|---|---|---|---|---|---|
+| 1 | 20261126-142500-04 | Review semicolon findings in .agent/skills/github-actions/SKILL.md | P0 | Ready | Approved | [04](tasks/20261126-142500/subtasks/04-ci-remediation-review-semicolon-findings-in-agent-skills-github-actions-skill-m.md) |
+| 2 | 20261126-142500-05 | Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Approved | [05](tasks/20261126-142500/subtasks/05-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md) |
+| 3 | 20261126-142500-06 | Review passive-voice findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Approved | [06](tasks/20261126-142500/subtasks/06-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md) |
+| 4 | 20261126-142500-07 | Review present-perfect findings in conversation-mode reference | P0 | Ready | Approved | [07](tasks/20261126-142500/subtasks/07-ci-remediation-review-present-perfect-findings-in-agent-skills-the-worker-refer.md) |
+| 5 | 20261126-142500-08 | Review long-sentence findings in .agent/skills/github-actions/SKILL.md | P0 | Ready | Approved | [08](tasks/20261126-142500/subtasks/08-ci-remediation-review-long-sentence-findings-in-agent-skills-github-actions-ski.md) |
+| 6 | 20261126-142500-09 | Review synonym-rotation findings in .agent/skills/github-actions/SKILL.md | P0 | Ready | Approved | [09](tasks/20261126-142500/subtasks/09-ci-remediation-review-synonym-rotation-findings-in-agent-skills-github-actions.md) |
+| 7 | 20261126-142500-10 | Review semicolon findings in workspace/task_board.md | P0 | Ready | Approved | [10](tasks/20261126-142500/subtasks/10-ci-remediation-review-semicolon-findings-in-workspace-task-board-md.md) |
+| 8 | 20261126-142500-11 | Review synonym-rotation findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Approved | [11](tasks/20261126-142500/subtasks/11-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-skil.md) |
+| 9 | 20261126-142500-12 | Review present-perfect findings in workspace/task_board.md | P0 | Ready | Approved | [12](tasks/20261126-142500/subtasks/12-ci-remediation-review-present-perfect-findings-in-workspace-task-board-md.md) |
+| 10 | 20261126-142500-13 | Review passive-voice findings in .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Approved | [13](tasks/20261126-142500/subtasks/13-ci-remediation-review-passive-voice-findings-in-agent-skills-ci-ledger-skill-md.md) |
+| 11 | 20261126-142500-14 | Review long-sentence findings in .agent/skills/the-worker/SKILL.md | P0 | Ready | Approved | [14](tasks/20261126-142500/subtasks/14-ci-remediation-review-long-sentence-findings-in-agent-skills-the-worker-skill-m.md) |
+| 12 | 20261126-142500-15 | Review semicolon findings in conversation-mode reference | P0 | Ready | Approved | [15](tasks/20261126-142500/subtasks/15-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-references.md) |
+| 13 | 20261126-142500-16 | Review synonym-rotation findings in .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Approved | [16](tasks/20261126-142500/subtasks/16-ci-remediation-review-synonym-rotation-findings-in-agent-skills-ci-ledger-skill.md) |
+| 14 | 20261126-142500-17 | Review long-sentence findings in conversation-mode reference | P0 | Ready | Approved | [17](tasks/20261126-142500/subtasks/17-ci-remediation-review-long-sentence-findings-in-agent-skills-the-worker-referen.md) |
+| 15 | 20261126-142500-18 | Review passive-voice findings in workspace/task_board.md | P0 | Ready | Approved | [18](tasks/20261126-142500/subtasks/18-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md) |
+| 16 | 20261126-142500-19 | Review semicolon findings in .agent/skills/ci-ledger/SKILL.md | P0 | Ready | Approved | [19](tasks/20261126-142500/subtasks/19-ci-remediation-review-semicolon-findings-in-agent-skills-ci-ledger-skill-md.md) |
+| 17 | 20261126-142500-20 | Review passive-voice findings in conversation-mode reference | P0 | Ready | Approved | [20](tasks/20261126-142500/subtasks/20-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md) |
 
 ## Next Task
 
-<text color="success" weight="medium">None — the eligible queue is empty.</text>
+[20261126-142500-04](tasks/20261126-142500/subtasks/04-ci-remediation-review-semicolon-findings-in-agent-skills-github-actions-skill-m.md) — P0, Ready, Approved.
 
 ## Deferred Work
 
-### Proposed — governance decision pending
+### Blocked
 
-These editorial P0 groups have been remediated and removed at direct closeout. Ledger findings retain stable identities, resolution history, task references, and commit evidence. Hosted validation is optional and is not reviewed.
-
-| ID | Title | Priority | Status | Approval | ADR(s) | Task record |
+| ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
+| 20261126-142500-03 | Fix lint tooling check: Markdown links and heading anchors | P0 | Blocked | Approved | Immutable report evidence was unavailable through remote readback; do not infer a fix or substitute hosted result review. | [03](tasks/20261126-142500/subtasks/03-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 
-_No proposed editorial remediation groups remain._
+### Proposed — decision pending
+
+_No proposed tasks._
 
 ### Paused
 
-| ID | Title | Priority | Status | Approval | Task record |
-|---|---|---:|---|---|---|
-_No tasks currently paused._
+_No paused tasks._
 
 ### Dependency-waiting
 
-_No tasks currently listed. The Worker reevaluates these tasks after prerequisite completion. They are not queue candidates._
-
-#
+_No dependency-waiting tasks._
