@@ -60,7 +60,8 @@ _No proposed tasks._
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261126-142500-22 | Consolidate Document Standards into The Worker | P1 | In Progress | Approved | Supporting consolidation work; current CI P0 queue remains scheduled first. | [22](tasks/20261126-142500/subtasks/22-consolidate-document-standards-into-worker.md) |
+| 20261127-102300 | Correct objective-based task parent selection | P1 | In Progress | Approved | Workflow correction and hierarchy reconciliation underway. | [task](tasks/20261127-102300/task.md) |
+| 20261127-102301 | Consolidate Document Standards into The Worker | P1 | Paused | Approved | Independent document-governance objective; deferred behind current P0 queue. | [task](tasks/20261127-102301/task.md) |
 
 ### Dependency-waiting
 
