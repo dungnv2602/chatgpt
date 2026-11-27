@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 13:27 UTC
+- **Updated:** 2026-11-27T13:27:38Z
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -53,6 +53,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27T13:27:38Z — startup P0 child 20 closeout
+
+- **Action:** Rewrote both passive constructions in the CI Ledger reference to name the user and the Ledger as actors. Verified the target file and resolved both linked findings in the central Ledger.
+- **Result:** Closed and deleted child 20. Activated child 21, the next P0 remediation.
+- **Evidence:** Commit `d2e5abb40b6df969d74a748df90a135c47b34f59`.
+- **Validation:** Hosted validation remains pending. No hosted CI results were inspected.
+
 
 ### 2026-11-27T13:24:24Z — startup P0 child 19 closeout
 
@@ -277,8 +285,6 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 | `lint-301135338f19f01e083e45ee` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-6d4fd87d7c04e6106995412e` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-19df0784fbab3f590bc978f2` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
-| `lint-20a3b946ee1ae4877e53e449` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992981903) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45997603698-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45997603698) |
-| `lint-02e6a360a86d394444d7be9c` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45992981903-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992981903) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45997603698-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45997603698) |
 | `lint-7e86fc5d602e4865ed4a0ff6` | medium | nominalization: Action frozen into a noun. Use the verb \(analyze, not perform an analysis of\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-fa833ca0d8a25be575faf6e0` | medium | nominalization: Action frozen into a noun. Use the verb \(analyze, not perform an analysis of\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
 | `lint-7a15da17f8212acf9cbcd80a` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../../.takeout/reports/lint_reports/on_changed/history/45992769255-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45992769255) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45993945279-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45993945279) |
