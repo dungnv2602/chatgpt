@@ -1,6 +1,6 @@
 # Subtask: [Title]
 
-**Template version:** 1.1
+**Template version:** 1.2
 
 Store this record under its parent task's `subtasks/` directory.
 
@@ -77,7 +77,7 @@ Conditional: CI remediation subtask only.
 - **Run URL:** Not reviewed
 - **Reviewed at:** Not reviewed
 
-CI Ledger intake marks generated P0 remediation tasks Approved and Ready under the standing authorization. The Worker does not need separate task approval or ADR review for independently safe work. The Worker completes remediation after committing the fix to the intended branch. The Worker then checks the commit, reads back the changed files, and records the SHA and summary. Hosted validation is separate metadata. It does not gate completion. Do not inspect hosted results until the user explicitly triggers results review.
+CI Ledger intake marks generated P0 remediation tasks Approved and mandatory under the standing authorization. Keep a task Proposed when Governing ADR(s) is Pending. Move it to Ready only after accepted ADR linkage exists or decision approval is not required. P0 does not bypass decision governance. The Worker completes remediation after committing the fix to the intended branch. The Worker then checks the commit, reads back the changed files, and records the SHA and summary. Hosted validation is separate metadata. It does not gate completion. Do not inspect hosted results until the user explicitly triggers results review.
 
 ## 10. Handoff
 
