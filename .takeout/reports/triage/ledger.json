@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T14:18:13Z",
+  "updated_at_utc": "2026-11-27T14:21:12Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -23570,6 +23570,82 @@
       "legacy_task_refs": [],
       "task_group": "ci-0a053667020ea8bf",
       "parent_group": "ci-be7bc6e9c195a9ea"
+    },
+    {
+      "finding_id": "lint-c4694e88f04cd654220cc23d",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-27T14:20:54.816264+00:00",
+      "last_seen_utc": "2026-11-27T14:20:54.816264+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/46015025342-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46015025342",
+          "observed_at_utc": "2026-11-27T14:20:54.816264+00:00",
+          "note": "on_changed · .agent/skills/the-worker/assets/actions-report-template.md:15:263",
+          "observation_id": "lint:46015025342:1",
+          "source_task_id": "20261127-173000-51",
+          "parent_task_id": "20261127-173000",
+          "attribution_status": "linked",
+          "source_commit_sha": "7744b9fccf0f5671054a0e9d4031c0bb3ff1ab29"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261127-173000"
+      ],
+      "subtask_refs": [
+        "20261127-173000-52"
+      ],
+      "legacy_task_refs": [],
+      "task_group": "ci-54f24a3174d2ee80",
+      "parent_group": "ci-4fd708656e9d99ec"
+    },
+    {
+      "finding_id": "lint-4d345e231ac14cad2ca77be0",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-27T14:20:54.816264+00:00",
+      "last_seen_utc": "2026-11-27T14:20:54.816264+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/46015025342-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46015025342",
+          "observed_at_utc": "2026-11-27T14:20:54.816264+00:00",
+          "note": "on_changed · .agent/skills/the-worker/assets/actions-report-template.md:15:393",
+          "observation_id": "lint:46015025342:1",
+          "source_task_id": "20261127-173000-51",
+          "parent_task_id": "20261127-173000",
+          "attribution_status": "linked",
+          "source_commit_sha": "7744b9fccf0f5671054a0e9d4031c0bb3ff1ab29"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261127-173000"
+      ],
+      "subtask_refs": [
+        "20261127-173000-52"
+      ],
+      "legacy_task_refs": [],
+      "task_group": "ci-54f24a3174d2ee80",
+      "parent_group": "ci-4fd708656e9d99ec"
     }
   ],
   "ingestion_state": {
@@ -23708,6 +23784,7 @@
       ".takeout/reports/lint_reports/on_changed/history/46008770801-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/46012838586-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/46014585047-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/46015025342-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json",
