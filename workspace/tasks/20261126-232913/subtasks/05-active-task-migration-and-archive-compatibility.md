@@ -6,7 +6,7 @@
 - **ID:** 20261126-232913-05
 - **Parent Task ID:** 20261126-232913
 - **Type:** Implementation
-- **Status:** Done
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -14,7 +14,7 @@
 - **Dependencies:** 20261126-232913-01
 - **Required:** Yes
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-27 00:58 UTC
+- **Updated:** 2026-11-27 01:10 UTC
 
 ## 1. Objective
 Active-task migration and folder archive compatibility as part of the accepted ADR-0004 implementation.
@@ -52,10 +52,10 @@ In Progress. Active task inventory and archive cleanup compatibility are being a
 - **Other evidence:** All six old flat paths returned NOT_FOUND. All local evidence targets checked exist. No archive record or retention-index entry was changed.
 
 ## 8. Completion Record
-- **Status:** Done
-- **Completed at:** 2026-11-27 00:58 UTC
-- **Completion basis:** All six active flat tasks were migrated, all required task folders and subtask indexes were verified, board and relative links were reconciled, and folder/legacy archive retention compatibility was implemented with regression coverage.
-- **Evidence:** Remote read-back of every changed path. Hosted tests were not executed or reviewed.
+- **Status:** Not Done
+- **Completed at:** Not applicable
+- **Completion basis:** Reopened because the Ledger archive reader required by ADR-0004 is missing.
+- **Evidence:** The migration and retention changes are committed and read back. Ledger archive-reader compatibility and regression coverage remain outstanding.
 
 ## 10. Handoff
-Subtask 05 is complete. Continue with subtask 06 — regression coverage and documentation/catalog alignment. Preserve the deferred hosted-results-review boundary.
+Implement the Ledger archive reader for folder archives and historical flat archives. Do not scan or rewrite archive directories. Preserve the deferred hosted-results-review boundary.
