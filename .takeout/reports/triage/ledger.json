@@ -1,6 +1,6 @@
 {
   "schema_version": "1.7.0",
-  "updated_at_utc": "2026-11-27T05:31:00Z",
+  "updated_at_utc": "2026-11-27T14:00:00Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -8521,9 +8521,7 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261127-013151-38"
-      ],
+      "task_refs": [],
       "task_group": "ci-ace4e198cb6445b7",
       "subtask_refs": [],
       "legacy_task_refs": [],
