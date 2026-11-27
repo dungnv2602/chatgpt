@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-04
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Selected — Current Execution in the mandatory startup P0 batch
+- **Eligibility / deferral reason:** Completed — committed fix and remote readback satisfy acceptance criteria
 - **Required:** Yes
 - **Created:** 2026-11-27 11:02 UTC
-- **Updated:** 2026-11-27 11:01 UTC
+- **Updated:** 2026-11-27 11:02 UTC
 - **Ledger group:** `ci-71de99e18bb591b4`
 - **Legacy Task IDs:** None
 
@@ -70,9 +70,9 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 11:02 UTC
+- **Completion basis:** Committed the narrow test correction and verified the intended-branch file content. Hosted validation remains separate metadata.
 
 The Worker marks the child Done only after its acceptance criteria pass and the intended-branch commit is read back. For CI remediation, commit-based completion is separate from hosted validation.
 
@@ -85,7 +85,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.
+No implementation work remains in this child. The shared finding group may recur under other genuine parent tasks. Do not inspect hosted CI results.
 
 ## 10. Ledger Findings
 
