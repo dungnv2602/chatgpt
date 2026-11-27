@@ -1,8 +1,8 @@
 # Discussion Register
 
 ## Current Step
+Initialize session baseline and continue the user's approved structural migration task [20261126-232913](tasks/20261126-232913/task.md). No unrelated CI remediation or hosted results review.
 
-Initialize this session, then review only eligible CI Ledger-generated P0 tasks. Preserve the user's task-scope restriction and defer hosted CI result review. Link [20261126-232913](tasks/20261126-232913/task.md) for the user's requested status follow-up.
 
 ## Open Discussions
 
