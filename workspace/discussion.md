@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T18:20:00Z**: Child 56 completed. The Skills Directory now links all 17 active skills. ASD-STE100 and Prompt Master metadata are aligned with the Agent Skills contract. No Ready Refactor Skills child remains. DRAFT-0005 still awaits approval.
+- **2026-11-27T23:01:11.684Z**: Child 57 is active. The Worker is being updated to enforce queue draining, immediate reselection after blockers, and one-at-a-time essential user input.
 
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.

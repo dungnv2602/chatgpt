@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 15:20 UTC
+- **Updated:** 2026-11-27 23:01 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -43,6 +43,13 @@
 - **Action:** Set parent priority to P0 and select it as Current Execution.
 - **Approval:** Explicit authorization to prioritize and focus execution on this task.
 
+### 2026-11-28
+
+> Check if we already have the rule to not bother me unless absolutely necessary, you autonomously execute the task to the very end, if one subtask is blocked, you move on to another unblocked subtask. Only ping me with blocked ones and require my input one by one. Identify the gaps in your workflow, tighten it, make you must respect it while working.
+
+- **Action:** Create child 57 to audit and strengthen autonomous execution and one-at-a-time blocker handling.
+- **Approval:** Explicit authorization through the original request.
+
 ## 3. Objective and Acceptance Criteria
 
 Serve as the persistent, open parent task and coordination point for skills refactoring in the repository, including the current consolidation work and future refactoring initiatives. This is an explicitly authorized standing parent for skills-refactoring work; it is not a finite deliverable and must not be retired or closed merely because its current children are complete.
@@ -65,6 +72,15 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-28 — autonomous execution workflow
+
+- Created child 57 under the standing Refactor Skills parent.
+- Confirmed that the Worker already required execution to quiescence and continuation past isolated blockers.
+- Identified missing mandatory queue reselection and unclear limits on routine progress and blocker messages.
+- Updated the Worker, Conversation Mode, Session Start, initialization history, and live task-board scheduler contract.
+- **Commit:** Pending.
+- **Readback:** Pending.
 
 ### 2026-11-27T18:20:00Z — Refactor Skills child 56 closeout
 

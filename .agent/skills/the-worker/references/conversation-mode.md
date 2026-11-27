@@ -2,7 +2,7 @@
 
 ## Modes
 
-Use Default Mode for detailed work updates and Condensed Mode for concise delivery when the user prefers it. The repository brief is the shared continuity surface.
+Use Default Mode for detailed final delivery and Condensed Mode for concise final delivery when the user prefers it. Task records are the progress channel during execution. A mode choice does not authorize routine status pings.
 
 ## Brief contract
 
@@ -15,9 +15,15 @@ Keep task-level details in task records. The Worker’s mandatory Prompt capture
 
 ## User-input coordination
 
-Do not interrupt an execution batch for routine choices, blockers isolated to one task, or ordinary implementation decisions. Drain all independent work first.
+The Worker owns task selection and queue progression. This reference controls user-facing interruptions.
 
-At quiescence, deduplicate essential input requests. Ask one question per turn and wait for the answer before asking the next. Do not execute input-dependent tasks until the user answers or declines each queued input. Do not repeat answered questions. Record input and scope in the task.
+- Do not send routine progress pings, intermediate status summaries, acknowledgements, or per-task completion notices while independent eligible work remains.
+- Do not contact the user about a blocker that affects only one task while another eligible task remains. Record the blocker and continue with the next eligible task.
+- Keep routine progress in task records and the task board. Do not use the discussion register as a stream of progress messages.
+- Required Session Start notices and higher-priority platform instructions remain mandatory. Interrupt before quiescence only when a safety, privacy, access, or authority boundary makes further action impermissible.
+- At quiescence, ask one concise question about the first blocked task in board order that needs user input. Do not list later blockers or combine questions. Do not ask about blockers that the user cannot resolve.
+- Wait for the answer. Record its exact wording and timestamp in the affected task. Rebuild the full eligible queue and resume work before asking about another blocker. Ask the next question only if the resumed batch reaches quiescence again.
+- If no blocker needs user input, do not ask a question. Deliver the result and state remaining limits only after eligible work ends.
 
 Request input only when necessary to resolve an authority, governance, safety, access, privacy, or materially outcome-changing boundary. Otherwise, decide and proceed within scope.
 

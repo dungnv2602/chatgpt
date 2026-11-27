@@ -31,3 +31,4 @@ Parent: [task.md](../task.md)
 | 20261127-173000-50 | CI remediation — Fix lint tooling check: Markdown links and heading anchors | Blocked | [50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md](50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 
 The parent cannot be Done while a required child is open. CI remediation is commit-based; hosted validation is separate metadata.
+| 20261127-173000-57 | Enforce autonomous execution to quiescence | In Progress | [57-autonomous-execution-to-quiescence.md](57-autonomous-execution-to-quiescence.md) |

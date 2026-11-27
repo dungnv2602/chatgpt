@@ -90,7 +90,17 @@ Claim validation only when you observed it. Do not run repository scripts, tests
 
 ## Run-to-quiescence and user input
 
-Process independent eligible work sequentially. A blocker on one task must not stop unrelated work. At quiescence, deduplicate essential questions and ask one question per turn. Do not repeat answered questions. Record answers in the relevant task, then execute dependent work as a batch.
+Treat every authorized execution batch as a queue-draining loop. Do not stop after one task.
+
+1. **Select:** Reconcile the board, parent indexes, child indexes, and task records. Build the full eligible queue within the user's authorized focus. Check dependencies and approval before priority and age. Select the next eligible task.
+2. **Execute:** Complete that task within its approved scope. Record progress and evidence in its task record. Do not send routine progress pings or per-task status messages.
+3. **Rebuild:** After a task becomes Done, Blocked, Paused, or Cancelled, or after an approval or dependency changes, update its records. Rebuild the full eligible queue at once. Do not rely on the old queue.
+4. **Skip isolated blockers:** Exhaust permitted repository evidence and source investigation before declaring Blocked. Record the exact missing evidence, access, or user action. Remove the blocked task from the eligible queue. Return to step 1. A blocked task never ends the batch while another independent eligible task remains.
+5. **Reach quiescence:** Declare quiescence only when no eligible task remains within the user's authorized focus. Keep blocked and dependency-waiting tasks in their deferred sections. Do not select unrelated work outside the user's focus.
+6. **Ask one question:** At quiescence, find the first blocked task in board order that needs user input. Ask one direct question about that task only. Do not list later blockers or combine questions. Do not ask about a blocker that the user cannot resolve.
+7. **Resume:** Wait for the user's answer. Record its exact wording and timestamp in the affected task. Recheck status, approval, and dependencies. Rebuild the full queue and resume at step 1. Ask about another blocker only after this resumed batch reaches quiescence. If the user declines or cannot provide the input, record that result and keep the task deferred.
+
+An isolated blocker does not justify interrupting the batch. Keep routine progress in task records. Contact the user before quiescence only when a higher-priority instruction requires it or when continuing would cross an authority, governance, safety, access, or privacy boundary.
 
 Ask only when proceeding would cross an authority, governance, safety, access, privacy, or materially outcome-changing boundary. Otherwise use the narrowest safe interpretation.
 

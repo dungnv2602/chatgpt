@@ -8,13 +8,15 @@ The Worker is the sole scheduler. This board publishes its current selection and
 
 Check eligibility before priority or age. Dependencies must be satisfied, execution must be authorized, and status must be Ready. Rank eligible tasks by priority (P0 first), then age within the same priority unless a documented dependency or material constraint changes the order. Keep ineligible tasks out of the queue. List them in the appropriate deferred section with the exact reason.
 
+After every task completion, blocker, pause, cancellation, approval change, or dependency change, the Worker must reconcile records and rebuild the full eligible queue. A blocked task does not stop execution while an independent eligible task remains. Quiescence means no eligible task remains within the user's authorized focus. At quiescence, ask one essential user-input question at a time.
+
 **Approval:** Approved records explicit authorization for the documented scope or applicable standing authorization. Pending means the user has not authorized execution. Declined means the user rejected the proposal. Approval does not depend on status or eligibility.
 
 This is the sole index of active task parents. Each parent folder contains `task.md` and `subtasks/README.md`. The parent index lists substantive children. Board links point to parents, except Current Execution may link to the selected child. Keep a parent open while a required child remains open. The Worker owns status, selection, and deletion at closeout.
 
 ## Current Execution
 
-None. Refactor Skills has no Ready child. The parent remains open.
+**P0** — [20261127-173000-57: Enforce autonomous execution to quiescence](tasks/20261127-173000/subtasks/57-autonomous-execution-to-quiescence.md) — Approved, In Progress, no dependencies. Parent: [Refactor Skills](tasks/20261127-173000/task.md).
 
 ## Ordered Eligible Execution Queue
 
@@ -22,7 +24,7 @@ None. Refactor Skills has no Ready child. The parent remains open.
 
 ## Next Task
 
-No Ready child remains under Refactor Skills. The global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+Child 57 is the active Refactor Skills execution. After it closes, the global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 

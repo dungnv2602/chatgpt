@@ -200,6 +200,16 @@ Use this template:
 - **Verification:**
 - **Commit(s):**
 
+### Version 10 — Queue-draining execution and one-at-a-time blockers
+
+- **Date:** 2026-11-28
+- **Requested change:** Continue independent eligible work when one task blocks. Ask the user about one essential blocker at a time.
+- **Reason:** Existing guidance did not require immediate queue reselection or clearly prohibit routine blocker notifications before quiescence.
+- **Behavioral impact:** The Worker rebuilds the full eligible queue after task-state, approval, and dependency changes. It skips isolated blockers and continues independent work. Conversation Mode suppresses routine task-level pings. Session Start applies the same rule to the mandatory P0 batch.
+- **Files modified:** `.agent/skills/the-worker/SKILL.md`, `.agent/skills/the-worker/references/conversation-mode.md`, `.agent/SESSION_START.md`, `.agent/INITIALIZATION_POLICY.md`, and `workspace/task_board.md`.
+- **Verification:** Pending committed read-back.
+- **Commit(s):** Pending.
+
 ### Version 9 — CI P0 batch during session startup
 
 - **Date:** 2026-11-27
