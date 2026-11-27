@@ -64,7 +64,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-54 | Remove latest lint report copy and use the unified index | P0 | Proposed | Approved | DRAFT-0005 revision 1 must receive user approval and become an accepted ADR before implementation. | [subtask](tasks/20261127-173000/subtasks/54-remove-latest-lint-report-copy.md) |
+| 20261127-173500 | Remove the standalone latest lint report copy | P0 | Proposed | Approved | DRAFT-0005 revision 1 must receive user approval and become an accepted ADR before implementation. | [task](tasks/20261127-173500/task.md) |
 
 ### Paused
 

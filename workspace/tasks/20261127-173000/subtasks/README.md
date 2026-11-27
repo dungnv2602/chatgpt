@@ -30,6 +30,5 @@ Parent: [task.md](../task.md)
 | 20261127-173000-49 | CI remediation — Review passive-voice findings in workspace/task\\\_board.md | Blocked | [49-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md](49-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md) |
 | 20261127-173000-50 | CI remediation — Fix lint tooling check: Markdown links and heading anchors | Blocked | [50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md](50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 | 20261127-173000-53 | Simplify CI report structure | Done | [53-simplify-ci-report-structure.md](53-simplify-ci-report-structure.md) |
-| 20261127-173000-54 | Remove latest lint report copy and use the unified index | Proposed | [54-remove-latest-lint-report-copy.md](54-remove-latest-lint-report-copy.md) || 20261127-173000-55 | Audit the skill portfolio and identify refactoring priorities | In Progress | [55-audit-skill-portfolio.md](55-audit-skill-portfolio.md) |
 
 The parent cannot be Done while a required child is open. CI remediation is commit-based; hosted validation is separate metadata.

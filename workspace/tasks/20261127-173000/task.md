@@ -66,6 +66,13 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
+### 2026-11-27T17:40:00Z — corrected report-task parentage
+
+- **Action:** Moved the latest-lint-report deletion request out of Refactor Skills. Its objective changes CI report architecture and does not refactor skills.
+- **Result:** Created independent parent `20261127-173500` in Proposed status. DRAFT-0005 remains in review. Child 55 remains the active Refactor Skills task.
+- **Next:** Continue the skill portfolio audit. Wait for approval before implementing the report-layout change.
+
+
 ### 2026-11-27T17:35:00Z — Refactor Skills audit activated
 
 - **Action:** Created child 55 to audit the active skill portfolio and identify evidence-based refactoring priorities.
@@ -336,8 +343,8 @@ Current child state:
 - Child 03 is Paused.
 - Children 27–50 are Blocked. Child 50 awaits a complete diagnostic report with its failing Markdown target and anchor.
 - Child 53 is Done.
-- Child 54 is Proposed. DRAFT-0005 revision 1 requires user approval before its implementation.
 - Child 55 is the current P0 audit of the active skill portfolio.
+- The latest-lint-report deletion request was moved to independent parent 20261127-173500. It is Proposed pending DRAFT-0005 approval and is not a Refactor Skills child.
 
 Continue with new child subtasks for distinct skills-refactoring deliverables. Keep this parent open. Do not retire or delete it.
 
