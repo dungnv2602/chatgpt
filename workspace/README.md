@@ -8,6 +8,7 @@ The Worker owns task capture, hierarchy, scheduling, progress, handoff, and dire
 |---|---|
 | [discussion.md](discussion.md) | Current step, open decisions, and three latest success reports |
 | [task_board.md](task_board.md) | Current execution, eligible queue, next task, and deferred work |
+| [TASK_BOARD_TEMPLATE.md](TASK_BOARD_TEMPLATE.md) | Canonical task-board structure and scheduler contract |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Parent task folder |
 | [SUBTASK_TEMPLATE.md](SUBTASK_TEMPLATE.md) | Follow-up and remediation child |
 | [tasks/](tasks/) | Active task folders; each has task.md and subtasks/README.md |
