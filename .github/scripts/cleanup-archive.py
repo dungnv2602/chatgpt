@@ -52,18 +52,55 @@ def load_index(path: Path) -> dict[str, Any]:
     return data
 
 def clean_due_records(index_path: Path, repository_root: Path, now: datetime) -> tuple[list[str], bool]:
-    """Delete due exact paths only. Never enumerate archive directories."""
+    """Delete due exact paths. Treat each indexed task folder as one archive unit."""
     if now.tzinfo is None:
         raise ValueError("now must be timezone-aware.")
     now = now.astimezone(timezone.utc)
     data = load_index(index_path)
     due, retained = [], []
+    task_folders: dict[str, list[tuple[dict[str, Any], datetime]]] = {}
+    individual_records = []
     for record in data["records"]:
         path, archived_at = validate_record(record)
+        parts = PurePosixPath(path).parts
+        if parts[1] == "task" and len(parts) >= 4:
+            folder = PurePosixPath(*parts[:3]).as_posix()
+            task_folders.setdefault(folder, []).append((record, archived_at))
+        else:
+            individual_records.append((record, path, archived_at))
+
+    # A folder archive is one immutable snapshot. Require its parent and child
+    # index, and one timestamp, before any part of the folder can expire.
+    for folder, entries in task_folders.items():
+        paths = {path for _record, path, _stamp in (
+            (record, record["path"], stamp) for record, stamp in entries
+        )}
+        required = {folder + "/task.md", folder + "/subtasks/README.md"}
+        if not required.issubset(paths):
+            missing = sorted(required - paths)
+            raise ValueError(
+                "Task-folder archive index is incomplete for " + folder
+                + ": missing " + ", ".join(missing)
+            )
+        timestamps = {stamp for _record, stamp in entries}
+        if len(timestamps) != 1:
+            raise ValueError(
+                "Task-folder archive entries must share one archived_at_utc timestamp: "
+                + folder
+            )
+        archived_at = next(iter(timestamps))
+        if now >= archived_at + RETENTION_PERIOD:
+            due.extend(path for record, stamp in entries for path in (record["path"],))
+        else:
+            retained.extend(record for record, _stamp in entries)
+
+    # Legacy flat task archives and report files retain their individual policy.
+    for record, path, archived_at in individual_records:
         if now >= archived_at + RETENTION_PERIOD:
             due.append(path)
         else:
             retained.append(record)
+
     if not due:
         return [], False
     archive_root = repository_root / ".archive"
@@ -89,7 +126,7 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
             deleted.append(path)
     data["records"] = retained
     temporary = index_path.with_name(index_path.name + ".tmp")
-    temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
     temporary.replace(index_path)
     return deleted, True
 
