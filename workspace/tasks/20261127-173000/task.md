@@ -66,6 +66,31 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 5. Progress
 
+### 2026-11-27T18:05:00Z — skill portfolio audit complete
+
+- **Inventory:** 17 active skill directories contain 17 `SKILL.md` files. Every `name` matches its directory. Every skill has a non-empty description under the 1,024-character limit. The scan found 26 local Markdown links in skill definitions. All 26 targets exist.
+- **Activation index:** `.agent/skills/README.md` lists only 7 of the 17 skills. It omits define-goal, discernment-nudge, doc-coauthoring, grilling, internal-comms, migrate-to-rust, pdf, skill-creator, theme-factory, and xlsx. Romantic Storyteller appears in both the Novelist tier and the task-specific table.
+- **Metadata drift:** ASD-STE100 declares `project-role: foundational`, but the README and SESSION_START classify it as task-activated. Prompt Master puts `version: 1.8.2` at the frontmatter root. The Agent Skill Authoring contract permits version only under `metadata`.
+- **Skill boundary overlap:** Agent Skill Authoring and Skill Creator both activate for skill creation and revision. Agent Skill Authoring is the repository's format and integration authority. Skill Creator adds evaluation and benchmark workflows, but its trigger is broader than its distinct role.
+- **Writing workflows:** Doc Co-Authoring overlaps with Internal Comms on document creation. Doc Co-Authoring contains 27 Claude references, 5 sub-agent references, 6 artifact references, 3 `str_replace` references, and 2 `create_file` references. These instructions do not map directly to ChatGPT Writing Blocks and Work.
+- **Behavior skills:** Discernment Nudge and Grilling both prompt the user to examine reasoning. Grilling requires an explicit stress-test request. Discernment Nudge automatically adds questions after substantive answers. Their different triggers need clear index entries and an explicit policy decision before any activation change.
+- **Other integration gaps:** Define Goal references `get_goal` and `create_goal`. No matching tool exists in the current tool registry. Skill Creator contains 28 Claude references, 2 Anthropic references, 7 Cowork references, and 16 sub-agent references. Prompt Master contains 17 Claude references and 4 sub-agent references. Internal Comms contains one Claude reference. Grilling contains two sub-agent references.
+- **Progressive disclosure:** Drawing has 538 lines and Prompt Master has 544 lines. Both exceed the Agent Skill Authoring recommendation of fewer than 500 lines where practical. Romantic Storyteller has 458 lines and Skill Creator has 486.
+- **Resource integrity:** The referenced Theme Factory showcase, internal-comms examples, and Skill Creator evaluation viewer exist. The audit found no missing local links in the 17 skill definitions.
+- **Distinct capabilities:** Define Goal explicitly excludes durable task management. Drawing and Romantic Storyteller have a clear prerequisite relationship. PDF, XLSX, Rust migration, philosophy research, and theme styling have distinct domain scopes.
+
+### Audit recommendations
+
+1. Reconcile the Skills Directory index and correct the two frontmatter inconsistencies. This is the next implementation child.
+2. Narrow Skill Creator to evaluation, benchmarking, and description optimization. Keep Agent Skill Authoring as the canonical repository skill-authoring procedure.
+3. Adapt Doc Co-Authoring and Internal Comms to the ChatGPT environment. Preserve their distinct general-document and internal-communications scopes.
+4. Review the automatic Discernment Nudge trigger with the user before changing it. Keep Grilling as an explicit-request workflow.
+5. Review Define Goal's unavailable tool dependency. Do not claim goal creation until an actual integration exists.
+6. Split secondary material from Drawing and Prompt Master only when a concrete loading benefit justifies the migration.
+
+**Evidence boundary:** This audit used the current GitHub tree and remote file readback. It did not run local scripts, tests, or lint. It did not inspect hosted CI results. Recommendations 2–6 require separate scoped tasks. Any activation or architecture change requires the relevant user decision.
+
+
 ### 2026-11-27T17:40:00Z — corrected report-task parentage
 
 - **Action:** Moved the latest-lint-report deletion request out of Refactor Skills. Its objective changes CI report architecture and does not refactor skills.
@@ -343,14 +368,15 @@ Current child state:
 - Child 03 is Paused.
 - Children 27–50 are Blocked. Child 50 awaits a complete diagnostic report with its failing Markdown target and anchor.
 - Child 53 is Done.
-- Child 55 is the current P0 audit of the active skill portfolio.
-- The latest-lint-report deletion request was moved to independent parent 20261127-173500. It is Proposed pending DRAFT-0005 approval and is not a Refactor Skills child.
+- Child 55 completed the portfolio audit. Its findings and recommendations are recorded above.
+- Child 56 is the current implementation child. It reconciles the skill index and activation metadata.
+- The latest-lint-report deletion request remains separate under parent 20261127-173500. It is Proposed pending DRAFT-0005 approval.
 
 Continue with new child subtasks for distinct skills-refactoring deliverables. Keep this parent open. Do not retire or delete it.
 
 ## 7. Verification and Evidence
 
-- **Commit SHA:** `1e6800f40e4c1bf1e15263f0a479a54afe81468a` (parent priority/current-execution); `24f697da8a75972ff7f6a0dca7302a125e63499c` (child 01 activation); `3f0101796d08a5eba78dfe2fd4120b7445bf5c62` (subtask index); `91ca878a4c151aeb65d3f5ff78b438af8e437aa3` (board); `ebc73c9a3f3f69d21d218d2a271c02aad1145d38` (template-first governance)
+- **Commit SHA:** `1e6800f40e4c1bf1e15263f0a479a54afe81468a` (parent priority/current-execution); `24f697da8a75972ff7f6a0dca7302a125e63499c` (child 01 activation); `3f0101796d08a5eba78dfe2fd4120b7445bf5c62` (subtask index); `91ca878a4c151aeb65d3f5ff78b438af8e437aa3` (board); `ebc73c9a3f3f69d21d218d2a271c02aad1145d38` (template-first governance); audit commit pending
 - **Changed paths:** `workspace/tasks/20261127-173000/task.md`; `workspace/tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md`; `workspace/tasks/20261127-173000/subtasks/README.md`; `workspace/task_board.md`
 - **Readback:** Verified all four paths on branch `gpt`.
 - **Checks:** Not performed

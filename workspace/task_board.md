@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-55: Audit the skill portfolio and identify refactoring priorities](tasks/20261127-173000/subtasks/55-audit-skill-portfolio.md) — P0, In Progress, Approved.
+[20261127-173000-56: Reconcile the skill directory index and activation metadata](tasks/20261127-173000/subtasks/56-reconcile-skill-directory-index.md) — P1, In Progress, Approved.
 
 ## Ordered Eligible Execution Queue
 
