@@ -1,0 +1,428 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Central report triage ledger",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "updated_at_utc",
+    "findings",
+    "ingestion_state"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.8.0"
+    },
+    "updated_at_utc": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ingestion_state": {
+      "type": "object",
+      "required": [
+        "bootstrap_at_utc",
+        "processed_reports",
+        "lint_baseline_scopes"
+      ],
+      "properties": {
+        "bootstrap_at_utc": {
+          "type": "string",
+          "minLength": 10
+        },
+        "processed_reports": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\.takeout/reports/"
+          },
+          "uniqueItems": true
+        },
+        "lint_baseline_scopes": {
+          "type": "object",
+          "required": [
+            "on_changed",
+            "on_repo"
+          ],
+          "properties": {
+            "on_changed": {
+              "type": "boolean"
+            },
+            "on_repo": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "task_group",
+          "source_family",
+          "category",
+          "title",
+          "status",
+          "severity",
+          "first_seen_utc",
+          "last_seen_utc",
+          "occurrence_count",
+          "evidence",
+          "parent_group",
+          "subtask_refs",
+          "legacy_task_refs"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 8
+          },
+          "task_group": {
+            "type": "string",
+            "pattern": "^ci-[0-9a-f]{16}$",
+            "description": "Stable CI remediation group. Each group is represented by a child subtask under its work-target parent."
+          },
+          "source_family": {
+            "enum": [
+              "lint",
+              "github_actions",
+              "other"
+            ]
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "open",
+              "investigating",
+              "planned",
+              "fixing",
+              "verifying",
+              "resolved",
+              "accepted",
+              "false_positive",
+              "duplicate"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low",
+              "informational"
+            ]
+          },
+          "owner": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_seen_utc": {
+            "type": "string",
+            "minLength": 10
+          },
+          "last_seen_utc": {
+            "type": "string",
+            "minLength": 10
+          },
+          "occurrence_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "report_path",
+                "observed_at_utc"
+              ],
+              "properties": {
+                "report_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(\\.takeout/reports/|workspace/archive/reports/)"
+                },
+                "run_url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "observed_at_utc": {
+                  "type": "string",
+                  "minLength": 10
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "observation_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_task_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                },
+                "parent_task_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                },
+                "attribution_status": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_commit_sha": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^[0-9a-fA-F]{7,40}$"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "resolution": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "fix_commit": {
+                "type": "string",
+                "pattern": "^[0-9a-fA-F]{7,40}$"
+              },
+              "resolved_at_utc": {
+                "type": "string",
+                "minLength": 10
+              },
+              "validation": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "pending",
+                      "passed",
+                      "failed",
+                      "not_run"
+                    ]
+                  },
+                  "run_url": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "conclusion": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  },
+                  "validated_at_utc": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 10
+                  },
+                  "note": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "status"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "fix_commit",
+              "resolved_at_utc"
+            ],
+            "description": "Commit-based remediation resolution. Hosted validation is optional metadata and does not gate resolved status."
+          },
+          "resolution_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "fix_commit",
+                "resolved_at_utc"
+              ],
+              "properties": {
+                "fix_commit": {
+                  "type": "string",
+                  "pattern": "^[0-9a-fA-F]{7,40}$"
+                },
+                "resolved_at_utc": {
+                  "type": "string",
+                  "minLength": 10
+                },
+                "validation": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "enum": [
+                        "pending",
+                        "passed",
+                        "failed",
+                        "not_run"
+                      ]
+                    },
+                    "run_url": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "conclusion": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    "validated_at_utc": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "minLength": 10
+                    },
+                    "note": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "status"
+                  ]
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "duplicate_of": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "accepted_risk": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              },
+              "accepted_by": {
+                "type": "string",
+                "minLength": 1
+              },
+              "accepted_at_utc": {
+                "type": "string",
+                "minLength": 10
+              },
+              "expires_at_utc": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "rationale",
+              "accepted_by",
+              "accepted_at_utc"
+            ]
+          },
+          "task_refs": {
+            "type": "array",
+            "description": "Genuine user-originated parent task IDs attributed from the source commit Task-ID trailer.",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "closure_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "parent_group": {
+            "type": "string",
+            "pattern": "^ci-[0-9a-f]{16}$",
+            "description": "Legacy work-target grouping key retained for migration only. It does not identify or create a task parent."
+          },
+          "subtask_refs": {
+            "type": "array",
+            "description": "CI remediation child IDs created under the genuine parent task.",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "legacy_task_refs": {
+            "type": "array",
+            "description": "Retired synthetic task IDs retained as historical provenance; never used as current parent links.",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

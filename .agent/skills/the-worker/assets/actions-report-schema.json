@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GitHub Actions diagnostic report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_run",
+    "capture",
+    "classification",
+    "jobs",
+    "check_runs",
+    "annotations",
+    "artifacts",
+    "capture_errors",
+    "history_path"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "source_run": {
+      "type": "object",
+      "required": [
+        "id",
+        "number",
+        "attempt",
+        "workflow_id",
+        "workflow_name",
+        "workflow_path",
+        "run_url",
+        "event",
+        "branch",
+        "head_sha",
+        "status",
+        "conclusion",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "number": {
+          "type": "integer"
+        },
+        "attempt": {
+          "type": "integer"
+        },
+        "workflow_id": {
+          "type": "integer"
+        },
+        "workflow_name": {
+          "type": "string"
+        },
+        "workflow_path": {
+          "type": "string"
+        },
+        "run_url": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "branch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "head_sha": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "conclusion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "run_started_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updated_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "actor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "triggering_actor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "head_commit_message": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "stage",
+        "captured_at_utc",
+        "completeness",
+        "reporter_job"
+      ],
+      "properties": {
+        "stage": {
+          "enum": [
+            "pre_finalizer",
+            "post_run"
+          ]
+        },
+        "captured_at_utc": {
+          "type": "string"
+        },
+        "completeness": {
+          "enum": [
+            "Complete",
+            "Incomplete"
+          ]
+        },
+        "reporter_job": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "classification": {
+      "description": "Run state records the source outcome. Cancellation alone does not create an actionable issue. Categories and issues contain only independent failures.",
+      "type": "object",
+      "required": [
+        "state",
+        "observed_conclusion",
+        "projected_conclusion",
+        "primary_category",
+        "categories",
+        "issues"
+      ],
+      "properties": {
+        "state": {
+          "type": "string"
+        },
+        "observed_conclusion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "projected_conclusion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "primary_category": {
+          "description": "Null when the report contains no actionable issue.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "categories": {
+          "description": "Categories for actionable issues. Do not include cancellation-only outcomes.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "issues": {
+          "description": "Independent actionable failures only. Exclude cancellation and known downstream status propagation caused by cancellation.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "category",
+              "job_id",
+              "job_name",
+              "step_number",
+              "step_name",
+              "blocking",
+              "confidence",
+              "message"
+            ],
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "jobs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "conclusion",
+          "steps",
+          "log_capture"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "check_runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "capture_errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "message"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "history_path": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
