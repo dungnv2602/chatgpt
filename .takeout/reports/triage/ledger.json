@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:36:42Z",
+  "updated_at_utc": "2026-11-27T13:36:52Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -20721,7 +20721,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -20762,7 +20762,18 @@
           "source_commit_sha": "a5521f4c244720dcb49bfcc92fba1df657160566"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "80440b3c6a81e440826071a66dd9f9c3a3e38747",
+        "resolved_at_utc": "2026-11-27T13:36:52Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The catalog now names the repository or Worker as the actor in ADR status and completed-task deletion descriptions. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -20781,7 +20792,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -20822,7 +20833,18 @@
           "source_commit_sha": "a5521f4c244720dcb49bfcc92fba1df657160566"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "80440b3c6a81e440826071a66dd9f9c3a3e38747",
+        "resolved_at_utc": "2026-11-27T13:36:52Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The catalog now names the repository or Worker as the actor in ADR status and completed-task deletion descriptions. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -20841,7 +20863,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -20882,7 +20904,18 @@
           "source_commit_sha": "a5521f4c244720dcb49bfcc92fba1df657160566"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "80440b3c6a81e440826071a66dd9f9c3a3e38747",
+        "resolved_at_utc": "2026-11-27T13:36:52Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The catalog now names the repository or Worker as the actor in ADR status and completed-task deletion descriptions. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,

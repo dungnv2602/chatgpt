@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-24: CI remediation — Review passive-voice findings in .agent/skills/the-worker/references/document-type-catalog.md](tasks/20261127-173000/subtasks/24-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md). This P0 child is active under the persistent Refactor Skills parent.
+[20261127-173000-26: CI remediation — Review long-sentence findings in .agent/SESSION_START.md](tasks/20261127-173000/subtasks/26-ci-remediation-review-long-sentence-findings-in-agent-session-start-md.md). This P0 child is active under the persistent Refactor Skills parent.
 
 ## Ordered Eligible Execution Queue
 
@@ -32,7 +32,6 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-26 | CI remediation — Review long-sentence findings in .agent/SESSION\\\_START.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](26-ci-remediation-review-long-sentence-findings-in-agent-session-start-md.md) |
 | 20261127-173000-27 | CI remediation — Review passive-voice findings in workspace/README.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md) |
 | 20261127-173000-28 | CI remediation — Review marketing-adjective findings in .agent/skills/asd-ste100/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md) |
 | 20261127-173000-29 | CI remediation — Review nominalization findings in .agent/skills/asd-ste100/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](29-ci-remediation-review-nominalization-findings-in-agent-skills-asd-ste100-skill.md) |
