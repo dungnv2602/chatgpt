@@ -752,6 +752,8 @@ def parse_active_ledger_tasks(root):
     ):
         result.setdefault(group_id, task)
     return result
+
+
 def read_archived_task(root, task_id):
     """Read one indexed task archive without scanning or changing archive directories."""
     if not isinstance(task_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9-]{5,63}", task_id):
