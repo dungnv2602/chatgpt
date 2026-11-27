@@ -14,16 +14,17 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-173000-09: CI remediation — Review synonym-rotation findings in .agent/skills/the-worker/references/ci-ledger.md](tasks/20261127-173000/subtasks/09-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-refe.md). This P0 child is active under the persistent Refactor Skills parent.
+[20261127-173000-10: CI remediation — Review passive-voice findings in .agent/skills/the-worker/references/decision-governance.md](tasks/20261127-173000/subtasks/10-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md). This P0 child is active under the persistent Refactor Skills parent.
 
 ## Ordered Eligible Execution Queue
 
-1. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
-2. **P1** — [20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — Approved, Ready, no dependencies.
+1. **P0** — [20261127-173000-50: CI remediation — Fix lint tooling check: Markdown links and heading anchors](tasks/20261127-173000/subtasks/50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) — Approved, Ready, no dependencies.
+2. **P1** — [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — Approved, Ready, no dependencies.
+3. **P1** — [20261127-173000-04: Enforce template-first document editing](tasks/20261127-173000/subtasks/04-enforce-template-first-document-editing.md) — Approved, Ready, no dependencies.
 
 ## Next Task
 
-[20261127-173100-02](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) is next after the startup P0 batch reaches quiescence.
+[20261127-173000-50](tasks/20261127-173000/subtasks/50-ci-remediation-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) is next after child 10 completes.
 
 ## Deferred Work
 
@@ -31,7 +32,6 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-10 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/references/decision-governance.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](10-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md) |
 | 20261127-173000-11 | CI remediation — Review passive-voice findings in .agent/skills/agent-skill-authoring/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](11-ci-remediation-review-passive-voice-findings-in-agent-skills-agent-skill-author.md) |
 | 20261127-173000-12 | CI remediation — Review semicolon findings in .agent/skills/the-worker/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](12-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md) |
 | 20261127-173000-13 | CI remediation — Review synonym-rotation findings in .agent/SESSION\\\_START.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](13-ci-remediation-review-synonym-rotation-findings-in-agent-session-start-md.md) |

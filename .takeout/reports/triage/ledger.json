@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T12:58:47Z",
+  "updated_at_utc": "2026-11-27T13:00:05Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -21567,7 +21567,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'change' and 'modify' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -21619,7 +21619,18 @@
           "source_commit_sha": "d83971693d6f268f7c52abe117ea00b22cbcd56d"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "1a82e58b4d88cd86fd9f5c120f17ac22ca23d7a0",
+        "resolved_at_utc": "2026-11-27T13:00:05Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The exact synonym-rotation wording was standardized in the target file. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -21638,7 +21649,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'alter' and 'modify' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -21679,7 +21690,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "d83971693d6f268f7c52abe117ea00b22cbcd56d",
+        "resolved_at_utc": "2026-11-27T13:00:05Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The exact synonym-rotation wording was standardized in the target file. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,

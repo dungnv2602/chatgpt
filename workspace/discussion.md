@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T12:57:07Z**: Full CI Ledger access restored through `fetch_blob` (1,049,704 bytes). Closed P0 children 07 and 08 after verifying their source commits and reconciling three Ledger findings. Child 09 is now the current P0 execution. Remaining P0 children still require sequential activation and review. Hosted CI results remain out of scope.
+- **2026-11-27T13:00:05Z**: Closed P0 child 09 after source readback and Ledger resolution. The remaining synonym-rotation group is resolved. Child 10 is now the current P0 execution. The Ledger is accessible through its Git blob SHA. Hosted CI results remain out of scope.
 
 ## Open Discussions
 
@@ -12,6 +12,7 @@
 
 ## Reports
 
+- **2026-11-27T13:00:05Z**: Closed child 09. Resolved `lint-a913a887a540db8f083a49d4` with commit `1a82e58b4d88cd86fd9f5c120f17ac22ca23d7a0` and `lint-b57ced8a931e2c7579ee7ae3` with commit `d83971693d6f268f7c52abe117ea00b22cbcd56d`. Activated child 10. Added two new passive-voice findings from report 45997603698 to the parent Ledger summary for child 20. Hosted validation remains pending. Hosted CI results were not inspected.
 - **2026-11-27T12:57:07Z**: Recovered the complete CI Ledger from blob `b8f592ac62d41b92d0f5cbc71895fbc5870ed8f5`. Closed children 07 and 08. Resolved findings `lint-462e0ea3915e8d7012fd216c`, `lint-f0924ddd2b0dc8bbc49b968e`, and `lint-def411a40f6be2c48a4cd3be` using source commits `a5521f4c244720dcb49bfcc92fba1df657160566` and `e1658a2dc41dffffe10d6563c5a7158f580c4918`. Child 09 is active. Hosted validation remains pending and hosted CI results were not inspected.
 - **2026-11-27:** Completed `/start` foundational retrieval and mandatory P0 batch review. Created and indexed `workspace/templates/DISCUSSION_TEMPLATE.md`. Source remediation commits: child 07 `a5521f4c244720dcb49bfcc92fba1df657160566`, child 08 `e1658a2dc41dffffe10d6563c5a7158f580c4918`, and child 09 `d83971693d6f268f7c52abe117ea00b22cbcd56d`. All 42 startup P0 children are recorded Blocked because the connector returns empty content for the complete CI Ledger. Board and subtask index readback confirmed 42 blocked rows, two P1 queued tasks, and no Current Execution. Hosted CI was not inspected. No hosted validation or task closeout is claimed.
 
