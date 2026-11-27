@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:20:03Z",
+  "updated_at_utc": "2026-11-27T13:20:56Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -2828,7 +2828,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T22:15:06.363498+00:00",
@@ -2869,7 +2869,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "a3603c9582a13695e52730d8b5f6d8911d7b5b03",
+        "resolved_at_utc": "2026-11-27T13:20:56Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The Worker skill now uses consistent action terms for deletion, change, start, verification, correction, and fetching. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -15092,7 +15103,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T01:49:37.240485+00:00",
@@ -15155,7 +15166,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "a3603c9582a13695e52730d8b5f6d8911d7b5b03",
+        "resolved_at_utc": "2026-11-27T13:20:56Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The Worker skill now uses consistent action terms for deletion, change, start, verification, correction, and fetching. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -20138,7 +20160,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'modify' and 'change' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -20168,7 +20190,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "a3603c9582a13695e52730d8b5f6d8911d7b5b03",
+        "resolved_at_utc": "2026-11-27T13:20:56Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The Worker skill now uses consistent action terms for deletion, change, start, verification, correction, and fetching. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -20187,7 +20220,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'begin' and 'start' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -20217,7 +20250,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "a3603c9582a13695e52730d8b5f6d8911d7b5b03",
+        "resolved_at_utc": "2026-11-27T13:20:56Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The Worker skill now uses consistent action terms for deletion, change, start, verification, correction, and fetching. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -20296,7 +20340,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'repair' and 'correct' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -20326,7 +20370,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "a3603c9582a13695e52730d8b5f6d8911d7b5b03",
+        "resolved_at_utc": "2026-11-27T13:20:56Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The Worker skill now uses consistent action terms for deletion, change, start, verification, correction, and fetching. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -20345,7 +20400,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -20375,7 +20430,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "a3603c9582a13695e52730d8b5f6d8911d7b5b03",
+        "resolved_at_utc": "2026-11-27T13:20:56Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The Worker skill now uses consistent action terms for deletion, change, start, verification, correction, and fetching. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
