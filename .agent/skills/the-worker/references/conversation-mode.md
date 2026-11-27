@@ -81,7 +81,7 @@ Use `workspace/discussion.md` as a compact, current register with exactly three 
 
 `## Reports`
 
-The file is not a transcript, general progress log, or task-history archive. `Current Step` contains only the one active pre-step brief. The other sections are ordered newest first. Use UTC timestamps. Determine the section from the item's current state, not from its original source or the kind of task.
+The file is not a transcript, general progress log, or task-history archive. `Current Step` contains only the one active pre-step brief. Order the other sections newest first. Use UTC timestamps. Determine the section from the item's current state, not from its original source or the kind of task.
 
 #### Current Step
 
@@ -93,12 +93,12 @@ This section is the user's short, live briefing surface while work proceeds.
 - Keep exactly one current brief. Do not retain completed briefs as history or duplicate them in Reports.
 - Link every active task record that the assistant is working on from the Current Step brief. Include multiple task links when work spans multiple tasks. Remove links when work stops or closes.
 - After the step, record detailed actions and verification in the task record. Before the next meaningful step, replace the brief and send the updated link.
-- If work stops, fails, or needs a user decision, state that execution is paused and why in the current brief. Record any unresolved failure or required user input under Open Discussions.
+- If work stops, fails, or needs a user decision, pause execution and explain why in the current brief. Record any unresolved failure or required user input under Open Discussions.
 - When no step is active, use `_No active step._`.
 
 #### Open Discussions
 
-This section contains every matter that is unresolved or needs the user's attention, judgment, or response. This includes:
+This section lists every matter that remains unresolved or needs the user's attention, judgment, or response. This includes:
 
 - A direct question, request for clarification, approval, permission, preference, or decision.
 - Ambiguous or conflicting prompt instructions when the assistant cannot safely choose an interpretation.
@@ -126,9 +126,9 @@ For each open item:
 - Preserve the user's relevant wording verbatim when it prevents ambiguity. Do not copy the full conversation.
 - Keep separate decisions separate. Combine messages only when they concern the same decision or dependency.
 - Put the item with the latest creation or meaningful update first. When the user adds a clarification to an existing thread, update that thread and move it to the top. Do not create a duplicate.
-- Keep an item open while awaiting the user's answer, even if the conversation or task is paused.
-- Do not close an item merely because it is old, another item is newer, work has stopped, or the assistant has proposed a solution.
-- Close the item when the user answers and no further input is needed. Also close it when evidence answers the question. Close it when the user withdraws or rejects the proposal. Close it after you implement the decision and resolve the matter. Close it when the blocker is resolved.
+- Keep an item open while you wait for the user's answer, even if the conversation or task pauses.
+- Do not close an item merely because it is old, another item is newer, work stopped, or the assistant proposed a solution.
+- Close the item when the user answers and the Worker needs no further input. Also close it when evidence answers the question. Close it when the user withdraws or rejects the proposal. Close it after you implement the decision and resolve the matter. Close it when the Worker resolves the blocker.
 - If the user answers only part of a multi-part question, keep the remaining unresolved part open and revise the entry to show only what remains.
 - If a later instruction supersedes an earlier open item, close the superseded item and retain the current decision or question. Preserve unrelated open items.
 
@@ -143,14 +143,14 @@ A report must:
 - Describe the completed result, not merely an intention, attempt, or progress update.
 - Be supported by the required verification. State any meaningful verification limit.
 - Avoid claiming that CI, tests, read-back, deployment, or another check passed unless the relevant result was actually observed.
-- Link or name the authoritative task record when more detail is needed, without duplicating its progress log.
+- Link or name the authoritative task record when readers need more detail. Do not duplicate its progress log.
 - Be concise and useful as a recent-outcome summary.
 
 Reports may describe a completed milestone even when a larger task continues, provided the milestone is independently complete and successful. If that milestone also leaves a decision or question for the user, record the success in Reports and the distinct unresolved question in Open Discussions. Do not duplicate the same information in both sections.
 
-A report may mention that an issue was encountered and successfully addressed, but it must report the final successful outcome and its verification. Do not classify an unsuccessful final outcome, an unverified claim, a pending check, or a blocked task as a success report.
+A report may mention an issue that the Worker encountered and addressed. It must report the final successful outcome and its verification. Do not classify an unsuccessful final outcome, an unverified claim, a pending check, or a blocked task as a success report.
 
-Retain at most the three most recent reports. Order them newest first by the time the successful outcome was verified or completed. When a new successful report would create a fourth entry, remove the oldest report. This limit applies only to Reports. It does not limit the number of genuinely open discussions. Do not preserve older reports elsewhere in this file.
+Retain at most the three most recent reports. Order them newest first by the time the Worker checked or completed the successful outcome. When a new successful report would create a fourth entry, remove the oldest report. This limit applies only to Reports. It does not limit the number of genuinely open discussions. Do not preserve older reports elsewhere in this file.
 
 #### Ordering, timestamps, and maintenance
 
@@ -159,7 +159,7 @@ Retain at most the three most recent reports. Order them newest first by the tim
 - Use a clear timestamp for every entry. Use UTC and an unambiguous format such as `2026-11-20 16:14 UTC`.
 - Do not move an entry to the top for cosmetic edits. Move it only after a meaningful change to its status, required decision, scope, or verified outcome.
 - Review and reconcile the register when entering project work in either mode, after meaningful user clarifications or decisions, after failures, and before the final response. Read it once at the start of project work in each conversation.
-- Update the file in the same turn when an item opens, materially changes, or closes. Remove closed discussions immediately. Prune Reports immediately when the three-report limit is exceeded.
+- Update the file in the same turn when an item opens, materially changes, or closes. Remove closed discussions immediately. Prune Reports immediately when it contains more than three reports.
 - Keep task progress, technical diagnostics, retries, detailed verification, and handoffs in the task record. The register is a short navigation surface, not a substitute for task records.
 - Never record credentials, access tokens, hidden reasoning, or unrelated sensitive information.
 
@@ -187,7 +187,7 @@ Decision-governance work keeps its active implementation task in Current Step. K
 
 Approval authorizes only the scope the user approved. It does not authorize unrelated work or clear unrelated open discussions.
 
-Keep an approved matter open while the approved work is incomplete or still requires user input. Once the approved work is complete and verified, remove only the resolved discussion. A rejected or withdrawn proposal is also removed when no further discussion is needed. Do not wait for separate approval to clear a resolved discussion.
+Keep an approved matter open while the approved work remains incomplete or needs user input. Once the Worker completes and checks the approved work, remove only the resolved discussion. A rejected or withdrawn proposal is also removed when no further discussion is needed. Do not wait for separate approval to clear a resolved discussion.
 
 Never clear an unrelated open matter. Do not retain resolved discussions as history. Keep the three-report success history separate from open discussions. Do not clear reports merely because the associated discussion closes. Retain them until they fall outside the three most recent successful reports.
 
@@ -203,7 +203,7 @@ Do not treat silence as approval. Do not infer a decision from an unrelated user
 - Do not add labels, headings, status text, progress updates, summaries, or other chat text. The brief itself lives in `discussion.md` and must be linked before its step starts.
 - The only exception is the single response that switches into Condensed Mode. That response must contain only a brief mode acknowledgement. Starting with the next response, send only one permitted link.
 - The mandatory CI P0 batch notice and readiness message in `.agent/SESSION_START.md` are additional explicit exceptions. Send the pre-batch notice before batch inspection or execution. Send the readiness message only after the batch ends.
-- After task creation, provide the task-record link. Continue work immediately when the user has approved the task or the task does not require approval.
+- After task creation, provide the task-record link. Continue work immediately when the user approves the task or the task does not require approval.
 - Do not ask for approval again when the user has already approved the task.
 - Task creation alone does not count as user approval.
 - Pause only when the task requires a decision or approval that the user has not already given.
@@ -230,7 +230,7 @@ If the task needs essential clarification or user approval, record the minimum n
 ### Progress communication
 
 - Use the pre-step briefing protocol in both modes instead of relying on free-form progress narration.
-- Before each meaningful work step, publish and link the committed Current Step brief. Do not start the step before the user has been given that link.
+- Before each meaningful work step, publish and link the committed Current Step brief. Send the user the link before you start the step.
 - Default Mode may include additional explanation in chat. Condensed Mode uses the single-link output rule.
 - Do not publish a second brief for routine sub-operations inside the same coherent step.
 - Record every meaningful action and verification in the task file.
@@ -251,7 +251,7 @@ When the user switches modes:
 
 ## 5. Interaction with other project skills
 
-- GitHub Actions workflow design, maintenance, security, and verification are governed by the [GitHub Actions skill](../../github-actions/SKILL.md).
+- The [GitHub Actions skill](../../github-actions/SKILL.md) governs GitHub Actions workflow design, maintenance, security, and verification.
 - The Worker governs task capture, priority, progress, recovery, and task archival in every conversation mode.
 - The Worker owns conversation integrity, drawing-session archives, image provenance, and media closeout.
 - Other task-specific skills govern their own tasks.
