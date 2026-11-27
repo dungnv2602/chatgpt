@@ -24,6 +24,10 @@ Preserve every request with an identifiable outcome verbatim in its own parent t
 
 Before creating a record, inspect active task records and the board. Reuse a parent only when the objective is genuinely the same. A substantive follow-up still receives its own child record. Never place unrelated requests under one parent to reduce task count.
 
+## Persistent skills-refactoring parent exception
+
+The user has explicitly designated `workspace/tasks/20261127-173000/task.md` (Refactor Skills) as a persistent parent for skills refactoring now and in the future. For requests that genuinely concern refactoring repository skills, create a distinct child subtask under this parent using `workspace/SUBTASK_TEMPLATE.md`; do not create a replacement parent merely because the request is a new deliverable or a future phase. Keep its subtask index and board reconciled. Close and delete completed child records under normal closeout, but **never mark this parent Done or Cancelled and never delete its task folder** unless the user explicitly instructs otherwise. This is a narrow, user-authorized exception to ordinary objective-based parent selection; it does not authorize placing unrelated work under this parent.
+
 ## Task hierarchy and CI attribution
 
 A user task is the genuine parent. Its follow-up requests and CI remediation are child subtasks. The Ledger must never create a synthetic parent for a file, rule, workflow, job, or CI finding.
