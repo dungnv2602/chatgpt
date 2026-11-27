@@ -20,6 +20,8 @@ Create `workspace/tasks/<task-id>/task.md` from this template. Each task folder 
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Related tasks:** None
 
+Parent selection is objective-based. Create a parent for each distinct outcome. Use a child only when it directly advances its genuine parent's objective or acceptance criteria. Repository, file, project, or general-theme overlap and the active-parent pointer do not justify nesting. For an uncertain relationship, do not guess. Keep parentage unassigned until resolved.
+
 Approval is separate from status and priority. Proposed means a real decision or authorization is pending. Ready means all required decisions, dependencies, and execution authority are satisfied. Blocked requires a genuine external or user-resolvable blocker; Paused indicates intentional suspension.
 
 The Worker owns selection and queue order. Do not store queue rank here. Reconcile the board against all active task indexes before declaring the eligible queue empty. The parent cannot be Done while any required child remains open.
