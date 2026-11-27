@@ -179,6 +179,17 @@ Create `subtasks/README.md` in every task folder. Store child records under `sub
 - Do not execute a Proposed task until the user approves it.
 - Do not use automatic task creation to expand implementation authority.
 
+### Approval semantics
+
+Approval is an authorization decision distinct from task status and eligibility.
+
+- **Approved** means explicit user authorization for the presented scope, or a documented standing authorization that applies to that exact scope. Record the approval source and scope in the task record.
+- **Pending** means authorization has not been granted. Do not execute the task.
+- **Declined** means the user rejected the presented scope; record the decision and do not execute it.
+- A user's concise response such as "Approve" authorizes the immediately preceding proposal within its stated scope. Do not interpret it as authorization for materially different, unrelated, destructive, or expanded work.
+- Approval authorizes execution within scope, but does not satisfy dependencies, ADR acceptance, safety, or other eligibility gates. Approved tasks may remain Proposed or otherwise ineligible.
+- Status must never be used as a proxy for approval. Preserve both fields separately. Reuse standing authorization only while its documented scope applies; do not request it again.
+
 ### 4. Set priority and status
 
 Use these priorities:
