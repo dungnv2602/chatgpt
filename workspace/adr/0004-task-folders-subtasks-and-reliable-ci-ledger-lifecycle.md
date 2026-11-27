@@ -138,7 +138,7 @@ Option 1 has the lowest migration cost but fails the required physical containme
 
 **Chosen option: Option 3 — Task folders with commit-complete CI subtasks and separate validation metadata.**
 
-The user's explicit approval of DRAFT-0005 revision 1 on 2026-11-27 authorizes this decision and its complete scope.
+The user's approval of DRAFT-0005 revision 1 on 2026-11-27 authorized this decision. On 2026-11-27, the user amended its task-retention lifecycle to direct deletion at closeout and authorized direct edits to accepted ADR content.
 
 ### Consequences
 
@@ -155,7 +155,7 @@ The user's explicit approval of DRAFT-0005 revision 1 on 2026-11-27 authorizes t
 5. A CI remediation subtask becomes Done only after the remediation is committed to the intended branch, the Worker verifies the commit and reads back the changed files, and the commit SHA and remediation summary are recorded.
 6. Hosted validation is separate metadata (for example Pending, Passed, or Failed). It is not a prerequisite for CI remediation subtask Done and does not retroactively change that subtask's completion.
 7. A later CI observation is a new recurrence/remediation record linked to the prior finding and remediation. Do not rewrite a completed prior remediation as incomplete merely because later validation fails or the issue recurs.
-8. Ledger `task_refs` identify stable parent Task IDs; `subtask_refs` identify child IDs. The Ledger retains terminal finding identity and resolution history after task archival; archiving must not delete a finding's identity or prior parent/child references.
+8. Ledger `task_refs` identify stable parent Task IDs; `subtask_refs` identify child IDs. The Ledger retains terminal finding identity and resolution history after task deletion. Deletion must not erase a finding's identity or prior parent/child references.
 9. When a resolved finding recurs, preserve its previous resolution in `resolution_history`, reopen the same finding identity, and append the new parent and child references. If the prior parent is no longer active, create or reuse the appropriate work-target parent and add a new CI remediation child.
 10. Report-ingestion errors must be surfaced as errors and produce a non-zero command result. Safe partial progress may be published, but failed reports remain retryable.
 11. Incomplete or pre-finalizer Actions captures remain unprocessed and eligible for retry.
@@ -176,7 +176,7 @@ The implementation is complete only when the repository provides observable evid
 - [ ] A CI remediation subtask can be Done with a verified commit SHA and remediation summary while hosted validation remains Pending.
 - [ ] The Ledger accepts commit-based resolution without hosted validation; optional validation metadata is schema-validated.
 - [ ] Recurrence reopens the same finding identity, preserves the prior resolution in `resolution_history`, and creates a new task/subtask when the prior task is no longer active.
-- [ ] Task archival does not delete finding identity or prior task references.
+- [ ] Task deletion does not delete finding identity or prior task references.
 - [ ] Malformed indexed reports produce visible errors and a non-zero command result; safe partial changes remain publishable and failed reports remain retryable.
 - [ ] Incomplete or pre-finalizer Actions captures are not marked processed.
 - [ ] Missing indexed complete reports and unsafe run identifiers fail closed.
@@ -210,7 +210,7 @@ The implementation is complete only when the repository provides observable evid
 
 - **In scope:** Task and subtask templates; active flat-task migration; task-board paths; Worker parent/child lifecycle and direct deletion closeout; CI Ledger task generation, schema, recurrence, resolution, and ingestion integrity; GitHub Actions remediation guidance; Document Type Catalog; workspace and triage documentation; regression tests.
 - **Out of scope:** Rewriting historical archived task records; changing report capture classification, report eligibility, lint baselines, report retention, or the shared report-writer architecture; automatically polling, dispatching, rerunning, or inspecting hosted CI results; approving or implementing DRAFT-0003's broader Area/Project architecture; weakening tests or protections; changing ADR-0003's report-artifact decision.
-- **Tasks:** Create one implementation task after ADR acceptance. It must link to ADR-0004 and map every applicable Confirmation criterion to acceptance criteria. Do not execute implementation before the accepted ADR exists.
+- **Tasks:** Implementation task 20261126-232913 links to ADR-0004. It maps applicable Confirmation criteria to acceptance criteria. User authorization on 2026-11-27 also permits direct amendment of this accepted ADR to retire task archiving.
 - **Dependencies:** ADR-0003 remains authoritative for canonical report artifact layout. Decision Governance and Document Standards govern task/ADR format and execution approval. DRAFT-0003 remains a separate in-review proposal and must not be treated as accepted.
 - **Migration / rollback:** Migrate only active flat task records to ID folders while preserving task IDs and record content; update board and relative links. Roll back by restoring previous active paths and board references from the pre-migration commit. The user later retired archival and authorized direct deletion of completed task folders.
 
@@ -232,6 +232,11 @@ The implementation is complete only when the repository provides observable evid
 - **Review trigger:** Any recurrence-link loss, partial-ingestion false success, incomplete-capture consumption, completion/validation conflation, task discoverability failure, or deletion lifecycle regression.
 
 ## Decision Lifecycle History
+
+### Amendment — Direct Task Deletion (2026-11-27)
+
+The user explicitly retired task archiving and authorized direct deletion of completed or cancelled task folders after closeout checks. The normative closeout rule, migration guidance, risk safeguards, and Confirmation criteria now require direct deletion. The Ledger must retain finding identity and resolution history without depending on task-file archives. The user also authorized direct modification of accepted ADR content to implement this amendment.
+
 
 ## Implementation Clarification — 2026-11-27
 
