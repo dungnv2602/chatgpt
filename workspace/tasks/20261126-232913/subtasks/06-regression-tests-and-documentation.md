@@ -52,6 +52,12 @@ Implement only this subtask within ADR-0004. Parent: [20261126-232913](../task.m
 Done. Regression coverage, documentation/catalog alignment, remote read-back, and the ADR-0004 Confirmation evidence matrix are complete.
 
 ### 2026-11-27 01:10 UTC
+- **Action:** Final archive-index audit found at least two non-expired historical flat task paths that return NOT_FOUND. Added fail-closed validation for missing retained index paths in the cleanup workflow and a regression test. Updated the archive, Worker, CI Ledger, GitHub Actions, and discussion guidance. Reconciled the two migrated task links in the discussion register.
+- **Result:** No historical archive file or retention-index entry was modified. The cleanup workflow now surfaces missing retained files instead of silently passing or pruning them. Parent Confirmation item 16 remains partial pending user direction.
+- **References:** `.github/scripts/cleanup-archive.py`; `.github/scripts/test_cleanup_archive.py`; `.archive/README.md`; `.agent/skills/the-worker/SKILL.md`; `.agent/skills/ci-ledger/SKILL.md`; `.agent/skills/github-actions/SKILL.md`; `workspace/discussion.md`.
+- **Next:** Wait for user direction on recovery or index-entry removal. Do not inspect hosted results.
+
+### 2026-11-27 01:10 UTC
 - **Action:** Completed the ADR-0004 Confirmation evidence matrix in the parent task. Reconciled all lifecycle documents and added regression coverage for folder and legacy archive reading, archive retention integrity, recurrence links, parent/child references, governance, hosted-validation separation, and existing ingestion/security protections.
 - **Result:** All six subtask records and the task index are consistent. Every changed file was read back. The task and subtask templates already meet the folder contract. No tests were run. Hosted results remain unreviewed.
 - **References:** Parent task section 11; `.takeout/reports/triage/scripts/test_ledger.py`; `.github/scripts/test_cleanup_archive.py`; CI Ledger, Worker, and GitHub Actions skills; workspace/triage/archive READMEs; task board; Document Type Catalog.
