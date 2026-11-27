@@ -42,6 +42,7 @@ The active CI issue Ledger keeps finding identity and history. Task archival doe
 4. Add one retention-index entry for every exact archived file path. Use one shared `archived_at_utc` timestamp for all files in the task folder.
 5. Read back every archived file and verify every index entry before you delete the active task folder.
 6. Keep finding IDs, resolution history, and prior task references in the Ledger after task archival. A later observation can reopen the same finding identity and link new remediation work.
+7. On recurrence, the Ledger reads a retained prior task archive through its exact retention-index paths. It supports both folder archives and historical flat task files. It adds a Related tasks link to the new parent when the prior archive remains retained. It does not scan archive directories.
 
 A task with any open or non-terminal finding must not be closed as Done. Cancelled tasks do not change open finding state.
 
