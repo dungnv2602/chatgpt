@@ -2,31 +2,31 @@
 
 - **Result:** Failed
 - **Schema version:** 1.2.0
-- **Run:** [#999](https://github.com/dungnv2602/chatgpt/actions/runs/45997603698)
-- **Run ID / attempt:** 45997603698 / 1
+- **Run:** [#1001](https://github.com/dungnv2602/chatgpt/actions/runs/46003026376)
+- **Run ID / attempt:** 46003026376 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / d83971693d6f268f7c52abe117ea00b22cbcd56d
+- **Branch / commit:** gpt / 1a82e58b4d88cd86fd9f5c120f17ac22ca23d7a0
 - **Source task:** 20261127-173000-09
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 290a1cdb82ed7e73c4f41a86db286bdd0b6528af
-- **Linter source SHA:** d83971693d6f268f7c52abe117ea00b22cbcd56d
-- **Generated (UTC):** 2026-11-27T12:19:33.427680+00:00
+- **Baseline SHA:** d83971693d6f268f7c52abe117ea00b22cbcd56d
+- **Linter source SHA:** 1a82e58b4d88cd86fd9f5c120f17ac22ca23d7a0
+- **Generated (UTC):** 2026-11-27T12:58:27.961721+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 1 |
-| Files that failed | 1 |
-| Files with findings | 1 |
-| Total findings | 3 |
-| Hard findings | 1 |
-| Advisory findings | 2 |
-| New findings | 3 |
-| Recurring findings | 0 |
-| Resolved findings | 8 |
-| Failed workflow checks | 0 |
+| Files evaluated | 3 |
+| Files that failed | 2 |
+| Files with findings | 3 |
+| Total findings | 11 |
+| Hard findings | 4 |
+| Advisory findings | 7 |
+| New findings | 9 |
+| Recurring findings | 2 |
+| Resolved findings | 1 |
+| Failed workflow checks | 1 |
 
 ## 2. Execution environment
 
@@ -40,6 +40,8 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
+- .agent/skills/the-worker/references/decision-governance.md
+- workspace/task_board.md
 - .agent/skills/the-worker/references/ci-ledger.md
 
 ## 4. Per-file result matrix
@@ -48,6 +50,8 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
+| .agent/skills/the-worker/references/decision-governance.md | FAIL | 7 | 3 | 0 | 2988 | 0.2 | 1 |
+| workspace/task_board.md | PASS | 1 | 0 | 0 | 1654 | 0.1 | 0 |
 | .agent/skills/the-worker/references/ci-ledger.md | FAIL | 3 | 1 | 0 | 705 | 0.4 | 1 |
 
 ## 5. Findings by rule
@@ -56,7 +60,8 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 2 |
+| passive-voice | 7 |
+| semicolon | 3 |
 | synonym-rotation | 1 |
 
 ## 6. Workflow and validation checks
@@ -89,7 +94,7 @@ No output captured.
 ~~~text
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.476s
+Ran 6 tests in 0.414s
 
 OK
 ~~~
@@ -118,12 +123,51 @@ selftest OK
 
 ### Markdown links and heading anchors
 
-- **Result:** Passed
-- **Exit code:** 0
+- **Result:** Failed
+- **Exit code:** 1
 
 ~~~text
-Scanned 1 changed Markdown sources (440 available as link targets) and 0 local Markdown links.
-Found 0 unresolved local Markdown targets or anchors.
+Scanned 3 changed Markdown sources (439 available as link targets) and 45 local Markdown links.
+Found 39 unresolved local Markdown targets or anchors.
+workspace/task_board.md: missing Markdown file: 10-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md
+workspace/task_board.md: missing Markdown file: 11-ci-remediation-review-passive-voice-findings-in-agent-skills-agent-skill-author.md
+workspace/task_board.md: missing Markdown file: 12-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md
+workspace/task_board.md: missing Markdown file: 13-ci-remediation-review-synonym-rotation-findings-in-agent-session-start-md.md
+workspace/task_board.md: missing Markdown file: 14-ci-remediation-review-phrasal-verb-findings-in-agent-skills-asd-ste100-skill-md.md
+workspace/task_board.md: missing Markdown file: 15-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md
+workspace/task_board.md: missing Markdown file: 16-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-references.md
+workspace/task_board.md: missing Markdown file: 17-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-skil.md
+workspace/task_board.md: missing Markdown file: 18-ci-remediation-review-passive-voice-findings-in-agent-session-start-md.md
+workspace/task_board.md: missing Markdown file: 19-ci-remediation-review-passive-voice-findings-in-agent-skills-asd-ste100-skill-m.md
+workspace/task_board.md: missing Markdown file: 20-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md
+workspace/task_board.md: missing Markdown file: 21-ci-remediation-review-semicolon-findings-in-workspace-readme-md.md
+workspace/task_board.md: missing Markdown file: 22-ci-remediation-review-synonym-rotation-findings-in-agent-skills-the-worker-refe.md
+workspace/task_board.md: missing Markdown file: 23-ci-remediation-review-long-sentence-findings-in-agent-skills-the-worker-skill-m.md
+workspace/task_board.md: missing Markdown file: 24-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md
+workspace/task_board.md: missing Markdown file: 26-ci-remediation-review-long-sentence-findings-in-agent-session-start-md.md
+workspace/task_board.md: missing Markdown file: 27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md
+workspace/task_board.md: missing Markdown file: 28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md
+workspace/task_board.md: missing Markdown file: 29-ci-remediation-review-nominalization-findings-in-agent-skills-asd-ste100-skill.md
+workspace/task_board.md: missing Markdown file: 30-ci-remediation-review-present-perfect-findings-in-agent-skills-asd-ste100-skill.md
+workspace/task_board.md: missing Markdown file: 31-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-references.md
+workspace/task_board.md: missing Markdown file: 32-ci-remediation-review-long-sentence-findings-in-agent-skills-the-worker-referen.md
+workspace/task_board.md: missing Markdown file: 33-ci-remediation-review-present-perfect-findings-in-agent-session-start-md.md
+workspace/task_board.md: missing Markdown file: 34-ci-remediation-review-synonym-rotation-findings-in-workspace-adr-0003-canonical.md
+workspace/task_board.md: missing Markdown file: 35-ci-remediation-review-semicolon-findings-in-workspace-task-template-md.md
+workspace/task_board.md: missing Markdown file: 36-ci-remediation-review-passive-voice-findings-in-workspace-subtask-template-md.md
+workspace/task_board.md: missing Markdown file: 37-ci-remediation-review-semicolon-findings-in-workspace-adr-0004-task-folders-sub.md
+workspace/task_board.md: missing Markdown file: 38-ci-remediation-review-passive-voice-findings-in-workspace-task-template-md.md
+workspace/task_board.md: missing Markdown file: 39-ci-remediation-review-synonym-rotation-findings-in-workspace-adr-0004-task-fold.md
+workspace/task_board.md: missing Markdown file: 40-ci-remediation-review-passive-voice-findings-in-workspace-adr-0004-task-folders.md
+workspace/task_board.md: missing Markdown file: 41-ci-remediation-review-long-sentence-findings-in-workspace-adr-0004-task-folders.md
+workspace/task_board.md: missing Markdown file: 42-ci-remediation-review-passive-voice-findings-in-workspace-adr-0001-establish-dr.md
+workspace/task_board.md: missing Markdown file: 43-ci-remediation-review-semicolon-findings-in-workspace-subtask-template-md.md
+workspace/task_board.md: missing Markdown file: 44-ci-remediation-review-semicolon-findings-in-workspace-adr-0001-establish-draft.md
+workspace/task_board.md: missing Markdown file: 45-ci-remediation-review-semicolon-findings-in-workspace-adr-readme-md.md
+workspace/task_board.md: missing Markdown file: 46-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-referen.md
+workspace/task_board.md: missing Markdown file: 47-ci-remediation-review-passive-voice-findings-in-agent-skills-asd-ste100-referen.md
+workspace/task_board.md: missing Markdown file: 48-ci-remediation-review-synonym-rotation-findings-in-agent-skills-agent-skill-aut.md
+workspace/task_board.md: missing Markdown file: 49-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md
 ~~~
 
 ## 7. Baseline comparison
@@ -132,61 +176,130 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **new** · fingerprint: 20a3b946ee1ae4877e53e449
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:103:34 · **new** · fingerprint: c7517e9068fe8c09010e809b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is included
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:47 · **new** · fingerprint: 3cfa441ce1b36c919b05cc87
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are stated
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:109:57 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:102 · **new** · fingerprint: a5f01370d23783e6b0e83a7e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is implied
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:111:86 · **new** · fingerprint: 24b3d9a71feccea3fb1206db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are addressed
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/task_board.md:82:113 · **new** · fingerprint: 9db0ccdc5f344a34e6b09777
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deferred
+- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **new** · fingerprint: aa0de8573960d54a21c2d1d2
+  - **Level:** advisory-free
+  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
+  - **Matched text:** changed
+
+### Recurring findings
+
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **recurring** · fingerprint: 20a3b946ee1ae4877e53e449
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is required
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:39:252 · **new** · fingerprint: a913a887a540db8f083a49d4
-  - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changes
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **new** · fingerprint: 02e6a360a86d394444d7be9c
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **recurring** · fingerprint: 02e6a360a86d394444d7be9c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is unassigned
 
-### Recurring findings
-
-None.
-
 ### Resolved findings
 
-- **passive-voice** · workspace/templates/DISCUSSION_TEMPLATE.md:11:135 · **resolved** · fingerprint: 73f84711409e6a9439c2bf01
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recorded
-- **passive-voice** · workspace/templates/DISCUSSION_TEMPLATE.md:19:77 · **resolved** · fingerprint: ed3909a3a29b635e81f1697c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
-- **semicolon** · workspace/README.md:15:41 · **resolved** · fingerprint: 99ddd247f24032b76e53f957
+- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:39:252 · **resolved** · fingerprint: a913a887a540db8f083a49d4
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/README.md:24:210 · **resolved** · fingerprint: 66ac36e2cdb3db3683c0c8f2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are recorded
-- **semicolon** · workspace/README.md:25:104 · **resolved** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/README.md:34:224 · **resolved** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/README.md:44:209 · **resolved** · fingerprint: bdeb2ff1622490b994e19f76
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-- **semicolon** · workspace/README.md:44:220 · **resolved** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
+  - **Matched text:** changes
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
+
+### .agent/skills/the-worker/references/decision-governance.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 7
+- **Hard findings:** 3
+- **Baseline:** 0
+- **Words:** 2988
+- **Findings per 100 words:** 0.2
+
+#### Complete diagnostics
+
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:78:206 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:103:34 · **new** · fingerprint: c7517e9068fe8c09010e809b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is included
+
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:47 · **new** · fingerprint: 3cfa441ce1b36c919b05cc87
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are stated
+
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:109:57 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:109:102 · **new** · fingerprint: a5f01370d23783e6b0e83a7e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is implied
+
+- **passive-voice** · .agent/skills/the-worker/references/decision-governance.md:111:86 · **new** · fingerprint: 24b3d9a71feccea3fb1206db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are addressed
+
+- **semicolon** · .agent/skills/the-worker/references/decision-governance.md:125:65 · **new** · fingerprint: b705ef6f747ccfaf4dd42d95
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+
+### workspace/task_board.md
+
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 1
+- **Hard findings:** 0
+- **Baseline:** 0
+- **Words:** 1654
+- **Findings per 100 words:** 0.1
+
+#### Complete diagnostics
+
+- **passive-voice** · workspace/task_board.md:82:113 · **new** · fingerprint: 9db0ccdc5f344a34e6b09777
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deferred
+
 
 ### .agent/skills/the-worker/references/ci-ledger.md
 
@@ -200,20 +313,20 @@ This section includes every normalized finding with its rule, level, source loca
 
 #### Complete diagnostics
 
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **new** · fingerprint: 20a3b946ee1ae4877e53e449
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:35:132 · **recurring** · fingerprint: 20a3b946ee1ae4877e53e449
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is required
 
-- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:39:252 · **new** · fingerprint: a913a887a540db8f083a49d4
-  - **Level:** advisory-free
-  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
-  - **Matched text:** changes
-
-- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **new** · fingerprint: 02e6a360a86d394444d7be9c
+- **passive-voice** · .agent/skills/the-worker/references/ci-ledger.md:48:137 · **recurring** · fingerprint: 02e6a360a86d394444d7be9c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is unassigned
+
+- **synonym-rotation** · .agent/skills/the-worker/references/ci-ledger.md:64:235 · **new** · fingerprint: aa0de8573960d54a21c2d1d2
+  - **Level:** advisory-free
+  - **Message:** 'change' and 'modify' name the same action. Pick one and use it every time.
+  - **Matched text:** changed
 
 ## 9. Structured evidence and integrity
 
