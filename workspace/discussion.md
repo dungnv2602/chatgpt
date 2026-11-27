@@ -1,7 +1,7 @@
 # Discussion Register
 
 ## Current Step
-Perform final read-back of the P0 task board, all eight governance-gated Ledger tasks, blocked task 20261126-090154, current task 20261126-232913, and the resolved Ledger finding for archived task 20261126-145133. Confirm status consistency and record the remaining user-decision gates. Do not inspect hosted CI results or perform a full-repository search without explicit authorization.
+No further autonomous P0 remediation is eligible. Await user direction on the separate Drafts needed for accepted ADR-0003/0004 wording changes, authorization for the read-only full-repository search in [20261126-090154](tasks/20261126-090154/task.md), and the hosted-results-review trigger for [20261126-232913](tasks/20261126-232913/task.md).
 
 ## Open Discussions
 
