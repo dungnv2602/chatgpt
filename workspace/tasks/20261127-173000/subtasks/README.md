@@ -5,7 +5,7 @@ Parent: [task.md](../task.md)
 | ID | Title | Status | Record |
 |---|---|---|---|
 | 20261127-173000-03 | Correct objective-based task parent selection | Paused | [03-correct-objective-based-task-parent-selection.md](03-correct-objective-based-task-parent-selection.md) |
-| 20261127-173000-27 | CI remediation — Review passive-voice findings in workspace/README.md | Blocked | [27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md](27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md) |
+| 20261127-173000-27 | CI remediation — Review passive-voice findings in workspace/README.md | In Progress | [27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md](27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md) |
 | 20261127-173000-28 | CI remediation — Review marketing-adjective findings in .agent/skills/asd-ste100/SKILL.md | Blocked | [28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md](28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md) |
 | 20261127-173000-29 | CI remediation — Review nominalization findings in .agent/skills/asd-ste100/SKILL.md | Blocked | [29-ci-remediation-review-nominalization-findings-in-agent-skills-asd-ste100-skill.md](29-ci-remediation-review-nominalization-findings-in-agent-skills-asd-ste100-skill.md) |
 | 20261127-173000-30 | CI remediation — Review present-perfect findings in .agent/skills/asd-ste100/SKILL.md | Blocked | [30-ci-remediation-review-present-perfect-findings-in-agent-skills-asd-ste100-skill.md](30-ci-remediation-review-present-perfect-findings-in-agent-skills-asd-ste100-skill.md) |

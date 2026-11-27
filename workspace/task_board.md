@@ -16,7 +16,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-None. Refactor Skills has no Ready child. The parent remains open.
+**P0** — [20261127-173000-27: CI remediation — Review passive-voice findings in workspace/README.md](tasks/20261127-173000/subtasks/27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md) — Approved, In Progress, no dependencies. Parent: [Refactor Skills](tasks/20261127-173000/task.md).
 
 ## Ordered Eligible Execution Queue
 
@@ -24,7 +24,7 @@ None. Refactor Skills has no Ready child. The parent remains open.
 
 ## Next Task
 
-No Ready child remains under Refactor Skills. The global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+Child 27 is the active Refactor Skills execution. After it closes, the global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 
@@ -32,7 +32,7 @@ No Ready child remains under Refactor Skills. The global queue's next eligible t
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-27 | CI remediation — Review passive-voice findings in workspace/README.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](27-ci-remediation-review-passive-voice-findings-in-workspace-readme-md.md) |
+
 | 20261127-173000-28 | CI remediation — Review marketing-adjective findings in .agent/skills/asd-ste100/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md) |
 | 20261127-173000-29 | CI remediation — Review nominalization findings in .agent/skills/asd-ste100/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](29-ci-remediation-review-nominalization-findings-in-agent-skills-asd-ste100-skill.md) |
 | 20261127-173000-30 | CI remediation — Review present-perfect findings in .agent/skills/asd-ste100/SKILL.md | P0 | Blocked | Approved | Complete CI Ledger content is unavailable. The connector returns an empty body, so evidence review and Ledger resolution cannot proceed safely. | [subtask](30-ci-remediation-review-present-perfect-findings-in-agent-skills-asd-ste100-skill.md) |

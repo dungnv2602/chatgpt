@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-27
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Blocked
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — complete CI Ledger and report evidence are unavailable through the GitHub connector.
+- **Eligibility / deferral reason:** In Progress — recovered the complete Ledger by blob SHA and retrieved historical/current source for both findings.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
-- **Updated:** 2026-11-27
+- **Updated:** 2026-11-27 23:07 UTC
 - **Ledger group:** `ci-c8106d6c6053ab98`
 - **Legacy Task IDs:** None
 
@@ -52,19 +52,20 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
 
-### Shared startup blocker
+### Evidence recovery and execution
 
-- **Action:** Paused execution before source changes.
-- **Reason:** The complete CI Ledger fetch returns an empty content body. The Worker cannot safely inspect the full finding evidence, preserve Ledger integrity, or complete remediation closeout.
-- **Required:** Restore complete repository-file retrieval for `.takeout/reports/triage/ledger.json`.
+- **Action:** Recovered the complete Ledger from `.takeout/reports/ledger.json` by blob SHA `02a23e7e0addfc7a9049590e177dab8d23122c73`.
+- **Evidence:** Found both open findings in the Ledger. Their latest notes point to passive constructions in `workspace/README.md`. Retrieved the source at commit `f75ec2958ef664727a643062ef601400c0bcd45e` and confirmed the same wording in the current branch.
+- **Limitation:** The historical report JSON files are not retained in the current report index. The retained Ledger location notes and source readback identify both affected constructions.
+- **Action:** Rewrote both constructions with named actors and active verbs. Updated the two Ledger findings to resolved with commit-based evidence.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
-- **Limitations:** The GitHub connector returns an empty content body for the complete CI Ledger. The Worker cannot inspect all finding evidence or update Ledger resolutions safely. No hosted CI results were inspected.
+- **Commit SHA:** Pending.
+- **Changed paths:** `workspace/README.md` and this task record. The Ledger update follows after the source commit.
+- **Readback:** Historical source and current source readback completed. Commit readback pending.
+- **Checks:** No local scripts, tests, or lint were run. Hosted CI results were not inspected.
+- **Limitations:** Historical report JSON files are not retained in the current report index. The Ledger and source history supplied sufficient evidence for these two edits.
 
 ## 7. Completion
 

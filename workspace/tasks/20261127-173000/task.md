@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 23:03 UTC
+- **Updated:** 2026-11-27 23:07 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -72,6 +72,12 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
 ## 5. Progress
+
+### 2026-11-27T23:07:31.778Z — resumed CI remediation child 27
+
+- Recovered the complete Ledger via blob SHA after the file-content endpoint returned an empty body.
+- Matched the two open passive-voice findings to historical and current `workspace/README.md` source.
+- Reactivated child 27 and started source remediation. Commit pending.
 
 ### 2026-11-28 — autonomous execution workflow
 
