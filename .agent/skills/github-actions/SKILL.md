@@ -186,7 +186,7 @@ Use these questions when implementing an optimization:
 9. Are changes grouped into one coherent push?
 10. Does the assistant leave workflow execution to GitHub Actions, avoid local CI execution, and avoid waiting or polling for results?
 
-## 14. Official references
+## 15. Official references
 
 - [Workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)
 - [Workflow concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)
