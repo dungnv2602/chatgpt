@@ -14,7 +14,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-None. The current Refactor Skills child has closed; the next eligible task remains in the queue.
+[20261127-173000-55: Audit the skill portfolio and identify refactoring priorities](tasks/20261127-173000/subtasks/55-audit-skill-portfolio.md) — P0, In Progress, Approved.
 
 ## Ordered Eligible Execution Queue
 
