@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27 18:01 +07:00:** Startup P0 batch: selected Refactor Skills child `20261127-173000-04` for the indexed lint-report regression-test failure. The latest report contains both failed assertions and their complete output. Next: update task selection, inspect the generator/template/test contract, and implement the narrow repair. Hosted CI results remain out of scope.
+- **2026-11-27 18:01 +07:00:** Startup P0 batch: child `20261127-173000-04` corrected the stale report-template assertions in commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. The next indexed repository report confirms all six lint-report regression tests pass and identifies four stale Markdown links. The Ledger generated child `20261127-173000-05` under Refactor Skills. Current focus: close child 04 and execute child 05. Hosted CI results remain out of scope.
 - **2026-11-27:** Correcting task-parent selection: independent objectives require separate parents; Document Standards consolidation was misparented under the CI/reporting task and is now tracked under its own parent.
 - **2026-11-27:** Consolidation request captured as paused subtask `20261127-173000-02` under Refactor Skills: merge GitHub Actions, CI Ledger, Decision Governance, and Document Standards into The Worker and delete the separate skill directories, deferred behind P0.
 
