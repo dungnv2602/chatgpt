@@ -12,6 +12,9 @@ The Worker owns task capture, hierarchy, scheduling, progress, handoff, closeout
 | [TASK_BOARD_TEMPLATE.md](../.agent/skills/the-worker/assets/TASK_BOARD_TEMPLATE.md) | Canonical task-board structure and scheduler contract |
 | [TASK_TEMPLATE.md](../.agent/skills/the-worker/assets/TASK_TEMPLATE.md) | Parent task folder |
 | [SUBTASK_TEMPLATE.md](../.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md) | Follow-up and remediation child |
+| [ADR_TEMPLATE.md](../.agent/skills/the-worker/assets/ADR_TEMPLATE.md) | Accepted decision record |
+| [ANALYSIS_TEMPLATE.md](../.agent/skills/the-worker/assets/ANALYSIS_TEMPLATE.md) | Repository analysis |
+| [DRAFT_TEMPLATE.md](../.agent/skills/the-worker/assets/DRAFT_TEMPLATE.md) | Proposed decision draft |
 | [tasks/](tasks/) | Active task folders. Each folder has task.md and subtasks/README.md |
 | [draft/](draft/README.md) | Decision proposals |
 | [adr/](adr/README.md) | Accepted decisions |
