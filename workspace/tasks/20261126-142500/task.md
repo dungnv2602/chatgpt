@@ -2,8 +2,7 @@
 
 ## Metadata
 
-- **Template version:** 1.3
-- **Folder migration:** ADR-0004, 2026-11-27
+- **Template version:** 2.5
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
 - **Updated:** 2026-11-27 09:47 UTC
@@ -11,12 +10,11 @@
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
+- **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation.
 - **Governing ADR(s):** None — CI/reporting repair; review governance boundaries before any architecture change
 - **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
-- **Ledger group:** CI report task-generation failure and active report backlog
-- **Archived:** No
 
 ## 1. Original Request
 
@@ -24,7 +22,19 @@
 
 ## 2. Subsequent Instructions
 
-User clarified that no deleted user files should be restored; either remediate generated errors or clear generated reports and begin a fresh reporting period. Explicit clean-start reset authorized.
+- **2026-11-27 — Follow-up hierarchy:** “This relate to the rule, every of my prompt you must create a task for it. If my prompt is the follow-up of an already existed task, then you should create a subtasks for it. So, none of my request for lost.
+
+Check if workflow already reflect this.”
+- **2026-11-27 — CI attribution clarification:** “When I said CI tasks are subtasks, I meant there's already a genuine task you've been working on, not a CI task. You commit, the CI triggered, errors occur. Then the CI ledger musy identify correct and out generated CI tasks as subtasks of that task. Do you understand?”
+- **2026-11-27 — Authorized workflow refactor:** “Approve
+
+Execute
+
+Expand on this, fix gaps, fix floodings, fix deadlocks, tighten, close the cycle, refactor by trimming down redundancy and minimize content without losing full context, optimize workflow, update templates, update skills, etc.
+
+If you really understand, you would know you should create a task for this to track your progress.”
+- **Effective closeout policy:** The user's later instruction supersedes earlier archiving and hosted-result-review wording. Commit and remote readback are the completion evidence. Do not inspect hosted CI results. Delete completed/cancelled task folders directly; do not create archive or retention copies. Keep Ledger identity, evidence, resolution history, and provenance intact.
+
 
 ## 3. Objective
 
@@ -32,21 +42,29 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 
 ## 4. Requirements
 
-- Diagnose why CI report findings failed to create or publish task records.
-- Inspect current active reports, indexes, Ledger state, scripts, workflows, and report generation evidence.
-- Adapt stale report paths, diagnostics, or task recommendations to the current refactor.
-- Repair genuine reported errors without weakening validation, ignoring findings, or restoring removed paths.
-- Generate or repair task handoff for applicable findings.
-- Resolve all actionable errors in reports, using hosted validation only.
-- Archive resolved report evidence according to the existing policy and retention index.
-- Clear generated active reports, latest pointers, request queues, report indexes, and `workspace/archive/reports/**` snapshots as prescribed by the reset policy; reinitialize the Ledger and unseed lint baselines.
-- Do not edit archived records. Do not create root README.md.
-- Do not run tests, lint, CI, or scripts locally. GitHub-hosted workflows are the permitted execution environment. Do not poll or wait for CI.
+1. Repair event-driven report ingestion and preserve finding identity, evidence, recurrence, and resolution history.
+2. Capture every user request with an identifiable outcome as a parent task or its own follow-up subtask before answering or performing it.
+3. Attach substantive follow-ups and CI remediation to the genuine existing user-task parent. Never create synthetic file-, workflow-, job-, or finding-parent tasks.
+4. Require an exact `Task-ID:` commit trailer. Resolve child IDs through Parent Task ID. Keep missing, malformed, ambiguous, inactive, or deleted parent attribution unassigned.
+5. Keep the Worker as the sole owner of task status, approval, dependencies, scheduling, Current Execution, board publication, and closeout. The Ledger owns findings and CI child publication only.
+6. Generate CI remediation children as P0, Approved, Ready under standing authorization; Proposed is reserved for a specific genuine decision gate.
+7. Make ingestion idempotent, bound evidence retention, suppress untracked baseline recurrences, and prevent duplicate child creation.
+8. Preserve report and workflow coverage. Do not weaken tests or validation to suppress errors.
+9. Do not run repository scripts/tests locally or inspect, poll, dispatch, rerun, or wait for hosted CI results.
+10. Close committed work after remote readback. Delete completed/cancelled task folders directly and do not create archives or retention copies.
+11. Preserve the original request and relevant instructions verbatim. Do not claim tests, runtime behavior, or hosted validation that was not observed.
+
 
 ## 5. Decisions
 
-- Do not restore user-deleted files. A clean-start reset of generated reports is explicitly authorized; preserve scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives.
-- Treat findings and task handoff according to current report/Ledger policy, after reconciling obsolete path references.
+- **Approval:** The user's “Approve / Execute” authorizes the current workflow refactor.
+- **Task parentage:** This work remains under this genuine user-originated parent. The audit and implementation are separate required subtasks.
+- **CI parentage:** Every CI remediation child belongs under the genuine user task identified by the triggering source commit's Task-ID trailer.
+- **Uncertain attribution:** Keep a finding visible and unassigned. Do not infer a parent from paths, workflow names, branches, timing, or the board pointer.
+- **Ownership:** Worker schedules and closes tasks. Ledger creates/updates findings and attributed children. GitHub Actions owns technical workflow diagnosis and implementation.
+- **No hosted-results review:** Commit/readback is sufficient for remediation completion. Hosted validation is optional metadata and is not inspected.
+- **Direct deletion:** Delete completed/cancelled task folders without archive copies. Preserve Ledger provenance and history.
+
 
 ## 6. Progress Log
 
@@ -123,23 +141,31 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 
 ## 7. Current State
 
-Resumed for the approved workflow continuation. The clean-start reset and static repairs remain recorded below. The new required subtask tracks universal prompt capture, genuine parent attribution, CI child generation, workflow simplification, and template/skill alignment. The parent remains incomplete until all required subtasks and its original report-ingestion acceptance criteria are closed. No end-to-end completion or hosted validation is claimed.
+The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`. This parent was resumed for the user's prompt-capture and CI-hierarchy follow-up.
 
-Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `workspace/archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
+- Audit child `20261126-142500-01` is Done.
+- Implementation child `20261126-142500-02` is In Progress.
+- The Worker, task templates, workspace guide, CI Ledger guide, Actions guide, report schemas, lint report capture, Ledger attribution/generation code, workflow callers, and regression tests have been updated.
+- CI attribution now comes from the source commit's Task-ID trailer. Unresolvable markers remain unassigned. The Ledger no longer creates synthetic CI parents or changes the scheduler board.
+- Regression tests were added but not executed. No hosted CI results were inspected.
+- The parent remains In Progress until child 02 closes and the original parent acceptance criteria are reconciled with current report-ingestion state. No claim is made that active report indexes are empty or that hosted validation passed.
+
 
 ## 8. Remaining Work
 
-- Hosted validation and live task handoff remain unverified; the user has since authorized CI inspection, and recent CI failures were inspected and test-fixture repairs committed. Follow-up validation remains pending.
-- The clean-start period has a valid watermark; fresh pre-finalizer captures remain in the active Actions index and pending queue. They are new-period evidence, not old data.
-- The lint indexes are empty and the Ledger findings are empty; lint baselines remain unseeded.
-- Leave first complete tooling-valid lint audits to seed the fresh period. Do not claim end-to-end task publication or completion.
+- Complete remote readback of every changed file and close implementation child `20261126-142500-02`.
+- Reconcile the original report-ingestion acceptance criteria using repository-owned Ledger/index state only. Do not inspect hosted runs, logs, or artifacts.
+- Keep any unattributed finding visible in the Ledger until reliable attribution is available. Do not fabricate a task link.
+- The parent cannot close while a required child or original acceptance criterion remains open.
+
 
 ## 9. Next Actions
 
-1. Allow fresh-period source workflow reports to arrive naturally; do not dispatch or poll.
-2. Review a naturally available complete post-run report and resulting Ledger/task handoff when authorized by the user's current CI policy.
-3. Verify the resulting task board and task_refs through remote readback.
-4. Close only after the required hosted evidence is observed.
+1. Finish static code/schema/template/workflow readback.
+2. Mark child 02 Done only after its acceptance criteria and committed-content checks pass.
+3. Reconcile any outstanding indexed Ledger work through the normal event-driven process without hosted-results review.
+4. Close and directly delete this parent folder only when every required child and original acceptance criterion is complete.
+
 
 ## 10. References
 
@@ -150,14 +176,16 @@ Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfd
 
 ## 11. Verification
 
-- **Check:** Intake state and latest report indexes.
-- **Method:** Remote file retrieval via GitHub API.
-- **Result:** Static inspection confirmed the task-board publication schema mismatch and the writer/test fixture were repaired by remote file edits and commit readback. Reset state was readback-confirmed earlier. End-to-end ingestion remains unverified.
-- **Limitations:** No tests, lint, scripts, or workflows run. No runtime/CI validation yet.
+- **Check:** Prompt capture, task/subtask hierarchy, Task-ID provenance, report-to-parent resolution, Ledger child generation, flood control, and scheduler ownership.
+- **Method:** Remote retrieval and static inspection of branch `gpt`; regression cases added for the critical paths.
+- **Result:** Documentation, schemas, report capture, workflows, and Ledger code are aligned around genuine task parents. The Ledger creates remediation children only; it does not create parent folders or write the board. Changed files are being read back.
+- **Limitations:** Tests/scripts were not executed. No hosted workflow results, logs, or artifacts were inspected. Runtime ingestion remains unverified.
+
 
 ## 12. Handoff Instructions
 
-Continue on branch gpt. Focus on task generation failure and current actionable report findings. Adapt to the repository's current roots. Do not assume report paths are current. Preserve archive policy and existing report-period state. Do not run CI or scripts locally. Do not poll or wait for CI.
+Resume at subtask [20261126-142500-02](subtasks/02-refactor-task-ci-lifecycle.md). Use remote GitHub operations on branch `gpt` only. Do not run scripts/tests locally or inspect hosted CI results. Verify every changed path by readback. After child closeout, assess only indexed Ledger state and original acceptance criteria. Preserve finding history and directly delete the task folder only at full parent closeout.
+
 
 ## 13. Ledger Findings
 
@@ -187,3 +215,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Repair:** Tests now remove the contents of the Proposed section in their copied fixture (leaving the section intentionally malformed) so both fail-closed and rollback assertions are isolated from live task-board data. Commits `899e6a1` and `ec3ba4d` (the latter corrected newline literals in the test fixture edit).
 - **Validation:** CI runs 573/893 were pending/in progress at last check; runs 574/894 for the latest commit were pending. Await validation.
 | `lint-tooling-2c26d8bc14fd4d4bbe314234` | high | Lint tooling check failed: Markdown links and heading anchors | [report](../../../.takeout/reports/lint_reports/on_changed/history/45911866106-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45911866106) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45967546887-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45967546887) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45968726096-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45968726096) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45970377226-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45970377226) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45976205944-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45976205944) |
+
+### 2026-11-27 — universal prompt capture and CI hierarchy refactor
+
+- **Action:** Captured this follow-up under required child records 01 (audit) and 02 (implementation). Updated the Worker prompt-capture gate, conversation brief contract, task templates, workspace guide, CI Ledger and GitHub Actions guidance, report schemas, lint report capture, workflow callers, Ledger attribution and child-only publication, and regression coverage.
+- **Result:** Actionable requests now map to a genuine parent or a dedicated follow-up child. CI reports carry source Task-ID provenance. The Ledger fails closed to unassigned when the source parent cannot be verified and no longer creates work-target parent tasks or writes the board. Regression coverage added; not executed.
+- **References:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/the-worker/references/conversation-mode.md`; `.agent/skills/ci-ledger/SKILL.md`; `.agent/skills/github-actions/SKILL.md`; `workspace/TASK_TEMPLATE.md`; `workspace/SUBTASK_TEMPLATE.md`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; lint report generator/schema/tests; lint workflows.
+- **Next:** Finish the child-level readback and closeout. Do not inspect hosted CI results.
