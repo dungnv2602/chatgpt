@@ -2,7 +2,7 @@
 
 ## Current Step
 
-**2026-11-27 08:26 UTC — Publish scheduler-order board.** Update `workspace/task_board.md` with one Current Execution pointer, a ranked eligible queue, a Next Task indicator, and distinct deferred sections. Task: [20261127-082500](tasks/20261127-082500/task.md).
+**2026-11-27 08:27 UTC — Task closeout.** Remove the completed board-refactor task from the board and delete its task folder under the direct-deletion lifecycle. Verify the board and register. Task: [20261127-082500](tasks/20261127-082500/task.md).
 
 ## Open Discussions
 
