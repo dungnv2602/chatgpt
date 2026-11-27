@@ -391,7 +391,7 @@ class LedgerTests(unittest.TestCase):
         (subtasks / "README.md").write_text(folder_index, encoding="utf-8")
         (subtasks / "01-child.md").write_text(child, encoding="utf-8")
 
-        flat_id = "20261122-040000"
+        flat_id = "20261122040000"
         flat_path = archive_root / (flat_id + "-legacy-task.md")
         flat_content = "# Task: Historical flat archive\n\n- **ID:** " + flat_id + "\n"
         flat_path.write_text(flat_content, encoding="utf-8")
