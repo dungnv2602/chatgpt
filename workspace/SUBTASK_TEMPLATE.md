@@ -1,6 +1,6 @@
 # Subtask: [Title]
 
-**Template version:** 1.2
+**Template version:** 1.3
 
 Store this record under its parent task's `subtasks/` directory.
 
@@ -16,6 +16,7 @@ Store this record under its parent task's `subtasks/` directory.
 - **Approval scope/source:** [Exact scope authorized and approval source, or standing authorization reference]
 - **Governing ADR(s):** None — non-implementation subtask
 - **Dependencies:** None
+- **Eligibility / deferral reason:** [Eligible / reason it is deferred]
 - **Required:** Yes
 - **Created:** YYYY-MM-DD HH:MM UTC
 - **Updated:** YYYY-MM-DD HH:MM UTC
@@ -23,6 +24,8 @@ Store this record under its parent task's `subtasks/` directory.
 - **Legacy Task IDs:** None
 
 Allowed statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, Cancelled. A parent cannot be Done while a required subtask is not Done.
+
+The task board publishes scheduling order; do not store or independently calculate queue rank in task records. The Worker alone selects tasks. Approval is distinct from status and eligibility.
 
 ## 1. Objective
 
