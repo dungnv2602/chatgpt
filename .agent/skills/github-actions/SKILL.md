@@ -24,6 +24,9 @@ The repository provides no local project environment. The remote repository is t
 
 ## 2. Task-scoped CI diagnostics and fix
 
+## Task attribution
+Every task-specific implementation commit must include one `Task-ID: <active-task-or-subtask-id>` trailer. Keep the trailer on the source commit so report capture can identify the genuine originating task. If the identifier is a subtask, the Ledger resolves its Parent Task ID. Never create a synthetic CI parent. Missing or invalid attribution remains unassigned; do not infer it from the changed path, workflow, branch, or current board pointer.
+
 CI is not a gate that must be fixed before every user prompt or after skill initialization. Inspect CI when the user requests it. Also inspect CI when the current task changes a workflow or validation target. Inspect CI when a known result directly affects the task.
 
 1. Start with `.takeout/reports/gh_ac_reports/README.md` for workflow-level failures, jobs, steps, logs, annotations, artifact metadata, and evidence limitations.
