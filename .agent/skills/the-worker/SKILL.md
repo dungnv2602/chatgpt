@@ -10,16 +10,17 @@ Initialize only on the cue in `.agent/SESSION_START.md`. That file owns session 
 
 ## Prompt capture — mandatory
 
-Before substantive work, find or create its task record. Do not begin work that can change project state until the request is recorded.
+Before answering or performing a user request with an identifiable outcome, find or create its task record. This includes questions, research, advice, writing, creative work, and project changes. Do not deliver the requested result before capture.
 
 - **New objective:** create a parent task folder from `workspace/TASK_TEMPLATE.md`.
 - **Follow-up, correction, extension, or next step of an existing objective:** create a separate child record under that genuine parent from `workspace/SUBTASK_TEMPLATE.md`. Do not overwrite an earlier prompt or silently enlarge its record.
-- **Several related requirements in one prompt:** record the prompt once and group them under one coherent task. Split independent outcomes into sibling tasks or subtasks.
-- **Clarification, decision, or approval with no independent deliverable:** append the exact user wording and timestamp to the relevant record's Subsequent Instructions. Do not create an empty task.
-- **Greeting or acknowledgement with no request:** no task is needed.
+- **Several related requirements in one prompt:** preserve the full prompt once in the parent and split its independently completable deliverables into child records. Unrelated objectives receive separate parents.
+
+- **Clarification, decision, or approval that changes scope, priority, or authorization but adds no deliverable:** append the exact wording and UTC timestamp to the relevant record's Subsequent Instructions. If it adds work, create a child.
+- **Greeting, reaction, or acknowledgement with no request or decision:** no task is needed.
 - **Unclear parentage:** do not guess. Preserve the request in the discussion register and ask one concise question at quiescence.
 
-Preserve each actionable user prompt verbatim in its own task or subtask under Original Request/Original Prompt. Preserve later clarifications, constraints, and approvals verbatim under Subsequent Instructions. Link the record from its parent index and keep the task board current. A request is not tracked merely because its words appear in chat, the parent summary, or the discussion register.
+Preserve every request with an identifiable outcome verbatim in its own parent task or follow-up subtask under Original Request/Original Prompt. Preserve non-deliverable clarifications, constraints, decisions, and approvals verbatim under Subsequent Instructions. Link the record from its parent index and keep the task board current. A request is not tracked merely because its words appear in chat, the parent summary, or the discussion register.
 
 Before creating a record, inspect active task records and the board. Reuse a parent only when the objective is genuinely the same. A substantive follow-up still receives its own child record. Never place unrelated requests under one parent to reduce task count.
 
