@@ -4,7 +4,7 @@
 - **Template version:** 2.0
 - **ID:** 20261126-232913
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-27 00:20 UTC
+- **Updated:** 2026-11-27 00:58 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -77,26 +77,27 @@ Implement accepted ADR-0004 completely and restore reliable CI Ledger operation.
 - **References:** `workspace/task_board.md`; prior task `20261126-170259-02`; accepted ADR-0004.
 - **Next:** Execute subtasks in dependency order, commit coherent changes, and read back every changed path.
 
+### 2026-11-27 00:58 UTC
+- **Action:** Completed subtask 05. Migrated all six active flat task records, updated board links, repaired and verified relative evidence links, and implemented atomic retention for indexed task-folder archives with regression coverage.
+- **Result:** All six legacy flat paths are absent. All six task folders and subtask indexes, the board, relevant evidence targets, cleanup script, test file, Ledger, and retention index were read back. Hosted tests remain unreviewed by explicit instruction.
+- **References:** `workspace/tasks/`; `workspace/task_board.md`; `.github/scripts/cleanup-archive.py`; `.github/scripts/test_cleanup_archive.py`; commits `79cda7d`, `45c3f05`, `e1f2dca`, `80b568e`.
+- **Next:** Execute subtask 06 only. Do not inspect hosted CI results until the user triggers results review.
+
 ## 7. Current State
 - ADR-0004 is accepted and indexed.
 - This task is Approved, P0, In Progress, and Current Execution.
-- Six implementation subtasks are registered in this folder; subtasks 01–04 are Done, subtask 05 is In Progress, and subtask 06 remains Ready.
-- The Ledger generator now publishes governed folder tasks, and resolution/recurrence semantics are commit-based with terminal history retained. Ingestion integrity, active-task migration, archive compatibility, and final regression coverage remain incomplete.
+- Six implementation subtasks are registered in this folder; subtasks 01–05 are Done and subtask 06 is In Progress.
+- The Ledger generator, commit-based resolution/recurrence, ingestion integrity, active-task folder migration, and folder archive retention compatibility are implemented. Subtask 06 regression coverage and documentation/catalog alignment remain in progress.
 - No hosted workflow has been run or inspected for this implementation.
 
 ## 8. Remaining Work
-- Subtasks 05–06 remain incomplete.
-- Active flat task records have not yet been migrated.
-- Templates, generator, schema, skills, archive reader/writer, tests, and catalog have not yet been updated.
-- Hosted regression results remain intentionally unreviewed pending explicit user trigger.
+- Subtask 06 remains incomplete.
+- Hosted Ledger regression and Document Type Catalog validation results remain intentionally unreviewed pending explicit user trigger.
 
 ## 9. Next Actions
-1. Update Ledger task generation and task governance handoff.
-3. Implement commit-based resolution and recurrence retention.
-4. Harden ingestion and report-index integrity.
-5. Migrate active tasks and update folder archive compatibility.
-6. Add regression coverage and update catalog/workspace/triage documentation.
-7. Perform complete remote read-back, commit, and stop before hosted results review.
+1. Complete subtask 06 regression coverage and documentation/catalog alignment.
+2. Read back every changed path and map all ADR-0004 Confirmation criteria to repository evidence.
+3. Stop before hosted results review. Keep the parent In Progress until the user explicitly triggers results review.
 
 ## 10. References
 - [ADR-0004](../../adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md)
