@@ -57,7 +57,7 @@ Serve as the persistent, open parent task and coordination point for skills refa
 ### 2026-11-27 18:29 UTC
 
 - **Action:** Set this parent to P0 and selected it as Current Execution. Activated child 01 and reconciled the board and child index.
-- **Result:** Readback confirmed parent, child, index, and board state. Child 02 (consolidate specialist skills into The Worker) is Ready after the mandatory startup P0 batch. Child 03 (objective-based task-parent selection) remains Paused.
+- **Result:** Readback confirmed parent, child, index, and board state. Child 02 (consolidate specialist skills into The Worker) is Ready after the mandatory startup P0 batch. Child 03 (objective-based task-parent selection) remains Paused. Child 04 (enforce template-first document editing) is Ready; it was created after no existing task covering the rule was found.
 - **References:** Commit `1e6800f40e4c1bf1e15263f0a479a54afe81468a`; child `24f697da8a75972ff7f6a0dca7302a125e63499c`; index `3f0101796d08a5eba78dfe2fd4120b7445bf5c62`; board `91ca878a4c151aeb65d3f5ff78b438af8e437aa3`.
 - **Next:** Execute child 01.
 
@@ -94,6 +94,13 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Action:** Processed every eligible CI-generated P0 child in the currently published task indexes. Closed the duplicate P0 children under the CI workflow and Template Fix parents using the shared verified remediation commits.
 - **Result:** No eligible CI-generated P0 tasks remain in the inspected active parent indexes. The completed P0 remediation records were removed after parent/index reconciliation. No local tests were run and no hosted CI results were inspected.
 - **Next:** Child `20261127-173000-02` is Ready as the next Refactor Skills deliverable. Child `20261127-173000-03` remains Paused.
+
+### 2026-11-27 11:26 UTC — template-first editing governance
+
+- **Action:** Created child `20261127-173000-04` to make template-first document editing a durable Worker-owned rule.
+- **Result:** No existing active task covering this requirement was found. The child requires reading the applicable template before edits and raising a proposed template to the user before modifying a document when no applicable template exists. It explicitly avoids introducing a separate skill.
+- **References:** Child `subtasks/04-enforce-template-first-document-editing.md`; child index commit `52a1c9080cc19ebe26bbd0999c68cbbd5e0cc247`; task creation commit `2980a1f77e5968f4e2fe5a1e6e83e9c66e57d921`.
+- **Next:** Execute the already approved specialist-skill consolidation child `20261127-173000-02`; then address this new governance child.
 
 ## 6. Current State and Remaining Work
 
