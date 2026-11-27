@@ -1,0 +1,85 @@
+# Subtask: CI remediation — Review long-sentence findings in workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md
+
+**Template version:** 1.0
+
+Store this record under its parent task's `subtasks/` directory.
+
+## Metadata
+
+- **ID:** 20261127-013151-25-01
+- **Parent Task ID:** 20261127-013151-25
+- **Type:** CI remediation
+- **Status:** Cancelled
+- **Priority:** P0
+- **Origin:** Assistant
+- **Approval:** Approved
+- **Governing ADR(s):** None — source Draft retired after ADR promotion
+- **Dependencies:** None
+- **Required:** Yes
+- **Created:** 2026-11-27 01:31 UTC
+- **Updated:** 2026-11-27 04:42 UTC
+
+Allowed statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, Cancelled. A parent cannot be Done while a required subtask is not Done.
+
+## 1. Objective
+
+Remediate the CI finding group ci-fbcd929376672335 and record a verified fix commit.
+
+## 2. Scope
+
+Inspect the linked report evidence, diagnose the actionable finding group, implement the authorized fix, commit it to the intended branch, and record the commit SHA and concise summary. Hosted validation is tracked separately and is not a completion prerequisite. Parent task: 20261127-013151-25.
+
+## 3. Acceptance Criteria
+
+1. Worker separately authorizes remediation after decision-governance review.
+2. The fix is committed to the intended branch and the commit is verified.
+3. The commit SHA and remediation summary are recorded.
+4. This subtask is marked Done only after these criteria pass; hosted validation remains separate metadata.
+
+## 4. Decisions
+
+- **Completion rule:** Commit-based Done under ADR-0004.
+- **Hosted validation:** Separate Pending/Passed/Failed metadata; not a Done gate.
+
+## 5. Progress Log
+
+### 2026-11-27 01:31 UTC
+
+- **Action:** Created a Proposed CI remediation subtask from Ledger finding group.
+- **Result:** 8 finding(s) linked; no remediation is authorized or claimed.
+- **References:** .takeout/reports/triage/ledger.json and parent task Ledger Findings.
+- **Next:** Worker review, accepted ADR linkage, and separate execution approval.
+
+## 6. Current State
+
+Cancelled. The source Draft no longer exists. Accepted ADR-0004 records the approved decision. No active source document remains for this lint finding.
+
+## 7. Evidence
+
+- **Commit SHA:** Not available — no remediation commit yet.
+- **Changed paths:** None.
+- **Read-back:** Not performed.
+- **Other evidence:** See parent Ledger Findings for source reports.
+
+## 8. Completion Record
+
+- **Status:** Cancelled
+- **Completed at:** 2026-11-27T04:42:00Z
+- **Completion basis:** Source Draft retired after accepted ADR promotion.
+- **Evidence:** Source path returns not found. ADR-0004 frontmatter records `DRAFT-0005` as its source.
+
+A regular subtask is Done when its own acceptance criteria are satisfied and its work/evidence are recorded.
+
+## 9. Hosted Validation
+
+Conditional: CI remediation subtask only.
+
+- **Status:** Pending
+- **Run URL:** Not reviewed
+- **Reviewed at:** Not reviewed
+
+Hosted validation is separate from remediation completion. Do not keep a CI remediation subtask open solely because hosted validation is pending. Do not inspect hosted results until the user explicitly triggers results review.
+
+## 10. Handoff
+
+Worker reviews the finding evidence and governing ADR coverage. Keep Proposed until the Worker separately approves execution. Do not inspect hosted validation results until the user explicitly triggers results review.
