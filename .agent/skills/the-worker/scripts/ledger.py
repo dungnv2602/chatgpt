@@ -144,7 +144,7 @@ def indexed_reports(root):
             attempt = row.get("attempt", 1)
             if isinstance(attempt, bool) or not isinstance(attempt, int) or attempt < 1:
                 raise LedgerError("Invalid attempt in " + str(index_path))
-            base = root / ".takeout" / "reports" / "lint_reports" / scope / "history"
+            base = root / ".takeout" / "reports" / "history"
             candidates = [
                 base / (run_id + "-attempt-" + str(attempt)) / "report.json",
                 base / run_id / "report.json",
@@ -196,7 +196,7 @@ def indexed_reports(root):
             )
             if history != expected_history:
                 raise LedgerError("GitHub Actions history_path does not match its run identity: " + history)
-            report_path = root / ".takeout" / "reports" / "gh_ac_reports" / Path(*PurePosixPath(history).parts) / "report.json"
+            report_path = root / ".takeout" / "reports" / Path(*PurePosixPath(history).parts) / "report.json"
             if not report_path.is_file():
                 raise LedgerError("Indexed complete GitHub Actions report is missing: " + str(report_path.relative_to(root)))
             found.append(("github_actions", report_path.relative_to(root).as_posix(), row))
