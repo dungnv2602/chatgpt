@@ -41,7 +41,7 @@ Load this skill for Ledger ingestion, reconciliation, finding identity, eligibil
 ## Ingestion and publication
 
 1. Read report paths only from published lint and Actions indexes. Do not scan report history directories or modify source reports.
-2. Use repository-relative paths under `.takeout/reports/` for active evidence. Use `workspace/archive/reports/` for archived evidence. Normalize legacy paths during migration.
+2. Use repository-relative paths under `.takeout/reports/` for report evidence. Keep canonical report paths unchanged; do not move report files into an archive directory.
 3. Keep the shared writer concurrency group non-cancelling and queued. Preserve the established `gh-ac-report-writer` contract.
 4. Publish report indexes, Ledger, task files, task board, and task links atomically through the existing commit/rebase/push flow.
 5. Ignore Ledger-only, task-board-only, discussion-only, and report-archive-only pushes during diagnostics sweeps. Follow the established archive-index trigger rules.

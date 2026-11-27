@@ -118,10 +118,10 @@ This boundary applies to every future task and every tool call, not only archivi
   - `.agent/skills/` — reusable skills and supporting references
   - `workspace/` — active task board and task records
   - `.takeout/reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
-  - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics and shared archive-retention scope or another user-authorized workflow change
+  - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics scope or another user-authorized workflow change
 - Read and write files only by exact paths beginning with one of those approved directory names.
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
-- Do not use repository-wide code search or recursive root-tree listings unless the user explicitly requests a full-repository audit. That request authorizes read-only tree inventory and exact-path retrieval within the stated scope, including workspace/archive contents only when the request expressly includes them. It does not authorize writes or override archive immutability. Use exact paths for all writes.
+- Do not use repository-wide code search or recursive root-tree listings unless the user explicitly requests a full-repository audit. That request authorizes read-only tree inventory and exact-path retrieval within the stated scope. It does not authorize writes or override project boundaries. Use exact paths for all writes.
 - Do not follow Markdown links outside the approved directories. If an essential reference is outside them and is not supplied in this conversation, explain the limitation. Ask the user to place it in an approved directory or provide it in chat.
 - A request to use an outside reference does not silently change this boundary. Ask for explicit permission before accessing an outside repository path.
 - Repository and branch identifiers may be used to direct GitHub operations, but this does not authorize reading or writing files outside the approved directories.
@@ -328,7 +328,7 @@ The task-specific `.agent/skills/decision-governance/SKILL.md` owns Draft, ADR, 
 - Ledger-generated P0 tasks enter as Approved and Ready under standing authorization. Accepted ADR constraints still apply. Separate ADR review does not gate intake.
 - Keep the task board ADR column aligned with each task record.
 - Keep accepted ADRs in `workspace/adr/`. Do not archive them.
-- Never add ADRs to the 90-day archive-retention index.
+- Keep accepted ADRs permanently in `workspace/adr/`.
 
 ## Cross-conversation recovery
 
@@ -384,44 +384,27 @@ A full report reset is destructive and requires explicit user authorization. On 
 This reset differs from normal report rollover. Normal rollover preserves open-finding evidence and processed state. Perform a full reset only after the user gives explicit instruction.
 
 
-## Task completion and archive
+## Task completion and deletion
 
 Task closeout is a mandatory workflow transaction. The Worker owns it in every conversation mode. Condensed Mode does not change or shorten these steps.
 
 Use only the canonical task statuses in this skill: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Do not use alternate values such as "Completed".
 
-The Worker closes a parent task after every required subtask reaches Done. The Worker reads back the complete task folder archive. The Worker checks each exact archive file and registers every archive file in the retention index. The Worker reconciles the task board.
-
-**Archive gate — do not mark an active parent Done prematurely.** Keep the active parent In Progress / Archived: No until the complete folder archive exists and matches the prepared final folder. Prepare final Done/Cancelled and Archived: Yes metadata only in the archive copy. Archive the complete directory, including task.md, subtasks/README.md, and every child record. Read back every file. Register each exact archived file path and timestamp in the retention index. Only after all copies and index entries verify may you delete the active task folder and reconcile the board. Move the board row to Historical only after the archive commit exists and link that commit. If any step fails, leave the task open and report the exact blocker.
-
-**Archive compatibility:** New task archives use `workspace/archive/task/<task-id>/`. Include the parent, subtask index, and every child record. Use one UTC archive timestamp for every file. The cleanup workflow retains and deletes the folder as one unit. Historical flat task archives remain immutable and readable at their exact paths. Never convert or rewrite them. The Ledger resolves retained archives through exact index entries and adds a Related tasks link when recurrence creates a new parent. It does not scan archive directories. If an indexed file is missing, stop and report the integrity error. Do not rewrite or reconstruct the archive. Delete a stale index entry only after exact-path history lookup confirms that the original is unrecoverable and the user explicitly approves the index correction. Record the disposition in the discussion register and parent task. See `workspace/archive/README.md`.
+The Worker closes a parent task after every required subtask reaches Done. The Worker checks every linked Ledger finding for a valid terminal/resolution record. The Worker then deletes the complete task folder and reconciles the task board.
 
 When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence. For Ledger-generated tasks, require terminal status and valid resolution, accepted-risk, false-positive, or duplicate evidence for every linked finding. A grouped task with any non-terminal finding cannot close as Done.
-2. Before you prepare the archive copy, move any report files that the historical record needs to `workspace/archive/reports/`. Register each exact path and timestamp. Update the task's report links to the archive paths. Then prepare the final archive copy with status Done or Cancelled. Add its UTC archive timestamp in `YYYY-MM-DDTHH:MM:SSZ` format. Include complete verification and a final handoff. Set Archived to Yes only in that archive copy.
-3. Check whether `workspace/archive/task/<task-id>/task.md` or any expected child path already exists. Read existing exact paths and compare complete content. Reuse only exact matches. Stop on differences. Never overwrite an archive record.
-4. If no archive folder exists, create the complete folder once, preserving the task ID, filenames, and child structure.
-5. Read back every archived file. Compare each with its prepared final content and verify the archive commit and changed-path metadata.
-6. Add one retention-index entry for each exact archived file path, including parent and child records, with its UTC archive timestamp. Preserve existing entries. Do not enumerate `workspace/archive/task/` or backfill unrelated records.
-7. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete indexed archived records.
-8. Only after every archive file and retention-index entry verifies, delete the complete active task folder from `workspace/tasks/<task-id>/`. Keep the active parent In Progress / Archived: No until deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive without rewriting it.
-9. Update `workspace/task_board.md` in the same closeout pass:
-   - Delete the task from Current Execution.
-   - Delete its active row from every status section.
-   - Add one Historical row with status Done or Cancelled, the archive path, and the exact commit that contains the archived record.
-   - Apply the seven-entry history limit. Delete only the oldest index rows when required.
-   - Select or identify the next current execution task according to the selection rules. Do not invent a task when no eligible task exists.
-10. Retrieve the committed task board. Check that the closed task is absent from active sections and appears exactly once in Historical. Check its links to the archive path and archival commit. Check that Current Execution matches the selection rules.
-11. Check that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to check its content or recover board details. Do not change the archived record.
-12. Only after these checks, report the task as closed and provide the appropriate handoff.
-13. For a Done Ledger-generated task, check that each linked terminal finding remains in the Ledger with its resolution, resolution_history, and prior task_refs intact. Expect no `findings_retired` result. Do not poll, dispatch, or manually edit the Ledger. If a finding identity or its history is missing, record it as an integrity blocker and preserve the archived task and evidence.
+2. Set the task status to Done or Cancelled in the active task record.
+3. Remove the task from Current Execution and every active board section. Do not add a Historical row.
+4. Delete the complete task folder from `workspace/tasks/<task-id>/`, including task.md, subtasks/README.md, and every child record. Do not copy any file to another path.
+5. Read back the task board and confirm the deleted task is absent. Preserve Ledger finding identity, resolution_history, task_refs, subtask_refs, and legacy_task_refs.
+6. Select or identify the next current execution task according to the selection rules. Do not invent a task when no eligible task exists.
+7. Report closeout only after deletion and board checks succeed.
 
-Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
+Treat task-folder deletion and board reconciliation as one logical transaction. If either fails, reconcile the partial state before switching tasks or ending work. Do not create a backup, archive copy, retention-index entry, or historical board row. Git commit history remains the repository's version-control record; do not rewrite it as part of ordinary task deletion.
 
-If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree. Do not ask the user to approve routine archival or board maintenance. The approved task requires this archival and board maintenance.
-
-Follow workspace/archive/README.md for 90-day retention. New task-folder archives expire as one unit. Historical flat task archives and report files expire individually. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only scheduled retention may delete indexed records.
+If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree.
 
 ## Conversation and drawing-session continuity
 
