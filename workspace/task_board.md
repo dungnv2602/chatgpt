@@ -12,11 +12,11 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-[20261127-180000 — Improve Repository Diagnostic Investigation Process](tasks/20261127-180000/task.md) — P0. Active process correction.
+_None. The process correction is committed and read back._
 
 ## Ordered Eligible Execution Queue
 
-- [20261127-180000 — Improve Repository Diagnostic Investigation Process](tasks/20261127-180000/task.md) — P0 — In Progress (current execution)
+_No eligible tasks._
 
 ## Next Task
 
