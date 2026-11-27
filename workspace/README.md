@@ -1,6 +1,6 @@
 # Workspace
 
-The workspace is the task-management and conversation-navigation area. The Worker owns task records, selection, progress, handoffs, archive closeout, and the shared discussion register. Document Standards governs workspace document formats.
+The workspace is the task-management and conversation-navigation area. The Worker owns task records, selection, progress, handoffs, direct deletion at closeout, and the shared discussion register. Document Standards governs workspace document formats.
 
 ## Files
 
@@ -18,7 +18,6 @@ The workspace is the task-management and conversation-navigation area. The Worke
 | [adr/](adr/README.md) | Accepted decisions awaiting implementation and confirmation |
 | [analysis/](analysis/README.md) | Evidence-based repository analysis snapshots |
 | [../.takeout/reports/README.md](../.takeout/reports/README.md) | Lint, Actions, and issue-ledger navigation |
-| [archive/README.md](../workspace/archive/README.md) | Archive and retention policy |
 
 ## Draft and ADR workflow
 
@@ -44,7 +43,7 @@ The decision-governance skill owns Draft, ADR, and repository-analysis lifecycle
 2. Record the user's request, scope, constraints, approval, priority, dependencies, and acceptance criteria.
 3. Select one current execution task. Follow explicit user direction, then dependencies, priority, and age.
 4. Record meaningful actions, decisions, verification, and blockers in the task record. Keep the board as an index.
-5. Close only after the Worker checks every acceptance criterion and marks each required subtask Done. Archive the complete task folder, including task.md, subtasks/README.md, and every child record. Read back every file and index every exact archive path before you delete the active folder. Update the board with the archive path and commit.
+5. Close only after the Worker checks every acceptance criterion and marks each required subtask Done. Delete the complete task folder, including task.md, subtasks/README.md, and every child record. Remove the task from the board. Do not create a copy, archive, retention entry, or Historical row.
 
 Task IDs use UTC YYYYMMDD-HHMMSS. Use only the statuses Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Optional assistant improvements remain Proposed until approved. Necessary follow-ups may be created automatically within the approved scope.
 
@@ -58,9 +57,9 @@ The user's standing instruction makes CI-generated P0 remediation mandatory and 
 
 A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
 
-The Worker marks a CI remediation subtask Done after committing its fix to the intended branch. The Worker checks the commit and records its SHA and summary. Hosted validation remains separate metadata. The Worker closes a parent only after every required subtask reaches Done. The Ledger retains terminal finding identities, resolution history, and prior task references after the Worker archives a task. A later observation can reopen the same finding and link new remediation. Do not delete terminal Ledger findings solely because the Worker archived a task.
+The Worker marks a CI remediation subtask Done after committing its fix to the intended branch. The Worker checks the commit and records its SHA and summary. Hosted validation remains separate metadata. The Worker closes a parent only after every required subtask reaches Done. The Ledger retains terminal finding identities, resolution history, and prior task references after the Worker deletes a task folder. A later observation can reopen the same finding and create new remediation. Task deletion does not delete terminal Ledger findings.
 
-A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `workspace/archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See .takeout/reports/triage/README.md and workspace/archive/README.md for exact reset and closeout rules.
+A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, and unrelated tasks. See .takeout/reports/triage/README.md for reset rules.
 
 Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A finding becomes resolved after the Worker checks the intended-branch fix commit and records its SHA, remediation summary, and UTC resolution timestamp. Hosted validation is separate metadata. A pending or failed hosted run does not reopen completed remediation.
 

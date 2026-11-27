@@ -109,16 +109,16 @@ Task creation is part of report ingestion.
 
 The user's standing directive makes all CI-generated P0 remediation mandatory and execution-approved. This authorization does not waive decision approval or accepted ADR constraints. Keep tasks Proposed when Governing ADR(s) is Pending. Move them to Ready only after accepted ADR linkage exists or decision approval is not required. Prepare a Draft when no accepted ADR covers the requested change. Keep the task Proposed until the user approves the Draft and the resulting ADR reaches accepted status. Do not edit accepted ADR decision content to satisfy a finding. This authorization does not permit destructive resets, restoration of deleted files, weakened checks, safety bypasses, or scope expansion. Block and escalate work that conflicts with a governing decision or safety/access constraint. The GitHub Actions skill governs technical remediation. Follow the Worker's batch execution procedure.
 
-## Resolution and recurrence retention
+## Resolution and recurrence continuity
 
 Mark a CI remediation subtask Done after the Worker commits its fix to the intended branch. The Worker checks the commit, reads back the changed files, and records the SHA and summary. Hosted CI validation is not a prerequisite. Do not close a parent until every required child reaches Done.
 
 1. Check that the remediation commit exists on the intended branch. Record the full commit SHA, concise remediation summary, and UTC resolution timestamp. This is sufficient for a finding to become `resolved`.
 2. Store hosted validation separately as optional metadata. A Pending, Failed, or not-yet-reviewed hosted run does not keep the remediation subtask open and does not change its Done state.
 3. On a new observation after resolution, reopen the same finding identity, preserve the previous resolution in `resolution_history`, and increment occurrence count for the new observation.
-4. If the previous remediation task is no longer active, read its retained archive through the exact paths in `.github/archive-retention-index.json`. Support folder archives and historical flat task files. Link any retained prior archive in the new parent's Related tasks field. Do not scan archive directories. If an indexed archive file is missing or its folder index is incomplete, fail closed and surface the integrity error. Do not delete the index entry or fabricate a link. If retention expired, keep the prior Task ID in `task_refs` without inventing an archive link. Create or reuse the work-target parent. Append its Task ID to `task_refs`. Append the child ID to `subtask_refs`. If the prior parent is no longer active, create a new parent with the recurring remediation child.
-5. Archive complete task folders under `workspace/archive/task/<task-id>/`. Index `task.md`, `subtasks/README.md`, and every child record by exact path. Use one shared UTC timestamp for every file in the folder. The cleanup workflow retains and deletes the folder as one unit. Historical flat archive files remain immutable and readable.
-6. Archiving a task never removes terminal findings, resolution history, or prior task references. Do not implement destructive finding retirement or retirement scans.
+4. If the previous remediation task is no longer active, use its Task ID from `task_refs` as provenance. Do not attempt to read or link a deleted task file. Create or reuse the work-target parent. Append its Task ID to `task_refs`. Append the child ID to `subtask_refs`. If the prior parent is no longer active, create a new parent with the recurring remediation child.
+5. Delete completed or cancelled task folders directly after the Worker verifies the closeout criteria. Do not create an archive copy, retention entry, or historical task link.
+6. Task deletion never removes terminal findings, resolution history, or prior task references. Preserve these Ledger fields so recurrence can reopen the same finding identity.
 
 Finding status and task status remain distinct. A finding becomes resolved after the Worker records the fix commit. Hosted validation remains independent. Later recurrence creates or reopens finding work through Ledger ingestion. It does not rewrite the prior Done record.
 
@@ -136,8 +136,8 @@ Finding status and task status remain distinct. A finding becomes resolved after
 - Historical backfill requires a separate approved task.
 - If `ledger.json` is missing, fail closed. Restore the exact prior state or obtain explicit authorization for a clean-start reset. Never create an empty Ledger automatically.
 - When relocating an existing Ledger, preserve its content and allow the generator to migrate schema and legacy report paths.
-- A clean-start reset requires explicit user authorization. It clears generated active report payloads and archived report content. It resets the three report indexes, replaces Ledger data with no findings or processed paths, and marks lint baselines unseeded. It also deletes report entries from the shared retention index.
-- Preserve scripts, schemas, templates, workflows, operating guides, task archives, task-retention entries, and unrelated tasks.
+- A clean-start reset requires explicit user authorization. It clears generated active report payloads and resets the three report indexes, replaces Ledger data with no findings or processed paths, and marks lint baselines unseeded.
+- Preserve scripts, schemas, templates, workflows, operating guides, and unrelated tasks.
 - After reset, the first tooling-valid full audit in each lint scope seeds its baseline only. Do not backfill or taskify the prior reporting period.
 
 ## Integrity and completion checks

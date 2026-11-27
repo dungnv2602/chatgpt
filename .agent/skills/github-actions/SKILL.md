@@ -22,32 +22,7 @@ Use this skill for GitHub Actions workflow design and maintenance. It governs wo
 
 The repository provides no local project environment. The remote repository is the sole source of truth. Local copies may be absent or stale. Local execution cannot establish the state or validity of the authorized remote branch.
 
-## 2. Scheduled archive cleanup
-
-GitHub Actions runs the scheduled archive-retention workflow.
-
-- Run the schedule from the repository default branch because GitHub scheduled events only run there.
-- Check out `gpt`, which is the working/source branch.
-- Read only `.github/archive-retention-index.json`. Never list or scan `workspace/archive/task/`.
-- Retain each new task-folder archive for at least 90 days from its shared UTC archive timestamp. Require indexed task.md, subtasks/README.md, and every child record.
-- Treat all indexed files in one task folder as a single retention unit. Fail closed if required entries or the shared timestamp are missing.
-- Delete only the exact indexed files in a due folder. Delete their index entries in the same cleanup operation.
-- Retain historical flat task archives and report files individually for at least 90 days from each file's own timestamp.
-- A missing retained indexed file fails the cleanup job. Do not remove its index entry or recreate the historical file.
-- Preserve `.gitkeep`. Unindexed legacy records remain protected and must not be discovered by a directory scan.
-- Allow only the native `schedule` event. The cleanup script must reject every other GitHub event.
-- After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
-- Check that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
-- Use a weekly cron schedule. The retention index avoids a daily or per-file scheduled workflow and prevents routine archive scans.
-
-## 3. Report triage and archive retention
-
-- Start at `.takeout/reports/README.md`. Maintain cross-family issue state in `.takeout/reports/triage/ledger.json`.
-- Resolved report files belong in `workspace/archive/reports/`, not in a report-root archive folder.
-- New task-folder archives expire as one indexed group after 90 days. Historical flat task archive files and report files expire individually. Cleanup deletes only exact indexed paths and never scans archive directories.
-- The index is `.github/archive-retention-index.json`. Preserve unindexed legacy files.
-
-## 4. Task-scoped CI diagnostics and fix
+## 2. Task-scoped CI diagnostics and fix
 
 CI is not a gate that must be fixed before every user prompt or after skill initialization. Inspect CI when the user requests it. Also inspect CI when the current task changes a workflow or validation target. Inspect CI when a known result directly affects the task.
 
@@ -91,14 +66,10 @@ The Worker completes a CI remediation after committing the immediate defect chan
 
 ## 5. Inspect and preserve validation scope
 
-### Archive boundary for Markdown checks
+### Markdown validation scope
 
-- Exclude all paths under `workspace/archive/` from full-document and changed-document lint.
-- Exclude archived Markdown files from link-source and heading-anchor checks.
-- For links from active documents to `workspace/archive/`, check whether the target path exists during routine lint. Ignore fragments for these targets.
-- Do not read archived files solely for routine link or heading-anchor checks. You may read an exact archived record when a task requires its content.
-- Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete archived records.
-- Do not add an `workspace/archive/README.md` lint exception. The entire `workspace/archive/` tree is outside lint scope.
+- Include all active Markdown files in full-document and changed-document lint, except the existing explicitly documented exclusions for generated reports, task working files, and creative project records.
+- Check local links and heading anchors for task and project documents. Do not add an archive-path exception.
 
 Before changing a workflow, identify its events, branch/path filters, jobs, dependencies, permissions, concurrency, runner, timeout, cache, artifact behavior, and scripts. Identify which checks cover which files.
 

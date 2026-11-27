@@ -132,7 +132,7 @@ jobs:
             > .lint-report-records/anchor-check.log 2>&1 || anchor_status=$?
 
           git ls-files -- '*.md' |
-            grep -vE '^(workspace/archive/|\.takeout/reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|\.agent/skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
+            grep -vE '^(\.takeout/reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|\.agent/skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
             > .lint-report-records/evaluated-files.txt || true
 
           failed=0
