@@ -10,7 +10,7 @@ Each child is an independently tracked work unit with its own stable ID, type, s
 2. [20261126-232913-02 — Ledger task generation and governance handoff](02-ledger-task-generation-and-governance.md) — Done
 3. [20261126-232913-03 — Commit-based CI resolution and recurrence retention](03-ci-resolution-and-recurrence-retention.md) — Done
 4. [20261126-232913-04 — Ingestion integrity and report-index hardening](04-ingestion-integrity-and-report-index-hardening.md) — Done
-5. [20261126-232913-05 — Active-task migration and folder archive compatibility](05-active-task-migration-and-archive-compatibility.md) — Done
+5. [20261126-232913-05 — Active-task migration and folder archive compatibility](05-active-task-migration-and-archive-compatibility.md) — In Progress
 6. [20261126-232913-06 — Regression coverage and documentation/catalog alignment](06-regression-tests-and-documentation.md) — In Progress
 
 ## Completion contract
