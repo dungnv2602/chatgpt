@@ -1018,6 +1018,35 @@ class LedgerTests(unittest.TestCase):
             LEDGER.ingest(self.root)
         self.assertEqual(path.read_bytes(),before)
 
+    def test_invalid_actions_run_id_is_rejected_before_path_construction(self):
+        index = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
+        index.parent.mkdir(parents=True,exist_ok=True)
+        index.write_text(json.dumps({"runs":[{
+            "run_id":"../100","attempt":1,"workflow_id":55,"report_status":"Complete",
+            "capture_stage":"post_run","source_status":"completed",
+            "history_path":"history/55/100-attempt-1-post_run"
+        }]}),encoding="utf-8")
+        with self.assertRaisesRegex(LEDGER.LedgerError,"Invalid GitHub Actions run ID"):
+            LEDGER.indexed_reports(self.root)
+
+    def test_actions_history_path_must_match_indexed_run_identity(self):
+        index = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
+        index.parent.mkdir(parents=True,exist_ok=True)
+        index.write_text(json.dumps({"runs":[{
+            "run_id":"101","attempt":1,"workflow_id":55,"report_status":"Complete",
+            "capture_stage":"post_run","source_status":"completed",
+            "history_path":"history/55/100-attempt-1-post_run"
+        }]}),encoding="utf-8")
+        with self.assertRaisesRegex(LEDGER.LedgerError,"does not match its run identity"):
+            LEDGER.indexed_reports(self.root)
+
+    def test_actions_index_without_completion_metadata_fails_closed(self):
+        index = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
+        index.parent.mkdir(parents=True,exist_ok=True)
+        index.write_text(json.dumps({"runs":[{"run_id":"100","workflow_id":55,"attempt":1}]}),encoding="utf-8")
+        with self.assertRaisesRegex(LEDGER.LedgerError,"lacks capture completion metadata"):
+            LEDGER.indexed_reports(self.root)
+
     def test_unsafe_actions_history_path_is_rejected(self):
         index = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
         index.parent.mkdir(parents=True,exist_ok=True)
