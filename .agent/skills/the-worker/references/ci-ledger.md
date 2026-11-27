@@ -63,4 +63,4 @@ Never erase terminal finding identity or resolution history when deleting a task
 
 Reject malformed IDs, unsafe report paths, inconsistent indexed run identities, and missing complete reports. Do not weaken classification, baselines, schemas, or tests. Do not run repository scripts or tests locally. Read back every changed file. Use hosted validation only when authorized and do not inspect hosted results unless the user requests review.
 
-Schema: `.takeout/reports/triage/ledger-schema.json`. Generator and regression tests: `scripts/ledger.py` and `scripts/test_ledger.py`.
+Schema: `.takeout/reports/triage/ledger-schema.json`. Generator and regression tests: `.takeout/reports/triage/scripts/ledger.py` and `.takeout/reports/triage/scripts/test_ledger.py`.
