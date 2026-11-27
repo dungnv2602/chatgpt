@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T23:08:59.100Z**: Child 27 completed. The passive-voice constructions in `workspace/README.md` are corrected. Source fix: `677b5de451f70246cfb0d3ededb9ec8f908e19fd`. The two target Ledger findings now carry commit-based resolutions.
+- **2026-11-27T23:09:26.095Z**: Child 27 completed, the two Ledger findings resolved, and the child record/index row deleted under the standing parent lifecycle. Source fix: `677b5de451f70246cfb0d3ededb9ec8f908e19fd`. Ledger closeout: `3663c9829750de56d2c2bb2ca789ec2da0d84ac3`.
 
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.
