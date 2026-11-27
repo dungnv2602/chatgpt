@@ -187,7 +187,7 @@ Use the ID format YYYYMMDD-HHMMSS in UTC. Add -01, -02, and later suffixes if ID
 
 Use this folder format:
 
-`workspace/tasks/YYYYMMDD-HHMMSS-short-kebab-title/task.md`
+`workspace/tasks/<task-id>/task.md`
 
 Create `subtasks/README.md` in every task folder. Store child records under `subtasks/<NN>-short-kebab-title.md` with IDs `<parent-task-id>-NN`. Keep assigned task and subtask IDs unchanged. Do not create new flat task notes.
 
