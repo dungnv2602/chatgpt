@@ -12,12 +12,12 @@ Store this record under its parent task's `subtasks/` directory.
 - **Status:** Proposed
 - **Priority:** P0
 - **Origin:** Assistant
-- **Approval:** Pending — Worker review required
-- **Governing ADR(s):** Pending — Worker review required before approval
+- **Approval:** Approved
+- **Governing ADR(s):** Pending — no accepted ADR authorizes edits to immutable decision content. User decision required.
 - **Dependencies:** None
 - **Required:** Yes
 - **Created:** 2026-11-27 01:31 UTC
-- **Updated:** 2026-11-27 01:31 UTC
+- **Updated:** 2026-11-27 05:31 UTC
 
 Allowed statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, Cancelled. A parent cannot be Done while a required subtask is not Done.
 
@@ -39,7 +39,8 @@ Inspect the linked report evidence, diagnose the actionable finding group, imple
 ## 4. Decisions
 
 - **Completion rule:** Commit-based Done under ADR-0004.
-- **Hosted validation:** Separate Pending/Passed/Failed metadata; not a Done gate.
+- **Hosted validation:** Separate Pending/Passed/Failed metadata. It is not a Done gate.
+- **Standing P0 authorization:** Approved for mandatory processing. Accepted ADR linkage remains a prerequisite for source changes.
 
 ## 5. Progress Log
 
@@ -50,9 +51,15 @@ Inspect the linked report evidence, diagnose the actionable finding group, imple
 - **References:** .takeout/reports/triage/ledger.json and parent task Ledger Findings.
 - **Next:** Worker review, accepted ADR linkage, and separate execution approval.
 
-## 6. Current State
+### 2026-11-27 05:31 UTC
 
-Proposed. Root cause and fix have not been assessed; no commit exists.
+- **Action:** Reviewed the target accepted ADR under Decision Governance.
+- **Result:** The finding requires a wording change to immutable ADR-0004 decision content. No accepted ADR covers this change. The user's standing P0 instruction authorizes mandatory processing, but it does not waive accepted-ADR governance. No source edit or fix commit was made. Keep this subtask Proposed.
+- **References:** `.agent/skills/decision-governance/SKILL.md`; `workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md`; parent task Ledger Findings.
+- **Next:** Obtain user approval for a separate Draft/ADR before any source change.
+
+## 6. Current State
+Proposed. Execution is approved as mandatory P0 work, but the required accepted decision coverage is missing. No remediation commit exists. Do not edit accepted ADR-0004 decision content.
 
 ## 7. Evidence
 
@@ -82,4 +89,4 @@ Hosted validation is separate from remediation completion. Do not keep a CI reme
 
 ## 10. Handoff
 
-Worker reviews the finding evidence and governing ADR coverage. Keep Proposed until the Worker separately approves execution. Do not inspect hosted validation results until the user explicitly triggers results review.
+Keep Proposed. Resume only after the user approves a separate Draft/ADR and it reaches accepted status. Do not inspect hosted validation results until the user explicitly triggers results review.
