@@ -35,11 +35,13 @@ _No tasks._
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
 | 20261126-232913 | Implement ADR-0004 task folders and CI Ledger lifecycle | P0 | In Progress | User | Approved | ADR-0004 | 2026-11-27 01:10 UTC | [Task record](tasks/20261126-232913/task.md) |
-| 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 17:04 UTC | [Task record](tasks/20261126-090154/task.md) |
+
 
 ## Blocked
 
-_No tasks._
+| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
+|---|---|---:|---|---|---|---|---|---|
+| 20261126-090154 | Review CI Ledger regression-test failures in Document Standards | P0 | Blocked | User | Approved | ADR-0003 | 2026-11-27 05:31 UTC | [Task record](tasks/20261126-090154/task.md) |
 
 ## Paused
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
