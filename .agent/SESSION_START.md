@@ -34,7 +34,7 @@ When the user says `/start`:
 10. After the batch ends, tell the user: **Ready to take your prompt.** State any remaining blockers. Do not claim hosted validation or task closeout.
 11. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Use existing Ledger records for batch selection. Review hosted CI results only under the rule in step 9.
 
-Baseline initialization is The Worker and its mandatory Conversation Mode reference only. Load ASD-STE100 when revising technical or skill documentation. Load GitHub Actions when CI or workflow work activates it. Load Document Standards when document-format governance or a recurring document/structured-record task activates it. Load Agent Skill Authoring only when skill creation or maintenance activates it. Retrieve supporting references only when needed. The Worker's archive and media references remain task-triggered components.
+Baseline initialization is The Worker and its mandatory Conversation Mode reference only. Load ASD-STE100 when revising technical or skill documentation. Load GitHub Actions when CI or workflow work activates it. Load Agent Skill Authoring only when skill creation or maintenance activates it. Retrieve supporting references only when needed. The Worker's archive and media references remain task-triggered components.
 
 If a required component is missing or cannot be verified, report its exact path and stop foundational initialization. Do not substitute memory, previous-conversation reads, or Library copies.
 
@@ -252,7 +252,7 @@ Use this order whenever a task requires specialist skills:
 | Tier | Skills | Activation |
 |---|---|---|
 | 1. Baseline | The Worker (including its mandatory Conversation Mode reference) | `/start` only. Specialist requests require baseline initialization to have passed already. |
-| 1a. Domain skills | ASD-STE100, GitHub Actions, Document Standards, Agent Skill Authoring | Load only when task activation conditions apply. |
+| 1a. Domain skills | ASD-STE100, GitHub Actions, Agent Skill Authoring | Load only when task activation conditions apply. |
 | 2. Drawing | The Worker's archive/media references, Drawing, and its required references | After baseline initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
 | 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
 
@@ -287,10 +287,6 @@ The Worker owns conversation archives, drawing-session closeout, image provenanc
 ### Agent Skill Authoring
 
 `.agent/skills/agent-skill-authoring/SKILL.md` is an on-demand skill. Load it when you create, revise, check, reorganize, or integrate a skill. It defines the repository's Agent Skills implementation.
-
-### Document Standards
-
-`.agent/skills/document-standards/SKILL.md` is task-activated, not baseline-loaded. Load it when the task creates, moves, materially revises, or validates recurring documents or structured records. It defines the template-first authoring workflow. Retrieve the catalog and exact templates, schemas, or validation references only when the task requires them.
 
 ### ASD-STE100 technical writing
 
