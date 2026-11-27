@@ -247,22 +247,23 @@ class LedgerTests(unittest.TestCase):
         board = board_path.read_text(encoding="utf-8")
         proposed_start = board.index("## Proposed\n")
         ready_start = board.index("## Ready\n", proposed_start)
-        board = board[:proposed_start] + board[ready_start:]
-        board_path.write_text(board, encoding="utf-8")
+        board_path.write_text(board[:proposed_start] + board[ready_start:], encoding="utf-8")
         finding = {
             "finding_id": "test-finding", "source_family": "lint", "category": "test",
             "severity": "medium", "status": "open", "task_group": "ci-0123456789abcdef",
+            "parent_group": LEDGER.task_group_key("lint-parent", "docs/example.md"),
             "evidence": [{"report_path":".takeout/reports/lint_reports/on_changed/history/1-attempt-1/report.json",
-                          "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:1:1"}],
-            "task_refs": [],
+                          "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:1:1",
+                          "note":"on_changed · docs/example.md:1:1"}],
+            "task_refs": [], "subtask_refs": [], "legacy_task_refs": [],
         }
         with self.assertRaises(LEDGER.LedgerError):
             LEDGER.create_or_update_worker_task(
-                self.root, finding["task_group"], [finding], "2026-11-26T08:12:00Z", {}
+                self.root, finding["parent_group"], {finding["task_group"]:[finding]},
+                "2026-11-26T08:12:00Z", {}
             )
         self.assertEqual(list((self.root / "workspace" / "tasks").iterdir()), [])
         self.assertNotIn("test-finding", board_path.read_text(encoding="utf-8"))
-
     def test_all_lint_severities_create_and_reuse_grouped_tasks(self):
         self.add_lint("on_changed", "110", "2026-11-23T07:10:00Z",
                       fingerprint="a1b2c3d4e5f6", level="advisory",
@@ -282,6 +283,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(second["tasks_updated"], 1)
         self.assertEqual(len(findings), 2)
         self.assertTrue(all(item["task_refs"] == [task_id] for item in findings))
+        self.assertEqual(findings[0]["subtask_refs"], findings[1]["subtask_refs"])
         self.assertEqual({item["severity"] for item in findings}, {"low", "informational"})
         task_files = list((self.root / "workspace" / "tasks").glob("*/task.md"))
         self.assertEqual(len(task_files), 1)
@@ -307,12 +309,31 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("Parent: [task.md](../task.md)", index_text)
         self.assertIn("01-ci-remediation.md", index_text)
         child_id = LEDGER.task_metadata(ci_text, "ID")
+        self.assertEqual(first_finding["subtask_refs"], [child_id])
         self.assertNotIn(child_id, first_finding["task_refs"])
+        self.assertEqual(LEDGER.task_metadata(task_text, "Ledger parent group"), first_finding["parent_group"])
+        self.assertEqual(LEDGER.task_metadata(ci_text, "Ledger group"), first_finding["task_group"])
         board = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
         self.assertIn("[Task record](tasks/" + task_id + "/task.md)", board)
         self.assertFalse((self.root / "workspace" / "tasks" / (task_id + ".md")).exists())
 
-    def test_active_legacy_flat_task_is_reused_during_migration(self):
+    def test_distinct_lint_groups_for_one_file_become_sibling_subtasks(self):
+        self.add_lint("on_changed", "114", "2026-11-23T07:18:00Z",
+                      fingerprint="e5f6a7b8c9d0", file_path="docs/shared.md", rule="passive-voice")
+        self.add_lint("on_changed", "115", "2026-11-23T07:19:00Z",
+                      fingerprint="f6a7b8c9d0e1", file_path="docs/shared.md", rule="semicolon")
+        result = LEDGER.ingest(self.root, now="2026-11-23T07:20:00Z")
+        findings = self.read_ledger()["findings"]
+        parents = list((self.root / "workspace" / "tasks").glob("*/task.md"))
+        self.assertEqual(result["tasks_created"], 1)
+        self.assertEqual(len(parents), 1)
+        self.assertEqual(len({item["task_refs"][0] for item in findings}), 1)
+        self.assertEqual(len({item["subtask_refs"][0] for item in findings}), 2)
+        child_files = list(parents[0].parent.joinpath("subtasks").glob("[0-9][0-9]-*.md"))
+        self.assertEqual(len(child_files), 2)
+        self.assertTrue(all(LEDGER.task_metadata(child.read_text(encoding="utf-8"), "Parent Task ID") == parents[0].parent.name for child in child_files))
+
+    def test_active_legacy_flat_task_is_not_used_as_a_parent(self):
         group_id = LEDGER.task_group_key("lint", "semicolon", "docs/example.md")
         legacy = self.root / "workspace" / "tasks" / "20261122-010000-legacy-task.md"
         legacy.write_text(
@@ -324,20 +345,22 @@ class LedgerTests(unittest.TestCase):
             "- **Approval:** Approved\n"
             "- **Current execution:** No\n"
             "- **Updated:** 2026-11-22 01:00 UTC\n"
-            "- **Ledger parent group:** " + LEDGER.task_group_key("lint-parent", "docs/folder-example.md") + "\n",
+            "- **Ledger group:** " + group_id + "\n",
             encoding="utf-8",
         )
         self.add_lint("on_changed", "112", "2026-11-23T07:14:00Z",
                       fingerprint="c3d4e5f6a7b8", file_path="docs/example.md", rule="semicolon")
         result = LEDGER.ingest(self.root, now="2026-11-23T07:15:00Z")
         finding = self.read_ledger()["findings"][0]
-        self.assertEqual(finding["task_refs"], ["20261122-010000"])
-        self.assertEqual(result["tasks_created"], 0)
-        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*/task.md")), [])
-        self.assertIn("lint-c3d4e5f6a7b8", legacy.read_text(encoding="utf-8"))
-
+        parent_id = finding["task_refs"][0]
+        self.assertNotEqual(parent_id, "20261122-010000")
+        self.assertEqual(result["tasks_created"], 1)
+        self.assertTrue((self.root / "workspace" / "tasks" / parent_id / "task.md").is_file())
+        self.assertTrue(legacy.is_file())
+        self.assertNotIn("lint-c3d4e5f6a7b8", legacy.read_text(encoding="utf-8"))
     def test_active_folder_task_is_reused_by_ledger(self):
         group_id = LEDGER.task_group_key("lint", "semicolon", "docs/folder-example.md")
+        parent_group = LEDGER.task_group_key("lint-parent", "docs/folder-example.md")
         task_id = "20261122-020000"
         folder = self.root / "workspace" / "tasks" / task_id
         subtasks = folder / "subtasks"
@@ -353,18 +376,21 @@ class LedgerTests(unittest.TestCase):
             "- **Governing ADR(s):** ADR-0004\n"
             "- **Current execution:** No\n"
             "- **Updated:** 2026-11-22 02:00 UTC\n"
-            "- **Ledger group:** " + group_id + "\n",
+            "- **Ledger parent group:** " + parent_group + "\n",
             encoding="utf-8",
         )
         (subtasks / "README.md").write_text(
             "# Subtasks — " + task_id + "\n\nParent: [task.md](../task.md)\n",
             encoding="utf-8",
         )
-        (subtasks / "01-ci-remediation.md").write_text(
+        child_path = subtasks / "01-ci-remediation.md"
+        child_path.write_text(
             "# Subtask: Existing CI remediation\n\n"
             "- **ID:** " + task_id + "-01\n"
             "- **Parent Task ID:** " + task_id + "\n"
-            "- **Type:** CI remediation\n",
+            "- **Type:** CI remediation\n"
+            "- **Status:** Proposed\n"
+            "- **Ledger group:** " + group_id + "\n",
             encoding="utf-8",
         )
         self.add_lint("on_changed", "113", "2026-11-23T07:16:00Z",
@@ -372,12 +398,13 @@ class LedgerTests(unittest.TestCase):
         result = LEDGER.ingest(self.root, now="2026-11-23T07:17:00Z")
         finding = self.read_ledger()["findings"][0]
         self.assertEqual(finding["task_refs"], [task_id])
+        self.assertEqual(finding["subtask_refs"], [task_id + "-01"])
         self.assertEqual(result["tasks_created"], 0)
         self.assertIn("lint-d4e5f6a7b8c9", parent.read_text(encoding="utf-8"))
+        self.assertIn("lint-d4e5f6a7b8c9", child_path.read_text(encoding="utf-8"))
         board = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
         self.assertIn("[Task record](tasks/" + task_id + "/task.md)", board)
         self.assertEqual(list((self.root / "workspace" / "tasks").glob("*/task.md")), [parent])
-
     def test_archived_task_reader_supports_folder_and_legacy_flat_files(self):
         archive_root = self.root / ".archive" / "task"
         folder_id = "20261122-030000"
@@ -566,13 +593,13 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["findings_created"],3)
         self.assertEqual(len(findings),3)
         self.assertTrue(all(item["source_family"] == "github_actions" for item in findings))
-        self.assertEqual(result["tasks_created"], 2)
+        self.assertEqual(result["tasks_created"], 1)
         refs = [item["task_refs"][0] for item in findings]
-        unit_test_refs = [item["task_refs"][0] for item in findings if "Unit tests" in item["evidence"][0]["note"]]
+        unit_test_refs = [item["subtask_refs"][0] for item in findings if "Unit tests" in item["evidence"][0]["note"]]
         self.assertEqual(len(set(unit_test_refs)), 1)
-        self.assertEqual(len(set(refs)), 2)
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 2)
-
+        self.assertEqual(len(set(refs)), 1)
+        self.assertEqual(len({item["subtask_refs"][0] for item in findings}), 2)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 1)
     def test_low_confidence_actions_error_always_creates_a_task(self):
         issue = {
             "category": "validation_or_test", "job_name": "Build", "step_name": "Run checks",
@@ -658,7 +685,8 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["tasks_created"],1)
         self.assertEqual(result["findings_created"],1)
         task = next((self.root / "workspace" / "tasks").glob("*/task.md")).read_text(encoding="utf-8")
-        self.assertIn("Fix lint tooling check: Markdown links and heading anchors",task)
+        child = next((self.root / "workspace" / "tasks").glob("*/subtasks/[0-9][0-9]-*.md")).read_text(encoding="utf-8")
+        self.assertIn("Fix lint tooling check: Markdown links and heading anchors",child)
         self.assertIn("- **Priority:** P0",task)
         self.assertIn("- **Approval:** Pending — Worker review required",task)
         self.assertIn("- **Status:** Proposed",task)
@@ -819,10 +847,10 @@ class LedgerTests(unittest.TestCase):
             "owner":None,"first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
             "occurrence_count":1,"evidence":[],
             "resolution":{"fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z"},
-            "resolution_history":[],"duplicate_of":None,"accepted_risk":None,"task_refs":["20261123-090000"],
+            "resolution_history":[],"duplicate_of":None,"accepted_risk":None,"task_refs":["20261123-090000"],"parent_group":"ci-0123456789abcdef","subtask_refs":[],"legacy_task_refs":[],
         }
         ledger = self.read_ledger()
-        ledger["schema_version"] = "1.6.0"
+        ledger["schema_version"] = "1.7.0"
         ledger["findings"] = [finding]
         LEDGER.validate_schema(ledger, schema, "$ledger")
         finding["resolution"]["validation"] = {
