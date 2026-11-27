@@ -6,7 +6,7 @@
 - **Folder migration:** ADR-0004, 2026-11-27
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-27 09:22 UTC
+- **Updated:** 2026-11-27 09:47 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -186,3 +186,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Validation:** Runs 572 and 892 passed on `8d92e78`, confirming the task-board newline serialization fix. The next Diagnostics capture then exposed two failing regression tests which depended on the Proposed section being empty, but the shared board fixture was populated by a generated task.
 - **Repair:** Tests now remove the contents of the Proposed section in their copied fixture (leaving the section intentionally malformed) so both fail-closed and rollback assertions are isolated from live task-board data. Commits `899e6a1` and `ec3ba4d` (the latter corrected newline literals in the test fixture edit).
 - **Validation:** CI runs 573/893 were pending/in progress at last check; runs 574/894 for the latest commit were pending. Await validation.
+| `lint-tooling-2c26d8bc14fd4d4bbe314234` | high | Lint tooling check failed: Markdown links and heading anchors | [report](../../../.takeout/reports/lint_reports/on_changed/history/45911866106-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45911866106) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45967546887-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45967546887) · [report](../../../.takeout/reports/lint_reports/on_changed/history/45968726096-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45968726096) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45970377226-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45970377226) · [report](../../../.takeout/reports/lint_reports/on_repo/history/45976205944-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45976205944) |
