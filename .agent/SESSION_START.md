@@ -15,7 +15,11 @@ Ignore quoted, discussed, or hypothetical uses of the cue. Do not treat a specia
 
 This file is the sole authority for session-start cues and the foundational loading sequence. The Worker owns task continuity, collaboration modes, and discussion-register maintenance.
 
-### Foundational loading sequence
+### Material recovery and cleanup
+
+For task-required materials, recover them autonomously within the approved task scope. Do not ask for permission solely to retrieve materials. Treat downloaded, extracted, copied, or staged recovery artifacts as temporary and delete them immediately after their last necessary use. At closeout, verify and record cleanup. Never delete canonical repository files, user-owned originals, retained evidence, or material protected by governance or explicit instructions. Preserve canonical and retention-controlled material; resolve any material uncertainty before deletion.
+
+## Foundational loading sequence
 
 When the user says `/start`:
 
