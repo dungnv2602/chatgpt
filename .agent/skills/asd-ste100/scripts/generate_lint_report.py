@@ -15,7 +15,7 @@ from pathlib import Path
 ASSET_DIR = Path(__file__).resolve().parents[1] / "assets"
 REPORT_TEMPLATE_PATH = ASSET_DIR / "lint-report-template.md"
 REPORT_SCHEMA_PATH = ASSET_DIR / "lint-report-schema.json"
-SCHEMA_VERSION = "1.1.0"
+SCHEMA_VERSION = "1.2.0"
 VALID_SCOPES = {"on_changed", "on_repo"}
 VALID_STATUSES = {"Passed", "Failed", "Incomplete", "Cancelled", "Superseded"}
 
@@ -236,6 +236,7 @@ def build_markdown(data):
 
     values = {
         "scope_title": data["scope"].replace("_", " ").title(),
+        "source_task_id": data.get("source_task_id") or "Unassigned",
         "schema_version": data["schema_version"], "status": data["status"],
         "run_number": data["run_number"], "run_url": data["run_url"],
         "run_id": data["run_id"], "attempt": data["attempt"],
@@ -338,7 +339,7 @@ def main():
     attempt = safe_int(args.attempt, 1)
     data = {
         "schema_version": SCHEMA_VERSION, "scope": args.scope,
-        "source_task_id": args.task_id.strip() or None,
+        "source_task_id": (args.task_id.strip() or None) if args.event == "push" else None,
         "run_id": args.run_id, "run_number": run_number, "run_url": args.run_url,
         "attempt": attempt, "branch": args.branch, "commit_sha": args.commit,
         "event": args.event, "workflow": os.environ.get("GITHUB_WORKFLOW"),
