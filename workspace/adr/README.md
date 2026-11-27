@@ -4,7 +4,7 @@ This folder is the permanent, flat home for every accepted ADR, including comple
 
 ## Files
 
-- [ADR_TEMPLATE.md](../ADR_TEMPLATE.md) — canonical template for decision records.
+- [ADR_TEMPLATE.md](../../.agent/skills/the-worker/assets/ADR_TEMPLATE.md) — canonical template for decision records.
 - NNNN-title-with-dashes.md — decision records use a four-digit global sequence and lowercase dashed filenames.
 
 ## Numbering and organization

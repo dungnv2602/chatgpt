@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27T23:12:40.445Z**: Resumed child 50 after recovering historical report 45911866106. The diagnostic reveals the missing exemption for the canonical task-template path. The resolver and regression test now cover both template locations.
+- **2026-11-27T23:14:05.854Z**: Recovered all five historical anchor-check reports from Git history. Fixed the task-template exemption, 22 task-board links, and three obsolete template links. Readback pending.
 
 
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.

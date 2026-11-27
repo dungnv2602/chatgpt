@@ -4,7 +4,7 @@ This folder stores proposals that require a user decision.
 
 ## Files
 
-- [DRAFT_TEMPLATE.md](../DRAFT_TEMPLATE.md) — canonical template for new proposals (Version 1.2). It requires detailed, evidence-qualified assessments of every viable option.
+- [DRAFT_TEMPLATE.md](../../.agent/skills/the-worker/assets/DRAFT_TEMPLATE.md) — canonical template for new proposals (Version 1.2). It requires detailed, evidence-qualified assessments of every viable option.
 - DRAFT-*.md — one record for each distinct proposal.
 
 ## Current Drafts

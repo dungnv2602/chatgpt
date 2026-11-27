@@ -16,10 +16,10 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — recovered report 45911866106 through its historical Git blob. Its diagnostic identifies `workspace/TASK_TEMPLATE.md` → `subtasks/README.md`. The canonical template now lives at `.agent/skills/the-worker/assets/TASK_TEMPLATE.md`, but the resolver only exempts the legacy path.
+- **Eligibility / deferral reason:** In Progress — recovered all five referenced report artifacts through their historical Git commits. The reports identify the canonical template link, 23 invalid child-record links in the task board, and three obsolete template links in the ADR, analysis, and draft indexes.
 - **Required:** Yes
 - **Created:** 2026-11-27 12:58 UTC
-- **Updated:** 2026-11-27 23:12 UTC
+- **Updated:** 2026-11-27 23:14 UTC
 - **Ledger group:** `ci-ace4e198cb6445b7`
 - **Legacy Task IDs:** None
 
@@ -55,10 +55,10 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 ## 6. State and Evidence
 
 - **Commit SHA:** Not committed.
-- **Changed paths:** `.agent/skills/asd-ste100/scripts/check_markdown_anchors.py` and `.agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py`.
-- **Readback:** Historical report blob `0cf5194494a6b8845621c1af67b519dcd1a65fc9` from commit `91a51c0d202bd183c2e503e5e8ef8571b21f5e93` supplied the exact failure. Current source readback shows the canonical task template still needs the same exemption.
+- **Changed paths:** `.agent/skills/asd-ste100/scripts/check_markdown_anchors.py`, `.agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py`, `workspace/task_board.md`, `workspace/adr/README.md`, `workspace/analysis/README.md`, and `workspace/draft/README.md`.
+- **Readback:** Recovered and inspected all five historical report files from their exact publishing commits. Report 459118 identified the legacy task-template link. Reports 460193 and 460237 identified 23 bad child links in the board. Report 460205 identified the canonical task-template link. The full audit 460237 also identified obsolete template links in three index READMEs. Source and regression-test changes are committed in `4fc299bdc94bdfea2e5323096d761f4565ad0d24`. Final board/README readback pending.
 - **Checks:** Not performed.
-- **Limitations:** Later report JSON files are no longer retained in the current index. This fix addresses the recovered missing-target diagnostic and the current canonical template path. No local scripts, tests, or lint were run. Hosted CI results were not inspected.
+- **Limitations:** No local scripts, tests, or lint were run. No hosted CI results were inspected. All diagnostics came from report artifacts stored in repository history.
 
 ## 7. Completion
 
@@ -77,7 +77,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Resume when a future complete, indexed lint report retains the failing target, fragment, and diagnostic output. Then trace and fix the cause. Do not inspect hosted CI results without explicit user authorization.
+Finish the readback, update the central Ledger with commit-based resolution evidence, and close the child. Do not inspect hosted CI results.
 
 ## 10. Ledger Findings
 
