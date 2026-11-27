@@ -25,6 +25,16 @@ class MarkdownAnchorTests(unittest.TestCase):
                 target,
             )
 
+    def test_task_template_child_index_resolves_after_instantiation(self):
+        self.assertIsNone(
+            MODULE.resolve_markdown_target(
+                "workspace/TASK_TEMPLATE.md",
+                "subtasks/README.md",
+                {"workspace/TASK_TEMPLATE.md"},
+                {"workspace/TASK_TEMPLATE.md"},
+            )
+        )
+
     def test_literal_local_targets_are_still_resolved(self):
         self.assertEqual(
             MODULE.resolve_markdown_target(

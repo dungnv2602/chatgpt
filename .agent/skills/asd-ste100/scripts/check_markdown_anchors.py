@@ -157,6 +157,9 @@ TEMPLATE_PLACEHOLDER_RE = re.compile(r"\{[A-Za-z_][A-Za-z0-9_.-]*\}|\$\{\{.*?\}\
 def resolve_markdown_target(
     source: str, target: str, file_set: set[str], all_paths: set[str]
 ) -> str | None:
+    # This link becomes valid after the template is copied into a task folder.
+    if source == "workspace/TASK_TEMPLATE.md" and target == "subtasks/README.md":
+        return None
     # Runtime template placeholders are not literal local file paths.
     if TEMPLATE_PLACEHOLDER_RE.search(target):
         return None
