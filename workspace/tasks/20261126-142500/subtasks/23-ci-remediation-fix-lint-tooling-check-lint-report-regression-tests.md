@@ -9,17 +9,17 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261126-142500-23
 - **Parent Task ID:** 20261126-142500
 - **Type:** CI remediation
-- **Status:** Blocked
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — CI/reporting repair; review governance boundaries before any architecture change
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — repository report files do not expose the regression-test failure detail. Hosted CI review remains prohibited.
+- **Eligibility / deferral reason:** Completed — exact failure evidence became available in the indexed report and the shared fix commit was verified.
 - **Required:** Yes
 - **Created:** 2026-11-27 10:20 UTC
-- **Updated:** 2026-11-27 10:42 UTC
+- **Updated:** 2026-11-27 11:08 UTC
 - **Ledger group:** `ci-71de99e18bb591b4`
 - **Legacy Task IDs:** None
 
@@ -48,7 +48,14 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 ## 5. Decisions and Progress
 
 - **Execution:** P0 and Approved under standing authorization.
-- **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
+- **Evidence:** The indexed changed-document report `.takeout/reports/lint_reports/on_changed/history/45986815109-attempt-1/report.json` contains the complete output for both failed assertions. The indexed on_repo report `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json` records all six lint-report regression tests as Passed.
+- **Diagnosis:** The tests expected a plain `Source task:` substring, but the canonical report template uses the bold label `- **Source task:**`. The JSON source-task values were correct. The tests, not the generator or template, required correction.
+
+### 2026-11-27 11:08 UTC — shared remediation closeout
+
+- **Action:** Reused the test correction completed under Refactor Skills child `20261127-173000-04`.
+- **Result:** Commit `1e697f0e5167e9c0778cadef69d7cf084249be27` updates both Markdown assertions. Remote readback confirmed the assertions and unchanged canonical template. The repository-published report `45987814713` records six regression tests passed.
+- **Next:** Close this duplicate child. The shared finding group is covered by the verified commit.
 
 ## 6. State and Evidence
 
@@ -58,11 +65,19 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 - **Checks:** Not performed.
 - **Limitations:** The report establishes a finding, not its root cause.
 
+## 6. State and Evidence
+
+- **Commit SHA:** `1e697f0e5167e9c0778cadef69d7cf084249be27`
+- **Changed paths:** `.agent/skills/asd-ste100/scripts/test_generate_lint_report.py`
+- **Readback:** Confirmed both assertions match the canonical template text. Confirmed the template remains unchanged.
+- **Checks:** Not performed by the Worker. The indexed repository report records all six regression tests as Passed. No hosted CI results or logs were inspected.
+- **Limitations:** Commit and readback establish the correction. The report's recorded test result is repository-published evidence, not an independently executed test.
+
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Blocked pending exact failure evidence.
+- **Status:** Done
+- **Completed at:** 2026-11-27 11:08 UTC
+- **Completion basis:** The shared intended-branch fix commit corrects both failing assertions. Remote readback confirms the test file and canonical template.
 
 The Worker marks the child Done only after its acceptance criteria pass and the intended-branch commit is read back. For CI remediation, commit-based completion is separate from hosted validation.
 
@@ -75,7 +90,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Inspect the linked report evidence, fix the cause, commit to the intended branch, read back the change, and record the SHA. Do not inspect hosted CI results.
+No implementation work remains in this child. The shared fix is recorded under Refactor Skills child `20261127-173000-04`. Hosted validation remains separate metadata.
 
 ## 10. Ledger Findings
 
