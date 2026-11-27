@@ -61,6 +61,7 @@ _No proposed tasks._
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
 | 20261127-102300 | Correct objective-based task parent selection | P1 | Paused | Approved | Hierarchy correction started; remaining index reconciliation deferred behind P0 queue. | [task](tasks/20261127-102300/task.md) |
+| 20261127-173000-02 | Consolidate specialist skills into The Worker | P1 | Paused | Approved | Refactor Skills child; deferred behind mandatory P0 queue. | [subtask](tasks/20261127-173000/subtasks/02-consolidate-specialist-skills-into-worker.md) |
 
 
 ### Dependency-waiting
