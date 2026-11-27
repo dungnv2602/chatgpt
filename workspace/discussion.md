@@ -1,5 +1,7 @@
 ## Current Step
 
+- **2026-11-28T06:50:00+07:00**: Updating The Worker, Conversation Mode, and Session Start to authorize autonomous task-material recovery and immediate cleanup of temporary artifacts, with preservation safeguards for canonical and retained evidence. Next: read back changed paths.
+
 - **2026-11-28T06:36:00+07:00**: `/start` initialization initiated. The startup notice is being recorded and verified before baseline skill retrieval. Hosted CI results remain out of scope.
 
 - **2026-11-27T23:27:17.109Z**: Refactor Skills reached quiescence. Child 28 is the first blocked child. Its five finding IDs are absent from the published Ledger, and the CI Ledger policy requires explicit authorization before historical backfill. Awaiting that single decision.
