@@ -615,7 +615,7 @@ class LedgerTests(unittest.TestCase):
             "owner":None,"first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
             "occurrence_count":1,"evidence":[],
             "resolution":{"fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z",
-                "validation":{"run_url":"https://example.invalid/actions/runs/9","conclusion":"success",
+                "validation":{"run_url":"https://example.invalid/actions/runs/9","conclusion":"success for targeted finding; workflow overall failed on unrelated recurring findings",
                               "validated_at_utc":"2026-11-23T07:14:00Z"}},
             "resolution_history":[],"duplicate_of":None,"accepted_risk":None,"task_refs":[],
         }
@@ -623,6 +623,7 @@ class LedgerTests(unittest.TestCase):
         migrated = LEDGER.migrate_ledger(ledger,self.root)
         self.assertEqual(migrated["schema_version"],"1.6.0")
         self.assertEqual(migrated["findings"][0]["resolution"]["validation"]["status"],"passed")
+        self.assertEqual(migrated["findings"][0]["resolution"]["validation"]["conclusion"],"success for targeted finding; workflow overall failed on unrelated recurring findings")
 
     def test_resolution_schema_accepts_commit_only_and_separate_validation_metadata(self):
         schema = json.loads((self.root / ".takeout" / "reports" / "triage" / "ledger-schema.json").read_text(encoding="utf-8"))

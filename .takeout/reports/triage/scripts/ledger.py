@@ -189,9 +189,9 @@ def migrate_ledger(ledger, root):
             validation = resolution_record.get("validation")
             if isinstance(validation, dict) and "status" not in validation:
                 conclusion = validation.get("conclusion")
-                if conclusion == "success":
+                if isinstance(conclusion, str) and conclusion.lower().startswith("success"):
                     validation["status"] = "passed"
-                elif conclusion in ("failure", "cancelled", "timed_out", "neutral"):
+                elif isinstance(conclusion, str) and conclusion.lower() in ("failure", "cancelled", "timed_out", "neutral"):
                     validation["status"] = "failed"
                 else:
                     raise LedgerError("Legacy validation record has no recognized conclusion: " + str(finding.get("finding_id")))
