@@ -350,7 +350,10 @@ jobs:
           status="Passed"
           if [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi
           if [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi
-          task_id="$(git show -s --format=%B "$GITHUB_SHA" | sed -nE 's/^Task-ID:[[:space:]]*([0-9]{8}-[0-9]{6}(-[0-9]{2})*)[[:space:]]*$/\1/p' | paste -sd, -)"
+          task_id=""
+          if [[ "$GITHUB_EVENT_NAME" == "push" ]]; then
+            task_id="$(git show -s --format=%B "$GITHUB_SHA" | sed -nE 's/^Task-ID:[[:space:]]*([0-9]{8}-[0-9]{6}(-[0-9]{2})*)[[:space:]]*$/\1/p' | paste -sd, -)"
+          fi
           history_dir=".takeout/reports/lint_reports/on_changed/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
           python3 .agent/skills/asd-ste100/scripts/generate_lint_report.py \
             --scope on_changed --records-dir .lint-report-records \
