@@ -1,6 +1,6 @@
 # Task Folder: [Title]
 
-**Template version:** 2.5
+**Template version:** 2.6
 
 Create `workspace/tasks/<task-id>/task.md` from this template. Each task folder must also contain `subtasks/README.md`. Store child records under `subtasks/NN-short-name.md`.
 
@@ -17,12 +17,12 @@ Create `workspace/tasks/<task-id>/task.md` from this template. Each task folder 
 - **Governing ADR(s):** [Accepted ADR IDs, or None]
 - **Current execution:** No
 - **Dependencies:** None
-- **Eligibility / deferral reason:** [Eligible or exact reason]
+- **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Related tasks:** None
 
-Approval is separate from status and priority. Proposed means a real decision or authorization is pending. Ready means all required decisions, dependencies, and execution authority are satisfied.
+Approval is separate from status and priority. Proposed means a real decision or authorization is pending. Ready means all required decisions, dependencies, and execution authority are satisfied. Blocked requires a genuine external or user-resolvable blocker; Paused indicates intentional suspension.
 
-The Worker owns task selection. Do not store queue rank here. The parent cannot be Done while a required child remains open.
+The Worker owns selection and queue order. Do not store queue rank here. Reconcile the board against all active task indexes before declaring the eligible queue empty. The parent cannot be Done while any required child remains open.
 
 ## 1. Original Request
 
