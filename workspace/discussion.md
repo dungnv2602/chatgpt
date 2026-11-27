@@ -2,7 +2,7 @@
 
 ## Current Step
 
-Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Implement atomic retention for indexed task-folder archives while preserving legacy flat-file and report retention. Add fail-closed folder-index invariants and regression cases. Scope: ADR-0004 subtask 05 only. Preserve the deferred hosted-results-review boundary.
+Execute [20261126-232913](tasks/20261126-232913/task.md), the approved ADR-0004 implementation task. Current subtask: 20261126-232913-05 — active-task migration and folder archive compatibility. Migrate the six board-indexed active flat task records into ID folders. Preserve task content and metadata, adjust relative links for the new depth, create each subtasks/README.md, and update board links. Scope: ADR-0004 subtask 05 only. Preserve the deferred hosted-results-review boundary.
 
 ## Open Discussions
 
