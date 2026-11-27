@@ -66,7 +66,11 @@ This file is the single index for active and retained task records. Each active 
 
 ## Ready
 
-_No tasks._
+| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
+|---|---|---:|---|---|---|---|---|---|
+| 20261127-033914-02 | Improve workspace/SUBTASK\_TEMPLATE.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:39 UTC | [Task record](tasks/20261127-033914-02/task.md) |
+| 20261127-033914-01 | Improve workspace/task\_board.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:39 UTC | [Task record](tasks/20261127-033914-01/task.md) |
+| 20261127-033914 | Improve .agent/skills/github-actions/SKILL.md | P0 | Ready | Assistant | Approved | — | 2026-11-27 03:39 UTC | [Task record](tasks/20261127-033914/task.md) |
 
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
