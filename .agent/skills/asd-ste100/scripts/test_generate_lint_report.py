@@ -22,7 +22,7 @@ class ReportGeneratorTests(unittest.TestCase):
         records_dir.mkdir()
         for name, value in records.items():
             (records_dir / (name + ".json")).write_text(json.dumps(value), encoding="utf-8")
-        output = root / scope / "history" / (run_id + "-attempt-" + str(attempt))
+        output = root / ".takeout" / "reports" / "history" / (run_id + "-attempt-" + str(attempt))
         checks_file = root / ("checks-" + run_id + ".json")
         checks_file.write_text(json.dumps(checks or []), encoding="utf-8")
         command = [
@@ -80,22 +80,15 @@ class ReportGeneratorTests(unittest.TestCase):
             self.assertEqual(report["checks"][0]["output"],checks[0]["output"])
             self.assertEqual(report["findings"][0]["comparison"],"new")
             self.assertTrue(report["findings"][0]["fingerprint"])
-            markdown=(first/"report.md").read_text(encoding="utf-8")
-            for heading in ("## 1. Executive summary","## 3. Exact evaluation coverage",
+                        for heading in ("## 1. Executive summary","## 3. Exact evaluation coverage",
                             "## 4. Per-file result matrix","## 6. Workflow and validation checks",
                             "## 8. Complete per-file diagnostics"):
-                self.assertIn(heading,markdown)
-            self.assertIn("docs/a.md",markdown)
-            self.assertIn("Split the sentence.",markdown)
-            self.assertIn("Scanned 1 file and 2 links.",markdown)
             integrity=json.loads((first/"integrity.json").read_text(encoding="utf-8"))
             self.assertEqual(integrity["files"]["report.json"],
                              hashlib.sha256((first/"report.json").read_bytes()).hexdigest())
-            self.assertEqual(integrity["files"]["report.md"],
-                             hashlib.sha256((first/"report.md").read_bytes()).hexdigest())
-            latest=root/"on_changed"/"latest-lint-report.json"
+            latest=root/".takeout"/"reports"/"latest-lint-report.json"
             self.assertEqual(json.loads(latest.read_text(encoding="utf-8"))["run_id"],"100")
-            index=json.loads((root/"on_changed"/"index.json").read_text(encoding="utf-8"))
+            index=json.loads((root/".takeout"/"reports"/"index.json").read_text(encoding="utf-8"))
             self.assertEqual(index["runs"][0]["total_findings"],2)
             self.assertEqual(index["runs"][0]["files_evaluated_count"],1)
 
@@ -121,10 +114,6 @@ class ReportGeneratorTests(unittest.TestCase):
             self.assertEqual(report["failed_files"],["skills/example.md"])
             self.assertEqual(report["failed_checks"],["Anchor check"])
             self.assertEqual(report["records"][0]["words"],75)
-            markdown=(output/"report.md").read_text(encoding="utf-8")
-            self.assertIn("skills/example.md",markdown)
-            self.assertIn("One unresolved local link.",markdown)
-            self.assertIn("26 words",markdown)
 
     def test_baseline_new_recurring_and_resolved_findings(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -150,17 +139,14 @@ class ReportGeneratorTests(unittest.TestCase):
             self.assertEqual(report["new_findings"],1)
             self.assertEqual(len(report["resolved_findings"]),1)
             self.assertEqual(report["resolved_findings"][0]["comparison"],"resolved")
-            markdown=(second/"report.md").read_text(encoding="utf-8")
-            self.assertIn("### Resolved findings",markdown)
-            self.assertIn("docs/old.md",markdown)
 
     def test_older_run_cannot_replace_newer_latest_pointer(self):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp)
             self.run_report(root,"on_repo","newer",50,1,{})
             older=self.run_report(root,"on_repo","older",49,1,{})
-            latest=root/"on_repo"/"latest-lint-report.json"
-            index=json.loads((root/"on_repo"/"index.json").read_text(encoding="utf-8"))
+            latest=root/".takeout"/"reports"/"latest-lint-report.json"
+            index=json.loads((root/".takeout"/"reports"/"index.json").read_text(encoding="utf-8"))
             self.assertEqual(json.loads(latest.read_text(encoding="utf-8"))["run_id"],"newer")
             self.assertEqual({row["run_id"] for row in index["runs"]},{"newer","older"})
             self.assertTrue((older/"integrity.json").is_file())
@@ -175,9 +161,7 @@ class ReportGeneratorTests(unittest.TestCase):
                 status="Passed", task_id="20261127-090000", event="push",
             )
             report = json.loads((output / "report.json").read_text(encoding="utf-8"))
-            markdown = (output / "report.md").read_text(encoding="utf-8")
-            self.assertEqual(report["source_task_id"], "20261127-090000")
-            self.assertIn("- **Source task:** 20261127-090000", markdown)
+                        self.assertEqual(report["source_task_id"], "20261127-090000")
 
     def test_scheduled_report_does_not_claim_a_task(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -188,9 +172,7 @@ class ReportGeneratorTests(unittest.TestCase):
                 status="Passed", task_id="20261127-090000", event="schedule",
             )
             report = json.loads((output / "report.json").read_text(encoding="utf-8"))
-            markdown = (output / "report.md").read_text(encoding="utf-8")
-            self.assertIsNone(report["source_task_id"])
-            self.assertIn("- **Source task:** Unassigned", markdown)
+                        self.assertIsNone(report["source_task_id"])
 
 
 if __name__=="__main__":

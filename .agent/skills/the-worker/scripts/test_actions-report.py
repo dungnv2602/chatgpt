@@ -523,15 +523,15 @@ class RenderedPathTests(unittest.TestCase):
         }
         expected = {
             ".github/workflows/ste-lint-changed.yml":
-                "https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_changed/latest-lint-report.md",
+                "https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/latest-lint-report.json",
             ".github/workflows/ste-lint-full-docs.yml":
-                "https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/lint_reports/on_repo/latest-lint-report.md",
+                "https://github.com/dungnv2602/chatgpt/blob/gpt/.takeout/reports/latest-lint-report.json",
         }
         for workflow_path, link in expected.items():
             report["source_run"]["workflow_path"] = workflow_path
             rendered = REPORT.render_markdown(report)
             self.assertIn(link, rendered)
-            self.assertNotIn("blob/gpt/reports/lint_reports/", rendered)
+            self.assertNotIn("blob/gpt/reports/", rendered)
 
 
 class RunSweepPaginationTests(unittest.TestCase):

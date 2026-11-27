@@ -24,9 +24,9 @@ class LedgerAttributionTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
-        triage = self.root / ".takeout" / "reports" / "triage"
-        triage.mkdir(parents=True)
-        shutil.copyfile(SCHEMA_SOURCE, triage / "ledger-schema.json")
+        reports = self.root / ".takeout" / "reports"
+        reports.mkdir(parents=True)
+        shutil.copyfile(SCHEMA_SOURCE, reports / "ledger-schema.json")
         workspace = self.root / "workspace"
         (workspace / "tasks").mkdir(parents=True)
         shutil.copyfile(TASK_TEMPLATE_SOURCE, workspace / "TASK_TEMPLATE.md")
@@ -88,12 +88,12 @@ class LedgerAttributionTests(unittest.TestCase):
                 "lint_baseline_scopes": baselines or {"on_changed": True, "on_repo": True},
             },
         }
-        path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
+        path = self.root / ".takeout" / "reports" / "ledger.json"
         path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
         return path
 
     def read_ledger(self):
-        path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
+        path = self.root / ".takeout" / "reports" / "ledger.json"
         return json.loads(path.read_text(encoding="utf-8"))
 
     def read_index(self, path):
@@ -105,8 +105,8 @@ class LedgerAttributionTests(unittest.TestCase):
         self, run_id, timestamp=NOW, source_task_id=PARENT_ID, findings=None,
         scope="on_repo", checks=None, status="Failed", execution_mode=None,
     ):
-        scope_folder = self.root / ".takeout" / "reports" / "lint_reports" / scope
-        history = scope_folder / "history" / (str(run_id) + "-attempt-1")
+        reports_root = self.root / ".takeout" / "reports"
+        history = reports_root / "history" / (str(run_id) + "-attempt-1")
         history.mkdir(parents=True, exist_ok=True)
         default_findings = [{
             "file": "docs/example.md", "line": 5, "col": 2,
@@ -131,11 +131,12 @@ class LedgerAttributionTests(unittest.TestCase):
             ],
         }
         (history / "report.json").write_text(json.dumps(report), encoding="utf-8")
-        index_path = scope_folder / "index.json"
+        index_path = reports_root / "index.json"
         index = self.read_index(index_path)
         index["runs"].append({
-            "run_id": str(run_id), "attempt": 1, "generated_at_utc": timestamp,
-            "status": status,
+            "family": "lint", "scope": scope, "run_id": str(run_id), "attempt": 1,
+            "generated_at_utc": timestamp, "status": status,
+            "history_path": "history/" + str(run_id) + "-attempt-1",
         })
         index_path.write_text(json.dumps(index, indent=2), encoding="utf-8")
         return history / "report.json"
@@ -147,7 +148,7 @@ class LedgerAttributionTests(unittest.TestCase):
     ):
         workflow_id = 55
         history_relative = "history/" + str(workflow_id) + "/" + str(run_id) + "-attempt-1-" + stage
-        history = self.root / ".takeout" / "reports" / "gh_ac_reports" / history_relative
+        history = self.root / ".takeout" / "reports" / history_relative
         history.mkdir(parents=True, exist_ok=True)
         report = {
             "schema_version": "1.0.0",
@@ -174,10 +175,10 @@ class LedgerAttributionTests(unittest.TestCase):
             },
         }
         (history / "report.json").write_text(json.dumps(report), encoding="utf-8")
-        index_path = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
+        index_path = self.root / ".takeout" / "reports" / "index.json"
         index = self.read_index(index_path)
         index["runs"].append({
-            "run_id": str(run_id), "attempt": 1, "workflow_id": workflow_id,
+            "family": "actions", "run_id": str(run_id), "attempt": 1, "workflow_id": workflow_id,
             "capture_stage": stage, "source_status": source_status,
             "report_status": "Complete" if completeness == "Complete" else "Incomplete",
             "captured_at_utc": timestamp, "history_path": history_relative,
@@ -194,7 +195,7 @@ class LedgerAttributionTests(unittest.TestCase):
         return LEDGER.ingest(self.root, now=NOW)
 
     def test_missing_ledger_fails_closed(self):
-        path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
+        path = self.root / ".takeout" / "reports" / "ledger.json"
         path.unlink()
         with self.assertRaises(LEDGER.LedgerError):
             self.ingest()
@@ -360,7 +361,7 @@ class LedgerAttributionTests(unittest.TestCase):
             "source_family": "lint", "category": "semicolon", "title": "Finding",
             "status": "open", "severity": "medium", "owner": None,
             "first_seen_utc": NOW, "last_seen_utc": NOW, "occurrence_count": 2,
-            "evidence": [{"report_path": ".takeout/reports/lint_reports/on_repo/history/90-attempt-1/report.json",
+            "evidence": [{"report_path": ".takeout/reports/history/90-attempt-1/report.json",
                           "observed_at_utc": NOW, "observation_id": "lint:90:1"}],
             "resolution": None, "resolution_history": [], "duplicate_of": None,
             "accepted_risk": None, "task_refs": [PARENT_ID, old_synthetic_id],
@@ -389,7 +390,7 @@ class LedgerAttributionTests(unittest.TestCase):
         }
         observation = {
             "finding_id": finding["finding_id"], "evidence": {
-                "report_path": ".takeout/reports/lint_reports/on_repo/history/251-attempt-1/report.json",
+                "report_path": ".takeout/reports/history/251-attempt-1/report.json",
                 "run_url": None, "observed_at_utc": "2026-11-27T10:05:00Z",
                 "note": "recurrence", "observation_id": "lint:251:1",
                 "source_task_id": PARENT_ID, "parent_task_id": PARENT_ID,
@@ -495,7 +496,7 @@ class LedgerAttributionTests(unittest.TestCase):
         result = self.ingest()
         self.assertEqual(len(result["errors"]), 1)
         self.assertNotIn(
-            ".takeout/reports/lint_reports/on_repo/history/294-attempt-1/report.json",
+            ".takeout/reports/history/294-attempt-1/report.json",
             self.read_ledger()["ingestion_state"]["processed_reports"],
         )
         self.assertEqual(self.read_ledger()["findings"], [])
@@ -521,7 +522,7 @@ class LedgerAttributionTests(unittest.TestCase):
         observation = {
             "finding_id": finding["finding_id"],
             "evidence": {
-                "report_path": ".takeout/reports/lint_reports/on_repo/history/297-attempt-1/report.json",
+                "report_path": ".takeout/reports/history/297-attempt-1/report.json",
                 "run_url": None, "observed_at_utc": "2026-11-27T10:05:00Z",
                 "note": "recurrence", "observation_id": "lint:297:1",
                 "source_task_id": PARENT_ID, "parent_task_id": PARENT_ID,
