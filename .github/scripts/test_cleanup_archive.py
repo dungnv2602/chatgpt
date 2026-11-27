@@ -85,6 +85,25 @@ class ArchiveRetentionTests(unittest.TestCase):
   with self.assertRaisesRegex(ValueError,"must share one archived_at_utc timestamp"):
    self.run_clean()
 
+ def test_missing_task_folder_file_fails_closed(self):
+  folder=self.root/".archive"/"task"/"missing-child"
+  (folder/"subtasks").mkdir(parents=True)
+  parent=folder/"task.md"
+  index=folder/"subtasks"/"README.md"
+  parent.write_text("parent")
+  index.write_text("index")
+  stamp="2026-01-01T00:00:00Z"
+  self.write([
+   self.rec(".archive/task/missing-child/task.md",stamp),
+   self.rec(".archive/task/missing-child/subtasks/README.md",stamp),
+   self.rec(".archive/task/missing-child/subtasks/01-missing.md",stamp)
+  ])
+  with self.assertRaisesRegex(ValueError,"Task-folder archive file is missing"):
+   self.run_clean()
+  self.assertTrue(parent.exists())
+  self.assertTrue(index.exists())
+  self.assertEqual(len(json.loads(self.index.read_text())["records"]),3)
+
  def test_missing_expired_file_prunes_index_entry(self):
   self.write([self.rec(".archive/reports/absent.json","2026-01-01T00:00:00Z")])
   deleted,changed=self.run_clean(); self.assertEqual(deleted,[]); self.assertTrue(changed)
