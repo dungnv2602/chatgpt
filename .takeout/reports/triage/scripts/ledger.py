@@ -1274,6 +1274,9 @@ def lint_tooling_observations(report, report_path, root):
         raise LedgerError("Lint report has invalid run identity: " + report_path)
     observed_at = report.get("generated_at_utc")
     parse_time(observed_at)
+    source_task_id = report.get("source_task_id")
+    attribution = resolve_task_attribution(root, source_task_id, "present" if source_task_id else "missing_marker")
+    source_commit_sha = report.get("commit_sha")
     result = {}
     for check in checks:
         if not isinstance(check, dict):
