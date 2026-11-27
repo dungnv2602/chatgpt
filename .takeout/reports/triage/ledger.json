@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:12:54Z",
+  "updated_at_utc": "2026-11-27T13:14:33Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -12189,8 +12189,8 @@
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-26T23:36:16.808147+00:00",
-      "last_seen_utc": "2026-11-27T13:12:14.545663+00:00",
-      "occurrence_count": 25,
+      "last_seen_utc": "2026-11-27T13:14:13.896038+00:00",
+      "occurrence_count": 26,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45911866106-attempt-1/report.json",
@@ -12202,17 +12202,6 @@
           "parent_task_id": null,
           "attribution_status": "historical_unattributed",
           "source_commit_sha": null
-        },
-        {
-          "report_path": ".takeout/reports/lint_reports/on_changed/history/46003913637-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46003913637",
-          "observed_at_utc": "2026-11-27T13:04:56.091255+00:00",
-          "note": "on_changed · Markdown links and heading anchors",
-          "observation_id": "lint_tooling:46003913637:1",
-          "source_task_id": "20261127-173000-11",
-          "parent_task_id": "20261127-173000",
-          "attribution_status": "linked",
-          "source_commit_sha": "eb780b92aa048fdaf2c9bc6a1e1783c8bc2adceb"
         },
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/46004321587-attempt-1/report.json",
@@ -12246,6 +12235,17 @@
           "parent_task_id": "20261127-173000",
           "attribution_status": "linked",
           "source_commit_sha": "7b682727a140dae6135471a694aca2148fdbff2c"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/46005287766-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46005287766",
+          "observed_at_utc": "2026-11-27T13:14:13.896038+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:46005287766:1",
+          "source_task_id": "20261127-173000-15",
+          "parent_task_id": "20261127-173000",
+          "attribution_status": "linked",
+          "source_commit_sha": "958b18f9878db02cc9cbf3e788b27d54dbbb4a87"
         }
       ],
       "resolution": null,
@@ -22172,10 +22172,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-14"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3a418783c1b37470",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -22722,10 +22722,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-14"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3a418783c1b37470",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -22782,10 +22782,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-14"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3a418783c1b37470",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -22842,10 +22842,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-14"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3a418783c1b37470",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -22902,10 +22902,10 @@
       "task_refs": [
         "20261127-173000"
       ],
-      "subtask_refs": [
+      "subtask_refs": [],
+      "legacy_task_refs": [
         "20261127-173000-14"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3a418783c1b37470",
       "parent_group": "ci-130d26d7756a53d7"
     },
@@ -23336,6 +23336,7 @@
       ".takeout/reports/lint_reports/on_changed/history/46003913637-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/46004321587-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/46004636376-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/46005287766-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json",
