@@ -8,7 +8,7 @@ The Worker is the sole scheduler. This board publishes its current selection and
 
 Check eligibility before priority or age. Dependencies must be satisfied, execution must be authorized, and status must be Ready. Rank eligible tasks by priority (P0 first), then age within the same priority unless a documented dependency or material constraint changes the order. Keep ineligible tasks out of the queue. List them in the appropriate deferred section with the exact reason.
 
-After every task completion, blocker, pause, cancellation, approval change, or dependency change, the Worker must reconcile records and rebuild the full eligible queue. A blocked task does not stop execution while an independent eligible task remains. Quiescence means no eligible task remains within the user's authorized focus. At quiescence, ask one essential user-input question at a time.
+After every task completion, blocker, pause, cancellation, approval change, or dependency change, the Worker must reconcile records and rebuild the full eligible queue. A blocked task does not stop execution while an independent eligible task remains. Quiescence means no eligible task remains within the user's authorized focus. At quiescence, follow The Worker's decision-collection phase. Record all user calls before batching work they unlock.
 
 **Approval:** Approved records explicit authorization for the documented scope or applicable standing authorization. Pending means the user has not authorized execution. Declined means the user rejected the proposal. Approval does not depend on status or eligibility.
 
@@ -16,7 +16,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Child 58 completed; no Ready child remains.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Current child: [20261127-173000-59 — Consolidate Session Start and Conversation Mode](tasks/20261127-173000/subtasks/59-consolidate-session-start-and-conversation-mode.md) (In Progress).
 
 ## Ordered Eligible Execution Queue
 
