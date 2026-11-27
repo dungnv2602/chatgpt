@@ -17,10 +17,10 @@ on:
       - gpt
     paths-ignore:
       - 'workspace/archive/reports/**'
-      - '.takeout/reports/gh_ac_reports/history/**'
-      - '.takeout/reports/gh_ac_reports/index.json'
-      - '.takeout/reports/gh_ac_reports/requests/processed/**'
-      - '.takeout/reports/triage/ledger.json'
+      - '.takeout/reports/history/**'
+      - '.takeout/reports/index.json'
+      - '.takeout/reports/requests/processed/**'
+      - '.takeout/reports/ledger.json'
       - 'workspace/tasks/**'
       - 'workspace/task_board.md'
       - 'workspace/discussion.md'

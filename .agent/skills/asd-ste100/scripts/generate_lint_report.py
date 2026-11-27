@@ -361,13 +361,12 @@ def main():
     schema = json.loads(REPORT_SCHEMA_PATH.read_text(encoding="utf-8"))
     validate_schema(data, schema)
     output = Path(args.output_dir)
-    if output.parent.name != "history" or output.parent.parent.name != args.scope:
-        parser.error("--output-dir must be <scope>/history/<run-id>-attempt-<attempt>")
+    if output.parent.name != "history" or output.parent.parent.name != "reports":
+        parser.error("--output-dir must be .takeout/reports/history/<run-id>-attempt-<attempt>")
     scope_root = output.parent.parent
     output.mkdir(parents=True, exist_ok=True)
     markdown = build_markdown(data)
     report_json = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
-    (output / "report.md").write_text(markdown, encoding="utf-8")
     (output / "report.json").write_text(report_json, encoding="utf-8")
 
     index_path = Path(__file__).resolve().parents[4] / ".takeout" / "reports" / "index.json"
@@ -404,8 +403,7 @@ def main():
     )
     index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    latest_json = scope_root / "latest-lint-report.json"
-    latest_markdown = scope_root / "latest-lint-report.md"
+    latest_json = Path(__file__).resolve().parents[4] / ".takeout" / "reports" / "latest-lint-report.json"
     replace_latest = True
     if latest_json.is_file():
         try:
@@ -418,13 +416,12 @@ def main():
             replace_latest = True
     if replace_latest:
         latest_json.write_text(report_json, encoding="utf-8")
-        latest_markdown.write_text(markdown, encoding="utf-8")
 
     integrity = {
         "algorithm": "SHA-256", "schema_version": SCHEMA_VERSION,
         "files": {
             name: hashlib.sha256((output / name).read_bytes()).hexdigest()
-            for name in ("report.md", "report.json")
+            for name in ("report.json",)
         },
     }
     (output / "integrity.json").write_text(
