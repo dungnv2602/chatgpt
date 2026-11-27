@@ -49,7 +49,7 @@ Consolidate document-format governance and template-first execution guidance int
 - **Action:** Captured this approved consolidation as a subtask under the genuine workflow-refactor parent.
 - **Result:** Execution started. Template-first gate is the immediate explicit correction, followed by consolidation and reference reconciliation.
 - **References:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/document-standards/SKILL.md`; `.agent/skills/document-standards/references/document-type-catalog.md`; `.agent/skills/README.md`; `.agent/SESSION_START.md`.
-- **Next:** Consolidate governance and indexes, commit, and read back.
+- **Next:** Reconcile remaining catalog references and task-board structure, commit, and read back.
 
 ## 6. State and Evidence
 
