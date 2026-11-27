@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-11
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Blocked
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — complete CI Ledger and report evidence are unavailable through the GitHub connector.
+- **Eligibility / deferral reason:** In Progress — selected as the current P0 child. The complete Ledger and indexed report evidence are now available.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
 - **Updated:** 2026-11-27
@@ -48,6 +48,13 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 3. Mark Done after these checks; hosted validation is separate metadata.
 
 ## 5. Decisions and Progress
+
+### 2026-11-27T13:02:43Z — execution started
+
+- **Action:** Retrieved the complete Ledger and reviewed the linked passive-voice findings against the indexed reports and current source file.
+- **Result:** Several diagnostics still match the current text. Other recorded matches no longer appear in the current source. The remediation will correct the remaining passive constructions and then reconcile all ten finding IDs.
+- **Next:** Rewrite the remaining passive constructions in this skill and read back the target.
+
 
 - **Execution:** P0 and Approved under standing authorization.
 - **Decision gate:** None identified. If a specific unresolved decision is discovered, return the child to Proposed for that decision only.
