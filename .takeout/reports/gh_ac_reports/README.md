@@ -112,3 +112,8 @@ A clean-start reset requires explicit user authorization. It deletes active gene
 The first report captures source runs created after the reset watermark. Do not carry pending runs or import old reports into the new period. Use the normal report indexes and immutable post-reset capture paths from then onward.
 
 Normal report rollover is different: it preserves open-finding evidence and does not clear the Ledger. See `.takeout/reports/triage/README.md` for task-linked finding retirement and baseline seeding.
+
+
+## Worker governance
+
+The Worker skill `.agent/skills/the-worker/SKILL.md` is the operational owner of this report family. Its GitHub Actions reference governs diagnosis and remediation. The workflow, capture action, generator, schema, template, index, and history paths remain stable implementation locations until a coordinated relocation updates all callers.

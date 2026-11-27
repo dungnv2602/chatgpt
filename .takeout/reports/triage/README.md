@@ -28,3 +28,8 @@ The source commit must contain one `Task-ID:` trailer. The Ledger resolves a par
 ## Boundaries
 
 Read only indexed reports. Do not scan history, backfill, reset, run scripts/tests locally, or inspect hosted CI results. Clean reset and historical backfill require separate explicit authorization. Do not edit immutable source reports.
+
+
+## Worker ownership and implementation locations
+
+The Worker skill and its references govern this report family's operations. The generator, tests, schema, ledger state, and shared eligibility module remain in this directory structure to preserve existing workflow and script path contracts. These locations are implementation assets, not independent operational entry points.

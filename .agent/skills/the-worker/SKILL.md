@@ -176,3 +176,8 @@ When a task depends on CI-generated or workflow diagnostic evidence, exhaust the
 
 This procedure applies before task selection, status changes, blocker declarations, and remediation closeout. It does not authorize local execution, hosted CI review, or any other restricted action.
 
+
+
+## CI and Actions operational ownership
+
+The Worker owns both CI Ledger and GitHub Actions operations. Its references define policy and procedures. The report producer, composite action, workflow, report schema, report template, Ledger schema, shared eligibility module, report indexes, and immutable evidence remain in their report-family paths because existing workflows and scripts consume those paths. Treat those paths as Worker-governed implementation assets, not independent operational owners. Consolidation must preserve path contracts until a coordinated migration updates every consumer.

@@ -187,3 +187,8 @@ Use these questions when implementing an optimization:
 - [Dependency caching](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching)
 - [Workflow artifacts](https://docs.github.com/en/actions/tutorials/store-and-share-data)
 - [Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)
+
+
+## Worker ownership and retained implementation paths
+
+The Worker owns Actions diagnosis, workflow remediation, operational policy, and report review. The diagnostic workflow, composite capture action, report generator, schema, template, report index, and immutable history remain in `.github/workflows/` and `.takeout/reports/gh_ac_reports/`. The report generator and Ledger share eligibility logic in `.takeout/reports/shared/eligibility.py`. These are Worker-governed implementation assets with stable caller contracts, not separate skills or operational owners. Relocation requires coordinated changes to workflow callers, scripts, schemas, tests, and indexes.

@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** Eligible — Ready, dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-27 00:00 UTC
-- **Updated:** 2026-11-27 00:00 UTC
+- **Updated:** 2026-11-27 20:55 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -56,11 +56,17 @@ This task includes inventory, ownership, restructuring, integration, link and ca
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** None.
-- **Readback:** Not performed.
-- **Checks:** Not performed.
-- **Limitations:** Inventory and migration remain underway.
+- **Commit SHA:** Pending this consolidation commit.
+- **Changed paths:** Worker ownership and path-contract documentation (listed below).
+- **Readback:** Pending.
+- **Checks:** Not run, as required.
+- **Limitations:** The scripts, schemas, workflow, capture action, report assets, and shared eligibility module were inventoried. Physical relocation of path-sensitive implementation files is not performed in this documentation tranche; it remains an open migration item.
+
+### 2026-11-27 — Inventory and ownership consolidation
+
+- Confirmed the diagnostics workflow `.github/workflows/gh-actions-diagnostics.yml`, composite action `.takeout/reports/gh_ac_reports/actions/capture/action.yml`, report generator and tests, report schema/template, triage Ledger script and tests, Ledger schema/state, and shared eligibility module.
+- Clarified Worker ownership in the skill references and report-family README files. Kept runtime paths stable to avoid breaking existing callers.
+- Physical relocation and caller rewrites remain outstanding. This subtask is not complete.
 
 ## 7. Completion
 
