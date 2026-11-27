@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261126-142500-03
 - **Parent Task ID:** 20261126-142500
 - **Type:** CI remediation
-- **Status:** Blocked
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** The linked immutable report file returned 404 on remote readback. Hosted CI result/log review is prohibited by the user's standing instruction.
+- **Eligibility / deferral reason:** Completed — corrected the report path to the indexed on_repo location and verified the shared link fix commit.
 - **Required:** Yes
 - **Created:** 2026-11-27 09:47 UTC
 - **Updated:** 2026-11-27 10:42 UTC
@@ -47,8 +47,15 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 
 - **Execution:** P0 and Approved under standing authorization.
 - **Attribution:** Correctly linked to genuine parent `20261126-142500`.
-- **Evidence blocker:** The latest linked repository report `.takeout/reports/lint_reports/on_changed/history/45976205944-attempt-1/report.json` returned 404 during remote readback. No hosted Actions result, log, or artifact was inspected.
-- **Decision gate:** None. Do not infer a diagnosis without the immutable report evidence.
+- **Evidence correction:** The indexed report was stored under `on_repo/history`, not `on_changed/history`. The correct report is `.takeout/reports/lint_reports/on_repo/history/45976205944-attempt-1/report.json`.
+- **Decision gate:** None. The exact report evidence is available.
+
+### 2026-11-27 11:08 UTC — shared remediation closeout
+
+- **Action:** Reused the shared link remediation completed under Refactor Skills child `20261127-173000-05`.
+- **Evidence:** Indexed report `45976205944` recorded four unresolved links. The later indexed report `45987814713` repeated the same four missing targets. Commit `22907d4bfb9905ee155d0d16164982c96d415762` corrected all four.
+- **Result:** Remote readback confirmed the report README now links to the current workspace guide, ADR-0001 no longer links to the deleted task file, and DRAFT-0002 links to the current ADR path. No tests or hosted results were inspected.
+- **Next:** Close this duplicate child. The shared finding group is covered by the verified commit.
 
 ## 6. State and Evidence
 
@@ -58,11 +65,19 @@ Fix the linked CI finding group under parent task 20261126-142500. Inspect exact
 - **Checks:** Not performed.
 - **Limitations:** The linked report is unavailable in the repository; root cause cannot be established without it. Hosted results cannot be used as a substitute.
 
+## 6. State and Evidence
+
+- **Commit SHA:** `22907d4bfb9905ee155d0d16164982c96d415762`
+- **Changed paths:** `.takeout/reports/README.md`; `workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md`; `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md`
+- **Readback:** Verified all three changed files and the two replacement link targets on branch `gpt`.
+- **Checks:** Not performed. No local scripts, tests, or hosted CI were run or inspected.
+- **Limitations:** The shared commit and readback establish the link corrections. A later hosted link-check result was not reviewed.
+
 ## 7. Completion
 
-- **Status:** Blocked
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-27 11:08 UTC
+- **Completion basis:** The shared intended-branch fix commit corrects the complete linked finding group. Remote readback confirms the changed files and replacement paths.
 
 The Worker marks the child Done only after its acceptance criteria pass and the result is recorded. CI remediation Done requires the verified intended-branch fix commit and SHA/summary. Hosted validation is separate metadata and does not gate completion.
 
@@ -75,7 +90,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Resume when the immutable report evidence is available through the repository's normal ingestion path. Then diagnose the exact failure, fix within scope, commit, read back, and record the SHA. Do not inspect hosted CI results.
+No implementation work remains in this child. The shared fix is recorded under Refactor Skills child `20261127-173000-05`. Hosted validation remains separate metadata.
 
 ## 10. Ledger Findings
 
