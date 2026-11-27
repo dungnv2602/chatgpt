@@ -13,7 +13,7 @@ The workspace is the task-management and conversation-navigation area. The Worke
 | [DRAFT_TEMPLATE.md](DRAFT_TEMPLATE.md) | Canonical decision-draft format |
 | [ADR_TEMPLATE.md](ADR_TEMPLATE.md) | Canonical decision-record format |
 | [ANALYSIS_TEMPLATE.md](ANALYSIS_TEMPLATE.md) | Canonical repository-analysis format |
-| [tasks/](tasks/) | Active task folders; each contains task.md and subtasks/ |
+| [tasks/](tasks/) | Active task folders. Each contains task.md and subtasks/README.md. Child records live under subtasks/ |
 | [draft/](draft/README.md) | Proposals awaiting user review and decision |
 | [adr/](adr/README.md) | Accepted decisions awaiting implementation and confirmation |
 | [analysis/](analysis/README.md) | Evidence-based repository analysis snapshots |
@@ -44,23 +44,23 @@ The decision-governance skill owns Draft, ADR, and repository-analysis lifecycle
 2. Record the user's request, scope, constraints, approval, priority, dependencies, and acceptance criteria.
 3. Select one current execution task. Follow explicit user direction, then dependencies, priority, and age.
 4. Record meaningful actions, decisions, verification, and blockers in the task record. Keep the board as an index.
-5. Close only after all acceptance criteria pass. Create the archive copy and read it back. Update the retention index and delete the active record. Check that the board links to the archive commit.
+5. Close only after all acceptance criteria pass and every required subtask is Done. Archive the complete task folder, including task.md, subtasks/README.md, and every child record. Read back every file and index every exact archive path before you delete the active folder. Update the board with the archive path and commit.
 
 Task IDs use UTC YYYYMMDD-HHMMSS. Use only the statuses Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Optional assistant improvements remain Proposed until approved. Necessary follow-ups may be created automatically within the approved scope.
 
 ## CI issue workflow
 
-GitHub Actions publishes diagnostic evidence into the lint and Actions report families. The event-driven Ledger creates Proposed parent task folders with typed CI remediation subtasks for newly identified actionable findings and links stable parent Task IDs through task_refs. The Worker retains ADR review, prioritization, execution approval, remediation, verification, and parent closeout.
+GitHub Actions publishes diagnostic evidence into the lint and Actions report families. The event-driven Ledger creates Proposed parent task folders with typed CI remediation subtasks for newly identified actionable findings. Every folder contains task.md and subtasks/README.md. The Ledger links stable parent Task IDs through task_refs. The Worker retains ADR review, prioritization, execution approval, remediation, verification, and parent closeout. P0 priority does not grant execution approval.
 
 The first complete tooling-valid full audit in each lint scope establishes a baseline without creating tasks. Later runs create tasks only for genuinely new actionable findings. Recurring untracked baseline findings do not flood the backlog. The Ledger retains at most five evidence paths per finding while preserving cumulative occurrence counts.
 
 A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
 
-A CI remediation subtask becomes Done when its intended-branch fix commit is verified and its SHA and summary are recorded; hosted validation is separate metadata. A parent task cannot close until all required subtasks are Done. The Ledger retains terminal finding identities and resolution history after task archival so recurrence can reopen the same finding and link new remediation. Do not delete terminal Ledger findings solely because a task was archived.
+A CI remediation subtask becomes Done when its intended-branch fix commit is verified and its SHA and summary are recorded. Hosted validation is separate metadata. A parent task cannot close until all required subtasks are Done. The Ledger retains terminal finding identities, resolution history, and prior task references after task archival. A later observation can reopen the same finding and link new remediation. Do not delete terminal Ledger findings solely because a task was archived.
 
 A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `.archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See .takeout/reports/triage/README.md and .archive/README.md for exact reset and closeout rules.
 
-Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A successful validation run URL and UTC timestamp provide sufficient resolution evidence. Capture a full successful-run diagnostic report only when the task needs detailed evidence.
+Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A finding becomes resolved when the intended-branch fix commit is verified and its SHA, remediation summary, and UTC resolution timestamp are recorded. Hosted validation is separate metadata. A pending or failed hosted run does not reopen completed remediation.
 
 The changed-document lint workflow uses GitHub Actions concurrency to cancel superseded push runs. Do not add a separate run-list preflight guard. GitHub may not list the current run when its first job queries the run list, which can cause the guard to cancel the current run.
 
