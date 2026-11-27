@@ -100,15 +100,15 @@ State what evidence establishes and what it does not establish. Distinguish a so
 
 Before setting a Draft to in-review, verify:
 
-- Every materially viable option is included, including no-change when viable.
+- Include every materially viable option, including no-change when viable.
 - Every option has a substantive assessment across the common dimensions, or an explicit reason a dimension is not applicable.
 - Decision drivers are explicit and used consistently.
 - A comparative matrix is present when multiple viable options exist, and does not replace the detailed assessments.
 - The recommendation explains why it is preferable to the strongest alternative and identifies assumptions that could change the choice.
 - Evidence claims have exact locators and relevant version/date/commit context.
-- Benchmark and external evidence limitations are stated; no unsupported transfer to this repository is implied.
+- State the limits of benchmark and external evidence. Do not imply that the evidence transfers to this repository without support.
 - Facts, external claims, tests, inferences, and hypotheses are distinguishable.
-- Costs, dependencies, migration, maintenance, risks, safeguards, and residual risks are addressed.
+- Address costs, dependencies, migration, maintenance, risks, safeguards, and residual risks.
 - Unknowns remain visible rather than being silently converted into facts.
 - The user's decision request identifies the exact revision and scope.
 
