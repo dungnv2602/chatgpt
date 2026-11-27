@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-27T13:24:02Z",
+  "updated_at_utc": "2026-11-27T13:24:24Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -22154,7 +22154,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -22184,7 +22184,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "67c3549c9c7106eddfdf5f90ccab563cc0720775",
+        "resolved_at_utc": "2026-11-27T13:24:24Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five passive constructions were rewritten to name the actor or describe the action directly. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -22203,7 +22214,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -22233,7 +22244,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "67c3549c9c7106eddfdf5f90ccab563cc0720775",
+        "resolved_at_utc": "2026-11-27T13:24:24Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five passive constructions were rewritten to name the actor or describe the action directly. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -22252,7 +22274,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -22282,7 +22304,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "67c3549c9c7106eddfdf5f90ccab563cc0720775",
+        "resolved_at_utc": "2026-11-27T13:24:24Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five passive constructions were rewritten to name the actor or describe the action directly. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -22361,7 +22394,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -22391,7 +22424,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "67c3549c9c7106eddfdf5f90ccab563cc0720775",
+        "resolved_at_utc": "2026-11-27T13:24:24Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five passive constructions were rewritten to name the actor or describe the action directly. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -23140,7 +23184,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-27T11:44:16.989293+00:00",
@@ -23170,7 +23214,18 @@
           "source_commit_sha": "75d4f66e0e9f665ddf913e1f9c8c4a44e21e5064"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "67c3549c9c7106eddfdf5f90ccab563cc0720775",
+        "resolved_at_utc": "2026-11-27T13:24:24Z",
+        "validation": {
+          "status": "pending",
+          "run_url": null,
+          "conclusion": "Source remediation committed and read back. Hosted validation has not been reviewed.",
+          "validated_at_utc": null,
+          "note": "Hosted CI results remain outside the startup batch review."
+        },
+        "note": "The five passive constructions were rewritten to name the actor or describe the action directly. The intended-branch commit was verified by remote readback."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
