@@ -369,7 +369,8 @@ def main():
     report_json = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
     (output / "report.json").write_text(report_json, encoding="utf-8")
 
-    index_path = Path(__file__).resolve().parents[4] / ".takeout" / "reports" / "index.json"
+    reports_root = output.parent.parent
+    index_path = reports_root / "index.json"
     try:
         index = json.loads(index_path.read_text(encoding="utf-8"))
         if not isinstance(index, dict) or not isinstance(index.get("runs"), list):
@@ -404,7 +405,7 @@ def main():
     )
     index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    latest_json = Path(__file__).resolve().parents[4] / ".takeout" / "reports" / "latest-lint-report.json"
+    latest_json = reports_root / "latest-lint-report.json"
     replace_latest = True
     if latest_json.is_file():
         try:
