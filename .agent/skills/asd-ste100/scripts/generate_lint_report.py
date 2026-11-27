@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate detailed Markdown and structured JSON lint evidence for both scopes."""
+"""Generate structured JSON lint evidence for both scopes."""
 from __future__ import annotations
 
 import argparse
@@ -365,7 +365,6 @@ def main():
         parser.error("--output-dir must be .takeout/reports/history/<run-id>-attempt-<attempt>")
     scope_root = output.parent.parent
     output.mkdir(parents=True, exist_ok=True)
-    markdown = build_markdown(data)
     report_json = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
     (output / "report.json").write_text(report_json, encoding="utf-8")
 

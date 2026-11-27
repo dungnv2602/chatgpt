@@ -53,7 +53,7 @@ Consolidate lint and GitHub Actions diagnostics under a unified `.takeout/report
 ## 6. State and Evidence
 
 - **Commit SHA:** e2cb50475e2bb1b96740d745b5cf794583b584fe
-- **Changed paths:** Unified lint and Actions generators, shared index and Ledger ingestion, workflows, report README, and initialization policy
+- **Changed paths:** Unified lint and Actions generators, shared index and Ledger ingestion, latest lint JSON pointer, regression fixtures, workflows, report README, initialization policy, document catalog, and ADR-0003 amendment
 - **Readback:** Final committed paths read back
 - **Checks:** Not performed
 - **Limitations:** No local scripts/tests or hosted CI inspection.
