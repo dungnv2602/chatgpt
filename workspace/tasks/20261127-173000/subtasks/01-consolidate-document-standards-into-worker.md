@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-01
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** Eligible — Ready; approved, no dependencies. Parent Refactor Skills is the selected P0 execution.
 - **Required:** Yes
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 17:30 UTC
+- **Updated:** 2026-11-27 18:00 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** 20261127-102301
 
@@ -46,10 +46,9 @@ Consolidate document-format governance and template-first execution guidance int
 
 ## 5. Decisions and Progress
 
-- **Action:** Migrated original parent task to a subtask under Refactor Skills and preserved its nested implementation child.
-- **Result:** Reparenting records created; readback pending.
-- **References:** Legacy task ID 20261127-102301.
-- **Next:** Resume remaining consolidation work as the first child of selected P0 parent.
+- **Action:** Relocated the catalog and validator infrastructure into The Worker and removed the separate skill activation/index entry.
+- **Result:** The standalone skill will be deleted; Worker owns the format governance and supporting assets directly.
+- **Next:** Reconcile exact file references, delete the standalone skill directory contents, read back and close this child.
 
 ## 6. State and Evidence
 
