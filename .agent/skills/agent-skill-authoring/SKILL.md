@@ -208,7 +208,7 @@ CI review is task-scoped. Inspect the relevant workflow only in these cases:
 - The skill-authoring task changes validation or workflow configuration.
 - A known result directly blocks the task.
 
-Use `.takeout/reports/` as the single CI evidence root. Read its `README.md`, `index.json`, and `ledger.json`; inspect canonical evidence under `history/`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
+Follow The Worker for task-scoped CI review. For ADR-0008 coordinator attempts, read `workspace/task-validation/status-index.json` first and follow its failure-only log-inspection rules. Use `.takeout/reports/` only for pre-migration legacy evidence when the Worker assigns that review. Do not treat the legacy Ledger as the task-validation queue. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
 
 The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 
