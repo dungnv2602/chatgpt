@@ -14,7 +14,7 @@
 - **Governing ADR(s):** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md)
 - **Current execution:** Yes
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress on branch `gpt`; operational coordinator activation and exact-SHA recovery remain gated by policy activation, publisher readiness, and default-branch recovery availability.
+- **Eligibility / deferral reason:** In Progress on branch `gpt`; coordinator activation and exact-SHA missing-dispatch recovery remain gated by policy activation, report migration, and operational readiness. Default-branch dispatcher and scheduled recovery workflow availability are verified.
 - **Related tasks:** 20261126-142500 (superseded administrative task; deleted after closeout)
 
 ## Validation Contract
