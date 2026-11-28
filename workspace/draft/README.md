@@ -11,7 +11,6 @@ Navigation for decision proposals. The Worker and [Decision Governance](../../.a
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 4, in review.
 - [DRAFT-0003 — Area, Project, and Task Architecture](DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md) — Revision 1, in review.
-- [DRAFT-0008 — Use the unified CI report index without a standalone latest lint copy](DRAFT-0008-unified-index-without-latest-lint-copy.md) — Revision 2, approved-for-adr. Revision 1 approval retained after administrative ID correction.
 
 ## Ownership
 
