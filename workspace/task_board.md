@@ -26,7 +26,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-No eligible child remains under Refactor Skills. Child 61 remains intentionally paused. The next independent eligible task in the global queue is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills. The next independent eligible task in the global queue is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+No eligible child remains under Refactor Skills. Child 61 remains intentionally paused. The next independent eligible task in the global queue is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 
