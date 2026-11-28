@@ -199,6 +199,19 @@ Routine execution work, corrective actions, evidence and tracking needed to fulf
 
 ### Execution invariant and recovery
 
+### Blocker-locality invariant — mandatory scheduler enforcement
+
+A blocker, restriction, failure, unavailable evidence, or authority gate is local to the operation it actually prevents. It is **not** a terminal signal for the universal execution directive, authorization lifecycle, task, batch, or workstream.
+
+When an operation cannot proceed:
+1. Identify the exact blocked operation and the narrowest applicable restriction or missing prerequisite. Do not broaden its scope by implication.
+2. Isolate and record/defer that operation without consuming, suspending, resetting, or revoking authorization for unaffected work.
+3. Immediately re-evaluate the authorized scope and scheduler queue. Select and execute the next eligible independent operation; include directly necessary recoverable preparation, reconciliation, retries, and transitions.
+4. Revisit the blocked operation only when its prerequisite changes or an authorized recovery path becomes available. Avoid repeated futile retries or polling.
+5. Do not report, ask for input, or transfer control merely because a blocker was encountered. Aggregate intervention at quiescence unless the boundary is urgent or all remaining progress is genuinely prevented.
+
+**Stop-proof gate:** Before ending an active execution authorization, reconcile all remaining in-scope operations, their eligibility, dependencies, recoverability, and blocker scope. A stop is valid only when scope is exhausted, no eligible or directly necessary recoverable operation remains, or a genuine boundary prevents all remaining progress. A restriction on one operation cannot satisfy this stop condition while independent authorized work remains. A report is closeout, never a scheduler transition or substitute for execution.
+
 Before and during execution, reconcile the cue and its ordered operations, scope, authorization, eligible work, dependencies, actual changes and outstanding operations. A readback, status reconciliation, preparation, acknowledgment or report alone is not fulfillment when eligible work remains. Resume after interrupted or partially completed operations by reconciling evidence first; retry safely when recoverable, and isolate only genuinely unrecoverable blockers. Never infer quiescence from a shallow scan or a procedural checkpoint.
 
 Continue queue selection and execution until no eligible work or directly necessary recoverable operation remains within the active scope, the scope is exhausted, or a genuine boundary cannot be resolved. Stop at quiescence or a mandatory safety/authorization boundary, not merely because a task, commit, readback or reassessment finished. Collect and present unresolved user-resolvable blockers only at quiescence, one at a time as governed by decision collection. Do not ask the user to supervise routine execution.
