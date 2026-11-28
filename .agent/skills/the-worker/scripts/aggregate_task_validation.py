@@ -45,12 +45,19 @@ def canonical_check_set(policy: dict[str, Any], task_contract: dict[str, Any]) -
     if not isinstance(mandatory, list) or not mandatory:
         raise AggregateError("Policy mandatory_checks must be a non-empty array")
     mandatory_ids = []
+    coordinator_jobs = []
     for item in mandatory:
-        if not isinstance(item, dict) or not isinstance(item.get("id"), str):
-            raise AggregateError("Every mandatory check must have a string id")
+        if (
+            not isinstance(item, dict)
+            or not isinstance(item.get("id"), str)
+            or not isinstance(item.get("coordinator_job"), str)
+            or not item["coordinator_job"]
+        ):
+            raise AggregateError("Every mandatory check needs an ID and coordinator job ID")
         mandatory_ids.append(item["id"])
-    if len(set(mandatory_ids)) != len(mandatory_ids):
-        raise AggregateError("Policy contains duplicate mandatory check IDs")
+        coordinator_jobs.append(item["coordinator_job"])
+    if len(set(mandatory_ids)) != len(mandatory_ids) or len(set(coordinator_jobs)) != len(coordinator_jobs):
+        raise AggregateError("Policy check IDs and coordinator job IDs must be unique")
 
     revision = task_contract.get("contract_revision")
     task_checks = task_contract.get("checks")
