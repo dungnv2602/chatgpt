@@ -16,7 +16,7 @@
 - **Eligibility / deferral reason:** Ready when dependency subtasks are completed
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
-- **Updated:** 2026-11-28 23:00 UTC
+- **Updated:** 2026-11-28
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -56,15 +56,15 @@ Design and implement exact-SHA coordination foundations, protected policy resolu
 - **Not complete:** GitHub branch protection/ruleset enforcement for policy files is an external prerequisite and has not been established or verified. The policy explicitly records this rather than claiming protection.
 - **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed.
 
-- **Next:** Complete the protected-policy enforcement prerequisite and coordinate exact-SHA, read-only reusable workflow migration with subtask 02 before wiring coordinator execution.
+- **Next:** Implement the coordinator only after reusable workflow migration provides exact-SHA, validation-only entry points. External protection remains a gate; do not claim policy is protected.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Not yet determined
-- **Readback:** Pending
-- **Checks:** Not performed
-- **Limitations:** No runtime claims.
+- **Commit SHA:** `fe1ae3700e02414dea5c9816a0f4dcc7a6231d51` (current branch HEAD; implementation foundation is present in branch history)
+- **Changed paths:** `.github/task-validation-policy.json`; `.github/task-validation-contract.schema.json`; `.github/task-validation-adapters.json`; `.github/task-validation/README.md`; `.github/workflows/ste-lint-changed.yml`; `.github/workflows/ste-lint-full-docs.yml`; `.github/workflows/validate-document-standards.yml`.
+- **Readback:** Policy, schema, adapter registry, interface README, and all three existing validation workflows read back from `gpt`.
+- **Checks:** No local scripts/tests/lint and no workflow dispatch or hosted-run inspection, as prohibited by parent task without separate authorization.
+- **Limitations:** Coordinator workflow is not implemented or wired. Existing reusable workflows still have write-capable report publishers and branch-name checkout paths, so they are unsafe for coordinator invocation. Repository rulesets endpoint returned an empty list; branch-protection read was forbidden to the integration, so effective branch protection remains unverified. No runtime claims.
 
 ## 7. Completion
 
