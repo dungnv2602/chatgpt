@@ -26,6 +26,6 @@ Operational authority and task lifecycle: .agent/skills/the-worker/SKILL.md.
 ## Recovery and retention
 
 - Unresolved attempts never expire.
-- Recovery uses coordinator run metadata, aggregate artifacts, and the task Validation Lifecycle blocks. It never reads logs or validates source code. Missing-dispatch recovery remains disabled until the dispatcher workflow exists on the repository default branch.
+- Recovery uses coordinator run metadata, aggregate artifacts, and the task Validation Lifecycle blocks. It never reads logs or validates source code. The dispatcher and scheduled recovery workflow are present on the repository default branch; the policy records their availability as verified. Missing-dispatch dispatch remains gated on source and current coordinator-policy activation.
 - The checkpoint advances only through a fully reconciled, contiguous sequence of attempts.
 - Metadata-only commits under this directory must not trigger source validation.
