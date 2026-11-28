@@ -2,7 +2,7 @@
 record_type: decision-record
 template_version: "1.1"
 id: "ADR-0006"
-status: "promotion-pending"
+status: "accepted"
 decision_date: "2026-11-28"
 decision_makers:
   - "User"
@@ -97,4 +97,4 @@ Chosen option: "Option 2 — Lightweight structural validator", because it adds 
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
-| 2026-11-28 | promotion-pending | User approved DRAFT-0007 Revision 1, Option 2. Provisional record created for verification. |
+| 2026-11-28 | accepted | Provisional record read back and completeness reviewed; user approved DRAFT-0007 Revision 1, Option 2. |
