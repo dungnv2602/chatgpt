@@ -1,6 +1,6 @@
 # Task Folder: [Title]
 
-**Template version:** 2.7
+**Template version:** 2.8
 
 Create `workspace/tasks/<task-id>/task.md` from this template. Each task folder must also contain `subtasks/README.md`. Store child records under `subtasks/NN-short-name.md`.
 
@@ -25,6 +25,17 @@ Parent selection is objective-based. Create a parent for each distinct outcome. 
 Approval is separate from status and priority. Proposed means a real decision or authorization is pending. Ready means all required decisions, dependencies, and execution authority are satisfied. Blocked requires a genuine external or user-resolvable blocker; Paused indicates intentional suspension.
 
 The Worker owns selection and queue order. Do not store queue rank here. Reconcile the board against all active task indexes before declaring the eligible queue empty. The parent cannot be Done while any required child remains open.
+
+## Validation Contract
+
+Declare task-specific checks in this JSON block. The coordinator binds the contract to the exact source commit SHA. Use an empty array when no additional checks are required. Repository policy checks remain mandatory and cannot be removed or overridden. Use only registered adapters and repository-relative entrypoints. Never add shell command strings, credentials, environment overrides, or permission settings.
+
+```json
+{
+  "contract_revision": "1",
+  "checks": []
+}
+```
 
 ## 1. Original Request
 
