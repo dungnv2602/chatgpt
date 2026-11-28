@@ -342,3 +342,10 @@ _Legacy migration input only._ These report-derived findings are historical reco
 - **Evidence:** Readback commit `2afe481d8a25770e46fc558cc2b5f703ea52ad93` updated the subtask index. Canonical readback was performed on 2026-11-28.
 - **Validation limits:** No local scripts, tests, or lint were run. No hosted CI results were inspected. Readback confirms committed source content only.
 - **Next:** Reconcile remaining report-remediation scope. Do not invent attribution or claim the Ledger is empty.
+
+
+### 2026-11-28 — Completed-subtask cleanup
+
+- **Action:** Deleted all completed subtask records currently present in the subtask directory, including the duplicate subtask-20 record and audit child 01, and removed the completed-child index. Subtasks 03, 23, and 02 were absent and were not recreated.
+- **Result:** Completed children are removed under the direct-deletion lifecycle. Parent remains In Progress: the ADR-0008 migration/Confirmation requirements and original report-remediation objective remain unresolved. This cleanup is not operational proof.
+- **Readback:** Cleanup and board reconciliation committed on branch `gpt`; no local tests or hosted CI inspection.
