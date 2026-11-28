@@ -103,6 +103,23 @@ jobs:
             echo "full_audit=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Retrieve indexed baseline report
+        if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
+        run: |
+          set -euo pipefail
+          index_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/index.json?ref=$GITHUB_REF_NAME" --jq '.content' | base64 --decode)
+          history_path=$(jq -r --arg sha "$BASE_SHA" '[.runs[]? | select(.family=="lint" and .scope=="on_changed" and .commit_sha==$sha)] | .[0].history_path // empty' <<< "$index_json")
+          if [[ -z "$history_path" || "$history_path" != history/* || "$history_path" == *..* || "$history_path" == /* ]]; then
+            echo "::warning::Could not safely resolve baseline report path."
+            exit 1
+          fi
+          report=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/$history_path/report.json?ref=$GITHUB_REF_NAME" --jq '.content' | base64 --decode)
+          printf '%s\n' "$report" > .lint-baseline-report.json
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
