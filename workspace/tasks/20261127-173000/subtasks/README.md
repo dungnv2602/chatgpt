@@ -5,11 +5,4 @@ Parent: [task.md](../task.md)
 | ID | Title | Status | Record |
 |---|---|---|---|
 
-
-
-| 20261127-173000-61 | Review structural validator test execution and validation loop | Blocked | [61-review-structural-validator-test-execution-and-validation-loop.md](61-review-structural-validator-test-execution-and-validation-loop.md) |
-
-
-
-
 The parent cannot be Done while a required child is open. CI remediation is commit-based; hosted validation is separate metadata.
