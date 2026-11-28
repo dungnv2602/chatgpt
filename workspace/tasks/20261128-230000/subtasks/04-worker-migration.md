@@ -106,6 +106,11 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Authority boundary:** No write or merge to `main` is authorized in this task. The `gpt` implementation remains the project source of truth; do not claim the default-branch copies have been updated.
 - **Current-source result:** The status index has 222 attempts, all `capture_failure`, all without check-set identity, all unresolved, with checkpoint zero. The exact current source SHA `c9ffdffd3c955af0ddb471f85557b32460315d8f` has run `46165107595`, attempt 1, `capture_failure`. Updated this subtask's lifecycle to `review_required` for that exact attempt in metadata commit `a2d5d529668953cd4bd2ee184bb3bea78742bf21`.
 - **Limitations:** No hosted logs or run metadata inspected; no cause is attributed to the stale `main` copies without runtime evidence. The current failure remains unreconciled. Coordinator activation stays staged, and `.takeout/reports/` remains intact.
+### 2026-11-28 — recursion guard runtime result remains unconfirmed
+
+- **Subsequent index readback:** The status index reached 226 attempts; all are `capture_failure`, all have null check-set identity, all are unreconciled, and the checkpoint remains zero. It still contains capture-failure attempts for metadata-only source commits created after the `gpt` commit-level guard was added, including `e1d5cfe544e139a0f0b78f5e3e038f8235fe63d8`, `e4d2381525f16e1723913f1739227a7c36b032c8`, `353742910d3b46f574abc7c632384f43b5482ace`, and `a2d5d529668953cd4bd2ee184bb3bea78742bf21`.
+- **Interpretation boundary:** The source commits contain the guard, but the index shows it has not been demonstrated operationally. The stale `main` workflow copies are a possible deployment/version-parity issue, but no causal link is established. Do not claim recursion prevention is fixed until an authorized operational demonstration succeeds.
+- **Current lifecycle:** Source `c9ffdffd3c955af0ddb471f85557b32460315d8f` remains `review_required` against run `46165107595`/attempt 1. Its `capture_failure` remains unreconciled. No logs inspected, no root cause inferred, and no checkpoint advanced.
 ## 6. State and Evidence
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
