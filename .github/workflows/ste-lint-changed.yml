@@ -461,4 +461,6 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./.github/workflows/gh-actions-capture
+        uses: ./.takeout/reports/gh_ac_reports/actions/capture
+        with:
+          run_id: ${{ github.run_id }}
