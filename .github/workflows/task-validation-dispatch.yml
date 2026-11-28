@@ -95,8 +95,19 @@ jobs:
     needs:
       - policy_gate
     permissions:
-      actions: read
       contents: write
     uses: ./.github/workflows/task-validation.yml
     with:
       source_sha: ${{ github.sha }}
+
+  recover:
+    name: Reconcile this coordinator attempt and prior gaps
+    needs:
+      - policy_gate
+      - coordinator
+    if: always() && (needs.policy_gate.result == 'failure' || needs.policy_gate.outputs.enabled == 'true')
+    continue-on-error: true
+    permissions:
+      actions: read
+      contents: write
+    uses: ./.github/workflows/task-validation-recovery.yml
