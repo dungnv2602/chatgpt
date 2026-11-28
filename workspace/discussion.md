@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-28T06:55:36+07:00**: Prepared and read back DRAFT-0006 Revision 1. It proposes one Worker-owned operating authority, a cue-pointer-only Session Start, and a settings-only Conversation Mode. Implementation remains gated on approval and an accepted ADR. Next: present the exact Draft for the user's decision.
+- **2026-11-28:** DRAFT-0006 Revision 1 approved. ADR-0005 accepted and implementation underway. The refactor consolidates operational ownership in The Worker and reconciles associated templates. Readback verification is in progress.
 
 - **2026-11-28T06:50:00+07:00**: Updating The Worker, Conversation Mode, and Session Start to authorize autonomous task-material recovery and immediate cleanup of temporary artifacts, with preservation safeguards for canonical and retained evidence. Next: read back changed paths.
 
@@ -16,8 +16,6 @@
 
 ## Open Discussions
 
-- **2026-11-28:** [DRAFT-0006 — Make Session Start and Conversation Mode lean](draft/DRAFT-0006-lean-session-start-and-conversation-mode.md), revision 1. Decision required: approve Option 3, which gives The Worker sole operational ownership, leaves Session Start as a cue pointer, and limits Conversation Mode to presentation settings. Implementation requires approval of this exact revision and an accepted ADR. Task: [20261127-173000-59](tasks/20261127-173000/subtasks/59-consolidate-session-start-and-conversation-mode.md).
-
 - **2026-11-27:** [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](draft/DRAFT-0005-unified-index-without-latest-lint-copy.md), revision 1. Decision required: remove the standalone latest lint JSON and make the shared index the only latest-report locator. ADR-0003 currently requires the file. User approval of this exact Draft revision is pending. Implementation task: [20261127-173500](tasks/20261127-173500/task.md).
 
 - **2026-11-27:** Completed/cancelled task folders must be deleted directly after closeout. Do not create task or report archives, retention copies, cleanup schedules, or Historical board rows.
@@ -26,7 +24,7 @@
 
 ## Reports
 
-- **2026-11-28T06:55:36+07:00**: Prepared DRAFT-0006 Revision 1 and read back the committed proposal. It assesses three architectures and recommends Worker-owned operations with focused references and specialist skills. Commit: dd2e36a071f1214fd23bc83b97e47fe18986eb24. No implementation, local validation, or hosted CI review performed.
+- **2026-11-28:** Approved and implemented DRAFT-0006 Option 3 under accepted ADR-0005. Updated entry files, Worker ownership gates, specialist initialization references, navigation, catalog, templates, board, and task evidence. Remote readback is being reconciled. Local tests, scripts, lint, and hosted CI review were not performed.
 
 - **2026-11-27T23:17:11.683Z**: Closed child 50. Recovered all five historical check reports, fixed Markdown target handling and all affected documentation links, and marked the Ledger finding resolved. Commits: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`, `6057e5596021b84a70a7201875c2f7bd3d1890b0`. No tests or hosted CI review performed.
 - **2026-11-27T23:08:59.100Z**: Closed child 27. Corrected two passive-voice findings in `workspace/README.md`. Source commit: `677b5de451f70246cfb0d3ededb9ec8f908e19fd`. The Ledger records both resolutions. No local checks or hosted CI review were performed.
