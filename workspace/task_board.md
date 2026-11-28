@@ -18,7 +18,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus; child 60 implementation completed and removed after readback.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus; child 60 completed and removed after closeout; child 61 verification follow-up created and paused.
 
 ## Ordered Eligible Execution Queue
 
@@ -26,7 +26,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-The current selected child is 20261127-173000-60 under Refactor Skills. The next independent eligible task in the global queue is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+No active child is selected under Refactor Skills; child 61 is intentionally paused. The next independent eligible task in the global queue is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 
@@ -62,6 +62,7 @@ The current selected child is 20261127-173000-60 under Refactor Skills. The next
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
+| 20261127-173000-61 | Review structural validator test execution and validation loop | P1 | Paused | Approved | Future verification follow-up; intentionally deferred until explicitly resumed. | [subtask](tasks/20261127-173000/subtasks/61-review-structural-validator-test-execution-and-validation-loop.md) |
 
 
 ### Proposed — decision pending
