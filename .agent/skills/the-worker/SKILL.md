@@ -156,22 +156,40 @@ The user's explicit preference is to be left undisturbed while authorized reposi
 - **Authority remains bounded:** This interruption rule does not grant new scope, bypass approval/decision gates, permit restricted validation, or authorize irreversible actions. If a genuine authority boundary cannot be resolved safely, isolate it and continue unrelated work; report it only when intervention is necessary.
 
 
+### Mandatory operation-level worklist
 
-1. **Reconcile and select:** Read the board, parent/child indexes and records. Recursively check orphan records, missing indexes, stale paths, duplicate IDs, status/dependency mismatches, and pauses. Recover records from repository evidence and templates when possible. Do not declare quiescence from a shallow scan.
+A task-level queue or status snapshot is not sufficient to drive execution or prove quiescence. For every authorized execution directive, maintain a concrete, reconciled worklist of independently completable operations for the authorized scope. Persist the worklist in the active task/subtask Progress or Handoff record when repository work is underway; for non-repository actions, maintain it in the conversation's execution context and reconcile it before every scheduler transition.
+
+Each worklist item must identify:
+- the task/acceptance criterion or outcome it advances;
+- a bounded operation (not a vague task-level label);
+- state: eligible, executing, completed, blocked, deferred, or cancelled;
+- prerequisites and whether those prerequisites are local to this operation;
+- blocker or recovery condition, if any;
+- next action or reassessment trigger;
+- evidence/commit/readback when completed.
+
+**Decomposition is mandatory:** Before accepting a blocked task as blocked, enumerate its remaining acceptance criteria and split them into operations. Split further whenever an operation can proceed without the blocked prerequisite. A blocked parent or child must never hide eligible work within its own scope. A blocker applies only to the operations that require it.
+
+**Scheduler transition protocol:** After every operation outcome (completed, blocked, failed, interrupted, deferred, or prerequisite change), reconcile the worklist and immediately choose the next eligible operation. Rebuild eligibility based on current evidence rather than preserving a stale queue. Do not stop at assessment, reconciliation, readback, tracking, commit, or reporting while operations remain eligible. Completion of a task/child is itself a scheduler transition; continue to the next eligible item without a new cue.
+
+**Recovery:** Failed or interrupted operations first reconcile actual effects, source state, authorization, and duplicate risk. Resume or retry only remaining work; do not repeat completed effects. Routine recovery, task decomposition, record updates, commits, readback, and queue reselection remain covered by active authorization. Revisit a blocked item only when its stated trigger changes, unless source investigation reveals a safe recovery path.
+
+**Quiescence evidence:** The final stop-proof must reconcile (a) every in-scope task and acceptance criterion, (b) its decomposed operations and states, (c) all dependencies and blockers, (d) recovery/continuation options, and (e) that no eligible or directly necessary operation remains. A blocked task is not proof of quiescence if its residual work has not been decomposed. A status scan or closeout report alone is insufficient. Only genuine scope exhaustion or a boundary that prevents all remaining work may stop the batch.
+
+1. **Reconcile and select:** Read the board, parent/child indexes and records. Recursively check orphan records, missing indexes, stale paths, duplicate IDs, status/dependency mismatches, and pauses. Recover records from repository evidence and templates when possible. Then construct or reconcile the operation-level worklist. Do not declare quiescence from a shallow scan.
 2. **Check eligibility:** Confirm scope, approval, dependencies, decisions and authorization before priority and age. Detect dependency cycles. Resume only stale/dependency-based pauses when authority remains valid. Preserve intentional pauses.
-3. **Execute:** Complete eligible work autonomously. Recover source material, make routine decisions and correct errors within scope. Do not interrupt for isolated blockers or routine updates.
-4. **Record evidence:** Capture decisions, progress, paths, commits, readback, checks and limitations. Every task-specific implementation commit must carry the exact `Task-ID: <task-id>` trailer.
+3. **Execute and decompose:** Execute the next eligible bounded operation. Decompose residual task acceptance criteria around blockers; recover source material, make routine decisions and correct errors within scope. Do not interrupt for isolated blockers or routine updates.
+4. **Record evidence:** Capture decisions, progress, paths, commits, readback, checks and limitations in task records/worklist. Every task-specific implementation commit must carry the exact `Task-ID: <task-id>` trailer.
 5. **Close implementation:** Mark a task Done when its acceptance criteria are met and its intended-branch commit is read back. Runtime checks are not universal gates. Do not claim checks that were not performed. Record verification debt separately. A parent cannot be Done while required children remain open.
-6. **Rebuild:** Reconcile the board and indexes after each status or dependency change. Immediately select the next eligible task within the authorized focus. A completed child is a scheduler transition, not a reporting pause.
-7. **Skip blockers:** Exhaust repository recovery and source investigation first. Isolate a blocker, record its precise cause and requested input, remove it from the eligible queue and continue independent work. A failed tool call or recoverable uncertainty is not a blocker.
-8. **Reach quiescence:** Stop only when no eligible task remains within scope. Reconcile all user-resolvable blockers and present one consolidated decision brief. Do not ask about external blockers the user cannot resolve.
+6. **Rebuild and continue:** After every operation or status/dependency transition, reconcile the worklist and immediately select the next eligible operation within the authorized focus. A completed child or task is a scheduler transition, never a reporting pause.
+7. **Skip blockers locally:** Exhaust repository recovery and source investigation first. Isolate the operation, record its precise cause and reassessment trigger, and continue independent/remaining work. A failed tool call or recoverable uncertainty is not a blocker.
+8. **Reach quiescence:** Stop only after the operation-level stop-proof gate confirms no eligible or directly necessary recoverable operation remains within scope. Reconcile user-resolvable blockers and present one consolidated decision brief. Do not ask about external blockers the user cannot resolve.
 9. **Collect decisions and process cues:** Log decisions and reconcile cues in their written order. `Next` is navigation only. An execution directive applies universally to the eligible work within its reconciled scope; do not require another cue for routine continuation or already-authorized work. A genuinely new scope or authority boundary requires the appropriate authorization.
 10. **Close records:** Read back each deliverable and tracking record. Delete completed/cancelled child folders and board rows under the normal lifecycle. Preserve the persistent skills-refactoring parent when its exception applies. Do not archive or create retention copies. Preserve Ledger identity and history.
 11. **Cleanup:** Remove temporary recovery artifacts immediately after last use and verify cleanup when possible.
 
 Do not run local repository scripts, tests or lint. Do not inspect hosted CI results unless explicitly authorized. Commit/readback evidence does not prove runtime behavior.
-
-
 ## Workflow map maintenance and display cue
 
 - `.agent/WORKFLOW_MAP.md` is the canonical workflow overview. It routes to authoritative owners and references and does not replace them.
