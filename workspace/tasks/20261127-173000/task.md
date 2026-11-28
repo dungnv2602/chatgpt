@@ -478,36 +478,33 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - Child 61 created and paused to revisit test execution/evidence and the verification gap at a future explicit resume.
 - Workflow readback confirmed it already includes the structural-validator unittest invocation and validator invocation; test runtime results remain unverified.
 
+
+
+### Progress history (continued)
+
+
+
 ## 6. Current State and Remaining Work
 
-This parent remains open as the persistent Refactor Skills workstream. The Worker and Agent Skill Authoring enforce the approved template-first gate.
+This is the persistent, open P0 Refactor Skills parent. The current authorized batch consists of children 65–67.
 
-Completed:
-- Child 04 — template-first governance.
-- Child 26 — startup long-sentence remediation.
-- Child 52 — Actions report template wording.
-- Child 53 — initial CI report consolidation.
-- Child 55 — 17-skill portfolio audit.
-- Child 56 — complete skill index and metadata reconciliation.
+- Child 65 — template freshness gate strengthened and closed.
+- Child 66 — README ownership audit and pointer cleanup closed, with documented audit coverage limits.
+- Child 67 — workflow optimization and cycle closure is In Progress.
 
-Open or deferred:
-- Child 03 is Paused.
-- Children 27–50 are Blocked. Child 50 awaits a complete diagnostic report with its failing Markdown target and anchor.
-- The latest-lint-report deletion is separate under parent 20261127-173500. It remains Proposed pending DRAFT-0005 approval.
-
-Child 59 is In Progress. DRAFT-0006 Revision 1 is in review and awaits the user's decision before ADR promotion or implementation. Keep this parent open. Do not retire or delete it.
+The task board and subtask index publish current state. Completed child records are deleted under the lifecycle rules. The parent remains open.
 
 ## 7. Verification and Evidence
 
-- **Commit SHA:** `1e6800f40e4c1bf1e15263f0a479a54afe81468a` (parent priority/current-execution); `24f697da8a75972ff7f6a0dca7302a125e63499c` (child 01 activation); `3f0101796d08a5eba78dfe2fd4120b7445bf5c62` (subtask index); `91ca878a4c151aeb65d3f5ff78b438af8e437aa3` (board); `ebc73c9a3f3f69d21d218d2a271c02aad1145d38` (template-first governance); `307fd54d494897450919ffdc47cef70f4cbd66e6` (skill portfolio audit); `8031e2f7312592343ba638ceb7a75054e95caa18` and `b76e45b7e8d37fa24ae01cbd7b3355f676596b36` (skill index and metadata)
-- **Changed paths:** `workspace/tasks/20261127-173000/task.md`; `workspace/tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md`; `workspace/tasks/20261127-173000/subtasks/README.md`; `workspace/task_board.md`
-- **Readback:** Verified all four paths on branch `gpt`.
-- **Checks:** Not performed
-- **Limitations:** No tests performed.
+- **Commit SHA:** Latest tracking and workflow commits are recorded in Progress and Git history. Children 65 and 66 closeout evidence is summarized there.
+- **Changed paths:** The Worker; decision-governance reference; workspace, Drawing, Draft, ADR and Analysis README files; document-type catalog; task board; parent task and subtask index; task templates.
+- **Readback:** Modified files were read back from branch `gpt` during execution. Consolidated closeout readback remains pending.
+- **Checks:** Local scripts, tests and lint were not performed. Hosted CI results were not inspected.
+- **Limitations:** The full non-README content scan is incomplete. No runtime or hosted-validation claim is made.
 
 ## 8. Handoff
 
-Keep this persistent P0 Refactor Skills parent open. Create and execute child subtasks for current and future skills-refactoring deliverables. Do not close or delete the parent task unless the user explicitly changes this instruction.
+Keep this persistent P0 Refactor Skills parent open. Finish child 67, reconcile the board and indexes, and report at quiescence. Do not close or delete the parent unless the user explicitly changes this instruction.
 
 ## 9. Subtasks
 
