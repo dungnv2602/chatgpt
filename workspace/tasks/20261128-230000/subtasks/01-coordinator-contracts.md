@@ -62,10 +62,12 @@ Design and implement exact-SHA coordination foundations, protected policy resolu
 
 ### 2026-11-28 — canonical ownership correction
 
-- **Action:** Subtask `20261127-173000-64` moved the task-validation policy, contract schema, and adapter registry into `.agent/skills/the-worker/assets/task-validation/`. It moved the explanatory interface guide into `.agent/skills/the-worker/references/task-validation-interfaces.md`.
+- **Action:** Subtask `20261127-173000-74` owns the Worker governance correction. Its implementation moved the task-validation policy, contract schema, and adapter registry into `.agent/skills/the-worker/assets/task-validation/`. It moved the explanatory interface guide into `.agent/skills/the-worker/references/task-validation-interfaces.md`.
 - **Result:** The old `.github/task-validation-*.json` and `.github/task-validation/README.md` paths were deleted. GitHub workflow definitions remain under `.github/workflows/`. The original paths above remain historical commit provenance, not current locations.
 - **Current owner:** The Worker skill owns the policy, schema, registry, and explanatory guidance. The Worker asset index and document-type catalog link the canonical files.
 - **Scope:** This correction does not change ADR-0008 validation semantics or claim that branch protection has been established.
+
+- **Task attribution correction:** The canonical prevention task is child 74 under the persistent Refactor Skills parent. Earlier implementation commits used reused child IDs 64 and 65 before the complete parent history was checked. Those commit trailers are immutable and are documented in child 74. Subsequent commits use child 74.
 
 ## 6. State and Evidence
 
