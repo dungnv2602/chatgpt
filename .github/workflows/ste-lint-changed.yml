@@ -8,6 +8,10 @@ on:
         required: false
         type: boolean
         default: false
+      source_sha:
+        description: "Exact source commit to validate."
+        required: true
+        type: string
   push:
     branches:
       - gpt
@@ -91,6 +95,7 @@ jobs:
       - name: Check out current commit
         uses: actions/checkout@v4
         with:
+          ref: ${{ inputs.source_sha || github.sha }}
           fetch-depth: 1
 
       - name: Fetch only the successful baseline commit
@@ -294,7 +299,7 @@ jobs:
           echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
       - name: Generate and publish changed-document lint evidence
-        if: ${{ !cancelled() && needs.preflight.outputs.proceed == 'true' }}
+        if: ${{ !cancelled() && needs.preflight.outputs.proceed == 'true' && inputs.coordinator_call != true }}
         shell: bash
         env:
           BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
@@ -433,7 +438,7 @@ jobs:
 
   diagnostics:
     name: Capture GH Actions diagnostics
-    if: ${{ always() }}
+    if: ${{ always() && inputs.coordinator_call != true }}
     needs: [preflight, ste-lint]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
