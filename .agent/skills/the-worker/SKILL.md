@@ -193,7 +193,7 @@ Before creating or updating a task, audit the proposed relationship. If the pare
 
 ## Document governance — mandatory template-first gate
 
-The Worker owns document governance. Apply this gate before creating, moving, renaming, materially revising, or validating a repository document or structured record.
+The Worker owns document governance. Apply this gate before creating, moving, renaming, materially revising, or validating any repository artifact, including non-Markdown files.
 
 1. Identify the target path, canonical owner, document type, and allowed location. Do not infer ownership from a consumer path.
 2. Read the current entry in `references/document-type-catalog.md`.
