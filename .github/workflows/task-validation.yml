@@ -168,10 +168,8 @@ jobs:
           )
 
           job_map = {
-              "ste-lint-changed": "lint_changed",
-              "ste-lint-full-docs": "lint_full",
-              "validate-document-standards": "document_standards",
-              "generic-verifier": "generic_verifier",
+              item["id"]: item.get("coordinator_job")
+              for item in policy["mandatory_checks"]
           }
           result_map = {
               "success": "success",
