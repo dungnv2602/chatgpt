@@ -34,8 +34,40 @@ concurrency:
 permissions: {}
 
 jobs:
+  policy_gate:
+    name: Gate legacy push backfill after coordinator activation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      proceed: ${{ steps.gate.outputs.proceed }}
+    steps:
+      - name: Check out trusted Worker policy
+        uses: actions/checkout@v4
+        with:
+          ref: gpt
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Disable push backfill after coordinator activation
+        id: gate
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          policy = json.loads(Path(".agent/skills/the-worker/assets/task-validation/task-validation-policy.json").read_text(encoding="utf-8"))
+          enabled = policy.get("coordinator", {}).get("activation_status") == "enabled"
+          proceed = not (os.environ["EVENT_NAME"] == "push" and enabled)
+          print("proceed=" + ("true" if proceed else "false"))
+          PY
+
   sweep:
     name: Backfill completed workflow runs
+    needs: [policy_gate]
+    if: needs.policy_gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
