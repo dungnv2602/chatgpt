@@ -9,7 +9,7 @@ decision_makers:
 proposed_by: "Assistant"
 consulted: []
 informed: []
-source_draft: "DRAFT-0005"
+source_draft: "DRAFT-0008"
 source_draft_revision: 1
 approved_scope: "Option 2: remove .takeout/reports/latest-lint-report.json and use .takeout/reports/index.json as the sole locator for latest lint reports, resolving validated immutable history reports."
 related_adrs:
@@ -44,4 +44,4 @@ Supersede only the latest-file requirement in ADR-0003. Preserve ADR-0003's othe
 
 ## Approval and implementation
 
-DRAFT-0005 revision 1, Option 2 was approved by the user on 2026-11-28. Execution began after the user's explicit `execute` cue on 2026-11-28. This ADR records the accepted decision. ADR-0003 remains immutable.
+DRAFT-0005 revision 1, Option 2 was approved by the user on 2026-11-28. The source reference was corrected administratively to DRAFT-0008 after DRAFT-0005 was found to collide with ADR-0004 provenance. This correction changes no approved decision content or scope. Execution began after the user's explicit `execute` cue on 2026-11-28. ADR-0003 remains immutable.
