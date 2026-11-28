@@ -71,7 +71,7 @@ CI remediation children are P0, Approved, and Ready under the standing authoriza
 
 ## Status, approval, and scheduling
 
-Approval records authority for a scope. It does not depend on status or priority. Record its source and scope. Never infer approval from status.
+Approval records authority for a scope. It does not depend on status or priority. Record its source and scope. Never infer approval from status. **Approval is not execution authorization and never triggers execution.** The sole execution cue is the explicit standalone word `execute`, matched case-insensitively (for example, `Execute` or `EXECUTE`). Other words, instructions, approval, `Next`, `proceed`, quoted or discussed cue mentions, and implied intent do not trigger execution.
 
 Use these statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Ready requires satisfied dependencies and any real decision gate. Use Blocked for a genuine external or user-resolvable blocker. Use Paused for intentional suspension.
 
@@ -137,16 +137,24 @@ Treat every authorized execution batch as a queue-draining loop. Do not stop aft
 4. **Skip isolated blockers:** Exhaust permitted repository evidence and source investigation before declaring Blocked. Record the exact missing evidence, access, or user action. Remove the blocked task from the eligible queue. Return to step 1. A blocked task never ends the batch while another independent eligible task remains.
 5. **Reach quiescence:** Declare quiescence only when no eligible task remains within the user's authorized focus. Keep blocked and dependency-waiting tasks in their deferred sections. Do not select unrelated work outside the user's focus.
 6. **Build the user-decision queue:** At quiescence, review every blocked task within the authorized focus and classify its blocker. Include tasks that require user authorization, a preference, a governance decision, or other input the user can provide. Do not ask about blockers that the user cannot resolve. Keep non-resolvable external/access blockers documented and deferred.
-7. **Collect decisions only:** Sort the user-decision queue by board order. Present only the first blocker as a concise decision brief: task ID and title, exact blocker and evidence already examined, the specific decision or input needed, and practical choices with their consequences. Do not bundle later blockers or hide them from the queue. Wait for the user's answer. Record the decision and reconcile that task, but do not execute work unlocked by that answer yet. Continue presenting the next blocker, one at a time, until every user-resolvable blocker in the queue has received a call, or the user declines/defers it.
-8. **Prepare the execution batch:** Once decision collection is complete, reconcile all answers, task statuses, approvals, dependencies, scope, and priorities. Build one consolidated eligible queue. Only then resume execution. Drain that queue to quiescence and repeat the decision-collection phase only if execution reveals new user-resolvable blockers.
+7. **Collect and log decisions only:** Sort the user-decision queue by board order. Present only the first blocker as a concise decision brief: task ID and title, exact blocker and evidence already examined, the specific decision or input needed, and practical choices with their consequences. Do not bundle later blockers or hide them from the queue. Wait for the user's answer. Log approval, decline, deferral, or other decision verbatim with timestamp and reconcile that task. **Do not execute work unlocked by the answer.** Continue presenting the next blocker, one at a time, until every user-resolvable blocker in the queue has received a call, or the user declines/defers it. When the user says `Next` (case-insensitive), log that exact navigation instruction for the current decision, leave the blocker unanswered and unresolved, and present the next unresolved decision. `Next` is navigation only and cannot approve, decline, execute, resume, or change task status.
+8. **Await execution cue and prepare batch:** After decision collection is complete, reconcile all answers, task statuses, approvals, dependencies, scope, and priorities. Do not start execution until the user supplies the sole cue: `execute`, case-insensitive and explicit. Once cued, build one consolidated eligible queue, execute the authorized batch, drain it to quiescence, and repeat the decision-collection phase only if execution reveals new user-resolvable blockers. Approval, decision answers, and queue-navigation commands are logged only and do not authorize immediate execution.
 
 An isolated blocker does not justify interrupting the batch. Keep routine progress in task records. Contact the user before quiescence only when a higher-priority instruction requires it or when continuing would cross an authority, governance, safety, access, or privacy boundary.
 
 Ask only when proceeding would cross an authority, governance, safety, access, privacy, or materially outcome-changing boundary. Otherwise use the narrowest safe interpretation.
 
-## Execution cues and startup
+## Execution cue — sole gate
 
-After a proposal receives approval, wait for `proceed` or `execute` before starting that proposal. Approval alone is not an execution cue. The explicit `/start` procedure is a separate governing workflow cue.
+The sole execution cue is the explicit standalone word `execute`, matched case-insensitively. Accept `execute`, `Execute`, or `EXECUTE` as the cue, but only when the user is clearly issuing it as an instruction, not quoting, discussing, testing, or hypothetically mentioning the word.
+
+- **`execute`:** authorizes the consolidated, previously approved and in-scope execution batch after decision collection and eligibility checks.
+- **`approve` / approval:** log the user's decision and scope. Never execute immediately.
+- **`Next`:** log decision-queue navigation. Keep the current blocker unanswered and unresolved, then present the next unresolved decision. It cannot approve, decline, execute, resume, or change status.
+- **Any other message or cue:** capture, interpret, or log it as required, but do not execute.
+- `/start` is a distinct session-initialization cue governed by Session Start and is not an execution cue.
+
+Do not infer or substitute execution authorization from phrasing, intent, status, approval, or an earlier cue. Before each execution batch, confirm that the latest explicit `execute` cue applies to the prepared batch and that its scope has not materially changed. If the scope changes, wait for a fresh cue.
 
 At `/start`, follow `.agent/SESSION_START.md`. The mandatory P0 batch uses the rules above. Do not inspect hosted CI results. At batch completion, state readiness and remaining blockers.
 
