@@ -13,20 +13,27 @@
       ".agent/skills/the-worker/SKILL.md",
       ".agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md",
       ".agent/skills/the-worker/assets/TASK_TEMPLATE.md",
+      ".agent/skills/the-worker/assets/actions-report-schema.json",
+      ".agent/skills/the-worker/assets/actions-report-template.md",
+      ".agent/skills/the-worker/assets/ledger-schema.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-adapters.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-policy.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-review-template.md",
       ".agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json",
+      ".agent/skills/the-worker/references/ci-ledger.md",
       ".agent/skills/the-worker/references/document-type-catalog.md",
       ".agent/skills/the-worker/references/task-validation-interfaces.md",
       ".agent/skills/the-worker/scripts/aggregate_task_validation.py",
       ".agent/skills/the-worker/scripts/build_task_validation_contract.py",
+      ".agent/skills/the-worker/scripts/eligibility.py",
+      ".agent/skills/the-worker/scripts/ledger.py",
       ".agent/skills/the-worker/scripts/publish_task_validation.py",
       ".agent/skills/the-worker/scripts/recover_task_validation.py",
       ".agent/skills/the-worker/scripts/task_validation.py",
       ".agent/skills/the-worker/scripts/test_aggregate_task_validation.py",
       ".agent/skills/the-worker/scripts/test_build_task_validation_contract.py",
+      ".agent/skills/the-worker/scripts/test_ledger.py",
       ".agent/skills/the-worker/scripts/test_publish_task_validation.py",
       ".agent/skills/the-worker/scripts/test_recover_task_validation.py",
       ".agent/skills/the-worker/scripts/test_task_validation.py",
@@ -42,7 +49,9 @@
       ".github/workflows/task-validation-verifier.yml",
       ".github/workflows/task-validation.yml",
       ".github/workflows/validate-document-standards.yml",
-      "workspace/task-validation/README.md"
+      ".takeout/reports/README.md",
+      "workspace/task-validation/README.md",
+      "workspace/tasks/20261128-193800/task.md"
     ],
     "enforcement_status": "external-prerequisite"
   },
@@ -142,5 +151,16 @@
     "push_trigger_excludes_status_index_commits": true,
     "reads_logs": false,
     "validates_source_code": false
+  },
+  "worker_lifecycle": {
+    "fallback_parent_id": "20261128-193800",
+    "fallback_parent_path": "workspace/tasks/20261128-193800/task.md",
+    "source_task_attribution": "exact-task-id-trailer-only",
+    "unresolved_attribution": "permanent-fallback-parent",
+    "cancelled_superseded_create_feedback": false,
+    "child_grouping": "one-child-per-actionable-root-cause-per-parent",
+    "review_index": "workspace/task-validation/status-index.json",
+    "review_folder_root": "workspace/task-validation/reviews",
+    "reconcile_after_review": true
   }
 }
