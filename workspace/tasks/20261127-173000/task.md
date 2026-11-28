@@ -581,3 +581,8 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - Updated the composite capture action and Worker references. Removed duplicate report-family implementations. Kept report indexes, immutable reports, and Ledger state in their data paths.
 - Read back canonical scripts, regression tests, schemas, template, and capture action. Tests, lint, and hosted CI inspection were not performed, as required.
 - **Commits:** `7744b9f`, `36a6ecc`, `578207a`, `4d86b34`, `6f8adc0`, `e75cf10`, `9b8a88e`, `e5c48e2`.
+
+### 2026-11-28 — user-directed deletion of blocked subtasks 28–49
+
+- Deleted remaining existing records individually. Subtask records 28–49 are absent. No remediation was attempted for those findings.
+- Reconciled the child index and task board. Child 61 remains paused, and the parent remains at quiescence.
