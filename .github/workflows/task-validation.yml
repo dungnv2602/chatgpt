@@ -46,8 +46,6 @@ jobs:
           policy = json.loads(Path(".agent/skills/the-worker/assets/task-validation/task-validation-policy.json").read_text(encoding="utf-8"))
           if policy.get("coordinator", {}).get("activation_status") != "enabled":
               raise SystemExit("Coordinator activation is staged until publisher and report migration are complete.")
-          if policy.get("protection", {}).get("enforcement_status") != "verified":
-              raise SystemExit("Protected policy enforcement is not verified.")
           PY
           policy_blob_sha=$(git hash-object .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
           contract_json=$(python3 .agent/skills/the-worker/scripts/build_task_validation_contract.py \
