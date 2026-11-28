@@ -153,7 +153,9 @@
     "schedule_activation_status": "external-prerequisite-default-branch-must-be-gpt",
     "push_trigger_excludes_status_index_commits": true,
     "reads_logs": false,
-    "validates_source_code": false
+    "validates_source_code": false,
+    "workflow_dispatch_activation_status": "external-prerequisite-default-branch-must-contain-dispatcher",
+    "dispatch_requires_verified_default_branch_workflow": true
   },
   "worker_lifecycle": {
     "fallback_parent_id": "20261128-193800",
