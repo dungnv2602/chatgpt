@@ -9,7 +9,7 @@ The Worker owns task capture, hierarchy, scheduling, progress, handoff, closeout
 | [discussion.md](discussion.md) | Current step, open decisions, and three latest success reports |
 | [DISCUSSION_TEMPLATE.md](../.agent/skills/the-worker/assets/DISCUSSION_TEMPLATE.md) | Canonical discussion-register structure and entry conventions |
 | [task_board.md](task_board.md) | Current execution, eligible queue, next task, and deferred work |
-| [TASK_BOARD_TEMPLATE.md](../.agent/skills/the-worker/assets/TASK_BOARD_TEMPLATE.md) | Canonical task-board structure and scheduler contract |
+| [TASK_BOARD_TEMPLATE.md](../.agent/skills/the-worker/assets/TASK_BOARD_TEMPLATE.md) | Canonical task-board structure; scheduler and decision rules remain in The Worker |
 | [TASK_TEMPLATE.md](../.agent/skills/the-worker/assets/TASK_TEMPLATE.md) | Parent task folder |
 | [SUBTASK_TEMPLATE.md](../.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md) | Follow-up and remediation child |
 | [ADR_TEMPLATE.md](../.agent/skills/the-worker/assets/ADR_TEMPLATE.md) | Accepted decision record |
