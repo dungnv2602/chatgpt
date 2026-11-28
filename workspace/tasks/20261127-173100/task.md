@@ -6,12 +6,12 @@
 
 - **ID:** 20261127-173100
 - **Created:** 2026-11-27 17:31 UTC
-- **Updated:** 2026-11-27 11:08 UTC
+- **Updated:** 2026-11-28
 - **Priority:** P1
 - **Status:** Ready
 - **Origin:** User
 - **Approval:** Approved
-- **Approval scope/source:** Explicit request to create Template Fix with two approved subtasks: create a task-board template; scan documents for missing templates and create any missing templates.
+- **Approval scope/source:** Explicit request to create a task-board template; scan documents for missing templates and create any missing templates; audit and update stale templates against the current repository/workflow; relocate all templates currently outside skills into appropriate skill locations in accordance with the skill standard.
 - **Governing ADR(s):** None
 - **Current execution:** No
 - **Dependencies:** None
@@ -24,21 +24,25 @@
 
 ## 2. Subsequent Instructions
 
-None.
+> When templates are created, scan the repository to update stale templates compared to the current workflow/repository. Then relocate all templates outside of skills into skills at appropriate places, respecting the skill standard.
 
 ## 3. Objective and Acceptance Criteria
 
-Improve template coverage for task-board and repository document types.
+Improve template coverage, freshness, and canonical placement across the repository.
 
 1. Create a canonical task-board template and define its maintenance/usage contract.
 2. Scan the repository systematically for documents that lack an applicable canonical template, schema, or embedded contract.
 3. Before creating any identified missing template, read the applicable existing template/contract first and establish the gap and document owner/type.
-4. Create missing templates only where the scan establishes a genuine gap; reconcile catalog, indexes, and coverage references.
-5. Commit and read back all changes and results. No unobserved validation claimed.
+4. As part of template creation and coverage work, inventory existing templates repository-wide and compare each against the current workflow, repository structure, governance contracts, and applicable skill standards; update stale templates and references where necessary.
+5. Relocate every template currently outside skill directories into the appropriate skill location, grouping it with the skill that owns the workflow/document type. Ensure each relocated template conforms to the repository's current skill standard, update all inbound references/catalogs/indexes, and remove obsolete duplicate copies only after references are reconciled.
+6. Create missing templates only where the scan establishes a genuine gap; do not introduce redundant templates where an existing schema or embedded contract already governs.
+7. Reconcile catalogs, indexes, ownership metadata, and coverage references for created, updated, and relocated templates.
+8. Commit and read back all changes and results. Verify references and applicable skill-standard requirements; make no unobserved validation claims.
 
 ## 4. Decisions
 
-- Repository scan and template creation are assigned to a separate child from task-board-template creation.
+- Repository scan, stale-template review, and template relocation are assigned to the document-template coverage child, separate from task-board-template creation.
+- Skill placement must follow the current repository skill standard; do not create a parallel template system outside skills.
 
 ## 5. Progress
 
@@ -58,7 +62,7 @@ Improve template coverage for task-board and repository document types.
 
 ## 6. Current State and Remaining Work
 
-Child 01 (canonical task-board template) is Done. Child 03 (duplicate P0 lint-report remediation) is complete and closed through shared commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Child 02 (repository template coverage audit and missing-template remediation) remains Ready. The repository-wide coverage audit has not started.
+Child 01 (canonical task-board template) is Done. Child 03 (duplicate P0 lint-report remediation) is complete and closed through shared commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Child 02 (repository template coverage audit, stale-template updates, and relocation of templates into appropriate skills) remains Ready. The repository-wide coverage/freshness/placement audit has not started.
 
 ## 7. Verification and Evidence
 
@@ -66,11 +70,11 @@ Child 01 (canonical task-board template) is Done. Child 03 (duplicate P0 lint-re
 - **Changed paths:** Task records and board
 - **Readback:** Pending
 - **Checks:** Not performed
-- **Limitations:** Repository-wide template audit not performed.
+- **Limitations:** Repository-wide template coverage, freshness, and placement audit not performed.
 
 ## 8. Handoff
 
-Execute children independently, template-first, with evidence.
+Execute children independently, template-first, with evidence. For child 02, inventory all repository templates, identify missing and stale templates, then relocate templates outside skills into their appropriate skill locations while maintaining skill-standard compliance and reconciling references.
 
 ## 9. Subtasks
 
