@@ -9,7 +9,7 @@ Navigation and accepted-decision index. The Worker and [Decision Governance](../
 
 ## Accepted ADRs
 
-- [ADR-0008 — CI Validation, Error Tasks, and Automatic Feedback Loop](0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — accepted; implementation in progress. Supersedes ADR-0003 and ADR-0007, and scoped CI/report lifecycle clauses in ADR-0004.
+- [ADR-0008 — CI Validation, Error Tasks, and Automatic Feedback Loop](0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — accepted; implementation not started; linked task is Proposed pending the standalone execute cue. Supersedes ADR-0003 and ADR-0007, and scoped CI/report lifecycle clauses in ADR-0004.
 - [ADR-0007 — Unified index as the sole latest lint report locator](0007-unified-index-as-latest-lint-report-locator.md) — superseded by ADR-0008; retained as permanent decision history.
 - [ADR-0006 — Automated Structural Validation for Canonical Ownership and Drift](0006-automated-structural-validation-for-canonical-ownership-and-drift.md) — accepted, implementation complete.
 - [ADR-0005 — Lean Session Start and Conversation Mode](0005-lean-session-start-and-conversation-mode.md) — accepted, implementation complete.
