@@ -7,12 +7,12 @@
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
 - **Priority:** P1
-- **Status:** Paused
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User requested a future follow-up to verify tests/validation for the completed structural validator and create a Worker-driven loop that reports remaining verification gaps. Paused until explicitly resumed.
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Paused intentionally for future execution.
+- **Eligibility / deferral reason:** Eligible — resumed by the user's 'Next' instruction; approved scope and no dependencies.
 
 ## 1. Original Prompt
 
@@ -51,7 +51,7 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 ## 5. Decisions and Progress
 
 - Workflow readback on 2026-11-28 confirmed the existing workflow already includes a unittest step for structural-validator tests and a separate invocation of the structural validator. The tests are present and wired in; execution/results remain unverified.
-- This follow-up is intentionally paused and must not begin until explicitly resumed.
+- User resumed this follow-up with the instruction 'Next' on 2026-11-28.
 
 ## 6. State and Evidence
 
@@ -69,11 +69,11 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 
 ## 8. Execution self-check
 
-This follow-up is approved for tracking only and intentionally Paused. Scope and parentage are verified as directly advancing the Refactor Skills parent. It must not execute until explicitly resumed. Future verification must respect the current Worker restrictions or seek a narrow instruction update.
+This follow-up is approved and resumed. Scope and parentage are verified as directly advancing the Refactor Skills parent. It must not execute until explicitly resumed. Future verification must respect the current Worker restrictions or seek a narrow instruction update.
 
 ## 9. Handoff
 
-Resume only on explicit user direction. Start by re-reading ADR-0006, the validator, tests, workflow and current Worker verification restrictions; then determine authorized evidence and drain the task to quiescence.
+Resumed on explicit user direction. Start by re-reading ADR-0006, the validator, tests, workflow and current Worker verification restrictions; then determine authorized evidence and drain the task to quiescence.
 
 ## 10. Ledger Findings
 
