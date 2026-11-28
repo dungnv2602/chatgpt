@@ -662,3 +662,11 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Commit:** `510fa8cdc6de6a7fc32d6745be99c7c0dac61f13`.
 - **Readback:** Confirmed all six paths at branch `gpt`. No local tests/scripts/lint performed.
 - **Closeout:** Child 69 completed and deleted under the task lifecycle. The persistent Refactor Skills parent remains open.
+
+
+### 2026-11-28 — child 70 closeout: redundant initialization policy
+
+- Deleted `.agent/INITIALIZATION_POLICY.md`; its navigation content was redundant with Session Start and The Worker.
+- Deletion commit: `66c5856798fba1cb747e00ad88474e7e4d3931a0`. Board reconciliation commit: `c4eafed5c7c7404eaabbe551e1c207fa5611360e`.
+- Readback and tracking reconciliation pending.
+- Startup CI Ledger baseline discrepancy remains outside this scoped deletion and has not been investigated or resolved in this cycle.
