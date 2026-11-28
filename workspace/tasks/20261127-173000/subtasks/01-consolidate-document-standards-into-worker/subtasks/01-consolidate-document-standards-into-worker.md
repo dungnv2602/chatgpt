@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-01-01
 - **Parent Task ID:** 20261127-173000-01
 - **Type:** Implementation
-- **Status:** Paused
+- **Status:** Ready
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Original explicit approval to consolidate Document Standards into The Worker.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Paused — behind current P0 queue.
+- **Eligibility / deferral reason:** Ready — previous P0 dependency cleared.
 - **Required:** Yes
 - **Created:** 2026-11-27 UTC
 - **Updated:** 2026-11-27 UTC
