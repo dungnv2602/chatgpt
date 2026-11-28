@@ -160,6 +160,14 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **Path discrepancy:** The user named .take/reports; repository search found no such path. Current canonical implementation and documentation reference .takeout/reports/. Destructive retirement of .takeout/reports/ is not inferred from the different path.
 - **Next:** Prepare a superseding decision proposal and the two approved workstreams using a folder-based subtask format after the decision/format gate is satisfied. Resolve the exact report directory before deletion.
 
+
+### 2026-11-28 15:10 UTC — superseding decision draft prepared
+
+- **Action:** Created DRAFT-0010, revision 1, comparing the current Ledger/report lifecycle, the approved folder-per-error feedback loop, and a minimal-index alternative. Added the proposal to the Draft index.
+- **Result:** The proposed architecture is documented but remains in draft status. It would supersede conflicting portions of ADR-0003, ADR-0004, and ADR-0007 only after exact Draft approval and accepted ADR promotion. No implementation was made under the conflicting current contract.
+- **References:** workspace/draft/DRAFT-0010-ci-error-task-folders-and-automatic-feedback-loop.md; workspace/draft/README.md.
+- **Next:** User review of the exact proposal and confirmation of the intended report directory; then promote an accepted ADR before changing canonical subtask-folder formats or CI producers.
+
 ## 7. Current State
 
 The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`. This parent was resumed for the user's prompt-capture and CI-hierarchy follow-up.
