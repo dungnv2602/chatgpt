@@ -5,12 +5,12 @@
 - **Template version:** 2.5
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-28 15:20 UTC
+- **Updated:** 2026-11-28 22:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation. DRAFT-0010 revision 9 and ADR-0008 are approved. The new implementation scope still requires the repository's explicit standalone `execute` cue.
+- **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation. DRAFT-0010 revision 9 and ADR-0008 are approved. The user explicitly authorized execution with “Approve / Execute” and the subsequent confirmation.
 - **Governing ADR(s):** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — universal post-commit validation, coordinator/verifier, status index, review tasks, remediation folders, retention, and report-system migration.
 - **Current execution:** Yes
 - **Dependencies:** None
@@ -33,7 +33,7 @@ Execute
 Expand on this, fix gaps, fix floodings, fix deadlocks, tighten, close the cycle, refactor by trimming down redundancy and minimize content without losing full context, optimize workflow, update templates, update skills, etc.
 
 If you really understand, you would know you should create a task for this to track your progress.”
-- **2026-11-28 — User decision:** “Approve the draft, proceed.” This approves DRAFT-0010 revision 9 and its promotion to ADR-0008. Under the canonical Worker execution gate, `proceed` is not the standalone `execute` cue. Keep the materially changed ADR-0008 implementation scope Proposed until that cue is issued.
+- **2026-11-28 — User decision:** “Approve the draft, proceed.” This approves DRAFT-0010 revision 9 and its promotion to ADR-0008. Under the canonical Worker execution gate, `proceed` is not the standalone `execute` cue. The execution gate was satisfied by the user's explicit “Execute” cue.
 - **Effective policy — ADR-0008:** After a source commit, GitHub Actions is the sole implementation-validation authority. The Worker does not run tests, scripts, lint, readback, or other correctness checks after commit, and does not poll, wait for, dispatch, or rerun CI. Set the task to Committed / Awaiting CI and continue with other unblocked work. Read the status index first. Open linked Actions logs only after a recorded check, coverage, infrastructure, or capture failure, solely to diagnose actionable causes. Done requires aggregate success for the exact current SHA and policy revision, result reconciliation, and no required subtasks. Delete completed task folders directly under the approved lifecycle. Retire `.takeout/reports/` only after the replacement is operational and every producer/consumer has migrated.
 
 
