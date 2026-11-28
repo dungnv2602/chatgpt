@@ -27,7 +27,7 @@ Scan all file contents, especially contents inside README.md files in the repo, 
 
 ## 2. Subsequent Instructions
 
-- **2026-11-28:** Task captured under the persistent Refactor Skills parent. Approval records scope; the standalone case-insensitive `execute` cue is still required to begin implementation.
+- **2026-11-28:** Task captured under the persistent Refactor Skills parent. The user explicitly authorized the Refactor Skills batch with the standalone `Execute` cue.
 
 ## 3. Objective and Scope
 
@@ -66,7 +66,7 @@ Perform a repository-wide content audit, with particular attention to README fil
 - Canonical template consulted: `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md`.
 - Parentage confirmed: Refactor Skills.
 - Scope and acceptance criteria recorded.
-- Execution authorization cue: pending.
+- Execution authorization: confirmed by the standalone `Execute` cue.
 
 ## 10. Handoff
 
