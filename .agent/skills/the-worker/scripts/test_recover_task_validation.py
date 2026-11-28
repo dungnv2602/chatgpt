@@ -162,6 +162,54 @@ class RecoveryTests(unittest.TestCase):
             with self.assertRaises(recovery.RecoveryError):
                 recovery.awaiting_ci_tasks(self.root)
 
+    def test_source_commit_policy_binds_validation_but_dispatch_gate_uses_current_policy(self) -> None:
+        source_policy = {
+            "coordinator": {"activation_status": "enabled"},
+            "protection": {"enforcement_status": "verified"},
+            "recovery": {"workflow_dispatch_activation_status": "external-prerequisite"},
+        }
+        current_policy = {
+            "coordinator": {"activation_status": "enabled"},
+            "protection": {"enforcement_status": "verified"},
+            "recovery": {"workflow_dispatch_activation_status": "verified"},
+        }
+        policy_path = self.root / recovery.POLICY_PATH
+        policy_path.parent.mkdir(parents=True)
+        policy_path.write_text(json.dumps(current_policy), encoding="utf-8")
+        def fake_git(_root, *args, **_kwargs):
+            return subprocess.CompletedProcess(args, 0, stdout=json.dumps(source_policy), stderr="")
+        with patch.object(recovery, "policy_blob_sha", return_value="b" * 40), patch.object(
+            recovery, "git", side_effect=fake_git
+        ):
+            self.assertTrue(recovery.source_policy_allows_dispatch(self.root, "a" * 40, "b" * 40))
+        current_policy["recovery"]["workflow_dispatch_activation_status"] = "external-prerequisite"
+        policy_path.write_text(json.dumps(current_policy), encoding="utf-8")
+        with patch.object(recovery, "policy_blob_sha", return_value="b" * 40), patch.object(
+            recovery, "git", side_effect=fake_git
+        ):
+            self.assertFalse(recovery.source_policy_allows_dispatch(self.root, "a" * 40, "b" * 40))
+
+    def test_source_commit_without_coordinator_activation_cannot_be_dispatched(self) -> None:
+        source_policy = {
+            "coordinator": {"activation_status": "staged"},
+            "protection": {"enforcement_status": "verified"},
+            "recovery": {"workflow_dispatch_activation_status": "verified"},
+        }
+        current_policy = {
+            "coordinator": {"activation_status": "enabled"},
+            "protection": {"enforcement_status": "verified"},
+            "recovery": {"workflow_dispatch_activation_status": "verified"},
+        }
+        policy_path = self.root / recovery.POLICY_PATH
+        policy_path.parent.mkdir(parents=True, exist_ok=True)
+        policy_path.write_text(json.dumps(current_policy), encoding="utf-8")
+        def fake_git(_root, *args, **_kwargs):
+            return subprocess.CompletedProcess(args, 0, stdout=json.dumps(source_policy), stderr="")
+        with patch.object(recovery, "policy_blob_sha", return_value="b" * 40), patch.object(
+            recovery, "git", side_effect=fake_git
+        ):
+            self.assertFalse(recovery.source_policy_allows_dispatch(self.root, "a" * 40, "b" * 40))
+
     def test_missing_dispatch_is_started_only_when_source_policy_is_enabled(self) -> None:
         source_sha = "a" * 40
         task = {
