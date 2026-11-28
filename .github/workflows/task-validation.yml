@@ -25,7 +25,6 @@ jobs:
       source_sha: ${{ steps.bind.outputs.source_sha }}
       policy_blob_sha: ${{ steps.bind.outputs.policy_blob_sha }}
       contract_json: ${{ steps.bind.outputs.contract_json }}
-      task_check_ids: ${{ steps.bind.outputs.task_check_ids }}
     steps:
       - name: Check out the source commit
         uses: actions/checkout@v4
@@ -44,11 +43,9 @@ jobs:
           policy_blob_sha=$(git hash-object .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
           contract_json=$(python3 .agent/skills/the-worker/scripts/build_task_validation_contract.py \
             --root . --source-sha "$SOURCE_SHA")
-          task_check_ids=$(python3 -c 'import json, sys; value=json.loads(sys.argv[1]); print(json.dumps([item["id"] for item in value["checks"]], separators=(",", ":")))' "$contract_json")
           echo "source_sha=$SOURCE_SHA" >> "$GITHUB_OUTPUT"
           echo "policy_blob_sha=$policy_blob_sha" >> "$GITHUB_OUTPUT"
           echo "contract_json=$contract_json" >> "$GITHUB_OUTPUT"
-          echo "task_check_ids=$task_check_ids" >> "$GITHUB_OUTPUT"
 
   lint_changed:
     name: Required changed-document lint
@@ -125,7 +122,7 @@ jobs:
         env:
           NEEDS_JSON: ${{ toJSON(needs) }}
           SOURCE_SHA: ${{ inputs.source_sha }}
-          TASK_CHECK_IDS: ${{ needs.policy.outputs.task_check_ids || '[]' }}
+          CONTRACT_JSON: ${{ needs.policy.outputs.contract_json }}
           COORDINATOR_RUN_ID: ${{ github.run_id }}
           COORDINATOR_ATTEMPT: ${{ github.run_attempt }}
         run: |
@@ -133,22 +130,32 @@ jobs:
           python3 - <<'PY'
           import json
           import os
+          import subprocess
+          import sys
           from pathlib import Path
+
+          sys.path.insert(0, ".agent/skills/the-worker/scripts")
+          import aggregate_task_validation
 
           needs = json.loads(os.environ["NEEDS_JSON"])
           source_sha = os.environ["SOURCE_SHA"]
-          import subprocess
           policy_sha = subprocess.check_output(["git", "hash-object", ".agent/skills/the-worker/assets/task-validation/task-validation-policy.json"], text=True).strip()
-          task_ids = json.loads(os.environ["TASK_CHECK_IDS"] or "[]")
           policy = json.loads(Path(".agent/skills/the-worker/assets/task-validation/task-validation-policy.json").read_text(encoding="utf-8"))
-
-          expected = [
-              item["id"] for item in policy["mandatory_checks"]
-          ] + sorted(task_ids)
-          import hashlib
-          check_set_id = hashlib.sha256(
-              json.dumps(expected, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
-          ).hexdigest()
+          raw_contract = os.environ.get("CONTRACT_JSON", "")
+          if raw_contract:
+              task_contract = json.loads(raw_contract)
+          else:
+              task_contract = {
+                  "schema_version": 1,
+                  "source_sha": source_sha,
+                  "contract_revision": "missing",
+                  "checks": [],
+              }
+          expected, check_set_id = aggregate_task_validation.canonical_check_set(policy, task_contract)
+          Path(".task-validation-contract.json").write_text(
+              json.dumps(task_contract, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
 
           job_map = {
               "ste-lint-changed": "lint_changed",
@@ -221,7 +228,7 @@ jobs:
             --source-sha "$SOURCE_SHA" \
             --coordinator-run-id "$COORDINATOR_RUN_ID" \
             --attempt "$COORDINATOR_ATTEMPT" \
-            --task-check-ids "$TASK_CHECK_IDS" \
+            --task-contract .task-validation-contract.json \
             --results .task-validation-results.json \
             > .task-validation-aggregate.json
           aggregate_exit=$?
