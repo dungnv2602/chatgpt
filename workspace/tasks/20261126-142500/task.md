@@ -11,7 +11,7 @@
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation.
-- **Governing ADR(s):** None — CI/reporting repair; review governance boundaries before any architecture change
+- **Governing ADR(s):** [ADR-0008](../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — universal post-commit validation, coordinator/verifier, status index, review tasks, remediation folders, retention, and report-system migration.
 - **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
@@ -33,7 +33,7 @@ Execute
 Expand on this, fix gaps, fix floodings, fix deadlocks, tighten, close the cycle, refactor by trimming down redundancy and minimize content without losing full context, optimize workflow, update templates, update skills, etc.
 
 If you really understand, you would know you should create a task for this to track your progress.”
-- **Effective closeout policy:** The user's later instruction supersedes earlier archiving and hosted-result-review wording. Commit and remote readback are the completion evidence. Do not inspect hosted CI results. Delete completed/cancelled task folders directly; do not create archive or retention copies. Keep Ledger identity, evidence, resolution history, and provenance intact.
+- **Effective policy — ADR-0008:** After a source commit, GitHub Actions is the sole implementation-validation authority. The Worker does not run tests, scripts, lint, readback, or other correctness checks after commit, and does not poll, wait for, dispatch, or rerun CI. Set the task to Committed / Awaiting CI and continue with other unblocked work. Read the status index first. Open linked Actions logs only after a recorded check, coverage, infrastructure, or capture failure, solely to diagnose actionable causes. Done requires aggregate success for the exact current SHA and policy revision, result reconciliation, and no required subtasks. Delete completed task folders directly under the approved lifecycle. Retire `.takeout/reports/` only after the replacement is operational and every producer/consumer has migrated.
 
 
 
@@ -48,16 +48,16 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 
 ## 4. Requirements
 
-1. Repair event-driven report ingestion and preserve finding identity, evidence, recurrence, and resolution history.
+1. Replace report/Ledger ingestion with the coordinator's compact run-status index and one review task per terminal attempt. Do not retain a findings Ledger, diagnostic archive, or parallel report store.
 2. Capture every user request with an identifiable outcome as a parent task or its own follow-up subtask before answering or performing it.
 3. Attach substantive follow-ups and CI remediation to the genuine existing user-task parent. Never create synthetic file-, workflow-, job-, or finding-parent tasks.
 4. Require an exact `Task-ID:` commit trailer. Resolve child IDs through Parent Task ID. Keep missing, malformed, ambiguous, inactive, or deleted parent attribution unassigned.
 5. Keep the Worker as the sole owner of task status, approval, dependencies, scheduling, Current Execution, board publication, and closeout. The Ledger owns findings and CI child publication only.
 6. Generate CI remediation children as P0, Approved, Ready under standing authorization; Proposed is reserved for a specific genuine decision gate.
-7. Make ingestion idempotent, bound evidence retention, suppress untracked baseline recurrences, and prevent duplicate child creation.
+7. Make aggregate publication and recovery idempotent. Retain reconciled attempt records for 14 days after reconciliation, never prune unresolved attempts, and compact behind a verified monotonic checkpoint. Prevent duplicate review and remediation tasks.
 8. Preserve report and workflow coverage. Do not weaken tests or validation to suppress errors.
-9. Do not run repository scripts/tests locally or inspect, poll, dispatch, rerun, or wait for hosted CI results.
-10. Close committed work after remote readback. Delete completed/cancelled task folders directly and do not create archives or retention copies.
+9. Do not run repository scripts/tests locally or poll, dispatch, rerun, or wait for hosted CI. Read the status index first and inspect logs only after recorded failure, solely for diagnosis.
+10. Mark work Done only after aggregate success for the exact current commit and policy revision, reconciliation, and completion of required subtasks. Delete completed/cancelled task folders directly and do not create archives or retention copies.
 11. Preserve the original request and relevant instructions verbatim. Do not claim tests, runtime behavior, or hosted validation that was not observed.
 
 
@@ -67,10 +67,26 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **Task parentage:** This work remains under this genuine user-originated parent. The audit and implementation are separate required subtasks.
 - **CI parentage:** Every CI remediation child belongs under the genuine user task identified by the triggering source commit's Task-ID trailer.
 - **Uncertain attribution:** Keep a finding visible and unassigned. Do not infer a parent from paths, workflow names, branches, timing, or the board pointer.
-- **Ownership:** Worker schedules and closes tasks. Ledger creates/updates findings and attributed children. GitHub Actions owns technical workflow diagnosis and implementation.
-- **No hosted-results review:** Commit/readback is sufficient for remediation completion. Hosted validation is optional metadata and is not inspected.
+- **Ownership:** Worker owns task status, scheduling, diagnosis, and remediation child folders. GitHub Actions owns validation and aggregate outcomes. The isolated publisher writes only the compact status index and review tasks. No findings Ledger or diagnostic archive remains after migration.
+- **Post-commit validation:** Aggregate GitHub Actions validation is mandatory for task completion. The Worker does not independently validate committed code. It reads the index first and inspects failed-run logs only when needed for diagnosis.
 - **Direct deletion:** Delete completed/cancelled task folders without archive copies. Preserve Ledger provenance and history.
 
+
+## Governing ADR linkage and acceptance criteria
+
+**Governing decision:** [ADR-0008 — CI Validation, Error Tasks, and Automatic Feedback Loop](../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md).
+
+This parent task implements the accepted decision. Its acceptance criteria must cover the applicable ADR-0008 Confirmation requirements:
+
+- Preserve all existing required validation checks and baselines while migrating established workflows to reusable coordinator entry points.
+- Implement the protected task contract, registered adapters, repository-owned script interface, generic verifier, exact-SHA aggregation, and isolated publisher.
+- Publish one atomic/idempotent status record and review task per terminal attempt. Implement recovery, bounded retries, safe concurrency, and recursive-trigger prevention.
+- Implement the non-blocking Worker lifecycle, index-first review, failure-only log diagnosis, root-cause grouping, active-child reuse, parent attribution, and permanent fallback.
+- Enforce the 14-day post-reconciliation retention period, never prune unresolved attempts, and advance the checkpoint only after complete reconciliation.
+- Demonstrate all required aggregate and recovery scenarios through GitHub Actions before retiring any report producer or consumer.
+- Retire the complete `.takeout/reports/` tree only after migration and operational proof. Preserve unrelated lint/test/workflow coverage.
+
+Implementation must follow ADR-0008's staged migration and must not delete report data or weaken validation before the replacement passes its Confirmation criteria.
 
 ## 6. Progress Log
 
