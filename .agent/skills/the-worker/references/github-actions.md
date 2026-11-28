@@ -36,6 +36,8 @@ The Ledger owns finding identity, evidence, and remediation-child publication. T
 
 ## 4. P0 coordination
 
+CI-generated remediation tasks feed the same Worker-owned eligible queue. The Ledger retains finding identity, evidence, grouping, and task creation. It does not schedule. After a remediation commit is read back and the task closes, the Worker immediately reconciles and continues with the next eligible task within the authorized focus. Hosted validation remains separate metadata and is not a universal completion gate.
+
 The Worker’s run-to-quiescence procedure is the only authority for task selection, sequencing, blockers, user-input timing, and closeout. CI remediation children are P0, Approved, and Ready under standing authorization. Use Proposed only for a specific unresolved decision. Do not create a competing queue, change parent status, or interrupt unrelated eligible work.
 
 ## 5. Preserve validation scope
