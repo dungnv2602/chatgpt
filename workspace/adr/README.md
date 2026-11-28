@@ -9,10 +9,11 @@ Navigation and accepted-decision index. The Worker and [Decision Governance](../
 
 ## Accepted ADRs
 
+- [ADR-0007 — Unified index as the sole latest lint report locator](0007-unified-index-as-latest-lint-report-locator.md) — accepted; implementation in progress. Supersedes only ADR-0003's standalone latest-lint locator requirement.
 - [ADR-0006 — Automated Structural Validation for Canonical Ownership and Drift](0006-automated-structural-validation-for-canonical-ownership-and-drift.md) — accepted, implementation complete.
 - [ADR-0005 — Lean Session Start and Conversation Mode](0005-lean-session-start-and-conversation-mode.md) — accepted, implementation in progress.
 - [ADR-0004 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) — accepted. Its implementation amendments include direct task deletion and parent/child CI attribution.
-- [ADR-0003 — Canonical GitHub Actions Diagnostic Report Artifact Layout](0003-canonical-github-actions-diagnostic-report-artifact-layout.md) — accepted. Its remaining Confirmation criteria are tracked separately.
+- [ADR-0003 — Canonical GitHub Actions Diagnostic Report Artifact Layout](0003-canonical-github-actions-diagnostic-report-artifact-layout.md) — accepted, partially superseded by ADR-0007. Remaining Confirmation criteria are tracked separately.
 
 ## Completed historical decisions
 
