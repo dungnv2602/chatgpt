@@ -10,6 +10,9 @@ The Worker owns the task-validation policy and contract interfaces. GitHub Actio
 - `.agent/skills/the-worker/scripts/build_task_validation_contract.py` resolves the source commit's Task-ID trailer and builds its exact-SHA contract.
 - `.agent/skills/the-worker/scripts/task_validation.py` validates and executes registered task checks without shell strings.
 - `.agent/skills/the-worker/scripts/aggregate_task_validation.py` classifies the complete exact-SHA check set.
+- `.agent/skills/the-worker/scripts/publish_task_validation.py` atomically publishes one status record and review folder per eligible terminal attempt.
+- `.agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json` defines the compact status index and checkpoint.
+- `.agent/skills/the-worker/assets/task-validation/task-validation-review-template.md` defines generated per-attempt review records.
 
 The policy file's Git blob SHA is the immutable policy revision for a coordinator attempt. The numeric `policy_revision` is a human-managed schema revision and is not a substitute for binding the blob SHA.
 
@@ -38,7 +41,21 @@ The protected policy names the coordinator job IDs used by the aggregate workflo
 
 The three existing validation workflows expose `workflow_call` with `coordinator_call` and required `source_sha` inputs. Coordinator calls check out the exact supplied SHA. They skip legacy report publication and diagnostics jobs. Their direct push triggers retain the existing report pipeline and validation behavior. The coordinator grants only `contents: read`, so a called job cannot obtain a write-capable token even where its direct-push mode retains a write permission declaration.
 
-The coordinator is defined as a reusable workflow in `.github/workflows/task-validation.yml`. It binds the source SHA and policy blob SHA, resolves the task contract from the source commit's Task-ID trailer, calls the three established validation workflows and the generic verifier, then aggregates their results. The generic verifier is `.github/workflows/task-validation-verifier.yml`. The coordinator has no push trigger yet. Its activation is staged until the privileged publisher and report migration are ready. This preserves the legacy push-report pipeline and prevents duplicate validation cycles. The publisher and recovery lifecycle remain separate downstream work. Do not claim publication or operational recovery until that work is complete.
+The coordinator is defined as a reusable workflow in `.github/workflows/task-validation.yml`. It binds the source SHA and policy blob SHA, resolves the task contract from the source commit's Task-ID trailer, calls the three established validation workflows and the generic verifier, aggregates their results, and calls the isolated publisher as a separate job. The dispatcher is `.github/workflows/task-validation-dispatch.yml`; its push trigger is gated by explicit policy activation and verified protection, and it suppresses duplicate first-attempt dispatches for an already-published source SHA. The generic verifier is `.github/workflows/task-validation-verifier.yml`. Activation remains staged until publisher/recovery and report migration are ready. The three legacy push workflows remain active meanwhile, so no duplicate validation cycle is started.
+
+## Status index and review queue
+
+- The single compact status index is `workspace/task-validation/status-index.json`. Its schema is Worker-owned under `assets/task-validation/`.
+- The `closed_through` tuple is the monotonic recovery checkpoint. Advance it only after every earlier attempt is accounted for and reconciled.
+- The publisher uses `(coordinator_run_id, attempt)` as its idempotency key. It checks the source commit's policy blob SHA, then writes the status record and the review folder in one metadata-only commit. Concurrent push conflicts are retried with a bounded retry count.
+- Review records live at `workspace/task-validation/reviews/<run-id>-<attempt>/review.md`. Cancelled and superseded attempts have status records but no review folder or feedback task.
+- The index contains only source Task-ID when valid, source SHA, run ID/attempt, check-set identity, policy revision, completion time, outcome, Actions URL, and recovery metadata. Do not add findings, logs, diagnostics, evidence, remediation state, or task history.
+- The coordinator uploads a compact aggregate artifact for recovery. The publisher checks out trusted branch `gpt`, executes only the Worker-owned publisher script, receives no secrets, and has contents-write permission only in its isolated job. It never checks out or executes task source code.
+- Recovery uses run metadata and aggregate artifacts only. It does not inspect logs or validate source code. Reconciled records expire after three days; unresolved records never expire.
+
+## Recovery scheduling constraint
+
+The repository's current default branch is `main`, while this project is maintained exclusively on `gpt`. GitHub scheduled workflows run only from the default branch, so a schedule defined only on `gpt` is not operational until the default branch changes or an external scheduler invokes the recovery workflow. The recovery workflow can still run opportunistically from `gpt` push events and after publication. Do not claim scheduled recovery is operational before that external prerequisite is met. See [GitHub's schedule event documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows).
 
 ## Task contract source and binding
 
@@ -65,7 +82,7 @@ The schema and registry are interfaces for the generic verifier. They do not the
 
 ## Protection prerequisite
 
-A file in the repository is not self-protecting. GitHub branch protection or a ruleset must require review for changes to the policy, schema, adapter registry, Worker authority, task-contract templates, verifier and aggregate scripts/tests, and coordinator/reusable workflows. The policy records these required paths as an external prerequisite. Effective protection has not been established or verified. Do not enable the coordinator until the repository's effective ruleset has been verified.
+A file in the repository is not self-protecting. GitHub branch protection or a ruleset must require review for changes to the policy, contract/status schemas, adapter registry, review template, Worker authority, task-contract templates, verifier, aggregate, publisher and recovery scripts/tests, dispatcher, and coordinator/reusable workflows. The policy records these required paths as an external prerequisite. Effective protection has not been established or verified. Do not enable the coordinator until the repository's effective ruleset has been verified.
 
 ## Security boundary
 
@@ -77,4 +94,4 @@ A file in the repository is not self-protecting. GitHub branch protection or a r
 
 ## Implementation state
 
-The coordinator, generic verifier, and exact-SHA aggregate are implemented as repository files. Their runtime behavior has not been demonstrated. GitHub branch protection remains an external prerequisite and is unverified. The publisher, recovery sweep, durable checkpoint, Worker feedback lifecycle, and report-tree retirement remain incomplete. `.takeout/reports/` and all existing report producers/consumers remain intact pending the later migration and confirmation gates.
+The exact-SHA coordinator, generic verifier, aggregate, gated dispatcher, and isolated publisher are implemented as repository files. The publisher and status-index regression tests are registered in document-standards CI but have not been executed by the Worker. No hosted run or publication is claimed. The recovery workflow and sweep implementation remain in progress. The repository default branch is main, so the scheduled sweep cannot operate from gpt yet. Effective branch protection and publisher write access remain external prerequisites. Worker feedback lifecycle and report-tree retirement remain incomplete. `.takeout/reports/` and all existing report producers/consumers remain intact pending migration and Confirmation.
