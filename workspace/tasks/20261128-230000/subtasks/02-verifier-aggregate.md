@@ -54,16 +54,27 @@ Implement the generic verifier and aggregate outcome logic, migrate existing req
 
 - ADR-0008 governs this work.
 - Preserve existing validation coverage and legacy report system until migration gates are met.
-- **Next:** Implement and commit this subtask's deliverables, then readback as required by the task workflow.
+### 2026-11-28 — exact-SHA verifier and aggregate implementation
+
+- Added the Worker-owned task contract builder. It resolves exactly one Task-ID trailer and task record from the source commit tree.
+- Added machine-readable Validation Contract blocks to parent/subtask templates. The coordinator injects the exact source SHA and rejects missing, ambiguous, malformed, or duplicate-key contracts.
+- Added the typed generic verifier, closed adapter registry checks, safe repository path resolution, shell-free execution, sanitized task environment, isolated HOME/TMP, per-check timeouts, and a 25-minute aggregate execution budget.
+- Added the exact-SHA aggregate. It binds source SHA, policy blob SHA, complete task-contract identity, coordinator run ID, and attempt. Missing, duplicate, skipped, pending, partial, mismatched, cancelled, and superseded states cannot produce success.
+- Added regression suites for contract resolution, verifier security and resource limits, and aggregate classification. Wired them into validate-document-standards.yml.
+- Migrated the three existing validation workflows to reusable exact-SHA inputs. Coordinator mode skips legacy report publishers and diagnostics jobs. Direct-push report behavior remains intact.
+- Added task-validation.yml as a reusable coordinator and task-validation-verifier.yml as the isolated verifier. The coordinator is deliberately staged as workflow_call only. It has no push trigger while legacy publishers remain active.
+- Updated the Worker skill, task templates, interface reference, document catalog, and Workflow Map to enforce canonical contract ownership and placement.
+- Protection gate: protection.enforcement_status remains external-prerequisite; effective branch protection/ruleset could not be verified. coordinator.activation_status remains staged. Both gates fail closed.
+- Validation: Regression tests are registered in CI but were not executed locally. No workflow was dispatched and no hosted run, logs, or artifacts were inspected.
+- Next: Proceed with eligible publisher/recovery subtask 03. Do not enable the coordinator until its publisher and report migration gates pass.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Not yet determined
-- **Readback:** Pending
-- **Checks:** Not performed
-- **Limitations:** No runtime claims.
-
+- **Commit SHA:** e2a9756a0f719882e2d35df1a049f0fada117dcb (latest implementation readback; 101 commits after subtask 01 foundation f036ecbd02a9f049486ffbe27f8d0d11edae314d)
+- **Changed paths:** .agent/WORKFLOW_MAP.md; Worker SKILL.md; task and subtask templates; task-validation policy, schema, and adapter registry; document catalog and task-validation interface reference; verifier, contract builder, aggregate scripts and three regression suites; .github/workflows/ste-lint-changed.yml, ste-lint-full-docs.yml, validate-document-standards.yml, task-validation.yml, and task-validation-verifier.yml; parent task, this subtask, and subtask index.
+- **Readback:** Implementation files and governance references read back from branch gpt. Final readback continues before closeout.
+- **Checks:** No local scripts, tests, or lint executed. Regression tests are wired into the document-standards workflow. No workflow dispatch or hosted-run inspection.
+- **Limitations:** Coordinator activation is staged and effective external policy protection is unverified. The privileged publisher, recovery sweep, durable checkpoint, and report migration belong to dependent work and remain incomplete. No runtime or CI success is claimed.
 ## 7. Completion
 
 - **Status:** Not Done
