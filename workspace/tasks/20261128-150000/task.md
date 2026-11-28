@@ -5,7 +5,7 @@
 - **Created:** 2026-11-28 15:00 UTC
 - **Updated:** 2026-11-28 15:00 UTC
 - **Priority:** P1
-- **Status:** Ready
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User approved and issued standalone Execute for the minimal workflow correction addressing unexplained commit SHA selection.
@@ -35,20 +35,24 @@ Add a minimal canonical rule in The Worker:
 Keep the correction narrow. No mandatory latest-commit lookup is added.
 
 ## 5. Progress
-Implementation pending.
+
+- **Action:** Added the branch-first file-read and SHA-provenance rule to The Worker and the routing summary to Workflow Map.
+- **Result:** The canonical workflow defaults to branch refs and prohibits unexplained/stale SHAs; no mandatory latest-commit lookup is imposed.
+- **References:** `.agent/skills/the-worker/SKILL.md`; `.agent/WORKFLOW_MAP.md`; `workspace/task_board.md`.
+- **Next:** Complete readback and closeout.
 
 ## 6. Current State and Remaining Work
-Update canonical Worker instruction and Workflow Map, read back, commit.
+Acceptance criteria met. Readback is confirmed below; no runtime checks were required.
 
 ## 7. Verification and Evidence
-- **Commit SHA:** Not committed
-- **Changed paths:** Pending
-- **Readback:** Pending
+- **Commit SHA:** See implementation commit references: `a63e263496a8dc7070a32a3ae579ed59fbeda666` (Worker), `2b2c739f6d1bd0164fe874fecc6364829270affd` (map), `a61a0fd8689138319ef6c666e5ec579c700f3492` (board)
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`, `.agent/WORKFLOW_MAP.md`, `workspace/task_board.md`
+- **Readback:** Confirmed on branch `gpt`
 - **Checks:** Not performed
 - **Limitations:** No runtime validation expected.
 
 ## 8. Execution self-check
-Scope and approval are explicit; standalone execute cue issued. Use branch refs for reads. No local scripts or hosted CI inspection.
+Canonical owner, scope, approval, task parentage, and branch-read approach confirmed; standalone execute cue issued. Readback completed. No local scripts or hosted CI inspection.
 
 ## 9. Handoff
 Complete the canonical rule, map pointer, readback and closeout.
