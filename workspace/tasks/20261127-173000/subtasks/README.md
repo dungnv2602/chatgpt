@@ -27,6 +27,6 @@ Parent: [task.md](../task.md)
 | 20261127-173000-47 | CI remediation — Review passive-voice findings in .agent/skills/asd-ste100/references/repository-writing-policy.md | Blocked | [47-ci-remediation-review-passive-voice-findings-in-agent-skills-asd-ste100-referen.md](47-ci-remediation-review-passive-voice-findings-in-agent-skills-asd-ste100-referen.md) |
 | 20261127-173000-48 | CI remediation — Review synonym-rotation findings in .agent/skills/agent-skill-authoring/SKILL.md | Blocked | [48-ci-remediation-review-synonym-rotation-findings-in-agent-skills-agent-skill-aut.md](48-ci-remediation-review-synonym-rotation-findings-in-agent-skills-agent-skill-aut.md) |
 | 20261127-173000-49 | CI remediation — Review passive-voice findings in workspace/task\\\_board.md | Blocked | [49-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md](49-ci-remediation-review-passive-voice-findings-in-workspace-task-board-md.md) |
-| 20261127-173000-60 | Prepare DRAFT-0007 — Automated structural ownership validation | Proposed | [60-automated-structural-ownership-validation.md](60-automated-structural-ownership-validation.md) |
+| 20261127-173000-60 | Implement approved structural ownership validator (ADR-0006) | In Progress | [60-automated-structural-ownership-validation.md](60-automated-structural-ownership-validation.md) |
 
 The parent cannot be Done while a required child is open. CI remediation is commit-based; hosted validation is separate metadata.
