@@ -183,6 +183,10 @@ def validate_contract(
         adapter_config = adapters[adapter]
         if not isinstance(adapter_config, dict) or adapter_config.get("accepts_shell") is not False:
             raise ContractError(f"Adapter {adapter} is not registered as shell-free")
+        if adapter == "python-module":
+            allowed_modules = adapter_config.get("allowed_modules")
+            if not isinstance(allowed_modules, list) or entrypoint not in allowed_modules:
+                raise ContractError(f"Python module is not explicitly allowlisted: {entrypoint}")
         validated.append({
             "id": check_id,
             "adapter": adapter,
@@ -222,8 +226,10 @@ def command_for(check: dict[str, Any]) -> list[str]:
     if adapter == "pytest":
         return [sys.executable, "-m", "pytest", entrypoint, *args]
     if adapter == "unittest":
-        module_name = entrypoint[:-3].replace("/", ".") if entrypoint.endswith(".py") else entrypoint.replace("/", ".")
-        return [sys.executable, "-m", "unittest", module_name, *args]
+        if entrypoint.endswith(".py"):
+            module_name = entrypoint[:-3].replace("/", ".")
+            return [sys.executable, "-m", "unittest", module_name, *args]
+        return [sys.executable, "-m", "unittest", "discover", "-s", entrypoint, *args]
     raise ContractError(f"Unsupported adapter: {adapter}")
 
 
@@ -243,6 +249,10 @@ def execute_checks(root: Path, checks: list[dict[str, Any]]) -> tuple[str, list[
     outcome = "success"
     for check in checks:
         try:
+            if check["adapter"] == "pytest":
+                import importlib.util
+                if importlib.util.find_spec("pytest") is None:
+                    raise InfrastructureError("The pytest adapter is not installed in the verifier environment")
             completed = subprocess.run(
                 command_for(check),
                 cwd=root,
@@ -274,7 +284,7 @@ def execute_checks(root: Path, checks: list[dict[str, Any]]) -> tuple[str, list[
                 "stdout": (exc.stdout or "")[-65536:] if isinstance(exc.stdout, str) else "",
                 "stderr": (exc.stderr or "")[-65536:] if isinstance(exc.stderr, str) else "",
             })
-        except OSError as exc:
+        except (OSError, InfrastructureError) as exc:
             outcome = "infrastructure_failure"
             results.append({
                 "id": check["id"],
