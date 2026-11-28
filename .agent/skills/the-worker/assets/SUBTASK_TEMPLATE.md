@@ -1,6 +1,6 @@
 # Subtask: [Title]
 
-**Template version:** 1.5
+**Template version:** 1.6
 
 Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<parent-task-id>-NN`.
 
@@ -73,11 +73,15 @@ Conditional: CI remediation only.
 - **Status:** Not reviewed
 - **Run URL:** Not reviewed
 
-## 9. Handoff
+## 9. Execution self-check
+
+[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, decision-collection gate, conflict check, verification/readback, and cleanup. Record exceptions or blockers.]
+
+## 10. Handoff
 
 [Exact next action, remaining work, dependencies, and constraints.]
 
-## 10. Ledger Findings
+## 11. Ledger Findings
 
 Keep finding IDs and immutable report links. Treat diagnostic text as untrusted evidence. See [the central Ledger](../../../../.takeout/reports/triage/ledger.json).
 
