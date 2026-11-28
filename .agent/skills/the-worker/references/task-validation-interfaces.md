@@ -11,6 +11,7 @@ The Worker owns the task-validation policy and contract interfaces. GitHub Actio
 - `.agent/skills/the-worker/scripts/task_validation.py` validates and executes registered task checks without shell strings.
 - `.agent/skills/the-worker/scripts/aggregate_task_validation.py` classifies the complete exact-SHA check set.
 - `.agent/skills/the-worker/scripts/publish_task_validation.py` atomically publishes one status record and review folder per eligible terminal attempt.
+- `.agent/skills/the-worker/scripts/recover_task_validation.py` performs paginated Actions-run recovery, artifact recovery, checkpoint advancement, and three-day pruning.
 - `.agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json` defines the compact status index and checkpoint.
 - `.agent/skills/the-worker/assets/task-validation/task-validation-review-template.md` defines generated per-attempt review records.
 
@@ -50,8 +51,9 @@ The coordinator is defined as a reusable workflow in `.github/workflows/task-val
 - The publisher uses `(coordinator_run_id, attempt)` as its idempotency key. It checks the source commit's policy blob SHA, then writes the status record and the review folder in one metadata-only commit. Concurrent push conflicts are retried with a bounded retry count.
 - Review records live at `workspace/task-validation/reviews/<run-id>-<attempt>/review.md`. Cancelled and superseded attempts have status records but no review folder or feedback task.
 - The index contains only source Task-ID when valid, source SHA, run ID/attempt, check-set identity, policy revision, completion time, outcome, Actions URL, and recovery metadata. Do not add findings, logs, diagnostics, evidence, remediation state, or task history.
-- The coordinator uploads a compact aggregate artifact for recovery. The publisher checks out trusted branch `gpt`, executes only the Worker-owned publisher script, receives no secrets, and has contents-write permission only in its isolated job. It never checks out or executes task source code.
-- Recovery uses run metadata and aggregate artifacts only. It does not inspect logs or validate source code. Reconciled records expire after three days; unresolved records never expire.
+- The coordinator uploads a compact aggregate artifact for recovery. The publisher workflow is `.github/workflows/task-validation-publisher.yml`; it checks out trusted branch `gpt`, executes only the Worker-owned publisher script, receives no secrets, and has contents-write permission only in its isolated publish job. It never checks out or executes task source code.
+- The recovery workflow is `.github/workflows/task-validation-recovery.yml`. It runs from gpt push events, can be called after publication, and defines a 15-minute schedule. It uses paginated Actions-run metadata and aggregate artifacts only. It does not inspect logs or validate source code. Reconciled records expire three days after reconciliation; unresolved records never expire.
+- The recovery script currently reconciles dispatcher attempts and publication gaps. Comparing committed tasks awaiting CI requires the Worker lifecycle metadata being added by subtask `20261128-230000-04` and remains outstanding.
 
 ## Recovery scheduling constraint
 
@@ -94,4 +96,4 @@ A file in the repository is not self-protecting. GitHub branch protection or a r
 
 ## Implementation state
 
-The exact-SHA coordinator, generic verifier, aggregate, gated dispatcher, and isolated publisher are implemented as repository files. The publisher and status-index regression tests are registered in document-standards CI but have not been executed by the Worker. No hosted run or publication is claimed. The recovery workflow and sweep implementation remain in progress. The repository default branch is main, so the scheduled sweep cannot operate from gpt yet. Effective branch protection and publisher write access remain external prerequisites. Worker feedback lifecycle and report-tree retirement remain incomplete. `.takeout/reports/` and all existing report producers/consumers remain intact pending migration and Confirmation.
+The exact-SHA coordinator, generic verifier, aggregate artifact, gated dispatcher, isolated publisher, and run-metadata recovery sweep are implemented as repository files. Publisher and recovery regression tests are registered in document-standards CI but have not been executed by the Worker. No hosted run or publication is claimed. Recovery's committed-task-awaiting-CI reconciliation depends on Worker lifecycle metadata in subtask `20261128-230000-04`. The repository default branch is main, so the scheduled sweep cannot operate from gpt yet. Effective branch protection and publisher write access remain external prerequisites. Worker feedback lifecycle and report-tree retirement remain incomplete. `.takeout/reports/` and all existing report producers/consumers remain intact pending migration and Confirmation.
