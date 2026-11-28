@@ -10,6 +10,7 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -251,10 +252,15 @@ def command_for(check: dict[str, Any]) -> list[str]:
     raise ContractError(f"Unsupported adapter: {adapter}")
 
 
-def safe_environment() -> dict[str, str]:
-    keys = ("PATH", "HOME", "SYSTEMROOT", "WINDIR", "TMP", "TEMP", "LANG", "LC_ALL")
-    env = {key: os.environ[key] for key in keys if key in os.environ}
+def safe_environment(home: Path) -> dict[str, str]:
+    env = {"PATH": os.environ.get("PATH", "/usr/bin:/bin")}
+    for key in ("SYSTEMROOT", "WINDIR", "LANG", "LC_ALL"):
+        if key in os.environ:
+            env[key] = os.environ[key]
     env.update({
+        "HOME": str(home),
+        "TMP": str(home),
+        "TEMP": str(home),
         "PYTHONNOUSERSITE": "1",
         "PYTHONDONTWRITEBYTECODE": "1",
         "PYTHONUNBUFFERED": "1",
@@ -271,16 +277,17 @@ def execute_checks(root: Path, checks: list[dict[str, Any]]) -> tuple[str, list[
                 import importlib.util
                 if importlib.util.find_spec("pytest") is None:
                     raise InfrastructureError("The pytest adapter is not installed in the verifier environment")
-            completed = subprocess.run(
-                command_for(check),
-                cwd=root,
-                shell=False,
-                capture_output=True,
-                text=True,
-                timeout=check["timeout_minutes"] * 60,
-                env=safe_environment(),
-                check=False,
-            )
+            with tempfile.TemporaryDirectory(prefix="task-validation-home-") as home_dir:
+                completed = subprocess.run(
+                    command_for(check),
+                    cwd=root,
+                    shell=False,
+                    capture_output=True,
+                    text=True,
+                    timeout=check["timeout_minutes"] * 60,
+                    env=safe_environment(Path(home_dir)),
+                    check=False,
+                )
             status = "passed" if completed.returncode == 0 else "failed"
             if status == "failed" and outcome == "success":
                 outcome = "check_failure"
