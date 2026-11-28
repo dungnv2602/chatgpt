@@ -8,14 +8,14 @@
 - **Created:** 2026-11-27 17:31 UTC
 - **Updated:** 2026-11-28 03:13 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create a task-board template; scan documents for missing templates and create any missing templates; audit and update stale templates against the current repository/workflow; relocate all templates currently outside skills into appropriate skill locations in accordance with the skill standard.
 - **Governing ADR(s):** None
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — user-selected current focus; child 02 is active.
+- **Eligibility / deferral reason:** Done — all required child work and acceptance criteria are complete.
 - **Related tasks:** None
 
 ## 1. Original Request
@@ -67,21 +67,31 @@ Improve template coverage, freshness, and canonical placement across the reposit
 - **Limitations:** No local tests or scripts were run. No hosted CI result page or logs were inspected.
 - **Next:** Continue child 02, the repository template coverage audit.
 
+
+
+### 2026-11-28 — Template Fix closeout
+
+- **Action:** Completed the repository-wide template coverage, freshness, and placement audit. Updated stale templates and owner guidance. Reconciled the catalog, validator, tests, and all references.
+- **Result:** No new template type was needed. All 30 template assets are in skill-owned `assets/` directories. Twelve novel templates were relocated to the Romantic Storyteller skill. Two stale templates were updated. The catalog now covers every in-scope Markdown file.
+- **Evidence:** `6cc29c784b7103bc425998ebfbfa5acfdf79399b`, `eb57d251600e4a86b78d9e62a1e49a5a65484003`, `11a44d28907f116f751babc3ede78fe436b8031c`, `be62841f0776a8c62e45d17ade01751c065a59b3`, `b59167b89e9c35ab071cf37e3fd5f74e6d14a264`, `56d2e4b515f79d15f01619d58af7983cd620280a`, and `98f8baf117c187edfc3dc76d16969a8228ed558e`. Independent path audit: 277/277 Markdown files covered, zero uncovered. Template placement audit: 30/30 under skill assets, zero outside. Local-link audit: 35 checked, zero broken. Readback confirmed all 12 moved template blobs retained their original SHA values.
+- **Limitations:** No local scripts or tests were run. Hosted workflow results were not inspected.
+- **Closeout:** All required children are complete. The task folder will be deleted under normal lifecycle rules.
+
 ## 6. Current State and Remaining Work
 
-Child 01 (canonical task-board template) is Done. Child 03 (duplicate P0 lint-report remediation) is complete and closed through shared commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Child 02 (repository template coverage audit, stale-template updates, and relocation of templates into appropriate skills) is In Progress. The existing catalog records the prior inventory and relocation, but the task still requires independent verification and correction of any remaining stale guidance.
+Child 01 (canonical task-board template) is complete and its record was removed under lifecycle rules. Child 03 (duplicate P0 lint-report remediation) is complete and closed through shared commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Child 02 is Done. All recurring document types have catalogued coverage. All 30 template assets now live under skill assets. The 12 novel templates are owned by the Romantic Storyteller skill. The two stale templates and the ongoing template-maintenance procedure were updated. The task is ready for normal folder closeout.
 
 ## 7. Verification and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Task records and board
-- **Readback:** Pending
-- **Checks:** Not performed
-- **Limitations:** Repository-wide template coverage, freshness, and placement audit not performed.
+- **Commit SHA:** `6cc29c784b7103bc425998ebfbfa5acfdf79399b`, `eb57d251600e4a86b78d9e62a1e49a5a65484003`, `11a44d28907f116f751babc3ede78fe436b8031c`, `be62841f0776a8c62e45d17ade01751c065a59b3`, `b59167b89e9c35ab071cf37e3fd5f74e6d14a264`, `56d2e4b515f79d15f01619d58af7983cd620280a`, and `98f8baf117c187edfc3dc76d16969a8228ed558e`
+- **Changed paths:** Novel template assets and owner indexes; Worker document catalog, validator, tests, and template policy; task-board template; Prompt Master template; drawing and novel skill references; workflow path filters; task records and board.
+- **Readback:** Verified from branch `gpt` at audit commit `98f8baf117c187edfc3dc76d16969a8228ed558e`.
+- **Checks:** 30 template assets found, all in skill `assets/` locations; no external templates; former novel template directory absent. Independent catalog-pattern audit covered 277/277 in-scope Markdown files with 54 rules and zero uncovered paths. Link audit checked 35 local links with zero broken targets. All 12 moved template blobs match their original content hashes.
+- **Limitations:** Repository scripts and tests were not run locally. Hosted Document Standards results were not inspected; no hosted pass is claimed.
 
 ## 8. Handoff
 
-Execute children independently, template-first, with evidence. For child 02, inventory all repository templates, identify missing and stale templates, then relocate templates outside skills into their appropriate skill locations while maintaining skill-standard compliance and reconciling references.
+Closeout complete. Remove the completed task folder and clear its Current Execution pointer. Do not select unrelated work without a new user instruction.
 
 ## 9. Subtasks
 
