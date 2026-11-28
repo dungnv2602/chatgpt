@@ -2,7 +2,7 @@
 record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0010"
-revision: 2
+revision: 3
 status: "draft"
 created: "2026-11-28"
 updated: "2026-11-28"
@@ -110,18 +110,18 @@ The user confirmed on 2026-11-28 that the intended retirement target is the exis
 - **Evidence and confidence:** User approval establishes the desired lifecycle. Current repository contracts establish the migration surface. Feasibility is an inference until workflow code is reviewed and changed.
 - **Limitations and unknowns:** Capture mechanism and path write permissions have not been inspected as part of this Draft. No prototype or runtime replay has been performed.
 
-### Option 3 — Retain a thin CI run index but move remediation into self-contained folders
+### Option 3 — Keep a thin CI run-status index inside workspace/ and move remediation into self-contained folders
 
-- **Description and operating model:** Keep a minimal run/capture status index to distinguish completed CI cycles from missing/failed capture, but place every actionable error and its working evidence in a separate child folder. Do not keep a central findings Ledger.
-- **Repository and environment fit:** Transitional compromise; still depends on central CI metadata and does not fully retire the report system.
-- **Good — strengths:** Provides an explicit signal that a CI cycle completed, reducing the risk that no children means no capture.
-- **Neutral — trade-offs:** Some central metadata remains, but it is not a findings database.
-- **Bad — weaknesses:** Retains infrastructure the user wants retired and adds a second completion signal.
-- **Implementation and migration cost:** High; requires redesign but less than removing all capture metadata.
-- **Dependencies and operational burden:** Requires a minimal run-status producer and consumer, plus child-folder generation and cleanup.
-- **Risks and safeguards:** The index may regrow into a Ledger. Strictly limit it to cycle success/failure; do not store findings, evidence, or task lifecycle.
-- **Evidence and confidence:** The existing unified index demonstrates a current place for capture metadata; the minimal alternative is an architectural inference.
-- **Limitations and unknowns:** User has not approved retaining any report index.
+- **Description and operating model:** Retain only a compact CI run-status index under workspace/. For each relevant commit, record the commit SHA, run identifier, workflow identity, completion time, and terminal outcome (success, failure, or infrastructure/capture failure). A successful status means the configured CI checks completed successfully for that exact commit. All actionable errors and their evidence remain exclusively in individual self-contained CI subtask folders. The index may link to active error folders but must not store findings, diagnostic payloads, evidence, recurrence identity, or remediation state.
+- **Repository and environment fit:** Fits the requested folder-based remediation model while preserving a narrow, auditable signal that the configured validation cycle actually ran. The index is workspace-owned metadata, not a report artifact under .takeout/reports/.
+- **Good — strengths:** Confirms whether the post-commit CI cycle completed; distinguishes a successful clean cycle from a failed run or failed capture; retains commit-specific validation status without retaining a findings Ledger.
+- **Neutral — trade-offs:** A small central metadata file remains and requires a defined schema, writer, and reader. This is not a full retirement of all CI metadata, but it does retire the report/finding system and its .takeout/reports/ location.
+- **Bad — weaknesses:** A green status is only as meaningful as the checks configured in that workflow; it does not prove the absence of defects outside their coverage. A status index can become a Ledger if its scope is not constrained.
+- **Implementation and migration cost:** High; requires a new minimal status writer/consumer, folder-based error capture, and coordinated removal of report/Ledger consumers.
+- **Dependencies and operational burden:** CI must publish an unambiguous terminal state for each relevant commit. The status writer must distinguish success, actionable test/check failure, and infrastructure/capture failure. Consumers must not infer success from a missing record.
+- **Risks and safeguards:** Freeze the allowed fields and reject findings/evidence payloads in the index. Require a matching commit SHA and terminal state. Treat missing, pending, cancelled, or capture-failed status as not validated, never as success. Keep error identity and all remediation material in child folders only.
+- **Evidence and confidence:** The need for a completion signal follows from the user's approved no-manual-verification loop; the exact index schema and workflow feasibility remain design work. No runtime behavior has been verified.
+- **Limitations and unknowns:** Exact workflow events, status APIs, write permissions, and whether all relevant checks report a reliable terminal state remain to be inspected during implementation.
 
 ## Comparative Assessment
 
@@ -130,20 +130,20 @@ The user confirmed on 2026-11-28 that the intended retirement target is the exis
 | One folder per error | Weak | Strong | Strong |
 | Self-contained remediation | Partial | Strong | Strong |
 | No manual fix verification | Weak | Strong | Strong |
-| Central state overhead | High | Low | Moderate |
-| Distinguishes clean cycle from failed capture | Strong | Requires safeguards | Strong |
-| Complete report-system retirement | No | Yes | Partial |
+| Central state overhead | High | Low | Low–moderate, tightly bounded |
+| Distinguishes clean cycle from failed capture | Strong | Requires safeguards | Strong, with explicit terminal states |
+| Complete report-system retirement | No | Yes | Yes; retains only run-status metadata under workspace/ |
 | Migration cost | Low | High | High |
 
 ### Overall comparison
 
-Option 1 is easiest to retain but fails the approved lifecycle. Option 3 improves isolation but retains central capture state contrary to the requested retirement. Option 2 best matches the approved direction, provided CI can distinguish a completed no-error cycle from a missing or failed capture. This is a capture-integrity condition, not manual fix verification.
+Option 1 is easiest to retain but fails the approved lifecycle. Option 2 fully removes central state, but its clean-cycle signal depends entirely on reliable capture behavior. Option 3 preserves the folder-based remediation model while retaining only the minimum commit-specific run outcome needed to know whether automated validation actually completed. The decisive boundary is that the index records run status only: no findings, logs, evidence, deduplication state, or remediation history. With that boundary, Option 3 retires .takeout/reports/ and the central findings Ledger while retaining a useful validation signal.
 
 ## Proposed Recommendation
 
-Adopt Option 2. Make CI create self-contained per-error task folders and use subsequent automatic CI task generation as the remediation feedback loop. Do not manually inspect or verify fixes. Keep only the minimal workflow behavior required to guarantee that a CI cycle actually triggers and task creation is not silently skipped; do not retain a central findings Ledger or report archive.
+Adopt Option 3. Keep a minimal CI run-status index inside workspace/ and make CI create self-contained per-error task folders. The index records only commit-specific run identity and terminal outcome, allowing the workflow to distinguish successful validation from failed checks or failed capture. All actionable errors and all remediation evidence live only in their own child folders. Do not retain a central findings Ledger or report archive, and do not retain any index under .takeout/reports/.
 
-The user confirmed .takeout/reports/ as the intended retirement target. Migrate every consumer and make replacement capture operational before deleting that directory.
+The user confirmed .takeout/reports/ as the intended retirement target. Migrate every consumer, make folder-based capture and run-status recording operational, and then delete that directory. The Worker does not manually verify fixes; the subsequent automated run is the validation signal.
 
 ## Consequences and Trade-Offs
 
@@ -176,11 +176,11 @@ The user confirmed .takeout/reports/ as the intended retirement target. Migrate 
 
 ## Proposed Implementation Outline
 
-1. Approve this Draft revision and exact report-tree retirement path.
+1. Approve this Draft revision and the workspace-local run-status index scope; the exact report-tree retirement path is confirmed.
 2. Promote the Draft to a superseding ADR for ADR-0003, ADR-0004, and ADR-0007 where rules conflict.
 3. Update canonical task/subtask folder contracts and document catalog before creating subtask folders.
 4. Update CI capture to create one self-contained child folder per distinct actionable error under the genuine parent identified by the source commit Task-ID trailer.
-5. Remove Ledger and report-index dependencies from remediation. Ensure capture failure is not treated as a clean cycle.
+5. Replace the old report index with a strictly bounded run-status index under workspace/. Remove Ledger and report-index dependencies from remediation. Ensure missing or failed capture is never treated as a successful clean cycle.
 6. Update Worker and Workflow Map to commit fixes and rely on automatic CI-created children; do not perform separate manual fix verification.
 7. Migrate existing active tasks/records only as required; do not backfill historical reports.
 8. Remove obsolete report producers, consumers, schemas, scripts, indexes, and the confirmed report tree after replacement is operational.
@@ -190,11 +190,12 @@ The user confirmed .takeout/reports/ as the intended retirement target. Migrate 
 ## User Clarification
 
 - **2026-11-28:** User confirmed that the intended retirement target is .takeout/reports/.
+- **2026-11-28:** User selected Option 3: retain the successful-run status concept, move the index inside workspace/, and use it to identify whether committed changes passed the configured automated CI checks. The index must remain run-status-only; findings and evidence belong in self-contained error folders.
 
 ## Review and Approval
 
-- **Revision presented:** 2
-- **User decision:** Folder-per-error lifecycle and automatic feedback-loop direction approved in conversation; exact report target confirmed as .takeout/reports/. Formal approval of this consolidated Draft revision is pending.
+- **Revision presented:** 3
+- **User decision:** Option 3 selected and approved as the preferred architecture direction; exact report target confirmed as .takeout/reports/. This revision incorporates the selected run-status-only index model and is awaiting approval as a complete consolidated Draft.
 - **Approved scope:** Desired operating model and report retirement target confirmed; implementation still requires a superseding accepted ADR.
 - **Decision date:** 2026-11-28
 - **Resulting ADR:** Not created
@@ -204,7 +205,8 @@ The user confirmed .takeout/reports/ as the intended retirement target. Migrate 
 | Date | Revision | Change | User feedback / decision |
 |---|---|---|---|
 | 2026-11-28 | 1 | Prepared the superseding CI folder/feedback-loop proposal and documented the repository path discrepancy. | User approved the operating model; clarified the intended directory. |
-| 2026-11-28 | 2 | Confirmed .takeout/reports/ as the exact retirement target and removed the unresolved-path question. | Awaiting approval of this consolidated Draft revision. |
+| 2026-11-28 | 2 | Confirmed .takeout/reports/ as the exact retirement target and removed the unresolved-path question. | User confirmed the path. |
+| 2026-11-28 | 3 | Selected Option 3; narrowed the retained index to commit-specific CI run status only and relocated it under workspace/. Clarified that success means configured checks completed successfully for the exact commit, while missing/failed capture is not success. | User approved Option 3 and requested feedback on the approach; awaiting approval of the consolidated revision. |
 
 ## References and Evidence Register
 
