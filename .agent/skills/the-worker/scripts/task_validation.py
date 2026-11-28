@@ -306,7 +306,8 @@ def execute_checks(root: Path, checks: list[dict[str, Any]]) -> tuple[str, list[
                 "stderr": completed.stderr[-65536:],
             })
         except subprocess.TimeoutExpired as exc:
-            outcome = "infrastructure_failure"
+            if outcome == "success":
+                outcome = "check_failure"
             results.append({
                 "id": check["id"],
                 "adapter": check["adapter"],
