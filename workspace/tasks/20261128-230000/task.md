@@ -2,7 +2,7 @@
 
 ## Metadata
 
-- **Template version:** 2.7
+- **Template version:** 2.8
 - **ID:** 20261128-230000
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
@@ -16,6 +16,17 @@
 - **Dependencies:** None
 - **Eligibility / deferral reason:** Eligible — user authorization and execution cue satisfied
 - **Related tasks:** 20261126-142500 (superseded administrative task; deleted after closeout)
+
+## Validation Contract
+
+Declare task-specific checks in this JSON block. The coordinator binds the contract to the exact source commit SHA. Use an empty array when no additional checks are required. Repository policy checks remain mandatory and cannot be removed or overridden. Use only registered adapters and repository-relative entrypoints. Never add shell command strings, credentials, environment overrides, or permission settings.
+
+```json
+{
+  "contract_revision": "1",
+  "checks": []
+}
+```
 
 ## 1. Original Request
 
