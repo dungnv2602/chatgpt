@@ -212,7 +212,7 @@ The Worker owns document governance. Apply this gate before creating, moving, re
 9. Read the complete current canonical template or format source after any update and before modifying the target. Create or revise the target from that current format.
 10. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable. Delete unused placeholders. Do not invent approvals or values.
 11. Update indexes and links. Check the target against its format and writing or data standard. Read back every changed path and commit.
-12. Use Reserved for a verified Markdown family with no current record. Change Reserved to Active in the commit that creates its first record.
+12. Use Reserved for a verified Markdown or non-Markdown family with no current record. Change Reserved to Active in the commit that creates its first record.
 13. Do not mass-migrate untouched history. Do not create a template when an approved embedded contract, schema, or generator already defines the format.
 
 For a one-off note or creative document, follow an explicit Lightweight pattern or Exempt catalog entry. If no such entry exists, propose the format before editing. Source code, generated output, schemas, and machine-readable data follow their own contracts.
@@ -245,6 +245,7 @@ Load the relevant reference only when the task requires it:
 - `references/ci-ledger.md` only for an assigned, selected CI task in the workspace that requires report intake, finding attribution, grouping, lifecycle, or Ledger integrity.
 - `references/github-actions.md` only for an assigned, selected CI task in the workspace that requires workflow design, diagnostics, technical remediation, or validation procedures. Load it with the CI Ledger reference only when that task needs both.
 - `references/decision-governance.md` for Drafts, ADRs, repository analysis, implementation linkage, or Confirmation.
+- `references/task-validation-interfaces.md` for ADR-0008 policy, contract schema, adapter registry, or coordinator interface work.
 
 The Worker owns document governance in this file and its canonical document-type catalog. The Worker does not activate a separate document-governance skill.
 
