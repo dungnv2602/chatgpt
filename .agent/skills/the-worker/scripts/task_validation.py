@@ -119,8 +119,19 @@ def validate_contract(
         raise ContractError("Unsupported task-contract schema")
     if schema.get("additionalProperties") is not False:
         raise ContractError("Task-contract schema must reject unknown top-level properties")
+    schema_properties = schema.get("properties", {})
+    check_schema = schema.get("$defs", {}).get("check", {})
+    if not isinstance(schema_properties, dict) or not isinstance(check_schema, dict):
+        raise ContractError("Task-contract schema is missing its property definitions")
+    if schema_properties.get("source_sha", {}).get("pattern") != "^[0-9a-f]{40}$":
+        raise ContractError("Task-contract schema does not enforce exact source SHA values")
+    if check_schema.get("additionalProperties") is not False:
+        raise ContractError("Task check schema must reject unknown properties")
     if registry.get("schema_version") != 1 or not isinstance(registry.get("adapters"), dict):
         raise ContractError("Invalid adapter registry")
+    schema_adapters = set(check_schema.get("properties", {}).get("adapter", {}).get("enum", []))
+    if schema_adapters != set(registry["adapters"]):
+        raise ContractError("Schema adapter enum and registered adapters do not match")
 
     if set(contract) - {"schema_version", "source_sha", "contract_revision", "checks"}:
         raise ContractError("Task contract contains unsupported top-level properties")
@@ -296,6 +307,10 @@ def main() -> int:
         schema = read_json(schema_path)
         registry = read_json(adapters_path)
         contract = read_json(contract_path)
+        if policy.get("task_contract", {}).get("schema") != args.schema.as_posix():
+            raise ContractError("Policy schema path does not match the verifier input")
+        if policy.get("generic_verifier", {}).get("registered_adapters") != args.adapters.as_posix():
+            raise ContractError("Policy adapter-registry path does not match the verifier input")
         checks = validate_contract(
             root, policy, schema, registry, contract,
             args.expected_source_sha, args.expected_policy_blob_sha, policy_path,
