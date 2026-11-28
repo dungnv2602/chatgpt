@@ -18,7 +18,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [20261127-173000-60: Implement approved structural ownership validator (ADR-0006)](tasks/20261127-173000/subtasks/60-automated-structural-ownership-validation.md) — Selected under the standing Refactor Skills focus.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus; child 60 implementation completed and removed after readback.
 
 ## Ordered Eligible Execution Queue
 
