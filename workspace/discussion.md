@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-28 10:13 +07:00:** `/start` initialization and startup P0 baseline review completed. The unified report index contains no indexed runs. The Ledger has two open high-severity tooling findings, one unassigned and one attributed to Refactor Skills. Neither has an eligible child in the current Template Fix focus. Reconciled the board to the user's selected Template Fix workstream and resumed child 02. Next: finish template freshness and placement reconciliation.
+- **2026-11-28 10:47 +07:00:** Template Fix completed and closed. Recovered its task records after premature deletion, updated the Task Board and Prompt Master templates/guidance, integrated placement-aware validation into the hosted document-standards workflow, reconciled the catalog and references, verified all 30 canonical template paths, cleared the board selection, and deleted the completed task folder. No local tests or hosted CI results were inspected. No task is selected; await the user's next instruction.
 
 - **2026-11-28 22:30 +07:00:** Completed ADR-0007 implementation. The Worker now requires autonomous recovery and reconciliation before any interruption. Migrated both workflows, corrected the report-index ordering assertion, removed the standalone reset marker, and read back all active changes. Commits include `a581ff4b24356ba234fd34d341c4ac104c5bf06c`, `bc62fa39442403f0435ac69da784d590923efe6c`, `911532c9a3caec0334231d3be77d882ac73a90fe`, `147e8a35f94264b7853c1563be2df98a352b87c4`, `683ded33ed88787771288d8da08407f5b6d19098`, `c87fa200c648e22e3d482d90f3cf92f475e750aa`, and reconciliation commits. Tests were not run; hosted CI was not inspected.
 
@@ -35,6 +35,8 @@
 - **2026-11-27:** User authorized direct execution of this task's full prompt-capture and CI lifecycle refactor.
 
 ## Reports
+
+- **2026-11-28 10:47 +07:00:** Template Fix closeout. Updated Task Board template v1.1 and live board to point to Worker-owned scheduling rules; updated Prompt Master 1.9.0, its OpenAI guidance, and Template N's scope/approval/verification contract; integrated the placement-aware validator and regression suite into the hosted document-standards workflow; removed the superseded validator/test; updated the document catalog to v1.27 and the workspace usage reference. Verified all 30 canonical template assets under owning skills, including the 12 novel templates under `.agent/skills/romantic-storyteller-visual-artist/assets/templates/`; former `area/novel/templates/` and workspace-root template paths are absent. The recorded scan baseline covers 277 Markdown documents and 30 template assets and found no missing recurring document family. Key commits: `babd4863ea5517b94f5f3a2e93326fca34ac3da6` (Task Board template), `695cdd4174986c99633caa6f5c3a3d5e9d6ad8f7` and `a4d42b9f8bde7ff1ff4a52fe7b510bd6627e0433` (Prompt Master template), `501bc09bbc646a54c8c422de23a4c5a60efb8298` / `81cbb0d1220fa0165dfa8d06b67b97fda71ca84d` / `9d9ac2e31187aa07076d081f436bcdb5f55fd51a` (validator, tests, workflow), `8eb9d12a5c151111ad424520d7b20b1b1737286a` (catalog), `25f6ff9b24197d2b55cde61870b87c836cdfe0ed` (board closeout), and `a830267a115b7352cefc1fc79b1ed79e5456a5c7` (task-folder cleanup). Readback verified all changed paths. No local scripts/tests were run and no hosted CI results were inspected; no validation-pass claim is made.
 
 - **2026-11-28:** ADR-0007 implementation closeout for the index-only lint locator. Commit/readback verified; tests were not run and hosted CI was not inspected.
 
