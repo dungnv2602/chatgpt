@@ -89,11 +89,11 @@ flowchart TD
 - Worker-owned contracts, schemas, adapters, publisher/recovery scripts and tests: .agent/skills/the-worker/assets/task-validation/ and .agent/skills/the-worker/scripts/. Interface and ownership guide: .agent/skills/the-worker/references/task-validation-interfaces.md.
 - Operational status index, checkpoint and review queue: workspace/task-validation/. The Worker reads the index first and opens logs only for recorded actionable failures. It does not rerun or override committed validation.
 - Recovery uses Actions run metadata and aggregate artifacts, not logs. Its push and post-publication paths are available on gpt. The scheduled trigger is not active because the repository default branch is main; scheduled workflows run only from the default branch. Activation requires changing the default branch or using an external scheduler.
-- Branch protection and publisher write access remain external prerequisites. Coordinator activation stays staged until policy protection, workflow migration, publisher/recovery operation and report migration gates are satisfied.
+- Effective branch protection, default-branch availability for scheduled and workflow-dispatch recovery, and publisher write access remain external prerequisites. Coordinator activation stays staged until policy protection, workflow migration, publisher/recovery operation and report migration gates are satisfied.
 - .takeout/reports/ remains intact until ADR-0008 Confirmation proves every producer/consumer migrated and coverage preserved. Do not delete it early.
 - No automatic startup CI baseline, report scan, or recovery sweep. CI review is activated by its workflow or an explicitly assigned task, not general session initialization.
 - Source attribution comes only from the exact Task-ID commit trailer. If the source parent is unavailable, ADR-0008 routes remediation to one permanent fallback parent; never infer parentage. The Worker alone owns scheduling and task lifecycle; the publisher does not schedule.
-- The legacy CI Ledger remains until the approved migration is complete. ADR-0008 retires its findings identity/history/archive lifecycle; do not create a parallel findings archive.
+- The legacy CI Ledger remains only for pre-migration report findings until the approved migration is complete. ADR-0008 coordinator attempts are owned by the Worker review queue; do not create a parallel findings archive.
 - Historical backfill and hosted CI access remain governed; this map grants no permission.
 
 ## Image, drawing and takeout
