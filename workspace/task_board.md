@@ -18,17 +18,16 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent selected focus. Executing child 64 for recursive queue integrity, then all eligible descendants.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent selected focus. Execution focus is now child 03 for objective-based hierarchy reconciliation.
 
 ## Ordered Eligible Execution Queue
 
-1. **P0** — [20261127-173000-64](tasks/20261127-173000/subtasks/64-correct-workstream-queue-draining.md) — Correct workstream queue-draining and recursive reconciliation.
-2. **P1** — [20261127-173000-03](tasks/20261127-173000/subtasks/03-correct-objective-based-task-parent-selection.md) — Correct objective-based task parent selection.
-3. **P1** — [20261127-173000-01](tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md) — Consolidate document-governance standards into The Worker, including nested child 01-01.
+1. **P1** — [20261127-173000-03](tasks/20261127-173000/subtasks/03-correct-objective-based-task-parent-selection.md) — Correct objective-based task parent selection.
+2. **P1** — [20261127-173000-01](tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md) — Consolidate document-governance standards into The Worker, including nested child 01-01.
 
 ## Next Task
 
-Next eligible task is child 64. Child 61 remains intentionally paused until explicitly resumed. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
+Next eligible task is child 03. Child 61 remains intentionally paused until explicitly resumed. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
 
 ## Deferred Work
 
