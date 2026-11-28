@@ -11,6 +11,7 @@ ALLOWED_ROOTS = {".agent", ".github", ".takeout", "area", "archive", "images", "
 NON_MARKDOWN_ARTIFACT_TYPES = {
     "Agent metadata",
     "Binary reference asset",
+    "JSON data",
     "JSON schema",
     "License text",
     "Python script",
@@ -23,6 +24,7 @@ NON_MARKDOWN_ARTIFACT_TYPES = {
 NON_MARKDOWN_SUFFIXES = {
     "Agent metadata": {".yaml", ".yml"},
     "Binary reference asset": {".pdf"},
+    "JSON data": {".json"},
     "JSON schema": {".json"},
     "License text": {""},
     "Python script": {".py"},
@@ -40,6 +42,7 @@ NON_MARKDOWN_PLACEMENT_RULES = {
     "skill-eval-viewer",
     "skill-vendored-schemas",
     "github-workflows",
+    "workspace-task-validation",
 }
 
 KNOWN_CLASSES = {
@@ -410,16 +413,20 @@ def read_non_markdown_coverage(content: str) -> tuple[list[dict[str, str]], list
 
 
 def find_non_markdown_documents(root: Path) -> list[str]:
-    """List non-Markdown files in skill and GitHub configuration trees."""
+    """List governed non-Markdown files in skill, GitHub, and workspace trees."""
     documents: list[str] = []
-    for relative_root in (".agent/skills", ".github"):
+    for relative_root in (".agent/skills", ".github", "workspace"):
         scan_root = root / relative_root
         if not scan_root.is_dir():
             continue
         documents.extend(
             path.relative_to(root).as_posix()
             for path in scan_root.rglob("*")
-            if path.is_file() and path.suffix.casefold() != ".md"
+            if (
+                path.is_file()
+                and path.suffix.casefold() != ".md"
+                and path.relative_to(root).parts[:2] != ("workspace", "archive")
+            )
         )
     return sorted(set(documents))
 
@@ -447,6 +454,8 @@ def non_markdown_placement_error(path_text: str, placement: str) -> str | None:
         )
     elif placement == "github-workflows":
         valid = parts[:2] == (".github", "workflows") and len(parts) >= 3
+    elif placement == "workspace-task-validation":
+        valid = parts[:2] == ("workspace", "task-validation") and len(parts) >= 3
     else:
         valid = False
     return None if valid else f"artifact is not in its registered '{placement}' location"
@@ -499,6 +508,7 @@ def validate_non_markdown_coverage(root: Path, content: str) -> list[str]:
             or not (
                 (parts[:2] == [".agent", "skills"] and len(parts) >= 3)
                 or (parts[0] == ".github" and len(parts) >= 2)
+                or (parts[0] == "workspace" and parts[:2] != ["workspace", "archive"])
             )
         ):
             errors.append(
