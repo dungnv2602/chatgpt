@@ -10,7 +10,8 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-- **20261128-230000 — ADR 8 implementation** — P1, In Progress, Approved. [Task](tasks/20261128-230000/task.md)
+- **20261127-173000-64 — Prevent Worker skill-governance drift** — P1, In Progress, Approved. [Subtask](tasks/20261127-173000/subtasks/64-prevent-worker-skill-governance-drift.md)
+  - Parent: [20261127-173000 — Refactor Skills](tasks/20261127-173000/task.md)
 
 ## Ordered Eligible Execution Queue
 
@@ -18,13 +19,13 @@ _None. Current execution is active._
 
 ## Next Task
 
-- **20261128-230000 — ADR 8 implementation** — Current implementation parent. [Task](tasks/20261128-230000/task.md)
+- **20261127-173000-64 — Prevent Worker skill-governance drift** — Current execution. [Subtask](tasks/20261127-173000/subtasks/64-prevent-worker-skill-governance-drift.md)
 
 ## Deferred Work
 
 ### Current focus reconciliation
 
-ADR-0008 implementation is tracked under current task **20261128-230000**. The previous task 20261126-142500 was administratively superseded and deleted; no implementation acceptance or successful validation was claimed. Preserve .takeout/reports until migration and Confirmation gates are satisfied.
+The current child corrects Worker-owned artifact placement and closes the document catalog's non-Markdown coverage gap. ADR-0008 implementation remains open under [20261128-230000](tasks/20261128-230000/task.md). Preserve .takeout/reports until its migration and Confirmation gates are satisfied.
 
 ### Blocked
 
