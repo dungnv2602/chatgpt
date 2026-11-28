@@ -68,6 +68,7 @@ Out of scope:
 7. The document-standards workflow invokes the regression suite and validator for all relevant changes without weakening existing coverage.
 8. All changed files, local references, and task indexes are read back from branch `gpt`. The task records unperformed validation honestly.
 9. No external protection, hosted validation, or runtime behavior is claimed without direct evidence.
+10. Child ID allocation checks the full parent history. Deleted child IDs remain consumed.
 
 ## 5. Decisions and Progress
 
@@ -103,9 +104,9 @@ Out of scope:
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Latest task-specific commit: `df45634fe77957a0abf41bb96228974eec784572` (Worker ID-allocation gate); final closeout commit pending.
+- **Commit SHA:** Latest task-specific commit: `84a01f1ad83d6ab5bdc0e55fc8b60b4ab1693921` (parent progress and current-state reconciliation); final closeout commit pending.
 - **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/agent-skill-authoring/SKILL.md`; `.agent/skills/the-worker/references/document-type-catalog.md`; `.agent/skills/the-worker/references/task-validation-interfaces.md`; `.agent/skills/the-worker/scripts/validate_document_catalog.py`; `.agent/skills/the-worker/scripts/test_validate_document_catalog.py`; `.agent/skills/the-worker/assets/README.md`; `.agent/skills/the-worker/assets/task-validation/task-validation-policy.json`; `.agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json`; `.agent/skills/the-worker/assets/task-validation/task-validation-adapters.json`; `.github/workflows/validate-document-standards.yml`; `workspace/tasks/20261128-230000/subtasks/01-coordinator-contracts.md`; `workspace/tasks/20261127-173000/subtasks/README.md`; `workspace/task_board.md`; this child record. Deleted `.github/task-validation-policy.json`, `.github/task-validation-contract.schema.json`, `.github/task-validation-adapters.json`, and `.github/task-validation/README.md`.
-- **Readback:** All implementation paths and deleted paths were read back or verified. Final branch-head and task-tracking readback remain.
+- **Readback:** All implementation paths and deleted paths were read back or verified. The final task ID is 74. The parent history, subtask index, board pointer, and task record now agree. Final branch-head readback remains.
 - **Checks:** JSON syntax and repository-tree path, owner, type, and placement coverage were checked through remote reads. Repository tests, scripts, lint, and hosted workflow results were not run or inspected.
 - **Limitations:** Branch protection or ruleset enforcement remains an external prerequisite and has not been established. No runtime behavior or hosted validation success is claimed. Initial commits carry reused child-64 and child-65 trailers as documented above.
 
