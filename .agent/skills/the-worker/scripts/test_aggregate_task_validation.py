@@ -65,6 +65,10 @@ class AggregateTaskValidationTests(unittest.TestCase):
     def test_all_exact_matching_successes_pass(self) -> None:
         self.assertEqual(self.classify()["outcome"], "success")
 
+    def test_rejects_duplicate_json_keys(self) -> None:
+        with self.assertRaises(aggregate.AggregateError):
+            aggregate.unique_object([("status", "success"), ("status", "failure")])
+
     def test_missing_result_is_coverage_failure(self) -> None:
         self.assertEqual(self.classify(self.records()[:1])["outcome"], "coverage_failure")
 
