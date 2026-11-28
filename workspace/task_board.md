@@ -10,7 +10,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-[Workspace-Bound CI Activation — 20261127-173000-73](tasks/20261127-173000/subtasks/73-workspace-bound-ci-activation.md)
+_None._
 
 ## Ordered Eligible Execution Queue
 
@@ -24,7 +24,7 @@ _None._
 
 ### Current focus reconciliation
 
-The persistent Refactor Skills parent is the authorized focus. Child 73 is the sole active child for correcting CI activation boundaries. CI report and Ledger work remains task-activated only.
+The persistent Refactor Skills parent is at quiescence. Child 73 completed and was removed under the normal child lifecycle. The CI activation boundary is now workspace-task scoped.
 
 ### Blocked
 
