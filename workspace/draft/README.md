@@ -9,7 +9,7 @@ Navigation for decision proposals. The Worker and [Decision Governance](../../.a
 
 ## Current proposal records
 
-- [DRAFT-0010 — CI Error Task Folders and Automatic Feedback Loop](DRAFT-0010-ci-error-task-folders-and-automatic-feedback-loop.md) — Revision 3, draft; selected Option 3 with a run-status-only index under workspace/, folder-based CI error tasks, and .takeout/reports/ retirement; consolidated Draft approval pending.
+- [DRAFT-0010 — CI Error Task Folders and Automatic Feedback Loop](DRAFT-0010-ci-error-task-folders-and-automatic-feedback-loop.md) — Revision 4, draft; consolidates the user-approved universal GitHub Actions-only post-commit validation policy, Committed / Awaiting CI status, event-driven CI-result review tasks, non-blocking task queue, workspace run-status-only index, folder-based error subtasks, permanent orphan/late-error fallback parent, and `.takeout/reports/` retirement. Individual design decisions approved; consolidated Draft remains open for discussion.
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 4, in review.
 - [DRAFT-0003 — Area, Project, and Task Architecture](DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md) — Revision 1, in review.
