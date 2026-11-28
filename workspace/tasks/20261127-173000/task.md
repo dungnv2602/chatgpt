@@ -635,3 +635,10 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Workflow:** Readback of `.github/workflows/validate-document-standards.yml` at SHA `70937191e08eb5dea25d05e1485e22c058802029` confirms that it already runs the structural ownership unittest suite and then invokes the validator. No workflow change was needed.
 - **Hosted CI boundary:** No hosted result is claimed. The unified report index had no run entries, commit statuses were empty, and the available connector could not enumerate push-triggered runs or dispatch a workflow. Hosted outcome remains separate, unobserved metadata.
 - **Closeout:** Child 61 completed and was removed under the normal child lifecycle. Its index row and deferred board entry were removed. ADR-0006 and the persistent parent lifecycle remain unchanged.
+
+
+### 2026-11-28 — subtasks 65 and 66 captured
+
+- **Action:** Created child 65 for template-first document governance and child 66 for repository-wide instruction placement/staleness audit, with README contents emphasized and prevention measures included.
+- **Result:** Both children are indexed as Ready. Their execution remains pending the standalone `execute` cue required by the Worker. No implementation was started.
+- **References:** Child records `subtasks/65-template-first-document-governance.md` and `subtasks/66-instruction-placement-audit.md`; index readback pending.
