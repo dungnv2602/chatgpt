@@ -41,11 +41,13 @@ jobs:
         run: |
           set -euo pipefail
           policy_blob_sha=$(git hash-object .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
-          contract_json=$(python3 -c 'import json, os; print(json.dumps({"schema_version": 1, "source_sha": os.environ["GITHUB_SHA"], "checks": []}, separators=(",", ":")))')
+          contract_json=$(python3 .agent/skills/the-worker/scripts/build_task_validation_contract.py \
+            --root . --source-sha "$GITHUB_SHA")
+          task_check_ids=$(python3 -c 'import json, sys; value=json.loads(sys.argv[1]); print(json.dumps([item["id"] for item in value["checks"]], separators=(",", ":")))' "$contract_json")
           echo "source_sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
           echo "policy_blob_sha=$policy_blob_sha" >> "$GITHUB_OUTPUT"
           echo "contract_json=$contract_json" >> "$GITHUB_OUTPUT"
-          echo "task_check_ids=[]" >> "$GITHUB_OUTPUT"
+          echo "task_check_ids=$task_check_ids" >> "$GITHUB_OUTPUT"
 
   lint_changed:
     name: Required changed-document lint
