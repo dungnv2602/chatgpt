@@ -111,6 +111,12 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Subsequent index readback:** The status index reached 226 attempts; all are `capture_failure`, all have null check-set identity, all are unreconciled, and the checkpoint remains zero. It still contains capture-failure attempts for metadata-only source commits created after the `gpt` commit-level guard was added, including `e1d5cfe544e139a0f0b78f5e3e038f8235fe63d8`, `e4d2381525f16e1723913f1739227a7c36b032c8`, `353742910d3b46f574abc7c632384f43b5482ace`, and `a2d5d529668953cd4bd2ee184bb3bea78742bf21`.
 - **Interpretation boundary:** The source commits contain the guard, but the index shows it has not been demonstrated operationally. The stale `main` workflow copies are a possible deployment/version-parity issue, but no causal link is established. Do not claim recursion prevention is fixed until an authorized operational demonstration succeeds.
 - **Current lifecycle:** Source `c9ffdffd3c955af0ddb471f85557b32460315d8f` remains `review_required` against run `46165107595`/attempt 1. Its `capture_failure` remains unreconciled. No logs inspected, no root cause inferred, and no checkpoint advanced.
+### 2026-11-28 — recovery ignores gated runs without coordinator execution
+
+- **Code correction:** Updated `recover_task_validation.py` so a successful dispatcher policy gate that does not start a coordinator is classified as `ignored`, even if a later recovery job makes the overall dispatcher run fail. This prevents a recovery-workflow failure from being converted into a task-validation `capture_failure` when no validation attempt began. Added regression test `test_attempt_kind_ignores_recovery_failure_when_policy_gate_skips_coordinator`.
+- **Readback:** Script and test changes are committed and read back: `07f40a20257a9cc74edd244f4fe54525fd7d857b` and `5ac0f011f09c7ce380be7d46c280bd9a7a8026eb`. No local tests were run.
+- **Lifecycle:** Bound this subtask to source `5ac0f011f09c7ce380be7d46c280bd9a7a8026eb` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b` in metadata commit `0703ca68a50f172e4f9c884718fcc9b85a7de948`.
+- **Unresolved history:** The status index has 230 attempts, all `capture_failure`, all with null check-set identity and no reconciliation; checkpoint remains zero. It contains previously published metadata-only attempts. This code change has not been runtime-demonstrated and does not rewrite existing records. Hosted logs were not inspected.
 ## 6. State and Evidence
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
