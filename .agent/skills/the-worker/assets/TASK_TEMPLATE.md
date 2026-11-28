@@ -59,6 +59,8 @@ Record meaningful actions, results, references, and next steps. Do not duplicate
 
 ## 7. Verification and Evidence
 
+Separate deliverable closeout evidence from verification debt. A committed, readback-confirmed deliverable can be complete without runtime checks unless the acceptance criteria specifically require those checks. Record unperformed checks honestly. Track required follow-up independently.
+
 - **Commit SHA:** [Full SHA or Not committed]
 - **Changed paths:** [Exact paths]
 - **Readback:** [Exact result]
