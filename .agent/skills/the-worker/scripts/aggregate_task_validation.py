@@ -81,6 +81,10 @@ def classify_attempt(
 ) -> dict[str, Any]:
     if policy.get("policy_id") != "chatgpt-task-validation" or policy.get("repository") != "dungnv2602/chatgpt":
         raise AggregateError("Unexpected task-validation policy identity")
+    if policy.get("coordinator", {}).get("activation_status") != "enabled":
+        raise AggregateError("Coordinator activation is not enabled")
+    if policy.get("protection", {}).get("enforcement_status") != "verified":
+        raise AggregateError("Protected policy enforcement is not verified")
     if task_contract.get("source_sha") != source_sha or task_contract.get("schema_version") != 1:
         raise AggregateError("Task contract is not bound to the exact source SHA")
     expected, check_set_id = canonical_check_set(policy, task_contract)
