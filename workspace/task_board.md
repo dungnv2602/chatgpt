@@ -10,17 +10,17 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-_None. Refactor Skills children 65, 66 and 67 are prepared and await the explicit standalone execution cue._
+**20261127-173000-65 — Template-first document governance** (In Progress)
 
 ## Ordered Eligible Execution Queue
 
-_No execution batch is authorized yet._
+1. **65** — Template-first document governance (In Progress)\n2. **66**** — Instruction placement audit (Ready)\n3. **67** — Workflow optimization (Ready)
 
 ## Next Task
 
-No task selected. Refactor Skills remains the user's designated workstream. Prepared children:
+Authorized execution focus: Refactor Skills. Remaining prepared children after current child:
 
-- **P0** — [Template-first document governance](tasks/20261127-173000/subtasks/65-template-first-document-governance.md) — Ready; execution cue pending.
+- **P0** — [Template-first document governance](tasks/20261127-173000/subtasks/65-template-first-document-governance.md) — Ready; eligible within authorized batch.
 - **P0** — [Instruction placement audit and stale-content prevention](tasks/20261127-173000/subtasks/66-instruction-placement-audit.md) — Ready; execution cue pending.
 - **P0** — [Workflow optimization, cycle closure and redundancy reduction](tasks/20261127-173000/subtasks/67-workflow-optimization-cycle-closure.md) — Ready; execution cue pending.
 
