@@ -15,7 +15,7 @@ approved_scope: "Option 2: implement a lightweight deterministic structural vali
 related_adrs: ["ADR-0005"]
 supersedes: []
 superseded_by: null
-implementation_status: "not-started"
+implementation_status: "in-progress"
 implementation_tasks: ["20261127-173000-60"]
 review_triggers: []
 ---
