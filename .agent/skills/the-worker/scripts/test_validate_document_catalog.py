@@ -125,9 +125,13 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_external_template_files_and_directories_are_detected(self):
         self.write("area/novel/templates/scene-template.md")
         self.write("workspace/TASK_TEMPLATE.md")
+        self.write("workspace/tasks/example/subtasks/02-audit-document-template-coverage.md")
+        self.write("workspace/tasks/example/subtasks/TASK_TEMPLATE.md")
         errors = find_external_templates(self.root)
-        self.assertEqual(len(errors), 2)
+        self.assertEqual(len(errors), 3)
         self.assertTrue(all("Misplaced template outside skills" in error for error in errors))
+        self.assertTrue(any("workspace/tasks/example/subtasks/TASK_TEMPLATE.md" in error for error in errors))
+        self.assertFalse(any("02-audit-document-template-coverage.md" in error for error in errors))
 
     def test_missing_canonical_path_fails(self):
         rows = self.valid_rows()

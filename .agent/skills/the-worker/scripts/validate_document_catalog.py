@@ -335,11 +335,21 @@ def find_external_templates(root: Path) -> list[str]:
             continue
         relative = candidate.relative_to(root)
         parts = relative.parts
-        if (
-            parts[:1] == (".git",)
-            or parts[:2] == ("workspace", "tasks")
-            or parts[:2] == (".agent", "skills")
-        ):
+        is_task_record = (
+            parts[:2] == ("workspace", "tasks")
+            and (
+                (len(parts) == 3 and parts[2] == "task.md")
+                or (
+                    len(parts) == 4
+                    and parts[2] == "subtasks"
+                    and (
+                        parts[3] == "README.md"
+                        or re.match(r"^\\d{2}-.*\\.md$", parts[3])
+                    )
+                )
+            )
+        )
+        if parts[:1] == (".git",) or is_task_record or parts[:2] == (".agent", "skills"):
             continue
         if is_template_asset(relative.as_posix()):
             errors.append(
