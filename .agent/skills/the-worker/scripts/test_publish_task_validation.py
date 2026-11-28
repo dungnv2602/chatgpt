@@ -116,6 +116,20 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(index["attempts"][-1]["outcome"], "cancelled")
         self.assertIsNotNone(index["attempts"][-1]["recovery"]["reconciled_at"])
 
+    def test_cancelled_attempt_without_check_set_is_valid(self) -> None:
+        cancelled = dict(self.aggregate)
+        cancelled.update({
+            "coordinator_run_id": 126,
+            "check_set_id": None,
+            "expected_checks": [],
+            "statuses": {},
+            "outcome": "cancelled",
+        })
+        self.assertTrue(self.publish(cancelled, run_id=126))
+        index = publisher.validate_index(publisher.read_json(self.root / publisher.INDEX_PATH))
+        self.assertIsNone(index["attempts"][-1]["check_set_id"])
+        self.assertEqual(index["attempts"][-1]["outcome"], "cancelled")
+
     def test_superseded_attempt_has_no_review_folder(self) -> None:
         superseded = dict(self.aggregate)
         superseded.update({
