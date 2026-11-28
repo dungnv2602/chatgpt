@@ -225,7 +225,7 @@ def awaiting_ci_tasks(root: Path) -> list[dict[str, str]]:
             continue
         source_sha = lifecycle.get("source_sha")
         policy_revision = lifecycle.get("policy_revision")
-        task_match = re.search(r"^- \\*\\*ID:\\*\\* (\\d{8}-\\d{6}(?:-\\d{2})*)$", content, re.MULTILINE)
+        task_match = re.search(r"^- \*\*ID:\*\* (\d{8}-\d{6}(?:-\d{2})*)$", content, re.MULTILINE)
         if (
             not task_match
             or not isinstance(source_sha, str)
@@ -264,14 +264,9 @@ def dispatch_missing_attempts(
     root: Path,
     api: GitHubAPI,
     repository: str,
-    runs: list[dict[str, Any]],
+    active_sources: set[str],
     indexed_sources: set[str],
 ) -> tuple[int, int, int]:
-    run_sources = {
-        source_sha_for_run(run)
-        for run in runs
-        if source_sha_for_run(run) is not None
-    }
     awaiting = awaiting_ci_tasks(root)
     dispatched = 0
     staged = 0
@@ -280,7 +275,7 @@ def dispatch_missing_attempts(
     workflow = urllib.parse.quote("task-validation-dispatch.yml", safe="")
     for task in awaiting:
         source_sha = task["source_sha"]
-        if source_sha in indexed_sources or source_sha in run_sources:
+        if source_sha in indexed_sources or source_sha in active_sources:
             already_tracked += 1
             continue
         if not source_policy_allows_dispatch(root, source_sha, task["policy_revision"]):
@@ -386,6 +381,13 @@ def attempt_kind(
             return "cancelled", coordinator_jobs[0]
         if any(job.get("conclusion") in {"success", "failure", "timed_out", "action_required"} for job in coordinator_jobs):
             return "started", coordinator_jobs[0]
+    if any(job.get("status") in {"queued", "in_progress", "waiting", "pending"} for job in jobs):
+        return "pending", next(
+            (job for job in jobs if job.get("status") in {"queued", "in_progress", "waiting", "pending"}),
+            None,
+        )
+    if run_status in {"queued", "in_progress"}:
+        return "pending", None
     if policy_job is not None and policy_job.get("conclusion") == "failure":
         return "policy_failure", policy_job
     if run_status == "completed" and run_conclusion == "cancelled":
@@ -584,6 +586,7 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
     ignored = 0
     pending = 0
     indexed_sources = {record["source_sha"] for record in index["attempts"]}
+    active_sources: set[str] = set(indexed_sources)
 
     for run in sorted(runs, key=lambda item: item.get("id", 0)):
         run_id = run.get("id")
@@ -606,6 +609,7 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
                     else:
                         published += 1
                 known_map[(run_id, attempt_number)] = state
+                active_sources.add(record["source_sha"])
                 continue
             state, key = process_attempt(root, api, repository, run, attempt_number)
             if state == "ignored":
@@ -613,6 +617,9 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
                 continue
             if state == "pending":
                 pending += 1
+                source_sha = source_sha_for_run(run)
+                if source_sha:
+                    active_sources.add(source_sha)
                 known_map[(key[0], key[1])] = "pending"
                 continue
             published += 1
@@ -626,11 +633,12 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
             )
             if record is not None:
                 indexed_sources.add(record["source_sha"])
+                active_sources.add(record["source_sha"])
             state_value = "completed" if record and record["recovery"]["reconciled_at"] is not None else "unresolved"
             known_map[(run_id, attempt_number)] = state_value
 
     awaiting_count, dispatched_count, staged_count = dispatch_missing_attempts(
-        root, api, repository, runs, indexed_sources
+        root, api, repository, active_sources, indexed_sources
     )
     known = [(run_id, attempt, state) for (run_id, attempt), state in known_map.items()]
     checkpoint_result = commit_checkpoint_with_retry(root, known)
