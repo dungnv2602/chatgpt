@@ -1,6 +1,13 @@
 name: STE Lint Changed Documentation
 
 on:
+  workflow_call:
+    inputs:
+      coordinator_call:
+        description: "True when invoked by the ADR-0008 exact-SHA coordinator."
+        required: false
+        type: boolean
+        default: false
   push:
     branches:
       - gpt
