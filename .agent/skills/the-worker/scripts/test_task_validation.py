@@ -32,7 +32,12 @@ class TaskValidationTests(unittest.TestCase):
         self.policy = {
             "policy_id": "chatgpt-task-validation",
             "repository": "dungnv2602/chatgpt",
-            "coordinator": {"bind_source_sha": True, "bind_policy_revision": True},
+            "coordinator": {
+                "bind_source_sha": True,
+                "bind_policy_revision": True,
+                "activation_status": "enabled",
+            },
+            "protection": {"enforcement_status": "verified"},
             "mandatory_checks": [{"id": "required-check"}],
         }
         self.schema = {
