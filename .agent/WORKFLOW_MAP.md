@@ -15,6 +15,7 @@ flowchart TD
 ```
 
 - Cue guard: `.agent/SESSION_START.md`; operating authority: `.agent/skills/the-worker/SKILL.md`.
+- Repository file reads default to the intended branch. Commit-specific reads require traceable SHA provenance; no unexplained or stale SHA is reused.
 - Presentation settings: `.agent/skills/the-worker/references/conversation-mode.md`.
 - `/map` displays this map only; it does not initialize or execute.
 - Standalone case-insensitive `execute` is the execution cue; approval and `Next` are log/navigation only.
