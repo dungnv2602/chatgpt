@@ -8,14 +8,14 @@ The governing standard is [`area/novel/WORKFLOW.md`](../../../../area/novel/WORK
 
 **Current format standard: Version 1.1.** Use these templates for new records and material revisions:
 
-- Novel: `.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.1.md`
-- Character Profile (optional): `.agent/skills/romantic-storyteller-visual-artist/assets/character-profile-v1.1.md`
-- Open Discussion: `.agent/skills/romantic-storyteller-visual-artist/assets/open-discussion-v1.1.md`
-- Development Outline (optional): `.agent/skills/romantic-storyteller-visual-artist/assets/development-outline-v1.1.md`
-- Story Arc: `.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.1.md`
-- Scene: `.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.1.md`
-- Illustration Note: `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.1.md`
-- Illustration Prompt Record: `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-prompt-v1.1.md`
+- Novel: `.agent/skills/romantic-storyteller-visual-artist/assets/templates/novel-v1.1.md`
+- Character Profile (optional): `.agent/skills/romantic-storyteller-visual-artist/assets/templates/character-profile-v1.1.md`
+- Open Discussion: `.agent/skills/romantic-storyteller-visual-artist/assets/templates/open-discussion-v1.1.md`
+- Development Outline (optional): `.agent/skills/romantic-storyteller-visual-artist/assets/templates/development-outline-v1.1.md`
+- Story Arc: `.agent/skills/romantic-storyteller-visual-artist/assets/templates/arc-v1.1.md`
+- Scene: `.agent/skills/romantic-storyteller-visual-artist/assets/templates/scene-v1.1.md`
+- Illustration Note: `.agent/skills/romantic-storyteller-visual-artist/assets/templates/illustration-note-v1.1.md`
+- Illustration Prompt Record: `.agent/skills/romantic-storyteller-visual-artist/assets/templates/illustration-prompt-v1.1.md`
 
 Version 1.0 templates remain as historical references for existing records. Do not mass-migrate untouched legacy documents.
 

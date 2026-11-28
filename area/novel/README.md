@@ -14,16 +14,16 @@ This workspace contains the authoritative narrative records, working plans, scen
 
 Use these for new records and material revisions:
 
-1. [Novel](../../.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.1.md)
-2. [Character Profile](../../.agent/skills/romantic-storyteller-visual-artist/assets/character-profile-v1.1.md) — optional when a concise profile in novel.md is sufficient
-3. [Open Discussion](../../.agent/skills/romantic-storyteller-visual-artist/assets/open-discussion-v1.1.md) — one active register per novel
-4. [Development Outline](../../.agent/skills/romantic-storyteller-visual-artist/assets/development-outline-v1.1.md) — optional focused planning record
-5. [Story Arc](../../.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.1.md)
-6. [Scene](../../.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.1.md)
-7. [Illustration Note](../../.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.1.md)
-8. [Illustration Prompt Record](../../.agent/skills/romantic-storyteller-visual-artist/assets/illustration-prompt-v1.1.md)
+1. [Novel](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/novel-v1.1.md)
+2. [Character Profile](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/character-profile-v1.1.md) — optional when a concise profile in novel.md is sufficient
+3. [Open Discussion](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/open-discussion-v1.1.md) — one active register per novel
+4. [Development Outline](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/development-outline-v1.1.md) — optional focused planning record
+5. [Story Arc](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/arc-v1.1.md)
+6. [Scene](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/scene-v1.1.md)
+7. [Illustration Note](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/illustration-note-v1.1.md)
+8. [Illustration Prompt Record](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/illustration-prompt-v1.1.md)
 
-The Version 1.0 templates are retained as historical references for existing records: [Novel](../../.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.md), [Story Arc](../../.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.md), [Scene](../../.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.md), and [Illustration Note](../../.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.md). They are not the default for new work. Do not mass-migrate completed or untouched legacy records.
+The Version 1.0 templates are retained as historical references for existing records: [Novel](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/novel-v1.md), [Story Arc](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/arc-v1.md), [Scene](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/scene-v1.md), and [Illustration Note](../../.agent/skills/romantic-storyteller-visual-artist/assets/templates/illustration-note-v1.md). They are not the default for new work. Do not mass-migrate completed or untouched legacy records.
 
 ## Narrative hierarchy and supporting records
 
