@@ -16,9 +16,18 @@ class AggregateError(ValueError):
     """Raised when the expected manifest or result set is invalid."""
 
 
+def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for key, value in pairs:
+        if key in result:
+            raise AggregateError(f"Duplicate JSON key: {key}")
+        result[key] = value
+    return result
+
+
 def read_object(path: Path) -> dict[str, Any]:
     try:
-        value = json.loads(path.read_text(encoding="utf-8"))
+        value = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise AggregateError(f"Cannot read JSON object from {path}: {exc}") from exc
     if not isinstance(value, dict):
@@ -191,7 +200,7 @@ def main() -> int:
         if blob_sha(args.policy) != args.policy_blob_sha:
             raise AggregateError("Policy blob SHA does not match the supplied policy")
         task_contract = read_object(args.task_contract)
-        results_value = json.loads(args.results.read_text(encoding="utf-8"))
+        results_value = json.loads(args.results.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
         if not isinstance(results_value, list):
             raise AggregateError("results must be a JSON array")
         result = classify_attempt(
