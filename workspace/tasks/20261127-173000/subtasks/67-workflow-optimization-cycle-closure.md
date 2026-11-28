@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-67
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User's explicit request to add this subtask to Refactor Skills.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Ready — execution cue pending
+- **Eligibility / deferral reason:** In Progress — authorized execution batch active
 - **Required:** Yes
 - **Created:** 2026-11-28 15:00 UTC
 - **Updated:** 2026-11-28 15:00 UTC
@@ -27,7 +27,7 @@ assess your workflow, fix gaps, fix floodings, fix deadlocks, tighten, close the
 
 ## 2. Subsequent Instructions
 
-- **2026-11-28:** Captured under Refactor Skills. Execution awaits the standalone case-insensitive `execute` cue.
+- **2026-11-28:** Captured under Refactor Skills. The user authorized the Refactor Skills batch with the standalone `Execute` cue.
 
 ## 3. Objective and Scope
 
@@ -44,13 +44,13 @@ Conduct a holistic assessment and refactor of the Worker workflow and its operat
 
 ## 5. Decisions and Progress
 
-- **Decision:** Capture as a separate P0 child in the Refactor Skills workstream. Do not start implementation without the explicit execution cue.
+- **Decision:** Capture as a separate P0 child in the Refactor Skills workstream. Execution authorized.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
+- **Commit SHA:** Pending consolidated readback
 - **Changed paths:** Subtask record, parent subtask index, parent task, task board
-- **Readback:** Pending
+- **Readback:** Changes read back individually during execution. Consolidated readback pending
 - **Checks:** Not performed
 - **Limitations:** This record captures scope only.
 
@@ -73,7 +73,7 @@ Conduct a holistic assessment and refactor of the Worker workflow and its operat
 
 ## 10. Handoff
 
-Await the explicit standalone `execute` cue. Upon authorization, assess and improve the workflow autonomously, record evidence and limitations, and reconcile tracking.
+Continue workflow optimization, reconcile task and board state, read back changes, and close with limitations.
 
 ## 11. Ledger Findings
 
