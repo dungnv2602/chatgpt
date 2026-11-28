@@ -52,15 +52,26 @@ jobs:
           SOURCE_SHA: ${{ inputs.source_sha || github.sha }}
         run: |
           set -euo pipefail
-          policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=$SOURCE_SHA" --jq '.content' | base64 --decode)
-          activation=$(jq -r '.coordinator.activation_status // empty' <<< "$policy_json")
+          source_policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=$SOURCE_SHA" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+          current_policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=gpt" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+          policy_ready='
+            .coordinator.activation_status == "enabled" and
+            .protection.enforcement_status == "verified" and
+            .recovery.workflow_dispatch_activation_status == "verified"
+          '
+          coordinator_ready=false
+          if [[ -n "$source_policy_json" && -n "$current_policy_json" ]] &&
+             jq -e "$policy_ready" <<< "$source_policy_json" >/dev/null 2>&1 &&
+             jq -e "$policy_ready" <<< "$current_policy_json" >/dev/null 2>&1; then
+            coordinator_ready=true
+          fi
           if [[ "$COORDINATOR_CALL" == "true" ]]; then
             echo "proceed=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          if [[ "$activation" == "enabled" ]]; then
+          if [[ "$GITHUB_EVENT_NAME" == "push" && "$coordinator_ready" == "true" ]]; then
             echo "proceed=false" >> "$GITHUB_OUTPUT"
-            echo "Legacy direct-push and manual full-docs lint is disabled after coordinator activation."
+            echo "Legacy push lint is disabled only after coordinator, protection, and recovery dispatch gates are verified."
             exit 0
           fi
           if [[ "$GITHUB_REF_NAME" != "gpt" ]]; then

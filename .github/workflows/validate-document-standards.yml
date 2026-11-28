@@ -91,15 +91,28 @@ jobs:
         id: gate
         shell: bash
         env:
+          GH_TOKEN: ${{ github.token }}
           COORDINATOR_CALL: ${{ inputs.coordinator_call }}
         run: |
-          python3 - <<'PY' >> "$GITHUB_OUTPUT"
-          import json, os
-          from pathlib import Path
-          policy = json.loads(Path(".agent/skills/the-worker/assets/task-validation/task-validation-policy.json").read_text(encoding="utf-8"))
-          proceed = os.environ["COORDINATOR_CALL"] == "true" or policy.get("coordinator", {}).get("activation_status") != "enabled"
-          print("proceed=" + ("true" if proceed else "false"))
-          PY
+          set -euo pipefail
+          source_policy_json=$(cat .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
+          current_policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=gpt" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+          policy_ready='
+            .coordinator.activation_status == "enabled" and
+            .protection.enforcement_status == "verified" and
+            .recovery.workflow_dispatch_activation_status == "verified"
+          '
+          coordinator_ready=false
+          if [[ -n "$current_policy_json" ]] &&
+             jq -e "$policy_ready" <<< "$source_policy_json" >/dev/null 2>&1 &&
+             jq -e "$policy_ready" <<< "$current_policy_json" >/dev/null 2>&1; then
+            coordinator_ready=true
+          fi
+          proceed=true
+          if [[ "$COORDINATOR_CALL" != "true" && "$GITHUB_EVENT_NAME" == "push" && "$coordinator_ready" == "true" ]]; then
+            proceed=false
+          fi
+          echo "proceed=$proceed" >> "$GITHUB_OUTPUT"
 
   validate-document-standards:
     needs: [policy_gate]
