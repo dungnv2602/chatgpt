@@ -642,3 +642,10 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Action:** Created child 65 for template-first document governance and child 66 for repository-wide instruction placement/staleness audit, with README contents emphasized and prevention measures included.
 - **Result:** Both children are indexed as Ready. Their execution remains pending the standalone `execute` cue required by the Worker. No implementation was started.
 - **References:** Child records `subtasks/65-template-first-document-governance.md` and `subtasks/66-instruction-placement-audit.md`; index readback pending.
+
+
+### 2026-11-28 — subtask 67 captured
+
+- **Action:** Added workflow optimization, cycle closure, redundancy reduction and efficiency review as child 67.
+- **Result:** Indexed as Ready. Execution remains pending the standalone `execute` cue.
+- **Reference:** `subtasks/67-workflow-optimization-cycle-closure.md`.
