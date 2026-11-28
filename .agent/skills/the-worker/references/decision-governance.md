@@ -41,7 +41,7 @@ Do not use an ADR as a task record. Do not use analysis as an issue backlog. Do 
 
 ## Draft lifecycle
 
-Create one Draft for each distinct decision that changes repository policy, architecture, workflow, structure, or durable practice. Use the next unused DRAFT-NNNN ID. Never reuse an ID.
+Create one Draft for each distinct decision that changes repository policy, architecture, workflow, structure, or durable practice. Before assigning an ID, search the complete Draft and ADR inventories, accepted ADR source-draft metadata, task records, indexes and discussion register for prior use. Cross-check the proposed ID against both existing Draft filenames/metadata and every ADR's source_draft field. Use the next genuinely unused DRAFT-NNNN ID. Never reuse an ID, even when the source Draft was deleted or promoted. Do not reuse a source ID as a new proposal ID.
 
 Draft statuses:
 - draft — preparation is in progress.
