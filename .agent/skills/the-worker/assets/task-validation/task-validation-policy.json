@@ -12,7 +12,10 @@
       ".agent/skills/the-worker/assets/task-validation/task-validation-policy.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-adapters.json",
-      ".github/workflows/task-validation.yml"
+      ".github/workflows/task-validation.yml",
+      ".agent/skills/the-worker/scripts/task_validation.py",
+      ".agent/skills/the-worker/scripts/aggregate_task_validation.py",
+      ".github/workflows/task-validation-verifier.yml"
     ],
     "enforcement_status": "external-prerequisite"
   },
