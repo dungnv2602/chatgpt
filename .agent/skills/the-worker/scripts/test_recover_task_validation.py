@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -79,6 +81,141 @@ class RecoveryTests(unittest.TestCase):
 
     def test_aggregate_artifact_proves_coordinator_started(self) -> None:
         self.assertEqual(recovery.attempt_kind([], artifact_present=True)[0], "started")
+
+    def test_dispatcher_policy_gate_running_counts_as_pending(self) -> None:
+        jobs = [
+            {"name": "Check protected policy and duplicate source SHA", "status": "in_progress", "conclusion": None},
+        ]
+        self.assertEqual(recovery.attempt_kind(jobs, run_status="in_progress")[0], "pending")
+
+    def test_source_sha_is_read_from_workflow_dispatch_run_name(self) -> None:
+        source_sha = "a" * 40
+        run = {
+            "event": "workflow_dispatch",
+            "display_title": f"ADR-0008 task validation {source_sha}",
+            "head_sha": "b" * 40,
+        }
+        self.assertEqual(recovery.source_sha_for_run(run), source_sha)
+
+    def test_source_sha_uses_push_head_sha(self) -> None:
+        source_sha = "a" * 40
+        self.assertEqual(
+            recovery.source_sha_for_run({"event": "push", "head_sha": source_sha}),
+            source_sha,
+        )
+
+    def test_validation_lifecycle_parser_reads_awaiting_state(self) -> None:
+        block = {
+            "state": "awaiting_ci",
+            "source_sha": "a" * 40,
+            "policy_revision": "b" * 40,
+            "coordinator_run_id": None,
+            "attempt": None,
+            "outcome": None,
+            "reconciled_at": None,
+        }
+        fence = chr(96) * 3
+        content = "## Validation Lifecycle\\n\\n" + fence + "json\\n" + json.dumps(block) + "\\n" + fence
+        self.assertEqual(recovery.read_validation_lifecycle(content), block)
+
+    def test_awaiting_ci_task_discovery_uses_task_record_metadata(self) -> None:
+        source_sha = "a" * 40
+        block = {
+            "state": "awaiting_ci",
+            "source_sha": source_sha,
+            "policy_revision": "b" * 40,
+            "coordinator_run_id": None,
+            "attempt": None,
+            "outcome": None,
+            "reconciled_at": None,
+        }
+        content = "- **ID:** 20261128-230000-04\\n\\n## Validation Lifecycle\\n\\n" + chr(96) * 3 + "json\\n" + json.dumps(block) + "\\n" + chr(96) * 3 + "\\n"
+        def fake_git(_root, *args, **_kwargs):
+            output = "workspace/tasks/20261128-230000/subtasks/04-worker-migration.md\\n" if args[:4] == ("ls-tree", "-r", "--name-only", "HEAD") else content
+            return subprocess.CompletedProcess(args, 0, stdout=output, stderr="")
+        with patch.object(recovery, "git", side_effect=fake_git):
+            tasks = recovery.awaiting_ci_tasks(self.root)
+        self.assertEqual(len(tasks), 1)
+        self.assertEqual(tasks[0]["task_id"], "20261128-230000-04")
+        self.assertEqual(tasks[0]["source_sha"], source_sha)
+
+    def test_duplicate_awaiting_ci_source_sha_fails_closed(self) -> None:
+        source_sha = "a" * 40
+        block = {
+            "state": "awaiting_ci",
+            "source_sha": source_sha,
+            "policy_revision": "b" * 40,
+            "coordinator_run_id": None,
+            "attempt": None,
+            "outcome": None,
+            "reconciled_at": None,
+        }
+        content = "- **ID:** 20261128-230000-04\\n## Validation Lifecycle\\n" + chr(96) * 3 + "json\\n" + json.dumps(block) + "\\n" + chr(96) * 3
+        paths = [
+            "workspace/tasks/20261128-230000/subtasks/04-worker-migration.md",
+            "workspace/tasks/20261128-230000/subtasks/05-confirmation-retirement.md",
+        ]
+        def fake_git(_root, *args, **_kwargs):
+            output = "\\n".join(paths) if args[:4] == ("ls-tree", "-r", "--name-only", "HEAD") else content
+            return subprocess.CompletedProcess(args, 0, stdout=output, stderr="")
+        with patch.object(recovery, "git", side_effect=fake_git):
+            with self.assertRaises(recovery.RecoveryError):
+                recovery.awaiting_ci_tasks(self.root)
+
+    def test_missing_dispatch_is_started_only_when_source_policy_is_enabled(self) -> None:
+        source_sha = "a" * 40
+        task = {
+            "task_id": "20261128-230000-04",
+            "path": "workspace/tasks/20261128-230000/subtasks/04-worker-migration.md",
+            "source_sha": source_sha,
+            "policy_revision": "b" * 40,
+        }
+        class FakeAPI:
+            def __init__(self):
+                self.calls = []
+            def post_json(self, path, payload):
+                self.calls.append((path, payload))
+        api = FakeAPI()
+        with patch.object(recovery, "awaiting_ci_tasks", return_value=[task]), patch.object(
+            recovery, "source_policy_allows_dispatch", return_value=True
+        ):
+            result = recovery.dispatch_missing_attempts(self.root, api, "dungnv2602/chatgpt", set(), set())
+        self.assertEqual(result, (1, 1, 0))
+        self.assertEqual(api.calls[0][1], {"ref": "gpt", "inputs": {"source_sha": source_sha}})
+
+    def test_missing_dispatch_stays_staged_without_verified_policy(self) -> None:
+        task = {
+            "task_id": "20261128-230000-04",
+            "path": "workspace/tasks/20261128-230000/subtasks/04-worker-migration.md",
+            "source_sha": "a" * 40,
+            "policy_revision": "b" * 40,
+        }
+        class FakeAPI:
+            def post_json(self, *_args, **_kwargs):
+                self.fail("staged policy must not dispatch")
+        with patch.object(recovery, "awaiting_ci_tasks", return_value=[task]), patch.object(
+            recovery, "source_policy_allows_dispatch", return_value=False
+        ):
+            result = recovery.dispatch_missing_attempts(self.root, FakeAPI(), "dungnv2602/chatgpt", set(), set())
+        self.assertEqual(result, (1, 0, 1))
+
+    def test_existing_index_or_running_attempt_prevents_duplicate_dispatch(self) -> None:
+        task = {
+            "task_id": "20261128-230000-04",
+            "path": "workspace/tasks/20261128-230000/subtasks/04-worker-migration.md",
+            "source_sha": "a" * 40,
+            "policy_revision": "b" * 40,
+        }
+        class FakeAPI:
+            def post_json(self, *_args, **_kwargs):
+                self.fail("existing attempt must not dispatch")
+        with patch.object(recovery, "awaiting_ci_tasks", return_value=[task]), patch.object(
+            recovery, "source_policy_allows_dispatch", return_value=True
+        ):
+            indexed = recovery.dispatch_missing_attempts(self.root, FakeAPI(), "dungnv2602/chatgpt", set(), {"a" * 40})
+            active = recovery.dispatch_missing_attempts(self.root, FakeAPI(), "dungnv2602/chatgpt", {"a" * 40}, set())
+        self.assertEqual(indexed, (1, 0, 0))
+        self.assertEqual(active, (1, 0, 0))
 
     def test_run_cancelled_before_coordinator_jobs_is_captured(self) -> None:
         jobs = [
