@@ -3,7 +3,7 @@
 Single source of truth for CI evidence and finding lifecycle.
 
 - `index.json`: one index for lint and GitHub Actions runs.
-- `latest-lint-report.json`: latest structured lint report used for baseline comparisons.
+- `index.json`: locator for eligible latest lint reports; entries point to immutable history reports.
 - `ledger.json`: cross-run finding lifecycle, task attribution, and occurrence history.
 - `history/`: canonical report JSON, integrity manifests, and diagnostic logs.
 
