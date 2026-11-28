@@ -15,6 +15,8 @@ class AggregateTaskValidationTests(unittest.TestCase):
         self.policy = {
             "policy_id": "chatgpt-task-validation",
             "repository": "dungnv2602/chatgpt",
+            "coordinator": {"activation_status": "enabled"},
+            "protection": {"enforcement_status": "verified"},
             "mandatory_checks": [
                 {"id": "lint"},
                 {"id": "document-standards"},
