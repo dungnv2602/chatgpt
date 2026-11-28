@@ -111,7 +111,7 @@ jobs:
     permissions:
       contents: read
     outputs:
-      outcome: ${{ steps.aggregate.outputs.outcome }}
+      outcome: ${{ steps.aggregate.outputs.outcome || steps.fallback.outputs.outcome }}
       check_set_id: ${{ steps.aggregate.outputs.check_set_id }}
     steps:
       - name: Check out the exact source commit
@@ -212,7 +212,7 @@ jobs:
                                   or not re.fullmatch(r"[0-9a-f]{64}", digest)
                               ):
                                   status = "partial"
-                          if job_result != "success" and status == "success":
+                          if job_result != "success" and status in {"success", "failure", "partial"}:
                               status = "capture_failure"
               records.append({
                   "check_id": check_id,
@@ -260,11 +260,22 @@ jobs:
           PY
           exit "$aggregate_exit"
 
+      - name: Set a terminal capture fallback
+        id: fallback
+        if: always()
+        shell: bash
+        env:
+          AGGREGATE_OUTCOME: ${{ steps.aggregate.outputs.outcome }}
+        run: |
+          if [[ -z "$AGGREGATE_OUTCOME" ]]; then
+            echo "outcome=capture_failure" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Fail the coordinator unless every check passed
         if: always()
         shell: bash
         env:
-          OUTCOME: ${{ steps.aggregate.outputs.outcome }}
+          OUTCOME: ${{ steps.aggregate.outputs.outcome || steps.fallback.outputs.outcome }}
         run: |
           if [[ "$OUTCOME" != "success" ]]; then
             echo "::error::ADR-0008 aggregate outcome: ${OUTCOME:-capture_failure}"
