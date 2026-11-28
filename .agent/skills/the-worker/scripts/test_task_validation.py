@@ -39,7 +39,6 @@ class TaskValidationTests(unittest.TestCase):
                 "bind_policy_revision": True,
                 "activation_status": "enabled",
             },
-            "protection": {"enforcement_status": "verified"},
             "mandatory_checks": [{"id": "required-check", "coordinator_job": "required", "result_mode": "job_result"}],
         }
         self.schema = {
