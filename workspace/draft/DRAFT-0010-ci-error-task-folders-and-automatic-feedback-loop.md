@@ -2,7 +2,7 @@
 record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0010"
-revision: 4
+revision: 5
 status: "draft"
 created: "2026-11-28"
 updated: "2026-11-28"
@@ -25,11 +25,11 @@ cleanup_reason: null
 
 ## Proposal Summary
 
-Adopt a universal, event-driven post-commit validation lifecycle. The Worker may inspect its changes before committing, but after a commit it must not independently validate the implementation, read back changed files as a correctness check, run tests/scripts, inspect hosted workflow results, or otherwise verify its own committed changes. GitHub Actions is the sole implementation-validation authority for the required checks associated with the exact commit.
+Adopt a universal, event-driven post-commit validation lifecycle. The Worker may inspect its changes before committing, but after a commit GitHub Actions is the sole authority for implementation-validation outcomes. The Worker must not run tests/scripts, independently decide whether a commit passed, or override the aggregate result recorded by automation. The Worker may inspect the linked GitHub Actions run **for diagnosis only after the status index reports a failure or infrastructure/capture failure**. That diagnostic inspection does not constitute validation and cannot change the recorded outcome.
 
-A committed task enters **Committed / Awaiting CI**. The Worker immediately moves to another unblocked task instead of waiting for CI. GitHub Actions runs the required validation set; automation records the aggregate terminal result in a minimal run-status index under `workspace/` and creates a deduplicated CI-result review task. The review task nudges the Worker to read the index and reconcile the task lifecycle; it does not ask the Worker to inspect logs, rerun checks, or validate the implementation.
+A committed task enters **Committed / Awaiting CI**. The Worker immediately moves to another unblocked task instead of waiting for CI. GitHub Actions runs the required validation set; automation records the aggregate terminal result and a direct run URL in a minimal run-status index under `workspace/`, then creates a deduplicated CI-result review task. CI does not generate separate diagnostic reports, finding documents, or error-evidence files. The review task nudges the Worker to read the index. For success, the Worker reconciles the task from the index without opening logs. For failure or infrastructure/capture failure, the Worker opens the linked run to diagnose the cause and creates only the necessary remediation/infrastructure task folders.
 
-A task becomes **Done** only after the required automated checks have succeeded for its exact commit, the result has been reconciled, and no outstanding subtasks remain. Actionable failures become self-contained error subtasks under the correctly identified active parent. If the original parent is no longer active or available (including a task already marked Done and deleted), route the late/orphaned error to a permanent fallback parent. The fallback parent is infrastructure and is never deleted merely because it is empty.
+A task becomes **Done**
 
 This proposal also retains the approved folder-based CI error lifecycle: delete a completed error subtask folder; delete an ordinary parent task folder only when it is Done and has no outstanding subtasks. Retire the confirmed `.takeout/reports/` tree only after all producers and consumers have migrated to the replacement.
 
@@ -41,10 +41,10 @@ Current repository contracts define CI diagnostics as report artifacts under `.t
 
 The user has approved a different model with these principles:
 
-- Each distinct actionable CI error becomes its own self-contained subtask folder under a genuine, correctly identified active parent task.
+- Each distinct actionable CI error diagnosed from the failed GitHub Actions run becomes its own self-contained subtask folder under a genuine, correctly identified active parent task. CI does not generate a separate finding/report document; the Worker creates the remediation task after reading the run.
 - The Worker may inspect its changes before committing. After committing, the Worker does not validate its own implementation. GitHub Actions alone executes and validates the required checks.
 - The task status explicitly distinguishes work still in progress from a committed task awaiting automated validation.
-- A terminal validation result is recorded in a small run-status-only index under `workspace/`. Automation creates a CI-result review task so the Worker is event-driven to reconcile that result by reading the index.
+- A terminal validation result and direct Actions run URL are recorded in a small run-status-only index under `workspace/`. Automation creates a lightweight CI-result review task. The Worker reads the index first and opens the linked run only when diagnosis is needed.
 - The Worker does not wait for CI. Immediately after committing, it takes the next unblocked task and continues until no unblocked task remains. It then follows the existing blocked-task procedure and brings blocked tasks to the user for input.
 - A review task arriving while the Worker is executing another task does not interrupt that work. It joins the ordinary task queue and is selected when the Worker next selects work.
 - A successful required validation result for the exact commit, reconciled through the index, is necessary but not sufficient for Done: outstanding subtasks must also be resolved.
@@ -58,7 +58,7 @@ The existing accepted ADRs and Worker references contain conflicting rules, espe
 
 ### Goals
 
-- Make GitHub Actions the sole authority for post-commit implementation validation across all task types, including tasks requiring scripts.
+- Make GitHub Actions the sole authority for post-commit implementation validation across all task types, including tasks requiring scripts; permit Worker log inspection only for diagnosis after a recorded failure.
 - Allow pre-commit inspection, but prohibit Worker-led post-commit verification of implementation correctness.
 - Introduce **Committed / Awaiting CI** as a distinct task status.
 - Require automated validation coverage for every task's declared validation requirements; do not treat absent coverage or absent results as success.
@@ -68,7 +68,7 @@ The existing accepted ADRs and Worker references contain conflicting rules, espe
 - Let the Worker continue immediately with other unblocked tasks while committed tasks await CI.
 - Process incoming review tasks through the ordinary queue without interrupting the task currently in progress.
 - Require successful required checks for the exact commit, completed result reconciliation, and no outstanding subtasks before an ordinary task is Done.
-- Generate one self-contained folder per distinct actionable CI error, with stable identity and active-child deduplication.
+- Have the Worker create one self-contained folder per distinct actionable CI error diagnosed from a failed run, with stable identity and active-child deduplication.
 - Route errors to the correct active parent; otherwise use a permanent fallback parent for orphaned/late errors.
 - Delete completed child folders and Done ordinary parent folders, but never automatically delete the fallback parent.
 - Retire the central report/Ledger remediation system and obsolete references after coordinated migration.
@@ -76,11 +76,11 @@ The existing accepted ADRs and Worker references contain conflicting rules, espe
 ### Non-Goals
 
 - The Worker must not run local scripts, tests, or lint as a substitute for required CI validation.
-- The Worker must not inspect, poll, dispatch, rerun, wait for, or open hosted workflow results to validate its own committed implementation.
+- The Worker must not inspect, poll, dispatch, rerun, or wait for hosted workflow results to determine or override validation status. After the index records a failed or infrastructure/capture-failed outcome, the Worker may open the linked run and inspect logs solely to diagnose the failure.
 - The Worker must not read back committed source files or diffs as a post-commit correctness check. Recording the SHA returned by the commit operation and updating task metadata are administrative actions, not validation.
 - The Worker must not use a missing CI result, missing review task, empty error-subtask list, skipped check, or incomplete capture as proof of success.
 - Do not create synthetic parent tasks for files, jobs, workflows, or individual errors.
-- Do not retain a central findings database, diagnostic archive, or report index. The only retained index is the strictly bounded run-status index under `workspace/`.
+- Do not generate CI-authored diagnostic reports, finding documents, or evidence artifacts. Do not retain a central findings database, diagnostic archive, or report index. The only retained index is the strictly bounded run-status index under `workspace/`; diagnostic context needed for remediation is captured by the Worker in the relevant task folder.
 - Do not claim that successful configured checks prove the absence of defects outside their declared coverage.
 - Do not delete `.takeout/reports/` until the replacement capture/status workflow is operational and all consumers have migrated.
 - Do not delete the permanent fallback parent when it has no children.
@@ -138,13 +138,13 @@ The existing accepted ADRs and Worker references contain conflicting rules, espe
 
 ### Option 3 — Workspace run-status index, event-driven review tasks, and folder-based remediation
 
-- **Description and operating model:** Retain only a compact CI run-status index under `workspace/`. For each validation attempt, record the exact commit SHA, validation-cycle/run identity, required workflow/check-set identity, completion time, and aggregate terminal outcome (success, check failure, or infrastructure/capture failure). The index is run-status-only: it must not store findings, diagnostic payloads, logs, evidence, deduplication signatures, or remediation state.
+- **Description and operating model:** Retain only a compact CI run-status index under `workspace/`. For each validation attempt, record the exact commit SHA, validation-cycle/run identity, required workflow/check-set identity, completion time, aggregate terminal outcome (success, check failure, or infrastructure/capture failure), and direct GitHub Actions run URL. The index is run-status-only: it must not store findings, diagnostic payloads, logs, evidence, deduplication signatures, or remediation state.
 
-  GitHub Actions executes the required checks for the exact commit. When the complete required check set reaches a terminal aggregate outcome, automation writes the index record and creates one CI-result review task for that validation event/attempt. The review task contains references (source Task-ID, commit SHA, validation/run identity, index location, and instructions), not copied diagnostics. The Worker later executes the review task by reading the index and reconciling task state; it does not inspect workflow logs, rerun checks, or independently validate the implementation.
+  GitHub Actions executes the required checks for the exact commit. When the complete required check set reaches a terminal aggregate outcome, automation writes the index record and creates one lightweight CI-result review task for that validation event/attempt. The review task contains references (source Task-ID, commit SHA, validation/run identity, index location, run URL, and instructions), not copied diagnostics. The Worker executes the review task by reading the index first. For success, it reconciles task state from the index. For failure or infrastructure/capture failure, it may open the linked run and inspect logs solely to diagnose the cause, then creates the necessary remediation/infrastructure task folders. It must not rerun checks or independently decide whether validation succeeded.
 
   A validation event means the aggregate result for the declared required check set for one exact commit and one validation attempt—not an individual job finishing while other required jobs remain pending. Duplicate event deliveries must not create duplicate review tasks. A rerun is a distinct attempt and must have a distinct identity. A later successful rerun does not silently erase a prior failed event or delete already-created remediation work.
 
-  All actionable errors and their evidence remain exclusively in individual self-contained CI subtask folders. A successful aggregate result means the declared required checks completed successfully for that exact commit; it does not prove absence of defects outside their coverage. Missing, pending, cancelled, skipped, incomplete, or infrastructure/capture-failed outcomes are not success.
+  CI does not generate separate diagnostic reports, finding documents, or error-evidence files. The Worker captures only the actionable diagnosis and necessary evidence in the remediation task folder. A successful aggregate result means the declared required checks completed successfully for that exact commit; it does not prove absence of defects outside their coverage. Missing, pending, cancelled, skipped, incomplete, or infrastructure/capture-failed outcomes are not success.
 
 - **Task lifecycle:** After the Worker commits, the task enters **Committed / Awaiting CI** and the Worker immediately selects another unblocked task. It continues processing unblocked work without waiting for CI. When no unblocked task remains, it follows the existing blocked-task procedure and brings blocked tasks to the user for input. A CI-result review task created while the Worker is busy joins the ordinary queue and does not interrupt the current task.
 
@@ -153,12 +153,12 @@ The existing accepted ADRs and Worker references contain conflicting rules, espe
 - **Error routing:** If the correct original parent is still active and can own the error, create the error subtask under that parent. Do not create a fallback task in this case. If the original parent is Done/deleted or otherwise unavailable, create the subtask under one permanent fallback parent for orphaned/late CI errors. Preserve the originating Task-ID, exact commit SHA, and validation/run identity in the error subtask. The fallback parent is permanent infrastructure and is never deleted just because it has no children.
 
 - **Repository and environment fit:** Fits the folder-based remediation model while retaining a narrow, auditable signal that the configured validation cycle actually ran and a queue event that prompts reconciliation. The index is workspace-owned metadata, not a report artifact under `.takeout/reports/`.
-- **Good — strengths:** Universal CI-only post-commit validation; explicit task state; commit-specific aggregate result; event-driven review; non-blocking queue throughput; clear late-error destination; no central findings Ledger.
-- **Neutral — trade-offs:** A small central metadata file and system-generated review tasks remain. They require strict schemas, idempotency, and a reliable producer/consumer contract.
+- **Good — strengths:** Universal CI-only post-commit validation; explicit task state; commit-specific aggregate result; event-driven review; non-blocking queue throughput; direct diagnostic source in Actions; no CI-generated finding documents or central findings Ledger; clear late-error destination.
+- **Neutral — trade-offs:** A small central metadata file and system-generated review tasks remain. The Worker performs diagnosis only on failed runs and records actionable findings in task folders.
 - **Bad — weaknesses:** A green result is only as meaningful as the declared required checks. A missing workflow, omitted script, incorrectly optional check, or failed event delivery could undermine the model if not detected.
 - **Implementation and migration cost:** Highest; requires coordinated changes to workflow orchestration, status writer, event/task generator, Worker policy, templates, queue, board, ADRs, and existing report/Ledger consumers.
-- **Dependencies and operational burden:** GitHub Actions must run every required check and aggregate results for each exact commit/attempt. Automation must write status before or atomically with review-task publication, deduplicate event deliveries, and preserve the queue handoff. Worker must read only the index when processing review tasks.
-- **Risks and safeguards:** Require declared validation coverage, exact SHA binding, aggregate required-check completion, idempotent event identity, visible infrastructure failure, and no inference of success from absent records. Keep findings and all remediation evidence in child folders only.
+- **Dependencies and operational burden:** GitHub Actions must run every required check and aggregate results for each exact commit/attempt. Automation must write status and the run URL before or atomically with review-task publication, deduplicate event deliveries, and preserve the queue handoff. Worker reads the index for status and opens the linked run only for failure diagnosis.
+- **Risks and safeguards:** Require declared validation coverage, exact SHA binding, aggregate required-check completion, idempotent event identity, visible infrastructure failure, and no inference of success from absent records. Do not generate CI diagnostic artifacts; let the Worker capture concise actionable diagnosis and evidence in child folders.
 - **Evidence and confidence:** The user approved this operating model on 2026-11-28. The exact index schema, workflow implementation, permissions, and queue integration remain implementation work; no runtime behavior has been verified.
 - **Limitations and unknowns:** Exact workflow triggers, check aggregation, event delivery/recovery, write permissions, and queue-discovery behavior remain to be designed and implemented.
 
@@ -186,12 +186,12 @@ Option 1 preserves existing machinery but conflicts with the approved universal 
 
 Adopt Option 3.
 
-### A. Universal post-commit validation boundary
+### A. Universal post-commit validation and diagnosis boundary
 
 - Before commit, the Worker owns implementation and may inspect its changes, review diffs, and make corrections.
-- Once committed, the Worker must not independently verify implementation correctness. Prohibited post-commit activities include reading back changed source files or diffs as a correctness check, running tests/scripts/lint, inspecting hosted Actions results/logs, dispatching or rerunning workflows, and waiting for CI.
-- The Worker may retain the commit SHA returned by the commit operation and update task metadata as administrative bookkeeping. Such bookkeeping is not validation and must not be represented as verification evidence.
-- GitHub Actions is the sole authority for the declared required checks against the exact commit.
+- After commit, GitHub Actions is the sole authority for implementation-validation outcomes. The Worker must not run tests/scripts/lint, independently decide whether a commit passed, or override the aggregate status recorded in the workspace index.
+- The Worker may retain the commit SHA returned by the commit operation and update task metadata as administrative bookkeeping. Such bookkeeping is not validation.
+- The Worker must not inspect successful workflow logs or independently re-evaluate passing checks. When the index records a failed or infrastructure/capture-failed result, the Worker may open the linked Actions run and inspect logs **solely to diagnose the cause and prepare remediation**. This diagnostic inspection cannot change the recorded validation outcome.
 - Every task declares its validation requirements. Tasks requiring scripts must have those scripts executed by required GitHub Actions checks. Missing coverage or a missing result means not validated, never Done.
 - Do not weaken, skip, or silently omit required checks to obtain a green result.
 
@@ -234,10 +234,10 @@ A validation event is the aggregate result of the full required check set for on
 
 ### E. Error folders, routing, and permanent fallback
 
-- Each distinct actionable CI error is one self-contained subtask folder under a genuine parent.
+- Each distinct actionable CI error diagnosed by the Worker from a failed Actions run is one self-contained subtask folder under a genuine parent.
 - If the correct originating parent is still active and can own the error, create the subtask there. Do not create a placeholder/fallback task for errors that have a valid active parent.
 - If the original parent is Done and deleted, or otherwise unavailable, create the error under a single permanent fallback parent for orphaned/late CI errors.
-- Preserve the originating Task-ID, exact commit SHA, validation/run identity, diagnostic payload, affected paths, and remediation instructions in the error subtask.
+- Preserve the originating Task-ID, exact commit SHA, validation/run identity, concise Worker-authored diagnosis, relevant log excerpts or durable references, affected paths, and remediation instructions in the error subtask. CI does not create a separate finding document.
 - Reuse a matching error subtask only while it remains active; distinct errors remain separate.
 - Delete a completed error subtask folder and all its contents. Delete an ordinary parent folder when it is Done and has no outstanding subtasks.
 - The fallback parent is permanent workflow infrastructure. Never delete it merely because it has no outstanding children. Its completed child folders are still deleted normally.
@@ -253,7 +253,7 @@ Keep the index under `workspace/`. Its allowed content is limited to run/validat
 - completion timestamp;
 - aggregate terminal outcome (success, check failure, infrastructure failure, or capture failure).
 
-The index must not contain findings, error signatures, logs, diagnostic payloads, evidence, remediation state, or historical finding records. Those belong in individual error task folders. A successful record means only that the declared required checks completed successfully for that exact commit.
+The index must not contain findings, error signatures, logs, diagnostic payloads, evidence, remediation state, or historical finding records. It may contain the direct Actions run URL as a locator. A successful record means only that the declared required checks completed successfully for that exact commit.
 
 ### G. Report-system retirement
 
@@ -263,7 +263,7 @@ The user confirmed `.takeout/reports/` as the exact retirement target. Migrate e
 
 - **Positive:** One validation authority after commit; no Worker post-commit verification; explicit Awaiting CI state; event-driven review; parallel task throughput; exact-commit validation; self-contained error work; deterministic late-error routing; no central findings Ledger.
 - **Negative:** The system depends on GitHub Actions coverage, aggregate result publication, and reliable event/task creation. Completed diagnostics and recurrence history are deleted with their task folders.
-- **Neutral:** Review tasks and the run-status index are retained as operational metadata, not as findings storage.
+- **Neutral:** Review tasks and the run-status index are retained as operational metadata, not as findings storage. CI produces no separate diagnostic documents; the Worker consults the run only when diagnosis is necessary.
 - **Conditional:** A successful configured check set is meaningful only when the task's required validation contract is complete and all required checks actually run.
 
 ## Risks and Safeguards
@@ -280,7 +280,7 @@ The user confirmed `.takeout/reports/` as the exact retirement target. Migrate e
 | Capture fails but no child is created | Unknown / Critical | Capture behavior not yet inspected | Explicit infrastructure/capture terminal state and review task | Capture failure can delay remediation |
 | Late error has no valid parent | High / Medium | Original folders are intentionally deleted | Permanent fallback parent; preserve origin references | Fallback queue may accumulate work |
 | Duplicate errors create flooding | Medium / Medium | Same error can recur across cycles | Stable signature and reuse only while matching child remains active | No long-term identity history after deletion |
-| Child lacks needed evidence | Medium / High | Self-containment is a new contract | Include exact diagnostic payload, source commit, attribution, affected paths, and instructions | Some external logs may expire |
+| Actions logs expire before remediation | Medium / High | Direct run inspection replaces CI-generated evidence copies | Record run URL and capture the relevant concise log excerpts/diagnosis in the Worker-created remediation task | Some artifacts may expire before review |
 | Premature deletion loses active work | Low / Critical | Folder deletion is destructive | Delete ordinary parent only after successful validation and no outstanding subtasks; delete child only when resolved | No retained archive by design |
 | Worker idles while CI runs | Medium / High | CI duration can be long | Mandatory next-unblocked-task scheduling rule | Queue discovery latency |
 | Review task is forgotten or starved | Medium / High | Review task is asynchronous | Review task enters ordinary queue and is eligible at every next task-selection point | Sustained higher-priority work may delay it |
@@ -308,8 +308,8 @@ The user confirmed `.takeout/reports/` as the exact retirement target. Migrate e
 2. Define task validation contracts: required workflow/check set for each task type, including scripts and other executable acceptance criteria.
 3. Define the task status lifecycle and board representation, including **Committed / Awaiting CI** and **Done** gates.
 4. Define the aggregate validation event and status-index schema, exact SHA/attempt identity, event idempotency, and failure/recovery semantics.
-5. Implement CI automation that records each terminal aggregate result and creates one review task per validation attempt.
-6. Implement Worker review-task instructions: read the workspace index only, reconcile the source task, do not inspect workflow logs or rerun checks, then delete the review-task folder.
+5. Implement CI automation that records each terminal aggregate result and direct run URL, then creates one lightweight review task per validation attempt; do not generate separate CI finding/report/evidence documents.
+6. Implement Worker review-task instructions: read the workspace index first; reconcile success from the index; for failure/infrastructure failure, inspect the linked run only for diagnosis, create necessary remediation tasks, and never rerun or independently re-score validation.
 7. Implement the non-blocking task queue rule: after commit, immediately select the next unblocked task; continue until none remain, then use the existing blocked-task escalation. Review tasks join the ordinary queue and do not interrupt current work.
 8. Define and implement self-contained error-subtask folders, active-parent routing, stable active-child deduplication, and the permanent orphan/late-error fallback parent.
 9. Update Worker, templates, catalog, board, Workflow Map, workspace README, and all related references; reconcile accepted ADR conflicts.
@@ -326,8 +326,8 @@ All decisions below were approved by the user during discussion on 2026-11-28. T
 - **Universal validation:** After commit, GitHub Actions is the sole implementation-validation authority. The Worker may inspect changes before commit but must not independently validate after commit. This applies to all task types, including script tasks.
 - **Task status:** Add **Committed / Awaiting CI** to distinguish committed work awaiting automated validation from **In Progress** work that still needs implementation. **Done** requires successful required automated checks for the exact commit, result reconciliation, and no outstanding subtasks.
 - **Script validation:** Required scripts must be executed by an appropriate GitHub Actions workflow. Missing coverage or missing results cannot be treated as success.
-- **Event-driven review:** Every terminal aggregate validation event/attempt creates a system-generated CI-result review task. The Worker executes it by reading the workspace run-status index, not workflow logs or source changes.
-- **Review-task content:** Store references to the source Task-ID, commit SHA, validation/run identity, index location, and reconciliation instructions; do not duplicate diagnostics.
+- **Event-driven review:** Every terminal aggregate validation event/attempt creates a system-generated CI-result review task. The Worker reads the workspace index first; it opens linked Actions logs only for diagnosis after a failed or infrastructure/capture-failed status. It never uses log inspection to override the aggregate status.
+- **Review-task content:** Store references to the source Task-ID, commit SHA, validation/run identity, index location, direct Actions run URL, and reconciliation instructions; do not duplicate CI diagnostics.
 - **Queue behavior:** As soon as a task is committed, the Worker immediately moves to another unblocked task. Continue until no unblocked task remains, then follow the existing blocked-task procedure and bring blocked tasks to the user. Incoming review tasks join the ordinary queue and do not interrupt current work.
 - **Active-parent routing:** If an error has a correctly identified active parent, create the error as its subtask; no placeholder is needed.
 - **Orphan/late-error routing:** If the original parent is Done/deleted or otherwise unavailable, create the error under one permanent fallback parent. The fallback parent is never deleted merely because it is empty.
@@ -335,9 +335,9 @@ All decisions below were approved by the user during discussion on 2026-11-28. T
 
 ## Review and Approval
 
-- **Revision presented:** 4
-- **User decisions:** All individual policy and architecture decisions listed above were approved during discussion.
-- **Consolidated Draft status:** Draft; updated to reflect approved discussion decisions and ready for continued discussion. Formal approval of the complete consolidated revision has not yet been requested or recorded.
+- **Revision presented:** 5
+- **User decisions:** The revision 4 architecture decisions remain approved. The leaner CI-output proposal in revision 5 is a recommendation added for discussion and has not yet been approved.
+- **Consolidated Draft status:** Draft; revision 5 proposes eliminating CI-generated diagnostic/report documents while retaining the status index, run URL, and event-driven review task. The Worker would inspect failed runs for diagnosis only. Formal approval of the complete consolidated revision has not yet been requested or recorded.
 - **Implementation authorization:** Not granted by this Draft update. Implementation requires the user's explicit execution instruction after the decision is finalized and the required superseding ADR is accepted.
 - **Decision date:** 2026-11-28
 - **Resulting ADR:** Not created
@@ -350,6 +350,7 @@ All decisions below were approved by the user during discussion on 2026-11-28. T
 | 2026-11-28 | 2 | Confirmed `.takeout/reports/` as the exact retirement target and removed the unresolved-path question. | User confirmed the path. |
 | 2026-11-28 | 3 | Selected Option 3; narrowed the retained index to commit-specific CI run status only and relocated it under `workspace/`. | User approved the Option 3 architecture direction. |
 | 2026-11-28 | 4 | Consolidated universal GitHub Actions-only post-commit validation; Committed / Awaiting CI; exact-commit Done gate; event-driven review tasks; index-only Worker reconciliation; non-blocking queue scheduling; active-parent vs permanent fallback routing; and permanent fallback lifecycle. | User approved each of these decisions and asked to update the Draft for continued discussion. |
+| 2026-11-28 | 5 | Proposed lean CI output: retain only the run-status index (including a direct run URL) and lightweight review-task event; stop generating CI-authored finding/report/evidence documents. Worker opens failed Actions runs only for diagnosis and creates remediation task folders; successful outcomes are reconciled from the index without log inspection. | Assessment/recommendation added at user's request; this change is pending user decision. |
 
 ## References and Evidence Register
 
