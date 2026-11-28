@@ -60,6 +60,8 @@ Keep all ADR files permanently in this folder after acceptance and confirmation.
 
 ## Current Accepted ADRs
 
+- [ADR-0006 — Automated Structural Validation for Canonical Ownership and Drift](0006-automated-structural-validation-for-canonical-ownership-and-drift.md) — Accepted Option 2. Implementation is in progress under Refactor Skills child 60.
+
 - [ADR-0005 — Lean Session Start and Conversation Mode](0005-lean-session-start-and-conversation-mode.md) — Accepted. Implementation is in progress under child 59.
 
 - [ADR-0004 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) — Accepted Option 3. Implementation remains in progress under the linked P0 task.
