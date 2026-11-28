@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-66
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User's explicit request in this conversation to create these two subtasks under Refactor Skills.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — authorized execution batch active for the prepared batch
+- **Eligibility / deferral reason:** Done — README ownership cleanup, targeted audit and prevention reconciliation completed with documented audit coverage limits
 - **Required:** Yes
 - **Created:** 2026-11-28 15:00 UTC
 - **Updated:** 2026-11-28 15:00 UTC
@@ -40,21 +40,21 @@ Perform a repository-wide content audit, with particular attention to README fil
 ## 5. Decisions and Progress
 
 - **Decision:** Preserve the request and its scope as this child. Execution authorized for the batch.
-- **Progress:** Task record prepared from the canonical subtask template.
+- **Progress:** Audited 21 README paths from the recursive tree and inspected content across workspace, skill navigation, drawing, report/image, novel, analysis, draft and ADR records. Replaced redundant operating procedures in workspace, drawing, draft, ADR and analysis README files with canonical pointers. Updated the catalog.\n- **Audit limitations:** The recursive tree had 685 entries. README inventory was complete, but a full content read of every non-README file was not performed. Targeted searches and canonical owner reads were used.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Pending consolidated readback
+- **Commit SHA:** `97dc4bebf895c39cd59711f1306f8c8dab1297be`; `1b73a480f8ab5c3e591a4207ec366e1ae4edd0ff`; `93d8f29dd8c28d598dca610cf937096fddde579e`; `1cfdffebb24ab00facea03ad5d84f1b253d89cd9`; `b0a7d55682d5f9a04b28d1d098d10dde5dac9cf7`; catalog `78c26fd9d2490ffdd9655059433e12f2c0f0f249`).
 - **Changed paths:** `workspace/README.md`; `.agent/skills/drawing/README.md`; `workspace/draft/README.md`; `workspace/adr/README.md`; `workspace/analysis/README.md`; document-type catalog; Worker; tracking
-- **Readback:** Changes read back individually during execution. Consolidated readback pending
+- **Readback:** All modified README/catalog paths read back individually
 - **Checks:** Not performed
 - **Limitations:** README inventory is complete (21 files), but the repository-wide non-README instruction scan is targeted, not a full fetch/read of all 685 entries. Code search/readback and structural validator coverage remain limited.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28
+- **Completion basis:** README ownership cleanup, navigation consolidation, catalog alignment and remote readback. Non-README coverage limitations documented.
 
 ## 8. Hosted Validation
 
@@ -70,7 +70,7 @@ Perform a repository-wide content audit, with particular attention to README fil
 
 ## 10. Handoff
 
-Continue the instruction ownership audit, reconcile ID collision/traceability issues as scope allows, then close with readback.
+Completed the scoped audit. The broader non-README file-content scan remains a documented limitation, not an assertion of full coverage.
 
 ## 11. Ledger Findings
 
