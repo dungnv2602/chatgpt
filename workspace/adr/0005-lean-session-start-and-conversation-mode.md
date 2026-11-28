@@ -15,7 +15,7 @@ approved_scope: "Option 3, including the user's additional requirement to update
 related_adrs: []
 supersedes: []
 superseded_by: null
-implementation_status: "in-progress"
+implementation_status: "complete"
 implementation_tasks:
   - "20261127-173000-59"
 review_triggers:
@@ -61,12 +61,12 @@ Chosen option: Option 3, including associated-template reconciliation, as approv
 
 ### Confirmation
 
-- [ ] Session Start contains only cue guard and pointer.
-- [ ] Conversation Mode contains presentation settings only.
-- [ ] Worker owns operational authority, mandatory self-check, contradiction detection, and execution gates.
-- [ ] Existing novelist/drawing procedures remain available through focused Worker references.
-- [ ] Initialization policy, skills index, catalog, board, discussion contract, and associated templates align.
-- [ ] Readback verifies every changed path.
+- [x] Session Start contains only cue guard and pointer.
+- [x] Conversation Mode contains presentation settings only.
+- [x] Worker owns operational authority, mandatory self-check, contradiction detection, and execution gates.
+- [x] Existing novelist/drawing procedures remain available through focused Worker references.
+- [x] Initialization policy/navigation, skills index, catalog, board, discussion contract, and associated templates align.
+- [x] Readback verifies every changed path.
 
 ## Implementation Scope
 
@@ -80,3 +80,10 @@ Chosen option: Option 3, including associated-template reconciliation, as approv
 - Source Draft: DRAFT-0006 Revision 1, approved.
 - Additional user instruction: update associated templates.
 - Approval and execution cue: user explicitly approved and instructed execution on 2026-11-28.
+
+
+### Implementation closeout (2026-11-28)
+
+- **Status:** Complete. Child 59 implementation reconciled under explicit user approval of DRAFT-0006 Revision 1, Option 3, including associated-template updates.
+- **Evidence:** Repository progress and discussion records document updates to entry files, Worker ownership gates, specialist initialization references, navigation, catalog, templates, task evidence, and readback. The source Draft is retired and ADR-0005 is the canonical accepted record.
+- **Limitations:** No local tests, scripts, lint, or hosted CI results were inspected for this closeout. Readback and tracking evidence do not establish runtime validation.
