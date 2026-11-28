@@ -30,6 +30,8 @@ The manifest preserves the three existing required validation families and adds 
 | `validate-document-standards` | `validate-document-standards.yml` | `document_standards` | Document catalog, structural ownership, and existing Ledger regression tests |
 | `generic-verifier` | `task-validation-verifier.yml` | `generic_verifier` | Exact-SHA task contract validation, closed adapter enforcement, and additive task-specific checks |
 
+The policy records each coordinator job ID and its result collection mode. Ordinary checks use the job result. The generic verifier uses its structured outcome and must return the exact source SHA, policy blob SHA, and result digest.
+
 The protected policy names the coordinator job IDs used by the aggregate workflow. The three existing reusable workflows now accept the exact source SHA and skip legacy publication in coordinator mode. Their direct-push report pipeline remains intact until the privileged publisher and report migration are ready. No hosted validation result is claimed.
 
 ## Reusable workflow-call interface
