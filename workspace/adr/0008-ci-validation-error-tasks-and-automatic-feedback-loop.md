@@ -2,7 +2,7 @@
 record_type: decision-record
 template_version: "1.1"
 id: "ADR-0008"
-status: "promotion-pending"
+status: "accepted"
 decision_date: "2026-11-28"
 decision_makers:
   - "User"
@@ -268,4 +268,4 @@ The single coordinator is preferred because the repository needs one authoritati
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
-| 2026-11-28 | Promotion pending | User approved DRAFT-0010 revision 9 and instructed promotion. Provisional ADR created for completeness review. |
+| 2026-11-28 | Accepted | User approved DRAFT-0010 revision 9 and instructed promotion. The complete provisional ADR was read back and compared with the approved source. Decision scope and rationale are preserved. |
