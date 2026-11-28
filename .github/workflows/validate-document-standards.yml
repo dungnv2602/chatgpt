@@ -88,6 +88,12 @@ jobs:
             -p 'test_validate_catalog.py' \
             -v
 
+      - name: Run structural ownership validator tests
+        run: python -m unittest discover -s .agent/skills/the-worker/scripts -p 'test_validate_structural_ownership.py' -v
+
+      - name: Validate structural ownership
+        run: python .agent/skills/the-worker/scripts/validate_structural_ownership.py --root .
+
       - name: Validate the document type catalog
         run: |
           python .agent/skills/document-standards/scripts/validate_catalog.py --root .
