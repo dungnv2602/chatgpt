@@ -455,15 +455,22 @@ Goal:
 Context:
 [Relevant inputs, current state, prior decisions, and failed attempts.]
 
+Scope:
+[Exact files, systems, workstream, and boundaries included.]
+
 Constraints:
-[Scope, requirements, compatibility, and limits.]
+[Requirements, compatibility limits, exclusions, and safety conditions.]
 
-Actions:
-[For tool-based tasks: available tools, actions already authorized,
-and actions requiring additional approval.]
+Approval boundaries:
+[Actions already authorized. Actions that require additional approval.
+Data, files, accounts, or systems that must not be changed.]
 
-Done:
-[Observable acceptance criteria and appropriate verification.]
+Tools and actions:
+[Available tools, permitted operations, and expected evidence.]
+
+Done and verification:
+[Observable acceptance criteria. State which checks are required,
+permitted, and expected; never claim a check that was not performed.]
 
 Output:
 [Deliverable, format, level of detail, and required evidence.]
@@ -471,13 +478,13 @@ Output:
 
 **Adaptation heuristics — evaluate on representative tasks:**
 - Keep the goal and output contract explicit.
-- Include implementation context and acceptance criteria for code tasks.
+- Include implementation context, scope, approval boundaries, and acceptance criteria for code tasks.
 - Add decision drivers and evidence limits for difficult tasks.
 - Combine related tasks when they share one outcome. Split when dependencies, review checkpoints, or context limits justify separate runs.
 - Ask for conclusions, assumptions, concise rationale, evidence, and checks rather than hidden chain-of-thought.
 - For current facts, request retrieval and citations when the environment provides those capabilities. Disclose missing access rather than invent sources.
 - Define tool access and authorization only for agentic tasks. For long work, request milestones and blockers instead of a message after every action.
-- Keep API and harness settings in setup notes outside the prompt. Verify supported controls for the exact model, endpoint, and surface.
+- Keep model, endpoint, reasoning, and harness settings outside the copyable prompt. Verify supported controls for the exact target surface.
 
 The task brief and adaptation heuristics are Prompt Master recommendations, not an official OpenAI template or benchmark result.
 
