@@ -155,7 +155,19 @@ def validate_contract(
     mandatory = policy.get("mandatory_checks")
     if not isinstance(mandatory, list) or not mandatory:
         raise ContractError("Policy has no mandatory check manifest")
-    mandatory_ids = {item.get("id") for item in mandatory if isinstance(item, dict)}
+    mandatory_ids: set[str] = set()
+    coordinator_jobs: set[str] = set()
+    for item in mandatory:
+        if not isinstance(item, dict):
+            raise ContractError("Every mandatory check must be an object")
+        check_id = item.get("id")
+        job_id = item.get("coordinator_job")
+        if not isinstance(check_id, str) or not isinstance(job_id, str) or not job_id:
+            raise ContractError("Mandatory checks require stable IDs and coordinator job IDs")
+        if check_id in mandatory_ids or job_id in coordinator_jobs:
+            raise ContractError("Mandatory check IDs and coordinator job IDs must be unique")
+        mandatory_ids.add(check_id)
+        coordinator_jobs.add(job_id)
     adapters = registry["adapters"]
     seen: set[str] = set()
     validated: list[dict[str, Any]] = []
