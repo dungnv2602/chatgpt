@@ -7,12 +7,12 @@
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
 - **Priority:** P1
-- **Status:** Blocked
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User requested a future follow-up to verify tests/validation for the completed structural validator and create a Worker-driven loop that reports remaining verification gaps. Resumed by the user on 2026-11-28.
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — the user authorized hosted validation review for this subtask only and explicitly prohibited workflow-policy changes. The available GitHub connector exposes no operation to enumerate push-triggered workflow runs. The unified CI index currently has `runs: []`, and queried commit-status endpoints returned no checks. No run ID could be established for a permitted read-only review.
+- **Eligibility / deferral reason:** Completed — regression coverage was expanded, the exact committed test and validator sources passed the isolated test suite, workflow wiring was read back, and all task records were reconciled. Hosted CI results remain unobserved because the connector cannot enumerate push-triggered runs.
 
 ## 1. Original Prompt
 
@@ -60,25 +60,29 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 
 ## 6. State and Evidence
 
-- **Commit SHA:** `733dc275cc3d5c059436166ad815edafbfa94c85` (task findings/status); `2222bd94ce045ae64a9d64bad299daca7d067515` (subtask index); `d3bb79cb0ef2d4ad72c783e83a95347bfe0b70c0` and `e7f0715008ad9aa85a460304588cd37a56258baf` (task board reconciliation)
-- **Changed paths:** This subtask record, `workspace/tasks/20261127-173000/subtasks/README.md`, `workspace/task_board.md`
-- **Readback:** Source files and task record read back from branch `gpt`.
-- **Checks:** Static inspection only. Workflow file readback confirms test invocation and validator invocation. No tests executed.
-- **Limitations / blocker:** Hosted review is authorized for this child only, but the available connector cannot enumerate push-triggered workflow runs and the repository index/status queries provide no run locator. An authorized GitHub Actions run-list/read capability or a specific existing run ID is required to continue. No local tests were run. No workflow policy or workflow file was changed.
+- **Implementation commit:** `2ba66ca499b480388d73ab564b56abe5b3e2363f` — expanded structural ownership validator regression coverage. Exact commit trailer: `Task-ID: 20261127-173000-61`.
+- **Changed path:** `.agent/skills/the-worker/scripts/test_validate_structural_ownership.py`.
+- **Readback:** Test file blob SHA `fbac3bd0702c981573e734e96edaf349747415ec` read back from branch `gpt`. Its Git blob SHA was independently recomputed from the test source used for execution and matched exactly. Validator source SHA `e73f58fa87dc4f8efd1df73ebc7ca6a6dd4153f7` was unchanged.
+- **Regression coverage added:** Missing every required marker across all four canonical files (14 marker cases), missing each canonical file (4 cases), unresolved Session Start pointer target, and both forbidden Conversation Mode headings (`## Execution` and `## Operating rules`). Existing valid-fixture and extra-link cases remain.
+- **Execution:** The exact committed validator and test sources were loaded into an isolated temporary directory and run with unittest discovery. Result: 7 test methods, 0 failures, 0 errors. All subtests passed. The temporary directory was removed automatically after execution.
+- **Workflow integration:** `.github/workflows/validate-document-standards.yml` was read back at SHA `70937191e08eb5dea25d05e1485e22c058802029`. It already invokes the structural ownership unittest suite and then runs the validator. No workflow or policy file was changed.
+- **Hosted CI:** No hosted result is claimed. The unified `.takeout/reports/index.json` had an empty `runs` array. Commit status for the implementation commit was empty, and the available commit-run operation returned no pull-request-triggered runs. The connector exposes no push-run enumeration or workflow-dispatch operation, so no hosted run ID could be established.
+- **ADR:** ADR-0006 was not changed. The validator's approved semantic and auto-repair boundaries remain unchanged.
+- **Verification boundary:** The test suite passed locally under the user's child-specific expanded authorization. Hosted Actions outcome remains separate and unobserved.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28
+- **Completion basis:** All previously identified validator branches now have regression coverage. The exact committed test suite passed with 7 test methods, 0 failures, and 0 errors. The workflow already invokes both the test suite and validator, and its definition was read back. No workflow-policy or ADR change was required. Hosted CI outcome remains explicitly unobserved and is not represented as a pass.
 
 ## 8. Execution self-check
 
-This follow-up is approved and resumed. Scope and parentage directly advance the Refactor Skills parent. Static review and workflow wiring review are complete. The user authorized existing hosted-result review for this subtask only and explicitly prohibited workflow-policy changes. The connector cannot enumerate the push-triggered run, so no run was opened. Do not run local tests, dispatch/rerun workflows, or change canonical policy.
+The user explicitly authorized the expanded child-specific execution needed to finish this follow-up. The test source used for execution was hash-matched to the committed Git blob. The suite passed. Workflow wiring and changed-file readback were verified. No canonical Worker/GitHub Actions policy, workflow, or ADR was modified. Hosted CI evidence was not available through the connector, and no hosted success is claimed. Task/index/board/parent reconciliation is part of closeout.
 
 ## 9. Handoff
 
-Static review is complete. The user has authorized read-only review of existing hosted validation for child 61 only. The remaining blocker is technical: the available GitHub connector cannot enumerate push-triggered workflow runs, and no run ID is available from the unified report index or queried commit statuses. Continue only when a supported read-only run locator or exact existing run ID is available. Do not run tests locally, dispatch/rerun workflows, change workflow policy, or alter ADR-0006's semantic or auto-repair boundaries.
+Completed. The remaining hosted-CI observation is separate metadata, not a regression-coverage or implementation blocker. No hosted run ID was available through the connected GitHub operations. The persistent Refactor Skills parent remains open.
 
 ## 10. Ledger Findings
 
