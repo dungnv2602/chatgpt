@@ -10,27 +10,27 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-**20261127-173000-67 — Workflow optimization, cycle closure and redundancy reduction** (In Progress)
+_None._
 
 ## Ordered Eligible Execution Queue
 
-1. **67** — Workflow optimization, cycle closure and redundancy reduction (In Progress)
+_No eligible tasks._
 
 ## Next Task
 
-_None. Child 67 is the final prepared task in the current execution batch._
+_None. Refactor Skills is at quiescence._
 
 ## Deferred Work
 
 ### Blocked
 
-_No blocked subtasks._
+_No blocked tasks._
 
 ### Proposed — decision pending
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173500 | Remove the standalone latest lint report copy | P0 | Proposed | Approved | Accepted ADR prerequisite; DRAFT-0008 approved-for-ADR. | [task](tasks/20261127-173500/task.md) |
+| 20261127-173000-68 | Reconcile accepted ADR source-Draft ID provenance | P0 | Proposed | Pending | Requires user authority for metadata-only provenance reconciliation between ADR-0004 and ADR-0007. | [record](tasks/20261127-173000/subtasks/68-adr-source-draft-provenance.md) |
 
 ### Paused
 
