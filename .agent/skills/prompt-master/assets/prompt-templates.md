@@ -19,7 +19,7 @@ Full template library for Prompt Master. Read the relevant template when the use
 | [K — ComfyUI](#template-k--comfyui) | ComfyUI node-based image workflows |
 | [L — Prompt Decompiler](#template-l--prompt-decompiler) | Breaking down, adapting, or splitting existing prompts |
 | [M — Current Claude Task Brief](#template-m--current-claude-task-brief) | Complex, multi-step, or agentic task on current Claude models |
-| [N — OpenAI Task Brief](#template-n--openai-task-brief) | Complex tasks across OpenAI models, ChatGPT, Codex, and the API |
+| [N — OpenAI Task Brief](#template-n--openai-task-brief) | Complex tasks across ChatGPT, Codex, and the API; explicit scope, approval boundaries, and verification |
 
 ---
 
