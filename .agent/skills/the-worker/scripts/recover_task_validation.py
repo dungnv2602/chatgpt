@@ -151,10 +151,20 @@ def get_attempt(api: GitHubAPI, repository: str, run_id: int, attempt: int, fall
 
 def get_jobs(api: GitHubAPI, repository: str, run_id: int, attempt: int) -> list[dict[str, Any]]:
     owner_repo = urllib.parse.quote(repository, safe="/")
-    return api.pages(
-        f"/repos/{owner_repo}/actions/runs/{run_id}/attempts/{attempt}/jobs",
-        "jobs",
-    )
+    path = f"/repos/{owner_repo}/actions/runs/{run_id}/attempts/{attempt}/jobs"
+    result: list[dict[str, Any]] = []
+    page = 1
+    while True:
+        payload = api.json(f"{path}?per_page=100&page={page}", allow_not_found=True)
+        if payload is None:
+            return []
+        jobs = payload.get("jobs", [])
+        if not isinstance(jobs, list):
+            raise RecoveryError("Actions jobs response is malformed")
+        result.extend(item for item in jobs if isinstance(item, dict))
+        if len(jobs) < 100:
+            return result
+        page += 1
 
 
 def get_artifact_payload(
@@ -199,29 +209,40 @@ def get_artifact_payload(
 
 def attempt_kind(
     jobs: list[dict[str, Any]],
+    artifact_present: bool = False,
 ) -> tuple[str, dict[str, Any] | None]:
     policy_job = next(
         (job for job in jobs if job.get("name") == "Check protected policy and duplicate source SHA"),
         None,
     )
-    coordinator_job = next(
-        (
-            job for job in jobs
-            if isinstance(job.get("name"), str)
+    coordinator_names = {
+        "Build exact-SHA task contract and policy binding",
+        "Changed-document lint",
+        "Full technical-document lint",
+        "Document standards",
+        "Generic task verifier",
+        "Aggregate complete check set",
+        "Publish terminal attempt",
+    }
+    coordinator_jobs = [
+        job for job in jobs
+        if job.get("name") in coordinator_names
+        or (
+            isinstance(job.get("name"), str)
             and job["name"].startswith("Run exact-SHA coordinator")
-        ),
-        None,
-    )
-    if coordinator_job is not None:
-        if coordinator_job.get("conclusion") == "skipped":
-            return "ignored", coordinator_job
-        if coordinator_job.get("status") != "completed":
-            return "pending", coordinator_job
-        if coordinator_job.get("conclusion") == "cancelled":
-            return "cancelled", coordinator_job
-        return "started", coordinator_job
+        )
+    ]
+    if coordinator_jobs:
+        if any(job.get("status") in {"queued", "in_progress", "waiting", "pending"} for job in coordinator_jobs):
+            return "pending", coordinator_jobs[0]
+        if any(job.get("conclusion") == "cancelled" for job in coordinator_jobs):
+            return "cancelled", coordinator_jobs[0]
+        if any(job.get("conclusion") in {"success", "failure", "timed_out", "action_required"} for job in coordinator_jobs):
+            return "started", coordinator_jobs[0]
     if policy_job is not None and policy_job.get("conclusion") == "failure":
         return "policy_failure", policy_job
+    if artifact_present:
+        return "started", None
     return "ignored", None
 
 
@@ -275,41 +296,34 @@ def process_attempt(
         return "ignored", (run_id, attempt_number)
 
     jobs = get_jobs(api, repository, run_id, attempt_number)
-    kind, coordinator_job = attempt_kind(jobs)
-    if kind == "ignored":
-        return kind, (run_id, attempt_number)
-    if kind == "pending":
+    aggregate = get_artifact_payload(api, repository, run_id, attempt_number)
+    kind, _ = attempt_kind(jobs, artifact_present=aggregate is not None)
+    if kind in {"ignored", "pending"}:
         return kind, (run_id, attempt_number)
 
-    completed_at = details.get("updated_at") or run.get("updated_at")
-    if not isinstance(completed_at, str):
+    policy_sha = policy_blob_sha(root, source_sha)
+    fallback_time = details.get("updated_at") or run.get("updated_at")
+    if not isinstance(fallback_time, str):
         raise RecoveryError(f"Run {run_id}/{attempt_number} has no completion timestamp")
-    aggregate = get_artifact_payload(api, repository, run_id, attempt_number)
 
     if aggregate is not None:
-        outcome = aggregate.get("outcome")
-        if outcome not in publisher.OUTCOMES:
-            aggregate = None
-        elif aggregate.get("source_sha") != source_sha:
+        try:
+            publisher.validate_aggregate(aggregate, source_sha, policy_sha, run_id, attempt_number)
+        except publisher.PublisherError:
             aggregate = None
 
     if aggregate is None:
         outcome = "cancelled" if kind == "cancelled" else "capture_failure"
-        policy_sha = policy_blob_sha(root, source_sha)
         aggregate = fallback_aggregate(
-            source_sha, policy_sha, run_id, attempt_number, outcome, completed_at
+            source_sha, policy_sha, run_id, attempt_number, outcome, fallback_time
         )
-    else:
-        policy_sha = aggregate.get("policy_blob_sha")
-        if not isinstance(policy_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", policy_sha):
-            policy_sha = policy_blob_sha(root, source_sha)
-            aggregate = fallback_aggregate(
-                source_sha, policy_sha, run_id, attempt_number, "capture_failure", completed_at
-            )
 
     with tempfile.TemporaryDirectory(prefix="task-validation-recovery-") as temp_dir:
         aggregate_path = Path(temp_dir) / "aggregate.json"
-        aggregate_path.write_text(json.dumps(aggregate, separators=(",", ":")) + "\n", encoding="utf-8")
+        aggregate_path.write_text(
+            json.dumps(aggregate, separators=(",", ":")) + "\\n",
+            encoding="utf-8",
+        )
         actions_url = f"https://github.com/{repository}/actions/runs/{run_id}"
         publisher.publish_with_retry(
             root,
@@ -381,7 +395,8 @@ def commit_checkpoint_with_retry(root: Path, known_attempts: list[tuple[int, int
         git(root, "config", "user.name", "github-actions[bot]")
         git(root, "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
         git(root, "add", "--", INDEX_PATH.as_posix())
-        git(root, "add", "-u", "--", REVIEW_ROOT.as_posix())
+        if (root / REVIEW_ROOT).exists():
+            git(root, "add", "-u", "--", REVIEW_ROOT.as_posix())
         commit = git(root, "commit", "-m", "Reconcile task validation checkpoint", check=False)
         if commit.returncode != 0:
             if "nothing to commit" in commit.stdout.lower():
@@ -401,7 +416,12 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
     if not isinstance(dispatcher, str):
         raise RecoveryError("Policy does not identify the dispatcher workflow")
     runs = list_runs(api, repository, dispatcher)
-    known: list[tuple[int, int, str]] = []
+    index = current_index(root)
+    known_map: dict[tuple[int, int], str] = {
+        (record["coordinator_run_id"], record["attempt"]):
+            ("completed" if record["recovery"]["reconciled_at"] is not None else "unresolved")
+        for record in index["attempts"]
+    }
     published = 0
     ignored = 0
     pending = 0
@@ -419,7 +439,14 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
                     if item["coordinator_run_id"] == run_id and item["attempt"] == attempt_number
                 )
                 state = "completed" if record["recovery"]["reconciled_at"] is not None else "unresolved"
-                known.append((run_id, attempt_number, state))
+                review_dir = root / REVIEW_ROOT / f"{run_id}-{attempt_number}"
+                if state == "unresolved" and record["outcome"] not in {"cancelled", "superseded"} and not review_dir.exists():
+                    state_result, key = process_attempt(root, api, repository, run, attempt_number)
+                    if state_result == "pending":
+                        state = "pending"
+                    else:
+                        published += 1
+                known_map[(run_id, attempt_number)] = state
                 continue
             state, key = process_attempt(root, api, repository, run, attempt_number)
             if state == "ignored":
@@ -427,7 +454,7 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
                 continue
             if state == "pending":
                 pending += 1
-                known.append((key[0], key[1], "pending"))
+                known_map[(key[0], key[1])] = "pending"
                 continue
             published += 1
             index = current_index(root)
@@ -439,8 +466,9 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
                 None,
             )
             state_value = "completed" if record and record["recovery"]["reconciled_at"] is not None else "unresolved"
-            known.append((run_id, attempt_number, state_value))
+            known_map[(run_id, attempt_number)] = state_value
 
+    known = [(run_id, attempt, state) for (run_id, attempt), state in known_map.items()]
     checkpoint_result = commit_checkpoint_with_retry(root, known)
     return {
         "runs_seen": len(runs),
