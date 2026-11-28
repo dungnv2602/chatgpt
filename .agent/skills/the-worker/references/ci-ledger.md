@@ -1,6 +1,6 @@
 # CI Ledger Operations
 
-> Worker-owned reference. The Worker controls activation. This file is not a standalone skill.
+> Worker-owned reference for the pre-migration legacy report pipeline only. The Worker controls activation. This file is not a standalone skill. Do not use this Ledger for ADR-0008 task-validation attempts, review folders, root-cause groups, or task lifecycle; those belong to The Worker and `workspace/task-validation/`.
 
 ## Ownership
 

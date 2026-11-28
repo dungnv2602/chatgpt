@@ -44,7 +44,7 @@ flowchart TD
 - Board: `workspace/task_board.md`; records and indexes: `workspace/tasks/`.
 - Drafts, analyses, ADRs and discussion registers: `workspace/decisions/`, governed by Worker decision-governance reference.
 - Worker owns task capture, hierarchy, selection, blockers, commit evidence and closeout.
-- Each task and subtask template includes a JSON Validation Contract. The coordinator resolves it from the commit's Task-ID trailer and binds it to the exact source SHA.
+- Each task and subtask template includes a JSON Validation Contract and task-local Validation Lifecycle block. After an implementation commit, the Worker records the exact source SHA and policy blob SHA as `awaiting_ci`, then immediately continues with other eligible work. Terminal outcomes are reconciled against the status index by Task-ID, SHA, and policy revision.
 
 ## Document and skill governance
 

@@ -95,6 +95,13 @@ Acceptance criteria are mapped to these required child tasks:
 - **Evidence:** Implementation range from f036ecbd02a9f049486ffbe27f8d0d11edae314d to e2a9756a0f719882e2d35df1a049f0fada117dcb (101 commits). Regression tests are wired into document-standards CI but have not been executed by the Worker.
 - **Limitations:** No local tests/lint, workflow dispatch, or hosted-run inspection. Publisher, recovery, checkpoint, Worker lifecycle, report migration, and operational Confirmation remain incomplete.
 - **Next:** Subtasks 02 and 03 are Done. Proceed with subtask 04 for Worker lifecycle and report migration.
+### 2026-11-28 — Subtask 04 lifecycle and migration staging
+
+- **Action:** Completed the Worker lifecycle contract, exact-SHA/policy matching rules, root-cause group reuse semantics, and legacy producer/consumer inventory.
+- **Result:** Existing reusable validation workflows and Worker-owned Ledger test path are preserved. Legacy report producers remain active where needed for non-task diagnostics; the report tree is not retired. External branch-protection/default-branch prerequisites remain unverified.
+- **References:** ADR-0008 Confirmation; `task-validation-interfaces.md`; `workspace/task-validation/README.md`.
+- **Next:** Read back the committed documents and reconcile the subtask index; do not enable the coordinator or inspect hosted logs before the required gates are verified.
+
 ## 6. Current State and Remaining Work
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.

@@ -45,6 +45,22 @@ The three existing validation workflows expose `workflow_call` with `coordinator
 
 The coordinator is defined as a reusable workflow in `.github/workflows/task-validation.yml`. It binds the source SHA and policy blob SHA, resolves the task contract from the source commit's Task-ID trailer, calls the three established validation workflows and the generic verifier, aggregates their results, and calls the isolated publisher as a separate job. The dispatcher is `.github/workflows/task-validation-dispatch.yml`; its push trigger is gated by explicit policy activation and verified protection, and it suppresses duplicate first-attempt dispatches for an already-published source SHA. The generic verifier is `.github/workflows/task-validation-verifier.yml`. Activation remains staged until publisher/recovery and report migration are ready. The three legacy push workflows remain active meanwhile, so no duplicate validation cycle is started.
 
+## Per-task validation lifecycle
+
+The task and subtask templates define a `Validation Lifecycle` JSON block governed by `.agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json`. It is task-local metadata, not a second run index.
+
+| State | Meaning | Allowed transition |
+|---|---|---|
+| `not_committed` | No task-specific implementation commit is awaiting validation. | `awaiting_ci` after a source commit with the exact Task-ID trailer. |
+| `awaiting_ci` | The task's current source SHA and policy blob SHA are recorded; no terminal attempt has been reconciled. | `review_required` for an actionable terminal failure; `passed` for a complete exact-SHA success. |
+| `review_required` | A current-SHA actionable failure needs Worker diagnosis and grouped remediation. | `reviewed` after all actionable root causes are diagnosed and linked to remediation children. |
+| `reviewed` | The failure attempt is reconciled and its review folder removed; remediation children remain ordinary queued work. | `passed` only after a qualifying successful result for the exact current SHA and policy revision. |
+| `passed` | The exact current SHA has a reconciled complete success. | `awaiting_ci` after a newer implementation commit. |
+
+After a task implementation commit, the Worker updates only that task's lifecycle block in a metadata-only commit. The source SHA remains the implementation commit, not the metadata commit. The dispatcher excludes `workspace/tasks/**`, so lifecycle updates cannot create validation recursion. Do not change the ordinary task Status to a special CI status; `awaiting_ci` and related values belong only to the lifecycle block.
+
+The Worker matches status-index attempts by all three values: exact `source_task_id`, `source_sha`, and `policy_revision`. A mismatch is stale or unattributable and cannot mutate the task. A later success does not erase earlier actionable failure work for the same source SHA. Cancelled and superseded attempts never mutate the lifecycle. The Worker, not the publisher or recovery workflow, owns task Status, remediation children, and final Done transitions.
+
 ## Status index and review queue
 
 - The single compact status index is `workspace/task-validation/status-index.json`. Its schema is Worker-owned under `assets/task-validation/`.
@@ -97,6 +113,23 @@ A file in the repository is not self-protecting. GitHub branch protection or a r
 - The publisher must be a separate, narrowly permissioned workflow/job and must not execute task code.
 - The coordinator must bind source SHA, policy blob SHA, check-set identity, run ID, and attempt before aggregation.
 - No source-validation or legacy diagnostic push trigger may be created by metadata-only publication commits. The dispatcher, changed-document lint, document-standards workflow, and legacy diagnostics workflow explicitly exclude `workspace/task-validation/**`; the full-document audit is scoped to the STE-100 ruleset. The recovery workflow's push filter excludes the status index and review folders.
+
+## Legacy report migration inventory
+
+The legacy report tree is still live and must remain intact. This inventory separates the task-validation replacement from report producers and consumers that still require migration.
+
+| Legacy producer / consumer | Current responsibility | Migration state |
+|---|---|---|
+| `.github/workflows/ste-lint-changed.yml` | Changed-document lint, baseline lookup in `.takeout/reports/index.json`, and legacy lint-report publication. | Reusable exact-SHA entry point exists and skips legacy publication in coordinator mode. Direct-push reporting remains active while coordinator activation is staged. |
+| `.github/workflows/ste-lint-full-docs.yml` | Full-document lint, legacy baseline lookup, and lint-report publication. | Reusable exact-SHA entry point exists and skips legacy publication in coordinator mode. Direct-push reporting remains active while coordinator activation is staged. |
+| `.github/workflows/validate-document-standards.yml` | Catalog/ownership/verifier tests and legacy Ledger regression tests. | Reusable exact-SHA entry point exists. Its Ledger regression test uses `.agent/skills/the-worker/scripts/test_ledger.py`; the obsolete report-family script path has been removed from the trigger/test configuration. |
+| `.github/workflows/gh-actions-capture.yml` and `.takeout/reports/gh_ac_reports/actions/capture/action.yml` | Workflow-run capture, legacy report generation, Ledger ingestion, and report/task publication. | Still a legacy producer for non-coordinator workflow-run diagnostics. Retain coverage for unrelated workflow runs until their replacement is proven. |
+| `.github/workflows/gh-actions-diagnostics.yml` | Workflow-run capture and push/manual backfill through `actions-report.py` and `ledger.py`. | Still a legacy producer and recovery path. Push backfill is policy-gated after coordinator activation; workflow-run capture remains for non-task workflows. |
+| `.agent/skills/the-worker/scripts/actions-report.py`, `ledger.py`, `eligibility.py`, their schemas/templates and regression tests | Legacy report capture, classification, Ledger ingestion, and report storage. | Code is Worker-owned, but outputs and consumers still target `.takeout/reports/`. Retain until all report families and consumers have migrated. |
+| `.takeout/reports/index.json`, `ledger.json`, `history/`, README, composite action | Legacy report indexes, evidence, Ledger state, and navigation. | Retained as compatibility state; no task-validation attempts or new parallel findings archive may be added. |
+| `workspace/README.md`, `.agent/skills/the-worker/references/ci-ledger.md`, document catalog, ADR-0003/0007 references, and workflow path filters | Navigation, operational instructions, schemas, regression coverage, and historical report locators. | Navigation and ownership now distinguish task-validation from the legacy Ledger. Remove obsolete paths and superseded locator references only in the gated retirement phase. |
+
+The three validation workflows already expose reusable exact-SHA entry points. Their direct-push legacy mode must not be disabled until the coordinator is enabled, protected, and demonstrated operational. The diagnostic capture workflow must continue covering unrelated non-task workflow runs until an equivalent replacement exists. Do not claim the report tree is migrated or retire it in this stage.
 
 ## Implementation state
 

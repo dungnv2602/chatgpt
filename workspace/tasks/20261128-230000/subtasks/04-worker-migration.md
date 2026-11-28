@@ -70,12 +70,12 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 
 - ADR-0008 governs this work.
 - Preserve existing validation coverage and legacy report system until migration gates are met.
-- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. Remaining: finish regression coverage, docs/navigation, report consumer inventory, and final readback.
+- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. This commit completes the Worker lifecycle procedure, root-cause group reuse contract, migration inventory, catalog/navigation updates, and legacy Ledger ownership boundary. Remaining: readback and Confirmation-dependent producer cutover.
 
 ## 6. State and Evidence
 
 - **Commit SHA:** In progress; implementation commits recorded in branch history
-- **Changed paths:** Not yet determined
+- **Changed paths:** Worker skill, task-validation interfaces, CI Ledger reference, document-type catalog, Workflow Map, task-validation README, and task tracking records.
 - **Readback:** Pending
 - **Checks:** Not performed
 - **Limitations:** No runtime claims.
