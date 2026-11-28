@@ -104,21 +104,30 @@ jobs:
           fi
 
       - name: Retrieve indexed baseline report
+        id: report_baseline
         if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true'
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
         run: |
-          set -euo pipefail
-          index_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/index.json?ref=$GITHUB_REF_NAME" --jq '.content' | base64 --decode)
-          history_path=$(jq -r --arg sha "$BASE_SHA" '[.runs[]? | select(.family=="lint" and .scope=="on_changed" and .commit_sha==$sha)] | .[0].history_path // empty' <<< "$index_json")
+          set -uo pipefail
+          fallback() {
+            echo "::warning::$1 Run a full audit instead."
+            echo "full_audit=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          }
+          index_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/index.json?ref=$GITHUB_REF_NAME" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null) || fallback "Could not retrieve the report index."
+          history_path=$(jq -r --arg sha "$BASE_SHA" '[.runs[]? | select(.family=="lint" and .scope=="on_changed" and .commit_sha==$sha and (.status=="Passed" or .status=="Failed"))] | .[0].history_path // empty' <<< "$index_json" 2>/dev/null) || fallback "Could not resolve the indexed baseline path."
           if [[ -z "$history_path" || "$history_path" != history/* || "$history_path" == *..* || "$history_path" == /* ]]; then
-            echo "::warning::Could not safely resolve baseline report path."
-            exit 1
+            fallback "Could not safely resolve the baseline report path."
           fi
-          report=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/$history_path/report.json?ref=$GITHUB_REF_NAME" --jq '.content' | base64 --decode)
+          report=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/$history_path/report.json?ref=$GITHUB_REF_NAME" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null) || fallback "The indexed baseline report is unavailable."
+          if ! jq -e '.scope=="on_changed" and (.status=="Passed" or .status=="Failed") and (.commit_sha|type=="string" and test("^[0-9a-f]{40}$")) and (.checks|type=="array")' <<< "$report" >/dev/null; then
+            fallback "The indexed baseline report is invalid."
+          fi
           printf '%s\n' "$report" > .lint-baseline-report.json
+          echo "full_audit=false" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -158,10 +167,11 @@ jobs:
           BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
           FULL_AUDIT: ${{ needs.preflight.outputs.full_audit }}
           FETCH_FALLBACK: ${{ steps.fetch_baseline.outputs.full_audit }}
+          REPORT_FALLBACK: ${{ steps.report_baseline.outputs.full_audit }}
         run: |
           set -uo pipefail
           status=0
-          if [[ "$FULL_AUDIT" == "true" || "$FETCH_FALLBACK" == "true" ]]; then
+          if [[ "$FULL_AUDIT" == "true" || "$FETCH_FALLBACK" == "true" || "$REPORT_FALLBACK" == "true" ]]; then
             python3 .agent/skills/asd-ste100/scripts/check_markdown_anchors.py \
               > .lint-report-records/anchor-check.log 2>&1 || status=$?
           else
@@ -176,7 +186,7 @@ jobs:
 
       - name: Run full technical-document lint
         id: full_audit
-        if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true'
+        if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true' || steps.report_baseline.outputs.full_audit == 'true'
         shell: bash
         run: |
           set -uo pipefail
@@ -283,6 +293,7 @@ jobs:
           BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
           FULL_AUDIT: ${{ needs.preflight.outputs.full_audit }}
           FETCH_FALLBACK: ${{ steps.fetch_baseline.outputs.full_audit }}
+          REPORT_FALLBACK: ${{ steps.report_baseline.outputs.full_audit }}
           TOOLING_FAILED: ${{ steps.tooling.outputs.failed }}
           WRAPPER_EXIT: ${{ steps.tooling.outputs.wrapper_syntax_exit }}
           PYTHON_EXIT: ${{ steps.tooling.outputs.python_compile_exit }}
@@ -291,13 +302,14 @@ jobs:
           SELFTEST_EXIT: ${{ steps.tooling.outputs.linter_selftest_exit }}
           ANCHOR_OUTCOME: ${{ steps.anchors.outcome }}
           ANCHOR_EXIT: ${{ steps.anchors.outputs.exit_code }}
+          REPORT_FALLBACK: ${{ steps.report_baseline.outputs.full_audit }}
           FULL_FAILED: ${{ steps.full_audit.outputs.failed }}
           CHANGED_FAILED: ${{ steps.changed_lint.outputs.failed }}
         run: |
           set -euo pipefail
           mode="incremental"
           baseline="$BASE_SHA"
-          if [[ "$FULL_AUDIT" == "true" || "$FETCH_FALLBACK" == "true" ]]; then
+          if [[ "$FULL_AUDIT" == "true" || "$FETCH_FALLBACK" == "true" || "$REPORT_FALLBACK" == "true" ]]; then
             mode="full-audit-fallback"
             baseline=""
           fi
