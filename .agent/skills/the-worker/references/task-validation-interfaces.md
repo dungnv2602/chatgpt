@@ -59,6 +59,7 @@ A task contract:
 - may select only adapter identifiers registered in `task-validation-adapters.json`;
 - carries a repository-relative entrypoint and an argument array, never a shell command string;
 - cannot define environment overrides, credentials, permissions, or arbitrary executables.
+- may declare at most 16 checks, with no check exceeding 15 minutes or 25 aggregate minutes.
 
 The schema and registry are interfaces for the generic verifier. They do not themselves execute or validate a contract. The verifier must independently enforce adapter registration, path containment, argument constraints, resource limits, and fail-closed rejection.
 
