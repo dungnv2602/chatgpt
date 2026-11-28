@@ -609,9 +609,10 @@ The CI Ledger is canonical for diagnostic text, immutable report links, occurren
 
 This is the persistent, open P0 Refactor Skills parent.
 
-- Child IDs 64–73 are completed. Their records were deleted under lifecycle rules.
-- Child 74 — Prevent Worker skill-governance drift — is In Progress and is the current execution.
-- The task board and subtask index publish this state.
+- Child IDs 64–74 are completed. Their records were deleted under lifecycle rules.
+- No active child is selected under this parent.
+- The task board has returned to the previously current ADR-0008 implementation parent.
+- Preserve this parent. Do not close or delete it unless the user explicitly changes this instruction.
 
 ## 7. Verification and Evidence
 
@@ -623,7 +624,7 @@ This is the persistent, open P0 Refactor Skills parent.
 
 ## 8. Handoff
 
-Keep this persistent P0 Refactor Skills parent open. Finish child 74, reconcile the task board and indexes, and report at quiescence. Do not close or delete the parent unless the user explicitly changes this instruction.
+Keep this persistent P0 Refactor Skills parent open. Child 74 is complete and no active child is selected. Preserve the parent. Do not close or delete it unless the user explicitly changes this instruction.
 
 ## 9. Subtasks
 
@@ -709,10 +710,16 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Process note:** The first three implementation commits did not include the required `Task-ID` trailer. Their SHAs are retained above; all subsequent task-tracking and closeout commits include `Task-ID: 20261127-173000-73`.
 - **Closeout:** Child 73 completed and removed under the persistent parent lifecycle. The Refactor Skills parent remains open at quiescence.
 
-### 2026-11-28 — child 74 activated: Worker skill-governance prevention
+### 2026-11-28 — child 74 closeout: Worker skill-governance prevention
 
-- **Action:** Created child 74 for the approved correction that prevents future bypass of the Agent Skill Authoring standard and Worker document-governance gate.
-- **Scope:** Relocate Worker-owned task-validation policy and contracts into Worker assets; strengthen Worker and Agent Skill Authoring instructions; register and validate governed non-Markdown files; add regression cases; expand the document-standards workflow path filter.
-- **Task ID allocation:** Full parent history confirms IDs 64–73 were already used and closed. Child 74 is the next unused ID. The empty index did not make earlier IDs available.
-- **Tracking correction:** Initial implementation commits used reused Task-ID 64. The first correction commits used reused Task-ID 65. Those immutable trailers are documented in child 74. Subsequent commits use Task-ID 74.
-- **Status:** Child 74 is In Progress and is the current board/index pointer. The parent remains open.
+- **Outcome:** Completed child 74. Its child record was deleted under the persistent Refactor Skills lifecycle. This parent retains the completion summary.
+- **Ownership correction:** Moved task-validation policy, contract schema, and adapter registry to `.agent/skills/the-worker/assets/task-validation/`. Moved the explanatory interface guide to Worker references. Removed the four former `.github/task-validation*` files. GitHub workflow definitions remain under `.github/workflows/`.
+- **Procedural controls:** The Worker now requires canonical owner, artifact type, and allowed location before creating or moving any repository artifact. The Agent Skill Authoring skill explicitly invokes this gate. Consumer paths do not establish ownership.
+- **Task identity control:** The Worker now requires checking the complete parent history and subtask index before allocating a child ID. Deleted IDs remain consumed.
+- **Structural and automated controls:** The catalog and validator cover every non-Markdown file under `.agent/skills/` and `.github/`. The document-standards workflow triggers for both path families. It already runs the catalog regression suite and validator.
+- **Verification:** Remote JSON parsing succeeded for all three policy assets. A repository-tree audit matched 116/116 non-Markdown files to 21 rules, with zero uncovered files, overlaps, stale active rules, owner errors, placement errors, or type/suffix errors. All changed paths and removed paths were read back.
+- **Regression tests:** Added cases for correct and incorrect placement, unregistered files, duplicate ownership, unknown artifact types, stale owners, invalid suffixes, path traversal, and GitHub workflow exemptions. Tests, scripts, lint, and hosted CI were not run or inspected.
+- **External prerequisite:** Branch protection/ruleset enforcement remains unverified. No runtime behavior or hosted validation success is claimed.
+- **Task-ID tracking correction:** IDs 64–73 were already consumed in parent history. Child 74 was the next unused ID. Initial implementation commits used reused trailers 64; the first tracking correction commits used reused trailer 65. Git history is immutable. Subsequent commits used 74. This attribution error is recorded rather than hidden.
+- **Evidence:** Implementation readback branch head before closeout: `a3632caca3200d30cd3044a351b1bbef389053b5`. Child closeout commit: `00b0b8e7941639f559678256f7b7c483211543db`.
+- **Current state:** No active child remains under this persistent parent. The parent remains open.
