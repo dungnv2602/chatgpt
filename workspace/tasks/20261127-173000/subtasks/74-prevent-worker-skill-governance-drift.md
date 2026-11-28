@@ -104,8 +104,25 @@ Out of scope:
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Latest task-specific commit: `84a01f1ad83d6ab5bdc0e55fc8b60b4ab1693921` (parent progress and current-state reconciliation); final closeout commit pending.
-- **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/agent-skill-authoring/SKILL.md`; `.agent/skills/the-worker/references/document-type-catalog.md`; `.agent/skills/the-worker/references/task-validation-interfaces.md`; `.agent/skills/the-worker/scripts/validate_document_catalog.py`; `.agent/skills/the-worker/scripts/test_validate_document_catalog.py`; `.agent/skills/the-worker/assets/README.md`; `.agent/skills/the-worker/assets/task-validation/task-validation-policy.json`; `.agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json`; `.agent/skills/the-worker/assets/task-validation/task-validation-adapters.json`; `.github/workflows/validate-document-standards.yml`; `workspace/tasks/20261128-230000/subtasks/01-coordinator-contracts.md`; `workspace/tasks/20261127-173000/subtasks/README.md`; `workspace/task_board.md`; this child record. Deleted `.github/task-validation-policy.json`, `.github/task-validation-contract.schema.json`, `.github/task-validation-adapters.json`, and `.github/task-validation/README.md`.
+- **Commit SHA:** Latest task-specific commit: `6faeef60317d958aba5d4cf492ed4422fb6e3353` (task evidence update); final closeout commit pending.
+- **Changed paths:**
+  - `.agent/skills/the-worker/SKILL.md`
+  - `.agent/skills/agent-skill-authoring/SKILL.md`
+  - `.agent/skills/the-worker/references/document-type-catalog.md`
+  - `.agent/skills/the-worker/references/task-validation-interfaces.md`
+  - `.agent/skills/the-worker/scripts/validate_document_catalog.py`
+  - `.agent/skills/the-worker/scripts/test_validate_document_catalog.py`
+  - `.agent/skills/the-worker/assets/README.md`
+  - `.agent/skills/the-worker/assets/task-validation/task-validation-policy.json`
+  - `.agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json`
+  - `.agent/skills/the-worker/assets/task-validation/task-validation-adapters.json`
+  - `.github/workflows/validate-document-standards.yml`
+  - `workspace/tasks/20261128-230000/subtasks/01-coordinator-contracts.md`
+  - `workspace/tasks/20261127-173000/task.md`
+  - `workspace/tasks/20261127-173000/subtasks/README.md`
+  - `workspace/tasks/20261127-173000/subtasks/74-prevent-worker-skill-governance-drift.md`
+  - `workspace/task_board.md`
+  - Deleted the four former `.github/task-validation*` files and the temporary duplicate child records 64 and 65.
 - **Readback:** All implementation paths and deleted paths were read back or verified. The final task ID is 74. The parent history, subtask index, board pointer, and task record now agree. Final branch-head readback remains.
 - **Checks:** JSON syntax and repository-tree path, owner, type, and placement coverage were checked through remote reads. Repository tests, scripts, lint, and hosted workflow results were not run or inspected.
 - **Limitations:** Branch protection or ruleset enforcement remains an external prerequisite and has not been established. No runtime behavior or hosted validation success is claimed. Initial commits carry reused child-64 and child-65 trailers as documented above.
