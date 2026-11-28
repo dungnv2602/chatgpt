@@ -3,9 +3,9 @@ record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0005"
 revision: 1
-status: "in-review"
+status: "approved"
 created: "2026-11-27"
-updated: "2026-11-27"
+updated: "2026-11-28"
 proposed_by: "Assistant"
 decision_makers:
   - "User"
@@ -173,16 +173,16 @@ The recommendation depends on the index retaining a stable `history_path` and th
 ## Review and Approval
 
 - **Revision presented:** Revision 1
-- **User decision:** Pending
-- **Approved scope:** Not approved
-- **Decision date:** Pending
-- **Resulting ADR:** Not created
+- **User decision:** Approved Option 2
+- **Approved scope:** DRAFT-0005 revision 1, Option 2: remove `.takeout/reports/latest-lint-report.json` and use `.takeout/reports/index.json` as the sole latest-lint-report locator, resolving validated immutable history reports; implementation remains separately gated.
+- **Decision date:** 2026-11-28
+- **Resulting ADR:** Not yet created; approval alone does not authorize execution
 
 ## Discussion and Revision History
 
 | Date | Revision | Change | User feedback / decision |
 |---|---|---|---|
-| 2026-11-27 | 1 | Initial proposal to remove the standalone latest lint JSON and use the unified index. | Pending |
+| 2026-11-27 | 1 | Initial proposal to remove the standalone latest lint JSON and use the unified index. | Approved on 2026-11-28: Option 2, exact revision 1. |
 
 ## References and Evidence Register
 
