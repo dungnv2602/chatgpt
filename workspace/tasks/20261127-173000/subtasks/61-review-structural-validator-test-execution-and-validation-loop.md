@@ -7,12 +7,12 @@
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
 - **Priority:** P1
-- **Status:** Paused
+- **Status:** Blocked
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User requested a future follow-up to verify tests/validation for the completed structural validator and create a Worker-driven loop that reports remaining verification gaps. Paused until explicitly resumed.
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Paused intentionally for future execution.
+- **Eligibility / deferral reason:** Blocked — static review is complete, but actual test execution evidence cannot be obtained under current Worker restrictions. A policy-level authorization change is required before any test execution or hosted-result review.
 
 ## 1. Original Prompt
 
@@ -25,7 +25,7 @@
 ## 2. Subsequent Instructions
 
 - The completed implementation child 20261127-173000-60 was already closed and deleted under the repository's task lifecycle before this follow-up. Do not recreate it or alter its closeout.
-- User asked to create a future follow-up, not to execute verification now.
+- User explicitly resumed this child and supplied the standalone `Execute` cue on 2026-11-28. Execution is authorized within the approved scope, subject to canonical Worker restrictions.
 
 ## 3. Objective and Scope
 
@@ -51,15 +51,18 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 ## 5. Decisions and Progress
 
 - Workflow readback on 2026-11-28 confirmed the existing workflow already includes a unittest step for structural-validator tests and a separate invocation of the structural validator. The tests are present and wired in; execution/results remain unverified.
-- This follow-up is intentionally paused and must not begin until explicitly resumed.
+- User resumed this follow-up and supplied `Execute` on 2026-11-28.
+- Static review confirmed `.github/workflows/validate-document-standards.yml` runs `python -m unittest discover -s .agent/skills/the-worker/scripts -p 'test_validate_structural_ownership.py' -v`, then invokes `validate_structural_ownership.py --root .`. The test suite is wired into the workflow, but this readback is not evidence that a run passed.
+- Static test review found four test methods: valid fixture, extra Session Start link, missing Worker file, and forbidden `## Execution` in Conversation Mode. Encoded validator branches not directly covered by regression cases include missing/altered required markers for each canonical file, unresolved Worker pointer target, and forbidden `## Operating rules` in Conversation Mode. The existing tests do not demonstrate all diagnostic branches.
+- The current Worker prohibits local repository script/test execution. The GitHub Actions reference prohibits inspecting hosted run pages, job output, logs, or artifacts. These rules prevent obtaining actual execution results in this batch. No local tests were run and no hosted CI data was accessed.
 
 ## 6. State and Evidence
 
 - **Commit SHA:** Not committed
 - **Changed paths:** Intended subtask record, subtask index, parent record, task board
-- **Readback:** Pending
-- **Checks:** Workflow file readback confirms test invocation and validator invocation.
-- **Limitations:** Tests have not been executed or results reviewed. Worker instructions prohibit local test execution and hosted CI result inspection unless the user explicitly requests review.
+- **Readback:** Source files and task record read back from branch `gpt`.
+- **Checks:** Static inspection only. Workflow file readback confirms test invocation and validator invocation. No tests executed.
+- **Limitations / blocker:** Actual test execution evidence remains unavailable. Local test execution is prohibited by The Worker. Hosted run pages/results are prohibited by the GitHub Actions reference. The subtask requires a narrow canonical policy amendment or explicit authorized alternative before execution evidence can be collected. No hosted CI data was accessed.
 
 ## 7. Completion
 
@@ -69,11 +72,11 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 
 ## 8. Execution self-check
 
-This follow-up is approved for tracking only and intentionally Paused. Scope and parentage are verified as directly advancing the Refactor Skills parent. It must not execute until explicitly resumed. Future verification must respect the current Worker restrictions or seek a narrow instruction update.
+This follow-up is approved and resumed. Scope and parentage directly advance the Refactor Skills parent. Static review and workflow wiring review are complete. Actual execution evidence is blocked by canonical policy restrictions. Do not bypass them. Request a narrow policy decision before running tests or reviewing hosted results.
 
 ## 9. Handoff
 
-Resume only on explicit user direction. Start by re-reading ADR-0006, the validator, tests, workflow and current Worker verification restrictions; then determine authorized evidence and drain the task to quiescence.
+Static review is complete. The remaining action is a user decision on whether to amend the canonical Worker/GitHub Actions restrictions to permit a narrowly scoped test execution and/or hosted validation review. Keep the task Blocked until that authority is provided. Do not change ADR-0006's semantic or auto-repair boundaries.
 
 ## 10. Ledger Findings
 
