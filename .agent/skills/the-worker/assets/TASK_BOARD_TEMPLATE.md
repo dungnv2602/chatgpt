@@ -4,6 +4,8 @@ The Worker is the sole scheduler. This board publishes its current selection and
 
 ## Scheduler contract
 
+Follow the Worker's scheduling and decision-collection procedure. This board publishes state and does not define operating rules.
+
 - Compare the board with active task records and child indexes before declaring the queue empty.
 - Check eligibility before priority or age. Dependencies must be satisfied, execution must be authorized, and status must be Ready.
 - Rank eligible tasks by priority (P0 first), then age within priority unless a documented dependency or material constraint changes the order.
