@@ -137,7 +137,7 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(len(index["attempts"]), 3)
 
     def test_metadata_publication_is_excluded_from_source_validation_triggers(self) -> None:
-        root = Path(__file__).resolve().parents[3]
+        root = Path(__file__).resolve().parents[4]
         dispatcher = (root / ".github/workflows/task-validation-dispatch.yml").read_text(encoding="utf-8")
         changed_lint = (root / ".github/workflows/ste-lint-changed.yml").read_text(encoding="utf-8")
         standards = (root / ".github/workflows/validate-document-standards.yml").read_text(encoding="utf-8")
