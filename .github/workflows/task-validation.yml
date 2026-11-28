@@ -372,3 +372,20 @@ jobs:
             exit 1
           fi
           echo "All mandatory checks passed for the exact source SHA and policy revision."
+
+  publish:
+    name: Publish terminal attempt
+    if: always() && needs.policy.result == 'success'
+    needs:
+      - policy
+      - aggregate
+    uses: ./.github/workflows/task-validation-publisher.yml
+    with:
+      aggregate_json: ${{ needs.aggregate.outputs.aggregate_json }}
+      source_sha: ${{ inputs.source_sha }}
+      policy_blob_sha: ${{ needs.policy.outputs.policy_blob_sha }}
+      coordinator_run_id: ${{ github.run_id }}
+      attempt: ${{ github.run_attempt }}
+      actions_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    permissions:
+      contents: write
