@@ -109,7 +109,7 @@ jobs:
             coordinator_ready=true
           fi
           proceed=true
-          if [[ "$COORDINATOR_CALL" != "true" && "$GITHUB_EVENT_NAME" == "push" && "$coordinator_ready" == "true" ]]; then
+          if [[ "$COORDINATOR_CALL" != "true" && "$coordinator_ready" == "true" ]]; then
             proceed=false
           fi
           echo "proceed=$proceed" >> "$GITHUB_OUTPUT"
