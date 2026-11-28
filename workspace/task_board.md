@@ -44,5 +44,4 @@ _None._
 
 | ID | Title | Priority | Status | Approval | Dependencies | Task record |
 |---|---|---:|---|---|---|---|
-| 20261128-230000-04 | Worker queue, review/remediation lifecycle, attribution, grouping, and report migration | P1 | Ready | Approved | 20261128-230000-02 | [task](tasks/20261128-230000/subtasks/04-worker-migration.md) |
 | 20261128-230000-05 | Operational Confirmation, scenario demonstrations, coverage reconciliation, and gated retirement | P1 | Ready | Approved | 20261128-230000-02; 20261128-230000-03; 20261128-230000-04 | [task](tasks/20261128-230000/subtasks/05-confirmation-retirement.md) |
