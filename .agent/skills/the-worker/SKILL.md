@@ -214,11 +214,12 @@ The Worker owns document governance. Apply this gate before creating, moving, re
 5. If a required template or format contract does not exist, do not modify the target. Propose a suitable format and explain its purpose, intended use, fields, ownership, and validation.
 6. Wait for the user's explicit approval of the proposed format. Do not create the template or edit the target before approval.
 7. After approval, create the canonical template or contract. Update the catalog, owner index, and workflow. Read back and commit this format setup first.
-8. Read the complete approved template before modifying the target. Create or revise the target from that format.
-9. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable. Delete unused placeholders. Do not invent approvals or values.
-10. Update indexes and links. Check the target against its format and writing or data standard. Read back every changed path and commit.
-11. Use Reserved for a verified Markdown family with no current record. Change Reserved to Active in the commit that creates its first record.
-12. Do not mass-migrate untouched history. Do not create a template when an approved embedded contract, schema, or generator already defines the format.
+8. Before editing the target, explicitly assess the canonical format for freshness against the current document, repository state, workflow, standards, and source evidence. Decide whether the template/contract itself needs correction or extension. If it does, update the canonical format first within approved scope, reconcile its catalog and owner pointers, commit/read back that format change, and only then revise the target using the updated format. If it does not, record or act on that assessment without unnecessary template churn.
+9. Read the complete current canonical template or format source after any update and before modifying the target. Create or revise the target from that current format.
+10. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable. Delete unused placeholders. Do not invent approvals or values.
+11. Update indexes and links. Check the target against its format and writing or data standard. Read back every changed path and commit.
+12. Use Reserved for a verified Markdown family with no current record. Change Reserved to Active in the commit that creates its first record.
+13. Do not mass-migrate untouched history. Do not create a template when an approved embedded contract, schema, or generator already defines the format.
 
 For a one-off note or creative document, follow an explicit Lightweight pattern or Exempt catalog entry. If no such entry exists, propose the format before editing. Source code, generated output, schemas, and machine-readable data follow their own contracts.
 
