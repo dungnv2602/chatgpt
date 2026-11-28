@@ -6,14 +6,14 @@
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
 - **Priority:** P2
-- **Status:** Ready
+- **Status:** Paused
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create a Plans task and a future Semantic Engine draft subtask. Creation and tracking only; future exploration remains deferred.
 - **Governing ADR(s):** None
 - **Current execution:** No
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Parent container only; its sole child is deliberately deferred.
+- **Eligibility / deferral reason:** Paused — the parent is a future-planning placeholder; its child is deliberately deferred.
 - **Related tasks:** None
 
 ## 1. Original Request
