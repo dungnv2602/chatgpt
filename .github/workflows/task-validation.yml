@@ -112,7 +112,8 @@ jobs:
       contents: read
     outputs:
       outcome: ${{ steps.aggregate.outputs.outcome || steps.fallback.outputs.outcome }}
-      check_set_id: ${{ steps.aggregate.outputs.check_set_id }}
+      check_set_id: ${{ steps.aggregate.outputs.check_set_id || steps.fallback.outputs.check_set_id }}
+      aggregate_json: ${{ steps.aggregate.outputs.aggregate_json || steps.fallback.outputs.aggregate_json }}
     steps:
       - name: Check out the exact source commit
         uses: actions/checkout@v4
@@ -127,6 +128,7 @@ jobs:
           python-version: "3.x"
 
       - name: Normalize every required check result
+        id: normalize
         shell: bash
         env:
           NEEDS_JSON: ${{ toJSON(needs) }}
@@ -226,6 +228,8 @@ jobs:
               json.dumps(records, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8",
           )
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"check_set_id={check_set_id}\n")
           PY
 
       - name: Classify the complete validation attempt
