@@ -388,4 +388,5 @@ jobs:
       attempt: ${{ github.run_attempt }}
       actions_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     permissions:
+      actions: read
       contents: write
