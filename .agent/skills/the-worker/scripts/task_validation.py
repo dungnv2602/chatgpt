@@ -222,7 +222,8 @@ def command_for(check: dict[str, Any]) -> list[str]:
     if adapter == "pytest":
         return [sys.executable, "-m", "pytest", entrypoint, *args]
     if adapter == "unittest":
-        return [sys.executable, "-m", "unittest", entrypoint, *args]
+        module_name = entrypoint[:-3].replace("/", ".") if entrypoint.endswith(".py") else entrypoint.replace("/", ".")
+        return [sys.executable, "-m", "unittest", module_name, *args]
     raise ContractError(f"Unsupported adapter: {adapter}")
 
 
