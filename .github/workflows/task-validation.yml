@@ -216,7 +216,6 @@ jobs:
         shell: bash
         env:
           SOURCE_SHA: ${{ inputs.source_sha }}
-          TASK_CHECK_IDS: ${{ needs.policy.outputs.task_check_ids || '[]' }}
           COORDINATOR_RUN_ID: ${{ github.run_id }}
           COORDINATOR_ATTEMPT: ${{ github.run_attempt }}
         run: |
