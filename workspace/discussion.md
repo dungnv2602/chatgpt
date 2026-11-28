@@ -85,3 +85,6 @@
 
 
 - **2026-11-28:** Corrected the Worker queue boundary so child completion is a scheduler transition rather than the report boundary. Reconciled the recursive Refactor Skills tree, reconstructed the missing approved document-governance parent, and closed the completed hierarchy-audit child 03. Execution continues within parent 20261127-173000.
+
+
+- **2026-11-28:** Reconstructed and reconciled the document-governance parent and nested child, restoring catalog validation under Worker ownership and readback-verifying the workflow/catalog/script changes. Child 01 and its descendant were completed and deleted under the task lifecycle. Refactor Skills is at quiescence with child 61 intentionally paused.
