@@ -10,10 +10,10 @@ Follow the Worker's scheduling and decision-collection procedure. This board pub
 - Check eligibility before priority or age. Dependencies must be satisfied, execution must be authorized, and status must be Ready.
 - Rank eligible tasks by priority (P0 first), then age within priority unless a documented dependency or material constraint changes the order.
 - Keep ineligible tasks out of the eligible queue. List them in the appropriate deferred section with an exact reason.
-- Approval is explicit scope authorization. Pending means authorization is not granted; Declined means rejected. Approval does not depend on status or eligibility.
+- Approval is explicit scope authorization and log-only. It never triggers execution. Execution requires the user's explicit standalone `execute` cue, case-insensitive, after decision collection. `Next` is decision navigation only and cannot resolve a blocker or trigger execution.
 - This board is the sole index of active task parents. Parent folders contain `task.md` and `subtasks/README.md`. The parent index lists substantive children. Board links point to parents, except Current Execution may link to the selected child.
 - Keep a parent open while required children remain open. The Worker owns status, selection, and deletion at closeout.
-- Implementation closeout does not universally depend on runtime validation. The Worker tracks missing evidence separately and immediately rebuilds the queue after closeout. This board publishes state only.
+- Implementation closeout does not universally depend on runtime validation. The Worker tracks missing evidence separately and immediately rebuilds the queue after closeout. Execution waits for the explicit case-insensitive `execute` cue. This board publishes state only.
 
 ## Current Execution
 
