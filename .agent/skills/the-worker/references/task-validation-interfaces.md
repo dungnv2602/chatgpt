@@ -25,14 +25,25 @@ The initial manifest preserves the three existing required validation families:
 | `ste-lint-changed` | `ste-lint-changed.yml` | `ste-lint` | Changed-document lint, report tooling tests, and incremental/full-audit fallback |
 | `ste-lint-full-docs` | `ste-lint-full-docs.yml` | `ste-lint` | Full technical-document audit and report tooling tests |
 | `validate-document-standards` | `validate-document-standards.yml` | `validate-document-standards` | Document catalog, structural ownership, and existing Ledger regression tests |
+| `generic-verifier` | `task-validation-verifier.yml` | `verify` | Exact-SHA task contract validation, closed adapter enforcement, and additive task-specific checks |
 
 This is an initial mapping, not a claim that the workflows have already been migrated or that the job identifiers are confirmed as stable aggregate check names. The downstream workflow migration must preserve the existing scripts, test cases, path coverage, and baseline behavior, then establish stable names for aggregation.
 
 ## Reusable workflow-call interface
 
-The three existing validation workflows now expose `workflow_call` and accept the optional boolean input `coordinator_call`. The full-document workflow uses this input to bypass its direct-push supersession cancellation logic when invoked by the coordinator.
+The three existing validation workflows expose `workflow_call` with `coordinator_call` and required `source_sha` inputs. Coordinator calls check out the exact supplied SHA. They skip legacy report publication and diagnostics jobs. Their direct push triggers retain the existing report pipeline and validation behavior. The coordinator grants only `contents: read`, so a called job cannot obtain a write-capable token even where its direct-push mode retains a write permission declaration.
 
-**Do not wire the coordinator to these entry points yet.** At this stage, the legacy workflows still contain report publication and write-capable jobs, and some paths check out the branch name rather than the immutable caller SHA. Subtask `20261128-230000-02` must first make the reusable entry points exact-SHA and validation-only, separate publication into the privileged publisher, and preserve existing validation semantics. Until then, invoking them from the coordinator would not satisfy ADR-0008's security boundary.
+The coordinator is now defined in `.github/workflows/task-validation.yml`. It binds the source SHA and policy blob SHA, resolves the task contract from the source commit's Task-ID trailer, calls the three established validation workflows and the generic verifier, then aggregates every result. The generic verifier is `.github/workflows/task-validation-verifier.yml`. The publisher and recovery lifecycle remain a separate downstream implementation. Do not claim publication or operational recovery until that work is complete.
+
+## Task contract source and binding
+
+Every parent task and subtask declares a JSON object in the `Validation Contract` section of its canonical task record. The section contains `contract_revision` and an additive `checks` array. Use an empty array when the task requires no checks beyond repository policy.
+
+The coordinator reads the source commit's exact `Task-ID` trailer. It resolves that ID to one task record in the same source commit tree. The Worker-owned builder rejects missing or ambiguous attribution, missing contract blocks, invalid JSON, and unsupported contract fields. It then injects the exact source SHA into the contract. The contract is therefore bound to the implementation commit without requiring a self-referential SHA in the task record.
+
+The policy job also records the policy file's Git blob SHA. The generic verifier checks the source SHA and policy blob SHA against its exact checkout. It receives a read-only token, no secrets, and no persisted checkout credentials. Its typed adapters execute with `shell=False` and a restricted environment.
+
+The coordinator aggregates every mandatory check and every task-added check. Each result must match the source SHA, policy blob SHA, check-set identity, coordinator run ID, and attempt. Missing, duplicate, skipped, pending, partial, or mismatched results cannot produce success.
 
 ## Task contract constraints
 
@@ -60,4 +71,4 @@ A file in the repository is not self-protecting. GitHub branch protection or a r
 
 ## Implementation state
 
-This is the interface foundation only. No coordinator, verifier, publisher, exact-SHA aggregate, runtime protection, or operational confirmation is claimed here. `.takeout/reports/` and all existing report producers/consumers remain intact pending the later migration and confirmation gates.
+The coordinator, generic verifier, and exact-SHA aggregate are implemented as repository files. Their runtime behavior has not been demonstrated. GitHub branch protection remains an external prerequisite and is unverified. The publisher, recovery sweep, durable checkpoint, Worker feedback lifecycle, and report-tree retirement remain incomplete. `.takeout/reports/` and all existing report producers/consumers remain intact pending the later migration and confirmation gates.
