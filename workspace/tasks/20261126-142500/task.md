@@ -181,7 +181,7 @@ Implementation must follow ADR-0008's staged migration and must not delete repor
 
 - **Action:** Created DRAFT-0010, revision 1, comparing the current Ledger/report lifecycle, the approved folder-per-error feedback loop, and a minimal-index alternative. Added the proposal to the Draft index.
 - **Result:** The proposed architecture is documented but remains in draft status. It would supersede conflicting portions of ADR-0003, ADR-0004, and ADR-0007 only after exact Draft approval and accepted ADR promotion. No implementation was made under the conflicting current contract.
-- **References:** workspace/draft/DRAFT-0010-ci-error-task-folders-and-automatic-feedback-loop.md; workspace/draft/README.md.
+- **References:** DRAFT-0010 (later promoted to accepted ADR-0008; source Draft retired); historical Draft index entry.
 - **Next:** User review of the exact proposal and confirmation of the intended report directory; then promote an accepted ADR before changing canonical subtask-folder formats or CI producers.
 
 
@@ -189,7 +189,7 @@ Implementation must follow ADR-0008's staged migration and must not delete repor
 
 - **Action:** User confirmed that the intended retirement target is .takeout/reports/.
 - **Result:** DRAFT-0010 advanced to revision 2. The path ambiguity is resolved; deletion remains sequenced after migration and operational replacement capture.
-- **Next:** User review/approval of DRAFT-0010 revision 2, then promote the superseding ADR before changing the accepted architecture.
+- **Next at that time:** User review of revision 2 and promotion. Superseded by approval of revision 9 and accepted ADR-0008 on 2026-11-28.
 
 ### 2026-11-28 — DRAFT-0010 approval and ADR-0008 promotion
 
