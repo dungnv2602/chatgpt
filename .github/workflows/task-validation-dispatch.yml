@@ -1,6 +1,14 @@
 name: ADR-0008 Task Validation Dispatcher
 
+run-name: ADR-0008 task validation ${{ inputs.source_sha || github.sha }}
+
 on:
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: Exact source commit SHA awaiting its first coordinator run
+        required: true
+        type: string
   push:
     branches:
       - gpt
@@ -12,7 +20,7 @@ on:
 permissions: {}
 
 concurrency:
-  group: task-validation-${{ github.sha }}
+  group: task-validation-${{ inputs.source_sha || github.sha }}
   cancel-in-progress: false
 
 jobs:
@@ -29,7 +37,7 @@ jobs:
       - name: Check out the pushed source commit
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ inputs.source_sha || github.sha }}
           fetch-depth: 1
           persist-credentials: false
 
@@ -37,7 +45,7 @@ jobs:
         id: gate
         shell: bash
         env:
-          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_SHA: ${{ inputs.source_sha || github.sha }}
           RUN_ATTEMPT: ${{ github.run_attempt }}
           REPOSITORY: ${{ github.repository }}
         run: |
@@ -98,7 +106,7 @@ jobs:
       contents: write
     uses: ./.github/workflows/task-validation.yml
     with:
-      source_sha: ${{ github.sha }}
+      source_sha: ${{ inputs.source_sha || github.sha }}
 
   recover:
     name: Reconcile this coordinator attempt and prior gaps
