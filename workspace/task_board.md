@@ -18,7 +18,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Child 59 implementation closed and removed after readback.
+**P0** — [20261127-173000-60: Implement approved structural ownership validator (ADR-0006)](tasks/20261127-173000/subtasks/60-automated-structural-ownership-validation.md) — Selected under the standing Refactor Skills focus.
 
 ## Ordered Eligible Execution Queue
 
@@ -26,7 +26,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-No Ready child remains under Refactor Skills. The global queue's next eligible task is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+The current selected child is 20261127-173000-60 under Refactor Skills. The next independent eligible task in the global queue is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 
@@ -69,7 +69,7 @@ No Ready child remains under Refactor Skills. The global queue's next eligible t
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
 | 20261127-173500 | Remove the standalone latest lint report copy | P0 | Proposed | Approved | DRAFT-0005 revision 1 must receive user approval and become an accepted ADR before implementation. | [task](tasks/20261127-173500/task.md) |
-| 20261127-173000-60 | Prepare DRAFT-0007 — Automated structural ownership validation | P1 | Proposed | Approved | DRAFT-0007 revision 1 awaits user decision; implementation remains unapproved. | [subtask](tasks/20261127-173000/subtasks/60-automated-structural-ownership-validation.md) |
+
 
 ### Paused
 
