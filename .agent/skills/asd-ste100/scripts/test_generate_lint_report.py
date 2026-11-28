@@ -143,7 +143,7 @@ class ReportGeneratorTests(unittest.TestCase):
             older=self.run_report(root,"on_repo","older",49,1,{})
             index=json.loads((root/".takeout"/"reports"/"index.json").read_text(encoding="utf-8"))
             self.assertEqual({row["run_id"] for row in index["runs"]},{"newer","older"})
-            self.assertEqual(index["runs"][0]["run_id"],"older")
+            self.assertEqual(index["runs"][0]["run_id"],"newer")
             self.assertTrue((older/"integrity.json").is_file())
 
 
