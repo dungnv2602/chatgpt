@@ -404,20 +404,6 @@ def main():
     )
     index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    latest_json = reports_root / "latest-lint-report.json"
-    replace_latest = True
-    if latest_json.is_file():
-        try:
-            old_latest = json.loads(latest_json.read_text(encoding="utf-8"))
-            replace_latest = (run_number, attempt) >= (
-                safe_int(old_latest.get("run_number")),
-                safe_int(old_latest.get("attempt"), 1),
-            )
-        except (OSError, ValueError, AttributeError):
-            replace_latest = True
-    if replace_latest:
-        latest_json.write_text(report_json, encoding="utf-8")
-
     integrity = {
         "algorithm": "SHA-256", "schema_version": SCHEMA_VERSION,
         "files": {
