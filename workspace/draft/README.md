@@ -9,7 +9,7 @@ Navigation for decision proposals. The Worker and [Decision Governance](../../.a
 
 ## Current proposal records
 
-- [DRAFT-0010 — CI Error Task Folders and Automatic Feedback Loop](DRAFT-0010-ci-error-task-folders-and-automatic-feedback-loop.md) — Revision 2, draft; folder-based CI lifecycle and .takeout/reports/ retirement target confirmed, formal Draft approval pending.
+- [DRAFT-0010 — CI Error Task Folders and Automatic Feedback Loop](DRAFT-0010-ci-error-task-folders-and-automatic-feedback-loop.md) — Revision 3, draft; selected Option 3 with a run-status-only index under workspace/, folder-based CI error tasks, and .takeout/reports/ retirement; consolidated Draft approval pending.
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 4, in review.
 - [DRAFT-0003 — Area, Project, and Task Architecture](DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md) — Revision 1, in review.
