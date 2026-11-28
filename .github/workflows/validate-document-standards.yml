@@ -48,6 +48,14 @@ on:
       - '.github/workflows/**'
       # Validate every GitHub configuration path so unowned policy files fail closed.
       - '.github/**'
+      # Govern all workspace non-Markdown artifacts; exclude operational/generated state from source validation.
+      - 'workspace/**'
+      - '!workspace/archive/**'
+      - '!workspace/discussion.md'
+      - '!workspace/tasks/**'
+      - '!workspace/task_board.md'
+      - '!workspace/task-validation/status-index.json'
+      - '!workspace/task-validation/reviews/**'
   workflow_dispatch: {}
 
 # A newer push to the same branch supersedes the older validation run.
