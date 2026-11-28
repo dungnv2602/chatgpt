@@ -10,7 +10,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-_None._
+[Workspace-Bound CI Activation — 20261127-173000-73](tasks/20261127-173000/subtasks/73-workspace-bound-ci-activation.md)
 
 ## Ordered Eligible Execution Queue
 
@@ -24,9 +24,7 @@ _None._
 
 ### Current focus reconciliation
 
-Workflow map and cue registry (subtask 20261127-173000-69) completed and reconciled. Redundant initialization policy removal (subtask 70) completed and reconciled. Startup ordering correction (subtask 71) completed and reconciled. Interruption-minimization reinforcement (subtask 72) completed and reconciled. Current Execution and queue are empty at quiescence.
-
-
+The persistent Refactor Skills parent is the authorized focus. Child 73 is the sole active child for correcting CI activation boundaries. CI report and Ledger work remains task-activated only.
 
 ### Blocked
 
@@ -45,5 +43,3 @@ _None._
 ### Dependency-waiting
 
 _None._
-
----
