@@ -9,14 +9,14 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **ID:** 20261127-173000-28
 - **Parent Task ID:** 20261127-173000
 - **Type:** CI remediation
-- **Status:** Blocked
+- **Status:** Ready
 - **Priority:** P0
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization for CI remediation.
 - **Governing ADR(s):** None — no separate decision required
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — all five finding IDs are absent from the current published Ledger. The published report index does not retain their source reports. `.agent/skills/the-worker/references/ci-ledger.md` prohibits historical scanning or backfill without separate explicit authorization.
+- **Eligibility / deferral reason:** Ready — user explicitly authorized restoration of these five finding identities and their available evidence. Execution awaits the sole case-insensitive `execute` cue.
 - **Required:** Yes
 - **Created:** 2026-11-27 11:44 UTC
 - **Updated:** 2026-11-27 23:27 UTC
@@ -35,13 +35,25 @@ Automated remediation request from CI report ingestion for parent task 20261127-
 
 ## 2. Subsequent Instructions
 
-No later user clarification is recorded for this generated remediation child.
+### 2026-11-28
+
+> Approve
+>
+> Next
+
+- **Action:** Approval and navigation recorded. Approval is not execution authorization. `Next` only navigates the decision queue.
+
+### 2026-11-28 — user decision
+
+> Approve
+
+- **Action:** User approved restoration of the five missing finding identities and their available evidence. Logged approval only. This is not execution authorization.
 
 ### 2026-11-28 — decision-queue navigation
 
 > Next
 
-- **Action:** Logged `Next` as decision-queue navigation only. The blocker remains unanswered and unresolved. This entry grants no authorization and does not change status.
+- **Action:** Logged `Next` as navigation after the authorization decision was recorded. It did not trigger execution.
 
 ## 3. Objective and Scope
 
@@ -63,7 +75,7 @@ Fix the linked CI finding group under parent task 20261127-173000. Inspect exact
 - **Action:** Reconciled the current published Ledger using its exact Git blob SHA.
 - **Evidence:** Current Ledger blob: `3ea2ea3d92db8de368d263b61054f6b4aecb0de9`. The five findings listed in the Original Prompt do not exist in its 312 finding records.
 - **Policy:** `.agent/skills/the-worker/references/ci-ledger.md` prohibits historical scanning or backfill without separate explicit authorization.
-- **Required:** Obtain explicit authorization to restore these five historical finding identities and their available evidence. Do not change source or recreate Ledger entries before approval.
+- **Required:** Authorization obtained on 2026-11-28. Restoration and evidence reconciliation remain pending the explicit execution cue. Do not change source or recreate Ledger entries before execution.
 
 ## 6. State and Evidence
 
@@ -90,7 +102,7 @@ Conditional: CI remediation only.
 
 ## 9. Handoff
 
-Await one user decision: authorize or decline restoration of the five missing finding identities and their available evidence. Resume queue selection after recording the answer. Do not inspect hosted CI results.
+Authorization is recorded. Await the explicit case-insensitive `execute` cue. Do not inspect hosted CI results.
 
 ## 10. Ledger Findings
 
