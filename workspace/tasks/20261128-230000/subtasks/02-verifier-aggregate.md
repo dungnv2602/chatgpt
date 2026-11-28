@@ -6,17 +6,17 @@
 - **ID:** 20261128-230000-02
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Parent task 20261128-230000, explicitly authorized by user; execution cue provided.
 - **Governing ADR(s):** ADR-0008
 - **Dependencies:** 20261128-230000-01
-- **Eligibility / deferral reason:** Eligible — subtask 01 foundation is complete
+- **Eligibility / deferral reason:** Completed; acceptance criteria met at repository-implementation level
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
-- **Updated:** 2026-11-28 23:00 UTC
+- **Updated:** 2026-11-28 12:55 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -53,28 +53,50 @@ Implement the generic verifier and aggregate outcome logic, migrate existing req
 ## 5. Decisions and Progress
 
 - ADR-0008 governs this work.
-- Preserve existing validation coverage and legacy report system until migration gates are met.
-### 2026-11-28 — exact-SHA verifier and aggregate implementation
+- Preserve the direct-push validation/report path until the staged migration and Confirmation gates are satisfied.
 
-- Added the Worker-owned task contract builder. It resolves exactly one Task-ID trailer and task record from the source commit tree.
-- Added machine-readable Validation Contract blocks to parent/subtask templates. The coordinator injects the exact source SHA and rejects missing, ambiguous, malformed, or duplicate-key contracts.
-- Added the typed generic verifier, closed adapter registry checks, safe repository path resolution, shell-free execution, sanitized task environment, isolated HOME/TMP, per-check timeouts, and a 25-minute aggregate execution budget.
-- Added the exact-SHA aggregate. It binds source SHA, policy blob SHA, complete task-contract identity, coordinator run ID, and attempt. Missing, duplicate, skipped, pending, partial, mismatched, cancelled, and superseded states cannot produce success.
-- Added regression suites for contract resolution, verifier security and resource limits, and aggregate classification. Wired them into validate-document-standards.yml.
-- Migrated the three existing validation workflows to reusable exact-SHA inputs. Coordinator mode skips legacy report publishers and diagnostics jobs. Direct-push report behavior remains intact.
-- Added task-validation.yml as a reusable coordinator and task-validation-verifier.yml as the isolated verifier. The coordinator is deliberately staged as workflow_call only. It has no push trigger while legacy publishers remain active.
-- Updated the Worker skill, task templates, interface reference, document catalog, and Workflow Map to enforce canonical contract ownership and placement.
-- Protection gate: protection.enforcement_status remains external-prerequisite; effective branch protection/ruleset could not be verified. coordinator.activation_status remains staged. Both gates fail closed.
-- Validation: Regression tests are registered in CI but were not executed locally. No workflow was dispatched and no hosted run, logs, or artifacts were inspected.
-- Next: Proceed with eligible publisher/recovery subtask 03. Do not enable the coordinator until its publisher and report migration gates pass.
+### 2026-11-28 — exact-SHA verifier, aggregate and reusable validation entry points completed
+
+- Implemented the Worker-owned contract builder. It requires exactly one final Task-ID trailer, resolves exactly one task record from the source commit tree, and binds the declared Validation Contract to the exact source SHA.
+- Implemented the generic verifier with closed typed adapters, strict structured arguments, safe repository-relative paths, symlink containment, per-check timeouts, a 25-minute aggregate budget, shell-free execution, and a sanitized environment without secrets or write tokens.
+- Implemented exact-SHA aggregation for the full mandatory policy set. It binds source SHA, policy blob SHA, check-set identity, coordinator run ID, and attempt. Missing, duplicate, unexpected, skipped, pending, partial, neutral, cancelled, superseded, mismatched, infrastructure, and capture states cannot produce success.
+- Migrated the three established validation workflows to reusable exact-SHA entry points. Coordinator calls validate the exact source commit, skip legacy report publication and diagnostics, and preserve the direct-push report path while activation remains staged.
+- Added regression suites for contract resolution, verifier security/resource constraints, and aggregate classification. They are registered in document-standards CI.
+- Corrected terminal finalization so an artifact-upload failure does not turn a cancelled or superseded result into an actionable capture failure. Added a regression assertion for this behavior.
+- **Protection and staging:** Effective branch protection remains unverified and the gpt branch is currently unprotected. Policy enforcement remains external-prerequisite; coordinator activation stays staged until branch protection and report migration are complete.
+- **Validation:** Regression tests are registered but were not run locally. No hosted workflow results or logs were inspected. No runtime success is claimed.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** e2a9756a0f719882e2d35df1a049f0fada117dcb (latest implementation readback; 101 commits after subtask 01 foundation f036ecbd02a9f049486ffbe27f8d0d11edae314d)
-- **Changed paths:** .agent/WORKFLOW_MAP.md; Worker SKILL.md; task and subtask templates; task-validation policy, schema, and adapter registry; document catalog and task-validation interface reference; verifier, contract builder, aggregate scripts and three regression suites; .github/workflows/ste-lint-changed.yml, ste-lint-full-docs.yml, validate-document-standards.yml, task-validation.yml, and task-validation-verifier.yml; parent task, this subtask, and subtask index.
-- **Readback:** Implementation files and governance references read back from branch gpt. Final readback continues before closeout.
-- **Checks:** No local scripts, tests, or lint executed. Regression tests are wired into the document-standards workflow. No workflow dispatch or hosted-run inspection.
-- **Limitations:** Coordinator activation is staged and effective external policy protection is unverified. The privileged publisher, recovery sweep, durable checkpoint, and report migration belong to dependent work and remain incomplete. No runtime or CI success is claimed.
+- **Commit SHA:** 4706077d47ac54e146361cf288b5129c7dd46dd9 (branch gpt head at final readback).
+- **Changed paths:** Worker contract builder, generic verifier, aggregate, task-validation policy/schema/adapter registry; regression suites; coordinator and generic-verifier workflows; the three reusable validation workflows; task-validation interface, Worker instructions, catalog, templates and Workflow Map; task/subtask records and indexes.
+- **Readback:** Contract builder, verifier, aggregate, their regression suites, policy/schema/registry, coordinator/verifier workflows, and all three reusable workflows read back from branch gpt at the stated head.
+- **Checks:** Regression tests are registered in validate-document-standards.yml. No local scripts/tests/lint were run. No workflow dispatch or hosted-run inspection.
+- **Limitations:** Coordinator activation remains staged. Branch protection is not enabled on gpt. Report producer/consumer migration and operational Confirmation remain in dependent subtasks 04 and 05. No runtime or CI success is claimed.
+
+## 7. Completion
+
+- **Status:** Done
+- **Completed at:** 2026-11-28 12:55 UTC
+- **Completion basis:** Contract builder, verifier, exact-SHA aggregation, reusable validation entry points, coverage-preserving staging, regression registration, and terminal outcome handling are committed and read back. Runtime and external prerequisites remain explicit verification debt.
+
+## 8. Hosted Validation
+
+- **Status:** Not reviewed; hosted workflow inspection is prohibited by the current Worker execution policy.
+- **Run URL:** Not reviewed
+
+## 9. Execution self-check
+
+- Scope and parentage match ADR-0008 subtask 02.
+- Task-specific implementation commits carry Task-ID: 20261128-230000-02.
+- Exact-SHA contract binding, verifier, aggregate, reusable workflows, and regression suites were read back.
+- Existing direct-push validation/report behavior remains intact while coordinator activation is staged.
+- No local validation or hosted CI inspection was performed.
+- Branch protection and report migration remain external/dependent gates.
+
+## 10. Handoff
+
+Subtasks 02 and 03 are complete. Subtask 04 is now dependency-eligible for Worker lifecycle and report migration. Subtask 05 remains dependency-waiting on subtask 04. Keep coordinator activation staged and preserve .takeout/reports/.
 ## 7. Completion
 
 - **Status:** Not Done
