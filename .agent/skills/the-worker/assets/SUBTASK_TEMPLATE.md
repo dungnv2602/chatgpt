@@ -1,6 +1,6 @@
 # Subtask: [Title]
 
-**Template version:** 1.6
+**Template version:** 1.7
 
 Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<parent-task-id>-NN`.
 
@@ -28,6 +28,17 @@ Confirm the parent before creating this child: it must directly advance the pare
 Approval and priority are separate from status. Ready means dependencies and authorization are satisfied. Use Proposed only for a real unresolved decision or authorization gate; use Blocked only for a genuine external or user-resolvable blocker; use Paused only for intentional suspension. CI remediation children use P0, Approved, Ready under standing authorization unless a narrow genuine decision gate or blocker applies. Queue rank belongs only on the Worker board, never in a task record.
 
 Allowed statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, Cancelled.
+
+## Validation Contract
+
+Declare task-specific checks in this JSON block. The coordinator binds the contract to the exact source commit SHA. Use an empty array when no additional checks are required. Repository policy checks remain mandatory and cannot be removed or overridden. Use only registered adapters and repository-relative entrypoints. Never add shell command strings, credentials, environment overrides, or permission settings.
+
+```json
+{
+  "contract_revision": "1",
+  "checks": []
+}
+```
 
 ## 1. Original Prompt
 
