@@ -202,7 +202,7 @@ Prompt Master includes specific profiles for 20+ tools. For anything not on the 
 | Tool | Category | What Prompt Master Fixes |
 |------|----------|--------------------------|
 | **Claude 5 / current Claude** | Reasoning and agentic LLM | Model-aware effort, scope, XML structure, and delegation control |
-| **ChatGPT / OpenAI GPT models** | Reasoning and agentic LLM | GPT-6 Luna, GPT-6.1 Sol, GPT-6 Astra, and GPT-5.6 compatibility. Use lean contracts and verified controls |
+| **ChatGPT / OpenAI GPT models** | Reasoning and agentic LLM | GPT-6, GPT-5.6, and GPT-5.5. Verify model availability and controls for the target surface |
 | **Codex** | Coding agent | File scope, approval boundaries, verification, bounded subagents |
 | **Grok 4.6** | Reasoning and agentic LLM | Search grounding, reasoning effort, tools, caching, and stop conditions |
 | **Gemini 2.x** | Reasoning LLM | Grounding anchors, citation rules, format locks |
@@ -265,7 +265,7 @@ Prompt Master picks the right architecture for every task automatically and rout
 | **ComfyUI** | Node-based image workflows — positive/negative split per checkpoint |
 | **Prompt Decompiler** | Breaking down, adapting, simplifying, or splitting existing prompts |
 | **Current Claude Task Brief** | Complex, multi-step, or agentic tasks on current Claude models |
-| **OpenAI Task Brief** | Complex tasks in ChatGPT, Codex, or the API. GPT-6 guidance with GPT-5.6 compatibility |
+| **OpenAI Task Brief** | Complex tasks in ChatGPT, Codex, or the API. Model-neutral scope, authorization, tools, verification, and output contract |
 
 </details>
 
@@ -398,7 +398,8 @@ This is the single biggest fix for long sessions. Most wasted re-prompts come fr
 
 ## ℹ️ Version History
 
-- **1.8.0** — Current-model refresh. Added Claude Fable 5, Opus 5, Sonnet 5, GPT-5.6 Sol/Terra/Luna, Codex, and Grok 4.6 routing. Replaced hidden chain-of-thought requests with auditable reasoning and generalized the Claude task brief for current adaptive-thinking models.
+- **1.9.0** — Refreshed OpenAI guidance for GPT-6 and the retained GPT-5.6/GPT-5.5 choices. Removed invented model variants and unsupported API-specific claims. Expanded the OpenAI task brief with explicit scope, approval boundaries, permitted actions, and verification.
+- **1.8.0** — Current-model refresh. Added Claude Fable 5, Opus 5, Sonnet 5, GPT-5.6 compatibility, Codex, and Grok 4.6 routing. Replaced hidden chain-of-thought requests with auditable reasoning and generalized the Claude task brief for current adaptive-thinking models.
 - **1.7.0** — Opus 4.8 compatibility. Made Claude 4.x routing version-aware: durable advice generalized across 4.6/4.7/4.8, added Opus 4.8 (current default) profile, kept Opus 4.7 labeled. De-hardcoded the effort-level note (now harness-managed). Template M and pattern 36 cover 4.7 and 4.8. Fixed a stray fragment in patterns.md.
 - **1.6.0** — Opus 4.7 update. Added Template M (Opus 4.7 Task Brief). Updated Claude and Claude Code routing for literalism, adaptive thinking, xhigh effort, and session hygiene. Added patterns 36–37.
 - **1.5.0** — Added more tool routing. New Agentic AI and 3D Model AI routing added. Fixed description to 189 chars. Removed token estimate from output. Added instruction layer and copywriting placeholders
