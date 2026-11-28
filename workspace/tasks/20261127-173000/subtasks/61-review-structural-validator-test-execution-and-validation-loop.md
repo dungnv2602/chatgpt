@@ -7,7 +7,7 @@
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User requested a future follow-up to verify tests/validation for the completed structural validator and create a Worker-driven loop that reports remaining verification gaps. Paused until explicitly resumed.
@@ -55,17 +55,17 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Intended subtask record, subtask index, parent record, task board
-- **Readback:** Pending
-- **Checks:** Workflow file readback confirms test invocation and validator invocation.
-- **Limitations:** Tests have not been executed or results reviewed. Worker instructions prohibit local test execution and hosted CI result inspection unless the user explicitly requests review.
+- **Commit SHA:** `938c663588bd1575835034cfd3f0201725d397f6` (Worker decision-queue rule tightening); repository review itself was readback-only
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md` decision-queue rule; task tracking records
+- **Readback:** Reviewed ADR-0006, validator, regression tests, and workflow integration. The workflow invokes both unittest discovery for `test_validate_structural_ownership.py` and the validator itself. Test results were not reviewed.
+- **Checks:** Source and workflow readback only; no test execution and no hosted CI result inspection.
+- **Limitations:** Runtime execution and hosted results remain unverified. Four regression test cases are authored: valid structure, extra session-start link, missing Worker file, and operating-section marker in Conversation Mode. Workflow integration exists, but actual pass/fail status cannot be claimed. The concrete evidence gap is execution/result review, prohibited under current rules unless explicitly authorized.
 
 ## 7. Completion
 
-- **Status:** Not Done
+- **Status:** Done
 - **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Completion basis:** Acceptance criteria satisfied by source/workflow review and documenting the exact evidence gap and next action; prohibited validation was not bypassed.
 
 ## 8. Execution self-check
 
