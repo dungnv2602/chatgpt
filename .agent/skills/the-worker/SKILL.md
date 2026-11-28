@@ -233,7 +233,7 @@ These procedures are Worker-owned references, not separate Agent Skills. Do not 
 Load the relevant reference only when the task requires it:
 
 - `references/ci-ledger.md` only for an assigned, selected CI task in the workspace that requires report intake, finding attribution, grouping, lifecycle, or Ledger integrity.
-- `references/github-actions.md` for workflow design, diagnostics, technical remediation, or validation procedures. Load it with the CI Ledger reference for the startup P0 batch.
+- `references/github-actions.md` only for an assigned, selected CI task in the workspace that requires workflow design, diagnostics, technical remediation, or validation procedures. Load it with the CI Ledger reference only when that task needs both.
 - `references/decision-governance.md` for Drafts, ADRs, repository analysis, implementation linkage, or Confirmation.
 
 The Worker owns document governance in this file and its canonical document-type catalog. The Worker does not activate a separate document-governance skill.
