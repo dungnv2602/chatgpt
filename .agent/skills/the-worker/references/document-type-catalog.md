@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.29
+**Catalog version:** 1.30
 **Repository template audit baseline:** Branch `gpt` at commit `a02713809b3b5fe403ab4085c28d163b3b1a70fc` contained 277 in-scope Markdown files and 30 template-named files. The recursive tree showed 18 template assets already under skills and 12 novel templates outside skill directories. This audit reviewed the full template path inventory and current owner contracts before relocation.
 **Source branch:** `gpt`
 
@@ -265,7 +265,7 @@ The template freshness review found two confirmed stale assets. The Task Board t
 
 Historical daily indexes, reconstructed session briefs, chronological prompt logs, transcript/index records, and standalone legacy prompt notes remain unchanged. They are not new document types and must not be mass-migrated. One-off creative direction notes remain exempt. Generated report files remain generator-owned.
 
-The validator enforces Markdown coverage and governed non-Markdown coverage under `.agent/skills/` and `.github/`. Every in-scope file must match exactly one registered family and its allowed location. The scan includes scripts, schemas, registries, configuration, agent metadata, workflow definitions, license files, and declared static assets. It does not claim repository-wide coverage of every non-Markdown file or semantic validation of every artifact.
+The validator enforces Markdown coverage and governed non-Markdown coverage under `.agent/skills/`, `.github/`, and `workspace/` outside the archive. Every in-scope file must match exactly one registered family and its allowed location. The scan includes scripts, schemas, registries, configuration, agent metadata, workflow definitions, license files, declared static assets, and the Worker-owned task-validation status index. It does not claim repository-wide coverage of every non-Markdown file or semantic validation of every artifact.
 
 ## Catalog maintenance
 
