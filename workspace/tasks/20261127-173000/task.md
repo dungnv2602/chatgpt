@@ -435,6 +435,11 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **References:** Child `subtasks/04-enforce-template-first-document-editing.md`; child index commit `52a1c9080cc19ebe26bbd0999c68cbbd5e0cc247`; task creation commit `2980a1f77e5968f4e2fe5a1e6e83e9c66e57d921`.
 - **Next:** Execute the already approved specialist-skill consolidation child `20261127-173000-02`; then address this new governance child.
 
+### 2026-11-28 — structural-validator verification follow-up
+
+- Child 61 created and paused to revisit test execution/evidence and the verification gap at a future explicit resume.
+- Workflow readback confirmed it already includes the structural-validator unittest invocation and validator invocation; test runtime results remain unverified.
+
 ## 6. Current State and Remaining Work
 
 This parent remains open as the persistent Refactor Skills workstream. The Worker and Agent Skill Authoring enforce the approved template-first gate.
