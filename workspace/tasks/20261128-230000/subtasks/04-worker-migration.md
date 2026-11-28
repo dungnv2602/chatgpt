@@ -72,6 +72,15 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - Preserve existing validation coverage and legacy report system until migration gates are met.
 - **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. This commit completes the Worker lifecycle procedure, root-cause group reuse contract, migration inventory, catalog/navigation updates, and legacy Ledger ownership boundary. Added fail-closed direct-push cutover gates that require source/current policy activation and recovery dispatch availability; task-owned workflow-run diagnostics are suppressed while unrelated workflow-run diagnostics and push backfill remain available. Remaining: reconcile exact-SHA validation when authorized, complete operational Confirmation, and gated producer cutover/retirement.
 
+### 2026-11-28 — residual policy gate correction and review-index assessment
+
+- **Correction:** Found a remaining `protection.enforcement_status` prerequisite in `.github/workflows/task-validation.yml` after the earlier gate cleanup. Removed it in commit `a991bebd5a166805c18eadd1aebfa305797d4e14`. The coordinator now relies on the exact source-SHA/policy-blob binding and mandatory-check manifest; GitHub branch protection remains optional hardening, not an ADR-0008 gate.
+- **Recovery availability:** Read back `main`'s dispatcher workflow with `workflow_dispatch` and recovery workflow with the 15-minute schedule. Updated the `gpt` policy's schedule and workflow-dispatch availability fields to `verified` in commit `d2f5b4b9e28fe935e77fc2c79e5ee519d9dad804`. Coordinator activation remains staged.
+- **Documentation:** Corrected the task-validation interface and subtask 01 wording; updated the task-validation README to reflect verified default-branch workflow availability. Read back each changed file.
+- **Review queue:** Read `workspace/task-validation/status-index.json` first. It contains 211 attempts; all 211 are `capture_failure`, all have `check_set_id: null`, all remain unreconciled, and `closed_through` remains `{run_id: 0, attempt: 0}`. Hosted logs were not inspected. No root cause is asserted for the full set, no remediation child was fabricated, and no unresolved record or checkpoint was changed.
+- **Lifecycle:** Bound this subtask to source commit `7814758586f68b3226822f760b4cbf06e86e108e` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b` in metadata commit `e67c2dc5f23e52cabadab769c9ec5fdc5343ac18`.
+- **Remaining:** Continue producer/consumer migration and preserve `.takeout/reports/`. Subtask 04 is not Done; operational Confirmation remains gated by the unresolved review queue and the ADR's required scenario demonstrations.
+
 ## 6. State and Evidence
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
