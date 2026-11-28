@@ -2,7 +2,7 @@
 record_type: decision-record
 template_version: "1.1"
 id: "ADR-0003"
-status: "accepted"
+status: "superseded"
 decision_date: "2026-11-26"
 decision_makers:
   - "User"
@@ -14,8 +14,8 @@ source_draft_revision: 1
 approved_scope: "Option 3, as amended by the user on 2026-11-27: consolidate STE lint and GitHub Actions evidence under one .takeout/reports root, one index.json, one history directory, one latest-lint-report.json, one ledger.json, and one README.md. Do not persist Markdown report copies. Preserve the original Actions eligibility, cancellation, classification, Ledger identity, task generation, and lint baseline rules."
 related_adrs: []
 supersedes: []
-superseded_by: null
-implementation_status: "completed"
+superseded_by: "ADR-0008"
+implementation_status: "superseded"
 implementation_tasks:
 review_triggers:
   - "A required external consumer is found to depend on a removed report path."
@@ -249,3 +249,8 @@ Both report families write to the shared index and history root. Lint index entr
 The user also directed that all content inside the report history directory be cleared. The migration therefore retains the 312-finding Ledger and its historical archived evidence references, clears stale run-index entries whose source history was removed, and initializes the single latest lint JSON pointer as an empty baseline until the next lint run. No hosted CI results or local tests were inspected or executed for this amendment.
 
 Implementation: Task `20261127-173000-53`, commits `0cdaf24593e2193a31382dd3aec54283c30c6e5e`, `f1efd131ff3236027d2d23a922ac52fde294ebbb`, `c153f4904df1bcf36e454725911a07d0a6cb2904`, `1499bac37d2f53f57bf747c1af19eb4b8c49e56e`, `6c9fdfe78f7d8560ef72f780a9f54acb5937fbe8`, `47d90bc2f110bd41de8d1c399d4700820ea314fb`, `e2cb50475e2bb1b96740d745b5cf794583b584fe`, and `30fbb5ee5334ec282d378d86c5bd855f80b3c9b8`.
+
+
+## Supersession — ADR-0008 (2026-11-28)
+
+ADR-0008 supersedes this report-artifact layout decision. The repository will retire the complete `.takeout/reports/` tree only after the replacement coordinator, verifier, status index, publisher, recovery sweep, and review-task flow are operational and every producer and consumer has migrated. Preserve unrelated lint, test, workflow coverage, and baselines. Do not retain this report layout or a parallel findings archive after migration. ADR-0008 is the governing decision for the replacement.
