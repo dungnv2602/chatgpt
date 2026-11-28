@@ -156,3 +156,5 @@ jobs:
 
       - name: Capture workflow diagnostics
         uses: ./.takeout/reports/gh_ac_reports/actions/capture
+        with:
+          run_id: ${{ github.run_id }}
