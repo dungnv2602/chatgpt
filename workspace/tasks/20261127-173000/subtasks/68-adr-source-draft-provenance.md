@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-68
 - **Parent Task ID:** 20261127-173000
 - **Type:** Governance reconciliation
-- **Status:** Proposed
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** User-authorized Refactor Skills execution batch
-- **Approval:** Pending
-- **Approval scope/source:** Pending a user decision on a metadata-only correction to accepted ADR provenance.
+- **Approval:** Approved
+- **Approval scope/source:** User approved metadata correction and execution cue on 2026-11-28.
 - **Governing ADR(s):** ADR-0004 and ADR-0007
-- **Dependencies:** User decision on how to reconcile the historical DRAFT-0005 ID collision.
-- **Eligibility / deferral reason:** Proposed — accepted ADR source-Draft provenance is conflicting and requires explicit user authority.
+- **Dependencies:** None; user decision received.
+- **Eligibility / deferral reason:** In Progress — correction authorized.
 - **Required:** Yes
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
@@ -42,7 +42,8 @@ Resolve or formally preserve the historical source-Draft ID collision between AD
 
 ## 5. Decisions and Progress
 
-- **Decision:** No correction is made before the user's input. This is a provenance issue, not permission to alter accepted ADR metadata.
+- **Decision:** Correct ADR-0007 source Draft metadata to the newly assigned DRAFT-0008, documenting that this is an administrative provenance correction and retaining the original approval scope. Do not alter ADR-0004.
+- **Authorization:** User: “Correct the metadata. Execute.” This is a provenance issue, not permission to alter accepted ADR metadata.
 - **Progress:** The Worker now checks Draft IDs against Draft files, accepted ADR source-draft metadata, task records, indexes and discussion before assigning an ID. The operational gate prevents new reuse but does not resolve this historical collision.
 
 ## 6. State and Evidence
