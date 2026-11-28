@@ -50,6 +50,15 @@
 - **Action:** Create child 57 to audit and strengthen autonomous execution and one-at-a-time blocker handling.
 - **Approval:** Explicit authorization through the original request.
 
+### 2026-11-28 — workflow lifecycle revision
+
+> I want you to stop standing still, I need you to move on another unblocked task immediately when a task is considered done. The problem right now is you standing here reporting to me you will not mark a task done without results validation when we agreed to let the worker to handle errors through CI task generation for you.
+>
+> Assess the workflow, bring me improvements suggestions.
+
+- **Decision:** User approved the assessment proposals and instructed execution.
+- **Action:** Created child 62 for implementation closeout, validation-debt tracking, and mandatory queue continuation.
+
 ## 3. Objective and Acceptance Criteria
 
 Serve as the persistent, open parent task and coordination point for skills refactoring in the repository, including the current consolidation work and future refactoring initiatives. This is an explicitly authorized standing parent for skills-refactoring work; it is not a finite deliverable and must not be retired or closed merely because its current children are complete.
