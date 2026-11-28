@@ -5,14 +5,14 @@
 - **Template version:** 2.5
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-28 22:00 UTC
+- **Updated:** 2026-11-28 23:00 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Cancelled
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation. DRAFT-0010 revision 9 and ADR-0008 are approved. The user explicitly authorized execution with “Approve / Execute” and the subsequent confirmation.
 - **Governing ADR(s):** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — universal post-commit validation, coordinator/verifier, status index, review tasks, remediation folders, retention, and report-system migration.
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
 
@@ -359,3 +359,10 @@ _Legacy migration input only._ These report-derived findings are historical reco
 
 Execute ” (received 2026-11-28). This explicitly authorizes hosted CI inspection for the ADR-0008 implementation and confirmation work in this parent task. It does not authorize reruns, dispatches, local tests/scripts/lint, or report-tree retirement before ADR confirmation unless those are separately covered by the accepted decision and task scope.
 - **Scope interpretation:** The earlier task restriction against hosted CI inspection is overridden only for inspection of hosted results necessary to implement and confirm ADR-0008. The prohibition on local validation and premature retirement remains.
+
+
+### 2026-11-28 23:00 UTC — Administrative supersession
+
+- **Action:** Closed this task as Cancelled/superseded and transferred the outstanding ADR-0008 implementation objective to task 20261128-230000. The user requested deletion of this task folder.
+- **Result:** This task is not marked Done because the ADR-0008 implementation and acceptance criteria were not met. It is deleted after administrative closeout under the direct-deletion lifecycle; the replacement task carries the objective.
+- **Next:** Implement under [20261128-230000](../20261128-230000/task.md).
