@@ -11,13 +11,17 @@ SCRIPT = Path(__file__).with_name("ledger.py")
 SPEC = importlib.util.spec_from_file_location("ci_issue_ledger", SCRIPT)
 LEDGER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(LEDGER)
-WORKER_ROOT = SCRIPT.parents[1]\nREPO_ROOT = SCRIPT.parents[4]\nSCHEMA_SOURCE = WORKER_ROOT / "assets" / "ledger-schema.json"
-TASK_TEMPLATE_SOURCE = REPO_ROOT / "workspace" / "TASK_TEMPLATE.md"
-SUBTASK_TEMPLATE_SOURCE = SCRIPT.parents[4] / "workspace" / "SUBTASK_TEMPLATE.md"
-TASK_BOARD_SOURCE = SCRIPT.parents[4] / "workspace" / "task_board.md"
+WORKER_ROOT = SCRIPT.parents[1]
+REPO_ROOT = SCRIPT.parents[4]
+SCHEMA_SOURCE = WORKER_ROOT / "assets" / "ledger-schema.json"
+TASK_TEMPLATE_SOURCE = WORKER_ROOT / "assets" / "TASK_TEMPLATE.md"
+SUBTASK_TEMPLATE_SOURCE = WORKER_ROOT / "assets" / "SUBTASK_TEMPLATE.md"
+POLICY_SOURCE = WORKER_ROOT / "assets" / "task-validation" / "task-validation-policy.json"
+TASK_BOARD_SOURCE = REPO_ROOT / "workspace" / "task_board.md"
 
 NOW = "2026-11-27T10:00:00Z"
 PARENT_ID = "20261127-090000"
+FALLBACK_ID = "20261128-193800"
 
 
 class LedgerAttributionTests(unittest.TestCase):
@@ -26,13 +30,17 @@ class LedgerAttributionTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         reports = self.root / ".takeout" / "reports"
         reports.mkdir(parents=True)
-        shutil.copyfile(SCHEMA_SOURCE, reports / "ledger-schema.json")
+        worker_assets = self.root / ".agent" / "skills" / "the-worker" / "assets"
+        (worker_assets / "task-validation").mkdir(parents=True)
+        shutil.copyfile(SCHEMA_SOURCE, worker_assets / "ledger-schema.json")
+        shutil.copyfile(TASK_TEMPLATE_SOURCE, worker_assets / "TASK_TEMPLATE.md")
+        shutil.copyfile(SUBTASK_TEMPLATE_SOURCE, worker_assets / "SUBTASK_TEMPLATE.md")
+        shutil.copyfile(POLICY_SOURCE, worker_assets / "task-validation" / "task-validation-policy.json")
         workspace = self.root / "workspace"
         (workspace / "tasks").mkdir(parents=True)
-        shutil.copyfile(TASK_TEMPLATE_SOURCE, workspace / "TASK_TEMPLATE.md")
-        shutil.copyfile(SUBTASK_TEMPLATE_SOURCE, workspace / "SUBTASK_TEMPLATE.md")
         shutil.copyfile(TASK_BOARD_SOURCE, workspace / "task_board.md")
         self.add_parent(PARENT_ID)
+        self.add_fallback_parent()
         self.write_ledger()
 
     def tearDown(self):
@@ -58,6 +66,32 @@ class LedgerAttributionTests(unittest.TestCase):
             "## 10. Ledger Findings\n\n"
             "| Finding ID | Severity | Diagnostic | Evidence |\n"
             "|---|---|---|---|\n"
+        )
+        (folder / "task.md").write_text(content, encoding="utf-8")
+        return folder
+
+    def add_fallback_parent(self):
+        folder = self.root / "workspace" / "tasks" / FALLBACK_ID
+        subtasks = folder / "subtasks"
+        subtasks.mkdir(parents=True, exist_ok=True)
+        (subtasks / "README.md").write_text(
+            "# Subtasks — " + FALLBACK_ID + "\\n\\nParent: [task.md](../task.md)\\n",
+            encoding="utf-8",
+        )
+        content = (
+            "# Task: Permanent CI remediation fallback parent\\n\\n## Metadata\\n\\n"
+            "- **ID:** " + FALLBACK_ID + "\\n"
+            "- **Status:** In Progress\\n"
+            "- **Origin:** System\\n"
+            "- **Priority:** P1\\n"
+            "- **Current execution:** No\\n"
+            "- **Eligibility / deferral reason:** Permanent system-owned fallback parent; never selected for execution.\\n"
+            "- **Approval:** Approved\\n"
+            "- **Governing ADR(s):** ADR-0008\\n"
+            "- **Updated:** 2026-11-28 12:38 UTC\\n\\n"
+            "## 10. Ledger Findings\\n\\n"
+            "| Finding ID | Severity | Diagnostic | Evidence |\\n"
+            "|---|---|---|---|\\n"
         )
         (folder / "task.md").write_text(content, encoding="utf-8")
         return folder
