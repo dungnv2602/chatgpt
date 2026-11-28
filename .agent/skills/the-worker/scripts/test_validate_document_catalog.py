@@ -6,6 +6,7 @@ from pathlib import Path
 
 from validate_document_catalog import (
     find_external_templates,
+    find_misplaced_skill_templates,
     template_location_error,
     validate_catalog,
 )
