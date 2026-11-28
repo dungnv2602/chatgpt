@@ -18,7 +18,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Current focused child batch is at quiescence. Child 62 and resumed child 61 completed and were removed under lifecycle rules.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Current focused child batch is at quiescence. Child 62 completed and was removed. Child 61 remains paused.
 
 ## Ordered Eligible Execution Queue
 
@@ -26,7 +26,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Next Task
 
-No eligible child remains under Refactor Skills. The next independent eligible task in the global queue is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
+No eligible child remains under Refactor Skills. Child 61 remains intentionally paused. The next independent eligible task in the global queue is [20261127-173100-02: Audit document template coverage and create missing templates](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md), but it is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 
