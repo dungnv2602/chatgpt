@@ -7,17 +7,17 @@
 - **ID:** 20261127-173100-02
 - **Parent Task ID:** 20261127-173100
 - **Type:** Audit / Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User-authorized subtask under Template Fix, expanded by the user's 2026-11-28 instruction to audit stale templates and relocate templates outside skills into appropriate skill locations.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready.
+- **Eligibility / deferral reason:** In Progress — selected under the user's current authorized focus.
 - **Required:** Yes
 - **Created:** 2026-11-27 17:31 UTC
-- **Updated:** 2026-11-28
+- **Updated:** 2026-11-28 03:13 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -50,6 +50,12 @@ Systematically scan the entire repository for document types or documents that l
 - **Action:** Created child record.
 - **Result:** Audit and remediation pending.
 - **Next:** Begin the full coverage, freshness, and placement audit after task-board-template child as ordered by parent.
+
+### 2026-11-28 03:13 UTC — execution resumed
+
+- **Action:** Read the current repository catalog, all novel template assets and owner references, the Worker governance rules, current task records, and startup CI evidence.
+- **Result:** The 12 novel templates already exist under `.agent/skills/romantic-storyteller-visual-artist/assets/templates/`. The former `area/novel/templates/` path is absent. The catalog records 277 in-scope Markdown files and 30 template-named assets, with no missing recurring document format. The Prompt Master skill still contains retired GPT-6 variant names and related unsupported API claims. The live task-board contract also contains scheduling detail not yet reflected in its template.
+- **Next:** Correct stale Prompt Master guidance and align the task-board template, then complete the repository-wide placement and link audit.
 
 ## 6. State and Evidence
 
