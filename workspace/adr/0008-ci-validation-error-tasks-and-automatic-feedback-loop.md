@@ -21,7 +21,7 @@ supersedes:
   - "ADR-0004"
   - "ADR-0007"
 superseded_by: null
-implementation_status: "in-progress"
+implementation_status: "not-started"
 implementation_tasks:
   - "20261126-142500"
 review_triggers:
@@ -270,5 +270,5 @@ The single coordinator is preferred because the repository needs one authoritati
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-28 | Accepted | User approved DRAFT-0010 revision 9 and instructed promotion. The complete provisional ADR was read back and compared with the approved source. Decision scope and rationale are preserved. |
-| 2026-11-28 | Implementation in progress | Linked the approved current-execution parent task 20261126-142500 after acceptance. Task acceptance criteria map the applicable Confirmation requirements. |
+| 2026-11-28 | Implementation task linked | Linked approved parent task 20261126-142500 and mapped its acceptance criteria to applicable Confirmation requirements. Execution has not started because the new scope awaits the standalone `execute` cue required by Worker policy. |
 | 2026-11-28 | Source Draft retired | Deleted DRAFT-0010 revision 9 after accepted ADR read-back, index updates, and active-reference migration. Commit `1e5ef5c18e8d6a4cfb67382e5d73730bd29adc12`. |
