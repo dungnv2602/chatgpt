@@ -2,7 +2,7 @@
 
 ## Metadata
 
-- **Template version:** 2.8
+- **Template version:** 2.9
 - **ID:** 20261128-230000
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
@@ -25,6 +25,20 @@ Declare task-specific checks in this JSON block. The coordinator binds the contr
 {
   "contract_revision": "1",
   "checks": []
+}
+```
+
+## Validation Lifecycle
+
+```json
+{
+  "state": "not_committed",
+  "source_sha": null,
+  "policy_revision": null,
+  "coordinator_run_id": null,
+  "attempt": null,
+  "outcome": null,
+  "reconciled_at": null
 }
 ```
 
@@ -70,7 +84,7 @@ Acceptance criteria are mapped to these required child tasks:
 - **Result:** Closed subtask 01 after the Worker-owned policy, schema, adapter registry, interface documentation, and reusable workflow-call entry points were read back from branch `gpt`.
 - **Commit:** `f036ecbd02a9f049486ffbe27f8d0d11edae314d` (task closeout); index reconciliation `892ec77fd5a4db52cc444b4a416b88ccb1782d04`.
 - **Limitations:** Effective GitHub branch protection remains unverified. The existing reusable workflows still require exact-SHA and validation-only migration before coordinator invocation. No runtime or hosted validation is claimed.
-- **Next:** Subtasks 02 and 03 are complete. Subtask 04 is now dependency-eligible.
+- **Next:** Subtasks 02 and 03 are complete. Subtask 04 has entered In Progress.
 
 ### 2026-11-28 — Subtask 02 verifier and aggregate implementation closed
 
@@ -83,9 +97,9 @@ Acceptance criteria are mapped to these required child tasks:
 - **Next:** Subtasks 02 and 03 are Done. Proceed with subtask 04 for Worker lifecycle and report migration.
 ## 6. Current State and Remaining Work
 
-Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is now eligible because dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
+Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
 
-The coordinator has no push trigger. Its activation remains staged until the privileged publisher and report migration are ready. Effective branch protection/ruleset enforcement remains unverified and is an external prerequisite. The legacy report pipeline remains intact. Operational Confirmation and report-tree retirement remain incomplete.
+The dispatcher has a push trigger, but policy-gates coordinator activation. The exact-SHA coordinator remains staged until publisher/report migration and external protection gates are verified. Effective branch protection/ruleset enforcement remains unverified and is an external prerequisite. The legacy report pipeline remains intact. Operational Confirmation and report-tree retirement remain incomplete.
 
 ## 7. Verification and Evidence
 
@@ -93,7 +107,7 @@ The coordinator has no push trigger. Its activation remains staged until the pri
 - **Changed paths:** Worker skill and Workflow Map; task/subtask templates; task-validation policy, schema, and adapter registry; document catalog and interface reference; contract builder, verifier, aggregate, and three regression suites; five GitHub Actions workflow files; parent task, subtask record, and index.
 - **Readback:** Subtasks 01, 02, and 03 have implementation readback from branch `gpt`; final parent readback and Confirmation remain pending.
 - **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed. Regression tests are registered in the document-standards workflow.
-- **Limitations:** Coordinator activation and external policy protection remain gated. Publisher/recovery and exact-SHA verifier/aggregate implementations are complete at repository level. Worker lifecycle, report migration, and Confirmation remain incomplete.
+- **Limitations:** Coordinator activation and external policy protection remain gated. Publisher/recovery and exact-SHA verifier/aggregate implementations are complete at repository level. Worker lifecycle and staged report migration are in progress; operational Confirmation remains incomplete.
 
 ## 8. Execution self-check
 
