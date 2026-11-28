@@ -349,3 +349,13 @@ _Legacy migration input only._ These report-derived findings are historical reco
 - **Action:** Deleted all completed subtask records currently present in the subtask directory, including the duplicate subtask-20 record and audit child 01, and removed the completed-child index. Subtasks 03, 23, and 02 were absent and were not recreated.
 - **Result:** Completed children are removed under the direct-deletion lifecycle. Parent remains In Progress: the ADR-0008 migration/Confirmation requirements and original report-remediation objective remain unresolved. This cleanup is not operational proof.
 - **Readback:** Cleanup and board reconciliation committed on branch `gpt`; no local tests or hosted CI inspection.
+
+
+### 2026-11-28 — Scoped user override of CI-inspection restriction
+
+- **User instruction:** “I give you permission for this 
+
+/Start 
+
+Execute ” (received 2026-11-28). This explicitly authorizes hosted CI inspection for the ADR-0008 implementation and confirmation work in this parent task. It does not authorize reruns, dispatches, local tests/scripts/lint, or report-tree retirement before ADR confirmation unless those are separately covered by the accepted decision and task scope.
+- **Scope interpretation:** The earlier task restriction against hosted CI inspection is overridden only for inspection of hosted results necessary to implement and confirm ADR-0008. The prohibition on local validation and premature retirement remains.
