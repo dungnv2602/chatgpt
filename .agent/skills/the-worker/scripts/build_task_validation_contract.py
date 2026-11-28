@@ -21,6 +21,15 @@ class TaskContractError(ValueError):
     """Raised when task attribution or its declared contract is invalid."""
 
 
+def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for key, value in pairs:
+        if key in result:
+            raise TaskContractError(f"Duplicate JSON key in task contract: {key}")
+        result[key] = value
+    return result
+
+
 def extract_task_id(commit_message: str) -> str:
     lines = [line for line in commit_message.rstrip().splitlines() if line.strip()]
     matches = TRAILER_PATTERN.findall(commit_message)
@@ -52,7 +61,7 @@ def parse_declared_contract(task_record: Path) -> dict[str, Any]:
     if len(matches) != 1:
         raise TaskContractError("Task record must contain exactly one JSON Validation Contract block")
     try:
-        value = json.loads(matches[0])
+        value = json.loads(matches[0], object_pairs_hook=unique_object)
     except json.JSONDecodeError as exc:
         raise TaskContractError(f"Task Validation Contract is not valid JSON: {exc}") from exc
     if not isinstance(value, dict) or set(value) != {"contract_revision", "checks"}:
