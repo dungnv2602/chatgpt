@@ -33,7 +33,7 @@ This is an initial mapping, not a claim that the workflows have already been mig
 
 The three existing validation workflows expose `workflow_call` with `coordinator_call` and required `source_sha` inputs. Coordinator calls check out the exact supplied SHA. They skip legacy report publication and diagnostics jobs. Their direct push triggers retain the existing report pipeline and validation behavior. The coordinator grants only `contents: read`, so a called job cannot obtain a write-capable token even where its direct-push mode retains a write permission declaration.
 
-The coordinator is now defined in `.github/workflows/task-validation.yml`. It binds the source SHA and policy blob SHA, resolves the task contract from the source commit's Task-ID trailer, calls the three established validation workflows and the generic verifier, then aggregates every result. The generic verifier is `.github/workflows/task-validation-verifier.yml`. The publisher and recovery lifecycle remain a separate downstream implementation. Do not claim publication or operational recovery until that work is complete.
+The coordinator is defined as a reusable workflow in `.github/workflows/task-validation.yml`. It binds the source SHA and policy blob SHA, resolves the task contract from the source commit's Task-ID trailer, calls the three established validation workflows and the generic verifier, then aggregates their results. The generic verifier is `.github/workflows/task-validation-verifier.yml`. The coordinator has no push trigger yet. Its activation is staged until the privileged publisher and report migration are ready. This preserves the legacy push-report pipeline and prevents duplicate validation cycles. The publisher and recovery lifecycle remain separate downstream work. Do not claim publication or operational recovery until that work is complete.
 
 ## Task contract source and binding
 
@@ -43,7 +43,7 @@ The coordinator reads the source commit's exact `Task-ID` trailer. It resolves t
 
 The policy job also records the policy file's Git blob SHA. The generic verifier checks the source SHA and policy blob SHA against its exact checkout. It receives a read-only token, no secrets, and no persisted checkout credentials. Its typed adapters execute with `shell=False` and a restricted environment.
 
-The coordinator aggregates every mandatory check and every task-added check. Each result must match the source SHA, policy blob SHA, check-set identity, coordinator run ID, and attempt. Missing, duplicate, skipped, pending, partial, or mismatched results cannot produce success.
+The coordinator aggregates every mandatory check. The generic verifier runs all task-added checks as its nested check set. Their full definitions and contract revision contribute to the aggregate check-set identity. Every mandatory result must match the source SHA, policy blob SHA, check-set identity, coordinator run ID, and attempt. Missing, duplicate, skipped, pending, partial, or mismatched results cannot produce success.
 
 ## Task contract constraints
 
