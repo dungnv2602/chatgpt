@@ -1,0 +1,242 @@
+name: ADR-0008 Exact-SHA Task Validation
+
+on:
+  push:
+    branches:
+      - gpt
+    paths-ignore:
+      # Metadata-only commits from the future publisher must not recurse.
+      - ".takeout/reports/**"
+      - "workspace/**"
+
+permissions: {}
+
+concurrency:
+  group: task-validation-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  policy:
+    name: Resolve exact source and policy revisions
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      source_sha: ${{ steps.bind.outputs.source_sha }}
+      policy_blob_sha: ${{ steps.bind.outputs.policy_blob_sha }}
+      contract_json: ${{ steps.bind.outputs.contract_json }}
+      task_check_ids: ${{ steps.bind.outputs.task_check_ids }}
+    steps:
+      - name: Check out the source commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Bind policy and create the base task contract
+        id: bind
+        shell: bash
+        run: |
+          set -euo pipefail
+          policy_blob_sha=$(git hash-object .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
+          contract_json=$(python3 -c 'import json, os; print(json.dumps({"schema_version": 1, "source_sha": os.environ["GITHUB_SHA"], "checks": []}, separators=(",", ":")))')
+          echo "source_sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+          echo "policy_blob_sha=$policy_blob_sha" >> "$GITHUB_OUTPUT"
+          echo "contract_json=$contract_json" >> "$GITHUB_OUTPUT"
+          echo "task_check_ids=[]" >> "$GITHUB_OUTPUT"
+
+  lint_changed:
+    name: Required changed-document lint
+    needs: policy
+    uses: ./.github/workflows/ste-lint-changed.yml
+    with:
+      coordinator_call: true
+      source_sha: ${{ needs.policy.outputs.source_sha }}
+    permissions:
+      contents: read
+
+  lint_full:
+    name: Required full-document lint
+    needs: policy
+    uses: ./.github/workflows/ste-lint-full-docs.yml
+    with:
+      coordinator_call: true
+      source_sha: ${{ needs.policy.outputs.source_sha }}
+    permissions:
+      contents: read
+
+  document_standards:
+    name: Required document standards
+    needs: policy
+    uses: ./.github/workflows/validate-document-standards.yml
+    with:
+      coordinator_call: true
+      source_sha: ${{ needs.policy.outputs.source_sha }}
+    permissions:
+      contents: read
+
+  generic_verifier:
+    name: Required generic task verifier
+    needs: policy
+    uses: ./.github/workflows/task-validation-verifier.yml
+    with:
+      source_sha: ${{ needs.policy.outputs.source_sha }}
+      policy_blob_sha: ${{ needs.policy.outputs.policy_blob_sha }}
+      contract_json: ${{ needs.policy.outputs.contract_json }}
+    permissions:
+      contents: read
+
+  aggregate:
+    name: Aggregate exact-SHA validation results
+    if: always()
+    needs:
+      - policy
+      - lint_changed
+      - lint_full
+      - document_standards
+      - generic_verifier
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      outcome: ${{ steps.aggregate.outputs.outcome }}
+      check_set_id: ${{ steps.aggregate.outputs.check_set_id }}
+    steps:
+      - name: Check out the exact source commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Normalize every required check result
+        shell: bash
+        env:
+          NEEDS_JSON: ${{ toJSON(needs) }}
+          SOURCE_SHA: ${{ needs.policy.outputs.source_sha }}
+          POLICY_BLOB_SHA: ${{ needs.policy.outputs.policy_blob_sha }}
+          TASK_CHECK_IDS: ${{ needs.policy.outputs.task_check_ids }}
+          COORDINATOR_RUN_ID: ${{ github.run_id }}
+          COORDINATOR_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          needs = json.loads(os.environ["NEEDS_JSON"])
+          source_sha = os.environ["SOURCE_SHA"]
+          policy_sha = os.environ["POLICY_BLOB_SHA"]
+          task_ids = json.loads(os.environ["TASK_CHECK_IDS"])
+          policy = json.loads(Path(".agent/skills/the-worker/assets/task-validation/task-validation-policy.json").read_text(encoding="utf-8"))
+
+          expected = [
+              item["id"] for item in policy["mandatory_checks"]
+          ] + sorted(task_ids)
+          import hashlib
+          check_set_id = hashlib.sha256(
+              json.dumps(expected, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+          ).hexdigest()
+
+          job_map = {
+              "ste-lint-changed": "lint_changed",
+              "ste-lint-full-docs": "lint_full",
+              "validate-document-standards": "document_standards",
+              "generic-verifier": "generic_verifier",
+          }
+          result_map = {
+              "success": "success",
+              "failure": "failure",
+              "cancelled": "cancelled",
+              "skipped": "skipped",
+          }
+          records = []
+          for check_id in expected:
+              job_name = job_map.get(check_id)
+              if job_name is None:
+                  status = "capture_failure"
+              else:
+                  job = needs.get(job_name, {})
+                  job_result = job.get("result", "pending")
+                  status = result_map.get(job_result, "pending")
+                  if check_id == "generic-verifier":
+                      verifier_outcome = job.get("outputs", {}).get("outcome", "")
+                      verifier_map = {
+                          "success": "success",
+                          "check_failure": "failure",
+                          "coverage_failure": "partial",
+                          "infrastructure_failure": "infrastructure_failure",
+                          "capture_failure": "capture_failure",
+                          "cancelled": "cancelled",
+                          "superseded": "superseded",
+                      }
+                      status = verifier_map.get(verifier_outcome, "capture_failure")
+                      if job_result != "success" and status == "success":
+                          status = "capture_failure"
+              records.append({
+                  "check_id": check_id,
+                  "status": status,
+                  "source_sha": source_sha,
+                  "policy_blob_sha": policy_sha,
+                  "check_set_id": check_set_id,
+                  "coordinator_run_id": os.environ["COORDINATOR_RUN_ID"],
+                  "attempt": int(os.environ["COORDINATOR_ATTEMPT"]),
+              })
+          Path(".task-validation-results.json").write_text(
+              json.dumps(records, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Classify the complete validation attempt
+        id: aggregate
+        continue-on-error: true
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ needs.policy.outputs.source_sha }}
+          POLICY_BLOB_SHA: ${{ needs.policy.outputs.policy_blob_sha }}
+          TASK_CHECK_IDS: ${{ needs.policy.outputs.task_check_ids }}
+          COORDINATOR_RUN_ID: ${{ github.run_id }}
+          COORDINATOR_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          set +e
+          python3 .agent/skills/the-worker/scripts/aggregate_task_validation.py \
+            --policy .agent/skills/the-worker/assets/task-validation/task-validation-policy.json \
+            --policy-blob-sha "$POLICY_BLOB_SHA" \
+            --source-sha "$SOURCE_SHA" \
+            --coordinator-run-id "$COORDINATOR_RUN_ID" \
+            --attempt "$COORDINATOR_ATTEMPT" \
+            --task-check-ids "$TASK_CHECK_IDS" \
+            --results .task-validation-results.json \
+            > .task-validation-aggregate.json
+          aggregate_exit=$?
+          set -e
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          result = json.loads(Path(".task-validation-aggregate.json").read_text(encoding="utf-8"))
+          print(f"outcome={result.get('outcome', 'capture_failure')}")
+          print(f"check_set_id={result.get('check_set_id', '')}")
+          PY
+          exit "$aggregate_exit"
+
+      - name: Fail the coordinator unless every check passed
+        if: always()
+        shell: bash
+        env:
+          OUTCOME: ${{ steps.aggregate.outputs.outcome }}
+        run: |
+          if [[ "$OUTCOME" != "success" ]]; then
+            echo "::error::ADR-0008 aggregate outcome: ${OUTCOME:-capture_failure}"
+            exit 1
+          fi
+          echo "All mandatory checks passed for the exact source SHA and policy revision."
