@@ -26,6 +26,7 @@
 
 ## Open Discussions
 
+- **2026-11-28:** [DRAFT-0009 — Project, Task, and Knowledge Lifecycle](draft/DRAFT-0009-unified-project-task-and-resource-lifecycle.md), revision 1. Reconciles DRAFT-0002 revision 4, DRAFT-0003 revision 1, and `master/Handoff.md` against current accepted contracts. Option 3 is recommended; user decision pending.
 
 
 - **2026-11-28:** DRAFT-0005 revision 1, Option 2 accepted as ADR-0007. The implementation is complete: the shared index is the latest lint locator, both workflows retrieve immutable history reports, and the standalone reset marker is deleted. Task record is closed and deleted under lifecycle rules.
@@ -95,3 +96,5 @@
 
 
 - **2026-11-28:** Completed metadata-only reconciliation of ADR-0007's source-Draft reference from DRAFT-0005 to DRAFT-0008. The original approved scope remains unchanged. ADR-0004's source reference remains DRAFT-0005. No further open decision remains.
+
+- **2026-11-28:** Reconstruction subtask 01 verified DRAFT-0005 is absent and ADR-0007 is self-contained; task-level historical references were reviewed. ADR-0004 retains DRAFT-0005 as its own provenance metadata, so ID collision prevents treating all mentions as references to the retired proposal. DRAFT-0009 is created for the workspace architecture review; no implementation is approved.
