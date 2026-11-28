@@ -5,14 +5,14 @@
 - **Template version:** 2.5
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-27 11:08 UTC
+- **Updated:** 2026-11-28 15:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation.
 - **Governing ADR(s):** None — CI/reporting repair; review governance boundaries before any architecture change
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
 
@@ -35,6 +35,12 @@ Expand on this, fix gaps, fix floodings, fix deadlocks, tighten, close the cycle
 If you really understand, you would know you should create a task for this to track your progress.”
 - **Effective closeout policy:** The user's later instruction supersedes earlier archiving and hosted-result-review wording. Commit and remote readback are the completion evidence. Do not inspect hosted CI results. Delete completed/cancelled task folders directly; do not create archive or retention copies. Keep Ledger identity, evidence, resolution history, and provenance intact.
 
+
+
+- **2026-11-28 — CI folder lifecycle approved:** “No CI findings go along with CI subtask in its own folder. A task can be a folder, a subtask can also be a folder. Each CI error generated a subtask with CI task and everything documents needed for you it resolve it. When it's done, delete it and everything goes aling with it. In this case, delete entire CI task folder.” The approved model is one self-contained subtask folder per distinct CI error; each folder contains the task record and all evidence/instructions required to resolve it. Delete the complete child folder after resolution. Delete the parent CI task folder when all its children are finished and no new children are generated.
+- **2026-11-28 — CI feedback-loop rule approved:** “As a rule existed in the workflow, you do not verify the fix, let it crash and the workflow automatically catch it as new CI subtasks. Actually, you never need to verify your work. The error present itself as CI subtasks. If there none generated, that means your fix worked.” The Worker commits fixes and relies on the next automatic CI cycle to generate new error subtasks. No separate manual fix-verification step is performed. No newly generated CI subtasks means the configured capture workflow detected no actionable CI errors; it does not claim absence of all possible defects.
+- **2026-11-28 — Report retirement requested:** “Retire .take/reports, no longer needed.” Repository search found no .take/reports path; current canonical references point to .takeout/reports/. Do not substitute the latter for the user's exact path without resolving this mismatch.
+- **2026-11-28 — Approval and execution:** “Approve.” “Execute”. The user approved the folder-based CI lifecycle and automatic CI feedback loop and authorized the prepared batch.
 
 ## 3. Objective
 
@@ -146,6 +152,14 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** Indexed report `.takeout/reports/lint_reports/on_repo/history/45976205944-attempt-1/report.json`; latest report `.takeout/reports/lint_reports/on_repo/history/45987814713-attempt-1/report.json`; changed-document report `.takeout/reports/lint_reports/on_changed/history/45986815109-attempt-1/report.json`.
 - **Next:** Both completed child records were deleted after index reconciliation. Continue child 02 and reconcile the original report-ingestion acceptance criteria from repository-owned state only.
 
+
+### 2026-11-28 15:00 UTC — new CI lifecycle direction and task activation
+
+- **Action:** Reconciled the user's approved folder-based CI lifecycle and automatic feedback-loop rule against the current Worker contract and accepted ADR-0004. Set this parent as the current execution task and prepared the board update.
+- **Result:** The requested model conflicts with accepted ADR-0004, which currently mandates CI Ledger identity/history, flat child records, and manual commit/readback verification before CI subtask completion. Decision Governance requires a new approved Draft/ADR for a changed decision; implementation of the conflicting architecture is therefore held behind that gate. The existing subtask template and catalog also define flat Markdown child records, not subtask folders.
+- **Path discrepancy:** The user named .take/reports; repository search found no such path. Current canonical implementation and documentation reference .takeout/reports/. Destructive retirement of .takeout/reports/ is not inferred from the different path.
+- **Next:** Prepare a superseding decision proposal and the two approved workstreams using a folder-based subtask format after the decision/format gate is satisfied. Resolve the exact report directory before deletion.
+
 ## 7. Current State
 
 The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`. This parent was resumed for the user's prompt-capture and CI-hierarchy follow-up.
@@ -160,6 +174,10 @@ The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c
 
 ## 8. Remaining Work
 
+- Prepare and approve a superseding decision for folder-per-CI-error subtasks, automatic CI feedback-loop completion, and retirement of the report/Ledger system; ADR-0004 currently conflicts with this direction.
+- Update the canonical subtask template, task-folder contract, document catalog, Worker, and Workflow Map before creating child folders.
+- Resolve whether the intended report path is .take/reports or the repository's existing .takeout/reports; do not delete the latter by inference.
+
 - Complete remote readback of every changed file and close implementation child `20261126-142500-02`.
 - Reconcile the original report-ingestion acceptance criteria using repository-owned Ledger/index state only. Do not inspect hosted runs, logs, or artifacts.
 - Keep any unattributed finding visible in the Ledger until reliable attribution is available. Do not fabricate a task link.
@@ -167,6 +185,11 @@ The original clean-start report reset was committed in `c9f4f6d92316c18574437c0c
 
 
 ## 9. Next Actions
+
+1. Prepare the superseding Draft for the newly approved CI folder/feedback-loop architecture.
+2. Resolve the report-directory path discrepancy before any destructive retirement.
+3. Update canonical folder-based subtask format and all owners/references after decision approval.
+4. Create and execute the two approved workstreams, then delete completed child folders and this parent CI task folder at full closeout.
 
 1. Finish static code/schema/template/workflow readback for child 02.
 2. Mark child 02 Done only after its acceptance criteria and committed-content checks pass.
