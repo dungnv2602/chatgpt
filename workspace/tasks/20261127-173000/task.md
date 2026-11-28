@@ -482,6 +482,97 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ### Progress history (continued)
 
+### 2026-11-27 — CI Ledger and GitHub Actions consolidation closeout
+
+- Completed child 51. Consolidated scripts, regression tests, shared eligibility policy, schemas, and report template under `.agent/skills/the-worker/scripts/` and `.agent/skills/the-worker/assets/`.
+- Updated the composite capture action and Worker references. Removed duplicate report-family implementations. Kept report indexes, immutable reports, and Ledger state in their data paths.
+- Read back canonical scripts, regression tests, schemas, template, and capture action. Tests, lint, and hosted CI inspection were not performed, as required.
+- **Commits:** `7744b9f`, `36a6ecc`, `578207a`, `4d86b34`, `6f8adc0`, `e75cf10`, `9b8a88e`, `e5c48e2`.
+
+### 2026-11-28 — user-directed deletion of blocked subtasks 28–49
+
+- Deleted remaining existing records individually. Subtask records 28–49 are absent. No remediation was attempted for those findings.
+- Reconciled the child index and task board. Child 61 remains paused, and the parent remains at quiescence.
+
+
+### 2026-11-28 — autonomous queue and recursive reconciliation batch
+
+- **Action:** Strengthened the canonical Worker with a parent/workstream execution boundary, recursive index and task-folder reconciliation, stale dependency-pause reassessment, and consolidated blocker collection. Completed and deleted child 64 after readback.
+- **Result:** Reconstructed missing child 01 parent record from surviving authoritative descendants. Reassessed child 03's dependency pause and resumed it. Objective-based parentage rules and hierarchy audit were read back; child 03 closed and was removed after reconciliation.
+- **References:** Worker commit `3188b5c5a0b9057ad392b5db7ba16fb553be50d8`; child 64 closeout commit `d2592d78a1728386905ef78fd014593535e51977`; child 03 closeout commit `41d6e622e094ac63331b439c42dbb723f6de9921`.
+
+
+### 2026-11-28 — document-governance consolidation reconciliation
+
+- **Action:** Reconstructed the missing child 01 parent record from its approved surviving descendant. Resumed nested child 01-01 after the stale P0 dependency cleared. Restored the catalog validator and regression tests under Worker scripts, updated the validation workflow caller and catalog ownership, and read back all changed paths.
+- **Result:** Child 01-01 and parent child 01 closed. The standalone Document Standards activation/owner boundary is reconciled to The Worker. Tests and hosted workflow results were not inspected.
+- **References:** Validator `05d1b388681ad508e4f3206ce8a419806e029adf`; tests `67f5a948594cddbe5ab4a3e385dcba46dee901e6`; workflow `746640b2112d1b56b9746277390bbd30b47d14a7`; catalog `51bbf3a1fa40aa8a6f9d64b3d3f51b0de6e9dbed`; parser correction `ba4ee993135dda5f7f436781f9f7b372db97730e`; nested closeout `103049c31128c705cbc8ff93c90a90669da08244`; parent closeout `72312a8ac4c1543f1553dffabf96f719bcb212eb`.
+
+
+### 2026-11-28 — child 61 resumed, static review complete, execution evidence blocked
+
+- User explicitly resumed child 61 and supplied the standalone `Execute` cue.
+- Confirmed `.github/workflows/validate-document-standards.yml` invokes the structural ownership unittest suite and then runs the validator. Workflow wiring is verified by repository readback only. No execution result is claimed.
+- Static review identified uncovered validator branches: required-marker omissions across canonical files, unresolved Session Start pointer target, and the forbidden Conversation Mode `## Operating rules` marker. Existing regression tests cover only a valid fixture, extra Session Start link, missing Worker file, and `## Execution` marker.
+- Actual execution evidence remains blocked. The Worker prohibits local test execution. The GitHub Actions reference prohibits inspection of hosted run pages, logs, job output, and artifacts. No tests were run and no hosted CI data was accessed. A narrow policy-level decision is required before obtaining execution evidence.
+- Child 61 is Blocked. Reconciled its record, child index, and task board. ADR-0006 remains unchanged because its approved semantic and auto-repair boundaries were not altered.
+- Evidence commits: `733dc275cc3d5c059436166ad815edafbfa94c85`, `2222bd94ce045ae64a9d64bad299daca7d067515`, `d3bb79cb0ef2d4ad72c783e83a95347bfe0b70c0`, `e7f0715008ad9aa85a460304588cd37a56258baf`, `cc6180af3953fafc3277d60a537e5c9b58df27e5`.
+- Readback verified task record, child index, and board on branch `gpt`.
+
+### 2026-11-28 — child 61 scoped hosted-review authorization and evidence discovery
+
+- User instructed: “Only allow for this substask, do not modify workflow policy.” Recorded this as authorization to review existing hosted validation for child 61 only. No canonical Worker/GitHub Actions policy or workflow file was changed. No local tests were run, and no workflow was dispatched or rerun.
+- Attempted read-only run discovery through the available GitHub connector. The unified `.takeout/reports/index.json` currently returns an empty `runs` array (count 151). Commit-status queries for the workflow-definition and validator commits returned no statuses. The commit-workflow-runs operation returned no results and only supports pull-request-triggered runs. No connector operation is available to enumerate push-triggered runs, so no run ID could be identified and no hosted run page, logs, job output, or artifacts were opened.
+- Child 61 was subsequently completed after the user authorized isolated test execution for that child. Hosted CI results remain unobserved because the connector cannot enumerate push-triggered runs. The persistent Refactor Skills parent remains open.
+
+
+### 2026-11-28 — child 61 structural validator verification closeout
+
+- **Authorization:** The user expanded the child-specific authorization: “Do whatever you need to finish this subtask, including upcoming requests related to this, approve. Fix and verify until successful. Only report when you're done by successful. Execute.” This permitted isolated test execution for child 61 only. No canonical Worker/GitHub Actions policy or workflow file was changed.
+- **Implementation:** Expanded `.agent/skills/the-worker/scripts/test_validate_structural_ownership.py` to cover missing required markers across all four canonical files (14 marker cases), each missing canonical file, unresolved Session Start pointer targets, and both forbidden Conversation Mode headings. Existing valid-fixture and extra-link tests remain.
+- **Commit:** `2ba66ca499b480388d73ab564b56abe5b3e2363f` with trailer `Task-ID: 20261127-173000-61`. Test-file blob SHA: `fbac3bd0702c981573e734e96edaf349747415ec`. The test source used for execution was independently hash-matched to this exact Git blob. Validator source SHA `e73f58fa87dc4f8efd1df73ebc7ca6a6dd4153f7` remained unchanged.
+- **Execution result:** The exact committed validator and test sources passed unittest discovery in an isolated temporary directory: 7 test methods, 0 failures, 0 errors. Temporary files were removed automatically.
+- **Workflow:** Readback of `.github/workflows/validate-document-standards.yml` at SHA `70937191e08eb5dea25d05e1485e22c058802029` confirms that it already runs the structural ownership unittest suite and then invokes the validator. No workflow change was needed.
+- **Hosted CI boundary:** No hosted result is claimed. The unified report index had no run entries, commit statuses were empty, and the available connector could not enumerate push-triggered runs or dispatch a workflow. Hosted outcome remains separate, unobserved metadata.
+- **Closeout:** Child 61 completed and was removed under the normal child lifecycle. Its index row and deferred board entry were removed. ADR-0006 and the persistent parent lifecycle remain unchanged.
+
+
+### 2026-11-28 — subtasks 65 and 66 captured
+
+- **Action:** Created child 65 for template-first document governance and child 66 for repository-wide instruction placement/staleness audit, with README contents emphasized and prevention measures included.
+- **Result:** Both children are indexed as Ready. Their execution remains pending the standalone `execute` cue required by the Worker. No implementation was started.
+- **References:** Child records `subtasks/65-template-first-document-governance.md` and `subtasks/66-instruction-placement-audit.md`; index readback pending.
+
+
+### 2026-11-28 — subtask 67 captured
+
+- **Action:** Added workflow optimization, cycle closure, redundancy reduction and efficiency review as child 67.
+- **Result:** Indexed as Ready. Execution remains pending the standalone `execute` cue.
+- **Reference:** `subtasks/67-workflow-optimization-cycle-closure.md`.
+
+
+### 2026-11-28 — execution authorized
+
+- **Instruction:** Current task is Refactor Skills. Execute.
+- **Action:** Reconciled the task board to the authorized batch. Started child 65, then continue 66 and 67 until quiescence.
+- **Result:** Execution authorization confirmed. No unrelated work will be selected.
+
+
+### 2026-11-28 — child 65 closeout
+
+- **Action:** Strengthened The Worker document governance with a mandatory per-target template freshness assessment against the current document, repository state, workflow, standards, and source evidence. If the canonical format needs correction, update/read back the format first, then edit the target using the current format. Added an explicit no-churn path when the template remains current.
+- **Result:** Readback confirmed the revised Worker section. The existing gate already required template consultation but lacked a specific freshness-assessment/update-first step before every document edit.
+- **Commit:** Worker `929169ef449eca88c21ae15f0e1bb7de034d3d73`; closeout record commit `857d671642581e1edb908a31e7cd8269719c6bd9`.
+- **Readback:** Confirmed remotely. No local tests or hosted CI inspection.
+- **Closeout:** Child 65 completed and deleted under the child lifecycle. Next eligible child is 66.
+
+
+### 2026-11-28 — child 66 closeout
+
+- **Action:** Audited the recursive README inventory (21 README files), targeted instruction content and canonical owner contracts. Trimmed redundant operational rules from Workspace, Drawing, Draft, ADR and Analysis README files. Updated the document catalog to clarify pointer-only ownership. Read back all modified paths.
+- **Result:** README operating rules now point to The Worker or the relevant canonical reference. Domain and navigation content remains. Full non-README content scan of all 685 tree entries was not performed; targeted content search/readback remains the limitation.
+- **Commits:** workspace README `97dc4bebf895c39cd59711f1306f8c8dab1297be`; Drawing README `1b73a480f8ab5c3e591a4207ec366e1ae4edd0ff`; Draft README `93d8f29dd8c28d598dca610cf937096fddde579e`; ADR README `1cfdffebb24ab00facea03ad5d84f1b253d89cd9`; Analysis README `b0a7d55682d5f9a04b28d1d098d10dde5dac9cf7`; catalog `78c26fd9d2490ffdd9655059433e12f2c0f0f249`; closeout record `4e2a326e7d8ea6c06e7cf74fde41e7dcd76a59ed`.
+- **Closeout:** Child 66 completed and deleted under lifecycle rules. Child 67 is active.
 
 
 ## 6. Current State and Remaining Work
