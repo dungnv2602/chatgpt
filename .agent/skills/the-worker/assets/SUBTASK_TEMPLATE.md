@@ -20,7 +20,8 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Required:** Yes
 - **Created:** YYYY-MM-DD HH:MM UTC
 - **Updated:** YYYY-MM-DD HH:MM UTC
-- **Root-cause group:** None\n- **Ledger group:** None (legacy reports only)
+- **Root-cause group:** None
+- **Ledger group:** None (legacy reports only)
 - **Legacy Task IDs:** None
 
 Confirm the parent before creating this child: it must directly advance the parent's objective or acceptance criteria. Do not choose the active parent solely because it is active, or because the work shares a repository, files, or broad theme. If the relationship is uncertain, leave parentage unassigned until resolved.
