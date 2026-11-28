@@ -42,6 +42,8 @@ on:
       - 'area/novel/WORKFLOW.md'
       - 'workspace/README.md'
       - '.github/workflows/**'
+      # Validate every GitHub configuration path so unowned policy files fail closed.
+      - '.github/**'
   workflow_dispatch: {}
 
 # A newer push to the same branch supersedes the older validation run.
