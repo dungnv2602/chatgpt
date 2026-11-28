@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dungnv2602/chatgpt/blob/gpt/.github/task-validation-contract.schema.json",
+  "title": "Task Validation Contract",
+  "description": "Additive, exact-source-commit validation requirements. This contract cannot weaken repository policy or provide arbitrary commands.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_sha", "checks"],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "source_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "contract_revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/check"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "adapter", "entrypoint"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,62}$"
+        },
+        "adapter": {
+          "enum": ["python-script", "python-module", "pytest", "unittest"]
+        },
+        "entrypoint": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9_./-]+$"
+        },
+        "args": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "string",
+            "maxLength": 256,
+            "pattern": "^[A-Za-z0-9_./:=,@+-]*$"
+          }
+        },
+        "timeout_minutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30,
+          "default": 10
+        }
+      }
+    }
+  }
+}
