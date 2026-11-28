@@ -121,7 +121,7 @@ Treat conflicting or stale instructions as a workflow fault. Inventory the confl
 2. Execute approved work to quiescence. Do not interrupt for routine choices or a blocker isolated to one task.
 3. Record progress, decisions, changed paths, commit SHAs, readback, and limitations in the task record.
 4. For every task-specific implementation commit, add the Task-ID trailer shown above.
-5. Close a subtask only after its acceptance criteria pass and you read back the intended-branch commit. CI remediation completion is commit-based. hosted validation is separate metadata.
+5. **Implementation closeout and verification are separate.** Close an implementation task when its deliverable-specific acceptance criteria are met, its intended-branch commit exists, and readback confirms the committed content. Do not make unperformed runtime tests, lint, or hosted validation a universal completion gate. If an acceptance criterion explicitly requires a permitted check, treat that check as deliverable-specific evidence and do not claim it passed when unperformed. Record remaining verification debt, uncertainty, or follow-up clearly. When useful, create an authorized follow-up task for verification or evidence collection. CI remediation completion is commit-based. Hosted validation is separate metadata.
 6. A parent cannot be Done while a required child remains open.
 7. After closeout checks, delete the completed or cancelled task folder and its board row. Do not archive it, create a retention copy, or add a Historical row. Preserve Ledger finding identity, evidence, resolution history, and prior task references.
 
@@ -129,11 +129,11 @@ Claim validation only when you observed it. Do not run repository scripts, tests
 
 ## Run-to-quiescence and user input
 
-Treat every authorized execution batch as a queue-draining loop. Do not stop after one task.
+Treat every authorized execution batch as a queue-draining loop. Do not stop after one task. Implementation closeout is not the end of the batch.
 
 1. **Select:** Reconcile the board, parent indexes, child indexes, and task records. Build the full eligible queue within the user's authorized focus. Check dependencies and approval before priority and age. Select the next eligible task.
 2. **Execute:** Complete that task within its approved scope. Record progress and evidence in its task record. Do not send routine progress pings or per-task status messages.
-3. **Rebuild:** After a task becomes Done, Blocked, Paused, or Cancelled, or after an approval or dependency changes, update its records. Rebuild the full eligible queue at once. Do not rely on the old queue.
+3. **Rebuild and continue immediately:** Once a task reaches implementation closeout (Done), reconcile its records and board, then immediately rebuild the full eligible queue. Treat this as a mandatory scheduler transition, not a reporting pause. Continue into the next eligible task within the user's authorized focus without waiting for a user message. After Blocked, Paused, Cancelled, approval, or dependency changes, also reconcile and rebuild. No task completion may terminate an authorized execution batch while an eligible task remains within that focus.
 4. **Skip isolated blockers:** Exhaust permitted repository evidence and source investigation before declaring Blocked. Record the exact missing evidence, access, or user action. Remove the blocked task from the eligible queue. Return to step 1. A blocked task never ends the batch while another independent eligible task remains.
 5. **Reach quiescence:** Declare quiescence only when no eligible task remains within the user's authorized focus. Keep blocked and dependency-waiting tasks in their deferred sections. Do not select unrelated work outside the user's focus.
 6. **Build the user-decision queue:** At quiescence, review every blocked task within the authorized focus and classify its blocker. Include tasks that require user authorization, a preference, a governance decision, or other input the user can provide. Do not ask about blockers that the user cannot resolve. Keep non-resolvable external/access blockers documented and deferred.
