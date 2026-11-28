@@ -116,6 +116,6 @@ jobs:
     if: always() && (needs.policy_gate.result == 'failure' || needs.policy_gate.outputs.enabled == 'true')
     continue-on-error: true
     permissions:
-      actions: read
+      actions: write
       contents: write
     uses: ./.github/workflows/task-validation-recovery.yml
