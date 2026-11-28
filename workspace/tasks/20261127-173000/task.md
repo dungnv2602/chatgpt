@@ -577,25 +577,23 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 ## 6. Current State and Remaining Work
 
-This is the persistent, open P0 Refactor Skills parent. The current authorized batch consists of children 65–67.
+This is the persistent, open P0 Refactor Skills parent.
 
-- Child 65 — template freshness gate strengthened and closed.
-- Child 66 — README ownership audit and pointer cleanup closed, with documented audit coverage limits.
-- Child 67 — workflow optimization and cycle closure is In Progress.
-
-The task board and subtask index publish current state. Completed child records are deleted under the lifecycle rules. The parent remains open.
+- Children 65–67 are completed and their records were deleted under the lifecycle rules.
+- Child 68 is Proposed, pending the user's decision on historical source-Draft ID provenance between ADR-0004 and ADR-0007.
+- The batch is at quiescence. The board and subtask index publish this state.
 
 ## 7. Verification and Evidence
 
 - **Commit SHA:** Latest tracking and workflow commits are recorded in Progress and Git history. Children 65 and 66 closeout evidence is summarized there.
 - **Changed paths:** The Worker; decision-governance reference; workspace, Drawing, Draft, ADR and Analysis README files; document-type catalog; task board; parent task and subtask index; task templates.
-- **Readback:** Modified files were read back from branch `gpt` during execution. Consolidated closeout readback remains pending.
+- **Readback:** Modified paths read back from branch `gpt` during execution and final reconciliation.
 - **Checks:** Local scripts, tests and lint were not performed. Hosted CI results were not inspected.
 - **Limitations:** The full non-README content scan is incomplete. No runtime or hosted-validation claim is made.
 
 ## 8. Handoff
 
-Keep this persistent P0 Refactor Skills parent open. Finish child 67, reconcile the board and indexes, and report at quiescence. Do not close or delete the parent unless the user explicitly changes this instruction.
+Keep this persistent P0 Refactor Skills parent open. Child 68 requires the user's decision. Do not change accepted ADR metadata until authorization. Do not close or delete the parent unless the user explicitly changes this instruction.
 
 ## 9. Subtasks
 
