@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check catalog classes and exact canonical references."""
+"""Check catalog classes, path coverage, canonical owners, and placement."""
 from __future__ import annotations
 
 import argparse
@@ -19,6 +19,18 @@ NON_MARKDOWN_ARTIFACT_TYPES = {
     "Vendored XML schema",
     "Worker policy and schema",
     "GitHub Actions workflow",
+}
+NON_MARKDOWN_SUFFIXES = {
+    "Agent metadata": {".yaml", ".yml"},
+    "Binary reference asset": {".pdf"},
+    "JSON schema": {".json"},
+    "License text": {""},
+    "Python script": {".py"},
+    "Shell script": {".sh"},
+    "Static HTML asset": {".html"},
+    "Vendored XML schema": {".xsd"},
+    "Worker policy and schema": {".json"},
+    "GitHub Actions workflow": {".yml", ".yaml"},
 }
 NON_MARKDOWN_PLACEMENT_RULES = {
     "skill-assets",
@@ -440,6 +452,19 @@ def non_markdown_placement_error(path_text: str, placement: str) -> str | None:
     return None if valid else f"artifact is not in its registered '{placement}' location"
 
 
+def non_markdown_type_error(path_text: str, artifact_type: str) -> str | None:
+    """Check whether a file suffix matches its registered artifact type."""
+    path = Path(path_text)
+    allowed_suffixes = NON_MARKDOWN_SUFFIXES.get(artifact_type)
+    if allowed_suffixes is None:
+        return f"unknown artifact type '{artifact_type}'"
+    if artifact_type == "License text":
+        valid = path.name.casefold().startswith("license")
+    else:
+        valid = path.suffix.casefold() in allowed_suffixes
+    return None if valid else f"file type does not match '{artifact_type}'"
+
+
 def validate_non_markdown_coverage(root: Path, content: str) -> list[str]:
     """Require every governed non-Markdown file to match one owner and placement rule."""
     errors: list[str] = []
@@ -451,7 +476,6 @@ def validate_non_markdown_coverage(root: Path, content: str) -> list[str]:
     documents = find_non_markdown_documents(root)
     seen_patterns: set[str] = set()
     matched_paths: dict[str, str] = {}
-    compiled_rows: list[tuple[re.Pattern[str], dict[str, str]]] = []
 
     for row in rows:
         line = row["line"]
@@ -545,6 +569,11 @@ def validate_non_markdown_coverage(root: Path, content: str) -> list[str]:
                 errors.append(
                     f"Line {line}: invalid placement for '{document}': {location_error}."
                 )
+            type_error = non_markdown_type_error(document, artifact_type)
+            if type_error:
+                errors.append(
+                    f"Line {line}: invalid artifact type for '{document}': {type_error}."
+                )
 
             document_parts = Path(document).parts
             if document_parts[:2] == (".agent", "skills"):
@@ -575,7 +604,6 @@ def validate_non_markdown_coverage(root: Path, content: str) -> list[str]:
                     f"Line {line}: governed non-Markdown artifact is outside supported roots: '{document}'."
                 )
 
-        compiled_rows.append((path_regex, row))
 
     uncovered = [document for document in documents if document not in matched_paths]
     if uncovered:
