@@ -10,7 +10,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-- **20261127-173000-65 — Prevent Worker skill-governance drift** — P1, In Progress, Approved. [Subtask](tasks/20261127-173000/subtasks/65-prevent-worker-skill-governance-drift.md)
+- **20261127-173000-74 — Prevent Worker skill-governance drift** — P1, In Progress, Approved. [Subtask](tasks/20261127-173000/subtasks/74-prevent-worker-skill-governance-drift.md)
   - Parent: [20261127-173000 — Refactor Skills](tasks/20261127-173000/task.md)
 
 ## Ordered Eligible Execution Queue
@@ -19,7 +19,7 @@ _None. Current execution is active._
 
 ## Next Task
 
-- **20261127-173000-65 — Prevent Worker skill-governance drift** — Current execution. [Subtask](tasks/20261127-173000/subtasks/65-prevent-worker-skill-governance-drift.md)
+- **20261127-173000-74 — Prevent Worker skill-governance drift** — Current execution. [Subtask](tasks/20261127-173000/subtasks/74-prevent-worker-skill-governance-drift.md)
 
 ## Deferred Work
 
