@@ -167,6 +167,7 @@ jobs:
               encoding="utf-8",
           )
 
+          check_config = {item["id"]: item for item in policy["mandatory_checks"]}
           job_map = {
               item["id"]: item.get("coordinator_job")
               for item in policy["mandatory_checks"]
@@ -186,7 +187,7 @@ jobs:
                   job = needs.get(job_name, {})
                   job_result = job.get("result", "pending")
                   status = result_map.get(job_result, "pending")
-                  if check_id == "generic-verifier":
+                  if check_config[check_id].get("result_mode") == "workflow_output":
                       if job_result in {"cancelled", "skipped"}:
                           status = result_map[job_result]
                       else:
