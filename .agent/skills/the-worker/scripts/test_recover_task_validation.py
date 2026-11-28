@@ -183,14 +183,14 @@ class RecoveryTests(unittest.TestCase):
             "protected_ref": "refs/heads/gpt",
             "coordinator": {"activation_status": "enabled", "dispatcher_workflow": ".github/workflows/task-validation-dispatch.yml"},
             "protection": {"enforcement_status": "verified"},
-            "recovery": {"workflow_dispatch_activation_status": "external-prerequisite"},
+            "recovery": {"schedule_activation_status": "verified", "workflow_dispatch_activation_status": "external-prerequisite"},
         }
         current_policy = {
             "repository": "dungnv2602/chatgpt",
             "protected_ref": "refs/heads/gpt",
             "coordinator": {"activation_status": "enabled", "dispatcher_workflow": ".github/workflows/task-validation-dispatch.yml"},
             "protection": {"enforcement_status": "verified"},
-            "recovery": {"workflow_dispatch_activation_status": "verified"},
+            "recovery": {"schedule_activation_status": "verified", "workflow_dispatch_activation_status": "verified"},
         }
         policy_path = self.root / recovery.POLICY_PATH
         policy_path.parent.mkdir(parents=True)
