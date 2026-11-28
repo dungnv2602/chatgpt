@@ -625,7 +625,7 @@ The task board and subtask index publish the current state. Completed child reco
 
 ## 8. Handoff
 
-Keep this persistent P0 Refactor Skills parent open. Finish child 67, reconcile the task board and indexes, and report at quiescence. Do not close or delete the parent unless the user explicitly changes this instruction.
+Keep this persistent P0 Refactor Skills parent open. Finish child 74, reconcile the task board and indexes, and report at quiescence. Do not close or delete the parent unless the user explicitly changes this instruction.
 
 ## 9. Subtasks
 
@@ -710,3 +710,11 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Checks:** No local scripts/tests/lint and no hosted CI inspection. Remote readback verifies committed content, not runtime behavior.
 - **Process note:** The first three implementation commits did not include the required `Task-ID` trailer. Their SHAs are retained above; all subsequent task-tracking and closeout commits include `Task-ID: 20261127-173000-73`.
 - **Closeout:** Child 73 completed and removed under the persistent parent lifecycle. The Refactor Skills parent remains open at quiescence.
+
+### 2026-11-28 — child 74 activated: Worker skill-governance prevention
+
+- **Action:** Created child 74 for the approved correction that prevents future bypass of the Agent Skill Authoring standard and Worker document-governance gate.
+- **Scope:** Relocate Worker-owned task-validation policy and contracts into Worker assets; strengthen Worker and Agent Skill Authoring instructions; register and validate governed non-Markdown files; add regression cases; expand the document-standards workflow path filter.
+- **Task ID allocation:** Full parent history confirms IDs 64–73 were already used and closed. Child 74 is the next unused ID. The empty index did not make earlier IDs available.
+- **Tracking correction:** Initial implementation commits used reused Task-ID 64. The first correction commits used reused Task-ID 65. Those immutable trailers are documented in child 74. Subsequent commits use Task-ID 74.
+- **Status:** Child 74 is In Progress and is the current board/index pointer. The parent remains open.
