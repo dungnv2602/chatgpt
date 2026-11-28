@@ -38,7 +38,7 @@ class TaskValidationTests(unittest.TestCase):
                 "activation_status": "enabled",
             },
             "protection": {"enforcement_status": "verified"},
-            "mandatory_checks": [{"id": "required-check", "coordinator_job": "required"}],
+            "mandatory_checks": [{"id": "required-check", "coordinator_job": "required", "result_mode": "job_result"}],
         }
         self.schema = {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
