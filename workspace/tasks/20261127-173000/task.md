@@ -593,3 +593,10 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Action:** Strengthened the canonical Worker with a parent/workstream execution boundary, recursive index and task-folder reconciliation, stale dependency-pause reassessment, and consolidated blocker collection. Completed and deleted child 64 after readback.
 - **Result:** Reconstructed missing child 01 parent record from surviving authoritative descendants. Reassessed child 03's dependency pause and resumed it. Objective-based parentage rules and hierarchy audit were read back; child 03 closed and was removed after reconciliation.
 - **References:** Worker commit `3188b5c5a0b9057ad392b5db7ba16fb553be50d8`; child 64 closeout commit `d2592d78a1728386905ef78fd014593535e51977`; child 03 closeout commit `41d6e622e094ac63331b439c42dbb723f6de9921`.
+
+
+### 2026-11-28 — document-governance consolidation reconciliation
+
+- **Action:** Reconstructed the missing child 01 parent record from its approved surviving descendant. Resumed nested child 01-01 after the stale P0 dependency cleared. Restored the catalog validator and regression tests under Worker scripts, updated the validation workflow caller and catalog ownership, and read back all changed paths.
+- **Result:** Child 01-01 and parent child 01 closed. The standalone Document Standards activation/owner boundary is reconciled to The Worker. Tests and hosted workflow results were not inspected.
+- **References:** Validator `05d1b388681ad508e4f3206ce8a419806e029adf`; tests `67f5a948594cddbe5ab4a3e385dcba46dee901e6`; workflow `746640b2112d1b56b9746277390bbd30b47d14a7`; catalog `51bbf3a1fa40aa8a6f9d64b3d3f51b0de6e9dbed`; parser correction `ba4ee993135dda5f7f436781f9f7b372db97730e`; nested closeout `103049c31128c705cbc8ff93c90a90669da08244`; parent closeout `72312a8ac4c1543f1553dffabf96f719bcb212eb`.
