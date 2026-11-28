@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-28 22:30 +07:00:** Continued ADR-0007 implementation after updating The Worker to prevent routine execution interruptions and require autonomous recovery/reconciliation. Full-docs workflow, changed-doc baseline fallback, test ordering assertion, board, and task records are being reconciled. Hosted CI and tests remain uninspected/unrun.
+- **2026-11-28 22:30 +07:00:** Completed ADR-0007 implementation. The Worker now requires autonomous recovery and reconciliation before any interruption. Migrated both workflows, corrected the report-index ordering assertion, removed the standalone reset marker, and read back all active changes. Commits include `a581ff4b24356ba234fd34d341c4ac104c5bf06c`, `bc62fa39442403f0435ac69da784d590923efe6c`, `911532c9a3caec0334231d3be77d882ac73a90fe`, `147e8a35f94264b7853c1563be2df98a352b87c4`, `683ded33ed88787771288d8da08407f5b6d19098`, `c87fa200c648e22e3d482d90f3cf92f475e750aa`, and reconciliation commits. Tests were not run; hosted CI was not inspected.
 
 - **2026-11-28 22:00 +07:00:** `/start` initialization on `main` and `gpt` after merge. Verified Session Start, The Worker, Conversation Mode, CI Ledger, GitHub Actions, document catalog, task board, and discussion register. Startup P0 baseline review is underway. Hosted CI results remain out of scope.
 
@@ -26,7 +26,7 @@
 
 
 
-- **2026-11-28:** DRAFT-0005 revision 1, Option 2 accepted as ADR-0007. The standalone latest lint report is to be removed and the unified report index used as the locator. Implementation task: [20261127-173500](tasks/20261127-173500/task.md), currently executing.
+- **2026-11-28:** DRAFT-0005 revision 1, Option 2 accepted as ADR-0007. The implementation is complete: the shared index is the latest lint locator, both workflows retrieve immutable history reports, and the standalone reset marker is deleted. Task record is closed and deleted under lifecycle rules.
 
 - **2026-11-27:** Completed/cancelled task folders must be deleted directly after closeout. Do not create task or report archives, retention copies, cleanup schedules, or Historical board rows.
 - **2026-11-27:** Do not inspect, poll, dispatch, or rerun hosted CI. Commit/readback is the completion evidence; later failures flow through automatic report ingestion.
@@ -34,8 +34,7 @@
 
 ## Reports
 
-
-
+- **2026-11-28:** ADR-0007 implementation closeout for the index-only lint locator. Commit/readback verified; tests were not run and hosted CI was not inspected.
 
 - **2026-11-28:** ADR-0006 implementation complete. Commit/readback evidence: validator `1b1fe08c579f02bb7b828001fe7eaafca27a6989`, tests `a7cc0d6cbd1ddd79d1c5af55ed22446bc5987ce8`, workflow integration `d5bac865a4dd83a1b40c91d5b6ff3444943f3378`. Tests were not executed; hosted CI was not inspected.
 
