@@ -118,6 +118,21 @@ class RecoveryTests(unittest.TestCase):
         content = "## Validation Lifecycle\n\n" + fence + "json\n" + json.dumps(block) + "\n" + fence
         self.assertEqual(recovery.read_validation_lifecycle(content), block)
 
+    def test_review_required_lifecycle_rejects_success_outcome(self) -> None:
+        block = {
+            "state": "review_required",
+            "source_sha": "a" * 40,
+            "policy_revision": "b" * 40,
+            "coordinator_run_id": 10,
+            "attempt": 1,
+            "outcome": "success",
+            "reconciled_at": None,
+        }
+        fence = chr(96) * 3
+        content = "## Validation Lifecycle\n" + fence + "json\n" + json.dumps(block) + "\n" + fence
+        with self.assertRaises(recovery.RecoveryError):
+            recovery.read_validation_lifecycle(content)
+
     def test_awaiting_ci_task_discovery_uses_task_record_metadata(self) -> None:
         source_sha = "a" * 40
         block = {
