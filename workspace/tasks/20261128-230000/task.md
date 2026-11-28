@@ -135,6 +135,11 @@ Acceptance criteria are mapped to these required child tasks:
 - The status index reached 220 unresolved `capture_failure` attempts. Recent records included source SHAs for task-record-only commits even though the dispatcher has `paths-ignore` entries for task metadata. This is consistent with push-range coalescing; hosted run metadata/logs were not inspected.
 - Added an exact-tip-commit diff guard to `.github/workflows/task-validation-dispatch.yml` (source commit `c9ffdffd3c955af0ddb471f85557b32460315d8f`). Metadata-only commits under `.takeout/reports/`, `workspace/task-validation/`, and `workspace/tasks/` are rejected independently of push-level filters and bot identity.
 - Subtask 04 lifecycle is now `awaiting_ci` for source `c9ffdffd3c955af0ddb471f85557b32460315d8f` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b`. Previous unresolved attempts remain retained; no checkpoint was advanced.
+### 2026-11-28 — default-branch implementation parity remains unresolved
+
+- Although `main` contains the dispatcher and scheduled recovery entry points, its dispatcher and coordinator workflow blobs (`9959288f223ee613d0eaab0a0ba7315bfb4544a1` and `4f8255d6b5b896dc25a8542ff2b3858071e3e75e`) still contain the obsolete branch-protection prerequisite and lack the new metadata-only commit guard. Workflow presence is verified; implementation parity is not.
+- No write or merge to `main` is authorized. Keep implementation on `gpt`; do not treat the default-branch copies as updated.
+- The status index now contains 222 unresolved `capture_failure` attempts, all without check-set identity and with checkpoint zero. The current subtask source `c9ffdffd3c955af0ddb471f85557b32460315d8f` matches run `46165107595`, attempt 1; its lifecycle is `review_required`. Hosted logs were not inspected, so no root cause is asserted.
 ## 6. Current State and Remaining Work
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
