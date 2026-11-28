@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.23
+**Catalog version:** 1.24
 **Previous tree inventory:** The last recursive audit at commit `315615e944ed55925a6aa72c59fd6401bdcc912b` counted 297 Markdown files outside root `master/` and `workspace/archive/`. That historical count predates the ADR-0004 task-folder migration. This task did not run a new recursive inventory, catalog simulation, validator, or tests.
 **Source branch:** `gpt`
 
@@ -67,6 +67,7 @@ Do not create a second template when an owning workflow already defines the requ
 | PDF processing guides | Lightweight pattern | `.agent/skills/pdf/FORMS.md` and `.agent/skills/pdf/REFERENCE.md` | The PDF Skill links these focused form-filling and advanced processing references. Preserve their subject-specific structures. |
 | Skill Creator agent instructions | Embedded contract | `.agent/skills/skill-creator/SKILL.md` and `.agent/skills/agent-skill-authoring/SKILL.md` | Specialized role prompts support the Skill Creator workflow. Preserve each agent's bounded responsibilities. |
 | Theme definitions | Lightweight pattern | `.agent/skills/theme-factory/themes/arctic-frost.md` | Theme files define named palettes and font pairings. Preserve each theme's values and structure. |
+| Document catalog validator and tests | Generator-owned | `.agent/skills/the-worker/scripts/validate_catalog.py` and `.agent/skills/the-worker/scripts/test_validate_catalog.py` | Validates catalog path coverage rules and uncovered Markdown paths. The hosted workflow runs its regression tests and validator. Do not run repository scripts locally. |
 | GitHub Actions workflows | Exempt | `.github/workflows/validate-document-standards.yml` | Follow GitHub's workflow schema. |
 
 | Document type | Class | Current canonical format | Inventory finding / next action |
@@ -227,4 +228,4 @@ When you add or change a recurring document type:
 4. Link the canonical format from its owner index.
 5. Define structural validation and migration rules.
 6. Read back all changed paths.
-7. Run the catalog validator and regression tests through the hosted Document Standards workflow. The validator enforces catalog integrity, exact references, template placement, and Markdown path coverage. It does not prove semantic document conformance. Do not run repository scripts locally.
+7. Run the catalog validator and regression tests through the hosted Document Standards workflow. The validator enforces Markdown path coverage, Active/Reserved/Optional rule consistency, and basic table integrity. It does not prove semantic document conformance. Do not run repository scripts locally.
