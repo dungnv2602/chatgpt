@@ -3,7 +3,7 @@ record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0010"
 revision: 9
-status: "draft"
+status: "approved-for-adr"
 created: "2026-11-28"
 updated: "2026-11-28"
 proposed_by: "Assistant"
@@ -271,10 +271,10 @@ No further user policy or architecture decisions are outstanding. Contract limit
 ## 14. Review and decision state
 
 - **Revision:** 9
-- **Status:** Draft; not yet formally accepted as a complete decision record.
+- **Status:** Approved for ADR promotion; source retained until the accepted ADR passes completeness and read-back checks.
 - **Approved design:** All decisions in Section 12, including the single-coordinator architecture and 14-day bounded retention/checkpoint model.
-- **Awaiting user calls:** None.
-- **Implementation authorization:** Not granted. Approval of design components and this revision does not itself authorize implementation. Implementation requires formal Draft promotion, an accepted superseding ADR, and the user's explicit execution instruction.
+- **User approval:** Approved by the user on 2026-11-28 for promotion of revision 9 and its complete stated scope.
+- **Implementation authorization:** The user instructed “Approve the draft, proceed.” Implementation remains gated until the superseding ADR reaches accepted status and the approved task is linked to it.
 - **Resulting ADR:** None.
 
 ## 15. Revision history
