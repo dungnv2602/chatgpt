@@ -82,6 +82,17 @@ class BuildTaskValidationContractTests(unittest.TestCase):
         with self.assertRaises(builder.TaskContractError):
             builder.build_contract(self.root, "a" * 40, "Task-ID: 20261128-230000-02\n")
 
+    def test_rejects_duplicate_json_keys(self) -> None:
+        self.task_path.write_text(
+            "- **ID:** 20261128-230000-02\n\n## Validation Contract\n"
+            "```json\n"
+            '{"contract_revision":"1","checks":[],"checks":[]}\n'
+            "```\n",
+            encoding="utf-8",
+        )
+        with self.assertRaises(builder.TaskContractError):
+            builder.build_contract(self.root, "a" * 40, "Task-ID: 20261128-230000-02\n")
+
     def test_rejects_invalid_source_sha(self) -> None:
         with self.assertRaises(builder.TaskContractError):
             builder.build_contract(self.root, "not-a-sha", "Task-ID: 20261128-230000-02\n")
