@@ -5,7 +5,7 @@
 - **Template version:** 2.5
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-28 15:10 UTC
+- **Updated:** 2026-11-28 15:20 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -39,7 +39,7 @@ If you really understand, you would know you should create a task for this to tr
 
 - **2026-11-28 — CI folder lifecycle approved:** “No CI findings go along with CI subtask in its own folder. A task can be a folder, a subtask can also be a folder. Each CI error generated a subtask with CI task and everything documents needed for you it resolve it. When it's done, delete it and everything goes aling with it. In this case, delete entire CI task folder.” The approved model is one self-contained subtask folder per distinct CI error; each folder contains the task record and all evidence/instructions required to resolve it. Delete the complete child folder after resolution. Delete the parent CI task folder when all its children are finished and no new children are generated.
 - **2026-11-28 — CI feedback-loop rule approved:** “As a rule existed in the workflow, you do not verify the fix, let it crash and the workflow automatically catch it as new CI subtasks. Actually, you never need to verify your work. The error present itself as CI subtasks. If there none generated, that means your fix worked.” The Worker commits fixes and relies on the next automatic CI cycle to generate new error subtasks. No separate manual fix-verification step is performed. No newly generated CI subtasks means the configured capture workflow detected no actionable CI errors; it does not claim absence of all possible defects.
-- **2026-11-28 — Report retirement requested:** “Retire .take/reports, no longer needed.” Repository search found no .take/reports path; current canonical references point to .takeout/reports/. Do not substitute the latter for the user's exact path without resolving this mismatch.
+- **2026-11-28 — Report retirement path confirmed:** User clarified “Yes” to the question whether the intended target is the repository's existing .takeout/reports/ directory. Retire that exact directory after replacement capture is ready and consumers are migrated.
 - **2026-11-28 — Approval and execution:** “Approve.” “Execute”. The user approved the folder-based CI lifecycle and automatic CI feedback loop and authorized the prepared batch.
 
 ## 3. Objective
@@ -167,6 +167,13 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **Result:** The proposed architecture is documented but remains in draft status. It would supersede conflicting portions of ADR-0003, ADR-0004, and ADR-0007 only after exact Draft approval and accepted ADR promotion. No implementation was made under the conflicting current contract.
 - **References:** workspace/draft/DRAFT-0010-ci-error-task-folders-and-automatic-feedback-loop.md; workspace/draft/README.md.
 - **Next:** User review of the exact proposal and confirmation of the intended report directory; then promote an accepted ADR before changing canonical subtask-folder formats or CI producers.
+
+
+### 2026-11-28 15:20 UTC — report path clarified
+
+- **Action:** User confirmed that the intended retirement target is .takeout/reports/.
+- **Result:** DRAFT-0010 advanced to revision 2. The path ambiguity is resolved; deletion remains sequenced after migration and operational replacement capture.
+- **Next:** User review/approval of DRAFT-0010 revision 2, then promote the superseding ADR before changing the accepted architecture.
 
 ## 7. Current State
 
