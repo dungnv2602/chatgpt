@@ -11,10 +11,10 @@
 - **Status:** Proposed
 - **Origin:** User
 - **Approval:** Approved
-- **Approval scope/source:** User-approved DRAFT-0005 revision 1. The approval applies to the report-layout proposal; implementation requires an accepted ADR.
-- **Governing ADR(s):** Pending — DRAFT-0005
+- **Approval scope/source:** User-approved DRAFT-0008 revision 2, carrying forward the unchanged approval of revision 1. The approval applies to the report-layout proposal; implementation requires an accepted ADR.
+- **Governing ADR(s):** Pending — DRAFT-0008
 - **Current execution:** No
-- **Dependencies:** DRAFT-0005 promotion to an accepted ADR, including provenance/ID reconciliation.
+- **Dependencies:** DRAFT-0008 promotion to an accepted ADR, including provenance/ID reconciliation.
 - **Eligibility / deferral reason:** Proposed — accepted ADR prerequisite remains unresolved.
 - **Related tasks:** Refactor Skills (recovery performed during workflow integrity review; not a parent-child relationship).
 
@@ -47,7 +47,7 @@ Remove the standalone latest lint report JSON and make the unified index the sol
 
 ### 2026-11-28 — task record recovery
 
-- **Action:** Reconstructed the parent task from DRAFT-0005, workspace discussion and previous task-board references.
+- **Action:** Reconstructed the parent task from DRAFT-0008, workspace discussion and previous task-board references.
 - **Result:** Restored the task as Proposed. The approved Draft remains the scope source; implementation is not started.
 - **References:** DRAFT-0005; workspace/discussion.md; task-board history; accepted ADR metadata.
 - **Next:** Reconcile DRAFT ID provenance and promote the approved Draft to an accepted ADR before implementation.
