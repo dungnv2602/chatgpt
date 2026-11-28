@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-01-01
 - **Parent Task ID:** 20261127-173000-01
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -47,13 +47,13 @@ Finish remaining catalog, index, coverage and workflow reconciliation for the co
 
 - **Action:** Migrated original child record.
 - **Result:** Paused implementation preserved.
-- **Next:** Finish remaining reconciliation after P0 queue.
+- **Next:** Delete completed nested child record after parent/index reconciliation.
 
 ## 6. State and Evidence
 
 - **Commit SHA:** Existing consolidation commits.
 - **Changed paths:** As referenced in original record.
-- **Readback:** Pending.
+- **Readback:** Verified catalog validator/test paths, workflow caller, catalog entry, and owner references on branch `gpt`.
 - **Checks:** Not performed.
 - **Limitations:** No hosted CI results review.
 
