@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "STE lint evidence report for repository-wide and changed-document scopes",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scope",
+    "run_id",
+    "run_number",
+    "run_url",
+    "attempt",
+    "branch",
+    "commit_sha",
+    "event",
+    "workflow",
+    "runner_os",
+    "execution_mode",
+    "baseline_sha",
+    "generated_at_utc",
+    "status",
+    "linter_source_sha",
+    "runtime",
+    "files_evaluated",
+    "files_evaluated_count",
+    "files_failed",
+    "failed_files",
+    "files_with_findings",
+    "total_findings",
+    "hard_findings",
+    "advisory_findings",
+    "findings_by_rule",
+    "records",
+    "findings",
+    "new_findings",
+    "recurring_findings",
+    "resolved_findings",
+    "checks",
+    "failed_checks"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.2.0"
+    },
+    "scope": {
+      "enum": [
+        "on_changed",
+        "on_repo"
+      ]
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "run_number": {
+      "type": "integer"
+    },
+    "run_url": {
+      "type": "string"
+    },
+    "attempt": {
+      "type": "integer"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string"
+    },
+    "workflow": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "runner_os": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "execution_mode": {
+      "type": "string"
+    },
+    "baseline_sha": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "Passed",
+        "Failed",
+        "Incomplete",
+        "Cancelled",
+        "Superseded"
+      ]
+    },
+    "linter_source_sha": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "runtime": {
+      "type": "object",
+      "required": [
+        "python",
+        "platform"
+      ],
+      "properties": {
+        "python": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "files_evaluated": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files_evaluated_count": {
+      "type": "integer"
+    },
+    "files_failed": {
+      "type": "integer"
+    },
+    "failed_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files_with_findings": {
+      "type": "integer"
+    },
+    "total_findings": {
+      "type": "integer"
+    },
+    "hard_findings": {
+      "type": "integer"
+    },
+    "advisory_findings": {
+      "type": "integer"
+    },
+    "findings_by_rule": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer"
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "exit_code"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "exit_code": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "file",
+          "fingerprint",
+          "comparison"
+        ],
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "fingerprint": {
+            "type": "string"
+          },
+          "comparison": {
+            "enum": [
+              "new",
+              "recurring"
+            ]
+          },
+          "rule": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "match": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "new_findings": {
+      "type": "integer"
+    },
+    "recurring_findings": {
+      "type": "integer"
+    },
+    "resolved_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "file",
+          "fingerprint",
+          "comparison"
+        ],
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "fingerprint": {
+            "type": "string"
+          },
+          "comparison": {
+            "const": "resolved"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status",
+          "exit_code",
+          "output"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "Passed",
+              "Failed",
+              "Skipped",
+              "Unknown"
+            ]
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "output": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "failed_checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_task_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}
