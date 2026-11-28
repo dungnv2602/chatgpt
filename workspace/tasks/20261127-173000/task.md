@@ -653,3 +653,12 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Result:** Readback confirmed ADR-0007's corrected metadata and rationale. The discussion register records the correction. Child 68 completed and deleted under lifecycle rules. Refactor Skills is at quiescence.
 - **Commits:** ADR-0007 `6e452884918604530780f8f4d1729b13a6f34ba1`; discussion `89342d49a61d4370fe1b02c7e50b8c20b76055b6`; child closeout `887a08d8f185f15bed2f9d7ee3fd2ae248ecb352`.
 - **Readback:** Verified ADR-0007 and discussion register remotely. No tests required or performed for metadata-only changes.
+
+
+### 2026-11-28 — child 69 workflow map and cue registry closeout
+
+- **Action:** Created `.agent/WORKFLOW_MAP.md` with Mermaid workflow overview and specialist routing. Updated Session Start to require map-first reading and define `/map` as display-only. Updated The Worker to define map ownership/maintenance and to permit explicit, scoped user override of a startup gate when recorded without implying skipped checks passed.
+- **Override:** The user explicitly superseded startup P0 CI baseline reconciliation for this deliverable only. No historical Ledger scan/backfill or hosted CI inspection was performed.
+- **Commit:** `510fa8cdc6de6a7fc32d6745be99c7c0dac61f13`.
+- **Readback:** Confirmed all six paths at branch `gpt`. No local tests/scripts/lint performed.
+- **Closeout:** Child 69 completed and deleted under the task lifecycle. The persistent Refactor Skills parent remains open.
