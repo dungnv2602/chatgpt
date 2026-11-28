@@ -36,9 +36,9 @@ Declare task-specific checks in this JSON block. The coordinator binds the contr
 
 ```json
 {
-  "state": "not_committed",
-  "source_sha": null,
-  "policy_revision": null,
+  "state": "awaiting_ci",
+  "source_sha": "e46cf725fc04398036cae7d07fb0d8cd33d88564",
+  "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
   "coordinator_run_id": null,
   "attempt": null,
   "outcome": null,
@@ -74,9 +74,9 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 
 ## 6. State and Evidence
 
-- **Commit SHA:** In progress; implementation commits recorded in branch history
+- **Commit SHA:** e46cf725fc04398036cae7d07fb0d8cd33d88564 in branch history
 - **Changed paths:** Worker skill, task-validation interfaces, CI Ledger reference, document-type catalog, Workflow Map, task-validation README, and task tracking records.
-- **Readback:** Pending
+- **Readback:** Pending after metadata update
 - **Checks:** Not performed
 - **Limitations:** No runtime claims.
 
