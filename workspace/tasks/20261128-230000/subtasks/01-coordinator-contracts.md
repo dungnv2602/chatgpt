@@ -37,7 +37,7 @@ Establish the exact-SHA coordination foundations, Worker-owned policy and task-c
 1. Worker-owned policy, schema, and adapter registry exist at their cataloged canonical paths and express the accepted ADR-0008 requirements.
 2. The policy declares the exact source-SHA and policy-blob binding requirements, mandatory check manifest, and terminal outcomes. Coordinator execution remains gated on safe reusable-workflow migration.
 3. Existing required workflows expose reusable `workflow_call` entry points without replacing their direct triggers or weakening their existing validation behavior.
-4. The interface documentation defines the security boundary, structured contract constraints, and external protection prerequisite.
+4. The interface documentation defines the security boundary, structured contract constraints, and distinguishes required policy integrity from optional repository hardening.
 5. All canonical files and references are read back from branch `gpt`. No runtime or hosted-validation result is claimed.
 
 ## 5. Decisions and Progress
