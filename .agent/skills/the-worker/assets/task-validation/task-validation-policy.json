@@ -18,7 +18,11 @@
       ".github/workflows/task-validation-verifier.yml",
       ".agent/skills/the-worker/scripts/build_task_validation_contract.py",
       ".agent/skills/the-worker/assets/TASK_TEMPLATE.md",
-      ".agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md"
+      ".agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md",
+      ".agent/skills/the-worker/scripts/test_task_validation.py",
+      ".agent/skills/the-worker/scripts/test_aggregate_task_validation.py",
+      ".agent/skills/the-worker/scripts/test_build_task_validation_contract.py",
+      ".github/workflows/validate-document-standards.yml"
     ],
     "enforcement_status": "external-prerequisite"
   },
