@@ -22,20 +22,24 @@ class TaskContractError(ValueError):
 
 
 def extract_task_id(commit_message: str) -> str:
+    lines = [line for line in commit_message.rstrip().splitlines() if line.strip()]
     matches = TRAILER_PATTERN.findall(commit_message)
-    if len(matches) != 1 or not TASK_ID_PATTERN.fullmatch(matches[0]):
-        raise TaskContractError("Commit message must contain exactly one valid Task-ID trailer")
+    if len(matches) != 1 or not lines or not TRAILER_PATTERN.fullmatch(lines[-1]):
+        raise TaskContractError("Commit message must end with exactly one valid Task-ID trailer")
     return matches[0]
 
 
 def find_task_record(root: Path, task_id: str) -> Path:
     matches: list[Path] = []
     tasks_root = root / "workspace" / "tasks"
-    for path in tasks_root.glob("*/task.md"):
-        if path.is_file() and re.search(rf"^- \*\*ID:\*\* {re.escape(task_id)}$", path.read_text(encoding="utf-8"), re.MULTILINE):
-            matches.append(path)
-    for path in tasks_root.glob("*/subtasks/*.md"):
-        if path.is_file() and re.search(rf"^- \*\*ID:\*\* {re.escape(task_id)}$", path.read_text(encoding="utf-8"), re.MULTILINE):
+    for path in list(tasks_root.glob("*/task.md")) + list(tasks_root.glob("*/subtasks/*.md")):
+        if not path.is_file():
+            continue
+        try:
+            path.resolve(strict=True).relative_to(root.resolve(strict=True))
+        except (OSError, ValueError) as exc:
+            raise TaskContractError(f"Task record path escapes the repository: {path}") from exc
+        if re.search(rf"^- \*\*ID:\*\* {re.escape(task_id)}$", path.read_text(encoding="utf-8"), re.MULTILINE):
             matches.append(path)
     if len(matches) != 1:
         raise TaskContractError(f"Task ID must resolve to exactly one active task record: {task_id}")
