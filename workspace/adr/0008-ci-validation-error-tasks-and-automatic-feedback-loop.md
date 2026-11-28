@@ -260,7 +260,7 @@ The single coordinator is preferred because the repository needs one authoritati
 - **Evidence:**
   - User approval of DRAFT-0010 revision 9 and explicit coordinator and 14-day retention decisions, 2026-11-28.
   - Repository branch `gpt`, commit `94f8bf2ec2c923f40df135b872eaa4a5327750b`: current workflow sources listed in Context and Problem Statement.
-  - `workspace/draft/DRAFT-0010-ci-error-task-folders-and-automatic-feedback-loop.md`, revision 9.
+  - DRAFT-0010 revision 9, deleted after promotion; provenance is recorded in the `source_draft` metadata.
   - `workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md`, `0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md`, and `0007-unified-index-as-latest-lint-report-locator.md`.
   - No tests, prototypes, or hosted CI runs were executed or inspected during this decision promotion. Confirmation requires later implementation evidence.
 - **Review trigger:** Any failed Confirmation criterion, material platform change, repeated publication/recovery failure, validation coverage change, or evidence that 14-day retention/checkpoint behavior loses required operational traceability.
