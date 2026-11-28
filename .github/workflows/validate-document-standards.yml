@@ -90,6 +90,17 @@ jobs:
             -p 'test_validate_document_catalog.py' \
             -v
 
+      - name: Run ADR-0008 verifier regression tests
+        run: |
+          python -m unittest discover \
+            -s .agent/skills/the-worker/scripts \
+            -p 'test_task_validation.py' \
+            -v
+          python -m unittest discover \
+            -s .agent/skills/the-worker/scripts \
+            -p 'test_aggregate_task_validation.py' \
+            -v
+
       - name: Run structural ownership validator tests
         run: python -m unittest discover -s .agent/skills/the-worker/scripts -p 'test_validate_structural_ownership.py' -v
 
