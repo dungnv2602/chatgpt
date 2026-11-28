@@ -251,7 +251,7 @@ The single coordinator is preferred because the repository needs one authoritati
 
 ## More Information
 
-- **Source Draft:** DRAFT-0010 revision 9, approved by the user on 2026-11-28. The source is retained until accepted ADR read-back and promotion cleanup pass.
+- **Source Draft:** DRAFT-0010 revision 9, approved by the user on 2026-11-28 and deleted after accepted ADR read-back and active-reference migration. Source deletion commit: `1e5ef5c18e8d6a4cfb67382e5d73730bd29adc12`.
 - **Approved scope:** Exact scope stated in DRAFT-0010 revision 9 and its approved architecture decisions. No additional policy choice is introduced by this ADR.
 - **Related ADRs and supersession scope:**
   - **ADR-0003:** Supersede its canonical report artifact layout and report-storage requirements under `.takeout/reports/`. Preserve unrelated lint/test/workflow validation coverage. Its report-layout decision no longer governs after the approved migration.
@@ -271,3 +271,4 @@ The single coordinator is preferred because the repository needs one authoritati
 |---|---|---|
 | 2026-11-28 | Accepted | User approved DRAFT-0010 revision 9 and instructed promotion. The complete provisional ADR was read back and compared with the approved source. Decision scope and rationale are preserved. |
 | 2026-11-28 | Implementation in progress | Linked the approved current-execution parent task 20261126-142500 after acceptance. Task acceptance criteria map the applicable Confirmation requirements. |
+| 2026-11-28 | Source Draft retired | Deleted DRAFT-0010 revision 9 after accepted ADR read-back, index updates, and active-reference migration. Commit `1e5ef5c18e8d6a4cfb67382e5d73730bd29adc12`. |
