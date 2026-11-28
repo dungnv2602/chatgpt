@@ -30,9 +30,10 @@ on:
       - 'area/drawing/**/*.md'
       - 'area/novel/**/*.md'
       - '.takeout/reports/**/*.md'
-      # Run Ledger regression tests when its implementation or schema changes.
-      - '.takeout/reports/triage/scripts/**'
-      - '.takeout/reports/triage/ledger-schema.json'
+      # Keep legacy Ledger regression coverage while the report migration is staged.
+      - '.agent/skills/the-worker/scripts/ledger.py'
+      - '.agent/skills/the-worker/scripts/test_ledger.py'
+      - '.agent/skills/the-worker/assets/ledger-schema.json'
       # Exclude generator-owned output so report publication cannot retrigger this workflow.
       - 'workspace/**/*.md'
       - '!workspace/archive/**'
@@ -70,8 +71,39 @@ concurrency:
 permissions: {}
 
 jobs:
+  policy_gate:
+    name: Gate legacy document-standards trigger after coordinator activation
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+    outputs:
+      proceed: ${{ steps.gate.outputs.proceed }}
+    steps:
+      - name: Check out the exact source policy
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_sha || github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Select coordinator or legacy invocation
+        id: gate
+        shell: bash
+        env:
+          COORDINATOR_CALL: ${{ inputs.coordinator_call }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          policy = json.loads(Path(".agent/skills/the-worker/assets/task-validation/task-validation-policy.json").read_text(encoding="utf-8"))
+          proceed = os.environ["COORDINATOR_CALL"] == "true" or policy.get("coordinator", {}).get("activation_status") != "enabled"
+          print("proceed=" + ("true" if proceed else "false"))
+          PY
+
   validate-document-standards:
-    if: github.ref == 'refs/heads/gpt'
+    needs: [policy_gate]
+    if: github.ref == 'refs/heads/gpt' && needs.policy_gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -89,7 +121,7 @@ jobs:
           python-version: '3.x'
 
       - name: Run CI Ledger regression tests
-        run: python -m unittest discover -s .takeout/reports/triage/scripts -p 'test_ledger.py' -v
+        run: python -m unittest discover -s .agent/skills/the-worker/scripts -p 'test_ledger.py' -v
 
       - name: Run catalog validator regression tests
         run: |
@@ -133,8 +165,8 @@ jobs:
 
   diagnostics:
     name: Capture GH Actions diagnostics
-    if: ${{ always() && inputs.coordinator_call != true }}
-    needs: [validate-document-standards]
+    if: ${{ always() && inputs.coordinator_call != true && needs.policy_gate.outputs.proceed == 'true' }}
+    needs: [policy_gate, validate-document-standards]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
       queue: max
