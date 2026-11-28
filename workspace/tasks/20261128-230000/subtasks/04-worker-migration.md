@@ -112,7 +112,7 @@ Scope and parent are confirmed. Required, approved, and executed under the autho
 
 ## 10. Handoff
 
-Blocked pending repository settings: ensure policy activation, publisher/report migration, and operational recovery readiness. Branch protection is not required by ADR-0008. Do not inspect hosted logs or retire `.takeout/reports/` before authorization and Confirmation.
+Continue repository-side producer/consumer migration. Coordinator activation remains staged pending report migration and operational readiness; default-branch dispatcher and scheduled recovery availability are verified. Branch protection is not required by ADR-0008. Do not inspect hosted logs or retire `.takeout/reports/` before the required authorization and Confirmation.
 
 ## 11. Ledger Findings
 
