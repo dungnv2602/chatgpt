@@ -7,7 +7,7 @@
 ```mermaid
 flowchart TD
  A[Conversation] --> B{Cue or task activation}
- B -->|/start| C[Session Start guard] --> D[Read Workflow Map] --> E[The Worker] --> F[Conversation Mode: presentation only] --> G[Baseline and progressive loading] --> H[Startup P0 and Ledger reconciliation] --> I[Task / queue reconciliation] --> J[Authorized work to quiescence] --> K[Commit, readback and tracking] --> L[Closeout and queue continuation] --> M[Quiescence report]
+ B -->|/start| C[Session Start guard] --> D[Read Workflow Map] --> E[The Worker] --> F[Conversation Mode: presentation only] --> G[Baseline and progressive loading] --> H[Workspace P0 and task reconciliation] --> I[Task / queue reconciliation] --> J[Authorized work to quiescence] --> K[Commit, readback and tracking] --> L[Closeout and queue continuation] --> M[Quiescence report]
  B -->|/map| N[Display map only]
  B -->|execute| O[Authorize prepared eligible batch]
  B -->|approve| P[Log decision only]
@@ -78,9 +78,11 @@ flowchart TD
  C --> I[On-demand report navigation]
 ```
 
-- Procedures: `.agent/skills/the-worker/references/ci-ledger.md` and `github-actions.md`.
+- Activation: CI work is handled only for an assigned, selected task under `workspace/tasks/` and within its authorized scope. It is not part of general session initialization.
+- Procedures: `.agent/skills/the-worker/references/ci-ledger.md` and `github-actions.md`, loaded only when the assigned CI task requires them.
 - Canonical implementation: `.agent/skills/the-worker/scripts/`; capture workflow: `.github/workflows/gh-actions-capture.yml`.
 - Report index and data: `.takeout/reports/`; navigation guide: `.takeout/reports/README.md`.
+- No automatic startup CI baseline, report scan, or Ledger reconciliation. Do not access `.takeout/reports/` for general setup or unrelated tasks.
 - Attribution is source-task-based, not guessed. The Ledger does not schedule or create parents.
 - Historical backfill and hosted CI access remain governed; this map grants no permission.
 
