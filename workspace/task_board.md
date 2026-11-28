@@ -24,7 +24,7 @@ _Current execution remains active._
 
 ### Current focus reconciliation
 
-Accepted [ADR-0008](adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) governs task 20261126-142500. The single-coordinator architecture and 3-day retention/checkpoint policy are approved. Implementation is execution-authorized and active. Preserve the current report pipeline until the replacement passes ADR-0008 Confirmation and every producer/consumer has migrated.
+Accepted [ADR-0008](adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) governs task 20261126-142500. Its implementation remains in progress, and the parent is not operationally accepted. Preserve the current report pipeline until the replacement passes ADR-0008 Confirmation and every producer/consumer has migrated. Completed child records were removed during lifecycle cleanup; the remaining objective is migration and Confirmation.
 
 ### Blocked
 
