@@ -80,6 +80,13 @@ Serve as the persistent, open parent task and coordination point for skills refa
 
 - **Decision:** Preserve this task as the standing parent for current and future skills-refactoring work. Create follow-up deliverables as child subtasks; do not create replacement parents for work within this defined scope or close/delete this parent at child closeout.
 
+### 2026-11-28 — implementation closeout and verification debt lifecycle
+
+- **Action:** Revised The Worker, task and subtask templates, board template, and GitHub Actions reference. Separates implementation closeout from runtime validation and mandates queue reconstruction/continuation after closeout.
+- **Result:** Readback confirmed all five paths on branch `gpt`. Child 62 closed and its record removed under the standing child lifecycle rule. The Refactor Skills child queue is at quiescence. Child 61 remains paused.
+- **Commit evidence:** `68b00ab984e2c8eac2724247bca62525dbfd071f`, `fa9f8dfd52f8fd013306fd2db29533430c4f2d46`, `3b7f145e3b02c82aa7919cd1c0c2d0dca934faf2`, `2ae6f37f62e4c108c91aee5649283acc7347274a`, `575d27d953318175031f89284cad19b42eb0571a`. Tracking reconciliation commits also read back.
+- **Validation:** Local scripts, tests, and lint not run. Hosted CI results not inspected.
+
 ## 5. Progress
 
 ### 2026-11-28T06:55:36+07:00 — DRAFT-0006 prepared
