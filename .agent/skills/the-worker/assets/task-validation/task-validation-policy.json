@@ -46,25 +46,29 @@
       "id": "ste-lint-changed",
       "workflow": ".github/workflows/ste-lint-changed.yml",
       "coverage": "Changed-document technical lint, report-tooling regression checks, and incremental/full-audit fallback",
-      "coordinator_job": "lint_changed"
+      "coordinator_job": "lint_changed",
+      "result_mode": "job_result"
     },
     {
       "id": "ste-lint-full-docs",
       "workflow": ".github/workflows/ste-lint-full-docs.yml",
       "coverage": "Full technical-document lint and report-tooling regression checks",
-      "coordinator_job": "lint_full"
+      "coordinator_job": "lint_full",
+      "result_mode": "job_result"
     },
     {
       "id": "validate-document-standards",
       "workflow": ".github/workflows/validate-document-standards.yml",
       "coverage": "Document catalog, structural ownership, and existing CI Ledger regression tests",
-      "coordinator_job": "document_standards"
+      "coordinator_job": "document_standards",
+      "result_mode": "job_result"
     },
     {
       "id": "generic-verifier",
       "workflow": ".github/workflows/task-validation-verifier.yml",
       "coverage": "Exact-SHA task contract validation, closed adapter enforcement, and additive task-specific checks",
-      "coordinator_job": "generic_verifier"
+      "coordinator_job": "generic_verifier",
+      "result_mode": "workflow_output"
     }
   ],
   "task_contract": {
