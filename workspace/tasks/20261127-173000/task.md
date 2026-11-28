@@ -586,3 +586,10 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 
 - Deleted remaining existing records individually. Subtask records 28–49 are absent. No remediation was attempted for those findings.
 - Reconciled the child index and task board. Child 61 remains paused, and the parent remains at quiescence.
+
+
+### 2026-11-28 — autonomous queue and recursive reconciliation batch
+
+- **Action:** Strengthened the canonical Worker with a parent/workstream execution boundary, recursive index and task-folder reconciliation, stale dependency-pause reassessment, and consolidated blocker collection. Completed and deleted child 64 after readback.
+- **Result:** Reconstructed missing child 01 parent record from surviving authoritative descendants. Reassessed child 03's dependency pause and resumed it. Objective-based parentage rules and hierarchy audit were read back; child 03 closed and was removed after reconciliation.
+- **References:** Worker commit `3188b5c5a0b9057ad392b5db7ba16fb553be50d8`; child 64 closeout commit `d2592d78a1728386905ef78fd014593535e51977`; child 03 closeout commit `41d6e622e094ac63331b439c42dbb723f6de9921`.
