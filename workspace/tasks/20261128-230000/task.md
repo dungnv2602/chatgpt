@@ -56,15 +56,17 @@ Acceptance criteria are mapped to these required child tasks:
 
 ## 6. Current State and Remaining Work
 
-No ADR-0008 implementation deliverables are yet committed under this task. The legacy report pipeline remains intact. All five required subtasks are open; implementation and Confirmation remain pending.
+Subtask 01 has begun and its initial policy/contract/interface foundation is committed on branch `gpt`. The three existing validation workflows expose reusable `workflow_call` entry points, but remain legacy report publishers and are not yet safe to invoke from the coordinator. GitHub branch protection/ruleset enforcement for the policy files remains an external prerequisite and is not claimed as established.
+
+The legacy report pipeline remains intact. Subtasks 02–05 remain pending; implementation and operational Confirmation remain incomplete.
 
 ## 7. Verification and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Task records and board only
-- **Readback:** Task creation and board reconciliation pending commit
-- **Checks:** Not performed
-- **Limitations:** This task administrative setup does not establish ADR-0008 operational behavior.
+- **Implementation commits:** `e639ca57397b5d84e1d635cb3b06853a7377db69`, `dfcfc490829aff3f1f53b2752cc1f6996c4ab073`, `251a1ff593a1eea88738ee35763e124fb7281bf5`, `65ebe337ad247943c1e9c2f91faf3ab46c81e882`, `cd10abcec2cb89a1b95a805401f398e03e724681`, `83b3bd5606a2f19521da3c86b06c82918b17a284`, `a7ae1a6ec0dc680de317f4bac4728c3a05245482`, `1f551c6680c176a1d1ee9c542541c6b1bf5ae7f6`
+- **Changed paths:** Three policy/contract/adapter files, interface README, three existing validation workflows, and task progress records.
+- **Readback:** All seven implementation files read back from branch `gpt`.
+- **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed.
+- **Limitations:** This is only the initial coordinator/policy/contract foundation. Policy protection, exact-SHA validation migration, coordinator execution, and runtime behavior are not established.
 
 ## 8. Execution self-check
 
