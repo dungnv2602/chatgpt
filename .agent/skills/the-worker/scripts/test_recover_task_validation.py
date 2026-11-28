@@ -179,12 +179,16 @@ class RecoveryTests(unittest.TestCase):
 
     def test_source_commit_policy_binds_validation_but_dispatch_gate_uses_current_policy(self) -> None:
         source_policy = {
-            "coordinator": {"activation_status": "enabled"},
+            "repository": "dungnv2602/chatgpt",
+            "protected_ref": "refs/heads/gpt",
+            "coordinator": {"activation_status": "enabled", "dispatcher_workflow": ".github/workflows/task-validation-dispatch.yml"},
             "protection": {"enforcement_status": "verified"},
             "recovery": {"workflow_dispatch_activation_status": "external-prerequisite"},
         }
         current_policy = {
-            "coordinator": {"activation_status": "enabled"},
+            "repository": "dungnv2602/chatgpt",
+            "protected_ref": "refs/heads/gpt",
+            "coordinator": {"activation_status": "enabled", "dispatcher_workflow": ".github/workflows/task-validation-dispatch.yml"},
             "protection": {"enforcement_status": "verified"},
             "recovery": {"workflow_dispatch_activation_status": "verified"},
         }
@@ -206,12 +210,16 @@ class RecoveryTests(unittest.TestCase):
 
     def test_source_commit_without_coordinator_activation_cannot_be_dispatched(self) -> None:
         source_policy = {
-            "coordinator": {"activation_status": "staged"},
+            "repository": "dungnv2602/chatgpt",
+            "protected_ref": "refs/heads/gpt",
+            "coordinator": {"activation_status": "staged", "dispatcher_workflow": ".github/workflows/task-validation-dispatch.yml"},
             "protection": {"enforcement_status": "verified"},
             "recovery": {"workflow_dispatch_activation_status": "verified"},
         }
         current_policy = {
-            "coordinator": {"activation_status": "enabled"},
+            "repository": "dungnv2602/chatgpt",
+            "protected_ref": "refs/heads/gpt",
+            "coordinator": {"activation_status": "enabled", "dispatcher_workflow": ".github/workflows/task-validation-dispatch.yml"},
             "protection": {"enforcement_status": "verified"},
             "recovery": {"workflow_dispatch_activation_status": "verified"},
         }
