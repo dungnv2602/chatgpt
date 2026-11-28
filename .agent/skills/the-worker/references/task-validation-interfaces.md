@@ -84,7 +84,7 @@ The schema and registry are interfaces for the generic verifier. They do not the
 
 ## Protection prerequisite
 
-A file in the repository is not self-protecting. GitHub branch protection or a ruleset must require review for changes to the policy, contract/status schemas, adapter registry, review template, Worker authority, task-contract templates, verifier, aggregate, publisher and recovery scripts/tests, dispatcher, and coordinator/reusable workflows. The policy records these required paths as an external prerequisite. Effective protection has not been established or verified. Do not enable the coordinator until the repository's effective ruleset has been verified.
+A file in the repository is not self-protecting. GitHub branch protection or a ruleset must require review for changes to the policy, contract/status schemas, adapter registry, review template, Worker authority, task-contract templates, verifier, aggregate, publisher and recovery scripts/tests, dispatcher, coordinator/reusable workflows, and legacy report/diagnostic producer workflows while migration remains staged. The policy records these required paths as an external prerequisite. Effective protection has not been established or verified. Do not enable the coordinator until the repository's effective ruleset has been verified.
 
 ## Security boundary
 
@@ -92,7 +92,7 @@ A file in the repository is not self-protecting. GitHub branch protection or a r
 - Task-supplied values are untrusted data, not executable instructions.
 - The publisher must be a separate, narrowly permissioned workflow/job and must not execute task code.
 - The coordinator must bind source SHA, policy blob SHA, check-set identity, run ID, and attempt before aggregation.
-- No source-validation trigger may be created by metadata-only publication commits.
+- No source-validation or legacy diagnostic push trigger may be created by metadata-only publication commits. The dispatcher, changed-document lint, document-standards workflow, and legacy diagnostics workflow explicitly exclude `workspace/task-validation/**`; the full-document audit is scoped to the STE-100 ruleset. The recovery workflow's push filter excludes the status index and review folders.
 
 ## Implementation state
 
