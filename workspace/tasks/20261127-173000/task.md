@@ -6,7 +6,7 @@
 
 - **ID:** 20261127-173000
 - **Created:** 2026-11-27 17:30 UTC
-- **Updated:** 2026-11-27 23:27 UTC
+- **Updated:** 2026-11-28
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -114,6 +114,12 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - Recovered the complete Ledger via blob SHA after the file-content endpoint returned an empty body. The two target findings were `lint-66ac36e2cdb3db3683c0c8f2` and `lint-bdeb2ff1622490b994e19f76`.
 - Rewrote both passive constructions in `workspace/README.md`. The source fix commit is `677b5de451f70246cfb0d3ededb9ec8f908e19fd`.
 - Set both findings to resolved in the Ledger with commit-based evidence. Closeout commit: `3663c9829750de56d2c2bb2ca789ec2da0d84ac3`. Readback confirmed both resolutions. Deleted the completed child record and index row under the standing parent lifecycle.
+
+### 2026-11-28 — DRAFT-0006 approved and implementation underway
+
+- The user approved DRAFT-0006 Revision 1 and instructed execution, including associated template updates.
+- ADR-0005 was provisionally created, read back, accepted, and verified.
+- Implementation of child 59 is underway. Hosted CI results remain unreviewed.
 
 ### 2026-11-28 — autonomous execution workflow
 
