@@ -14,21 +14,21 @@ _None._
 
 ## Ordered Eligible Execution Queue
 
-1. **20261128-230000 — Reconstruction** (P0, Approved, Ready) — [task](tasks/20261128-230000/task.md)
+_None._
 
 ## Next Task
 
-**20261128-230000 — Reconstruction.** Eligible, not yet selected for execution.
+_None._
 
 ## Deferred Work
 
 ### Blocked
 
-_No blocked tasks._
+_None._
 
 ### Proposed — decision pending
 
-_No proposed tasks._
+**DRAFT-0009 — Project, Task, and Knowledge Lifecycle.** Proposal in review; no implementation authorization.
 
 ### Paused
 
@@ -38,4 +38,6 @@ _No proposed tasks._
 
 ### Dependency-waiting
 
-_No dependency-waiting tasks._
+_None._
+
+---
