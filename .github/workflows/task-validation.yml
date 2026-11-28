@@ -37,12 +37,13 @@ jobs:
       - name: Bind policy and create the base task contract
         id: bind
         shell: bash
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
         run: |
           set -euo pipefail
           policy_blob_sha=$(git hash-object .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
-          SOURCE_SHA='${{ inputs.source_sha }}'
           contract_json=$(python3 .agent/skills/the-worker/scripts/build_task_validation_contract.py \
-            --root . --source-sha "$GITHUB_SHA")
+            --root . --source-sha "$SOURCE_SHA")
           task_check_ids=$(python3 -c 'import json, sys; value=json.loads(sys.argv[1]); print(json.dumps([item["id"] for item in value["checks"]], separators=(",", ":")))' "$contract_json")
           echo "source_sha=$SOURCE_SHA" >> "$GITHUB_OUTPUT"
           echo "policy_blob_sha=$policy_blob_sha" >> "$GITHUB_OUTPUT"
@@ -110,7 +111,7 @@ jobs:
       - name: Check out the exact source commit
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ inputs.source_sha }}
           fetch-depth: 1
           persist-credentials: false
 
@@ -207,7 +208,7 @@ jobs:
         continue-on-error: true
         shell: bash
         env:
-          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_SHA: ${{ inputs.source_sha }}
           TASK_CHECK_IDS: ${{ needs.policy.outputs.task_check_ids || '[]' }}
           COORDINATOR_RUN_ID: ${{ github.run_id }}
           COORDINATOR_ATTEMPT: ${{ github.run_attempt }}
