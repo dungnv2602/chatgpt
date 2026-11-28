@@ -94,6 +94,14 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Commit evidence:** `68b00ab984e2c8eac2724247bca62525dbfd071f`, `fa9f8dfd52f8fd013306fd2db29533430c4f2d46`, `3b7f145e3b02c82aa7919cd1c0c2d0dca934faf2`, `2ae6f37f62e4c108c91aee5649283acc7347274a`, `575d27d953318175031f89284cad19b42eb0571a`. Tracking reconciliation commits also read back.
 - **Validation:** Local scripts, tests, and lint not run. Hosted CI results not inspected.
 
+
+
+### 2026-11-28 — child 63 closeout
+
+- **Action:** Enforced the sole explicit standalone `execute` cue with case-insensitive matching. Approval is log-only. `Next` logs navigation and leaves blockers unresolved. Decision collection must finish before execution. Updated the Worker, task/subtask templates, board and discussion templates, document-type catalog versions, task index, board, and task record. Readback confirmed all changed files.
+- **Commit evidence:** Worker `f5279e1ad5cd57d681fd3540ed4119ecec2eb3f0`; templates `84d14b82d2bb7ca64f8ae493f406069ffdca5ce8`, `a6812e3e3cba4c42fe6951a23bd458280e705457`, `d8a8be3e90cff11ee045c3f41d7127c32ba0262d`, `1a1c0098de0b4414ae07afaab0b5ea2c3736efca`; catalog `ae03cb1e6d64b822ee453e6d85d02e9249be892a`, `8886816fdfc349eecf011d08e8adf343064721b6e`; tracking `a9b29abf8ae3207a59326609c4c67b185326c2d5`, `8a1413e317cc858948d156f719efd145dbb0bde8`, `4497360679ef64022d49a5d32dda70490c77bd1a`, `3ce03ede7a139204d21556f8f1612ec05ff4ad10`, `11e580d5874441e6058e2c42190503505a337b9d`, `ae03cb1e6d64b822ee453e6d85d02e9249be892a`. Readback confirmed the final rule and tracking. No local checks or hosted CI inspection performed.
+- **Closeout:** Child 63's record is removed under normal lifecycle rules. The persistent Refactor Skills parent remains open. Focus is at quiescence and decision collection resumes with blocked task 28.
+
 ## 5. Progress
 
 ### 2026-11-28T06:55:36+07:00 — DRAFT-0006 prepared
