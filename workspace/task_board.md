@@ -10,7 +10,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-- **20261126-142500 — Repair CI task generation and clear active reports** — P1, In Progress, Approved. [Task](tasks/20261126-142500/task.md)
+- **20261128-230000 — ADR 8 implementation** — P1, In Progress, Approved. [Task](tasks/20261128-230000/task.md)
 
 ## Ordered Eligible Execution Queue
 
@@ -18,21 +18,19 @@ _None. Current execution is active._
 
 ## Next Task
 
-_Current execution remains active._
+- **20261128-230000 — ADR 8 implementation** — Current implementation parent. [Task](tasks/20261128-230000/task.md)
 
 ## Deferred Work
 
 ### Current focus reconciliation
 
-Accepted [ADR-0008](adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) governs task 20261126-142500. Its implementation remains in progress, and the parent is not operationally accepted. Preserve the current report pipeline until the replacement passes ADR-0008 Confirmation and every producer/consumer has migrated. Completed child records were removed during lifecycle cleanup; the remaining objective is migration and Confirmation.
+ADR-0008 implementation is tracked under current task **20261128-230000**. The previous task 20261126-142500 was administratively superseded and deleted; no implementation acceptance or successful validation was claimed. Preserve .takeout/reports until migration and Confirmation gates are satisfied.
 
 ### Blocked
 
 _None._
 
 ### Proposed — decision pending
-
-~~20261126-142500 — Repair CI task generation and clear active reports.~~ Removed from Proposed after execution authorization. — [task](tasks/20261126-142500/task.md)
 
 **DRAFT-0009 — Project, Task, and Knowledge Lifecycle.** Proposal in review; no implementation authorization.
 
