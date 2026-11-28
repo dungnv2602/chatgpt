@@ -34,13 +34,12 @@ No eligible child remains under Refactor Skills. Child 61 is blocked by current 
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-
+| 20261127-173000-61 | Review structural validator test execution and validation loop | P1 | Blocked | Approved | Static review complete. Actual test execution evidence requires a narrow policy amendment because local test execution and hosted result inspection are currently prohibited. | [subtask](tasks/20261127-173000/subtasks/61-review-structural-validator-test-execution-and-validation-loop.md) |
 
 ### Paused
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-61 | Review structural validator test execution and validation loop | P1 | Blocked | Approved | Static review complete. Actual test execution evidence requires a narrow policy amendment because local test execution and hosted result inspection are currently prohibited. | [subtask](tasks/20261127-173000/subtasks/61-review-structural-validator-test-execution-and-validation-loop.md) |
 
 
 
