@@ -159,7 +159,11 @@
     "reads_logs": false,
     "validates_source_code": false,
     "workflow_dispatch_activation_status": "external-prerequisite-default-branch-must-contain-dispatcher",
-    "dispatch_requires_verified_default_branch_workflow": true
+    "dispatch_requires_verified_default_branch_workflow": true,
+    "permissions": [
+      "actions:write",
+      "contents:write"
+    ]
   },
   "worker_lifecycle": {
     "fallback_parent_id": "20261128-193800",
@@ -174,7 +178,7 @@
     "lifecycle_schema": ".agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json",
     "awaiting_ci_state": "awaiting_ci",
     "task_discovery": "Validation Lifecycle block in active task and subtask records",
-    "missing_dispatch_recovery": "dispatch exact source SHA only when no coordinator attempt exists and activation plus protection are verified",
+    "missing_dispatch_recovery": "dispatch exact source SHA only when source and current coordinator policies are enabled, protection is verified, and workflow_dispatch is available on the default branch",
     "root_cause_group_field": "Root-cause group",
     "legacy_ledger_scope": ".takeout/reports/ledger.json"
   }
