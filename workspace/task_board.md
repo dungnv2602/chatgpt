@@ -24,7 +24,7 @@ Subtask 04 — Worker queue, review/remediation lifecycle, attribution, grouping
 
 ### Current focus reconciliation
 
-The Worker skill-governance prevention correction completed under child 74. Child 75's implementation is readback-verified and awaiting exact-SHA CI reconciliation; no permitted CI review was performed. ADR-0008 implementation under **20261128-230000** is restored as Current Execution. Child 75 remains tracked under the persistent Refactor Skills parent, pending validation lifecycle reconciliation. Operational activation gates remain separate from implementation availability. Preserve `.takeout/reports/` until migration and Confirmation gates are satisfied. The permanent system-owned CI fallback parent is [20261128-193800](tasks/20261128-193800/task.md); it is never selected as Current Execution and must never be deleted.
+The Worker skill-governance prevention correction completed under child 74. Child 76 tightened blocker-locality and stop-proof semantics; ADR-0008 remains Current Execution. Child 75's implementation is readback-verified and awaiting exact-SHA CI reconciliation; no permitted CI review was performed. ADR-0008 implementation under **20261128-230000** is restored as Current Execution. Child 75 remains tracked under the persistent Refactor Skills parent, pending validation lifecycle reconciliation. Operational activation gates remain separate from implementation availability. Preserve `.takeout/reports/` until migration and Confirmation gates are satisfied. The permanent system-owned CI fallback parent is [20261128-193800](tasks/20261128-193800/task.md); it is never selected as Current Execution and must never be deleted.
 
 ### Blocked
 

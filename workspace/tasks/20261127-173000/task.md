@@ -737,3 +737,11 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Lifecycle reconciliation commits:** Parent closeout state `8569a6868e8f41e3478a9f98d7994c08b8665f51`; child index reset `caa0a306881866a7d636c2863884f60673beebfe`; board restored to ADR-0008 `5606abe15315093b53bedf00f3524e46f537d4d3`; child record deletion `ef230a2b91c7582d69f45c957e5d18a42fe3c28`; ADR-0008 subtask 01 canonical-path reconciliation `a64fbbb94b7c513c04634ca65f6a10a1bac71688`.
 - **Final readback before this parent-note commit:** Branch `gpt` head `a64fbbb94b7c513c04634ca65f6a10a1bac71688`. Child 74 is absent from the subtask index and tree. The board points to ADR-0008. The four former `.github/task-validation*` paths are absent.
 - **Current state:** Child 75 is implementation-complete and readback-verified but remains In Progress awaiting exact-SHA CI reconciliation; no CI result was inspected. The parent remains open.
+
+
+### 2026-11-28 — child 76 blocker-locality enforcement
+
+- **Approval and execution:** User approved tightening the scheduler's blocker-locality logic and explicitly issued Execute.
+- **Action:** Reinforced the canonical Worker with an operation-local blocker rule, immediate scheduler continuation, and stop-proof gate. Tracking under child 76 of the persistent Refactor Skills parent; ADR-0008 remains Current Execution.
+- **Implementation commit:** Worker rule committed; task tracking and final readback pending.
+- **Checks:** No local tests/scripts/lint or hosted CI inspection performed.
