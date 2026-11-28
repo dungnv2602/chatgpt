@@ -238,11 +238,13 @@ jobs:
         shell: bash
         env:
           SOURCE_SHA: ${{ inputs.source_sha }}
+          POLICY_BLOB_SHA: ${{ needs.policy.outputs.policy_blob_sha }}
+          CHECK_SET_ID: ${{ steps.normalize.outputs.check_set_id }}
           COORDINATOR_RUN_ID: ${{ github.run_id }}
           COORDINATOR_ATTEMPT: ${{ github.run_attempt }}
+          ACTIONS_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set +e
-          POLICY_BLOB_SHA=$(git hash-object .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
           python3 .agent/skills/the-worker/scripts/aggregate_task_validation.py \
             --policy .agent/skills/the-worker/assets/task-validation/task-validation-policy.json \
             --policy-blob-sha "$POLICY_BLOB_SHA" \
@@ -256,10 +258,24 @@ jobs:
           set -e
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json
+          import os
+          from datetime import datetime, timezone
           from pathlib import Path
-          result = json.loads(Path(".task-validation-aggregate.json").read_text(encoding="utf-8"))
+
+          path = Path(".task-validation-aggregate.json")
+          result = json.loads(path.read_text(encoding="utf-8"))
+          result.setdefault("source_sha", os.environ["SOURCE_SHA"])
+          result.setdefault("policy_blob_sha", os.environ["POLICY_BLOB_SHA"])
+          result.setdefault("check_set_id", os.environ.get("CHECK_SET_ID") or None)
+          result.setdefault("coordinator_run_id", int(os.environ["COORDINATOR_RUN_ID"]))
+          result.setdefault("attempt", int(os.environ["COORDINATOR_ATTEMPT"]))
+          result["completed_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+          result.pop("reason", None)
+          path.write_text(json.dumps(result, separators=(",", ":")) + "\\n", encoding="utf-8")
+          compact = json.dumps(result, separators=(",", ":"))
           print(f"outcome={result.get('outcome', 'capture_failure')}")
-          print(f"check_set_id={result.get('check_set_id', '')}")
+          print(f"check_set_id={result.get('check_set_id') or ''}")
+          print(f"aggregate_json={compact}")
           PY
           exit "$aggregate_exit"
 
