@@ -18,7 +18,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Current child: [20261127-173000-59 — Consolidate Session Start and Conversation Mode](tasks/20261127-173000/subtasks/59-consolidate-session-start-and-conversation-mode.md) (In Progress).
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Child 59 implementation closed and removed after readback.
 
 ## Ordered Eligible Execution Queue
 
