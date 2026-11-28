@@ -1,6 +1,6 @@
 # Task Folder: [Title]
 
-**Template version:** 2.9
+**Template version:** 3.0
 
 Create `workspace/tasks/<task-id>/task.md` from this template. Each task folder must also contain `subtasks/README.md`. Store child records under `subtasks/NN-short-name.md`.
 
@@ -61,7 +61,7 @@ Schema: `.agent/skills/the-worker/assets/task-validation/task-validation-lifecyc
 
 ## 2. Subsequent Instructions
 
-[Preserve later clarifications, constraints, decisions, and approvals verbatim. Add UTC timestamps. Do not overwrite the original request. Approval and decisions are log-only until the explicit standalone execute cue, case-insensitive, authorizes the prepared batch. Record Next as navigation only.]
+[Preserve later clarifications, constraints, decisions, and approvals verbatim. Add UTC timestamps. Do not overwrite the original request. Approval alone is log-only; `execute` is a universal directive, interpreted in ordered context and governed by The Worker. Record Next as navigation only.]
 
 ## 3. Objective and Acceptance Criteria
 
@@ -98,7 +98,7 @@ Separate deliverable closeout evidence from verification debt. A committed, read
 
 ## 8. Execution self-check
 
-[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, decision collection complete, explicit case-insensitive execute cue present for this batch, conflict check, verification/readback, and cleanup. Approval and Next are not execution cues. Record exceptions or blockers.]
+[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, ordered cue/decision reconciliation, applicable execution authorization, conflict check, verification/readback, and cleanup. Approval and Next are not execution cues. Record exceptions or blockers.]
 
 ## 9. Handoff
 
