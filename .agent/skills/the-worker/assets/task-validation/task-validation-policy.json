@@ -9,8 +9,10 @@
     "required": true,
     "mechanism": "GitHub branch protection or ruleset",
     "required_review_paths": [
+      ".agent/WORKFLOW_MAP.md",
       ".agent/skills/agent-skill-authoring/SKILL.md",
       ".agent/skills/the-worker/SKILL.md",
+      ".agent/skills/the-worker/assets/README.md",
       ".agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md",
       ".agent/skills/the-worker/assets/TASK_TEMPLATE.md",
       ".agent/skills/the-worker/assets/actions-report-schema.json",
@@ -24,6 +26,7 @@
       ".agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json",
       ".agent/skills/the-worker/references/ci-ledger.md",
       ".agent/skills/the-worker/references/document-type-catalog.md",
+      ".agent/skills/the-worker/references/github-actions.md",
       ".agent/skills/the-worker/references/task-validation-interfaces.md",
       ".agent/skills/the-worker/scripts/aggregate_task_validation.py",
       ".agent/skills/the-worker/scripts/build_task_validation_contract.py",
@@ -51,6 +54,7 @@
       ".github/workflows/task-validation.yml",
       ".github/workflows/validate-document-standards.yml",
       ".takeout/reports/README.md",
+      "workspace/README.md",
       "workspace/task-validation/README.md",
       "workspace/task_board.md",
       "workspace/tasks/20261128-193800/subtasks/README.md",
@@ -170,6 +174,8 @@
     "lifecycle_schema": ".agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json",
     "awaiting_ci_state": "awaiting_ci",
     "task_discovery": "Validation Lifecycle block in active task and subtask records",
-    "missing_dispatch_recovery": "dispatch exact source SHA only when no coordinator attempt exists and activation plus protection are verified"
+    "missing_dispatch_recovery": "dispatch exact source SHA only when no coordinator attempt exists and activation plus protection are verified",
+    "root_cause_group_field": "Root-cause group",
+    "legacy_ledger_scope": ".takeout/reports/ledger.json"
   }
 }
