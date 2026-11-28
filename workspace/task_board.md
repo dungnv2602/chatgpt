@@ -25,7 +25,7 @@ _None. Current execution is active._
 
 ### Current focus reconciliation
 
-The current child corrects Worker-owned artifact placement and closes the document catalog's non-Markdown coverage gap. ADR-0008 implementation remains open under [20261128-230000](tasks/20261128-230000/task.md). Preserve .takeout/reports until its migration and Confirmation gates are satisfied.
+The current child corrects Worker-owned artifact placement and closes the document catalog's non-Markdown coverage gap. ADR-0008 implementation remains open under current task **20261128-230000**. Preserve .takeout/reports until migration and Confirmation gates are satisfied.
 
 ### Blocked
 
