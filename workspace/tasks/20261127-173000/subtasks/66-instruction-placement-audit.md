@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-66
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User's explicit request in this conversation to create these two subtasks under Refactor Skills.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Ready — execution cue pending for the prepared batch
+- **Eligibility / deferral reason:** In Progress — authorized execution batch active for the prepared batch
 - **Required:** Yes
 - **Created:** 2026-11-28 15:00 UTC
 - **Updated:** 2026-11-28 15:00 UTC
@@ -39,16 +39,16 @@ Perform a repository-wide content audit, with particular attention to README fil
 
 ## 5. Decisions and Progress
 
-- **Decision:** Preserve the request and its scope as this child. Do not begin implementation until the explicit standalone execution cue authorizes the prepared batch.
+- **Decision:** Preserve the request and its scope as this child. Execution authorized for the batch.
 - **Progress:** Task record prepared from the canonical subtask template.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Task record, parent subtask index, task board, parent task tracking
-- **Readback:** Pending commit
+- **Commit SHA:** Pending consolidated readback
+- **Changed paths:** `workspace/README.md`; `.agent/skills/drawing/README.md`; `workspace/draft/README.md`; `workspace/adr/README.md`; `workspace/analysis/README.md`; document-type catalog; Worker; tracking
+- **Readback:** Changes read back individually during execution. Consolidated readback pending
 - **Checks:** Not performed
-- **Limitations:** This record captures scope only; implementation and repository audit remain pending.
+- **Limitations:** README inventory is complete (21 files), but the repository-wide non-README instruction scan is targeted, not a full fetch/read of all 685 entries. Code search/readback and structural validator coverage remain limited.
 
 ## 7. Completion
 
@@ -70,7 +70,7 @@ Perform a repository-wide content audit, with particular attention to README fil
 
 ## 10. Handoff
 
-Await the explicit standalone `execute` cue. Upon authorization, perform the scope audit autonomously, and reconcile records and evidence.
+Continue the instruction ownership audit, reconcile ID collision/traceability issues as scope allows, then close with readback.
 
 ## 11. Ledger Findings
 
