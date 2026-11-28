@@ -10,7 +10,9 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-_None._
+**20261127-173000-72 — Enforce user-interruption minimization and report-at-quiescence** (P0, In Progress)
+
+[Task record](tasks/20261127-173000/subtasks/72-user-interruption-minimization.md)
 
 ## Ordered Eligible Execution Queue
 
@@ -24,7 +26,7 @@ _None._
 
 ### Current focus reconciliation
 
-Workflow map and cue registry (subtask 20261127-173000-69) completed and reconciled. Redundant initialization policy removal (subtask 70) completed and reconciled. Startup ordering correction (subtask 71) completed and reconciled. Current Execution and queue remain empty at quiescence.
+Workflow map and cue registry (subtask 20261127-173000-69) completed and reconciled. Redundant initialization policy removal (subtask 70) completed and reconciled. Startup ordering correction (subtask 71) completed and reconciled. Subtask 72 is current execution.
 
 
 
