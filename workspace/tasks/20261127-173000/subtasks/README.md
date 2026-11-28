@@ -4,7 +4,9 @@ Parent: [task.md](../task.md)
 
 | ID | Title | Status | Record |
 |---|---|---|---|
-| 20261127-173000-03 | Correct objective-based task parent selection | Paused | [03-correct-objective-based-task-parent-selection.md](03-correct-objective-based-task-parent-selection.md) |
+| 20261127-173000-01 | Consolidate document-governance standards into The Worker | In Progress | [01-consolidate-document-standards-into-worker.md](01-consolidate-document-standards-into-worker.md) |
+| 20261127-173000-03 | Correct objective-based task parent selection | Ready | [03-correct-objective-based-task-parent-selection.md](03-correct-objective-based-task-parent-selection.md) |
+| 20261127-173000-64 | Correct workstream queue-draining and recursive reconciliation | In Progress | [64-correct-workstream-queue-draining.md](64-correct-workstream-queue-draining.md) |
 | 20261127-173000-61 | Review structural validator test execution and validation loop | Paused | [61-review-structural-validator-test-execution-and-validation-loop.md](61-review-structural-validator-test-execution-and-validation-loop.md) |
 
 
