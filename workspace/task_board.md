@@ -28,7 +28,9 @@ _No blocked subtasks._
 
 ### Proposed — decision pending
 
-_No proposed tasks._
+| ID | Title | Priority | Status | Approval | Reason | Task record |
+|---|---|---:|---|---|---|---|
+| 20261127-173500 | Remove the standalone latest lint report copy | P0 | Proposed | Approved | Accepted ADR prerequisite; DRAFT-0008 approved-for-ADR. | [task](tasks/20261127-173500/task.md) |
 
 ### Paused
 
