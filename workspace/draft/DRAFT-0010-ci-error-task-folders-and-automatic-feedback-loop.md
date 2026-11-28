@@ -2,7 +2,7 @@
 record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0010"
-revision: 8
+revision: 9
 status: "draft"
 created: "2026-11-28"
 updated: "2026-11-28"
@@ -33,7 +33,7 @@ For each terminal aggregate validation attempt, automation publishes one minimal
 
 A task becomes **Done** only when the complete required check set succeeds for its exact current commit, the result is reconciled, and no required subtasks remain. A committed task enters **Committed / Awaiting CI** and the Worker immediately continues with other unblocked work.
 
-This remains a Draft. The user has approved the component decisions recorded below, including the generic verifier's use of both adapters and repository-owned scripts. The consolidated architecture and remaining calls are presented for final decision; implementation is not authorized by this Draft.
+This remains a Draft. The user has approved the architecture and policy choices recorded below, including one coordinator invoking reusable established workflows and the generic verifier, plus bounded 14-day retention for reconciled attempt records. Implementation is not authorized by this Draft.
 
 ## 2. Goals and boundaries
 
@@ -89,11 +89,11 @@ Every task-specific implementation commit carries exactly one valid \`Task-ID: <
 
 ### 4.1 Preferred orchestration
 
-Use one coordinator workflow per source commit. It resolves the protected policy and exact-commit task contract, invokes required established checks and the generic verifier as reusable jobs, and aggregates their outcomes in a final job that runs even when validation jobs fail.
+Use one coordinator workflow per source commit. It resolves the protected policy and exact-commit task contract, invokes required established checks through reusable `workflow_call` entry points and the generic verifier, and aggregates their outcomes in a final job that runs even when validation jobs fail. This architecture is approved.
 
 Established workflows used by this coordinator must expose callable entry points (or equivalent reusable jobs). Their independent triggers may remain for unrelated purposes, but they must not create duplicate task-validation cycles. The coordinator is the sole authority for the task's aggregate result.
 
-This single-coordinator design avoids races between separate workflow completions and avoids an aggregator guessing whether another required workflow is still pending. If repository constraints prevent this design, a separately approved alternative must provide an explicit expected-check manifest, missing-check timeout, and equivalent recovery guarantees.
+This single-coordinator design avoids races between separate workflow completions and avoids an aggregator guessing whether another required workflow is still pending. Do not substitute independent push-triggered workflows plus a `workflow_run` aggregator without a new user-approved decision.
 
 ### 4.2 Aggregate outcomes
 
@@ -193,7 +193,14 @@ Keep one compact index under \`workspace/\`. It is operational run metadata, not
 
 **Forbidden:** findings, error signatures, logs, diagnostic payloads, evidence, remediation state, copied report content, or task history.
 
-Keep one record per validation attempt so event delivery remains idempotent and previous outcomes are not silently overwritten. Do not retain a second index, Ledger, or archive.
+**Retention and compaction:**
+
+- Retain each individual attempt record for 14 days after successful reconciliation. The 14-day clock does not start at workflow completion.
+- Never prune an unreconciled, partially reconciled, or otherwise outstanding attempt, regardless of age.
+- After the 14-day period, compact and remove the individual record. Do not retain a permanent per-attempt archive.
+- Maintain one small, monotonic `closed-through` recovery watermark/checkpoint identifying the latest run/attempt range for which every earlier attempt has been accounted for and reconciled. Advance it only after the recovery sweep has verified there are no missing events, publication gaps, or unreconciled attempts in that range.
+- Duplicate or delayed deliveries at or below the verified checkpoint are no-ops and cannot recreate review tasks. Distinct reruns remain distinct attempts and must be accounted for before the checkpoint advances.
+- Keep only the checkpoint and recent/unresolved records. Do not retain a second index, Ledger, findings archive, or historical attempt archive.
 
 ## 9. Migration and retirement
 
@@ -227,7 +234,7 @@ The resulting ADR must reconcile conflicting clauses in ADR-0003, ADR-0004, and 
 
 ## 11. Implementation sequence
 
-1. Finalize the open architecture calls below and promote this Draft through Decision Governance to a superseding ADR.
+1. Promote this approved Draft through Decision Governance to a superseding ADR.
 2. Inventory existing workflows and map every task/contract requirement to its current check coverage. Preserve all existing required validation scope.
 3. Define the protected validation policy, contract schema, registered adapters, script interface, and trust boundary.
 4. Implement the coordinator, reusable entry points for established workflows, generic verifier, exact-SHA execution, and aggregate classification.
@@ -254,23 +261,19 @@ The following decisions were explicitly approved during discussion:
 - Correct active parent receives the error child; otherwise use one permanent fallback parent. Never infer parentage or recreate a deleted original parent.
 - Completed error children and Done ordinary parent folders are deleted; the permanent fallback parent is never automatically deleted.
 - Revision 7's generic verifier direction is approved: one reusable workflow for uncovered task requirements, supporting both registered adapters and repository-owned scripts, with a thin dispatcher. Revision 8 hardens this with exact-commit, trust, privilege, anti-flood, recovery, and loop-prevention safeguards.
+- Use one coordinator per source commit, invoking established workflows through reusable `workflow_call` entry points alongside the generic verifier; do not use independent workflow aggregation as the default architecture.
+- Retain reconciled per-attempt index records for 14 days, then compact/prune them behind a verified monotonic recovery checkpoint. Never prune unreconciled attempts; old duplicate deliveries at or below the checkpoint are no-ops.
 
-## 13. Remaining user decisions
+## 13. Open decisions
 
-Only the following architecture choices remain for user direction. Recommendations are included; no implementation is authorized.
-
-1. **Coordinator architecture — recommended: one coordinator invoking reusable jobs.** Existing task-validation workflows would expose \`workflow_call\` entry points and be called by one coordinator, alongside the generic verifier. This gives one reliable aggregate result without waiting for separate workflows or guessing whether a check is missing. Alternative: retain independent push-triggered workflows and add a separate \`workflow_run\` aggregator plus missing-check timeout/recovery. The single-coordinator model is simpler and less prone to race conditions, but requires refactoring established workflows.
-
-2. **Run-status retention — recommended: retain one compact record per attempt.** Keep all attempt metadata in the single index, with no diagnostic content. This preserves idempotency and makes previous outcomes visible without retaining findings or reports. Alternative: prune records after their review tasks are reconciled, reducing index growth but weakening long-term attempt traceability and duplicate-event protection.
-
-No other policy choice is intentionally left open. Contract limits, adapter allowlists, timeouts, recovery cadence, retry bounds, trigger filters, and exact schemas are implementation details to be designed within the approved safeguards and accepted ADR.
+No further user policy or architecture decisions are outstanding. Contract limits, adapter allowlists, timeouts, recovery cadence, retry bounds, trigger filters, checkpoint representation, and exact schemas are engineering details to be designed within the approved safeguards and accepted ADR.
 
 ## 14. Review and decision state
 
-- **Revision:** 8
+- **Revision:** 9
 - **Status:** Draft; not yet formally accepted as a complete decision record.
-- **Approved components:** All decisions in Section 12, including the generic verifier supporting both registered adapters and repository-owned scripts.
-- **Awaiting user calls:** Only the two choices in Section 13.
+- **Approved design:** All decisions in Section 12, including the single-coordinator architecture and 14-day bounded retention/checkpoint model.
+- **Awaiting user calls:** None.
 - **Implementation authorization:** Not granted. Approval of design components and this revision does not itself authorize implementation. Implementation requires formal Draft promotion, an accepted superseding ADR, and the user's explicit execution instruction.
 - **Resulting ADR:** None.
 
@@ -281,7 +284,8 @@ No other policy choice is intentionally left open. Contract limits, adapter allo
 | 2026-11-28 | 1–4 | Established the folder-based remediation model, universal Actions-only post-commit validation, Awaiting CI state, exact-commit completion gate, event-driven review, non-blocking queue, and permanent fallback. | Individual architecture decisions approved. |
 | 2026-11-28 | 5–6 | Reduced CI output to a run-status index and review task; restricted Worker log inspection to failure diagnosis. | Approved. |
 | 2026-11-28 | 7 | Added one generic reusable verifier, thin dispatcher, structured contracts, adapters, and repository-owned scripts. | User approved both adapters and repository-owned scripts. |
-| 2026-11-28 | 8 | Reassessed and consolidated the lifecycle; added one aggregate coordinator, trusted contract policy, isolated publisher, atomic/idempotent publication, recovery sweep, loop prevention, stale-result handling, error grouping, flood controls, and explicit failure guarantees. Reduced duplicated options, risks, and implementation text. | Presented for the two remaining architecture calls in Section 13. |
+| 2026-11-28 | 8 | Reassessed and consolidated the lifecycle; added one aggregate coordinator, trusted contract policy, isolated publisher, atomic/idempotent publication, recovery sweep, loop prevention, stale-result handling, error grouping, flood controls, and explicit failure guarantees. Reduced duplicated options, risks, and implementation text. | Architecture presented for final user decision. |
+| 2026-11-28 | 9 | Confirmed one coordinator invoking reusable established workflows and the generic verifier. Replaced indefinite attempt retention with 14-day retention after reconciliation, unresolved-record protection, and a verified monotonic checkpoint for safe compaction and duplicate suppression. Closed the remaining user decisions. | Both final architecture and retention choices approved by user. |
 
 ## 16. Repository references
 
