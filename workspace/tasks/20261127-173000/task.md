@@ -59,6 +59,13 @@
 - **Decision:** User approved the assessment proposals and instructed execution.
 - **Action:** Created child 62 for implementation closeout, validation-debt tracking, and mandatory queue continuation.
 
+
+
+### 2026-11-28 — sole execution cue and log-only decisions
+
+- **Action:** Created child 63 to enforce the explicit, case-insensitive standalone `execute` cue as the sole execution authorization. Approval only records decisions. `Next` only navigates the decision queue and leaves the blocker unresolved. Decision collection must finish before the batch begins.
+- **Authorization:** User supplied `Execute` after specifying the cue is case-insensitive.
+
 ## 3. Objective and Acceptance Criteria
 
 Serve as the persistent, open parent task and coordination point for skills refactoring in the repository, including the current consolidation work and future refactoring initiatives. This is an explicitly authorized standing parent for skills-refactoring work; it is not a finite deliverable and must not be retired or closed merely because its current children are complete.
