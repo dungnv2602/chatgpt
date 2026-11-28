@@ -21,9 +21,9 @@ supersedes:
   - "ADR-0004"
   - "ADR-0007"
 superseded_by: null
-implementation_status: "not-started"
+implementation_status: "in-progress"
 implementation_tasks:
-  - "20261126-142500"
+  - "20261128-230000"
 review_triggers:
   - "A required check is missing, skipped, cancelled, or evaluated against a different source SHA or policy revision."
   - "The coordinator, publisher, or recovery sweep loses or duplicates a terminal attempt."
@@ -272,4 +272,5 @@ The single coordinator is preferred because the repository needs one authoritati
 |---|---|---|
 | 2026-11-28 | Accepted | User approved DRAFT-0010 revision 9 and instructed promotion. The complete provisional ADR was read back and compared with the approved source. Decision scope and rationale are preserved. |
 | 2026-11-28 | Implementation task linked | Linked approved parent task 20261126-142500 and mapped its acceptance criteria to applicable Confirmation requirements. Execution has not started because the new scope awaits the standalone `execute` cue required by Worker policy. |
+| 2026-11-28 | Implementation task superseded | The incomplete former task 20261126-142500 was cancelled and deleted administratively; implementation continues under 20261128-230000. No acceptance or CI success is claimed. |
 | 2026-11-28 | Source Draft retired | Deleted DRAFT-0010 revision 9 after accepted ADR read-back, index updates, and active-reference migration. Commit `1e5ef5c18e8d6a4cfb67382e5d73730bd29adc12`. |
