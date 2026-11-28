@@ -54,6 +54,13 @@ Acceptance criteria are mapped to these required child tasks:
 - **References:** ADR-0008; prior parent 20261126-142500 (deleted after closeout).
 - **Next:** Start subtask 01: coordinator architecture, protected policy, contracts, and reusable workflow design/implementation.
 
+### 2026-11-28 — Subtask 01 foundation closed
+
+- **Result:** Closed subtask 01 after the Worker-owned policy, schema, adapter registry, interface documentation, and reusable workflow-call entry points were read back from branch `gpt`.
+- **Commit:** `f036ecbd02a9f049486ffbe27f8d0d11edae314d` (task closeout); index reconciliation `892ec77fd5a4db52cc444b4a416b88ccb1782d04`.
+- **Limitations:** Effective GitHub branch protection remains unverified. The existing reusable workflows still require exact-SHA and validation-only migration before coordinator invocation. No runtime or hosted validation is claimed.
+- **Next:** Subtasks 02 and 03 are now eligible.
+
 ## 6. Current State and Remaining Work
 
 Subtask 01 has begun and its initial policy/contract/interface foundation is committed on branch `gpt`. The three existing validation workflows expose reusable `workflow_call` entry points, but remain legacy report publishers and are not yet safe to invoke from the coordinator. GitHub branch protection/ruleset enforcement for the policy files remains an external prerequisite and is not claimed as established.
