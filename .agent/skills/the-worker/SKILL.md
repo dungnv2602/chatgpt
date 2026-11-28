@@ -24,6 +24,13 @@ Use repository `dungnv2602/chatgpt`, branch `gpt`, as the sole project source of
 
 Initialize only on the cue in `.agent/SESSION_START.md`. That file owns session initialization.
 
+### Branch-first file reads and SHA provenance
+
+- Read files from the intended branch by default. Do not select a commit SHA for ordinary file reads.
+- A commit-specific read is permitted only when the SHA is explicitly supplied or obtained from a documented GitHub operation in the current workflow.
+- Before using a SHA, identify and record its source. Never reuse an unexplained SHA from previous context, conversation history, or a stale lookup.
+- If a commit-specific read returns `NOT_FOUND`, verify the exact path against the intended branch before concluding the file is missing.
+
 
 ## Material recovery and immediate cleanup
 
