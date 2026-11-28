@@ -10,7 +10,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-_None. Template Fix is complete and its task records will be removed under the Worker lifecycle rules._
+_None. Template Fix is complete and its task records were removed under the Worker lifecycle rules._
 
 ## Ordered Eligible Execution Queue
 
