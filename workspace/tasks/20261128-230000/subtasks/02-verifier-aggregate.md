@@ -6,14 +6,14 @@
 - **ID:** 20261128-230000-02
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Parent task 20261128-230000, explicitly authorized by user; execution cue provided.
 - **Governing ADR(s):** ADR-0008
 - **Dependencies:** 20261128-230000-01
-- **Eligibility / deferral reason:** Ready when dependency subtasks are completed
+- **Eligibility / deferral reason:** Eligible — subtask 01 foundation is complete
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
