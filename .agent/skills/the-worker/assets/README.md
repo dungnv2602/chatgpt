@@ -18,5 +18,7 @@ Canonical copy-ready templates and supporting static formats owned by The Worker
 | [task-validation/task-validation-policy.json](task-validation/task-validation-policy.json) | ADR-0008 mandatory validation policy | Task-validation coordinator |
 | [task-validation/task-validation-contract.schema.json](task-validation/task-validation-contract.schema.json) | Exact-source-SHA task contract schema | Generic verifier |
 | [task-validation/task-validation-adapters.json](task-validation/task-validation-adapters.json) | Closed typed adapter registry | Generic verifier |
+| [task-validation/task-validation-status-index.schema.json](task-validation/task-validation-status-index.schema.json) | Compact run-status index schema and recovery checkpoint | Publisher and recovery workflows |
+| [task-validation/task-validation-review-template.md](task-validation/task-validation-review-template.md) | Per-attempt review queue entry | Publisher workflow and Worker |
 
 Catalog and governance: [document-type-catalog.md](../references/document-type-catalog.md). Templates are static assets; scripts and explanatory reference documents remain in their respective directories.
