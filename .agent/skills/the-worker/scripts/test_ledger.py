@@ -75,23 +75,23 @@ class LedgerAttributionTests(unittest.TestCase):
         subtasks = folder / "subtasks"
         subtasks.mkdir(parents=True, exist_ok=True)
         (subtasks / "README.md").write_text(
-            "# Subtasks — " + FALLBACK_ID + "\\n\\nParent: [task.md](../task.md)\\n",
+            "# Subtasks — " + FALLBACK_ID + "\n\nParent: [task.md](../task.md)\n",
             encoding="utf-8",
         )
         content = (
-            "# Task: Permanent CI remediation fallback parent\\n\\n## Metadata\\n\\n"
-            "- **ID:** " + FALLBACK_ID + "\\n"
-            "- **Status:** In Progress\\n"
-            "- **Origin:** System\\n"
-            "- **Priority:** P1\\n"
-            "- **Current execution:** No\\n"
-            "- **Eligibility / deferral reason:** Permanent system-owned fallback parent; never selected for execution.\\n"
-            "- **Approval:** Approved\\n"
-            "- **Governing ADR(s):** ADR-0008\\n"
-            "- **Updated:** 2026-11-28 12:38 UTC\\n\\n"
-            "## 10. Ledger Findings\\n\\n"
-            "| Finding ID | Severity | Diagnostic | Evidence |\\n"
-            "|---|---|---|---|\\n"
+            "# Task: Permanent CI remediation fallback parent\n\n## Metadata\n\n"
+            "- **ID:** " + FALLBACK_ID + "\n"
+            "- **Status:** In Progress\n"
+            "- **Origin:** System\n"
+            "- **Priority:** P1\n"
+            "- **Current execution:** No\n"
+            "- **Eligibility / deferral reason:** Permanent system-owned fallback parent; never selected for execution.\n"
+            "- **Approval:** Approved\n"
+            "- **Governing ADR(s):** ADR-0008\n"
+            "- **Updated:** 2026-11-28 12:38 UTC\n\n"
+            "## 10. Ledger Findings\n\n"
+            "| Finding ID | Severity | Diagnostic | Evidence |\n"
+            "|---|---|---|---|\n"
         )
         (folder / "task.md").write_text(content, encoding="utf-8")
         return folder
