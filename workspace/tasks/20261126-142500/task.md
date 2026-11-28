@@ -7,12 +7,12 @@
 - **Created:** 2026-11-26 14:25 UTC
 - **Updated:** 2026-11-28 15:20 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Proposed
 - **Origin:** User
 - **Approval:** Approved
-- **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation.
+- **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation. DRAFT-0010 revision 9 and ADR-0008 are approved. The new implementation scope still requires the repository's explicit standalone `execute` cue.
 - **Governing ADR(s):** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — universal post-commit validation, coordinator/verifier, status index, review tasks, remediation folders, retention, and report-system migration.
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
 
@@ -33,6 +33,7 @@ Execute
 Expand on this, fix gaps, fix floodings, fix deadlocks, tighten, close the cycle, refactor by trimming down redundancy and minimize content without losing full context, optimize workflow, update templates, update skills, etc.
 
 If you really understand, you would know you should create a task for this to track your progress.”
+- **2026-11-28 — User decision:** “Approve the draft, proceed.” This approves DRAFT-0010 revision 9 and its promotion to ADR-0008. Under the canonical Worker execution gate, `proceed` is not the standalone `execute` cue. Keep the materially changed ADR-0008 implementation scope Proposed until that cue is issued.
 - **Effective policy — ADR-0008:** After a source commit, GitHub Actions is the sole implementation-validation authority. The Worker does not run tests, scripts, lint, readback, or other correctness checks after commit, and does not poll, wait for, dispatch, or rerun CI. Set the task to Committed / Awaiting CI and continue with other unblocked work. Read the status index first. Open linked Actions logs only after a recorded check, coverage, infrastructure, or capture failure, solely to diagnose actionable causes. Done requires aggregate success for the exact current SHA and policy revision, result reconciliation, and no required subtasks. Delete completed task folders directly under the approved lifecycle. Retire `.takeout/reports/` only after the replacement is operational and every producer/consumer has migrated.
 
 
@@ -193,15 +194,15 @@ Implementation must follow ADR-0008's staged migration and must not delete repor
 
 ### 2026-11-28 — DRAFT-0010 approval and ADR-0008 promotion
 
-- **Action:** The user approved DRAFT-0010 revision 9 and instructed execution. Promoted it to accepted ADR-0008 after provisional creation, full readback, and scope comparison.
+- **Action:** The user approved DRAFT-0010 revision 9 and instructed “proceed.” Promoted it to accepted ADR-0008 after provisional creation, full readback, and scope comparison. The new implementation scope remains Proposed because “proceed” is not the repository's standalone `execute` cue.
 - **Result:** ADR-0008 is accepted and governs this task. It supersedes ADR-0003 and ADR-0007, and the specified CI completion and findings/report clauses in ADR-0004. The parent task now links ADR-0008. The source Draft was retired after accepted ADR readback and active index references were migrated. Draft deletion commit: `1e5ef5c18e8d6a4cfb67382e5d73730bd29adc12`.
 - **References:** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md); commits `ac87f45e84287eef610ce6979ff4e85963d27717`, `f46d125adb202b2ccf08430063588f19e6635317`, and task-link commit `2be94982d80df0de825134a362a11a303db26202`.
 - **Validation limits:** Repository files were read back. No tests were run and no hosted CI results were inspected. Workflow runtime behavior remains unverified.
-- **Next:** Implement ADR-0008 under this parent task. Preserve the existing report pipeline until the replacement meets every applicable Confirmation criterion.
+- **Next:** Await the explicit standalone `execute` cue for ADR-0008 implementation. Preserve the existing report pipeline until the replacement meets every applicable Confirmation criterion.
 
 ## 7. Current State
 
-The parent remains the approved current-execution task for ADR-0008 implementation. The source Draft is promoted and no longer an active proposal.
+The parent is approved and linked to ADR-0008, but its materially changed implementation scope is Proposed pending the standalone `execute` cue. The source Draft is promoted and no longer an active proposal.
 
 - Audit child `20261126-142500-01` is Done.
 - Historical implementation child `20261126-142500-02` has no current task record in the subtask index. Do not recreate it. Its prior repository changes remain subject to reconciliation against ADR-0008.
@@ -209,7 +210,7 @@ The parent remains the approved current-execution task for ADR-0008 implementati
 - The legacy report/Ledger pipeline and `.takeout/reports/` tree remain in place during migration. Do not delete them before replacement proof.
 - ADR-0008 is accepted and linked as the governing decision. The current report and workflow implementation has not yet been migrated to its architecture.
 - Earlier documentation, schema, script, and workflow changes exist, but tests were not executed and hosted CI results were not inspected. No runtime or validation-pass claim is made.
-- The parent remains In Progress until all applicable ADR-0008 Confirmation criteria and the original task scope are satisfied.
+- The parent remains Proposed until the user issues the standalone `execute` cue. After execution begins, it remains open until all applicable ADR-0008 Confirmation criteria and original task scope are satisfied.
 
 ## 8. Remaining Work
 
@@ -252,7 +253,7 @@ The parent remains the approved current-execution task for ADR-0008 implementati
 
 ## 12. Handoff Instructions
 
-Resume from the current parent task `20261126-142500`, governed by [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md). Do not recreate deleted child `02` or infer missing child records. Use remote GitHub operations on branch `gpt` only. Do not run repository scripts/tests locally, poll, dispatch, rerun, or wait for CI. For committed task validation, read the status index first and inspect linked logs only after a recorded failure, solely for diagnosis. Preserve the legacy report pipeline until ADR-0008 Confirmation proves the replacement operational. Read back every changed path and update the task and board. Delete the parent folder only at full closeout.
+Resume from parent task `20261126-142500` only after the standalone `execute` cue. It is governed by [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md). Do not recreate deleted child `02` or infer missing child records. Use remote GitHub operations on branch `gpt` only. Do not run repository scripts/tests locally, poll, dispatch, rerun, or wait for CI. For committed task validation, read the status index first and inspect linked logs only after a recorded failure, solely for diagnosis. Preserve the legacy report pipeline until ADR-0008 Confirmation proves the replacement operational. Read back every changed path and update the task and board. Delete the parent folder only at full closeout.
 
 ## 13. Ledger Findings
 
