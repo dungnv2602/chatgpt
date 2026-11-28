@@ -52,8 +52,8 @@ Tighten The Worker so that only the case-insensitive, explicit execution cue `ex
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** Not yet recorded.
+- **Commit SHA:** Implementation commits in progress.
+- **Changed paths:** The Worker, parent/subtask templates, board template, discussion template, child index, task board, parent task, and this child record.
 - **Readback:** Pending.
 - **Checks:** Not performed.
 - **Limitations:** No local or hosted validation.
