@@ -8,6 +8,12 @@ The Ledger owns finding identity, report intake, classification, evidence, recur
 
 The Ledger never creates arbitrary parent tasks. It uses the exact active user-originated parent from source Task-ID attribution, or the one permanent system-owned fallback parent when attribution cannot resolve.
 
+## ADR-0008 boundary
+
+This reference and the Ledger script govern legacy report findings only while their producers remain active during migration. They do not own the ADR-0008 task-validation status index or review folders. The Worker owns exact-SHA attempt review, current-task checks, root-cause grouping, task attribution, feedback children, and reconciliation. Do not add task-validation findings, logs, or diagnostics to the legacy Ledger. Do not use the Ledger to schedule work or change task lifecycle.
+
+Legacy reports may continue to update their historical finding records and legacy task references until the report producer cutover is confirmed. The Worker review queue remains the sole route for new coordinator attempts.
+
 ## Intake
 
 1. Read only reports listed in the published lint and Actions indexes. Do not scan report history or modify source reports.
@@ -32,7 +38,7 @@ Every task-specific source commit must include one trailer:
 - The fallback parent is a permanent system container, not a user task or an execution target. Never mark it Done/Cancelled, delete it, or select it as Current Execution.
 - A finding's latest observation controls attribution for that ingestion. Never reuse an older observation's parent for a new, unattributed run.
 
-For attributed findings, group by genuine parent ID and stable `task_group`. Create or reuse one P0 CI remediation child per active group under that parent's `subtasks/` directory. Use `NN-ci-remediation-<slug>.md` and ID `<parent-id>-NN`.
+For legacy report findings, group by genuine parent ID and stable `task_group`. Create or reuse one P0 legacy CI remediation child per active group under that parent's `subtasks/` directory. Do not apply this Ledger path to ADR-0008 coordinator attempts. Use `NN-ci-remediation-<slug>.md` and ID `<parent-id>-NN`.
 
 Set new CI children to P0, Approved, Ready under the standing authorization. Use Proposed only when the user must resolve a specific decision before implementation. Routine implementation does not need an ADR just because the code differs. Keep a real decision gate limited to the dependent child.
 
