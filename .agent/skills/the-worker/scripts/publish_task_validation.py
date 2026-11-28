@@ -69,9 +69,20 @@ def ensure_source_commit(root: Path, source_sha: str) -> None:
 def source_task_id(root: Path, source_sha: str) -> str | None:
     message = run_git(root, "show", "-s", "--format=%B", source_sha).stdout
     try:
-        return extract_task_id(message)
+        task_id = extract_task_id(message)
     except TaskContractError:
         return None
+    paths = run_git(root, "ls-tree", "-r", "--name-only", source_sha, "workspace/tasks").stdout.splitlines()
+    matches = []
+    for relative in paths:
+        if not (relative.endswith("/task.md") or "/subtasks/" in relative and relative.endswith(".md")):
+            continue
+        if not relative.startswith("workspace/tasks/"):
+            continue
+        record = run_git(root, "show", f"{source_sha}:{relative}").stdout
+        if re.search(rf"^- \*\*ID:\*\* {re.escape(task_id)}$", record, re.MULTILINE):
+            matches.append(relative)
+    return task_id if len(matches) == 1 else None
 
 
 def read_json(path: Path) -> Any:
@@ -106,7 +117,14 @@ def validate_aggregate(
         raise PublisherError("Aggregate check-set identity is malformed")
     if check_set_id is None and outcome not in {"capture_failure", "infrastructure_failure"}:
         raise PublisherError("A terminal result requires a check-set identity")
-    return outcome, check_set_id
+    completed_at = aggregate.get("completed_at")
+    if not isinstance(completed_at, str):
+        raise PublisherError("Aggregate completion timestamp is missing")
+    try:
+        datetime.fromisoformat(completed_at.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise PublisherError("Aggregate completion timestamp is invalid") from exc
+    return outcome, check_set_id, completed_at
 
 
 def validate_index(index: Any) -> dict[str, Any]:
@@ -259,9 +277,11 @@ def publish_attempt(
     run_id: int,
     attempt: int,
     actions_url: str,
+    completed_at: str,
 ) -> bool:
-    outcome, check_set_id = validate_aggregate(aggregate, source_sha, policy_blob_sha, run_id, attempt)
-    completed_at = timestamp_now()
+    outcome, check_set_id, aggregate_completed_at = validate_aggregate(aggregate, source_sha, policy_blob_sha, run_id, attempt)
+    if completed_at != aggregate_completed_at:
+        raise PublisherError("Publisher timestamp does not match the aggregate timestamp")
     task_id = source_task_id(root, source_sha)
     record = record_for(
         aggregate, task_id, source_sha, policy_blob_sha, run_id, attempt,
@@ -341,14 +361,16 @@ def publish_with_retry(
         raise PublisherError("Actions URL does not match the repository and run ID")
 
     aggregate = read_json(aggregate_path)
-    validate_aggregate(aggregate, source_sha, policy_blob_sha, run_id, attempt)
+    outcome, check_set_id, completed_at = validate_aggregate(
+        aggregate, source_sha, policy_blob_sha, run_id, attempt
+    )
     ensure_source_commit(root, source_sha)
 
     for push_attempt in range(1, MAX_PUSH_ATTEMPTS + 1):
         run_git(root, "fetch", "origin", branch, "--depth=1")
         run_git(root, "reset", "--hard", "FETCH_HEAD")
         changed = publish_attempt(
-            root, aggregate, source_sha, policy_blob_sha, run_id, attempt, actions_url
+            root, aggregate, source_sha, policy_blob_sha, run_id, attempt, actions_url, completed_at
         )
         if not changed:
             return "already_published"
