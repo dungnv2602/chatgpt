@@ -7,17 +7,17 @@
 - **ID:** 20261127-173000-73
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User explicitly requested “Fix your workflow” and supplied the standalone “Execute” cue on 2026-11-28.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — explicit execution authorization received; canonical workflow and map are being corrected.
+- **Eligibility / deferral reason:** Done — acceptance criteria satisfied and all changed paths read back from branch `gpt`.
 - **Required:** Yes
 - **Created:** 2026-11-28 06:54 UTC
-- **Updated:** 2026-11-28 06:54 UTC
+- **Updated:** 2026-11-28 07:00 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -55,17 +55,17 @@ Scope is limited to the canonical Worker instructions and workflow overview, plu
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Pending
-- **Readback:** Pending
-- **Checks:** Not performed; local scripts/tests/lint and hosted CI are outside this scope.
-- **Limitations:** Remote readback verifies committed content, not runtime behavior.
+- **Commit SHA:** `f9bfbdb2ea5a4f1d0b051ac8a6c5963e00e2e82e` (Worker), `8d2b8187bae4f2c7f163959c0a3e7157132f9617` (Worker activation correction), `892825e5222e21e5e06661bee49d95bda2991c89` (Workflow Map), `b8bec9e517f048698a8a8b3b7de53f0ec9d67468` (task capture), `4c16cc30eb76db33304cb5ce12fba5e78b91ebe9` (subtask index), `9ca067ddb004c08223893aba41af6bb473e964d6` (board).
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `.agent/WORKFLOW_MAP.md`; `workspace/task_board.md`; `workspace/tasks/20261127-173000/subtasks/README.md`; this subtask record.
+- **Readback:** Worker SHA `a4cac0c49aa0c1b1d858f199e8564043e531ca93` confirms startup prohibits CI report/index/history/Ledger reads and CI baseline reconciliation; both CI references require an assigned selected workspace CI task. Workflow Map SHA `ba5ee2c8beba2dd3233dc7c60581b5a17d58e135` removes Ledger reconciliation from startup and states the workspace-task activation boundary. Board and index readback confirm tracking.
+- **Checks:** No local scripts/tests/lint and no hosted CI inspection, per Worker restrictions.
+- **Limitations:** Remote readback verifies committed content, not runtime behavior. Initial implementation commits were made without the required Task-ID trailer; the task-tracking closeout commit will carry the trailer and preserve provenance.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28 07:00 UTC
+- **Completion basis:** The Worker and Workflow Map now enforce workspace-assigned CI task activation; all changed files were read back from branch `gpt`.
 
 ## 8. Hosted Validation
 
@@ -81,7 +81,7 @@ Scope is limited to the canonical Worker instructions and workflow overview, plu
 
 ## 10. Handoff
 
-Implement the task-scoped CI activation gate in The Worker, align the Workflow Map, read back all changed files, then reconcile and close this child under the parent lifecycle.
+Workflow correction is complete and read back. Close this child under the persistent parent lifecycle; no CI data or hosted validation was accessed.
 
 ## 11. Ledger Findings
 
