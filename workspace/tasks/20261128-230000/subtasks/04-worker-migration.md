@@ -2,23 +2,49 @@
 
 ## Metadata
 
-- **Template version:** 1.6
+- **Template version:** 1.8
 - **ID:** 20261128-230000-04
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Parent task 20261128-230000, explicitly authorized by user; execution cue provided.
 - **Governing ADR(s):** ADR-0008
 - **Dependencies:** 20261128-230000-02; 20261128-230000-03
-- **Eligibility / deferral reason:** Ready when dependency subtasks are completed
+- **Eligibility / deferral reason:** In Progress — dependencies 02 and 03 are Done and parent execution is active
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
-- **Ledger group:** None
+- **Root-cause group:** None
+- **Ledger group:** None (legacy reports only)
 - **Legacy Task IDs:** None
+
+## Validation Contract
+
+Declare task-specific checks in this JSON block. The coordinator binds the contract to the exact source commit SHA. Use an empty array when no additional checks are required. Repository policy checks remain mandatory and cannot be removed or overridden. Use only registered adapters and repository-relative entrypoints. Never add shell command strings, credentials, environment overrides, or permission settings.
+
+```json
+{
+  "contract_revision": "1",
+  "checks": []
+}
+```
+
+## Validation Lifecycle
+
+```json
+{
+  "state": "not_committed",
+  "source_sha": null,
+  "policy_revision": null,
+  "coordinator_run_id": null,
+  "attempt": null,
+  "outcome": null,
+  "reconciled_at": null
+}
+```
 
 ## 1. Original Prompt
 
@@ -44,11 +70,11 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 
 - ADR-0008 governs this work.
 - Preserve existing validation coverage and legacy report system until migration gates are met.
-- **Next:** Implement and commit this subtask's deliverables, then readback as required by the task workflow.
+- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. Remaining: finish regression coverage, docs/navigation, report consumer inventory, and final readback.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
+- **Commit SHA:** In progress; implementation commits recorded in branch history
 - **Changed paths:** Not yet determined
 - **Readback:** Pending
 - **Checks:** Not performed
