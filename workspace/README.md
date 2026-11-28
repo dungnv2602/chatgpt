@@ -9,6 +9,7 @@ Navigation for task records, decision records, analysis, and unified CI evidence
 | [discussion.md](discussion.md) | Current discussion and decisions |
 | [task_board.md](task_board.md) | Published execution and deferred state |
 | [tasks/](tasks/) | Active task folders and subtask indexes |
+| [task-validation/](task-validation/README.md) | Exact-SHA status index, recovery checkpoint, and review queue |
 | [draft/](draft/README.md) | Decision proposals |
 | [adr/](adr/README.md) | Accepted decisions |
 | [analysis/](analysis/README.md) | Repository analysis snapshots |
