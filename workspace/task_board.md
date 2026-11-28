@@ -10,7 +10,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-_None._
+**20261126-142500 — Repair CI task generation and clear active reports** (P1, In Progress, Approved) — [task](tasks/20261126-142500/task.md)
 
 ## Ordered Eligible Execution Queue
 
@@ -24,7 +24,7 @@ _None._
 
 ### Current focus reconciliation
 
-The persistent Refactor Skills parent is at quiescence. Child 73 completed and was removed under the normal child lifecycle. The CI activation boundary is now workspace-task scoped.
+The current authorized focus is CI task lifecycle repair under 20261126-142500. Implementation of the newly approved folder-based CI lifecycle is pending the required superseding decision and canonical subtask-folder format update. The report-directory deletion target also requires path clarification.
 
 ### Blocked
 
