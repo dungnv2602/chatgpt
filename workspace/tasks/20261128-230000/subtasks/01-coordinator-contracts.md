@@ -71,7 +71,8 @@ Design and implement exact-SHA coordination foundations, protected policy resolu
 
 ## 6. State and Evidence
 
-- **Commit SHA:** `fe1ae3700e02414dea5c9816a0f4dcc7a6231d51` (current branch HEAD; implementation foundation is present in branch history)
+- **Commit SHA:** `fe1ae3700e02414dea5c9816a0f4dcc7a6231d51` (initial implementation foundation; historical, not current branch HEAD)
+- **Current path reconciliation commit:** `a64fbbb94b7c513c04634ca65f6a10a1bac71688` (canonical Worker paths and task attribution)
 - **Changed paths:** Initial paths: `.github/task-validation-policy.json`; `.github/task-validation-contract.schema.json`; `.github/task-validation-adapters.json`; `.github/task-validation/README.md`; `.github/workflows/ste-lint-changed.yml`; `.github/workflows/ste-lint-full-docs.yml`; `.github/workflows/validate-document-standards.yml`. The first four paths are historical and were removed by child 74.
 - **Current canonical paths:** `.agent/skills/the-worker/assets/task-validation/task-validation-policy.json`; `.agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json`; `.agent/skills/the-worker/assets/task-validation/task-validation-adapters.json`; `.agent/skills/the-worker/references/task-validation-interfaces.md`; `.agent/skills/the-worker/assets/README.md`. The Worker skill, Agent Skill Authoring skill, document catalog, validator, regression tests, and document-standards workflow now enforce and consume this ownership model.
 - **Readback:** The Worker-owned policy, schema, adapter registry, interface guide, asset index, catalog, validator, regression tests, Worker and Agent Skill Authoring skills, and all three validation workflows read back from `gpt`. The old `.github/task-validation*` paths are absent.
