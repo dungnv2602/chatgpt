@@ -670,3 +670,9 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - Deletion commit: `66c5856798fba1cb747e00ad88474e7e4d3931a0`. Board reconciliation commit: `c4eafed5c7c7404eaabbe551e1c207fa5611360e`.
 - Readback: Confirmed the target file returns NOT_FOUND on branch `gpt`; board and parent progress record were read back. The child record is deleted at closeout.
 - Startup CI Ledger baseline discrepancy remains outside this scoped deletion and has not been investigated or resolved in this cycle.
+
+
+### 2026-11-28 — map-first startup order correction
+
+- Created child 71 to correct the sequence so Session Start routes to the Workflow Map first, before The Worker and related references.
+- Explicit execution authorization received. Implementation underway.
