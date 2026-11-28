@@ -26,7 +26,10 @@ _No additional eligible tasks under Template Fix while child 02 is In Progress._
 
 ## Next Task
 
-No additional eligible child remains under Template Fix. Refactor Skills has no eligible child and remains at quiescence. Its P0 focus is outside the user's current selected batch.
+No next child is selected within the Template Fix batch. Other open parents remain unselected:
+
+- [Repair CI task generation and clear active reports](tasks/20261126-142500/task.md) — P1, In Progress. Its child 02 is active outside this batch.
+- [Refactor Skills](tasks/20261127-173000/task.md) — Persistent P0 parent at quiescence. No eligible child remains.
 
 ## Deferred Work
 
@@ -38,9 +41,7 @@ _No blocked subtasks._
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-
-
-
+| 20261128-221000 | Plans | P2 | Paused | Approved | Future planning is explicitly deferred by the user. | [task](tasks/20261128-221000/task.md) |
 
 ### Dependency-waiting
 
