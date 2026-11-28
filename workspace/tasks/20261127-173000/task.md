@@ -754,3 +754,13 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Final branch readback:** Worker SHA `dd1d8d4da7c778614932128f5a9a9805b8cbbee8`; subtask index SHA `57fe10d456fdfb59d08641440400acf76ec23b8d`; parent SHA `ff44f2ab12cb0fcf7fa1559c3056bda58097464b`; board SHA `7ae03ef316358399444d23657c79a3d0e7bc0d97`. Confirmed child record absent and index entry removed. Closeout tracking commit `b3a343a8a7afac30325de52205376f418ff8aebb`.
 - **Checks:** No local tests/scripts/lint or hosted CI inspection performed.
 - **Closeout:** Child 76 completed and its record removed under normal child lifecycle. Child 75 remains open for validation metadata; ADR-0008 remains Current Execution.
+
+
+### 2026-11-28 — child 77: persistent eligible-operation worklist
+
+- **Root cause:** Task-level scheduling and stop-proof language did not require a concrete decomposed operation worklist, allowing assessment/status reconciliation to be treated as a practical stop.
+- **Correction:** The Worker now requires a persistent operation-level worklist for authorized execution, decomposition of residual acceptance criteria around blockers, immediate reselection after every operation transition, effect-aware recovery, and a worklist-based quiescence proof. Task-level blockers cannot conceal independently eligible operations. The Workflow Map now routes execution through operation-level scheduling.
+- **Implementation commits:** Worker `2202d365f75559e79a89dc481e29e76883447a64`; map `860dc1fe5d5f9d05756c0e25f82971b193fa00e`.
+- **Readback:** Worker operation-worklist procedure and Workflow Map reconciled from branch `gpt`; task record and index also read back. The implementation child is closed and removed under the normal lifecycle.
+- **Checks:** No local tests/scripts/lint or hosted CI inspection performed.
+- **Closeout:** Child 77 completed and deleted. Universal execution authorization continues to the ADR-0008 workstream; this correction does not reset or consume it.
