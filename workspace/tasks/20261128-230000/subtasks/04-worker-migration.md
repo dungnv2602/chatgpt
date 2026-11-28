@@ -37,8 +37,8 @@ Declare task-specific checks in this JSON block. The coordinator binds the contr
 ```json
 {
   "state": "awaiting_ci",
-  "source_sha": "e46cf725fc04398036cae7d07fb0d8cd33d88564",
-  "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+  "source_sha": "c362482231e425125f642b84ceb642ba9a725856",
+  "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
   "coordinator_run_id": null,
   "attempt": null,
   "outcome": null,
@@ -74,11 +74,11 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 
 ## 6. State and Evidence
 
-- **Commit SHA:** e46cf725fc04398036cae7d07fb0d8cd33d88564; workflow gate commit pending
+- **Commit SHA:** c362482231e425125f642b84ceb642ba9a725856
 - **Changed paths:** Worker skill, task-validation interfaces, CI Ledger reference, document-type catalog, Workflow Map, task-validation README, task tracking records, and five validation/diagnostic workflows.
-- **Readback:** Pending after metadata update
+- **Readback:** Pending final readback
 - **Checks:** Not performed
-- **Limitations:** No runtime claims.
+- **Limitations:** No local tests or hosted validation performed. Effective branch protection and default-branch recovery workflow availability remain external prerequisites; existing capture-failure attempts were not inspected or reconciled.
 
 ## 7. Completion
 
