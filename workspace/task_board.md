@@ -4,6 +4,8 @@ Canonical format: [TASK_BOARD_TEMPLATE.md](../.agent/skills/the-worker/assets/TA
 
 ## Scheduler contract
 
+Follow the Worker's scheduling and decision-collection procedure. This board publishes state and does not define operating rules.
+
 The Worker is the sole scheduler. This board publishes its current selection and ordered eligible queue. It is not a second scheduler. Compare the board with task records and child indexes before declaring the queue empty.
 
 Check eligibility before priority or age. Dependencies must be satisfied, execution must be authorized, and status must be Ready. Rank eligible tasks by priority (P0 first), then age within the same priority unless a documented dependency or material constraint changes the order. Keep ineligible tasks out of the queue. List them in the appropriate deferred section with the exact reason.
