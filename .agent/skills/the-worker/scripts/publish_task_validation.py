@@ -53,6 +53,7 @@ def run_git(root: Path, *args: str, check: bool = True) -> subprocess.CompletedP
         capture_output=True,
         text=True,
         check=False,
+        timeout=60,
     )
     if check and result.returncode != 0:
         raise PublisherError(f"git {' '.join(args[:2])} failed: {result.stderr[-2000:]}")
