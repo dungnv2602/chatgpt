@@ -248,3 +248,15 @@ For each finding, `task_refs` contains parent Task IDs, `subtask_refs` contains 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-27 | Accepted | User approved DRAFT-0005 revision 1 and its full scope. The provisional ADR passed the source-Draft completeness comparison and read-back. ADR-0004 is now the accepted decision. |
+
+
+## Scoped supersession — ADR-0008 (2026-11-28)
+
+ADR-0008 supersedes only the following parts of this ADR:
+
+- The rule that CI remediation can become Done from a committed fix and Worker readback while hosted validation remains optional metadata.
+- The rule that hosted validation is not a prerequisite for task/subtask completion.
+- The findings Ledger requirements to preserve finding identity, recurrence history, diagnostic evidence, and report-linked task references after remediation-folder deletion, where those requirements conflict with ADR-0008's status-index-only model and retirement of the report/Ledger system.
+- Any instruction that prevents the Worker from reconciling the aggregate result or diagnosing a recorded failure under ADR-0008.
+
+ADR-0008 does not supersede the general task-folder and nested-subtask structure, genuine source-task parent attribution, Worker ownership of task status and scheduling, decision-governance gates, direct deletion of completed task folders, or unrelated safeguards. Those provisions remain in force. This note changes lifecycle metadata and records the scope of supersession; it does not rewrite the historical accepted decision above.
