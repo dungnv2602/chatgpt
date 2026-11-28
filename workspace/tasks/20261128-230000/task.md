@@ -72,19 +72,28 @@ Acceptance criteria are mapped to these required child tasks:
 - **Limitations:** Effective GitHub branch protection remains unverified. The existing reusable workflows still require exact-SHA and validation-only migration before coordinator invocation. No runtime or hosted validation is claimed.
 - **Next:** Subtasks 02 and 03 are now eligible.
 
+### 2026-11-28 — Subtask 02 verifier and aggregate implementation in progress
+
+- **Result:** Added the task-contract builder, typed generic verifier, exact-SHA aggregate, coordinator workflow definition, regression tests, and exact-SHA validation-only reusable interfaces.
+- **Governance:** Updated parent/subtask templates, Worker instructions, catalog, interface reference, and Workflow Map. Every task contract is resolved from one Task-ID trailer and bound to the exact source SHA.
+- **Staging:** The coordinator remains workflow_call-only. Push activation is deferred until the privileged publisher/report migration is ready. This prevents duplicate validation cycles while legacy report producers remain active.
+- **Protection:** Effective GitHub branch protection/ruleset remains unverified. The policy remains external-prerequisite and activation remains staged. Both runtime gates fail closed.
+- **Evidence:** Implementation range from f036ecbd02a9f049486ffbe27f8d0d11edae314d to e2a9756a0f719882e2d35df1a049f0fada117dcb (101 commits). Regression tests are wired into document-standards CI but have not been executed by the Worker.
+- **Limitations:** No local tests/lint, workflow dispatch, or hosted-run inspection. Publisher, recovery, checkpoint, Worker lifecycle, report migration, and operational Confirmation remain incomplete.
+- **Next:** Continue with eligible subtask 03 while subtask 02 remains In Progress pending activation and protection gates.
 ## 6. Current State and Remaining Work
 
-Subtask 01 has begun and its initial policy/contract/interface foundation is committed on branch `gpt`. The three existing validation workflows expose reusable `workflow_call` entry points, but remain legacy report publishers and are not yet safe to invoke from the coordinator. GitHub branch protection/ruleset enforcement for the policy files remains an external prerequisite and is not claimed as established.
+Subtask 01 is Done. Subtask 02 is In Progress with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, and staged coordinator definition committed on branch `gpt`. Subtask 03 is Ready and eligible because its dependency is complete. Subtasks 04 and 05 remain dependency-waiting.
 
-The legacy report pipeline remains intact. Subtasks 02–05 remain pending; implementation and operational Confirmation remain incomplete.
+The coordinator has no push trigger. Its activation remains staged until the privileged publisher and report migration are ready. Effective branch protection/ruleset enforcement remains unverified and is an external prerequisite. The legacy report pipeline remains intact. Operational Confirmation and report-tree retirement remain incomplete.
 
 ## 7. Verification and Evidence
 
-- **Implementation commits:** `e639ca57397b5d84e1d635cb3b06853a7377db69`, `dfcfc490829aff3f1f53b2752cc1f6996c4ab073`, `251a1ff593a1eea88738ee35763e124fb7281bf5`, `65ebe337ad247943c1e9c2f91faf3ab46c81e882`, `cd10abcec2cb89a1b95a805401f398e03e724681`, `83b3bd5606a2f19521da3c86b06c82918b17a284`, `a7ae1a6ec0dc680de317f4bac4728c3a05245482`, `1f551c6680c176a1d1ee9c542541c6b1bf5ae7f6`
-- **Changed paths:** Three policy/contract/adapter files, interface README, three existing validation workflows, and task progress records.
-- **Readback:** All seven implementation files read back from branch `gpt`.
-- **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed.
-- **Limitations:** This is only the initial coordinator/policy/contract foundation. Policy protection, exact-SHA validation migration, coordinator execution, and runtime behavior are not established.
+- **Implementation commits:** Subtask 01 foundation f036ecbd02a9f049486ffbe27f8d0d11edae314d; current subtask 02 implementation head e2a9756a0f719882e2d35df1a049f0fada117dcb.
+- **Changed paths:** Worker skill and Workflow Map; task/subtask templates; task-validation policy, schema, and adapter registry; document catalog and interface reference; contract builder, verifier, aggregate, and three regression suites; five GitHub Actions workflow files; parent task, subtask record, and index.
+- **Readback:** Initial and ongoing readback from branch `gpt`. Final readback and closeout remain pending.
+- **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed. Regression tests are registered in the document-standards workflow.
+- **Limitations:** Coordinator activation and external policy protection remain gated. Publisher/recovery, Worker lifecycle, report migration, and Confirmation are incomplete.
 
 ## 8. Execution self-check
 
@@ -98,7 +107,7 @@ The legacy report pipeline remains intact. Subtasks 02–05 remain pending; impl
 
 ## 9. Handoff
 
-Begin with subtask 01. Keep report capture intact. Do not mark the parent Done until all required implementation and Confirmation criteria are met.
+Continue with eligible subtask 03. Keep report capture intact. Do not enable coordinator push activation before publisher/report migration and verified policy protection. Do not mark the parent Done until all required implementation and Confirmation criteria are met.
 
 ## 10. Subtasks
 
