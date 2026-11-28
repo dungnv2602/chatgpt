@@ -15,8 +15,8 @@ approved_scope: "Option 2: implement a lightweight deterministic structural vali
 related_adrs: ["ADR-0005"]
 supersedes: []
 superseded_by: null
-implementation_status: "in-progress"
-implementation_tasks: ["20261127-173000-60"]
+implementation_status: "complete"
+implementation_tasks: ["20261127-173000-60 (closed; task record deleted per task lifecycle)"]
 review_triggers: []
 ---
 
@@ -52,10 +52,10 @@ Chosen option: "Option 2 — Lightweight structural validator", because it adds 
 
 ### Confirmation
 
-- [ ] Validator checks designated entry and pointer structure, required owner/reference presence, and target-path integrity.
-- [ ] Tests cover expected pass/fail cases and diagnostic output.
-- [ ] Existing validation workflow invokes the validator and tests.
-- [ ] Readback confirms no automatic repairs or semantic policy logic.
+- [x] Validator checks designated entry and pointer structure, required owner/reference presence, and target-path integrity (readback verified).
+- [x] Regression tests cover passing and failing structural cases (authored/readback verified; not executed).
+- [x] Existing validation workflow invokes the validator and tests (readback verified).
+- [x] Readback confirms no automatic repairs or semantic policy logic.
 
 ## Pros and Cons of the Options
 
@@ -97,4 +97,4 @@ Chosen option: "Option 2 — Lightweight structural validator", because it adds 
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
-| 2026-11-28 | accepted | Provisional record read back and completeness reviewed; user approved DRAFT-0007 Revision 1, Option 2. |
+| 2026-11-28 | accepted | Provisional record read back and completeness reviewed; user approved DRAFT-0007 Revision 1, Option 2. |\n| 2026-11-28 | implementation complete | Validator, tests and workflow integration committed/read back. Test execution and hosted CI review not performed. |
