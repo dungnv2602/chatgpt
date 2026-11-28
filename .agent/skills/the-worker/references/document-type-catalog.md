@@ -171,10 +171,12 @@ Placement rules are enforced by the validator:
 | `.agent/skills/skill-creator/eval-viewer/*.html` | Static HTML asset | Active | `.agent/skills/skill-creator/SKILL.md` | skill-eval-viewer | Evaluation viewer interface. |
 | `.agent/skills/skill-creator/eval-viewer/*.py` | Python script | Active | `.agent/skills/skill-creator/SKILL.md` | skill-eval-viewer | Evaluation viewer generator. |
 | `.agent/skills/skill-creator/scripts/*.py` | Python script | Active | `.agent/skills/skill-creator/SKILL.md` | skill-scripts | Skill Creator packaging, evaluation, and reporting tools. |
-| `.agent/skills/the-worker/assets/**/*.json` | Worker policy and schema | Active | `.agent/skills/the-worker/SKILL.md` | skill-assets | Worker-owned machine-readable policies, registries, and schemas. |
+| `.agent/skills/the-worker/assets/*.json` | Worker policy and schema | Active | `.agent/skills/the-worker/SKILL.md` | skill-assets | Worker-owned top-level schemas. |
+| `.agent/skills/the-worker/assets/task-validation/*.json` | Worker policy and schema | Active | `.agent/skills/the-worker/SKILL.md` | skill-assets | Worker-owned task-validation policy, schema, and registry. |
 | `.agent/skills/the-worker/scripts/*.py` | Python script | Active | `.agent/skills/the-worker/SKILL.md` | skill-scripts | Worker-owned operational scripts and regression tests. |
 | `.agent/skills/theme-factory/theme-showcase.pdf` | Binary reference asset | Active | `.agent/skills/theme-factory/SKILL.md` | skill-root | Skill-owned visual reference asset. |
-| `.agent/skills/xlsx/scripts/**/*.py` | Python script | Active | `.agent/skills/xlsx/SKILL.md` | skill-scripts | XLSX skill processing and validation tools. |
+| `.agent/skills/xlsx/scripts/*.py` | Python script | Active | `.agent/skills/xlsx/SKILL.md` | skill-scripts | XLSX top-level processing tools. |
+| `.agent/skills/xlsx/scripts/**/*.py` | Python script | Active | `.agent/skills/xlsx/SKILL.md` | skill-scripts | Nested XLSX processing and validation tools. |
 | `.agent/skills/xlsx/scripts/office/schemas/**/*.xsd` | Vendored XML schema | Active | `.agent/skills/xlsx/SKILL.md` | skill-vendored-schemas | External Office Open XML schema files used by the XLSX tools. |
 | `.github/workflows/*.yml` | GitHub Actions workflow | Active | external: GitHub Actions workflow syntax | github-workflows | Workflow definitions belong in the GitHub Actions execution layer. |
 
