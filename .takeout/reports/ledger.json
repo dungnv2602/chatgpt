@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-28T01:27:11Z",
+  "updated_at_utc": "2026-11-28T03:49:28Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -18500,14 +18500,14 @@
       "accepted_risk": null,
       "task_refs": [
         "20261126-142500",
-        "20261127-173100",
         "20261127-173000"
       ],
       "subtask_refs": [],
       "legacy_task_refs": [
         "20261127-173000-04",
         "20261126-142500-23",
-        "20261127-173100-03"
+        "20261127-173100-03",
+        "20261127-173100"
       ],
       "task_group": "ci-71de99e18bb591b4",
       "parent_group": "ci-c22cfa3d350aa1a7"
