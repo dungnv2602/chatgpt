@@ -66,6 +66,12 @@
 - **Action:** Created child 63 to enforce the explicit, case-insensitive standalone `execute` cue as the sole execution authorization. Approval only records decisions. `Next` only navigates the decision queue and leaves the blocker unresolved. Decision collection must finish before the batch begins.
 - **Authorization:** User supplied `Execute` after specifying the cue is case-insensitive.
 
+### 2026-11-28 — universal execution cue and lifecycle correction
+
+- **Approval:** User approved the consolidated correction package: universal cue semantics; directive-intent and ordered processing; combined cues; authorization persistence; scope boundaries; recovery and idempotency; execution audit; quiescence safeguards; canonical Worker ownership and map/reference alignment.
+- **Execution authorization:** User explicitly issued `Execute`.
+- **Action:** Created child 75 for this independently deliverable workflow hardening.
+
 ## 3. Objective and Acceptance Criteria
 
 Serve as the persistent, open parent task and coordination point for skills refactoring in the repository, including the current consolidation work and future refactoring initiatives. This is an explicitly authorized standing parent for skills-refactoring work; it is not a finite deliverable and must not be retired or closed merely because its current children are complete.
@@ -103,6 +109,12 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Closeout:** Child 63's record is removed under normal lifecycle rules. The persistent Refactor Skills parent remains open. Focus is at quiescence and decision collection resumes with blocked task 28.
 
 ## 5. Progress
+
+### 2026-11-28 — child 75 implementation
+
+- Created child 75 and updated the canonical Worker execution-cue section to universal, context-dependent execution, ordered cue processing, authorization persistence, recovery, idempotency, scope boundaries, and quiescence invariant. Updated the Workflow Map cue route and summary. Tracking reconciliation underway.
+- Commits: child record `faf729e5c0c5e911ec083f939269df0ed4f84f1b`; Worker `8fdc1ade2ecd8dc0b3812456700f88ce6b6a44d3`; map `8fbd7079815f4d9a4b19c032fb0c195049e59db2`; child index `b2c336d7d2593ed66777ee1adc61783c92250a31`.
+
 
 ### 2026-11-28 03:13 UTC — execution focus reconciled
 
