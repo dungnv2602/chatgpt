@@ -542,6 +542,13 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("unknown non-Markdown artifact type" in error for error in errors))
 
+    def test_non_markdown_artifact_type_must_match_file_suffix(self):
+        rows = self.default_non_markdown_rows()
+        rows[0] = rows[0].replace("Python script", "JSON schema")
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("file type does not match" in error for error in errors))
+
     def test_stale_non_markdown_owner_fails(self):
         rows = self.default_non_markdown_rows()
         rows[0] = rows[0].replace(
