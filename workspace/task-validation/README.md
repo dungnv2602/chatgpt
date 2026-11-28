@@ -14,9 +14,12 @@ Operational authority and task lifecycle: .agent/skills/the-worker/SKILL.md.
 
 - `reviews/<run-id>-<attempt>/review.md` is one review folder per non-cancelled, non-superseded terminal attempt.
 - The publisher creates the status record and review folder in one commit.
-- The Worker reads the index first. It opens logs only for recorded actionable failures.
-- The Worker marks the attempt reconciled and removes its review folder after review. Reconciled attempt records remain for three days.
-- Cancelled and superseded attempts have status records but no review folder or feedback task.
+- The Worker is non-blocking while CI runs. When assigned to review, it reads this index first; successful attempts need no log inspection, and logs are opened only for recorded actionable failures when authorized.
+- The source Task-ID trailer resolves to an active genuine parent. Missing, invalid, ambiguous, or inactive attribution routes to the single policy-designated permanent fallback parent: `workspace/tasks/20261128-193800/task.md`. Never infer a parent or use the current board pointer.
+- Group related failures by root cause and parent. Create or reuse one P0 child per actionable root cause, not one child per check, job, log line, or attempt.
+- After review, the Worker marks the attempt reconciled and removes its review folder. Reconciled attempt records remain for three days.
+- Cancelled and superseded attempts have status records but no review folder, feedback task, or task-state mutation.
+- Only a complete success for the exact current task SHA and policy revision, with no required subtasks remaining, may mark a task Done.
 
 ## Recovery and retention
 
