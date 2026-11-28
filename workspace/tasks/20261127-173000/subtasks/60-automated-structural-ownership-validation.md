@@ -6,15 +6,15 @@
 
 - **ID:** 20261127-173000-60
 - **Parent Task ID:** 20261127-173000
-- **Type:** Decision Draft preparation
-- **Status:** Proposed
-- **Priority:** P1
+- **Type:** Implementation
+- **Status:** In Progress
+- **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
-- **Approval scope/source:** Explicit request to prepare DRAFT-0007. Approval authorizes proposal preparation and task/index updates only; implementation requires an accepted ADR and separate execution cue.
-- **Governing ADR(s):** None — decision pending
+- **Approval scope/source:** User explicitly approved DRAFT-0007 Revision 1, Option 2 and instructed Proceed. Authorized scope is ADR-0006 implementation: focused deterministic structural checks, tests and existing validation workflow integration, diagnostics only.
+- **Governing ADR(s):** ADR-0006
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Proposed — awaiting decision on DRAFT-0007 before implementation work is eligible.
+- **Eligibility / deferral reason:** In Progress — approved scope and ADR-0006 accepted; implementation underway.
 - **Required:** Yes
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
@@ -23,7 +23,7 @@
 
 ## 1. Original Prompt
 
-> Proceed preparing draft 7 for me
+ > Proceed preparing draft 7 for me
 
 ## 2. Subsequent Instructions
 
@@ -31,20 +31,21 @@
 
 ## 3. Objective and Scope
 
-Prepare DRAFT-0007 Revision 1 proposing a lightweight repository validator for structural canonical ownership and drift-prevention invariants. Assess viable options, evidence limits, scope, consequences, risks, and implementation outline. Reconcile discussion and task records. No validator implementation.
+Implement ADR-0006 Option 2: a lightweight structural ownership validator with focused regression tests and integration into the existing validation workflow. No semantic interpretation or auto-repair.
 
 ## 4. Acceptance Criteria
 
-1. Draft follows the canonical decision template and assessment standards.
-2. All materially viable options are compared on common drivers.
-3. Draft links from the discussion register and draft index.
-4. Subtask and board state are reconciled.
-5. Remote readback verifies the prepared records.
+1. ADR-0006 accepted and indexed; source Draft retired after readback.
+2. Validator checks defined structural markers and pointer boundary/target.
+3. Regression tests cover passing and failure cases.
+4. Existing document standards workflow invokes tests and validator.
+5. Validator remains deterministic, diagnostic-only and non-semantic.
+6. Readback verifies changes; no hosted CI inspection.
 
 ## 5. Decisions and Progress
 
-- Recommend Option 2 (lightweight structural validator) for review.
-- User approval of the Draft is pending; implementation is out of scope.
+- User approved DRAFT-0007 Option 2; ADR-0006 is accepted.
+- Implementation is underway under ADR-0006.
 
 ## 6. State and Evidence
 
@@ -56,9 +57,9 @@ Prepare DRAFT-0007 Revision 1 proposing a lightweight repository validator for s
 
 ## 7. Completion
 
-- **Status:** Not Done
+- **Status:** In Progress
 - **Completed at:** Not applicable
-- **Completion basis:** Awaiting readback
+- **Completion basis:** Implementation underway; readback and verification pending
 
 ## 8. Hosted Validation
 
@@ -71,7 +72,7 @@ Canonical owner: The Worker. Draft and task governance reference loaded. Parenta
 
 ## 10. Handoff
 
-Present DRAFT-0007 Revision 1 for user decision. Do not implement validator until approval and accepted ADR.
+Complete the validator, tests and workflow integration; reconcile ADR and task governance; read back changes.
 
 ## 11. Ledger Findings
 
