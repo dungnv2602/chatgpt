@@ -342,7 +342,7 @@ The user confirmed `.takeout/reports/` as the exact retirement target. Migrate e
 
 1. Approve this consolidated Draft and promote it to a superseding ADR for ADR-0003, ADR-0004, and ADR-0007 where rules conflict.
 2. Define task validation contracts: required workflow/check set for each task type, including scripts and other executable acceptance criteria. Establish a machine-readable contract schema, trusted policy boundary, and named adapter interface.
-4. Retain established workflows when they fully cover a task's contract. Design a thin dispatcher and one generic reusable verifier for uncovered contracts; pin execution to the exact commit, enforce least privilege, and fail closed on unsupported or unsafe requirements.
+3. Retain established workflows when they fully cover a task's contract. Design a thin dispatcher and one generic reusable verifier for uncovered contracts; pin execution to the exact commit, enforce least privilege, and fail closed on unsupported or unsafe requirements.
 4. Define the task status lifecycle and board representation, including **Committed / Awaiting CI** and **Done** gates.
 5. Define the aggregate validation event and status-index schema, exact SHA/attempt identity, event idempotency, and failure/recovery semantics.
 6. Implement CI automation that records each terminal aggregate result and direct run URL, then creates one lightweight review task per validation attempt; do not generate separate CI finding/report/evidence documents.
