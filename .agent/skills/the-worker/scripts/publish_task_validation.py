@@ -10,7 +10,7 @@ import re
 import subprocess
 import sys
 import tempfile
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -102,11 +102,17 @@ def validate_aggregate(
 ) -> tuple[str, str | None, str]:
     if not isinstance(aggregate, dict):
         raise PublisherError("Aggregate must be a JSON object")
-    if aggregate.get("source_sha") != source_sha:
+    if not isinstance(aggregate.get("source_sha"), str) or aggregate.get("source_sha") != source_sha:
         raise PublisherError("Aggregate source SHA does not match the source event")
-    if aggregate.get("policy_blob_sha") != policy_blob_sha:
+    if not isinstance(aggregate.get("policy_blob_sha"), str) or aggregate.get("policy_blob_sha") != policy_blob_sha:
         raise PublisherError("Aggregate policy blob SHA does not match the protected policy")
-    if aggregate.get("coordinator_run_id") != run_id or aggregate.get("attempt") != attempt:
+    aggregate_run_id = aggregate.get("coordinator_run_id")
+    aggregate_attempt = aggregate.get("attempt")
+    if (
+        not isinstance(aggregate_run_id, int) or isinstance(aggregate_run_id, bool)
+        or not isinstance(aggregate_attempt, int) or isinstance(aggregate_attempt, bool)
+        or aggregate_run_id != run_id or aggregate_attempt != attempt
+    ):
         raise PublisherError("Aggregate run ID or attempt does not match the coordinator event")
     outcome = aggregate.get("outcome")
     if not isinstance(outcome, str) or outcome not in OUTCOMES:
@@ -128,10 +134,16 @@ def validate_aggregate(
     except ValueError as exc:
         raise PublisherError("Aggregate completion timestamp is invalid") from exc
     statuses = aggregate.get("statuses")
+    expected_checks = aggregate.get("expected_checks")
     if outcome == "success" and (
-        not isinstance(statuses, dict) or not statuses or any(value != "success" for value in statuses.values())
+        not isinstance(expected_checks, list)
+        or not expected_checks
+        or not all(isinstance(item, str) for item in expected_checks)
+        or not isinstance(statuses, dict)
+        or set(statuses) != set(expected_checks)
+        or any(value != "success" for value in statuses.values())
     ):
-        raise PublisherError("Successful aggregate does not contain all-success check statuses")
+        raise PublisherError("Successful aggregate does not contain a complete all-success check set")
     return outcome, check_set_id, completed_at
 
 
@@ -184,23 +196,32 @@ def validate_index(index: Any) -> dict[str, Any]:
             raise PublisherError("Status-index attempts must be unique and sorted")
         seen.add(key)
         previous = key
-        if record.get("source_task_id") is not None and not re.fullmatch(
-            r"[0-9]{8}-[0-9]{6}(?:-[0-9]{2,})?", str(record["source_task_id"])
+        source_task = record.get("source_task_id")
+        if source_task is not None and (
+            not isinstance(source_task, str)
+            or not re.fullmatch(r"[0-9]{8}-[0-9]{6}(?:-[0-9]{2,})?", source_task)
         ):
             raise PublisherError("Status-index source Task-ID is malformed")
-        if not re.fullmatch(r"[0-9a-f]{40}", str(record.get("source_sha", ""))):
+        source_value = record.get("source_sha")
+        if not isinstance(source_value, str) or not re.fullmatch(r"[0-9a-f]{40}", source_value):
             raise PublisherError("Status-index source SHA is malformed")
-        if not re.fullmatch(r"[0-9a-f]{40}", str(record.get("policy_revision", ""))):
+        policy_value = record.get("policy_revision")
+        if not isinstance(policy_value, str) or not re.fullmatch(r"[0-9a-f]{40}", policy_value):
             raise PublisherError("Status-index policy revision is malformed")
         check_set_id = record.get("check_set_id")
-        if check_set_id is not None and not re.fullmatch(r"[0-9a-f]{64}", str(check_set_id)):
+        if check_set_id is not None and (
+            not isinstance(check_set_id, str) or not re.fullmatch(r"[0-9a-f]{64}", check_set_id)
+        ):
             raise PublisherError("Status-index check-set identity is malformed")
-        if record.get("outcome") not in OUTCOMES:
+        if not isinstance(record.get("outcome"), str) or record["outcome"] not in OUTCOMES:
             raise PublisherError("Status-index outcome is invalid")
         if check_set_id is None and record["outcome"] not in {"capture_failure", "infrastructure_failure"}:
             raise PublisherError("Status-index outcome requires a check-set identity")
         try:
-            completed = datetime.fromisoformat(str(record.get("completed_at", "")).replace("Z", "+00:00"))
+            completed_at = record.get("completed_at")
+            if not isinstance(completed_at, str):
+                raise ValueError("completion timestamp must be a string")
+            completed = datetime.fromisoformat(completed_at.replace("Z", "+00:00"))
             if completed.tzinfo is None:
                 raise ValueError("timezone is required")
             actions_url = record.get("actions_url", "")
@@ -217,6 +238,8 @@ def validate_index(index: Any) -> dict[str, Any]:
             or recovery["retry_count"] < 0
         ):
             raise PublisherError("Status-index recovery metadata is malformed")
+        if record["outcome"] in {"cancelled", "superseded"} and recovery["reconciled_at"] is None:
+            raise PublisherError("Cancelled and superseded attempts must be reconciled immediately")
         for field in ("reconciled_at", "last_retry_at"):
             value = recovery[field]
             if value is not None:
@@ -381,6 +404,8 @@ def publish_with_retry(
         raise PublisherError("source_sha must be a full lowercase 40-character SHA")
     if not re.fullmatch(r"[0-9a-f]{40}", policy_blob_sha):
         raise PublisherError("policy_blob_sha must be a full lowercase 40-character SHA")
+    if branch != "gpt":
+        raise PublisherError("Publisher may write only to the authorized gpt branch")
     if not isinstance(run_id, int) or run_id < 1 or not isinstance(attempt, int) or attempt < 1:
         raise PublisherError("Coordinator run ID and attempt must be positive integers")
     expected_url = f"https://github.com/dungnv2602/chatgpt/actions/runs/{run_id}"
