@@ -11,13 +11,13 @@
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
-- **Approval scope/source:** User-authorized subtask under Template Fix.
+- **Approval scope/source:** User-authorized subtask under Template Fix, expanded by the user's 2026-11-28 instruction to audit stale templates and relocate templates outside skills into appropriate skill locations.
 - **Governing ADR(s):** None
 - **Dependencies:** None
 - **Eligibility / deferral reason:** Eligible — Ready.
 - **Required:** Yes
 - **Created:** 2026-11-27 17:31 UTC
-- **Updated:** 2026-11-27 17:31 UTC
+- **Updated:** 2026-11-28
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -27,26 +27,29 @@
 
 ## 2. Subsequent Instructions
 
-None.
+> When templates are created, scan the repository to update stale templates compared to the current workflow/repository. Then relocate all templates outside of skills into skills at appropriate places, respecting the skill standard.
 
 ## 3. Objective and Scope
 
-Systematically scan the repository for document types or documents that lack an applicable canonical template, schema, or embedded contract. Identify genuine gaps and create appropriate missing templates, including required catalog and owner/index updates.
+Systematically scan the entire repository for document types or documents that lack an applicable canonical template, schema, or embedded contract. In the same audit, inventory all existing templates and compare them with the current workflow, repository structure, governance contracts, and skill standards. Identify genuine coverage gaps and stale content, update stale templates, create appropriate missing templates, and relocate every template outside skill directories into the appropriate owning skill. Maintain a clear mapping from each template to its skill/document owner and reconcile all references and catalogs.
 
 ## 4. Acceptance Criteria
 
-1. Define and execute a scoped, reproducible repository scan for document-template coverage.
-2. Inventory document types, their existing templates/contracts, and coverage gaps with evidence.
-3. Read existing canonical template(s) and relevant governance contracts before modifying documents or creating templates.
-4. Create templates only for confirmed gaps; avoid redundant templates where schemas or embedded contracts already govern.
-5. Update catalog, coverage, owner and index references as required.
-6. Commit and remotely read back results. No validation beyond observed evidence claimed.
+1. Define and execute a scoped, reproducible repository-wide scan for template coverage, freshness, and placement.
+2. Inventory document types and all existing templates, recording their locations, owners, applicable contracts/standards, freshness findings, and coverage gaps with evidence.
+3. Read existing canonical templates, relevant governance contracts, and the current skill standard before modifying, creating, or relocating templates.
+4. Compare existing templates against current workflow and repository reality; update every confirmed stale template and its affected references.
+5. Relocate every template found outside skill directories into the appropriate owning skill location. Preserve required content/history as appropriate, follow the skill standard, and avoid arbitrary dumping of unrelated templates into a generic skill.
+6. Create templates only for confirmed gaps; avoid redundant templates where schemas or embedded contracts already govern.
+7. Update catalogs, coverage records, owner metadata, indexes, links, and other inbound references for created, updated, and relocated templates.
+8. Remove obsolete duplicate/original copies only after all references have been reconciled and the canonical destination has been verified.
+9. Commit and remotely read back results. Verify paths, references, and applicable skill-standard requirements; make no validation beyond observed evidence claims.
 
 ## 5. Decisions and Progress
 
 - **Action:** Created child record.
 - **Result:** Audit and remediation pending.
-- **Next:** Begin coverage audit after task-board-template child as ordered by parent.
+- **Next:** Begin the full coverage, freshness, and placement audit after task-board-template child as ordered by parent.
 
 ## 6. State and Evidence
 
@@ -69,7 +72,7 @@ Systematically scan the repository for document types or documents that lack an 
 
 ## 9. Handoff
 
-Run the repository audit and remediate confirmed gaps after the task-board template work.
+Run the repository-wide audit for missing and stale templates, then move all templates outside skills into appropriate skill locations in compliance with the current skill standard. Reconcile every affected reference and verify the final canonical paths.
 
 ## 10. Ledger Findings
 
