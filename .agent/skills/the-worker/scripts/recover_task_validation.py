@@ -247,6 +247,19 @@ def read_validation_lifecycle(content: str) -> dict[str, Any] | None:
         or value["outcome"] is None
     ):
         raise RecoveryError("Terminal task lifecycle is missing coordinator result metadata")
+    actionable = {"check_failure", "coverage_failure", "infrastructure_failure", "capture_failure"}
+    if value["state"] == "review_required" and (
+        value["outcome"] not in actionable or value["reconciled_at"] is not None
+    ):
+        raise RecoveryError("Review-required lifecycle must be actionable and unreconciled")
+    if value["state"] == "reviewed" and (
+        value["outcome"] not in actionable or value["reconciled_at"] is None
+    ):
+        raise RecoveryError("Reviewed lifecycle must be actionable and reconciled")
+    if value["state"] == "passed" and (
+        value["outcome"] != "success" or value["reconciled_at"] is None
+    ):
+        raise RecoveryError("Passed lifecycle must bind a reconciled success")
     return value
 
 
