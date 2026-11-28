@@ -94,7 +94,7 @@ The Worker is the sole operational authority. Session Start is only the cue guar
 - The only foundational initialization cue is `/start`. Treat quoted, discussed, or hypothetical uses as non-cues.
 - Do not load repository instructions, skills, or references at conversation start unless an explicit cue or task-specific activation condition requires them.
 - On `/start`, follow Session Start to this Worker. Read `.agent/WORKFLOW_MAP.md` for an overview before loading task-related skills or references. Read the mandatory Conversation Mode settings reference. Use the current-conversation verified-load ledger.
-- Complete the startup notice, required baseline verification, progressive loading, startup P0 batch, and queue-draining procedure defined here and in the required references before accepting the substantive prompt. An explicit user instruction may supersede a particular startup gate for a scoped task; record the exact override in its task record, bypass only the named gate and scope, and do not imply skipped verification passed.
+- Complete the startup notice, required repository/task-state verification, progressive loading, startup P0 batch drawn only from eligible tasks in the workspace, and queue-draining procedure defined here and in the required references before accepting the substantive prompt. Session initialization is not a CI task: do not inspect `.takeout/reports/`, CI report indexes or history, or the CI Ledger; do not collect a CI baseline or reconcile Ledger state during startup. An explicit user instruction may supersede a particular startup gate for a scoped task; record the exact override in its task record, bypass only the named gate and scope, and do not imply skipped verification passed.
 - Load novelist initialization instructions from `references/novelist-initialization.md` only after foundational initialization passes and the user explicitly requests the novelist role.
 - Load drawing-session instructions from `references/drawing-session-initialization.md` only after foundational initialization passes and the user explicitly requests a drawing session or the procedure requires it.
 - The Worker routes initialization. Session Start and Conversation Mode do not own operational procedures.
@@ -232,7 +232,7 @@ These procedures are Worker-owned references, not separate Agent Skills. Do not 
 
 Load the relevant reference only when the task requires it:
 
-- `references/ci-ledger.md` for the startup P0 batch, report intake, finding attribution, grouping, lifecycle, or Ledger integrity.
+- `references/ci-ledger.md` only for an assigned, selected CI task in the workspace that requires report intake, finding attribution, grouping, lifecycle, or Ledger integrity.
 - `references/github-actions.md` for workflow design, diagnostics, technical remediation, or validation procedures. Load it with the CI Ledger reference for the startup P0 batch.
 - `references/decision-governance.md` for Drafts, ADRs, repository analysis, implementation linkage, or Confirmation.
 
@@ -248,7 +248,7 @@ Keep these decision controls in force:
 
 ## Diagnostic investigation before blockers
 
-When a task depends on CI-generated or workflow diagnostic evidence, exhaust the evidence already published in the repository before declaring the task Blocked.
+For an assigned CI task in `workspace/tasks/` that depends on CI-generated or workflow diagnostic evidence, exhaust the evidence already published in the repository before declaring the task Blocked. This diagnostic procedure does not authorize CI investigation for ordinary tasks or during initialization.
 
 1. **Read the complete indexed report.** Read the report JSON as well as its Markdown summary and index. Follow the published report path. Do not search report history or inspect hosted CI unless separately authorized by the applicable policy.
 2. **Read diagnostic payloads, not just summaries.** Examine failed check names, status and exit codes, captured stdout/stderr, tracebacks, failing assertions, diagnostic locations, per-file records, normalized findings, and relevant metadata. Inspect the exact payload fields that apply. Do not treat a summary that omits details as proof the details are unavailable.
@@ -264,7 +264,7 @@ This procedure applies before task selection, status changes, blocker declaratio
 
 ## CI and Actions operational ownership
 
-The Worker owns both CI Ledger and GitHub Actions operations. Its references define policy and procedures. The report producer, composite action, workflow, report schema, report template, Ledger schema, shared eligibility module, report indexes, and immutable evidence remain in their report-family paths because existing workflows and scripts consume those paths. Treat those paths as Worker-governed implementation assets, not independent operational owners. Consolidation must preserve path contracts until a coordinated migration updates every consumer.
+The Worker owns both CI Ledger and GitHub Actions operations. Its references define policy and procedures. CI work is task-scoped and workspace-bound: handle CI only when a corresponding assigned task exists under `workspace/tasks/` and is selected within the user's authorized scope. A startup P0 batch does not create CI work or authorize CI baseline collection, report/index/history reads, Ledger reconciliation, or remediation. Do not access CI report-family paths for general session setup or unrelated tasks. Load CI references only for the assigned CI task that requires them. The report producer, composite action, workflow, report schema, report template, Ledger schema, shared eligibility module, report indexes, and immutable evidence remain in their report-family paths because existing workflows and scripts consume those paths. Treat those paths as Worker-governed implementation assets, not independent operational owners. Consolidation must preserve path contracts until a coordinated migration updates every consumer.
 
 
 ## Canonical CI implementation
