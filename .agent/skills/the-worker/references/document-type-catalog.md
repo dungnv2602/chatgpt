@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.27
+**Catalog version:** 1.28
 **Repository template audit baseline:** Branch `gpt` at commit `a02713809b3b5fe403ab4085c28d163b3b1a70fc` contained 277 in-scope Markdown files and 30 template-named files. The recursive tree showed 18 template assets already under skills and 12 novel templates outside skill directories. This audit reviewed the full template path inventory and current owner contracts before relocation.
 **Source branch:** `gpt`
 
@@ -42,6 +42,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Session summary | Template required | `.agent/skills/the-worker/assets/session-summary-template.md` | Copy-ready handoff template now exists. The historical record `area/drawing/history/2026-11-12-summary.md` predates the template and remains unchanged. |
 | Workspace task folder | Template required | `.agent/skills/the-worker/assets/TASK_TEMPLATE.md` | Version 2.7. One actionable objective per parent task; preserve its original prompt and subsequent instructions verbatim. Each folder contains task.md and subtasks/README.md. |
 | Workspace subtask record | Template required | `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md` | Version 1.6. Each substantive follow-up or CI remediation has its own child prompt, parent ID, acceptance criteria, evidence, and completion record. CI children default to P0, Approved, Ready; a real decision gate may make a child Proposed. |
+| Worker task-validation interfaces | Embedded contract | `.agent/skills/the-worker/assets/task-validation/task-validation-policy.json`, `.agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json`, `.agent/skills/the-worker/assets/task-validation/task-validation-adapters.json`, `.agent/skills/the-worker/references/task-validation-interfaces.md`, and `.agent/skills/the-worker/scripts/test_validate_document_catalog.py` | The Worker owns the policy, contract schema, and closed adapter registry. GitHub workflows consume these assets but do not own them. |
 
 | Decision Draft | Template required | `.agent/skills/the-worker/assets/DRAFT_TEMPLATE.md` | Template version 1.2. One proposal per decision. Assess each materially viable option against explicit decision drivers. Include no-change when viable. For multiple viable options, use a qualitative comparative matrix and recommend one option against the strongest alternative. Record evidence provenance, source versions, dates, commits, confidence, and limitations. Distinguish facts, external claims, tests, inferences, and hypotheses. Do not invent scores or estimates. Require explicit user review and approval. After the Worker completes the completeness and read-back review for an accepted ADR, delete the source Draft. Keep its ID and revision as ADR provenance. Retain the source temporarily only when deletion fails, under Promotion Cleanup Pending. |
 | Accepted Decision Record | Template required | `.agent/skills/the-worker/assets/ADR_TEMPLATE.md` | MADR-inspired decision record. Use promotion-pending only for the provisional promotion transaction. It is not accepted, must not appear in the accepted-decision index, and cannot govern a task. Change it to accepted only after the full rationale review and read-back both pass. Track decision status separately from implementation status. |
@@ -139,6 +140,44 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/adr/README.md` | Embedded contract | Active | `.agent/skills/the-worker/references/decision-governance.md` and `workspace/adr/README.md` | Accepted-decision index and owner pointer. Decision Governance owns lifecycle and implementation linkage. |
 | `workspace/adr/????-*.md` | Template required | Active | `.agent/skills/the-worker/assets/ADR_TEMPLATE.md` | Global four-digit ADR records. The repository retains ADR-0001 and ADR-0002 as completed historical records in this flat folder. ADR-0003 and ADR-0004 record accepted decisions. Their implementation work or confirmation remains in progress. Provisional promotion-pending records are non-authoritative and must pass the completeness/read-back gate before acceptance. Only accepted records govern implementation tasks. |
 
+## Governed non-Markdown artifact coverage
+
+This register covers every non-Markdown file under `.agent/skills/` and `.github/`. Each file must match exactly one Active rule. Add a narrow rule before creating a new artifact family. Do not use a catch-all rule to hide an unknown type or incorrect location. A skill-owned artifact must remain inside its owning skill and follow the placement rule.
+
+Coverage status has two values. Active rules must match at least one current file. Reserved rules must match no current file. Change a Reserved rule to Active when its first file is created. The validator rejects stale Active rules, used Reserved rules, overlapping rules, missing owners, and unregistered files.
+
+Placement rules are enforced by the validator:
+
+- `skill-assets`: within the owning skill's `assets/` directory.
+- `skill-scripts`: within the owning skill's `scripts/` directory.
+- `skill-agents`: within the owning skill's `agents/` directory.
+- `skill-root`: directly within the owning skill directory.
+- `skill-eval-viewer`: within Skill Creator's `eval-viewer/` directory.
+- `skill-vendored-schemas`: within XLSX's vendored schema directory.
+- `github-workflows`: within `.github/workflows/`. Workflow definitions follow GitHub's external schema.
+
+| Path pattern | Artifact type | Coverage status | Canonical owner | Placement rule | Coverage rationale |
+|---|---|---|---|---|---|
+| `.agent/skills/*/LICENSE*` | License text | Active | `.agent/skills/*/SKILL.md` | skill-root | License terms remain with the skill that distributes them. |
+| `.agent/skills/asd-ste100/assets/*.json` | JSON schema | Active | `.agent/skills/asd-ste100/SKILL.md` | skill-assets | ASD-STE100 lint report schema. |
+| `.agent/skills/asd-ste100/scripts/*.py` | Python script | Active | `.agent/skills/asd-ste100/SKILL.md` | skill-scripts | Technical lint and Markdown anchor tools and tests. |
+| `.agent/skills/asd-ste100/scripts/*.sh` | Shell script | Active | `.agent/skills/asd-ste100/SKILL.md` | skill-scripts | Repository lint wrapper. |
+| `.agent/skills/define-goal/agents/*.yaml` | Agent metadata | Active | `.agent/skills/define-goal/SKILL.md` | skill-agents | Skill-specific agent configuration. |
+| `.agent/skills/grilling/agents/*.yaml` | Agent metadata | Active | `.agent/skills/grilling/SKILL.md` | skill-agents | Skill-specific agent configuration. |
+| `.agent/skills/migrate-to-rust/assets/*.html` | Static HTML asset | Active | `.agent/skills/migrate-to-rust/SKILL.md` | skill-assets | Skill-owned infographic template. |
+| `.agent/skills/migrate-to-rust/scripts/*.py` | Python script | Active | `.agent/skills/migrate-to-rust/SKILL.md` | skill-scripts | Skill-owned telemetry utility. |
+| `.agent/skills/pdf/scripts/*.py` | Python script | Active | `.agent/skills/pdf/SKILL.md` | skill-scripts | PDF inspection and form-processing tools. |
+| `.agent/skills/skill-creator/assets/*.html` | Static HTML asset | Active | `.agent/skills/skill-creator/SKILL.md` | skill-assets | Skill Creator evaluation viewer asset. |
+| `.agent/skills/skill-creator/eval-viewer/*.html` | Static HTML asset | Active | `.agent/skills/skill-creator/SKILL.md` | skill-eval-viewer | Evaluation viewer interface. |
+| `.agent/skills/skill-creator/eval-viewer/*.py` | Python script | Active | `.agent/skills/skill-creator/SKILL.md` | skill-eval-viewer | Evaluation viewer generator. |
+| `.agent/skills/skill-creator/scripts/*.py` | Python script | Active | `.agent/skills/skill-creator/SKILL.md` | skill-scripts | Skill Creator packaging, evaluation, and reporting tools. |
+| `.agent/skills/the-worker/assets/**/*.json` | Worker policy and schema | Active | `.agent/skills/the-worker/SKILL.md` | skill-assets | Worker-owned machine-readable policies, registries, and schemas. |
+| `.agent/skills/the-worker/scripts/*.py` | Python script | Active | `.agent/skills/the-worker/SKILL.md` | skill-scripts | Worker-owned operational scripts and regression tests. |
+| `.agent/skills/theme-factory/theme-showcase.pdf` | Binary reference asset | Active | `.agent/skills/theme-factory/SKILL.md` | skill-root | Skill-owned visual reference asset. |
+| `.agent/skills/xlsx/scripts/**/*.py` | Python script | Active | `.agent/skills/xlsx/SKILL.md` | skill-scripts | XLSX skill processing and validation tools. |
+| `.agent/skills/xlsx/scripts/office/schemas/**/*.xsd` | Vendored XML schema | Active | `.agent/skills/xlsx/SKILL.md` | skill-vendored-schemas | External Office Open XML schema files used by the XLSX tools. |
+| `.github/workflows/*.yml` | GitHub Actions workflow | Active | external: GitHub Actions workflow syntax | github-workflows | Workflow definitions belong in the GitHub Actions execution layer. |
+
 ## Validation coverage limits
 
 The processor validates the hand-off when it processes a ready batch. Its regression suite covers important success and failure paths. Field-level tests cover invalid asset IDs, generation hashes, internal IDs, native IDs, approval values, and mapping evidence. A drawing-session upload test also asserts that provenance metadata reaches the generated manifest. Existing tests cover manifest backfill, custom-column preservation, published hashes, URLs, and attempt links.
@@ -220,7 +259,7 @@ The template freshness review found two confirmed stale assets. The Task Board t
 
 Historical daily indexes, reconstructed session briefs, chronological prompt logs, transcript/index records, and standalone legacy prompt notes remain unchanged. They are not new document types and must not be mass-migrated. One-off creative direction notes remain exempt. Generated report files remain generator-owned.
 
-The validator enforces path-family coverage for Markdown. Machine-readable JSON, YAML, and CSV records remain governed by their exact schema, processor, generator, and regression-test entries in the Initial inventory. This Markdown path audit does not replace those validations.
+The validator enforces Markdown coverage and governed non-Markdown coverage under `.agent/skills/` and `.github/`. Every in-scope file must match exactly one registered family and its allowed location. The scan includes scripts, schemas, registries, configuration, agent metadata, workflow definitions, license files, and declared static assets. It does not claim repository-wide coverage of every non-Markdown file or semantic validation of every artifact.
 
 ## Catalog maintenance
 
@@ -231,8 +270,8 @@ When you add or change a recurring document type or template:
 3. Scan every repository template for drift against current workflows, repository structure, and governing standards.
 4. Update confirmed stale templates and their owner references.
 5. Define its canonical template, schema, or embedded contract.
-6. Add or update one document-type row and, for Markdown, one narrow path-coverage rule.
+6. Add or update one document-type row and one narrow path-coverage rule for each governed artifact family.
 7. Link the canonical format from its owner index.
 8. Define structural validation and migration rules.
 9. Read back all changed paths.
-10. Run the catalog validator and regression tests through the hosted Document Standards workflow. The validator enforces Markdown path coverage, Active/Reserved/Optional rule consistency, and basic table integrity. It does not prove semantic document conformance. Do not run repository scripts locally.
+10. Run the catalog validator and regression tests through the hosted Document Standards workflow. The validator enforces Markdown and governed non-Markdown path coverage, Active/Reserved rule consistency, placement, and basic table integrity. It does not prove semantic document conformance. Do not run repository scripts locally.
