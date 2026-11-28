@@ -1,6 +1,6 @@
 # Subtask: [Title]
 
-**Template version:** 1.7
+**Template version:** 1.8
 
 Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<parent-task-id>-NN`.
 
@@ -20,7 +20,7 @@ Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<par
 - **Required:** Yes
 - **Created:** YYYY-MM-DD HH:MM UTC
 - **Updated:** YYYY-MM-DD HH:MM UTC
-- **Ledger group:** None
+- **Root-cause group:** None\n- **Ledger group:** None (legacy reports only)
 - **Legacy Task IDs:** None
 
 Confirm the parent before creating this child: it must directly advance the parent's objective or acceptance criteria. Do not choose the active parent solely because it is active, or because the work shares a repository, files, or broad theme. If the relationship is uncertain, leave parentage unassigned until resolved.
@@ -37,6 +37,24 @@ Declare task-specific checks in this JSON block. The coordinator binds the contr
 {
   "contract_revision": "1",
   "checks": []
+}
+```
+
+## Validation Lifecycle
+
+The Worker updates this block after the source implementation commit. The source SHA is the exact commit carrying this subtask's Task-ID trailer. Metadata-only lifecycle updates do not start source validation.
+
+Schema: `.agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json`.
+
+```json
+{
+  "state": "not_committed",
+  "source_sha": null,
+  "policy_revision": null,
+  "coordinator_run_id": null,
+  "attempt": null,
+  "outcome": null,
+  "reconciled_at": null
 }
 ```
 
