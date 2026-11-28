@@ -139,7 +139,7 @@ Do not run local repository scripts, tests or lint. Do not inspect hosted CI res
 - `.agent/WORKFLOW_MAP.md` is the canonical workflow overview. It routes to authoritative owners and references and does not replace them.
 - The `/map` cue displays the current map only. It does not initialize, load additional skills, reconcile startup, or execute.
 - Whenever a workflow, cue, activation prerequisite, ownership boundary, or operational route changes, update the map in the same governed change cycle. Read back the map and changed owner documents before commit.
-- At `/start`, Session Start requires map-first reading before related skill/reference loading.
+- At `/start`, Session Start requires the Workflow Map to be read first for overview, before loading The Worker or any related skills/references. Then load The Worker.
 
 ## Execution cue — sole gate
 
