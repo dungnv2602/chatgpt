@@ -4,7 +4,7 @@ Parent: [task.md](../task.md)
 
 | ID | Title | Status | Record |
 |---|---|---|---|
-| 20261127-173000-01 | Consolidate document-governance standards into The Worker | In Progress | [01-consolidate-document-standards-into-worker.md](01-consolidate-document-standards-into-worker.md) |
+
 
 
 | 20261127-173000-61 | Review structural validator test execution and validation loop | Paused | [61-review-structural-validator-test-execution-and-validation-loop.md](61-review-structural-validator-test-execution-and-validation-loop.md) |
