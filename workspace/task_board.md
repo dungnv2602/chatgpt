@@ -68,7 +68,7 @@ No Ready child remains under Refactor Skills. The global queue's next eligible t
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173500 | Remove the standalone latest lint report copy | P0 | Proposed | Approved | DRAFT-0005 revision 1 must receive user approval and become an accepted ADR before implementation. | [task](tasks/20261127-173500/task.md) |
+| 20261127-173500 | Remove the standalone latest lint report copy | P0 | Proposed | Approved | DRAFT-0005 revision 1 must receive user approval and become an accepted ADR before implementation. | [task](tasks/20261127-173500/task.md) |\n| 20261127-173000-60 | Prepare DRAFT-0007 — Automated structural ownership validation | P1 | Proposed | Approved | DRAFT-0007 revision 1 awaits user decision; implementation remains unapproved. | [subtask](tasks/20261127-173000/subtasks/60-automated-structural-ownership-validation.md) |
 
 ### Paused
 
