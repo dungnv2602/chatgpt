@@ -7,6 +7,9 @@ The Worker owns the task-validation policy and contract interfaces. GitHub Actio
 - `.agent/skills/the-worker/assets/task-validation/task-validation-policy.json` defines the mandatory validation set, coordinator binding, terminal outcomes, and protection requirements.
 - `.agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json` defines additive task-specific checks pinned to one 40-character source commit SHA.
 - `.agent/skills/the-worker/assets/task-validation/task-validation-adapters.json` is the closed registry of supported typed verifier adapters.
+- `.agent/skills/the-worker/scripts/build_task_validation_contract.py` resolves the source commit's Task-ID trailer and builds its exact-SHA contract.
+- `.agent/skills/the-worker/scripts/task_validation.py` validates and executes registered task checks without shell strings.
+- `.agent/skills/the-worker/scripts/aggregate_task_validation.py` classifies the complete exact-SHA check set.
 
 The policy file's Git blob SHA is the immutable policy revision for a coordinator attempt. The numeric `policy_revision` is a human-managed schema revision and is not a substitute for binding the blob SHA.
 
