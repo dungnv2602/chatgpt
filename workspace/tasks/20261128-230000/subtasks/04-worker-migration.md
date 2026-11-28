@@ -93,6 +93,13 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Current-source match:** Exactly one attempt matches this subtask's source SHA `7814758586f68b3226822f760b4cbf06e86e`, Task-ID `20261128-230000-04`, and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b`: run `46164069720`, attempt 1, `capture_failure`, no check-set identity.
 - **Lifecycle:** Updated this task's Validation Lifecycle to `review_required` with that exact run/attempt/outcome in commit `82620a2b9cec788534e7a2f16086663d4aacf3c8`. It remains unreconciled. Hosted logs were not inspected; no root cause or remediation child is asserted.
 
+### 2026-11-28 — commit-level metadata recursion guard
+
+- **Finding:** The status index reached 220 attempts, all `capture_failure`. Its latest records included source SHAs `82620a2b9cec788534e7a2f16086663d4aacf3c8`, `888f0693a753eaf8e6143c807ebb5d5b7c7dc309`, and `feee2223022d2a7221cf52af74fd2b650278f082`, which are task-record-only commits despite the dispatcher's `paths-ignore` entries. This is consistent with a multi-commit push being evaluated at its metadata-only tip; no hosted run metadata or logs were inspected.
+- **Correction:** Added an exact-commit changed-path guard to `.github/workflows/task-validation-dispatch.yml` in source commit `c9ffdffd3c955af0ddb471f85557b32460315d8f`. The gate reads the tip commit's diff against its first parent (with depth 2) and refuses to start a coordinator when every changed path is under `.takeout/reports/`, `workspace/task-validation/`, or `workspace/tasks/`. It does not rely on bot identity.
+- **Lifecycle:** Updated this subtask's Validation Lifecycle to `awaiting_ci` for source SHA `c9ffdffd3c955af0ddb471f85557b32460315d8f` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b` in metadata commit `c37def8a8db65047ab2e6a93c67c17a78f943cc8`. The earlier failure for source SHA `7814758586f68b3226822f760b4cbf06e86e108e` remains unresolved in the index and cannot change the new source lifecycle.
+- **Limitations:** No local tests or hosted CI inspection performed. Coordinator activation remains staged; the new guard has repository readback but no runtime demonstration yet.
+
 ## 6. State and Evidence
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
