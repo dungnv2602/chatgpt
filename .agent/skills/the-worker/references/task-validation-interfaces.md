@@ -21,7 +21,7 @@ Store GitHub Actions workflow definitions in `.github/workflows/`. A workflow's 
 
 ## Mandatory validation coverage
 
-The initial manifest preserves the three existing required validation families:
+The manifest preserves the three existing required validation families and adds the generic verifier:
 
 | Policy ID | Existing workflow | Coordinator job ID | Coverage |
 |---|---|---|---|
@@ -30,7 +30,7 @@ The initial manifest preserves the three existing required validation families:
 | `validate-document-standards` | `validate-document-standards.yml` | `document_standards` | Document catalog, structural ownership, and existing Ledger regression tests |
 | `generic-verifier` | `task-validation-verifier.yml` | `generic_verifier` | Exact-SHA task contract validation, closed adapter enforcement, and additive task-specific checks |
 
-This is an initial mapping, not a claim that the workflows have already been migrated or that the job identifiers are confirmed as stable aggregate check names. The downstream workflow migration must preserve the existing scripts, test cases, path coverage, and baseline behavior, then establish stable names for aggregation.
+The protected policy names the coordinator job IDs used by the aggregate workflow. The three existing reusable workflows now accept the exact source SHA and skip legacy publication in coordinator mode. Their direct-push report pipeline remains intact until the privileged publisher and report migration are ready. No hosted validation result is claimed.
 
 ## Reusable workflow-call interface
 
@@ -62,7 +62,7 @@ The schema and registry are interfaces for the generic verifier. They do not the
 
 ## Protection prerequisite
 
-A file in the repository is not self-protecting. GitHub branch protection or a ruleset must require review for changes to the policy, schema, adapter registry, and coordinator workflow. The policy records this as an external prerequisite; protection has not been established by these commits. Do not treat the policy as protected until the repository's effective ruleset has been verified.
+A file in the repository is not self-protecting. GitHub branch protection or a ruleset must require review for changes to the policy, schema, adapter registry, Worker authority, task-contract templates, verifier and aggregate scripts/tests, and coordinator/reusable workflows. The policy records these required paths as an external prerequisite. Effective protection has not been established or verified. Do not enable the coordinator until the repository's effective ruleset has been verified.
 
 ## Security boundary
 
