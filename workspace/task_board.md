@@ -18,17 +18,15 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Remove the standalone latest lint report copy](tasks/20261127-173500/task.md) — Current authorized execution; coordinated migration is underway.
-
-**Deferred focus:** [Refactor Skills](tasks/20261127-173000/task.md) — Parent is at quiescence. Child 61 remains paused; child 63 and 62 completed and were removed under lifecycle rules.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent selected focus. Parent is at quiescence. Child 61 remains paused; child 63 and 62 completed and were removed under lifecycle rules.
 
 ## Ordered Eligible Execution Queue
 
-[20261127-173500](tasks/20261127-173500/task.md) — implementation reconciliation and closeout.
+_No eligible child tasks under Refactor Skills._
 
 ## Next Task
 
-Current task: 20261127-173500. Refactor Skills is deferred at quiescence; child 61 remains intentionally paused. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
+No eligible child remains under Refactor Skills. Child 61 remains intentionally paused. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
 
 ## Deferred Work
 
