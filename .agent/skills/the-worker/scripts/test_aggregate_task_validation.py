@@ -184,6 +184,22 @@ class AggregateTaskValidationTests(unittest.TestCase):
         with self.assertRaises(aggregate.AggregateError):
             aggregate.canonical_check_set(self.policy, contract)
 
+    def test_unverified_policy_cannot_aggregate_success(self) -> None:
+        policy = {**self.policy, "protection": {"enforcement_status": "external-prerequisite"}}
+        with self.assertRaises(aggregate.AggregateError):
+            aggregate.classify_attempt(
+                policy, self.records(), self.source_sha, self.policy_sha,
+                self.run_id, self.attempt, self.task_contract,
+            )
+
+    def test_staged_coordinator_cannot_aggregate_success(self) -> None:
+        policy = {**self.policy, "coordinator": {"activation_status": "staged"}}
+        with self.assertRaises(aggregate.AggregateError):
+            aggregate.classify_attempt(
+                policy, self.records(), self.source_sha, self.policy_sha,
+                self.run_id, self.attempt, self.task_contract,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
