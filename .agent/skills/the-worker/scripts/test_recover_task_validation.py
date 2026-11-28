@@ -115,7 +115,7 @@ class RecoveryTests(unittest.TestCase):
             "reconciled_at": None,
         }
         fence = chr(96) * 3
-        content = "## Validation Lifecycle\\n\\n" + fence + "json\\n" + json.dumps(block) + "\\n" + fence
+        content = "## Validation Lifecycle\n\n" + fence + "json\n" + json.dumps(block) + "\n" + fence
         self.assertEqual(recovery.read_validation_lifecycle(content), block)
 
     def test_awaiting_ci_task_discovery_uses_task_record_metadata(self) -> None:
@@ -129,9 +129,9 @@ class RecoveryTests(unittest.TestCase):
             "outcome": None,
             "reconciled_at": None,
         }
-        content = "- **ID:** 20261128-230000-04\\n\\n## Validation Lifecycle\\n\\n" + chr(96) * 3 + "json\\n" + json.dumps(block) + "\\n" + chr(96) * 3 + "\\n"
+        content = "- **ID:** 20261128-230000-04\n\n## Validation Lifecycle\n\n" + chr(96) * 3 + "json\n" + json.dumps(block) + "\n" + chr(96) * 3 + "\n"
         def fake_git(_root, *args, **_kwargs):
-            output = "workspace/tasks/20261128-230000/subtasks/04-worker-migration.md\\n" if args[:4] == ("ls-tree", "-r", "--name-only", "HEAD") else content
+            output = "workspace/tasks/20261128-230000/subtasks/04-worker-migration.md\n" if args[:4] == ("ls-tree", "-r", "--name-only", "HEAD") else content
             return subprocess.CompletedProcess(args, 0, stdout=output, stderr="")
         with patch.object(recovery, "git", side_effect=fake_git):
             tasks = recovery.awaiting_ci_tasks(self.root)
@@ -150,13 +150,13 @@ class RecoveryTests(unittest.TestCase):
             "outcome": None,
             "reconciled_at": None,
         }
-        content = "- **ID:** 20261128-230000-04\\n## Validation Lifecycle\\n" + chr(96) * 3 + "json\\n" + json.dumps(block) + "\\n" + chr(96) * 3
+        content = "- **ID:** 20261128-230000-04\n## Validation Lifecycle\n" + chr(96) * 3 + "json\n" + json.dumps(block) + "\n" + chr(96) * 3
         paths = [
             "workspace/tasks/20261128-230000/subtasks/04-worker-migration.md",
             "workspace/tasks/20261128-230000/subtasks/05-confirmation-retirement.md",
         ]
         def fake_git(_root, *args, **_kwargs):
-            output = "\\n".join(paths) if args[:4] == ("ls-tree", "-r", "--name-only", "HEAD") else content
+            output = "\n".join(paths) if args[:4] == ("ls-tree", "-r", "--name-only", "HEAD") else content
             return subprocess.CompletedProcess(args, 0, stdout=output, stderr="")
         with patch.object(recovery, "git", side_effect=fake_git):
             with self.assertRaises(recovery.RecoveryError):
