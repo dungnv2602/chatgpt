@@ -136,6 +136,19 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(index["closed_through"], {"run_id": 1, "attempt": 1})
         self.assertEqual(len(index["attempts"]), 3)
 
+    def test_metadata_publication_is_excluded_from_source_validation_triggers(self) -> None:
+        root = Path(__file__).resolve().parents[3]
+        dispatcher = (root / ".github/workflows/task-validation-dispatch.yml").read_text(encoding="utf-8")
+        changed_lint = (root / ".github/workflows/ste-lint-changed.yml").read_text(encoding="utf-8")
+        standards = (root / ".github/workflows/validate-document-standards.yml").read_text(encoding="utf-8")
+        recovery_workflow = (root / ".github/workflows/task-validation-recovery.yml").read_text(encoding="utf-8")
+        self.assertIn('"workspace/task-validation/**"', dispatcher)
+        self.assertIn("'!workspace/task-validation/**'", changed_lint)
+        self.assertIn("'!workspace/task-validation/reviews/**'", standards)
+        self.assertIn("'!workspace/task-validation/status-index.json'", standards)
+        self.assertNotIn('"workspace/task-validation/status-index.json"', recovery_workflow.split("paths:", 1)[1].split("schedule:", 1)[0])
+        self.assertNotIn('"workspace/task-validation/reviews/**"', recovery_workflow.split("paths:", 1)[1].split("schedule:", 1)[0])
+
     def test_retention_prunes_only_reconciled_attempts_after_three_days(self) -> None:
         old = "2026-11-20T12:00:00Z"
         records = [
