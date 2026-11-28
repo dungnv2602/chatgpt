@@ -67,7 +67,7 @@ Implement secret/write-permission isolation, atomic terminal status/review-task 
 - Prevented metadata recursion across the dispatcher, changed-document lint, document-standards workflow, and legacy diagnostics push trigger. The recovery push filter excludes the status index and review folders. Added regression assertions for these exclusions.
 - Updated Worker interface documentation, document catalog, workspace index, Workflow Map, and protected policy review paths.
 - **Handoff boundary:** Recovery now reconciles dispatcher attempts and publication gaps. Discovery of committed tasks awaiting CI, current-task staleness, and Worker review/remediation lifecycle remain in dependent subtask 04.
-- **Protection:** GitHub branch metadata currently reports gpt as unprotected. The policy remains external-prerequisite and coordinator activation remains staged. Do not enable it until effective branch protection is established and report migration gates pass.
+- **Protection:** GitHub branch protection is not required by ADR-0008. Coordinator activation remains staged pending report migration and operational readiness.
 - **Validation:** Publisher and recovery regression suites are registered in validate-document-standards.yml. No local scripts/tests/lint were run and no hosted workflow runs/logs were inspected. No end-to-end runtime success is claimed.
 
 ## 6. State and Evidence
@@ -77,7 +77,7 @@ Implement secret/write-permission isolation, atomic terminal status/review-task 
 - **Changed paths:** Worker task-validation policy, status schema and review template; publisher/recovery scripts and regression tests; publisher/recovery/dispatcher/coordinator workflows; changed-document lint and legacy diagnostics trigger filters; document catalog and task-validation interface reference; Workflow Map; workspace index and operations README; task record and subtask index.
 - **Readback:** Relevant scripts, tests, workflows, policy, schema, catalog, interface reference, Workflow Map, and task record were read back from branch gpt at the stated head.
 - **Checks:** Regression suites are registered in document-standards CI. Not executed locally. Hosted CI was not inspected. GitHub branch API reports protected: false; scheduled workflows are not active from gpt while default branch is main.
-- **Limitations:** Runtime behavior, branch protection, publisher permissions in a hosted run, scheduled recovery, and end-to-end confirmation remain unverified. Committed-task-awaiting-CI reconciliation is assigned to subtask 04. The legacy report system remains intact.
+- **Limitations:** Runtime behavior, publisher permissions in a hosted run, scheduled recovery, and end-to-end confirmation remain unverified. Committed-task-awaiting-CI reconciliation is assigned to subtask 04. The legacy report system remains intact.
 
 ## 7. Completion
 
@@ -96,7 +96,7 @@ Implement secret/write-permission isolation, atomic terminal status/review-task 
 - Every task-specific implementation commit includes the exact Task-ID trailer.
 - Publisher and recovery implementations, workflows, schemas, regression tests, ownership references, and recursion exclusions are committed and read back.
 - No local validation or hosted CI inspection was performed.
-- Branch protection and scheduled recovery remain external prerequisites.
+- Scheduled recovery availability and operational readiness remain prerequisites.
 - Subtask 04 owns committed-task discovery and Worker lifecycle integration.
 
 ## 10. Handoff
