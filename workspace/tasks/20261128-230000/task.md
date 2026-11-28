@@ -130,6 +130,11 @@ Acceptance criteria are mapped to these required child tasks:
 - The latest compact status-index readback contains 217 attempts, all `capture_failure` with `check_set_id: null`, no reconciliation timestamps, and a zero checkpoint.
 - Subtask 04 has one exact matching attempt for source SHA `7814758586f68b3226822f760b4cbf06e86e108e`, Task-ID `20261128-230000-04`, policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b`: run `46164069720`, attempt 1. Its lifecycle is now `review_required`, not reconciled.
 - Hosted logs remain uninspected under Worker restrictions. Do not invent a root cause or remediation child; preserve all unresolved records and do not advance the checkpoint.
+### 2026-11-28 — metadata-only recursion guard added
+
+- The status index reached 220 unresolved `capture_failure` attempts. Recent records included source SHAs for task-record-only commits even though the dispatcher has `paths-ignore` entries for task metadata. This is consistent with push-range coalescing; hosted run metadata/logs were not inspected.
+- Added an exact-tip-commit diff guard to `.github/workflows/task-validation-dispatch.yml` (source commit `c9ffdffd3c955af0ddb471f85557b32460315d8f`). Metadata-only commits under `.takeout/reports/`, `workspace/task-validation/`, and `workspace/tasks/` are rejected independently of push-level filters and bot identity.
+- Subtask 04 lifecycle is now `awaiting_ci` for source `c9ffdffd3c955af0ddb471f85557b32460315d8f` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b`. Previous unresolved attempts remain retained; no checkpoint was advanced.
 ## 6. Current State and Remaining Work
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
