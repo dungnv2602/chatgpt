@@ -8,7 +8,7 @@ Use this structure for the active conversation register. The Worker owns the reg
 
 ## Open Discussions
 
-- **YYYY-MM-DD:** Unresolved decisions, constraints, approvals, or deferred matters. Remove only after recording disposition.
+- **YYYY-MM-DD:** Unresolved decisions, constraints, approvals, or deferred matters. Record approvals as decisions only, not execution authorization. Log `Next` as navigation, leaving the current blocker unresolved. Remove only after recording disposition.
 
 ## Reports
 
