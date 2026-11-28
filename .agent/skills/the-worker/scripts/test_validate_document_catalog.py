@@ -39,6 +39,7 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write(".agent/skills/example/test_generator.py")
         self.write(".agent/skills/the-worker/scripts/process_takeout.py")
         self.write(".agent/skills/the-worker/scripts/test_process_takeout_unittest.py")
+        self.write("workspace/task-validation/status-index.json")
         self.write("master/Example.md")
         self.write("area/novel/WORKFLOW.md")
         self.write(".agent/skills/drawing/SKILL.md")
@@ -58,6 +59,9 @@ class CatalogValidatorTests(unittest.TestCase):
             "`.agent/skills/example/SKILL.md` | skill-root | Fixture skill code. |",
             "| `.agent/skills/the-worker/scripts/*.py` | Python script | Active | "
             "`.agent/skills/the-worker/SKILL.md` | skill-scripts | Worker scripts and tests. |",
+            "| `workspace/task-validation/*.json` | JSON data | Active | "
+            "`.agent/skills/the-worker/SKILL.md` | workspace-task-validation | "
+            "Worker-owned operational status index. |",
         ]
 
     def set_catalog(self, rows, extra_coverage=(), non_markdown_rows=None):
@@ -576,6 +580,31 @@ class CatalogValidatorTests(unittest.TestCase):
         self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("unsafe or out-of-scope non-Markdown pattern" in error for error in errors))
+
+    def test_workspace_status_index_uses_canonical_placement(self):
+        self.set_catalog(self.valid_rows())
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_misplaced_workspace_json_fails_placement(self):
+        self.write("workspace/misplaced-status.json")
+        rows = self.default_non_markdown_rows() + [
+            "| `workspace/*.json` | JSON data | Active | "
+            "`.agent/skills/the-worker/SKILL.md` | workspace-task-validation | "
+            "Misplaced operational state. |",
+        ]
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("invalid placement" in error for error in errors))
+
+    def test_unregistered_workspace_non_markdown_artifact_fails_closed(self):
+        self.write("workspace/unregistered.json")
+        self.set_catalog(self.valid_rows())
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any(
+            "workspace/unregistered.json" in error and "not covered by the catalog" in error
+            for error in errors
+        ))
 
     def test_valid_github_workflow_uses_external_schema_exemption(self):
         self.write(".github/workflows/validate.yml")
