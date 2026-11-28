@@ -32,7 +32,7 @@ The Worker owns selection and queue order. Do not store queue rank here. Reconci
 
 ## 2. Subsequent Instructions
 
-[Preserve later clarifications, constraints, decisions, and approvals verbatim. Add UTC timestamps. Do not overwrite the original request.]
+[Preserve later clarifications, constraints, decisions, and approvals verbatim. Add UTC timestamps. Do not overwrite the original request. Approval and decisions are log-only until the explicit standalone execute cue, case-insensitive, authorizes the prepared batch. Record Next as navigation only.]
 
 ## 3. Objective and Acceptance Criteria
 
@@ -69,7 +69,7 @@ Separate deliverable closeout evidence from verification debt. A committed, read
 
 ## 8. Execution self-check
 
-[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, batch decision gates, conflict check, verification/readback, and cleanup. Record exceptions or blockers.]
+[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, decision collection complete, explicit case-insensitive execute cue present for this batch, conflict check, verification/readback, and cleanup. Approval and Next are not execution cues. Record exceptions or blockers.]
 
 ## 9. Handoff
 
