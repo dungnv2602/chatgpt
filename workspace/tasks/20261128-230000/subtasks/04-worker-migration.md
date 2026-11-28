@@ -13,7 +13,7 @@
 - **Approval scope/source:** Parent task 20261128-230000, explicitly authorized by user; execution cue provided.
 - **Governing ADR(s):** ADR-0008
 - **Dependencies:** 20261128-230000-02; 20261128-230000-03
-- **Eligibility / deferral reason:** Implementation continues on `gpt`; automated missing-dispatch recovery and coordinator activation remain gated pending default-branch workflow availability and verified protection.
+- **Eligibility / deferral reason:** Implementation continues on `gpt`; automated missing-dispatch recovery and coordinator activation remain gated pending default-branch workflow availability and GitHub branch-protection verification.
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
@@ -70,7 +70,7 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 
 - ADR-0008 governs this work.
 - Preserve existing validation coverage and legacy report system until migration gates are met.
-- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. This commit completes the Worker lifecycle procedure, root-cause group reuse contract, migration inventory, catalog/navigation updates, and legacy Ledger ownership boundary. Added fail-closed direct-push cutover gates that require source/current policy activation, effective protection, and recovery dispatch availability; task-owned workflow-run diagnostics are suppressed while unrelated workflow-run diagnostics and push backfill remain available. Remaining: reconcile exact-SHA validation when authorized, complete operational Confirmation, and gated producer cutover/retirement.
+- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. This commit completes the Worker lifecycle procedure, root-cause group reuse contract, migration inventory, catalog/navigation updates, and legacy Ledger ownership boundary. Added fail-closed direct-push cutover gates that require source/current policy activation, GitHub branch protection, and recovery dispatch availability; task-owned workflow-run diagnostics are suppressed while unrelated workflow-run diagnostics and push backfill remain available. Remaining: reconcile exact-SHA validation when authorized, complete operational Confirmation, and gated producer cutover/retirement.
 
 ## 6. State and Evidence
 
@@ -78,7 +78,7 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Changed paths:** Worker skill, task-validation interfaces, CI Ledger reference, document-type catalog, Workflow Map, task-validation README, task tracking records, and five validation/diagnostic workflows.
 - **Readback:** Confirmed from branch `gpt`; all nine owner, interface, workflow, and tracking paths were fetched after commit `4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b` and metadata commit `1b1f248c98ca5833d77064269db62bf90dce8bca`.
 - **Checks:** Not performed
-- **Limitations:** No local tests or hosted validation performed. Default branch `main` does not contain `.github/workflows/task-validation-dispatch.yml` or `.github/workflows/task-validation-recovery.yml`; effective branch protection is unverified because the API returned 403 and no rulesets were returned. Existing capture-failure attempts were not inspected or reconciled.
+- **Limitations:** No local tests or hosted validation performed. Default branch `main` now contains `.github/workflows/task-validation-dispatch.yml` and `.github/workflows/task-validation-recovery.yml` after PR #10. GitHub branch protection is not an ADR-0008 requirement. Existing capture-failure attempts were not inspected or reconciled.
 
 ## 7. Completion
 
@@ -97,7 +97,7 @@ Scope and parent are confirmed. Required, approved, and executed under the autho
 
 ## 10. Handoff
 
-Blocked pending repository settings: make `gpt` the default branch (the policy prerequisite), ensure dispatcher/recovery workflows are available there, and configure effective branch protection. Then resume exact-SHA validation and subtask 05. Do not inspect hosted logs or retire `.takeout/reports/` before authorization and Confirmation.
+Blocked pending repository settings: ensure policy activation, publisher/report migration, and operational recovery readiness. Branch protection is not required by ADR-0008. Do not inspect hosted logs or retire `.takeout/reports/` before authorization and Confirmation.
 
 ## 11. Ledger Findings
 
@@ -109,7 +109,7 @@ Blocked pending repository settings: make `gpt` the default branch (the policy p
 ### 2026-11-28 — execution worklist reconciliation
 
 - **Operation 1 — reconcile staged migration and lifecycle procedure:** Completed. Read back the canonical Worker, migration interface, and task records; existing index-first, grouped-root-cause, exact-source attribution, fallback, cancellation/supersession, and nonblocking lifecycle rules remain intact.
-- **Operation 2 — verify producer gate and migration scope:** Completed. Reviewed the three validation workflows and the two diagnostic/capture workflows. Exact-SHA reusable calls and gated legacy suppression are staged; coordinator-owned diagnostics suppression is conditional on source/current policy activation, effective protection, and recovery dispatch availability. Unrelated workflow diagnostics and push backfill remain available.
-- **Operation 3 — reconcile external prerequisites:** Blocked locally to this operation. Default branch `main` lacks the dispatcher/recovery workflows and effective protection cannot be verified through available repository metadata. No setting change or `main` write is authorized. No hosted CI inspection was authorized for ADR-0008.
+- **Operation 2 — verify producer gate and migration scope:** Completed. Reviewed the three validation workflows and the two diagnostic/capture workflows. Exact-SHA reusable calls and gated legacy suppression are staged; coordinator-owned diagnostics suppression is conditional on source/current policy activation, GitHub branch protection, and recovery dispatch availability. Unrelated workflow diagnostics and push backfill remain available.
+- **Operation 3 — reconcile external prerequisites:** Blocked locally to this operation. Default branch `main` lacks the dispatcher/recovery workflows and GitHub branch protection cannot be verified through available repository metadata. No setting change or `main` write is authorized. No hosted CI inspection was authorized for ADR-0008.
 - **Operation 4 — operational Confirmation and retirement:** Dependency-waiting in child 05. Preserve `.takeout/reports/` and all legacy producers/consumers. No retirement or coverage weakening.
 - **Stop-proof:** Remaining work is confined to the external activation/protection prerequisite and operational Confirmation; independent repository-side staging and readback operations in this scope are reconciled. Do not retry the unavailable settings verification until access/prerequisites change.
