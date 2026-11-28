@@ -600,3 +600,14 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Action:** Reconstructed the missing child 01 parent record from its approved surviving descendant. Resumed nested child 01-01 after the stale P0 dependency cleared. Restored the catalog validator and regression tests under Worker scripts, updated the validation workflow caller and catalog ownership, and read back all changed paths.
 - **Result:** Child 01-01 and parent child 01 closed. The standalone Document Standards activation/owner boundary is reconciled to The Worker. Tests and hosted workflow results were not inspected.
 - **References:** Validator `05d1b388681ad508e4f3206ce8a419806e029adf`; tests `67f5a948594cddbe5ab4a3e385dcba46dee901e6`; workflow `746640b2112d1b56b9746277390bbd30b47d14a7`; catalog `51bbf3a1fa40aa8a6f9d64b3d3f51b0de6e9dbed`; parser correction `ba4ee993135dda5f7f436781f9f7b372db97730e`; nested closeout `103049c31128c705cbc8ff93c90a90669da08244`; parent closeout `72312a8ac4c1543f1553dffabf96f719bcb212eb`.
+
+
+### 2026-11-28 — child 61 resumed, static review complete, execution evidence blocked
+
+- User explicitly resumed child 61 and supplied the standalone `Execute` cue.
+- Confirmed `.github/workflows/validate-document-standards.yml` invokes the structural ownership unittest suite and then runs the validator. Workflow wiring is verified by repository readback only. No execution result is claimed.
+- Static review identified uncovered validator branches: required-marker omissions across canonical files, unresolved Session Start pointer target, and the forbidden Conversation Mode `## Operating rules` marker. Existing regression tests cover only a valid fixture, extra Session Start link, missing Worker file, and `## Execution` marker.
+- Actual execution evidence remains blocked. The Worker prohibits local test execution. The GitHub Actions reference prohibits inspection of hosted run pages, logs, job output, and artifacts. No tests were run and no hosted CI data was accessed. A narrow policy-level decision is required before obtaining execution evidence.
+- Child 61 is Blocked. Reconciled its record, child index, and task board. ADR-0006 remains unchanged because its approved semantic and auto-repair boundaries were not altered.
+- Evidence commits: `733dc275cc3d5c059436166ad815edafbfa94c85`, `2222bd94ce045ae64a9d64bad299daca7d067515`, `d3bb79cb0ef2d4ad72c783e83a95347bfe0b70c0`, `e7f0715008ad9aa85a460304588cd37a56258baf`, `cc6180af3953fafc3277d60a537e5c9b58df27e5`.
+- Readback verified task record, child index, and board on branch `gpt`.
