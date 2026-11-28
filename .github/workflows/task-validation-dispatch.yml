@@ -1,0 +1,101 @@
+name: ADR-0008 Task Validation Dispatcher
+
+on:
+  push:
+    branches:
+      - gpt
+    paths-ignore:
+      - "workspace/task-validation/**"
+      - "workspace/tasks/**"
+      - ".takeout/reports/**"
+
+permissions: {}
+
+concurrency:
+  group: task-validation-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  policy_gate:
+    name: Check protected policy and duplicate source SHA
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+    outputs:
+      enabled: ${{ steps.gate.outputs.enabled }}
+      reason: ${{ steps.gate.outputs.reason }}
+    steps:
+      - name: Check out the pushed source commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Resolve activation and duplicate guard
+        id: gate
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          git fetch origin gpt --depth=1
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+
+          policy_path = Path(".agent/skills/the-worker/assets/task-validation/task-validation-policy.json")
+          policy = json.loads(policy_path.read_text(encoding="utf-8"))
+          source_sha = os.environ["SOURCE_SHA"]
+          if not re.fullmatch(r"[0-9a-f]{40}", source_sha):
+              raise SystemExit("Push event does not contain a full source commit SHA")
+          if policy.get("repository") != os.environ["REPOSITORY"]:
+              raise SystemExit("Protected policy repository does not match this run")
+          if policy.get("protected_ref") != "refs/heads/gpt":
+              raise SystemExit("Protected policy ref does not match gpt")
+          coordinator = policy.get("coordinator", {})
+          if coordinator.get("dispatcher_workflow") != ".github/workflows/task-validation-dispatch.yml":
+              raise SystemExit("Protected policy does not bind this dispatcher")
+          if coordinator.get("activation_status") != "enabled":
+              print("enabled=false")
+              print("reason=coordinator activation is staged")
+              raise SystemExit(0)
+          protection = policy.get("protection", {})
+          if protection.get("enforcement_status") != "verified":
+              print("enabled=false")
+              print("reason=effective branch protection is not verified")
+              raise SystemExit(0)
+          if int(os.environ["RUN_ATTEMPT"]) == 1:
+              index_path = "workspace/task-validation/status-index.json"
+              raw = subprocess.run(
+                  ["git", "show", f"FETCH_HEAD:{index_path}"],
+                  capture_output=True,
+                  text=True,
+                  check=False,
+              )
+              if raw.returncode == 0:
+                  index = json.loads(raw.stdout)
+                  if any(item.get("source_sha") == source_sha for item in index.get("attempts", [])):
+                      print("enabled=false")
+                      print("reason=source SHA already has a published coordinator attempt")
+                      raise SystemExit(0)
+          print("enabled=true")
+          print("reason=protected policy is enabled and source SHA is not duplicated")
+          PY
+
+  coordinator:
+    name: Run exact-SHA coordinator
+    if: needs.policy_gate.outputs.enabled == 'true'
+    needs:
+      - policy_gate
+    permissions:
+      contents: write
+    uses: ./.github/workflows/task-validation.yml
+    with:
+      source_sha: ${{ github.sha }}
