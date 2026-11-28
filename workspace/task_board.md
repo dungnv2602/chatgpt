@@ -18,15 +18,15 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent selected focus. Child 61 completed and was removed after regression coverage expansion and successful isolated test execution. The persistent parent remains open at quiescence.
+**P1** — [Template Fix](tasks/20261127-173100/task.md) → [Child 02 — Audit document template coverage](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — User-selected current focus. Child 02 is In Progress. The P0 Refactor Skills parent remains open at quiescence outside this execution batch.
 
 ## Ordered Eligible Execution Queue
 
-_No eligible child tasks under Refactor Skills._
+_No additional eligible tasks under Template Fix while child 02 is In Progress._
 
 ## Next Task
 
-No eligible child remains under Refactor Skills. Child 61 completed and was removed under lifecycle rules. Hosted CI outcome remains unobserved because the connected GitHub operations cannot enumerate push-triggered runs. Completed child 64, 03, and 01 were removed under lifecycle rules. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
+No additional eligible child remains under Template Fix. Refactor Skills has no eligible child and remains at quiescence. Its P0 focus is outside the user's current selected batch.
 
 ## Deferred Work
 
