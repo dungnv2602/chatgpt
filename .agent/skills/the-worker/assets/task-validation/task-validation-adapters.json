@@ -16,7 +16,8 @@
       "accepts_shell": false,
       "requires_repository_checkout": true,
       "default_timeout_minutes": 10,
-      "maximum_timeout_minutes": 30
+      "maximum_timeout_minutes": 30,
+      "allowed_modules": []
     },
     "pytest": {
       "runtime": "python3",
@@ -28,7 +29,7 @@
     },
     "unittest": {
       "runtime": "python3",
-      "entrypoint_kind": "repository-relative-test-path",
+      "entrypoint_kind": "repository-relative-test-module-or-discovery-directory",
       "accepts_shell": false,
       "requires_repository_checkout": true,
       "default_timeout_minutes": 10,
