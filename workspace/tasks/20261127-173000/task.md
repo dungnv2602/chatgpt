@@ -668,5 +668,5 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 
 - Deleted `.agent/INITIALIZATION_POLICY.md`; its navigation content was redundant with Session Start and The Worker.
 - Deletion commit: `66c5856798fba1cb747e00ad88474e7e4d3931a0`. Board reconciliation commit: `c4eafed5c7c7404eaabbe551e1c207fa5611360e`.
-- Readback and tracking reconciliation pending.
+- Readback: Confirmed the target file returns NOT_FOUND on branch `gpt`; board and parent progress record were read back. The child record is deleted at closeout.
 - Startup CI Ledger baseline discrepancy remains outside this scoped deletion and has not been investigated or resolved in this cycle.
