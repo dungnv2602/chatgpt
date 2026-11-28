@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-28:** DRAFT-0007 Revision 1, Option 2 approved and promoted to accepted ADR-0006 after provisional readback. Source Draft retired. Structural validator implementation and focused tests/workflow integration are underway under Refactor Skills child 60. Plans parent created with Semantic Engine child paused by explicit deferral.
+- **2026-11-28:** DRAFT-0007 Revision 1, Option 2 promoted to accepted ADR-0006 after provisional readback. Source Draft retired. Validator, focused tests, and workflow integration were committed and readback-verified. Child 60 closed and its record removed under task lifecycle. Tests were not executed and hosted CI was not inspected. Plans parent `20261128-221000` and paused child `20261128-221000-01` created; Semantic Engine work remains deferred.
 
 - **2026-11-28:** DRAFT-0006 Revision 1 approved. ADR-0005 accepted and implementation underway. The refactor consolidates operational ownership in The Worker and reconciles associated templates. Readback verification is in progress.
 
@@ -28,7 +28,7 @@
 
 ## Reports
 
-- **2026-11-28:** DRAFT-0007 Option 2 promoted to accepted ADR-0006. Validator, regression tests and workflow integration are being implemented. Plans task `20261128-221000` and paused child `20261128-221000-01` record deferred Semantic Engine exploration. Hosted CI and local execution remain out of scope.
+- **2026-11-28:** ADR-0006 implementation complete. Commit/readback evidence: validator `1b1fe08c579f02bb7b828001fe7eaafca27a6989`, tests `a7cc0d6cbd1ddd79d1c5af55ed22446bc5987ce8`, workflow integration `d5bac865a4dd83a1b40c91d5b6ff3444943f3378`. Tests were not executed; hosted CI was not inspected.
 
 - **2026-11-28:** Approved and implemented DRAFT-0006 Option 3 under accepted ADR-0005. Updated entry files, Worker ownership gates, specialist initialization references, navigation, catalog, templates, board, and task evidence. Remote readback is being reconciled. Local tests, scripts, lint, and hosted CI review were not performed.
 
