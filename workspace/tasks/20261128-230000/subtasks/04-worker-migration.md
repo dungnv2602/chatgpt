@@ -117,6 +117,12 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Readback:** Script and test changes are committed and read back: `07f40a20257a9cc74edd244f4fe54525fd7d857b` and `5ac0f011f09c7ce380be7d46c280bd9a7a8026eb`. No local tests were run.
 - **Lifecycle:** Bound this subtask to source `5ac0f011f09c7ce380be7d46c280bd9a7a8026eb` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b` in metadata commit `0703ca68a50f172e4f9c884718fcc9b85a7de948`.
 - **Unresolved history:** The status index has 230 attempts, all `capture_failure`, all with null check-set identity and no reconciliation; checkpoint remains zero. It contains previously published metadata-only attempts. This code change has not been runtime-demonstrated and does not rewrite existing records. Hosted logs were not inspected.
+### 2026-11-28 — latest classifier attempt remains actionable
+
+- **Index snapshot:** 233 attempts; all are `capture_failure`, all have null check-set identity, all remain unreconciled, and the checkpoint is zero.
+- **Current-source match:** Source `5ac0f011f09c7ce380be7d46c280bd9a7a8026eb`, Task-ID `20261128-230000-04`, policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b` matches run `46165824426`, attempt 1, `capture_failure`, with no check-set identity.
+- **Lifecycle:** Set to `review_required` for that exact attempt in commit `24f4647c829f2255b7aff3374f0d69f65736cb17`; unreconciled.
+- **Important limitation:** The index also received `capture_failure` records for metadata-only commits `0703ca68a50f172e4f9c884718fcc9b85a7de948` and `f795fd96ce0d6188ab3109bde9b841b445affeea` after the commit-level dispatcher guard and recovery-classifier guard were added. Runtime recursion prevention is therefore not fixed or demonstrated. No hosted logs were inspected, no root cause inferred, and no historical record/checkpoint altered.
 ## 6. State and Evidence
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
