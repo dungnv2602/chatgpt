@@ -1,5 +1,7 @@
 ## Current Step
 
+- **2026-11-28 22:00 +07:00:** `/start` initialization on `main` and `gpt` after merge. Verified Session Start, The Worker, Conversation Mode, CI Ledger, GitHub Actions, document catalog, task board, and discussion register. Startup P0 baseline review is underway. Hosted CI results remain out of scope.
+
 - **2026-11-28:** DRAFT-0007 Revision 1, Option 2 promoted to accepted ADR-0006 after provisional readback. Source Draft retired. Validator, focused tests, and workflow integration were committed and readback-verified. Child 60 closed and its record removed under task lifecycle. Tests were not executed and hosted CI was not inspected. Plans parent `20261128-221000` and paused child `20261128-221000-01` created; Semantic Engine work remains deferred.
 
 - **2026-11-28:** DRAFT-0006 Revision 1 approved. ADR-0005 accepted and implementation underway. The refactor consolidates operational ownership in The Worker and reconciles associated templates. Readback verification is in progress.
