@@ -580,8 +580,7 @@ Serve as the persistent, open parent task and coordination point for skills refa
 This is the persistent, open P0 Refactor Skills parent.
 
 - Children 65–67 are completed and their records were deleted under the lifecycle rules.
-- Child 68 is Proposed, pending the user's decision on historical source-Draft ID provenance between ADR-0004 and ADR-0007.
-- The batch is at quiescence. The board and subtask index publish this state.
+- Child 68 completed: corrected ADR-0007 source metadata from DRAFT-0005 to DRAFT-0008; ADR-0004 unchanged.\n- The batch is at quiescence. The board and subtask index publish this state.
 
 ## 7. Verification and Evidence
 
@@ -593,7 +592,7 @@ This is the persistent, open P0 Refactor Skills parent.
 
 ## 8. Handoff
 
-Keep this persistent P0 Refactor Skills parent open. Child 68 requires the user's decision. Do not change accepted ADR metadata until authorization. Do not close or delete the parent unless the user explicitly changes this instruction.
+Keep this persistent P0 Refactor Skills parent open. The historical provenance correction is complete. Do not close or delete the parent unless the user explicitly changes this instruction.
 
 ## 9. Subtasks
 
@@ -643,6 +642,14 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Result:** Parent task record reduced from roughly 100 KB to roughly 57 KB without deleting finding IDs or the historical progress entries. The board and subtask index are reconciled. Children 65, 66 and 67 completed and deleted under lifecycle rules. Child 68 is Proposed for user-resolvable provenance conflict.
 - **Workflow commits:** Worker `82c0b2c9a8e9981403a54bf2c6c90f146564e2e4`; ID gate `4664ebd5334c22bc6447a787f473f8a1d15f131b`; task template `a38ae0f3b983fc6bc5882b67aba74b23ecc65c9a`; subtask template `be167f4dea66b3414a4d27268d052b54fd3f5514`; parent Ledger summary `ad364cd4f740639ff10cadf2ba0e41ab848998eca`; progress recovery `5b9d92f828db6b445af4f0799cbf762cdb`.
 - **README/catalog commits:** workspace `97dc4bebf895c39cd59711f1306f8c8dab1297be`; Drawing `1b73a480f8ab5c3e591a4207ec366e1ae4edd0ff`; Draft `93d8f29dd8c28d598dca610cf937096fddde579e`; ADR `1cfdffebb24ab00facea03ad5d84f1b253d89cd9`; Analysis `b0a7d55682d5f9a04b28d1d098d10dde5dac9cf7`; catalog `78c26fd9d2490ffdd9655059433e12f2c0f0f249`; ADR index `377202958450df9ff5ad3cdcd60c662c97ff39e1`.
-- **Recovery correction:** The report-layout task and source Draft were briefly reconstructed under stale evidence, then removed after readback confirmed accepted ADR-0007 and normal task deletion. No report-layout implementation was performed. A historical DRAFT-0005 source-ID collision remains between accepted ADR-0004 and ADR-0007; child 68 records the required user decision. The new ID allocation gate prevents future reuse.
+- **Recovery correction:** The report-layout task and source Draft were briefly reconstructed under stale evidence, then removed after readback confirmed accepted ADR-0007 and normal task deletion. No report-layout implementation was performed. The historical source-ID collision between ADR-0004 and ADR-0007 was reconciled by changing ADR-0007's source_draft metadata to DRAFT-0008, preserving ADR-0004 and ADR-0007's decision content. Child 68 closed. The new ID allocation gate prevents future reuse.
 - **Checks:** No local scripts/tests/lint performed. Hosted CI results not inspected. Readback confirms committed content, not runtime behavior.
 - **Closeout:** Child 67 completed and deleted. The batch is at quiescence with child 68 Proposed.
+
+
+### 2026-11-28 — child 68 provenance correction
+
+- **Action:** User authorized correction and execution. Corrected ADR-0007's source-Draft reference from DRAFT-0005 to DRAFT-0008 and documented the administrative correction in its approval/implementation section. ADR-0004's source reference and both accepted decision outcomes remain unchanged.
+- **Result:** Readback confirmed ADR-0007's corrected metadata and rationale. The discussion register records the correction. Child 68 completed and deleted under lifecycle rules. Refactor Skills is at quiescence.
+- **Commits:** ADR-0007 `6e452884918604530780f8f4d1729b13a6f34ba1`; discussion `89342d49a61d4370fe1b02c7e50b8c20b76055b6`; child closeout `887a08d8f185f15bed2f9d7ee3fd2ae248ecb352`.
+- **Readback:** Verified ADR-0007 and discussion register remotely. No tests required or performed for metadata-only changes.
