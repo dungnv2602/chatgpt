@@ -6,14 +6,14 @@
 - **ID:** 20261128-230000-05
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** Blocked
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Parent task 20261128-230000, explicitly authorized by user; execution cue provided.
 - **Governing ADR(s):** ADR-0008
 - **Dependencies:** 20261128-230000-02; 20261128-230000-03; 20261128-230000-04
-- **Eligibility / deferral reason:** Ready when dependency subtasks are completed
+- **Eligibility / deferral reason:** Dependency 20261128-230000-04 remains In Progress
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
