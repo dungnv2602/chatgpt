@@ -39,13 +39,13 @@ Keep the correction narrow. No mandatory latest-commit lookup is added.
 - **Action:** Added the branch-first file-read and SHA-provenance rule to The Worker and the routing summary to Workflow Map.
 - **Result:** The canonical workflow defaults to branch refs and prohibits unexplained/stale SHAs; no mandatory latest-commit lookup is imposed.
 - **References:** `.agent/skills/the-worker/SKILL.md`; `.agent/WORKFLOW_MAP.md`; `workspace/task_board.md`.
-- **Next:** Complete readback and closeout.
+- **Next:** None — closed.
 
 ## 6. Current State and Remaining Work
 Acceptance criteria met. Readback is confirmed below; no runtime checks were required.
 
 ## 7. Verification and Evidence
-- **Commit SHA:** See implementation commit references: `a63e263496a8dc7070a32a3ae579ed59fbeda666` (Worker), `2b2c739f6d1bd0164fe874fecc6364829270affd` (map), `a61a0fd8689138319ef6c666e5ec579c700f3492` (board)
+- **Commit SHA:** See implementation commit references: `a63e263496a8dc7070a32a3ae579ed59fbeda666` (Worker), `2b2c739f6d1bd0164fe874fecc6364829270affd` (map), `a61a0fd8689138319ef6c666e5ec579c700f3492` (board queue update), `1e6636bb1c1c3cb51d19a3e66f92419414205821` (board reconciliation), `978350f88d97586388f4a106e8dc36a828c9d0d2` (task closeout)
 - **Changed paths:** `.agent/skills/the-worker/SKILL.md`, `.agent/WORKFLOW_MAP.md`, `workspace/task_board.md`
 - **Readback:** Confirmed on branch `gpt`
 - **Checks:** Not performed
