@@ -14,11 +14,11 @@ _None._
 
 ## Ordered Eligible Execution Queue
 
-_No eligible tasks._
+1. **20261128-230000 — Reconstruction** (P0, Approved, Ready) — [task](tasks/20261128-230000/task.md)
 
 ## Next Task
 
-_None. Refactor Skills is at quiescence._
+**20261128-230000 — Reconstruction.** Eligible, not yet selected for execution.
 
 ## Deferred Work
 
@@ -29,6 +29,7 @@ _No blocked tasks._
 ### Proposed — decision pending
 
 _No proposed tasks._
+
 ### Paused
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
