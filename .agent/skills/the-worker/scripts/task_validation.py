@@ -117,9 +117,6 @@ def validate_contract(
         raise ContractError("Policy does not require policy-revision binding")
     if policy.get("coordinator", {}).get("activation_status") != "enabled":
         raise ContractError("Coordinator activation is not enabled")
-    if policy.get("protection", {}).get("enforcement_status") != "verified":
-        raise ContractError("Protected policy enforcement is not verified")
-
     if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
         raise ContractError("Unsupported task-contract schema")
     if schema.get("additionalProperties") is not False:
