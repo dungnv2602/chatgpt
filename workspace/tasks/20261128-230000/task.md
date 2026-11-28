@@ -145,6 +145,11 @@ Acceptance criteria are mapped to these required child tasks:
 - The status index has since reached 226 attempts, all `capture_failure`, all without check-set identity, all unreconciled, with checkpoint zero. It still records capture failures for metadata-only source commits created after the `gpt` commit-level guard was added.
 - The guard is present in `gpt`, but runtime suppression is not demonstrated. The stale `main` dispatcher/coordinator copies are a possible version-parity issue; no causal link is established without authorized run inspection.
 - Subtask 04 source `c9ffdffd3c955af0ddb471f85557b32460315d8f` remains `review_required` against run `46165107595`/attempt 1. Hosted logs were not inspected; no remediation cause is claimed.
+### 2026-11-28 — recovery classification hardened
+
+- Updated the recovery classifier to ignore a dispatcher run when its policy gate succeeds but the coordinator never starts, even if a later recovery job fails. Added a regression test. Commits: `07f40a20257a9cc74edd244f4fe54525fd7d857b`, `5ac0f011f09c7ce380be7d46c280bd9a7a8026eb`.
+- The status index now has 230 unresolved `capture_failure` attempts, all without check-set identity; checkpoint remains zero. The new classifier has not been run or operationally demonstrated, and it does not rewrite historical records.
+- Subtask 04 lifecycle is `awaiting_ci` for source `5ac0f011f09c7ce380be7d46c280bd9a7a8026eb` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b`. No local tests or hosted logs inspected.
 ## 6. Current State and Remaining Work
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
