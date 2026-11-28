@@ -327,52 +327,71 @@ def template_location_error(path_text: str) -> str | None:
     return "template must be stored in its owning skill's assets/ directory"
 
 
+def _is_task_record(parts: tuple[str, ...]) -> bool:
+    """Return whether a path is an active task/index record, not a reusable template."""
+    if parts[:2] != ("workspace", "tasks"):
+        return False
+    if len(parts) == 3 and parts[2] == "task.md":
+        return True
+    return (
+        len(parts) == 4
+        and parts[2] == "subtasks"
+        and (
+            parts[3] == "README.md"
+            or re.fullmatch(r"\d{2}-.*\.md", parts[3], flags=re.IGNORECASE) is not None
+        )
+    )
+
+
 def find_external_templates(root: Path) -> list[str]:
     """Find reusable template files or template directories outside skill folders."""
     errors: list[str] = []
     for candidate in root.rglob("*"):
-        if not candidate.is_file():
-            continue
         relative = candidate.relative_to(root)
         parts = relative.parts
-        is_task_record = (
-            parts[:2] == ("workspace", "tasks")
-            and (
-                (len(parts) == 3 and parts[2] == "task.md")
-                or (
-                    len(parts) == 4
-                    and parts[2] == "subtasks"
-                    and (
-                        parts[3] == "README.md"
-                        or re.match(r"^\\d{2}-.*\\.md$", parts[3])
-                    )
-                )
-            )
-        )
-        if parts[:1] == (".git",) or is_task_record or parts[:2] == (".agent", "skills"):
+        if (
+            parts[:1] in {(".git",), ("master",)}
+            or parts[:2] in {("workspace", "archive"), (".agent", "skills")}
+            or _is_task_record(parts)
+        ):
             continue
-        if is_template_asset(relative.as_posix()):
-            errors.append(
-                f"Misplaced template outside skills: {relative.as_posix()}. "
-                "Move it to the owning skill's assets/ directory."
-            )
+
+        if candidate.is_dir():
+            if is_template_asset(relative.as_posix()):
+                errors.append(
+                    f"Misplaced template outside skills (directory): {relative.as_posix()}. "
+                    "Move it to the owning skill's assets/ directory."
+                )
+            continue
+
+        if not candidate.is_file() or not is_template_asset(relative.as_posix()):
+            continue
+        # Report the misplaced template directory once, not every file inside it.
+        if any(part.casefold() in {"template", "templates"} for part in parts[:-1]):
+            continue
+        errors.append(
+            f"Misplaced template outside skills: {relative.as_posix()}. "
+            "Move it to the owning skill's assets/ directory."
+        )
     return errors
 
 
 def find_misplaced_skill_templates(root: Path) -> list[str]:
-    """Find reusable templates stored outside the owning skill's assets directory."""
+    """Find reusable templates or template directories outside skill assets/."""
     skill_root = root / ".agent" / "skills"
     if not skill_root.is_dir():
         return []
-    errors = []
+    errors: list[str] = []
     for candidate in skill_root.rglob("*"):
-        if not candidate.is_file():
-            continue
         relative = candidate.relative_to(root)
         parts = relative.parts
         if not is_template_asset(relative.as_posix()):
             continue
         if len(parts) >= 4 and parts[:2] == (".agent", "skills") and parts[3] == "assets":
+            continue
+        if candidate.is_file() and any(
+            part.casefold() in {"template", "templates"} for part in parts[4:-1]
+        ):
             continue
         errors.append(
             f"Misplaced skill template outside assets/: {relative.as_posix()}. "
