@@ -204,14 +204,14 @@ jobs:
                               "superseded": "superseded",
                           }
                           status = verifier_map.get(verifier_outcome, "capture_failure")
-                          if status == "success":
-                              digest = verifier_outputs.get("result_sha256", "")
-                              if (
-                                  verifier_outputs.get("source_sha") != source_sha
-                                  or verifier_outputs.get("policy_blob_sha") != policy_sha
-                                  or not re.fullmatch(r"[0-9a-f]{64}", digest)
-                              ):
-                                  status = "partial"
+                          digest = verifier_outputs.get("result_sha256", "")
+                          if status != "capture_failure" and not re.fullmatch(r"[0-9a-f]{64}", digest):
+                              status = "capture_failure"
+                          if verifier_outcome in {"success", "check_failure"} and (
+                              verifier_outputs.get("source_sha") != source_sha
+                              or verifier_outputs.get("policy_blob_sha") != policy_sha
+                          ):
+                              status = "partial"
                           if job_result != "success" and status in {"success", "failure", "partial"}:
                               status = "capture_failure"
               records.append({
