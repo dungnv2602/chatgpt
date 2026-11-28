@@ -64,8 +64,6 @@ class TaskValidationTests(unittest.TestCase):
         self.source_sha = self._git("rev-parse", "HEAD")
         self.contract["source_sha"] = self.source_sha
         self.contract_path.write_text(json.dumps(self.contract), encoding="utf-8")
-        self._commit()
-        self.source_sha = self._git("rev-parse", "HEAD")
 
     def tearDown(self) -> None:
         self.temp.cleanup()
