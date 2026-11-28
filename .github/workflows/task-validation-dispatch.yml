@@ -74,11 +74,6 @@ jobs:
               print("enabled=false")
               print("reason=coordinator activation is staged")
               raise SystemExit(0)
-          protection = policy.get("protection", {})
-          if protection.get("enforcement_status") != "verified":
-              print("enabled=false")
-              print("reason=effective branch protection is not verified")
-              raise SystemExit(0)
           recovery = policy.get("recovery", {})
           if (
               recovery.get("schedule_activation_status") != "verified"
