@@ -16,7 +16,6 @@ class AggregateTaskValidationTests(unittest.TestCase):
             "policy_id": "chatgpt-task-validation",
             "repository": "dungnv2602/chatgpt",
             "coordinator": {"activation_status": "enabled"},
-            "protection": {"enforcement_status": "verified"},
             "mandatory_checks": [
                 {"id": "lint", "coordinator_job": "lint", "result_mode": "job_result"},
                 {"id": "document-standards", "coordinator_job": "document-standards", "result_mode": "job_result"},
