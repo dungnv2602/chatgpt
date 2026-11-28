@@ -2,7 +2,7 @@
 record_type: decision-record
 template_version: "1.1"
 id: "ADR-0007"
-status: "accepted"
+status: "superseded"
 decision_date: "2026-11-28"
 decision_makers:
   - "User"
@@ -15,8 +15,8 @@ approved_scope: "Option 2: remove .takeout/reports/latest-lint-report.json and u
 related_adrs:
   - "ADR-0003"
 supersedes: []
-superseded_by: null
-implementation_status: "in-progress"
+superseded_by: "ADR-0008"
+implementation_status: "superseded"
 implementation_tasks:
   - "20261127-173500"
 review_triggers:
@@ -45,3 +45,8 @@ Supersede only the latest-file requirement in ADR-0003. Preserve ADR-0003's othe
 ## Approval and implementation
 
 DRAFT-0005 revision 1, Option 2 was approved by the user on 2026-11-28. The source reference was corrected administratively to DRAFT-0008 after DRAFT-0005 was found to collide with ADR-0004 provenance. This correction changes no approved decision content or scope. Execution began after the user's explicit `execute` cue on 2026-11-28. ADR-0003 remains immutable.
+
+
+## Supersession — ADR-0008 (2026-11-28)
+
+ADR-0008 supersedes this latest-lint-report locator decision when the approved migration retires `.takeout/reports/`. The replacement status index is not a latest-report locator and must not retain diagnostic report paths or findings. This ADR remains as permanent history of the prior locator decision; its operational requirement no longer governs after migration.
