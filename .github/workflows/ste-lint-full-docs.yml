@@ -17,6 +17,10 @@ on:
       - gpt
     paths:
       - '.agent/skills/asd-ste100/**'
+      - '.agent/skills/the-worker/scripts/generate_lint_report.py'
+      - '.agent/skills/the-worker/scripts/test_generate_lint_report.py'
+      - '.agent/skills/the-worker/assets/lint-report-schema.json'
+      - '.agent/skills/the-worker/assets/lint-report-template.md'
       - '.github/workflows/ste-lint-full-docs.yml'
       - '.github/workflows/ste-lint-changed.yml'
       - '!.agent/skills/asd-ste100/examples/**'
@@ -131,9 +135,9 @@ jobs:
           }
           run_check wrapper_syntax bash -n .agent/skills/asd-ste100/scripts/ste-lint-repository.sh
           run_check python_compile python3 -m py_compile \
-            .agent/skills/asd-ste100/scripts/generate_lint_report.py \
+            .agent/skills/the-worker/scripts/generate_lint_report.py \
             .agent/skills/asd-ste100/scripts/check_markdown_anchors.py
-          run_check report_tests python3 .agent/skills/asd-ste100/scripts/test_generate_lint_report.py
+          run_check report_tests python3 .agent/skills/the-worker/scripts/test_generate_lint_report.py
           run_check anchor_tests python3 .agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py
           run_check linter_selftest python3 .agent/skills/asd-ste100/scripts/ste-lint.py --selftest
           echo "failed=$failed" >> "$GITHUB_OUTPUT"
@@ -276,7 +280,7 @@ jobs:
           fi
           history=".takeout/reports/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
           generator_status=0
-          python3 .agent/skills/asd-ste100/scripts/generate_lint_report.py \
+          python3 .agent/skills/the-worker/scripts/generate_lint_report.py \
             --scope on_repo --records-dir .lint-report-records \
             --output-dir "$history" \
             --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \
