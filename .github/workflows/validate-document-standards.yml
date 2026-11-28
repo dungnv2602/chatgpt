@@ -8,6 +8,10 @@ on:
         required: false
         type: boolean
         default: false
+      source_sha:
+        description: "Exact source commit to validate."
+        required: true
+        type: string
   push:
     branches:
       - gpt
@@ -68,7 +72,7 @@ jobs:
       - name: Check out gpt
         uses: actions/checkout@v7.0.1
         with:
-          ref: gpt
+          ref: ${{ inputs.source_sha || github.sha }}
           fetch-depth: 1
 
       - name: Set up Python
@@ -98,7 +102,7 @@ jobs:
 
   diagnostics:
     name: Capture GH Actions diagnostics
-    if: ${{ always() }}
+    if: ${{ always() && inputs.coordinator_call != true }}
     needs: [validate-document-standards]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
