@@ -102,6 +102,13 @@ Acceptance criteria are mapped to these required child tasks:
 - **References:** ADR-0008 Confirmation; `task-validation-interfaces.md`; `workspace/task-validation/README.md`.
 - **Next:** Read back the committed documents and reconcile the subtask index; do not enable the coordinator or inspect hosted logs before the required gates are verified.
 
+### 2026-11-28 — Legacy producer cutover gates staged
+
+- **Action:** Updated the three legacy validation workflows and two workflow-run diagnostic consumers to yield only when the source and current policies both authorize coordinator ownership, branch protection is verified, and recovery dispatch is available.
+- **Result:** Manual audits remain available. Legacy workflow-run capture is suppressed only for exact Task-ID coordinator-owned validation attempts; unrelated workflow-run diagnostics and push backfill remain active. This preserves non-task coverage while preventing duplicate task feedback.
+- **References:** `.github/workflows/ste-lint-changed.yml`; `.github/workflows/ste-lint-full-docs.yml`; `.github/workflows/validate-document-standards.yml`; `.github/workflows/gh-actions-capture.yml`; `.github/workflows/gh-actions-diagnostics.yml`.
+- **Next:** Read back the workflow changes, update the task lifecycle source SHA, and leave operational activation/Confirmation gated on external protection/default-branch prerequisites.
+
 ## 6. Current State and Remaining Work
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.

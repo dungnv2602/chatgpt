@@ -70,12 +70,12 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 
 - ADR-0008 governs this work.
 - Preserve existing validation coverage and legacy report system until migration gates are met.
-- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. This commit completes the Worker lifecycle procedure, root-cause group reuse contract, migration inventory, catalog/navigation updates, and legacy Ledger ownership boundary. Remaining: readback and Confirmation-dependent producer cutover.
+- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. This commit completes the Worker lifecycle procedure, root-cause group reuse contract, migration inventory, catalog/navigation updates, and legacy Ledger ownership boundary. Added fail-closed direct-push cutover gates that require source/current policy activation, effective protection, and recovery dispatch availability; task-owned workflow-run diagnostics are suppressed while unrelated workflow-run diagnostics and push backfill remain available. Remaining: readback and Confirmation-dependent producer cutover.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** e46cf725fc04398036cae7d07fb0d8cd33d88564 in branch history
-- **Changed paths:** Worker skill, task-validation interfaces, CI Ledger reference, document-type catalog, Workflow Map, task-validation README, and task tracking records.
+- **Commit SHA:** e46cf725fc04398036cae7d07fb0d8cd33d88564; workflow gate commit pending
+- **Changed paths:** Worker skill, task-validation interfaces, CI Ledger reference, document-type catalog, Workflow Map, task-validation README, task tracking records, and five validation/diagnostic workflows.
 - **Readback:** Pending after metadata update
 - **Checks:** Not performed
 - **Limitations:** No runtime claims.
