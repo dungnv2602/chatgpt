@@ -79,6 +79,14 @@ jobs:
               print("enabled=false")
               print("reason=effective branch protection is not verified")
               raise SystemExit(0)
+          recovery = policy.get("recovery", {})
+          if (
+              recovery.get("schedule_activation_status") != "verified"
+              or recovery.get("workflow_dispatch_activation_status") != "verified"
+          ):
+              print("enabled=false")
+              print("reason=scheduled and missing-dispatch recovery are not operational")
+              raise SystemExit(0)
           if int(os.environ["RUN_ATTEMPT"]) == 1:
               index_path = "workspace/task-validation/status-index.json"
               raw = subprocess.run(
