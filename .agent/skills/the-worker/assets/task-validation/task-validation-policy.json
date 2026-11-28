@@ -18,6 +18,7 @@
       ".agent/skills/the-worker/assets/ledger-schema.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-adapters.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-policy.json",
       ".agent/skills/the-worker/assets/task-validation/task-validation-review-template.md",
       ".agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json",
@@ -163,6 +164,10 @@
     "child_grouping": "one-child-per-actionable-root-cause-per-parent",
     "review_index": "workspace/task-validation/status-index.json",
     "review_folder_root": "workspace/task-validation/reviews",
-    "reconcile_after_review": true
+    "reconcile_after_review": true,
+    "lifecycle_schema": ".agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json",
+    "awaiting_ci_state": "awaiting_ci",
+    "task_discovery": "Validation Lifecycle block in active task and subtask records",
+    "missing_dispatch_recovery": "dispatch exact source SHA only when no coordinator attempt exists and activation plus protection are verified"
   }
 }
