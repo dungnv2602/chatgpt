@@ -9,7 +9,6 @@ This folder stores proposals that require a user decision.
 
 ## Current Drafts
 
-- [DRAFT-0007 — Automated Structural Validation for Canonical Ownership and Drift](DRAFT-0007-automated-structural-ownership-validation.md) — Revision 1 in review. Recommends a lightweight validator for deterministic structural checks without semantic policy duplication.
 
 - [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](DRAFT-0005-unified-index-without-latest-lint-copy.md) — Revision 1 in review. Proposes to remove the standalone latest lint JSON and resolve the previous report from the unified index. Requires user approval because it changes accepted ADR-0003.
 
