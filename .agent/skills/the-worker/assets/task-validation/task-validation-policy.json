@@ -158,7 +158,7 @@
     "unresolved_attempts_never_pruned": true,
     "bounded_retries": 5,
     "scheduled_cron": "*/15 * * * *",
-    "schedule_activation_status": "external-prerequisite-default-branch-must-be-gpt",
+    "schedule_activation_status": "external-prerequisite-default-branch-must-contain-recovery",
     "push_trigger_excludes_status_index_commits": true,
     "reads_logs": false,
     "validates_source_code": false,
@@ -182,7 +182,7 @@
     "lifecycle_schema": ".agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json",
     "awaiting_ci_state": "awaiting_ci",
     "task_discovery": "Validation Lifecycle block in active task and subtask records",
-    "missing_dispatch_recovery": "dispatch exact source SHA only when source and current coordinator policies are enabled, protection is verified, and workflow_dispatch is available on the default branch",
+    "missing_dispatch_recovery": "dispatch exact source SHA only when source and current coordinator policies are enabled, protection is verified, and scheduled plus workflow_dispatch recovery are available on the default branch",
     "root_cause_group_field": "Root-cause group",
     "legacy_ledger_scope": ".takeout/reports/ledger.json"
   }
