@@ -30,7 +30,8 @@
     ],
     "one_run_per_source_commit": true,
     "bind_source_sha": true,
-    "bind_policy_revision": true
+    "bind_policy_revision": true,
+    "activation_status": "staged-until-privileged-publisher-and-report-migration"
   },
   "mandatory_checks": [
     {
