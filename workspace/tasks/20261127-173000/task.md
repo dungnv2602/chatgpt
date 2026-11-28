@@ -611,3 +611,9 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - Child 61 is Blocked. Reconciled its record, child index, and task board. ADR-0006 remains unchanged because its approved semantic and auto-repair boundaries were not altered.
 - Evidence commits: `733dc275cc3d5c059436166ad815edafbfa94c85`, `2222bd94ce045ae64a9d64bad299daca7d067515`, `d3bb79cb0ef2d4ad72c783e83a95347bfe0b70c0`, `e7f0715008ad9aa85a460304588cd37a56258baf`, `cc6180af3953fafc3277d60a537e5c9b58df27e5`.
 - Readback verified task record, child index, and board on branch `gpt`.
+
+### 2026-11-28 — child 61 scoped hosted-review authorization and evidence discovery
+
+- User instructed: “Only allow for this substask, do not modify workflow policy.” Recorded this as authorization to review existing hosted validation for child 61 only. No canonical Worker/GitHub Actions policy or workflow file was changed. No local tests were run, and no workflow was dispatched or rerun.
+- Attempted read-only run discovery through the available GitHub connector. The unified `.takeout/reports/index.json` currently returns an empty `runs` array (count 151). Commit-status queries for the workflow-definition and validator commits returned no statuses. The commit-workflow-runs operation returned no results and only supports pull-request-triggered runs. No connector operation is available to enumerate push-triggered runs, so no run ID could be identified and no hosted run page, logs, job output, or artifacts were opened.
+- Child 61 remains Blocked pending a supported read-only run locator or an exact existing run ID. Board and child record reconciled. The persistent Refactor Skills parent remains open.
