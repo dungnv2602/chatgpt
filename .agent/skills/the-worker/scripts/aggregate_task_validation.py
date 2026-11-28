@@ -123,9 +123,11 @@ def classify_attempt(
         outcome = "capture_failure"
     elif "infrastructure_failure" in statuses.values():
         outcome = "infrastructure_failure"
-    elif any(status in {"skipped", "pending", "partial", "neutral", None} for status in statuses.values()):
+    elif any(status in {"skipped", "pending", "queued", "in_progress", "partial", "neutral", None} for status in statuses.values()):
         outcome = "coverage_failure"
-    elif any(status != "success" for status in statuses.values()):
+    elif any(status not in {"success", "failure"} for status in statuses.values()):
+        outcome = "coverage_failure"
+    elif any(status == "failure" for status in statuses.values()):
         outcome = "check_failure"
     else:
         outcome = "success"
