@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -98,7 +99,7 @@ def validate_aggregate(
     policy_blob_sha: str,
     run_id: int,
     attempt: int,
-) -> tuple[str, str | None]:
+) -> tuple[str, str | None, str]:
     if not isinstance(aggregate, dict):
         raise PublisherError("Aggregate must be a JSON object")
     if aggregate.get("source_sha") != source_sha:
@@ -108,7 +109,7 @@ def validate_aggregate(
     if aggregate.get("coordinator_run_id") != run_id or aggregate.get("attempt") != attempt:
         raise PublisherError("Aggregate run ID or attempt does not match the coordinator event")
     outcome = aggregate.get("outcome")
-    if outcome not in OUTCOMES:
+    if not isinstance(outcome, str) or outcome not in OUTCOMES:
         raise PublisherError("Aggregate has an unknown terminal outcome")
     check_set_id = aggregate.get("check_set_id")
     if check_set_id is not None and (
@@ -121,9 +122,16 @@ def validate_aggregate(
     if not isinstance(completed_at, str):
         raise PublisherError("Aggregate completion timestamp is missing")
     try:
-        datetime.fromisoformat(completed_at.replace("Z", "+00:00"))
+        parsed_completed_at = datetime.fromisoformat(completed_at.replace("Z", "+00:00"))
+        if parsed_completed_at.tzinfo is None:
+            raise ValueError("timezone is required")
     except ValueError as exc:
         raise PublisherError("Aggregate completion timestamp is invalid") from exc
+    statuses = aggregate.get("statuses")
+    if outcome == "success" and (
+        not isinstance(statuses, dict) or not statuses or any(value != "success" for value in statuses.values())
+    ):
+        raise PublisherError("Successful aggregate does not contain all-success check statuses")
     return outcome, check_set_id, completed_at
 
 
@@ -189,6 +197,17 @@ def validate_index(index: Any) -> dict[str, Any]:
             raise PublisherError("Status-index check-set identity is malformed")
         if record.get("outcome") not in OUTCOMES:
             raise PublisherError("Status-index outcome is invalid")
+        if check_set_id is None and record["outcome"] not in {"capture_failure", "infrastructure_failure"}:
+            raise PublisherError("Status-index outcome requires a check-set identity")
+        try:
+            completed = datetime.fromisoformat(str(record.get("completed_at", "")).replace("Z", "+00:00"))
+            if completed.tzinfo is None:
+                raise ValueError("timezone is required")
+            actions_url = record.get("actions_url", "")
+            if actions_url != f"https://github.com/dungnv2602/chatgpt/actions/runs/{run_id}":
+                raise ValueError("Actions URL does not match run ID")
+        except ValueError as exc:
+            raise PublisherError("Status-index completion metadata is invalid") from exc
         recovery = record.get("recovery")
         if (
             not isinstance(recovery, dict)
@@ -198,11 +217,18 @@ def validate_index(index: Any) -> dict[str, Any]:
             or recovery["retry_count"] < 0
         ):
             raise PublisherError("Status-index recovery metadata is malformed")
+        for field in ("reconciled_at", "last_retry_at"):
+            value = recovery[field]
+            if value is not None:
+                try:
+                    parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+                    if parsed.tzinfo is None:
+                        raise ValueError("timezone is required")
+                except ValueError as exc:
+                    raise PublisherError("Status-index recovery timestamp is malformed") from exc
+        if key <= (checkpoint["run_id"], checkpoint["attempt"]):
+            raise PublisherError("Status-index contains an attempt at or below its checkpoint")
     return index
-
-
-def timestamp_now() -> str:
-    return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
 def atomic_write(path: Path, content: str) -> None:
@@ -220,7 +246,6 @@ def atomic_write(path: Path, content: str) -> None:
 
 
 def record_for(
-    aggregate: dict[str, Any],
     source_task: str | None,
     source_sha: str,
     policy_blob_sha: str,
@@ -284,15 +309,14 @@ def publish_attempt(
         raise PublisherError("Publisher timestamp does not match the aggregate timestamp")
     task_id = source_task_id(root, source_sha)
     record = record_for(
-        aggregate, task_id, source_sha, policy_blob_sha, run_id, attempt,
+        task_id, source_sha, policy_blob_sha, run_id, attempt,
         actions_url, completed_at, outcome, check_set_id,
     )
 
     index_file = root / INDEX_PATH
-    if index_file.exists():
-        index = validate_index(read_json(index_file))
-    else:
-        index = {"schema_version": 1, "closed_through": {"run_id": 0, "attempt": 0}, "attempts": []}
+    if not index_file.exists():
+        raise PublisherError("Canonical task-validation status index is missing")
+    index = validate_index(read_json(index_file))
 
     checkpoint = index["closed_through"]
     if (run_id, attempt) <= (checkpoint["run_id"], checkpoint["attempt"]):
@@ -309,8 +333,11 @@ def publish_attempt(
     review_file = review_dir / "review.md"
     ignored = outcome in {"cancelled", "superseded"}
 
-    template = (root / REVIEW_TEMPLATE).read_text(encoding="utf-8")
-    review_content = None if ignored else render_review(record, template)
+    if ignored:
+        review_content = None
+    else:
+        template = (root / REVIEW_TEMPLATE).read_text(encoding="utf-8")
+        review_content = render_review(record, template)
 
     if existing is not None:
         comparable = {key: value for key, value in existing.items() if key != "recovery"}
@@ -365,6 +392,16 @@ def publish_with_retry(
         aggregate, source_sha, policy_blob_sha, run_id, attempt
     )
     ensure_source_commit(root, source_sha)
+    policy_content = run_git(
+        root,
+        "show",
+        f"{source_sha}:.agent/skills/the-worker/assets/task-validation/task-validation-policy.json",
+    ).stdout.encode("utf-8")
+    actual_policy_blob_sha = hashlib.sha1(
+        f"blob {len(policy_content)}\\0".encode("ascii") + policy_content
+    ).hexdigest()
+    if actual_policy_blob_sha != policy_blob_sha:
+        raise PublisherError("Source commit policy blob does not match the aggregate policy revision")
 
     for push_attempt in range(1, MAX_PUSH_ATTEMPTS + 1):
         run_git(root, "fetch", "origin", branch, "--depth=1")
