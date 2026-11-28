@@ -52,8 +52,9 @@ def canonical_check_set(policy: dict[str, Any], task_contract: dict[str, Any]) -
             or not isinstance(item.get("id"), str)
             or not isinstance(item.get("coordinator_job"), str)
             or not item["coordinator_job"]
+            or item.get("result_mode") not in {"job_result", "workflow_output"}
         ):
-            raise AggregateError("Every mandatory check needs an ID and coordinator job ID")
+            raise AggregateError("Every mandatory check needs an ID, coordinator job ID, and result mode")
         mandatory_ids.append(item["id"])
         coordinator_jobs.append(item["coordinator_job"])
     if len(set(mandatory_ids)) != len(mandatory_ids) or len(set(coordinator_jobs)) != len(coordinator_jobs):
