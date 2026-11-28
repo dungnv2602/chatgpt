@@ -12,13 +12,13 @@
 
 - **2026-11-28:** DRAFT-0007 Revision 1, Option 2 promoted to accepted ADR-0006 after provisional readback. Source Draft retired. Validator, focused tests, and workflow integration were committed and readback-verified. Child 60 closed and its record removed under task lifecycle. Tests were not executed and hosted CI was not inspected. Plans parent `20261128-221000` and paused child `20261128-221000-01` created; Semantic Engine work remains deferred.
 
-- **2026-11-28:** DRAFT-0006 Revision 1 approved. ADR-0005 accepted and implementation underway. The refactor consolidates operational ownership in The Worker and reconciles associated templates. Readback verification is in progress.
+- **2026-11-28:** DRAFT-0006 Revision 1, Option 3, including associated-template updates, was approved and implemented under accepted ADR-0005. Implementation is complete; the source Draft was retired. ADR-0005 is the canonical linked decision.
 
 - **2026-11-28T06:50:00+07:00**: Updating The Worker, Conversation Mode, and Session Start to authorize autonomous task-material recovery and immediate cleanup of temporary artifacts, with preservation safeguards for canonical and retained evidence. Next: read back changed paths.
 
 - **2026-11-28T06:36:00+07:00**: `/start` initialization initiated. The startup notice is being recorded and verified before baseline skill retrieval. Hosted CI results remain out of scope.
 
-- **2026-11-27T23:27:17.109Z**: Refactor Skills reached quiescence. Child 28 is the first blocked child. Its five finding IDs are absent from the published Ledger, and the CI Ledger policy requires explicit authorization before historical backfill. Awaiting that single decision.
+- **2026-11-27T23:27:17.109Z**: Child 28 reported five historical finding IDs absent from the published Ledger. User subsequently declined restoration with “Delete”; no backfill or restoration is authorized. Retired the stale blocker state.
 
 
 - **2026-11-27T23:17:47.504Z**: Child 50 completed, the Ledger finding resolved, and the task record/index row deleted under the standing parent lifecycle. Source fix: `4fc299bdc94bdfea2e5323096d761f4565ad0d24`. Documentation fixes: `6057e5596021b84a70a7201875c2f7bd3d1890b0`. Ledger closeout: `f7a5c764c99b1a070b9c84ffeed6af1673b606e3`.
@@ -102,3 +102,6 @@
 - **2026-11-28:** Reconstruction subtask 01 verified DRAFT-0005 is absent and ADR-0007 is self-contained; task-level historical references were reviewed. ADR-0004 retains DRAFT-0005 as its own provenance metadata, so ID collision prevents treating all mentions as references to the retired proposal. DRAFT-0009 is created for the workspace architecture review; no implementation is approved.
 
 - **2026-11-28:** Reconstruction closeout. Deliverables: reference audit and cleanup (child 01); DRAFT-0009 revision 1 created, indexed, and linked for review (child 02). DRAFT-0009 is not approved; no architecture implementation or migration occurred. Repository readback verified. Task records were deleted under lifecycle rules.
+
+
+- **2026-11-28 — execution reconciliation:** Child 59's already-approved DRAFT-0006 Option 3 implementation was reconciled as complete under ADR-0005. Child 68's provenance correction was already complete; its proposed state was stale. Child 28 restoration was declined, so no historical findings were restored. Readback confirmed ADR-0005 and its index now report implementation complete. No local tests or hosted CI review performed.
