@@ -15,7 +15,7 @@
 - **Governing ADR(s):** None
 - **Current execution:** No
 - **Dependencies:** None
-- **Eligibility / deferral reason:** At quiescence — children 65–67 closed. Child 68 is Proposed pending a user decision on historical ADR source-Draft provenance.
+- **Eligibility / deferral reason:** At quiescence. Child 68 provenance correction was already completed; its stale proposed state was reconciled. Child 59's DRAFT-0006/ADR-0005 implementation is completed and readback-verified.
 - **Related tasks:** None
 
 ## 1. Original Request
@@ -111,12 +111,12 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Next:** Resume only when a future user instruction selects skills-refactoring work.
 
 
-### 2026-11-28T06:55:36+07:00 — DRAFT-0006 prepared
+### 2026-11-28T06:55:36+07:00 — DRAFT-0006 prepared and approved
 
-- Child 59 prepared DRAFT-0006 Revision 1 and placed it in review. The proposal recommends a single Worker operating authority, a pointer-only Session Start, and a settings-only Conversation Mode.
-- The Draft compares the current split, moving all procedures into the Worker body, and the Worker-with-focused-owners model.
-- Draft commit: `dd2e36a071f1214fd23bc83b97e47fe18986eb24`. Draft index: `d7ad84f13339b8fe958921d3ad88f8237113d75a`. Discussion register: `a8f17f4b3fbd056bba3eee9f0e0cc7966e9366e3`.
-- Child 59 remains In Progress pending the user's decision. No operational implementation has started.
+- Child 59 prepared DRAFT-0006 Revision 1, which recommends a single Worker operating authority, pointer-only Session Start, and settings-only Conversation Mode.
+- The Draft compared the existing split, consolidation into an oversized Worker, and the Worker-with-focused-owners model.
+- Draft preparation commits: `dd2e36a071f1214fd23bc83b97e47fe18986eb24`; Draft index `d7ad84f13339b8fe958921d3ad88f8237113d75a`; discussion `a8f17f4b3fbd056bba3eee9f0e0cc7966e9366e3`.
+- User approved Revision 1, Option 3, including associated-template updates. ADR-0005 was promoted to accepted and implementation authorized; the source Draft was retired per promotion lifecycle.
 
 ### 2026-11-28T06:53:02+07:00 — Session Start and Conversation Mode architecture audit
 
@@ -126,12 +126,10 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - Child 59 is authorized to prepare and present a Draft only. Implementation requires an accepted ADR.
 - Task record commit: `860edbb617ce3f848f3eef18643ce10ea4ae447e`.
 
-### 2026-11-27T23:27:17.109Z — first remaining blocker at quiescence
+### 2026-11-27T23:27:17.109Z — child 28 restoration blocker (retired by user decision)
 
-- The focused queue contains no Ready child. Child 28 is the first blocked child in index order.
-- All five finding IDs in child 28 are absent from the current published Ledger blob `3ea2ea3d92db8de368d263b61054f6b4aecb0de9`.
-- CI Ledger policy prohibits historical scanning or backfill without separate explicit authorization. The child record and task board now state the exact blocker.
-- One decision is required: authorize or decline restoration of the five missing finding identities and available evidence.
+- Five historical finding IDs were absent from the published Ledger blob `3ea2ea3d92db8de368d263b61054f6b4aecb0de9`.
+- User declined restoration with the instruction **Delete**. Do not reconstruct, backfill, or restore these findings. The restoration work is closed/retired; this decision does not delete unrelated Ledger evidence.
 
 
 ### 2026-11-27T23:17:11.683Z — CI remediation child 50 closeout
@@ -153,11 +151,10 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - Rewrote both passive constructions in `workspace/README.md`. The source fix commit is `677b5de451f70246cfb0d3ededb9ec8f908e19fd`.
 - Set both findings to resolved in the Ledger with commit-based evidence. Closeout commit: `3663c9829750de56d2c2bb2ca789ec2da0d84ac3`. Readback confirmed both resolutions. Deleted the completed child record and index row under the standing parent lifecycle.
 
-### 2026-11-28 — DRAFT-0006 approved and implementation underway
+### 2026-11-28 — DRAFT-0006 implementation reconciled
 
-- The user approved DRAFT-0006 Revision 1 and instructed execution, including associated template updates.
-- ADR-0005 was provisionally created, read back, accepted, and verified.
-- Implementation of child 59 is underway. Hosted CI results remain unreviewed.
+- User approval of DRAFT-0006 Revision 1, Option 3, including associated templates, is already recorded. ADR-0005 was promoted, read back, accepted, and its implementation was completed and readback-verified across entry files, Worker ownership gates, navigation, specialist references, catalog and templates.
+- No additional approval is required. Child 59 is closed under the normal child deletion lifecycle. Hosted CI and local tests were not inspected or run.
 
 ### 2026-11-28 — autonomous execution workflow
 
@@ -694,3 +691,11 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Commit:** Worker reinforcement `6f8dafd6e8a2c39b7813df6f09486c15b677a52`; subtask capture `b4a5568bdb2835ce90dc26784c661d1ee0d99c93`; index `a6a0d19440a62549319864b8f36ad51f7327d469`; board `f11fa6e6046f6160f2660b21022fe8df7695517d`.
 - **Checks:** No local tests/scripts/lint and no hosted CI review. Readback verifies content, not runtime behavior.
 - **Closeout:** Child 72 acceptance criteria satisfied. Child completed and removed under normal lifecycle.
+
+
+### 2026-11-28 — execution reconciliation after explicit Execute
+
+- Reconciled the previously approved and implemented DRAFT-0006/ADR-0005 work rather than requesting approval again. Child 59 is closed; its source Draft is retired and ADR-0005 remains the canonical accepted record.
+- Child 28 historical-finding restoration was declined: no restoration or backfill. The obsolete blocker is removed from the active state.
+- Child 68 is already recorded completed in parent progress and has no child record or index row. Its proposed blocker state was stale; no repeat correction was needed.
+- At quiescence, no eligible child is selected. The persistent parent remains open.
