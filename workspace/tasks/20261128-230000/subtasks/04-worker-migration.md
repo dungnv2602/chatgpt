@@ -81,6 +81,12 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Lifecycle:** Bound this subtask to source commit `7814758586f68b3226822f760b4cbf06e86e108e` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b` in metadata commit `e67c2dc5f23e52cabadab769c9ec5fdc5343ac18`.
 - **Remaining:** Continue producer/consumer migration and preserve `.takeout/reports/`. Subtask 04 is not Done; operational Confirmation remains gated by the unresolved review queue and the ADR's required scenario demonstrations.
 
+### 2026-11-28 — legacy report producer/consumer inventory refresh
+
+- **Tracked tree:** The recursive `gpt` tree contains seven entries under `.takeout/reports/`: README, `gh_ac_reports/actions/capture/action.yml`, `index.json`, and `ledger.json` (841,526 bytes). No tracked `history/` or `lint_reports/` directories are present. `index.json` currently has zero runs and no latest report.
+- **Lint producers/consumers:** `ste-lint-changed.yml` and `ste-lint-full-docs.yml` still read `.takeout/reports/index.json` for baseline reports and publish report history; `.agent/skills/the-worker/scripts/generate_lint_report.py` enforces the legacy history layout and updates the index. The changed-lint workflow has a full-audit fallback when baseline data is unavailable.
+- **Actions diagnostics:** `gh-actions-capture.yml` invokes the legacy composite capture action. `gh-actions-diagnostics.yml` invokes `actions-report.py` and `ledger.py`, runs their regression tests, and can publish `.takeout/reports/`, task folders, and the task board. `validate-document-standards.yml` still runs `test_ledger.py` and the composite capture action.
+- **Decision:** These producers and consumers remain live. Do not delete the Ledger, report scripts/tests, workflows, or tree while coordinator activation is staged and operational Confirmation is incomplete. The migration must replace or retire each dependency without weakening the existing lint/standards checks; the full report-tree retirement remains reserved for subtask 05.
 ## 6. State and Evidence
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
