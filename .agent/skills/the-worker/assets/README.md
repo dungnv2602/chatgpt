@@ -15,5 +15,8 @@ Canonical copy-ready templates and supporting static formats owned by The Worker
 | [session-brief-template.md](session-brief-template.md) | Session brief | Drawing session records |
 | [session-summary-template.md](session-summary-template.md) | Session closeout summary | Drawing session closeout |
 | [conversation-integrity-template.md](conversation-integrity-template.md) | Conversation integrity record | Conversation archive |
+| [task-validation/task-validation-policy.json](task-validation/task-validation-policy.json) | ADR-0008 mandatory validation policy | Task-validation coordinator |
+| [task-validation/task-validation-contract.schema.json](task-validation/task-validation-contract.schema.json) | Exact-source-SHA task contract schema | Generic verifier |
+| [task-validation/task-validation-adapters.json](task-validation/task-validation-adapters.json) | Closed typed adapter registry | Generic verifier |
 
 Catalog and governance: [document-type-catalog.md](../references/document-type-catalog.md). Templates are static assets; scripts and explanatory reference documents remain in their respective directories.
