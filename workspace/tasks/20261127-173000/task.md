@@ -685,3 +685,12 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - Implementation commits: `08a2977990dab8b1506fa1918ea774813767a33a`, `86c5e01536a660317b2e7d89ca4571df62cc73af`, `a7598b0c865051cb9d38538347742da7d84ce4da`. Tracking commits: `560385e5fbfaf25f60a5f089b9fcd807c0aafce7`, `60537525d635b179a1199049772ac438e559143d`, `303bba099826238d08369304bdb26298ee1c2d00`. Completion evidence `1795994d1a69b1fa0f48d240048a6ed0f69f037d`.
 - No local tests/scripts/lint or hosted CI inspection performed.
 - Child 71 closed and its task record removed under the persistent parent lifecycle.
+
+
+### 2026-11-28 — child 72 closeout: user-interruption minimization
+
+- **Action:** Strengthened The Worker with a canonical mandatory interruption/reporting gate: no progress pings or interim narration; recover and continue independent work; aggregate only substantial, genuinely user-resolvable blockers/decisions; report at quiescence; preserve all existing scope and authority gates.
+- **Readback:** Confirmed the revised Worker text, task board and subtask index remotely.
+- **Commit:** Worker reinforcement `6f8dafd6e8a2c39b7813df6f09486c15b677a52`; subtask capture `b4a5568bdb2835ce90dc26784c661d1ee0d99c93`; index `a6a0d19440a62549319864b8f36ad51f7327d469`; board `f11fa6e6046f6160f2660b21022fe8df7695517d`.
+- **Checks:** No local tests/scripts/lint and no hosted CI review. Readback verifies content, not runtime behavior.
+- **Closeout:** Child 72 acceptance criteria satisfied. Child completed and removed under normal lifecycle.
