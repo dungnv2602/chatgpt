@@ -18,15 +18,15 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent selected focus. Execution focus is child 01 for document-governance consolidation and its nested reconciliation child.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent selected focus. Persistent Refactor Skills parent is at quiescence. Child 61 remains intentionally paused until explicitly resumed.
 
 ## Ordered Eligible Execution Queue
 
-1. **P1** — [20261127-173000-01](tasks/20261127-173000/subtasks/01-consolidate-document-standards-into-worker.md) — Consolidate document-governance standards into The Worker, including nested child 01-01.
+_No eligible child tasks under Refactor Skills._
 
 ## Next Task
 
-Next eligible task is child 01 and its nested child 01-01. Child 61 remains intentionally paused until explicitly resumed. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
+No eligible child remains under Refactor Skills. Child 61 remains intentionally paused until explicitly resumed. Completed child 64, 03, and 01 were removed under lifecycle rules. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
 
 ## Deferred Work
 
