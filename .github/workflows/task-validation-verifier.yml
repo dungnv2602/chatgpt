@@ -1,0 +1,114 @@
+name: ADR-0008 Generic Task Validation Verifier
+
+on:
+  workflow_call:
+    inputs:
+      source_sha:
+        description: "Exact source commit to validate."
+        required: true
+        type: string
+      policy_blob_sha:
+        description: "Exact Git blob SHA of the protected validation policy."
+        required: true
+        type: string
+      contract_json:
+        description: "Untrusted JSON task contract supplied by the coordinator."
+        required: true
+        type: string
+    outputs:
+      outcome:
+        description: "Verifier terminal classification."
+        value: ${{ jobs.verify.outputs.outcome }}
+      source_sha:
+        description: "Exact source commit checked."
+        value: ${{ jobs.verify.outputs.source_sha }}
+      policy_blob_sha:
+        description: "Exact policy blob checked."
+        value: ${{ jobs.verify.outputs.policy_blob_sha }}
+      result_sha256:
+        description: "Digest of the complete verifier result JSON."
+        value: ${{ jobs.verify.outputs.result_sha256 }}
+
+permissions: {}
+
+jobs:
+  verify:
+    name: Generic task contract verifier
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    outputs:
+      outcome: ${{ steps.result.outputs.outcome }}
+      source_sha: ${{ steps.result.outputs.source_sha }}
+      policy_blob_sha: ${{ steps.result.outputs.policy_blob_sha }}
+      result_sha256: ${{ steps.result.outputs.result_sha256 }}
+    steps:
+      - name: Check out the exact source commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Write the untrusted contract as data
+        shell: bash
+        env:
+          CONTRACT_JSON: ${{ inputs.contract_json }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          Path(".task-validation-contract.json").write_text(
+              os.environ["CONTRACT_JSON"], encoding="utf-8"
+          )
+          PY
+
+      - name: Validate and execute registered task checks
+        id: result
+        continue-on-error: true
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+          POLICY_BLOB_SHA: ${{ inputs.policy_blob_sha }}
+        run: |
+          set +e
+          python3 .agent/skills/the-worker/scripts/task_validation.py \
+            --root . \
+            --policy .agent/skills/the-worker/assets/task-validation/task-validation-policy.json \
+            --schema .agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json \
+            --adapters .agent/skills/the-worker/assets/task-validation/task-validation-adapters.json \
+            --contract .task-validation-contract.json \
+            --expected-source-sha "$SOURCE_SHA" \
+            --expected-policy-blob-sha "$POLICY_BLOB_SHA" \
+            > .task-validation-result.json
+          verifier_exit=$?
+          set -e
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import hashlib
+          import json
+          from pathlib import Path
+          result_path = Path(".task-validation-result.json")
+          result = json.loads(result_path.read_text(encoding="utf-8"))
+          print(f"outcome={result.get('outcome', 'capture_failure')}")
+          print(f"source_sha={result.get('source_sha', '')}")
+          print(f"policy_blob_sha={result.get('policy_blob_sha', '')}")
+          print(f"result_sha256={hashlib.sha256(result_path.read_bytes()).hexdigest()}")
+          PY
+          echo "verifier_exit=$verifier_exit" >> "$GITHUB_OUTPUT"
+          exit "$verifier_exit"
+
+      - name: Preserve structured verifier result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: task-validation-verifier-result
+          path: .task-validation-result.json
+          if-no-files-found: warn
+          retention-days: 3
