@@ -13,9 +13,9 @@
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create the Refactor Skills task and place workspace/tasks/20261127-102301 beneath it.
 - **Governing ADR(s):** None
-- **Current execution:** No
+- **Current execution:** 20261127-173000-65
 - **Dependencies:** None
-- **Eligibility / deferral reason:** At quiescence — no eligible child remains. The user selected Template Fix as the current execution focus.
+- **Eligibility / deferral reason:** In Progress — user authorized the Refactor Skills batch with the standalone `Execute` cue. Children 65–67 are in scope.
 - **Related tasks:** None
 
 ## 1. Original Request
@@ -649,3 +649,10 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Action:** Added workflow optimization, cycle closure, redundancy reduction and efficiency review as child 67.
 - **Result:** Indexed as Ready. Execution remains pending the standalone `execute` cue.
 - **Reference:** `subtasks/67-workflow-optimization-cycle-closure.md`.
+
+
+### 2026-11-28 — execution authorized
+
+- **Instruction:** Current task is Refactor Skills. Execute.
+- **Action:** Reconciled the task board to the authorized batch. Started child 65, then continue 66 and 67 until quiescence.
+- **Result:** Execution authorization confirmed. No unrelated work will be selected.
