@@ -24,7 +24,7 @@ _None. Current execution is active._
 
 ### Current focus reconciliation
 
-The Worker skill-governance prevention correction completed under child 74 of the persistent Refactor Skills parent. That parent remains open. ADR-0008 implementation is again the current execution under **20261128-230000**. Preserve .takeout/reports until migration and Confirmation gates are satisfied.
+The Worker skill-governance prevention correction completed under child 74 of the persistent Refactor Skills parent. That parent remains open. ADR-0008 implementation is again the current execution under **20261128-230000**. Preserve .takeout/reports until migration and Confirmation gates are satisfied. The permanent system-owned CI fallback parent is [20261128-193800](tasks/20261128-193800/task.md); it is never selected as Current Execution and must never be deleted.
 
 ### Blocked
 
