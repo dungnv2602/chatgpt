@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-67
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User's explicit request to add this subtask to Refactor Skills.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — authorized execution batch active
+- **Eligibility / deferral reason:** Done — implementation and readback complete with documented residual blocker
 - **Required:** Yes
 - **Created:** 2026-11-28 15:00 UTC
 - **Updated:** 2026-11-28 15:00 UTC
@@ -44,21 +44,21 @@ Conduct a holistic assessment and refactor of the Worker workflow and its operat
 
 ## 5. Decisions and Progress
 
-- **Decision:** Capture as a separate P0 child in the Refactor Skills workstream. Execution authorized.
+- **Decision:** Execute autonomously within the authorized Refactor Skills batch.\n- **Progress:** Consolidated redundant execution, blocker and closeout sections into one loop. Corrected canonical Ledger pointers in task/subtask templates. Reduced the parent task's duplicated Ledger evidence table from 46.8 KB to a compact 64-ID severity summary (2 high, 25 medium, 37 low) while preserving report details in the central Ledger and moved misplaced progress logs back under Progress.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Pending consolidated readback
-- **Changed paths:** Subtask record, parent subtask index, parent task, task board
-- **Readback:** Changes read back individually during execution. Consolidated readback pending
+- **Commit SHA:** `82c0b2c9a8e9981403a54bf2c6c90f146564e2e4` (Worker execution loop); `4664ebd5334c22bc6447a787f473f8a1d15f131b` (ID collision gate); `ad364cd4f740639ff10cadf2ba0e41ab848998eca` (Ledger summary); `5b9d92f828db6b445af4f0799cb762cdb` (progress-history recovery)
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/the-worker/references/decision-governance.md`; task templates; workspace, Drawing, Draft, ADR and Analysis README files; document-type catalog; parent task; board and subtask index
+- **Readback:** Modified paths read back during execution; final consolidated readback confirmed by the subsequent repository fetches
 - **Checks:** Not performed
-- **Limitations:** This record captures scope only.
+- **Limitations:** Full non-README repository content audit remains incomplete. No local tests, scripts or lint were performed, and hosted CI results were not inspected. The historical DRAFT-0005 source-ID collision between ADR-0004 and ADR-0007 remains unresolved and requires user authority.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28
+- **Completion basis:** Worker queue-draining loop consolidated, template pointer correction, duplicate Ledger flood trimmed, README ownership cleanup, ID collision gate added, task state reconciled and read back.
 
 ## 8. Hosted Validation
 
@@ -73,7 +73,7 @@ Conduct a holistic assessment and refactor of the Worker workflow and its operat
 
 ## 10. Handoff
 
-Continue workflow optimization, reconcile task and board state, read back changes, and close with limitations.
+Completed. A child 68 decision task remains Proposed for the historical source-Draft ID collision; the batch is at quiescence.
 
 ## 11. Ledger Findings
 
