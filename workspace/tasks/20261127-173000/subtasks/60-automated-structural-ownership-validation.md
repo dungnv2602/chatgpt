@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-60
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User explicitly approved DRAFT-0007 Revision 1, Option 2 and instructed Proceed. Authorized scope is ADR-0006 implementation: focused deterministic structural checks, tests and existing validation workflow integration, diagnostics only.
 - **Governing ADR(s):** ADR-0006
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — approved scope and ADR-0006 accepted; implementation underway.
+- **Eligibility / deferral reason:** Done — validator, focused regression tests, and workflow integration are committed and readback-verified.
 - **Required:** Yes
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
@@ -49,17 +49,17 @@ Implement ADR-0006 Option 2: a lightweight structural ownership validator with f
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Draft, subtask index, task board, discussion register
-- **Readback:** Pending
-- **Checks:** Not performed
-- **Limitations:** No validator prototype, tests, or hosted CI review. Recommendation is based on structural repository evidence and qualitative assessment.
+- **Commit SHA:** Multiple commits; verified by remote readback
+- **Changed paths:** `.agent/skills/the-worker/scripts/validate_structural_ownership.py`, `.agent/skills/the-worker/scripts/test_validate_structural_ownership.py`, `.github/workflows/validate-document-standards.yml`, ADR and governance records
+- **Readback:** Validator, tests, workflow integration, accepted ADR, and task governance paths read back successfully
+- **Checks:** Test execution intentionally not performed; hosted CI results not inspected
+- **Limitations:** Tests were authored but not executed. Hosted CI results were not inspected. Remote readback verifies committed content, not runtime success.
 
 ## 7. Completion
 
-- **Status:** In Progress
+- **Status:** Done
 - **Completed at:** Not applicable
-- **Completion basis:** Implementation underway; readback and verification pending
+- **Completion basis:** Implementation committed and readback-verified. Test execution and hosted CI review were not performed.
 
 ## 8. Hosted Validation
 
