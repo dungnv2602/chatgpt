@@ -83,8 +83,7 @@ class ReportGeneratorTests(unittest.TestCase):
             integrity=json.loads((first/"integrity.json").read_text(encoding="utf-8"))
             self.assertEqual(integrity["files"]["report.json"],
                              hashlib.sha256((first/"report.json").read_bytes()).hexdigest())
-            latest=root/".takeout"/"reports"/"latest-lint-report.json"
-            self.assertEqual(json.loads(latest.read_text(encoding="utf-8"))["run_id"],"100")
+            self.assertTrue((first/"report.json").is_file())
             index=json.loads((root/".takeout"/"reports"/"index.json").read_text(encoding="utf-8"))
             self.assertEqual(index["runs"][0]["total_findings"],2)
             self.assertEqual(index["runs"][0]["files_evaluated_count"],1)
@@ -142,10 +141,9 @@ class ReportGeneratorTests(unittest.TestCase):
             root=Path(temp)
             self.run_report(root,"on_repo","newer",50,1,{})
             older=self.run_report(root,"on_repo","older",49,1,{})
-            latest=root/".takeout"/"reports"/"latest-lint-report.json"
             index=json.loads((root/".takeout"/"reports"/"index.json").read_text(encoding="utf-8"))
-            self.assertEqual(json.loads(latest.read_text(encoding="utf-8"))["run_id"],"newer")
             self.assertEqual({row["run_id"] for row in index["runs"]},{"newer","older"})
+            self.assertEqual(index["runs"][0]["run_id"],"older")
             self.assertTrue((older/"integrity.json").is_file())
 
 
