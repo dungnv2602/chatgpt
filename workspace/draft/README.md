@@ -11,6 +11,7 @@ Navigation for decision proposals. The Worker and [Decision Governance](../../.a
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 4, in review.
 - [DRAFT-0003 — Area, Project, and Task Architecture](DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md) — Revision 1, in review.
+- [DRAFT-0009 — Project, Task, and Knowledge Lifecycle](DRAFT-0009-unified-project-task-and-resource-lifecycle.md) — Revision 1, in review. Reconciles DRAFT-0002/0003 and `master/Handoff.md` against current accepted workflow contracts; implementation not approved.
 
 ## Ownership
 
