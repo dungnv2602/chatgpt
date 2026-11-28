@@ -22,7 +22,11 @@
       ".agent/skills/the-worker/scripts/test_task_validation.py",
       ".agent/skills/the-worker/scripts/test_aggregate_task_validation.py",
       ".agent/skills/the-worker/scripts/test_build_task_validation_contract.py",
-      ".github/workflows/validate-document-standards.yml"
+      ".github/workflows/validate-document-standards.yml",
+      ".agent/skills/the-worker/SKILL.md",
+      ".agent/skills/the-worker/references/task-validation-interfaces.md",
+      ".github/workflows/ste-lint-changed.yml",
+      ".github/workflows/ste-lint-full-docs.yml"
     ],
     "enforcement_status": "external-prerequisite"
   },
