@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8.0",
-  "updated_at_utc": "2026-11-28T03:49:28Z",
+  "updated_at_utc": "2026-11-28T10:02:34Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -2897,17 +2897,15 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-2e6e55c5823c1856",
-      "subtask_refs": [
-        "20261126-142500-05"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
         "20261127-013151-04",
         "20261127-023803",
-        "20261127-023803-03"
+        "20261127-023803-03",
+        "20261126-142500",
+        "20261126-142500-05"
       ],
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -3403,15 +3401,13 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-46b1082d5f924607",
-      "subtask_refs": [
-        "20261126-142500-08"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
-        "20261127-013151-08"
+        "20261127-013151-08",
+        "20261126-142500",
+        "20261126-142500-08"
       ],
       "parent_group": "ci-e736b94d271eef98"
     },
@@ -3651,17 +3647,15 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-2bf45872b5cb47c9",
-      "subtask_refs": [
-        "20261126-142500-04"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
         "20261127-013151-09",
         "20261127-033914",
-        "20261127-033914-02"
+        "20261127-033914-02",
+        "20261126-142500",
+        "20261126-142500-04"
       ],
       "parent_group": "ci-e736b94d271eef98"
     },
@@ -5271,15 +5265,13 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-91fe436623d092ea",
-      "subtask_refs": [
-        "20261126-142500-13"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
-        "20261127-013151-18"
+        "20261127-013151-18",
+        "20261126-142500",
+        "20261126-142500-13"
       ],
       "parent_group": "ci-6835b1ef0d75e5f9"
     },
@@ -5921,15 +5913,13 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-d4aa932754ef4f93",
-      "subtask_refs": [
-        "20261126-142500-15"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
-        "20261127-013151-22"
+        "20261127-013151-22",
+        "20261126-142500",
+        "20261126-142500-15"
       ],
       "parent_group": "ci-1c9052e7a4fa8f81"
     },
@@ -6370,15 +6360,13 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-fec522450a3c4807",
-      "subtask_refs": [
-        "20261126-142500-20"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
-        "20261127-013151-23"
+        "20261127-013151-23",
+        "20261126-142500",
+        "20261126-142500-20"
       ],
       "parent_group": "ci-1c9052e7a4fa8f81"
     },
@@ -11881,7 +11869,6 @@
       "duplicate_of": null,
       "accepted_risk": null,
       "task_refs": [
-        "20261126-142500",
         "20261127-173000"
       ],
       "task_group": "ci-ace4e198cb6445b7",
@@ -11889,7 +11876,8 @@
       "legacy_task_refs": [
         "20261126-142500-03",
         "20261127-173000-05",
-        "20261127-173000-50"
+        "20261127-173000-50",
+        "20261126-142500"
       ],
       "parent_group": "ci-c22cfa3d350aa1a7"
     },
@@ -12211,17 +12199,15 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-66923e8434cd7e1f",
-      "subtask_refs": [
-        "20261126-142500-10"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
         "20261127-013151-39",
         "20261127-033914-01",
-        "20261127-033914-01-03"
+        "20261127-033914-01-03",
+        "20261126-142500",
+        "20261126-142500-10"
       ],
       "parent_group": "ci-16e209ae50310c87"
     },
@@ -12413,15 +12399,13 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-efafc72e64463f6c",
-      "subtask_refs": [
-        "20261126-142500-19"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
-        "20261127-013151-41"
+        "20261127-013151-41",
+        "20261126-142500",
+        "20261126-142500-19"
       ],
       "parent_group": "ci-6835b1ef0d75e5f9"
     },
@@ -14476,17 +14460,15 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-5991cb56f6047563",
-      "subtask_refs": [
-        "20261126-142500-09"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
         "20261127-013151-07",
         "20261127-033914",
-        "20261127-033914-04"
+        "20261127-033914-04",
+        "20261126-142500",
+        "20261126-142500-09"
       ],
       "parent_group": "ci-e736b94d271eef98"
     },
@@ -14738,15 +14720,13 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
+      "task_refs": [],
       "task_group": "ci-72bec6c4d1d3df9e",
-      "subtask_refs": [
-        "20261126-142500-11"
-      ],
+      "subtask_refs": [],
       "legacy_task_refs": [
-        "20261127-013151-03"
+        "20261127-013151-03",
+        "20261126-142500",
+        "20261126-142500-11"
       ],
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -17068,13 +17048,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-14"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-9d7a16162351a43b",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -17400,13 +17379,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-12"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-7baca42a131f7b1d",
       "parent_group": "ci-16e209ae50310c87"
     },
@@ -17460,13 +17438,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-18"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-ec825d4d86907bf8",
       "parent_group": "ci-16e209ae50310c87"
     },
@@ -17611,13 +17588,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-06"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3ce140e6800ecc9a",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -17660,13 +17636,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-06"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3ce140e6800ecc9a",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -17709,13 +17684,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-06"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3ce140e6800ecc9a",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -17758,13 +17732,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-06"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3ce140e6800ecc9a",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -17807,13 +17780,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-06"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3ce140e6800ecc9a",
       "parent_group": "ci-7d49af0ce94de93a"
     },
@@ -18026,13 +17998,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-16"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-d51257d755305965",
       "parent_group": "ci-6835b1ef0d75e5f9"
     },
@@ -18075,13 +18046,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-13"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-91fe436623d092ea",
       "parent_group": "ci-6835b1ef0d75e5f9"
     },
@@ -18124,13 +18094,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-16"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-d51257d755305965",
       "parent_group": "ci-6835b1ef0d75e5f9"
     },
@@ -18264,13 +18233,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-07"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-3d8e36fabc7fde35",
       "parent_group": "ci-1c9052e7a4fa8f81"
     },
@@ -18302,13 +18270,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-20"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-fec522450a3c4807",
       "parent_group": "ci-1c9052e7a4fa8f81"
     },
@@ -18340,13 +18307,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-17"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-d540b06a72ede2b1",
       "parent_group": "ci-1c9052e7a4fa8f81"
     },
@@ -18378,13 +18344,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-20"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-fec522450a3c4807",
       "parent_group": "ci-1c9052e7a4fa8f81"
     },
@@ -18416,13 +18381,12 @@
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
-      "task_refs": [
-        "20261126-142500"
-      ],
-      "subtask_refs": [
+      "task_refs": [],
+      "subtask_refs": [],
+      "legacy_task_refs": [
+        "20261126-142500",
         "20261126-142500-13"
       ],
-      "legacy_task_refs": [],
       "task_group": "ci-91fe436623d092ea",
       "parent_group": "ci-6835b1ef0d75e5f9"
     },
@@ -18499,7 +18463,6 @@
       "duplicate_of": null,
       "accepted_risk": null,
       "task_refs": [
-        "20261126-142500",
         "20261127-173000"
       ],
       "subtask_refs": [],
@@ -18507,7 +18470,8 @@
         "20261127-173000-04",
         "20261126-142500-23",
         "20261127-173100-03",
-        "20261127-173100"
+        "20261127-173100",
+        "20261126-142500"
       ],
       "task_group": "ci-71de99e18bb591b4",
       "parent_group": "ci-c22cfa3d350aa1a7"
