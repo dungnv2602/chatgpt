@@ -1,9 +1,6 @@
 # Task Board
 
-The Worker is the sole scheduler. This board publishes its current selection and ordered eligible queue. It is not a second scheduler.
-
 ## Scheduler contract
-
 
 Follow the Worker's scheduling and decision-collection procedure. This board publishes state and does not define operating rules.
 
