@@ -62,6 +62,8 @@ def classify_attempt(
     attempt: int,
     task_check_ids: list[str],
 ) -> dict[str, Any]:
+    if policy.get("policy_id") != "chatgpt-task-validation" or policy.get("repository") != "dungnv2602/chatgpt":
+        raise AggregateError("Unexpected task-validation policy identity")
     expected, check_set_id = canonical_check_set(policy, task_check_ids)
     by_id: dict[str, dict[str, Any]] = {}
     duplicate_ids: set[str] = set()
