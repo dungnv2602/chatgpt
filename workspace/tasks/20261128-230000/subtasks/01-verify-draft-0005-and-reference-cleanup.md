@@ -35,7 +35,15 @@ Explain why there's still reference in draft. If draft is deleted then reference
 
 ## 2. Subsequent Instructions
 
-None.
+### 2026-11-28 — decision-source independence and promotion completeness
+
+> Transfer the entire sufficient content of a draft to an ADR, so that it's no longer need to have references to it for context. Update relevant documents to point to the ADR instead of that draft. The draft is gone, has been promoted to ADR. Reflect that vision.
+>
+> Fix your workflow.
+
+- **Direction:** Promotion should make the accepted ADR self-sufficient for decision context and rationale. Draft IDs may be retained as brief promotion provenance, but no active record or ADR may rely on a deleted Draft for understanding the decision. Replace navigational and contextual references to retired Draft files with the resulting ADR. Do not preserve dangling source links merely for traceability.
+- **Execution authorization:** Logged; implementation awaits standalone execution cue under the Worker contract.
+
 
 ## 3. Objective and Scope
 
