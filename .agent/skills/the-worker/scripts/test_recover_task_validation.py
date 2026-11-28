@@ -84,14 +84,20 @@ class RecoveryTests(unittest.TestCase):
         jobs = [
             {"name": "Check protected policy and duplicate source SHA", "status": "completed", "conclusion": "success"},
         ]
-        kind, _ = recovery.attempt_kind(jobs)
-        self.assertEqual(kind, "ignored")
-        details = {"status": "completed", "conclusion": "cancelled"}
-        if kind == "ignored" and details.get("status") == "completed":
-            conclusion = details.get("conclusion")
-            if conclusion == "cancelled":
-                kind = "cancelled"
+        kind, _ = recovery.attempt_kind(
+            jobs,
+            run_status="completed",
+            run_conclusion="cancelled",
+        )
         self.assertEqual(kind, "cancelled")
+
+    def test_failed_dispatch_without_coordinator_is_capture_failure_candidate(self) -> None:
+        kind, _ = recovery.attempt_kind(
+            [],
+            run_status="completed",
+            run_conclusion="failure",
+        )
+        self.assertEqual(kind, "policy_failure")
 
     def test_fallback_record_contains_only_compact_status_metadata(self) -> None:
         result = recovery.fallback_aggregate(
