@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-65
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User's explicit request in this conversation to create these two subtasks under Refactor Skills.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — authorized execution batch active for the prepared batch
+- **Eligibility / deferral reason:** Done — criteria satisfied and commit read back for the prepared batch
 - **Required:** Yes
 - **Created:** 2026-11-28 15:00 UTC
 - **Updated:** 2026-11-28 15:00 UTC
@@ -44,17 +44,17 @@ Audit the Worker workflow for template-first document governance. Strengthen it 
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Task record, parent subtask index, task board, parent task tracking
-- **Readback:** Pending commit
+- **Commit SHA:** `929169ef449eca88c21ae15f0e1bb7de034d3d73` (Worker template freshness gate)
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `workspace/README.md`; `.agent/skills/the-worker/references/document-type-catalog.md`; task record and board tracking
+- **Readback:** Worker and affected records read back from branch `gpt`; freshness-assessment gate confirmed
 - **Checks:** Not performed
-- **Limitations:** This record captures scope only; implementation and repository audit remain pending.
+- **Limitations:** No local validation or hosted CI result was inspected.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28
+- **Completion basis:** Canonical Worker gate updated and remote-readback confirmed.
 
 ## 8. Hosted Validation
 
@@ -66,11 +66,11 @@ Audit the Worker workflow for template-first document governance. Strengthen it 
 - Canonical template consulted: `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md`.
 - Parentage confirmed: Refactor Skills.
 - Scope and acceptance criteria recorded.
-- Execution authorization cue: pending.
+- Execution authorization: confirmed by standalone `Execute`.
 
 ## 10. Handoff
 
-Execution is authorized. Audit the template-first gate, strengthen the freshness assessment, reconcile related contracts and records, and close out with readback.
+Completed. The Worker gate now requires template freshness assessment and format-first correction when warranted.
 
 ## 11. Ledger Findings
 
