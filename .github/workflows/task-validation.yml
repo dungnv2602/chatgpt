@@ -350,7 +350,10 @@ jobs:
                   "outcome": "capture_failure",
                   "check_set_id": os.environ.get("CHECK_SET_ID") or None,
               }
-          if os.environ.get("ARTIFACT_OUTCOME") != "success":
+          if (
+              os.environ.get("ARTIFACT_OUTCOME") != "success"
+              and result.get("outcome") not in {"cancelled", "superseded"}
+          ):
               result["outcome"] = "capture_failure"
               result["check_set_id"] = result.get("check_set_id") or os.environ.get("CHECK_SET_ID") or None
               result["completed_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
