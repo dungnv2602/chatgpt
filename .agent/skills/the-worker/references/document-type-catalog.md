@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.22
+**Catalog version:** 1.23
 **Previous tree inventory:** The last recursive audit at commit `315615e944ed55925a6aa72c59fd6401bdcc912b` counted 297 Markdown files outside root `master/` and `workspace/archive/`. That historical count predates the ADR-0004 task-folder migration. This task did not run a new recursive inventory, catalog simulation, validator, or tests.
 **Source branch:** `gpt`
 
@@ -50,7 +50,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Task board | Template required | `.agent/skills/the-worker/assets/TASK_BOARD_TEMPLATE.md` | The live board is the current schedule. Create or revise it from the canonical asset template. |
 | Report navigation | Embedded contract | `.takeout/reports/README.md` | One guide defines the unified index, latest lint report, Ledger, history layout, and on-demand rendering. |
 | Workspace navigation index | Embedded contract | `workspace/README.md` and `.takeout/reports/README.md` | Workspace README points to task navigation and unified CI evidence. The single report guide owns navigation and review order. |
-| Conversation Mode discussion register | Template required | `.agent/skills/the-worker/assets/DISCUSSION_TEMPLATE.md` plus `.agent/skills/the-worker/references/conversation-mode.md` | Create or revise the shared discussion register from the canonical asset template, preserving the mode-specific contract. |
+| Discussion register data format only. The Worker owns its operating contract. | Template required | `.agent/skills/the-worker/assets/DISCUSSION_TEMPLATE.md` plus `.agent/skills/the-worker/references/conversation-mode.md` | Create or revise the shared discussion register from the canonical asset template, preserving the mode-specific contract. |
 | Image asset storage and WebP delivery | Embedded contract | `.takeout/images/README.md` and `.agent/skills/the-worker/SKILL.md` | The Worker owns the shared archive, image-provenance, intake, and WebP procedures. One live README defines image storage, original-master retention, WebP derivatives, takeout, and report locations. Do not create a separate template. |
 | Image takeout hand-off | Schema required | `.agent/skills/the-worker/scripts/process_takeout.py` and `.takeout/images/README.md` | The processor validates the YAML contract during batch preparation. The reconstructed tree contains no active hand-off file. The regression suite covers readiness, exact intake coverage, missing attempt metadata, malformed top-level data, duplicate output IDs, rollback, and hashes. |
 | Drawing-session manifest | Generator-owned | `.agent/skills/the-worker/scripts/process_takeout.py` (`MANIFEST_FIELDS`) and `.agent/skills/the-worker/scripts/verify_published_manifest.py` | The processor defines columns, preserves existing columns, and adds missing fields. The publisher validates verification columns and published values. `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py` covers legacy rows, missing columns, duplicate IDs, hashes, and publication links. |
