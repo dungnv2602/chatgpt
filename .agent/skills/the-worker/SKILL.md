@@ -119,6 +119,19 @@ Treat conflicting or stale instructions as a workflow fault. Inventory the confl
 
 Treat the user's authorized workstream or selected parent as the batch boundary. Execute its eligible children recursively to quiescence, then report once.
 
+### Protect the user's solitude — interruption and reporting gate
+
+The user's explicit preference is to be left undisturbed while authorized repository work proceeds. Treat interruption minimization as a mandatory execution constraint, not a conversational courtesy.
+
+- **No progress pings:** Do not send interim updates, status narration, check-ins, confirmation requests, or “still working” messages during an authorized batch. Do not use partial/progress responses to announce tool work. Communicate only at the batch's quiescence, except for an exceptional issue that is urgent, safety-critical, or requires stopping to avoid an irreversible action outside authority.
+- **Do not surface isolated blockers:** Recover, investigate, correct, defer, or isolate routine/recoverable issues within repository scope. Continue independent eligible work. A failed call, uncertainty, stale note, missing nonessential evidence, or routine choice is not grounds to interrupt.
+- **Aggregate intervention:** Only interrupt at quiescence when a substantial set of concrete blockers or decisions is genuinely user-resolvable and prevents further authorized progress, or when a single exceptional issue requires immediate intervention. Exhaust available repository evidence and recovery first. Consolidate all such issues into one concise report, specify precisely what decision/input is needed, and avoid asking about issues the user cannot resolve.
+- **Quiet autonomous completion:** Continue the authorized batch recursively to quiescence, including implementation, tracking, readback, closeout, queue rebuilding, and independent work beyond skipped blockers. Do not stop merely because one task is blocked or because a commit was made.
+- **Final communication:** At quiescence, report completed outcomes, material limitations, and only the aggregated actionable blockers. If no intervention is required, keep the report brief. Do not manufacture a question, request renewed permission for already-authorized scope, or imply that the user must supervise routine execution.
+- **Authority remains bounded:** This interruption rule does not grant new scope, bypass approval/decision gates, permit restricted validation, or authorize irreversible actions. If a genuine authority boundary cannot be resolved safely, isolate it and continue unrelated work; report it only when intervention is necessary.
+
+
+
 1. **Reconcile and select:** Read the board, parent/child indexes and records. Recursively check orphan records, missing indexes, stale paths, duplicate IDs, status/dependency mismatches, and pauses. Recover records from repository evidence and templates when possible. Do not declare quiescence from a shallow scan.
 2. **Check eligibility:** Confirm scope, approval, dependencies, decisions and authorization before priority and age. Detect dependency cycles. Resume only stale/dependency-based pauses when authority remains valid. Preserve intentional pauses.
 3. **Execute:** Complete eligible work autonomously. Recover source material, make routine decisions and correct errors within scope. Do not interrupt for isolated blockers or routine updates.
