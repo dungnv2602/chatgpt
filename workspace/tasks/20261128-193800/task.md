@@ -8,7 +8,7 @@
 - **Updated:** 2026-11-28 12:38 UTC
 - **Priority:** P1
 - **Status:** In Progress
-- **Origin:** System
+- **Origin:** Assistant
 - **Approval:** Approved
 - **Approval scope/source:** Standing authorization from accepted ADR-0008 for the permanent fallback parent used only when source Task-ID attribution cannot resolve.
 - **Governing ADR(s):** ADR-0008
@@ -75,7 +75,7 @@ Permanent container for unattributed actionable CI findings. Not a task executio
 ## 8. Execution self-check
 
 - Parent exists only because ADR-0008 explicitly requires a permanent fallback.
-- Origin is System; no user-originated task or parentage is fabricated.
+- Origin is Assistant; the record is system-designated by policy, not a user-originated task.
 - The record is excluded from Current Execution and the eligible queue.
 - Routine cleanup must preserve this parent.
 
