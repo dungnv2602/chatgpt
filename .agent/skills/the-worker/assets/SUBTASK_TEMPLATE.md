@@ -1,6 +1,6 @@
 # Subtask: [Title]
 
-**Template version:** 1.8
+**Template version:** 1.9
 
 Store this record in its parent's `subtasks/NN-short-name.md` file. Use ID `<parent-task-id>-NN`.
 
@@ -65,7 +65,7 @@ Schema: `.agent/skills/the-worker/assets/task-validation/task-validation-lifecyc
 
 ## 2. Subsequent Instructions
 
-[Preserve later clarifications, constraints, decisions, and approvals verbatim with UTC timestamps. Approval is log-only until the explicit standalone execute cue (case-insensitive). Record Next as navigation only.]
+[Preserve later clarifications, constraints, decisions, and approvals verbatim with UTC timestamps. Approval alone is log-only; `execute` is universal and interpreted in ordered context under The Worker. Record Next as navigation only.]
 
 ## 3. Objective and Scope
 
@@ -107,7 +107,7 @@ Conditional: CI remediation only.
 
 ## 9. Execution self-check
 
-[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, decision collection complete, explicit case-insensitive execute cue for the batch, conflict check, verification/readback, and cleanup. Approval and Next are not execution cues. Record exceptions or blockers.]
+[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, ordered cue/decision reconciliation and applicable authorization, conflict check, verification/readback, and cleanup. Approval and Next are not execution cues. Record exceptions or blockers.]
 
 ## 10. Handoff
 
