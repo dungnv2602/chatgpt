@@ -118,6 +118,13 @@ Acceptance criteria are mapped to these required child tasks:
 - **Operational gates:** Default-branch recovery workflow availability and operational readiness must be established before automated missing-dispatch recovery or coordinator activation. Branch protection is not an ADR-0008 prerequisite. These gates do not prevent continued implementation and tracking work on `gpt`.
 - **Next:** Hold subtask 05 in dependency-waiting; do not enable the coordinator or retire the legacy report tree.
 
+### 2026-11-28 — residual protection gate removed; recovery availability verified
+
+- **Correction:** Removed the remaining branch-protection prerequisite from `.github/workflows/task-validation.yml` (commit `a991bebd5a166805c18eadd1aebfa305797d4e14`). Repository-wide checks of the relevant dispatcher/coordinator/recovery/publisher/verifier workflows, Worker validation scripts, and interface references found no remaining branch-protection enforcement gate. Branch protection is optional hardening outside ADR-0008 acceptance.
+- **Recovery:** Verified that default branch `main` contains the dispatcher `workflow_dispatch` entry point and the scheduled recovery workflow. Updated both corresponding availability fields in the `gpt` policy to `verified` (commit `d2f5b4b9e28fe935e77fc2c79e5ee519d9dad804`). Coordinator activation remains staged pending report migration and operational readiness.
+- **Review queue:** The compact status index contains 211 attempts, all `capture_failure` with missing check-set identity and no reconciliation timestamp; checkpoint remains at zero. No hosted logs were inspected, no unproven root cause or remediation task was invented, and all unresolved records remain retained.
+- **Current subtask:** 04 remains In Progress. Continue the producer/consumer migration; preserve `.takeout/reports/` until every ADR-0008 migration and Confirmation criterion is demonstrated.
+
 ## 6. Current State and Remaining Work
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
