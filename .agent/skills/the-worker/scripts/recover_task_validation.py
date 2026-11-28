@@ -82,6 +82,36 @@ class GitHubAPI:
         except (UnicodeError, json.JSONDecodeError) as exc:
             raise RecoveryError(f"GitHub API returned invalid JSON for {path}") from exc
 
+    def post_json(self, path: str, payload: dict[str, Any]) -> None:
+        data = json.dumps(payload, separators=(",", ":")).encode("utf-8")
+        for attempt in range(1, MAX_API_RETRIES + 1):
+            request = urllib.request.Request(
+                self.base + path,
+                data=data,
+                headers={
+                    "Accept": "application/vnd.github+json",
+                    "Authorization": f"Bearer {self.token}",
+                    "Content-Type": "application/json",
+                    "X-GitHub-Api-Version": API_VERSION,
+                    "User-Agent": "chatgpt-task-validation-recovery",
+                },
+                method="POST",
+            )
+            try:
+                with urllib.request.urlopen(request, timeout=30):
+                    return
+            except urllib.error.HTTPError as exc:
+                if exc.code not in {403, 429, 500, 502, 503, 504} or attempt == MAX_API_RETRIES:
+                    raise RecoveryError(f"GitHub API dispatch failed ({exc.code}) for {path}") from exc
+                retry_after = exc.headers.get("Retry-After")
+                delay = min(int(retry_after), 20) if retry_after and retry_after.isdigit() else min(2 ** attempt, 16)
+                time.sleep(delay)
+            except urllib.error.URLError as exc:
+                if attempt == MAX_API_RETRIES:
+                    raise RecoveryError(f"GitHub API dispatch failed for {path}: {exc}") from exc
+                time.sleep(min(2 ** attempt, 16))
+        raise RecoveryError(f"GitHub API dispatch retry budget exhausted for {path}")
+
     def pages(self, path: str, collection: str) -> list[dict[str, Any]]:
         result: list[dict[str, Any]] = []
         page = 1
@@ -147,6 +177,121 @@ def get_attempt(api: GitHubAPI, repository: str, run_id: int, attempt: int, fall
         allow_not_found=True,
     )
     return payload if isinstance(payload, dict) else fallback
+
+
+def source_sha_for_run(run: dict[str, Any]) -> str | None:
+    if run.get("event") == "workflow_dispatch":
+        title = run.get("display_title") or run.get("name") or ""
+        match = re.search(r"([0-9a-f]{40})$", str(title))
+        return match.group(1) if match else None
+    value = run.get("head_sha")
+    return value if isinstance(value, str) and re.fullmatch(r"[0-9a-f]{40}", value) else None
+
+
+def read_validation_lifecycle(content: str) -> dict[str, Any] | None:
+    heading = content.find("## Validation Lifecycle")
+    if heading < 0:
+        return None
+    fence = chr(96) * 3 + "json"
+    start = content.find(fence, heading)
+    if start < 0:
+        raise RecoveryError("Task Validation Lifecycle block has no JSON fence")
+    start += len(fence)
+    end = content.find(chr(96) * 3, start)
+    if end < 0:
+        raise RecoveryError("Task Validation Lifecycle block has no closing fence")
+    try:
+        value = json.loads(content[start:end].strip(), object_pairs_hook=publisher.unique_object)
+    except (json.JSONDecodeError, publisher.PublisherError) as exc:
+        raise RecoveryError("Task Validation Lifecycle block is invalid JSON") from exc
+    if not isinstance(value, dict) or set(value) != {
+        "state", "source_sha", "policy_revision", "coordinator_run_id",
+        "attempt", "outcome", "reconciled_at",
+    }:
+        raise RecoveryError("Task Validation Lifecycle block has an invalid shape")
+    return value
+
+
+def awaiting_ci_tasks(root: Path) -> list[dict[str, str]]:
+    paths = git(root, "ls-tree", "-r", "--name-only", "HEAD", "workspace/tasks").stdout.splitlines()
+    tasks: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for relative in paths:
+        if not relative.endswith(".md") or ("/subtasks/" not in relative and not relative.endswith("/task.md")):
+            continue
+        content = git(root, "show", f"HEAD:{relative}").stdout
+        lifecycle = read_validation_lifecycle(content)
+        if lifecycle is None or lifecycle.get("state") != "awaiting_ci":
+            continue
+        source_sha = lifecycle.get("source_sha")
+        policy_revision = lifecycle.get("policy_revision")
+        task_match = re.search(r"^- \\*\\*ID:\\*\\* (\\d{8}-\\d{6}(?:-\\d{2})*)$", content, re.MULTILINE)
+        if (
+            not task_match
+            or not isinstance(source_sha, str)
+            or not re.fullmatch(r"[0-9a-f]{40}", source_sha)
+            or not isinstance(policy_revision, str)
+            or not re.fullmatch(r"[0-9a-f]{40}", policy_revision)
+        ):
+            raise RecoveryError(f"Awaiting-CI lifecycle metadata is malformed in {relative}")
+        if source_sha in seen:
+            raise RecoveryError(f"Multiple tasks claim the same awaiting-CI source SHA: {source_sha}")
+        seen.add(source_sha)
+        tasks.append({
+            "task_id": task_match.group(1),
+            "path": relative,
+            "source_sha": source_sha,
+            "policy_revision": policy_revision,
+        })
+    return tasks
+
+
+def source_policy_allows_dispatch(root: Path, source_sha: str, expected_policy_sha: str) -> bool:
+    actual_policy_sha = policy_blob_sha(root, source_sha)
+    if actual_policy_sha != expected_policy_sha:
+        raise RecoveryError(f"Task lifecycle policy revision does not match source commit {source_sha}")
+    raw = git(root, "show", f"{source_sha}:{POLICY_PATH}").stdout
+    policy = json.loads(raw)
+    coordinator = policy.get("coordinator", {})
+    protection = policy.get("protection", {})
+    return (
+        coordinator.get("activation_status") == "enabled"
+        and protection.get("enforcement_status") == "verified"
+    )
+
+
+def dispatch_missing_attempts(
+    root: Path,
+    api: GitHubAPI,
+    repository: str,
+    runs: list[dict[str, Any]],
+    indexed_sources: set[str],
+) -> tuple[int, int, int]:
+    run_sources = {
+        source_sha_for_run(run)
+        for run in runs
+        if source_sha_for_run(run) is not None
+    }
+    awaiting = awaiting_ci_tasks(root)
+    dispatched = 0
+    staged = 0
+    already_tracked = 0
+    owner_repo = urllib.parse.quote(repository, safe="/")
+    workflow = urllib.parse.quote("task-validation-dispatch.yml", safe="")
+    for task in awaiting:
+        source_sha = task["source_sha"]
+        if source_sha in indexed_sources or source_sha in run_sources:
+            already_tracked += 1
+            continue
+        if not source_policy_allows_dispatch(root, source_sha, task["policy_revision"]):
+            staged += 1
+            continue
+        api.post_json(
+            f"/repos/{owner_repo}/actions/workflows/{workflow}/dispatches",
+            {"ref": "gpt", "inputs": {"source_sha": source_sha}},
+        )
+        dispatched += 1
+    return len(awaiting), dispatched, staged
 
 
 def get_jobs(api: GitHubAPI, repository: str, run_id: int, attempt: int) -> list[dict[str, Any]]:
@@ -295,7 +440,7 @@ def process_attempt(
     if not isinstance(run_id, int):
         raise RecoveryError("Workflow run ID is malformed")
     details = get_attempt(api, repository, run_id, attempt_number, run)
-    source_sha = details.get("head_sha") or run.get("head_sha")
+    source_sha = source_sha_for_run(details) or source_sha_for_run(run)
     if not isinstance(source_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", source_sha):
         raise RecoveryError(f"Run {run_id}/{attempt_number} has no exact source SHA")
     if details.get("head_branch", run.get("head_branch")) != "gpt":
@@ -438,6 +583,7 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
     published = 0
     ignored = 0
     pending = 0
+    indexed_sources = {record["source_sha"] for record in index["attempts"]}
 
     for run in sorted(runs, key=lambda item: item.get("id", 0)):
         run_id = run.get("id")
@@ -478,9 +624,14 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
                 ),
                 None,
             )
+            if record is not None:
+                indexed_sources.add(record["source_sha"])
             state_value = "completed" if record and record["recovery"]["reconciled_at"] is not None else "unresolved"
             known_map[(run_id, attempt_number)] = state_value
 
+    awaiting_count, dispatched_count, staged_count = dispatch_missing_attempts(
+        root, api, repository, runs, indexed_sources
+    )
     known = [(run_id, attempt, state) for (run_id, attempt), state in known_map.items()]
     checkpoint_result = commit_checkpoint_with_retry(root, known)
     return {
@@ -488,6 +639,9 @@ def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
         "attempts_published_or_present": published,
         "ignored_dispatches": ignored,
         "pending_attempts": pending,
+        "awaiting_ci_tasks": awaiting_count,
+        "missing_dispatches_started": dispatched_count,
+        "awaiting_policy_activation": staged_count,
         "checkpoint": checkpoint_result,
     }
 
