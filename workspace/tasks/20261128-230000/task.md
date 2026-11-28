@@ -83,13 +83,13 @@ Acceptance criteria are mapped to these required child tasks:
 - **Next:** Continue with eligible subtask 03 while subtask 02 remains In Progress pending activation and protection gates.
 ## 6. Current State and Remaining Work
 
-Subtask 01 is Done. Subtask 02 is In Progress with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, and staged coordinator definition committed on branch `gpt`. Subtask 03 is Ready and eligible because its dependency is complete. Subtasks 04 and 05 remain dependency-waiting.
+Subtask 01 is Done. Subtask 02 remains In Progress with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, and staged coordinator definition committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtasks 04 and 05 remain dependency-waiting.
 
 The coordinator has no push trigger. Its activation remains staged until the privileged publisher and report migration are ready. Effective branch protection/ruleset enforcement remains unverified and is an external prerequisite. The legacy report pipeline remains intact. Operational Confirmation and report-tree retirement remain incomplete.
 
 ## 7. Verification and Evidence
 
-- **Implementation commits:** Subtask 01 foundation f036ecbd02a9f049486ffbe27f8d0d11edae314d; current subtask 02 implementation head e2a9756a0f719882e2d35df1a049f0fada117dcb.
+- **Implementation commits:** Subtask 01 foundation f036ecbd02a9f049486ffbe27f8d0d11edae314d; subtask 02 implementation head e2a9756a0f719882e2d35df1a049f0fada117dcb; subtask 03 implementation readback head 66fc180fe3a9b7ab6db6a72ab0d24a4e4d071e10.
 - **Changed paths:** Worker skill and Workflow Map; task/subtask templates; task-validation policy, schema, and adapter registry; document catalog and interface reference; contract builder, verifier, aggregate, and three regression suites; five GitHub Actions workflow files; parent task, subtask record, and index.
 - **Readback:** Initial and ongoing readback from branch `gpt`. Final readback and closeout remain pending.
 - **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed. Regression tests are registered in the document-standards workflow.
