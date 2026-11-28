@@ -2,7 +2,7 @@
 
 ## Metadata
 
-- **Template version:** 1.6
+- **Template version:** 1.7
 - **ID:** 20261128-230000-02
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
@@ -19,6 +19,17 @@
 - **Updated:** 2026-11-28 23:00 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
+
+## Validation Contract
+
+Declare task-specific checks in this JSON block. The coordinator binds the contract to the exact source commit SHA. Use an empty array when no additional checks are required. Repository policy checks remain mandatory and cannot be removed or overridden. Use only registered adapters and repository-relative entrypoints. Never add shell command strings, credentials, environment overrides, or permission settings.
+
+```json
+{
+  "contract_revision": "1",
+  "checks": []
+}
+```
 
 ## 1. Original Prompt
 
