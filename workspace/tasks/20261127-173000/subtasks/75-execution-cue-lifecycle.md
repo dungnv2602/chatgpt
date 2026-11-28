@@ -35,9 +35,9 @@
 
 ```json
 {
-  "state": "not_committed",
-  "source_sha": null,
-  "policy_revision": null,
+  "state": "awaiting_ci",
+  "source_sha": "bac7881838c1c5598f5bf6ecd9905b881c9542e8",
+  "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
   "coordinator_run_id": null,
   "attempt": null,
   "outcome": null,
@@ -87,21 +87,24 @@ Consolidate the execution-cue and authorization lifecycle in The Worker so `exec
 
 ## 5. Decisions and Progress
 
-- Approved consolidated correction package is to be implemented as one coherent specification, rather than symptom-specific patches.
+- Approved consolidated correction package was implemented as one coherent specification, rather than symptom-specific patches.
+- Replaced contradictory batch-only cue clauses in the Worker scheduler and execution-loop text. Updated parent/subtask templates and catalog to align the cue lifecycle semantics. Readback confirmed changed owner and tracking files.
+- Implementation commits: child record `faf729e5c0c5e911ec083f939269df0ed4f84f1b`; Worker `8fdc1ade2ecd8dc0b3812456700f88ce6b6a44d3` and `7eecebbf305112bff2c7eed7520ec8d61dc0c7d1`; map `8fbd7079815f4d9a4b19c032fb0c195049e59db2`; index `b2c336d7d2593ed66777ee1adc61783c92250a31`; parent `45df0211fe5cd32256957a803b883d478dca23f0`; board `84bc41d143b8aad16f79cf2b5d2a126f1330cc0b`; templates `345f94048b94b8129c25fb46a77ee81f5a56ff22`, `0c105f2e49d6d75d1e8a3f3ba540032212a5369a`; catalog `bac7881838c1c5598f5bf6ecd9905b881c9542e8`.
+- Readback verified the Worker, map, templates, catalog, board and task tracking. Local checks/tests/lint and hosted CI inspection were not performed.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Not yet determined
-- **Readback:** Pending
+- **Commit SHA:** `bac7881838c1c5598f5bf6ecd9905b881c9542e8`
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `.agent/WORKFLOW_MAP.md`; `.agent/skills/the-worker/assets/TASK_TEMPLATE.md`; `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md`; `.agent/skills/the-worker/references/document-type-catalog.md`; parent and subtask records/index; task board.
+- **Readback:** Confirmed from branch `gpt` during reconciliation.
 - **Checks:** Not performed
 - **Limitations:** No local scripts, tests or lint; no hosted CI inspection.
 
 ## 7. Completion
 
-- **Status:** Not Done
+- **Status:** Not Done — awaiting exact-SHA validation reconciliation.
 - **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Completion basis:** Implementation and readback criteria satisfied; policy lifecycle awaits CI.
 
 ## 8. Hosted Validation
 
