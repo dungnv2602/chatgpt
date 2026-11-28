@@ -7,17 +7,17 @@
 - **ID:** 20261127-173100-02
 - **Parent Task ID:** 20261127-173100
 - **Type:** Audit / Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User-authorized subtask under Template Fix, expanded by the user's 2026-11-28 instruction to audit stale templates and relocate templates outside skills into appropriate skill locations.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — selected under the user's current authorized focus.
+- **Eligibility / deferral reason:** Done — acceptance criteria met; implementation and readback complete.
 - **Required:** Yes
 - **Created:** 2026-11-27 17:31 UTC
-- **Updated:** 2026-11-28 03:13 UTC
+- **Updated:** 2026-11-28
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -48,8 +48,8 @@ Systematically scan the entire repository for document types or documents that l
 ## 5. Decisions and Progress
 
 - **Action:** Created child record.
-- **Result:** Audit and remediation pending.
-- **Next:** Begin the full coverage, freshness, and placement audit after task-board-template child as ordered by parent.
+- **Result:** Audit and remediation completed; see the closeout entry below.
+- **Next:** None.
 
 ### 2026-11-28 03:13 UTC — execution resumed
 
@@ -59,28 +59,40 @@ Systematically scan the entire repository for document types or documents that l
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Pending
-- **Readback:** Pending
-- **Checks:** Not performed
-- **Limitations:** Repository-wide audit not yet performed.
+- **Commit SHA:** `6cc29c784b7103bc425998ebfbfa5acfdf79399b`, `eb57d251600e4a86b78d9e62a1e49a5a65484003`, `11a44d28907f116f751babc3ede78fe436b8031c`, `be62841f0776a8c62e45d17ade01751c065a59b3`, `b59167b89e9c35ab071cf37e3fd5f74e6d14a264`, `56d2e4b515f79d15f01619d58af7983cd620280a`, and `98f8baf117c187edfc3dc76d16969a8228ed558e`
+- **Changed paths:** 12 moved novel templates; template index; novel README and workflow; Romantic Storyteller and Drawing skills; Worker skill, catalog, validator, tests, and task-board template; Prompt Master template; anchor checker and Document Standards workflow.
+- **Readback:** All 12 canonical template paths and affected references were fetched from branch `gpt`.
+- **Checks:** Independent audit found 30/30 templates under skill assets, zero external templates, 277/277 Markdown paths covered, 54 coverage rules, and zero broken links among 35 checked local links. Original template blob SHAs were preserved.
+- **Limitations:** Local scripts and tests were not run. Hosted workflow results were not inspected.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28
+- **Completion basis:** All nine acceptance criteria met by committed changes and remote readback. Validation limits are recorded above.
 
 ## 8. Hosted Validation
 
-- **Status:** Not reviewed
+- **Status:** Not reviewed — no hosted result claimed
 - **Run URL:** Not reviewed
 
 ## 9. Handoff
 
-Run the repository-wide audit for missing and stale templates, then move all templates outside skills into appropriate skill locations in compliance with the current skill standard. Reconcile every affected reference and verify the final canonical paths.
+Closed. The completed task folder will be removed under normal lifecycle rules.
 
 ## 10. Ledger Findings
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
+
+
+### 2026-11-28 — repository template audit and closeout
+
+- **Inventory:** The baseline tree contained 30 template assets: 18 already under skills and 12 novel templates outside skills. The 12 novel templates moved to `.agent/skills/romantic-storyteller-visual-artist/assets/templates/`. Their original blob SHAs were preserved.
+- **Coverage:** No recurring document type lacked an applicable template, schema, or embedded contract. No new template type was created. The catalog now records version 1.26 and covers 277/277 in-scope Markdown files with 54 path rules and zero uncovered files.
+- **Freshness:** Updated the task-board template to match the live scheduler contract and current-focus queue semantics. Updated the Prompt Master OpenAI task brief to remove retired model labels and stale model-specific guidance. Added a Worker rule to scan all templates for drift whenever a template is created or materially revised.
+- **Governance:** The catalog and validator now require reusable templates to live in the owning skill's `assets/` directory. The validator scans for misplaced skill templates and templates outside skills. Regression tests cover external placement, nested skill assets, and two-digit child-record coverage. The unsupported task-child character-class glob was replaced with supported `??-*.md` syntax.
+- **Reference reconciliation:** Updated novel README/workflow, Romantic Storyteller workflow, Drawing skill, catalog, anchor-check exclusions, and workflow path filters. Removed the former `area/novel/templates/` directory.
+- **Verification:** Read back all 12 moved templates and updated owner files. The repository tree contains 30 templates, all under skill assets, and zero outside. The former novel template directory has zero entries. Independent path matching covered all 277 Markdown files. A local-link audit checked 35 links with zero broken targets. The task-board scheduler section matches its template.
+- **Commits:** `6cc29c784b7103bc425998ebfbfa5acfdf79399b`, `eb57d251600e4a86b78d9e62a1e49a5a65484003`, `11a44d28907f116f751babc3ede78fe436b8031c`, `be62841f0776a8c62e45d17ade01751c065a59b3`, `b59167b89e9c35ab071cf37e3fd5f74e6d14a264`, `56d2e4b515f79d15f01619d58af7983cd620280a`, and `98f8baf117c187edfc3dc76d16969a8228ed558e`.
+- **Limitations:** Repository scripts and tests were not run locally. Hosted Document Standards results were not inspected. No hosted validation pass is claimed.
