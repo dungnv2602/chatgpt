@@ -12,7 +12,7 @@
 - **Approval:** Approved
 - **Approval scope/source:** User requested a future follow-up to verify tests/validation for the completed structural validator and create a Worker-driven loop that reports remaining verification gaps. Resumed by the user on 2026-11-28.
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Blocked — static review is complete, but actual test execution evidence cannot be obtained under current Worker restrictions. A policy-level authorization change is required before any test execution or hosted-result review.
+- **Eligibility / deferral reason:** Blocked — the user authorized hosted validation review for this subtask only and explicitly prohibited workflow-policy changes. The available GitHub connector exposes no operation to enumerate push-triggered workflow runs. The unified CI index currently has `runs: []`, and queried commit-status endpoints returned no checks. No run ID could be established for a permitted read-only review.
 
 ## 1. Original Prompt
 
@@ -26,6 +26,7 @@
 
 - The completed implementation child 20261127-173000-60 was already closed and deleted under the repository's task lifecycle before this follow-up. Do not recreate it or alter its closeout.
 - User explicitly resumed this child and supplied the standalone `Execute` cue on 2026-11-28. Execution is authorized within the approved scope, subject to canonical Worker restrictions.
+- **2026-11-28 — scoped hosted-review authorization:** User instructed: “Only allow for this substask, do not modify workflow policy.” This authorizes reviewing existing hosted validation evidence for child 61 only. It does not authorize local test execution, workflow dispatch/rerun, polling, or any change to canonical Worker/GitHub Actions policy or workflow files.
 
 ## 3. Objective and Scope
 
@@ -54,7 +55,8 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 - User resumed this follow-up and supplied `Execute` on 2026-11-28.
 - Static review confirmed `.github/workflows/validate-document-standards.yml` runs `python -m unittest discover -s .agent/skills/the-worker/scripts -p 'test_validate_structural_ownership.py' -v`, then invokes `validate_structural_ownership.py --root .`. The test suite is wired into the workflow, but this readback is not evidence that a run passed.
 - Static test review found four test methods: valid fixture, extra Session Start link, missing Worker file, and forbidden `## Execution` in Conversation Mode. Encoded validator branches not directly covered by regression cases include missing/altered required markers for each canonical file, unresolved Worker pointer target, and forbidden `## Operating rules` in Conversation Mode. The existing tests do not demonstrate all diagnostic branches.
-- The current Worker prohibits local repository script/test execution. The GitHub Actions reference prohibits inspecting hosted run pages, job output, logs, or artifacts. These rules prevent obtaining actual execution results in this batch. No local tests were run and no hosted CI data was accessed.
+- The user supplied a child-61-only exception for review of existing hosted validation evidence, without changing workflow policy. No local test execution was authorized or performed. No workflow was dispatched or rerun.
+- Attempted read-only evidence discovery through the available GitHub connector. `.takeout/reports/index.json` currently returns `runs: []` and `count: 151`. `get_commit_combined_status` returned empty status arrays for the relevant workflow/validator commits. `fetch_commit_workflow_runs` returned no runs for the workflow-definition commit and, by its documented contract, only returns pull-request-triggered runs. The connector exposes no repository-wide or workflow-specific run-list operation for push-triggered runs. No run ID could therefore be identified. No hosted run page, logs, job output, or artifacts were inspected.
 
 ## 6. State and Evidence
 
@@ -62,7 +64,7 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 - **Changed paths:** This subtask record, `workspace/tasks/20261127-173000/subtasks/README.md`, `workspace/task_board.md`
 - **Readback:** Source files and task record read back from branch `gpt`.
 - **Checks:** Static inspection only. Workflow file readback confirms test invocation and validator invocation. No tests executed.
-- **Limitations / blocker:** Actual test execution evidence remains unavailable. Local test execution is prohibited by The Worker. Hosted run pages/results are prohibited by the GitHub Actions reference. The subtask requires a narrow canonical policy amendment or explicit authorized alternative before execution evidence can be collected. No hosted CI data was accessed.
+- **Limitations / blocker:** Hosted review is authorized for this child only, but the available connector cannot enumerate push-triggered workflow runs and the repository index/status queries provide no run locator. An authorized GitHub Actions run-list/read capability or a specific existing run ID is required to continue. No local tests were run. No workflow policy or workflow file was changed.
 
 ## 7. Completion
 
@@ -72,11 +74,11 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 
 ## 8. Execution self-check
 
-This follow-up is approved and resumed. Scope and parentage directly advance the Refactor Skills parent. Static review and workflow wiring review are complete. Actual execution evidence is blocked by canonical policy restrictions. Do not bypass them. Request a narrow policy decision before running tests or reviewing hosted results.
+This follow-up is approved and resumed. Scope and parentage directly advance the Refactor Skills parent. Static review and workflow wiring review are complete. The user authorized existing hosted-result review for this subtask only and explicitly prohibited workflow-policy changes. The connector cannot enumerate the push-triggered run, so no run was opened. Do not run local tests, dispatch/rerun workflows, or change canonical policy.
 
 ## 9. Handoff
 
-Static review is complete. The remaining action is a user decision on whether to amend the canonical Worker/GitHub Actions restrictions to permit a narrowly scoped test execution and/or hosted validation review. Keep the task Blocked until that authority is provided. Do not change ADR-0006's semantic or auto-repair boundaries.
+Static review is complete. The user has authorized read-only review of existing hosted validation for child 61 only. The remaining blocker is technical: the available GitHub connector cannot enumerate push-triggered workflow runs, and no run ID is available from the unified report index or queried commit statuses. Continue only when a supported read-only run locator or exact existing run ID is available. Do not run tests locally, dispatch/rerun workflows, change workflow policy, or alter ADR-0006's semantic or auto-repair boundaries.
 
 ## 10. Ledger Findings
 
