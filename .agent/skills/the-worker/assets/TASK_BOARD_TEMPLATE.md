@@ -13,6 +13,7 @@ Follow the Worker's scheduling and decision-collection procedure. This board pub
 - Approval is explicit scope authorization. Pending means authorization is not granted; Declined means rejected. Approval does not depend on status or eligibility.
 - This board is the sole index of active task parents. Parent folders contain `task.md` and `subtasks/README.md`. The parent index lists substantive children. Board links point to parents, except Current Execution may link to the selected child.
 - Keep a parent open while required children remain open. The Worker owns status, selection, and deletion at closeout.
+- Implementation closeout does not universally depend on runtime validation. The Worker tracks missing evidence separately and immediately rebuilds the queue after closeout. This board publishes state only.
 
 ## Current Execution
 
