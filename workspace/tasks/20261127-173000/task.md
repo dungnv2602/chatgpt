@@ -676,3 +676,12 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 
 - Created child 71 to correct the sequence so Session Start routes to the Workflow Map first, before The Worker and related references.
 - Explicit execution authorization received. Implementation underway.
+
+
+### 2026-11-28 — child 71 closeout: map-first startup order
+
+- Corrected the startup sequence in Session Start, Workflow Map, and The Worker so the map is read first after the cue guard and before The Worker or references.
+- Readback verified the changed owner files and tracking on branch `gpt`.
+- Implementation commits: `08a2977990dab8b1506fa1918ea774813767a33a`, `86c5e01536a660317b2e7d89ca4571df62cc73af`, `a7598b0c865051cb9d38538347742da7d84ce4da`. Tracking commits: `560385e5fbfaf25f60a5f089b9fcd807c0aafce7`, `60537525d635b179a1199049772ac438e559143d`, `303bba099826238d08369304bdb26298ee1c2d00`. Completion evidence `1795994d1a69b1fa0f48d240048a6ed0f69f037d`.
+- No local tests/scripts/lint or hosted CI inspection performed.
+- Child 71 closed and its task record removed under the persistent parent lifecycle.
