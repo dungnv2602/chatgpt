@@ -29,7 +29,7 @@ Adopt a universal, event-driven post-commit validation lifecycle. The Worker may
 
 A committed task enters **Committed / Awaiting CI**. The Worker immediately moves to another unblocked task instead of waiting for CI. GitHub Actions runs the required validation set; automation records the aggregate terminal result and a direct run URL in a minimal run-status index under `workspace/`, then creates a deduplicated CI-result review task. CI does not generate separate diagnostic reports, finding documents, or error-evidence files. The review task nudges the Worker to read the index. For success, the Worker reconciles the task from the index without opening logs. For failure or infrastructure/capture failure, the Worker opens the linked run to diagnose the cause and creates only the necessary remediation/infrastructure task folders.
 
-A task becomes **Done**
+A task becomes **Done** only after the required automated checks have succeeded for its exact commit, the aggregate result has been reconciled from the index, and no outstanding subtasks remain. The Worker does not independently validate the implementation. If a required check fails, the Worker diagnoses the linked Actions run and creates remediation subtasks; if validation infrastructure or capture fails, the task remains not Done until that issue is resolved.
 
 This proposal also retains the approved folder-based CI error lifecycle: delete a completed error subtask folder; delete an ordinary parent task folder only when it is Done and has no outstanding subtasks. Retire the confirmed `.takeout/reports/` tree only after all producers and consumers have migrated to the replacement.
 
