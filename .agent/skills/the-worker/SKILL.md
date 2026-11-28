@@ -94,7 +94,7 @@ CI remediation children are P0, Approved, and Ready under the standing authoriza
 
 ## Status, approval, and scheduling
 
-Approval records authority for a scope. It does not depend on status or priority. Record its source and scope. Never infer approval from status. **Approval is not execution authorization and never triggers execution.** The sole execution cue is the explicit standalone word `execute`, matched case-insensitively (for example, `Execute` or `EXECUTE`). Other words, instructions, approval, `Next`, `proceed`, quoted or discussed cue mentions, and implied intent do not trigger execution.
+Approval records authority for a scope. It does not depend on status or priority. Record its source and scope. Never infer approval from status. **Approval is not execution authorization and never triggers execution by itself.** The universal execution directive is `execute`, matched case-insensitively when clear directive intent is present; its semantics and persistence are defined in the canonical Execution cue and authorization lifecycle section. Quoted, discussed, hypothetical or negated mentions are not directives.
 
 Use these statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Ready requires satisfied dependencies and any real decision gate. Use Blocked for a genuine external or user-resolvable blocker. Use Paused for intentional suspension.
 
@@ -131,8 +131,8 @@ Before repository work, review the task's authority and current workflow. Confir
 4. No conflicting instruction or duplicate rule creates an ambiguous execution boundary.
 5. Each planned file has one registered canonical owner and an allowed path. A consumer path is not treated as its owner.
 6. The child ID is unused in the full parent history. Deleted child IDs remain consumed.
-7. The user's decision collection phase is complete before executing newly unlocked work.
-8. The intended batch, verification, readback, and cleanup steps are defined.
+7. Any required decision collection is reconciled in the written cue order before dependent work begins; approval alone never triggers execution.
+8. Applicable execution mechanisms, scope, recovery, verification, readback, and cleanup are defined; batch boundaries are scheduling details, not cue semantics.
 
 If any check fails, resolve it before the affected work. Do not silently bypass a gate.
 
@@ -142,7 +142,7 @@ Treat conflicting or stale instructions as a workflow fault. Inventory the confl
 
 ## Execution, recovery, queue draining and closeout
 
-Treat the user's authorized workstream or selected parent as the batch boundary. Execute its eligible children recursively to quiescence, then report once.
+Treat the user's authorized workstream or reconciled scope as the execution boundary. Batch is a scheduling mechanism only. Execute eligible work recursively to quiescence within scope, then report once.
 
 ### Protect the user's solitude — interruption and reporting gate
 
@@ -165,7 +165,7 @@ The user's explicit preference is to be left undisturbed while authorized reposi
 6. **Rebuild:** Reconcile the board and indexes after each status or dependency change. Immediately select the next eligible task within the authorized focus. A completed child is a scheduler transition, not a reporting pause.
 7. **Skip blockers:** Exhaust repository recovery and source investigation first. Isolate a blocker, record its precise cause and requested input, remove it from the eligible queue and continue independent work. A failed tool call or recoverable uncertainty is not a blocker.
 8. **Reach quiescence:** Stop only when no eligible task remains within scope. Reconcile all user-resolvable blockers and present one consolidated decision brief. Do not ask about external blockers the user cannot resolve.
-9. **Collect decisions:** Log responses and reconcile them without executing newly unlocked work. `Next` is navigation only. A fresh standalone `execute` cue authorizes the prepared batch. If scope changes materially, require a fresh cue.
+9. **Collect decisions and process cues:** Log decisions and reconcile cues in their written order. `Next` is navigation only. An execution directive applies universally to the eligible work within its reconciled scope; do not require another cue for routine continuation or already-authorized work. A genuinely new scope or authority boundary requires the appropriate authorization.
 10. **Close records:** Read back each deliverable and tracking record. Delete completed/cancelled child folders and board rows under the normal lifecycle. Preserve the persistent skills-refactoring parent when its exception applies. Do not archive or create retention copies. Preserve Ledger identity and history.
 11. **Cleanup:** Remove temporary recovery artifacts immediately after last use and verify cleanup when possible.
 
