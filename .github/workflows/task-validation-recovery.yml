@@ -7,6 +7,10 @@ on:
       - gpt
     paths:
       - ".agent/skills/the-worker/assets/task-validation/**"
+      - ".agent/skills/the-worker/assets/TASK_TEMPLATE.md"
+      - ".agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md"
+      - ".agent/skills/the-worker/SKILL.md"
+      - ".agent/skills/the-worker/references/task-validation-interfaces.md"
       - ".agent/skills/the-worker/scripts/**"
       - ".github/workflows/task-validation-dispatch.yml"
       - ".github/workflows/task-validation.yml"
