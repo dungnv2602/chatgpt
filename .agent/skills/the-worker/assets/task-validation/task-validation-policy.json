@@ -19,7 +19,9 @@
   "coordinator": {
     "workflow": ".github/workflows/task-validation.yml",
     "source_event": "push",
-    "source_branches": ["gpt"],
+    "source_branches": [
+      "gpt"
+    ],
     "one_run_per_source_commit": true,
     "bind_source_sha": true,
     "bind_policy_revision": true
@@ -42,6 +44,12 @@
       "workflow": ".github/workflows/validate-document-standards.yml",
       "job": "validate-document-standards",
       "coverage": "Document catalog, structural ownership, and existing CI Ledger regression tests"
+    },
+    {
+      "id": "generic-verifier",
+      "workflow": ".github/workflows/task-validation-verifier.yml",
+      "job": "verify",
+      "coverage": "Exact-SHA task contract validation, closed adapter enforcement, and additive task-specific checks"
     }
   ],
   "task_contract": {
