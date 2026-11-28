@@ -150,8 +150,9 @@ Promote a Draft only after the user approves its exact revision and scope. Treat
 10. Read back the accepted ADR. Verify that its decision content matches the provisional record that the Worker verified.
 11. Delete the exact source Draft only after the accepted ADR passes the completeness gate.
 12. Update the Draft and ADR indexes. Delete the source Draft from every active index.
-13. Verify that the ADR exists, the source Draft does not exist, and no active Markdown link targets the deleted file.
-14. Record the Draft ID, ADR ID, completeness result, deletion result, and commit references in the promotion task or other active decision record.
+13. **Migrate active references.** Search the repository for the source Draft's file path and ID. Replace active navigational, operational, task, documentation, and index references that pointed to the Draft with references to the resulting accepted ADR, wherever the reference is still relevant. Do not preserve a deleted Draft as an active link or destination. Retain the Draft ID only where it serves deliberate provenance or historical context, such as the ADR's `source_draft` metadata or immutable historical records; do not turn those references into links to the deleted file.
+14. **Verify reference migration.** Confirm the accepted ADR exists, the source Draft does not exist, active indexes and applicable current records point to the ADR, and no active Markdown link or operational pointer targets the deleted Draft path. Review search matches by context, distinguishing intentional historical/provenance mentions from stale active pointers. Resolve stale active pointers before closeout.
+15. Record the Draft ID, ADR ID, completeness result, deletion result, reference-migration and verification result, and commit references in the promotion task or other active decision record.
 
 Never create a second ADR when a provisional or accepted ADR already reserves the promotion ID. Never delete the source Draft before the accepted ADR read-back passes.
 
