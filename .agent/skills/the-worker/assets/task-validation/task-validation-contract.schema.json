@@ -5,7 +5,12 @@
   "description": "Additive, exact-source-commit validation requirements. This contract cannot weaken repository policy or provide arbitrary commands.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "source_sha", "checks"],
+  "required": [
+    "schema_version",
+    "source_sha",
+    "contract_revision",
+    "checks"
+  ],
   "properties": {
     "schema_version": {
       "const": 1
@@ -31,14 +36,23 @@
     "check": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "adapter", "entrypoint"],
+      "required": [
+        "id",
+        "adapter",
+        "entrypoint"
+      ],
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^[a-z][a-z0-9-]{0,62}$"
         },
         "adapter": {
-          "enum": ["python-script", "python-module", "pytest", "unittest"]
+          "enum": [
+            "python-script",
+            "python-module",
+            "pytest",
+            "unittest"
+          ]
         },
         "entrypoint": {
           "type": "string",
