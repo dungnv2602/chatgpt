@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-03
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -50,13 +50,13 @@ Add an objective-based parent-selection test, prevent active-parent bias, and de
 - Active parent status is not a parent-selection criterion.
 - CI finding attribution is a specific exception and does not imply blanket parent reuse.
 - Earlier implementation and evidence remain preserved in the legacy record below.
-- **Next:** Complete the remaining parentage/index audit and readback.
+- **Next:** Close and delete this completed child record after parent/index/board reconciliation.
 
 ## 6. State and Evidence
 
 - **Commit SHA:** Earlier implementation SHA `0b7f1b5b2c340fa59e718aa650d2e55fbc2b00d8`; reparenting not committed
 - **Changed paths:** Worker, task/subtask templates and task indexes from earlier work; record migration pending
-- **Readback:** Earlier remote readback verified implementation paths. Migration readback pending.
+- **Readback:** Verified Worker parent-selection rules, task and subtask templates, board, recursive indexes, discussion register and restored document-governance parentage.
 - **Checks:** Not performed
 - **Limitations:** No hosted CI review.
 
@@ -64,7 +64,8 @@ Add an objective-based parent-selection test, prevent active-parent bias, and de
 
 - **Status:** Not Done
 - **Completed at:** Not applicable
-- **Completion basis:** Remaining hierarchy reconciliation and closeout criteria.
+- **Completed at:** 2026-11-28 UTC
+- **Completion basis:** Objective-based parent selection, uncertainty handling, CI attribution exception, hierarchy correction process, and index/board reconciliation verified. Legacy task 20261127-102300 is preserved within this child record.
 
 The Worker marks the child Done only after its acceptance criteria pass and the intended-branch commit is read back. For CI remediation, commit-based completion is separate from hosted validation.
 
