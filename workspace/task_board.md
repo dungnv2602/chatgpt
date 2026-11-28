@@ -18,15 +18,15 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Current focused child 63 — execution-cue and decision-logging workflow — is In Progress. Child 62 completed and was removed. Child 61 remains paused.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Focused child 63 completed and was removed under lifecycle rules. Refactor Skills is at quiescence. Child 62 completed and was removed. Child 61 remains paused.
 
 ## Ordered Eligible Execution Queue
 
-_No additional eligible child task while child 63 is the current focused execution._
+_No eligible child tasks under Refactor Skills._
 
 ## Next Task
 
-Child 63 is the current focused task. Child 61 remains intentionally paused. The global document-template audit is not selected because the user directed focus on Refactor Skills.
+No eligible child remains under Refactor Skills. Child 61 remains intentionally paused. The global document-template audit is not selected because the user directed focus on Refactor Skills.
 
 ## Deferred Work
 
