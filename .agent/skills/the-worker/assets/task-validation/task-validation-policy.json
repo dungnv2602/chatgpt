@@ -9,24 +9,34 @@
     "required": true,
     "mechanism": "GitHub branch protection or ruleset",
     "required_review_paths": [
-      ".agent/skills/the-worker/assets/task-validation/task-validation-policy.json",
-      ".agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json",
-      ".agent/skills/the-worker/assets/task-validation/task-validation-adapters.json",
-      ".github/workflows/task-validation.yml",
-      ".agent/skills/the-worker/scripts/task_validation.py",
-      ".agent/skills/the-worker/scripts/aggregate_task_validation.py",
-      ".github/workflows/task-validation-verifier.yml",
-      ".agent/skills/the-worker/scripts/build_task_validation_contract.py",
-      ".agent/skills/the-worker/assets/TASK_TEMPLATE.md",
+      ".agent/skills/the-worker/SKILL.md",
       ".agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md",
-      ".agent/skills/the-worker/scripts/test_task_validation.py",
+      ".agent/skills/the-worker/assets/TASK_TEMPLATE.md",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-adapters.json",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-policy.json",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-review-template.md",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json",
+      ".agent/skills/the-worker/references/task-validation-interfaces.md",
+      ".agent/skills/the-worker/scripts/aggregate_task_validation.py",
+      ".agent/skills/the-worker/scripts/build_task_validation_contract.py",
+      ".agent/skills/the-worker/scripts/publish_task_validation.py",
+      ".agent/skills/the-worker/scripts/recover_task_validation.py",
+      ".agent/skills/the-worker/scripts/task_validation.py",
       ".agent/skills/the-worker/scripts/test_aggregate_task_validation.py",
       ".agent/skills/the-worker/scripts/test_build_task_validation_contract.py",
-      ".github/workflows/validate-document-standards.yml",
-      ".agent/skills/the-worker/SKILL.md",
-      ".agent/skills/the-worker/references/task-validation-interfaces.md",
+      ".agent/skills/the-worker/scripts/test_publish_task_validation.py",
+      ".agent/skills/the-worker/scripts/test_recover_task_validation.py",
+      ".agent/skills/the-worker/scripts/test_task_validation.py",
       ".github/workflows/ste-lint-changed.yml",
-      ".github/workflows/ste-lint-full-docs.yml"
+      ".github/workflows/ste-lint-full-docs.yml",
+      ".github/workflows/task-validation-dispatch.yml",
+      ".github/workflows/task-validation-publisher.yml",
+      ".github/workflows/task-validation-recovery.yml",
+      ".github/workflows/task-validation-verifier.yml",
+      ".github/workflows/task-validation.yml",
+      ".github/workflows/validate-document-standards.yml",
+      "workspace/task-validation/README.md"
     ],
     "enforcement_status": "external-prerequisite"
   },
@@ -39,7 +49,8 @@
     "one_run_per_source_commit": true,
     "bind_source_sha": true,
     "bind_policy_revision": true,
-    "activation_status": "staged-until-privileged-publisher-and-report-migration"
+    "activation_status": "staged-until-privileged-publisher-and-report-migration",
+    "dispatcher_workflow": ".github/workflows/task-validation-dispatch.yml"
   },
   "mandatory_checks": [
     {
@@ -93,5 +104,37 @@
     "capture_failure",
     "cancelled",
     "superseded"
-  ]
+  ],
+  "publisher": {
+    "workflow": ".github/workflows/task-validation-publisher.yml",
+    "script": ".agent/skills/the-worker/scripts/publish_task_validation.py",
+    "status_index": "workspace/task-validation/status-index.json",
+    "status_index_schema": ".agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json",
+    "review_root": "workspace/task-validation/reviews",
+    "review_template": ".agent/skills/the-worker/assets/task-validation/task-validation-review-template.md",
+    "idempotency_key": [
+      "coordinator_run_id",
+      "attempt"
+    ],
+    "atomic_publication": true,
+    "max_push_retries": 5,
+    "permissions": [
+      "contents:write"
+    ],
+    "receives_secrets": false,
+    "executes_untrusted_task_code": false
+  },
+  "recovery": {
+    "workflow": ".github/workflows/task-validation-recovery.yml",
+    "script": ".agent/skills/the-worker/scripts/recover_task_validation.py",
+    "checkpoint": "workspace/task-validation/status-index.json#/closed_through",
+    "reconciled_retention_days": 3,
+    "unresolved_attempts_never_pruned": true,
+    "bounded_retries": 5,
+    "scheduled_cron": "*/15 * * * *",
+    "schedule_activation_status": "external-prerequisite-default-branch-must-be-gpt",
+    "push_trigger_excludes_status_index_commits": true,
+    "reads_logs": false,
+    "validates_source_code": false
+  }
 }
