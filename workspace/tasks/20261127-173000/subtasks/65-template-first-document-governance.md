@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-65
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User's explicit request in this conversation to create these two subtasks under Refactor Skills.
 - **Governing ADR(s):** None
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Ready — execution cue pending for the prepared batch
+- **Eligibility / deferral reason:** In Progress — authorized execution batch active for the prepared batch
 - **Required:** Yes
 - **Created:** 2026-11-28 15:00 UTC
 - **Updated:** 2026-11-28 15:00 UTC
@@ -27,7 +27,7 @@ Whenever you modify a document, consult its template first. Assess whether you s
 
 ## 2. Subsequent Instructions
 
-- **2026-11-28:** Task captured under the persistent Refactor Skills parent. Approval records scope; the standalone case-insensitive `execute` cue is still required to begin implementation.
+- **2026-11-28:** Task captured under the persistent Refactor Skills parent. The user explicitly selected Refactor Skills as current task and issued `Execute`, authorizing the prepared P0 batch.
 
 ## 3. Objective and Scope
 
@@ -39,8 +39,8 @@ Audit the Worker workflow for template-first document governance. Strengthen it 
 
 ## 5. Decisions and Progress
 
-- **Decision:** Preserve the request and its scope as this child. Do not begin implementation until the explicit standalone execution cue authorizes the prepared batch.
-- **Progress:** Task record prepared from the canonical subtask template.
+- **Decision:** Preserve the request and its scope as this child. Execution authorized for this batch by the user's explicit `Execute` cue.
+- **Progress:** Execution started. Existing Worker gate already requires reading the catalog and applicable template/contract before edits, but does not explicitly require assessing template freshness against latest repo/document state before editing.
 
 ## 6. State and Evidence
 
@@ -70,7 +70,7 @@ Audit the Worker workflow for template-first document governance. Strengthen it 
 
 ## 10. Handoff
 
-Await the explicit standalone `execute` cue. Upon authorization, perform the scope audit autonomously, and reconcile records and evidence.
+Execution is authorized. Audit the template-first gate, strengthen the freshness assessment, reconcile related contracts and records, and close out with readback.
 
 ## 11. Ledger Findings
 
