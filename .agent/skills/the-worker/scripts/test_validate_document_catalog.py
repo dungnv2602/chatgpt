@@ -112,9 +112,9 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_templates_must_live_in_owning_skill_assets(self):
         self.assertIsNone(
             template_location_error(".agent/skills/example/assets/template.md")
+        )
         self.assertIsNone(
             template_location_error(".agent/skills/example/assets/templates/novel.md")
-        )
         )
         for path in (
             "area/novel/templates/scene-template.md",
@@ -127,11 +127,27 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write("workspace/TASK_TEMPLATE.md")
         self.write("workspace/tasks/example/subtasks/02-audit-document-template-coverage.md")
         self.write("workspace/tasks/example/subtasks/TASK_TEMPLATE.md")
+        self.write("workspace/archive/TASK_TEMPLATE.md")
+        self.write("master/template.md")
         errors = find_external_templates(self.root)
         self.assertEqual(len(errors), 3)
         self.assertTrue(all("Misplaced template outside skills" in error for error in errors))
         self.assertTrue(any("workspace/tasks/example/subtasks/TASK_TEMPLATE.md" in error for error in errors))
         self.assertFalse(any("02-audit-document-template-coverage.md" in error for error in errors))
+        self.assertFalse(any("workspace/archive" in error for error in errors))
+        self.assertFalse(any("master/" in error for error in errors))
+
+    def test_empty_external_template_directory_is_detected(self):
+        (self.root / "area" / "novel" / "templates").mkdir(parents=True)
+        errors = find_external_templates(self.root)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("area/novel/templates", errors[0])
+
+    def test_misplaced_skill_template_directory_is_detected(self):
+        (self.root / ".agent" / "skills" / "example" / "references" / "templates").mkdir(parents=True)
+        errors = find_misplaced_skill_templates(self.root)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("references/templates", errors[0])
 
     def test_missing_canonical_path_fails(self):
         rows = self.valid_rows()
