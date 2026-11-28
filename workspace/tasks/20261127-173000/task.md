@@ -699,3 +699,13 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - Child 28 historical-finding restoration was declined: no restoration or backfill. The obsolete blocker is removed from the active state.
 - Child 68 is already recorded completed in parent progress and has no child record or index row. Its proposed blocker state was stale; no repeat correction was needed.
 - At quiescence, no eligible child is selected. The persistent parent remains open.
+
+
+### 2026-11-28 — child 73 closeout: workspace-bound CI activation
+
+- **Action:** Corrected The Worker so CI operations and CI-specific references activate only for an assigned, selected CI task under `workspace/tasks/`. Session initialization now explicitly prohibits CI report/index/history/Ledger reads and CI baseline or Ledger reconciliation. Removed startup-P0 activation from the GitHub Actions reference gate. Updated the Workflow Map to show CI as task-activated, not a startup phase.
+- **Result:** The startup P0 batch remains limited to eligible workspace tasks; it does not create CI work or authorize report-family access. No CI data was inspected or changed.
+- **Commits:** Worker `f9bfbdb2ea5a4f1d0b051ac8a6c5963e00e2e82e`, Worker reference-gate correction `8d2b8187bae4f2c7f163959c0a3e7157132f9617`, Workflow Map `892825e5222e21e5e06661bee49d95bda2991c89`; tracking `b8bec9e517f048698a8a8b3b7de53f0ec9d67468`, `4c16cc30eb76db33304cb5ce12fba5e78b91ebe9`, `9ca067ddb004c08223893aba41af6bb473e964d6`, `676eabf1fbc0d9dbc23461c2c7230a14672d4a5e`.
+- **Readback:** Worker SHA `a4cac0c49aa0c1b1d858f199e8564043e531ca93`; Workflow Map SHA `ba5ee2c8beba2dd3233dc7c60581b5a17d58e135`; task board and subtask index read back. All required activation and initialization prohibitions are present.
+- **Checks:** No local scripts/tests/lint and no hosted CI inspection. Remote readback verifies committed content, not runtime behavior.
+- **Closeout:** Child 73 completed and removed under the persistent parent lifecycle. The Refactor Skills parent remains open at quiescence.
