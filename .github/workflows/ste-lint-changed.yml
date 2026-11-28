@@ -53,9 +53,28 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
+          COORDINATOR_CALL: ${{ inputs.coordinator_call }}
+          SOURCE_SHA: ${{ inputs.source_sha || github.sha }}
         run: |
           set -euo pipefail
           echo "proceed=true" >> "$GITHUB_OUTPUT"
+          policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=$SOURCE_SHA" --jq '.content' | base64 --decode)
+          activation=$(jq -r '.coordinator.activation_status // empty' <<< "$policy_json")
+          if [[ "$COORDINATOR_CALL" == "true" ]]; then
+            base_sha=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.parents[0].sha // empty')
+            if [[ "$base_sha" =~ ^[0-9a-f]{40}$ ]]; then
+              echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
+              echo "full_audit=false" >> "$GITHUB_OUTPUT"
+            else
+              echo "full_audit=true" >> "$GITHUB_OUTPUT"
+            fi
+            exit 0
+          fi
+          if [[ "$activation" == "enabled" ]]; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "Legacy direct-push lint is disabled after coordinator activation."
+            exit 0
+          fi
           index_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/index.json?ref=$GITHUB_REF_NAME" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
           entry=$(jq -c '[.runs[]? | select(.family=="lint" and .scope=="on_changed" and (.status=="Passed" or .status=="Failed") and (.execution_mode=="incremental" or .execution_mode=="full-audit-fallback"))] | sort_by(.generated_at_utc) | reverse | .[0] // empty' <<< "$index_json" 2>/dev/null || true)
           history_path=$(jq -r '.history_path // empty' <<< "$entry" 2>/dev/null || true)
@@ -118,7 +137,7 @@ jobs:
 
       - name: Retrieve indexed baseline report
         id: report_baseline
-        if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true'
+        if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true' && inputs.coordinator_call != true
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -439,7 +458,7 @@ jobs:
 
   diagnostics:
     name: Capture GH Actions diagnostics
-    if: ${{ always() && inputs.coordinator_call != true }}
+    if: ${{ always() && inputs.coordinator_call != true && needs.preflight.outputs.proceed == 'true' }}
     needs: [preflight, ste-lint]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
