@@ -63,7 +63,7 @@ Implement the generic verifier and aggregate outcome logic, migrate existing req
 - Migrated the three established validation workflows to reusable exact-SHA entry points. Coordinator calls validate the exact source commit, skip legacy report publication and diagnostics, and preserve the direct-push report path while activation remains staged.
 - Added regression suites for contract resolution, verifier security/resource constraints, and aggregate classification. They are registered in document-standards CI.
 - Corrected terminal finalization so an artifact-upload failure does not turn a cancelled or superseded result into an actionable capture failure. Added a regression assertion for this behavior.
-- **Protection and staging:** Effective branch protection remains unverified and the gpt branch is currently unprotected. Policy enforcement remains external-prerequisite; coordinator activation stays staged until branch protection and report migration are complete.
+- **Protection and staging:** GitHub branch protection is not required by ADR-0008. Coordinator activation remains staged pending publisher/report migration and operational readiness.
 - **Validation:** Regression tests are registered but were not run locally. No hosted workflow results or logs were inspected. No runtime success is claimed.
 
 ## 6. State and Evidence
@@ -72,7 +72,7 @@ Implement the generic verifier and aggregate outcome logic, migrate existing req
 - **Changed paths:** Worker contract builder, generic verifier, aggregate, task-validation policy/schema/adapter registry; regression suites; coordinator and generic-verifier workflows; the three reusable validation workflows; task-validation interface, Worker instructions, catalog, templates and Workflow Map; task/subtask records and indexes.
 - **Readback:** Contract builder, verifier, aggregate, their regression suites, policy/schema/registry, coordinator/verifier workflows, and all three reusable workflows read back from branch gpt at the stated head.
 - **Checks:** Regression tests are registered in validate-document-standards.yml. No local scripts/tests/lint were run. No workflow dispatch or hosted-run inspection.
-- **Limitations:** Coordinator activation remains staged. Branch protection is not enabled on gpt. Report producer/consumer migration and operational Confirmation remain in dependent subtasks 04 and 05. No runtime or CI success is claimed.
+- **Limitations:** Coordinator activation remains staged. GitHub branch protection is not an ADR-0008 requirement. Report producer/consumer migration and operational Confirmation remain in dependent subtasks 04 and 05. No runtime or CI success is claimed.
 
 ## 7. Completion
 
@@ -92,7 +92,7 @@ Implement the generic verifier and aggregate outcome logic, migrate existing req
 - Exact-SHA contract binding, verifier, aggregate, reusable workflows, and regression suites were read back.
 - Existing direct-push validation/report behavior remains intact while coordinator activation is staged.
 - No local validation or hosted CI inspection was performed.
-- Branch protection and report migration remain external/dependent gates.
+- Report migration and operational readiness remain dependent gates.
 
 ## 10. Handoff
 
