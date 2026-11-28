@@ -1,6 +1,6 @@
 # Task Folder: [Title]
 
-**Template version:** 2.8
+**Template version:** 2.9
 
 Create `workspace/tasks/<task-id>/task.md` from this template. Each task folder must also contain `subtasks/README.md`. Store child records under `subtasks/NN-short-name.md`.
 
@@ -34,6 +34,24 @@ Declare task-specific checks in this JSON block. The coordinator binds the contr
 {
   "contract_revision": "1",
   "checks": []
+}
+```
+
+## Validation Lifecycle
+
+The Worker updates this block after the source implementation commit. The source SHA is the exact commit carrying this task's Task-ID trailer. Metadata-only lifecycle updates do not start source validation.
+
+Schema: `.agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json`.
+
+```json
+{
+  "state": "not_committed",
+  "source_sha": null,
+  "policy_revision": null,
+  "coordinator_run_id": null,
+  "attempt": null,
+  "outcome": null,
+  "reconciled_at": null
 }
 ```
 
