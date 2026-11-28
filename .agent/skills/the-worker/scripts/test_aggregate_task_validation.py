@@ -124,7 +124,7 @@ class AggregateTaskValidationTests(unittest.TestCase):
         records.append(dict(records[0], check_id="unexpected"))
         self.assertEqual(self.classify(records)["outcome"], "coverage_failure")
 
-    def test_task_checks_extend_the_expected_set(self) -> None:
+    def test_task_checks_are_nested_under_generic_verifier(self) -> None:
         task_contract = {
             **self.task_contract,
             "checks": [{
