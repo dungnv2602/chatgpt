@@ -46,15 +46,18 @@ def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
 
 
 def run_git(root: Path, *args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
-    result = subprocess.run(
-        ["git", *args],
-        cwd=root,
-        shell=False,
-        capture_output=True,
-        text=True,
-        check=False,
-        timeout=60,
-    )
+    try:
+        result = subprocess.run(
+            ["git", *args],
+            cwd=root,
+            shell=False,
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=60,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise PublisherError(f"git operation timed out: {' '.join(args[:2])}") from exc
     if check and result.returncode != 0:
         raise PublisherError(f"git {' '.join(args[:2])} failed: {result.stderr[-2000:]}")
     return result
@@ -372,6 +375,8 @@ def publish_attempt(
             if review_dir.exists():
                 raise PublisherError("Cancelled or superseded attempt unexpectedly has a review folder")
             return False
+        if existing["recovery"]["reconciled_at"] is not None:
+            return False
         if review_file.exists():
             if review_file.read_text(encoding="utf-8") != review_content:
                 raise PublisherError("Existing review folder conflicts with the attempt record")
@@ -440,7 +445,10 @@ def publish_with_retry(
 
         run_git(root, "config", "user.name", "github-actions[bot]")
         run_git(root, "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
-        run_git(root, "add", "--", INDEX_PATH.as_posix(), (REVIEW_ROOT / f"{run_id}-{attempt}").as_posix())
+        run_git(root, "add", "--", INDEX_PATH.as_posix())
+        review_path = REVIEW_ROOT / f"{run_id}-{attempt}"
+        if (root / review_path).exists():
+            run_git(root, "add", "--", review_path.as_posix())
         commit = run_git(
             root,
             "commit",
