@@ -28,10 +28,7 @@ _No blocked tasks._
 
 ### Proposed — decision pending
 
-| ID | Title | Priority | Status | Approval | Reason | Task record |
-|---|---|---:|---|---|---|---|
-| 20261127-173000-68 | Reconcile accepted ADR source-Draft ID provenance | P0 | Proposed | Pending | Requires user authority for metadata-only provenance reconciliation between ADR-0004 and ADR-0007. | [record](tasks/20261127-173000/subtasks/68-adr-source-draft-provenance.md) |
-
+_No proposed tasks._
 ### Paused
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
