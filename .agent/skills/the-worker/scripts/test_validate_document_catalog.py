@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from validate_document_catalog import validate_catalog
+from validate_document_catalog import find_external_templates, template_location_error, validate_catalog
 
 
 HEADER = (
@@ -101,25 +101,26 @@ class CatalogValidatorTests(unittest.TestCase):
         self.set_catalog(self.valid_rows())
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any(
-            "Misplaced skill template under references/" in error
+            "Misplaced skill template outside assets/" in error
             for error in errors
         ))
 
-    def test_project_and_workspace_template_locations_are_allowed(self):
+    def test_templates_must_live_in_owning_skill_assets(self):
+        self.assertIsNone(
+            template_location_error(".agent/skills/example/assets/template.md")
+        )
+        for path in (
+            "area/novel/templates/scene-template.md",
+            "workspace/TASK_TEMPLATE.md",
+        ):
+            self.assertIn("owning skill's assets/", template_location_error(path))
+
+    def test_external_template_files_and_directories_are_detected(self):
         self.write("area/novel/templates/scene-template.md")
         self.write("workspace/TASK_TEMPLATE.md")
-        self.set_catalog([
-            "| Novel scene | Template required | "
-            "`area/novel/templates/scene-template.md` | Project-owned. |",
-            "| Workspace task | Template required | "
-            "`workspace/TASK_TEMPLATE.md` | Shared workspace template. |",
-        ], [
-            "| `area/novel/templates/*.md` | Exempt | Active |"
-            "`area/novel/WORKFLOW.md` | Template-source fixture. |",
-        ])
-        errors, row_count, _ = validate_catalog(self.root, self.catalog)
-        self.assertEqual(errors, [])
-        self.assertEqual(row_count, 2)
+        errors = find_external_templates(self.root)
+        self.assertEqual(len(errors), 2)
+        self.assertTrue(all("Misplaced template outside skills" in error for error in errors))
 
     def test_missing_canonical_path_fails(self):
         rows = self.valid_rows()
@@ -262,10 +263,10 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write("workspace/adr/README.md")
         self.write("workspace/adr/0001-historical-decision.md")
         self.write("workspace/archive/task/20261124-103354/task.md")
-        self.write("workspace/ADR_TEMPLATE.md")
+        self.write(".agent/skills/example/assets/ADR_TEMPLATE.md")
         self.set_catalog(self.valid_rows(), [
             "| `workspace/adr/*.md` | Template required | Active |"
-            "`workspace/ADR_TEMPLATE.md` | Historical and active ADRs share one flat folder. |",
+            "`.agent/skills/example/assets/ADR_TEMPLATE.md` | Historical and active ADRs share one flat folder. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])

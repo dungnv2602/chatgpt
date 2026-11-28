@@ -20,7 +20,7 @@ EXCLUDED_PREFIXES = (
     "workspace/discussion.md",
     "area/drawing/history/",
     "master/",
-    "area/novel/templates/",
+    ".agent/skills/romantic-storyteller-visual-artist/assets/",
     ".agent/skills/prompt-master/",
     ".agent/skills/asd-ste100/examples/",
 )
@@ -159,7 +159,6 @@ def resolve_markdown_target(
 ) -> str | None:
     # This link becomes valid after either task-template source is copied into a task folder.
     task_template_sources = {
-        "workspace/TASK_TEMPLATE.md",
         ".agent/skills/the-worker/assets/TASK_TEMPLATE.md",
     }
     if source in task_template_sources and target == "subtasks/README.md":

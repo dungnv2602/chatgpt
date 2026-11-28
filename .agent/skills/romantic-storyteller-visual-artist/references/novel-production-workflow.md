@@ -4,18 +4,18 @@
 
 Store all durable novel records in the repository's `area/novel/` workspace on branch `gpt`.
 
-The governing standard is [`area/novel/WORKFLOW.md`](../../../../area/novel/WORKFLOW.md). The quick reference and active templates are in [`area/novel/README.md`](../../../../area/novel/README.md).
+The governing standard is [`area/novel/WORKFLOW.md`](../../../../area/novel/WORKFLOW.md). The quick reference is in [`area/novel/README.md`](../../../../area/novel/README.md). The canonical templates are indexed in [`assets/README.md`](../assets/README.md).
 
 **Current format standard: Version 1.1.** Use these templates for new records and material revisions:
 
-- Novel: `area/novel/templates/novel-v1.1.md`
-- Character Profile (optional): `area/novel/templates/character-profile-v1.1.md`
-- Open Discussion: `area/novel/templates/open-discussion-v1.1.md`
-- Development Outline (optional): `area/novel/templates/development-outline-v1.1.md`
-- Story Arc: `area/novel/templates/arc-v1.1.md`
-- Scene: `area/novel/templates/scene-v1.1.md`
-- Illustration Note: `area/novel/templates/illustration-note-v1.1.md`
-- Illustration Prompt Record: `area/novel/templates/illustration-prompt-v1.1.md`
+- Novel: `.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.1.md`
+- Character Profile (optional): `.agent/skills/romantic-storyteller-visual-artist/assets/character-profile-v1.1.md`
+- Open Discussion: `.agent/skills/romantic-storyteller-visual-artist/assets/open-discussion-v1.1.md`
+- Development Outline (optional): `.agent/skills/romantic-storyteller-visual-artist/assets/development-outline-v1.1.md`
+- Story Arc: `.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.1.md`
+- Scene: `.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.1.md`
+- Illustration Note: `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.1.md`
+- Illustration Prompt Record: `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-prompt-v1.1.md`
 
 Version 1.0 templates remain as historical references for existing records. Do not mass-migrate untouched legacy documents.
 

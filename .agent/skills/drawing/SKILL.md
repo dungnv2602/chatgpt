@@ -140,7 +140,7 @@ Use the daily index template at `.agent/skills/drawing/assets/daily-index-templa
 
 Use the attempt template at `.agent/skills/drawing/assets/attempt-template.md`.
 
-For novel illustrations, use the scene-local templates in `area/novel/templates/`. Do not duplicate novel prompt histories in the daily drawing index.
+For novel illustrations, use the templates in `.agent/skills/romantic-storyteller-visual-artist/assets/`. Do not create project-local template copies or duplicate novel prompt histories in the daily drawing index.
 
 ### Skill-loading cadence
 

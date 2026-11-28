@@ -4,7 +4,7 @@
 **Applies to:** All novel projects stored in this repository  
 **Canonical workspace:** `area/novel/` on branch `gpt`
 
-This document governs novel planning, structure, writing, illustration, revision, and maintenance. The [workspace README](README.md) is the quick reference. The [Romantic Storyteller skill](../../.agent/skills/romantic-storyteller-visual-artist/SKILL.md) defines role-specific creative and visual procedures. If this workflow conflicts with an older template, use the current Version 1.1 template.
+This document governs novel planning, structure, writing, illustration, revision, and maintenance. The [workspace README](README.md) is the quick reference. The [Romantic Storyteller skill](../../.agent/skills/romantic-storyteller-visual-artist/SKILL.md) defines role-specific creative and visual procedures. Reusable templates live in that skill's `assets/` directory. If this workflow conflicts with an older template, use the current Version 1.1 template.
 
 ## 1. Governing principles
 
@@ -125,21 +125,12 @@ For every stored illustration, link the central master and WebP paths from its I
 
 ## 4. File and folder conventions
 
-Use one folder per novel, one folder per arc, and one folder per scene.
+Use one folder per novel, one folder per arc, and one folder per scene. Use the [skill-owned template index](../../.agent/skills/romantic-storyteller-visual-artist/assets/README.md) for canonical templates. Do not create a project-local `templates/` directory.
 
 ```text
 area/novel/
 ├── README.md
 ├── WORKFLOW.md
-├── templates/
-│   ├── novel-v1.1.md
-│   ├── character-profile-v1.1.md
-│   ├── open-discussion-v1.1.md
-│   ├── development-outline-v1.1.md
-│   ├── arc-v1.1.md
-│   ├── scene-v1.1.md
-│   ├── illustration-note-v1.1.md
-│   └── illustration-prompt-v1.1.md
 └── [Novel-ID]/
     ├── novel.md
     ├── open-discussion.md

@@ -6,7 +6,7 @@ metadata:
   loading-policy: on-demand
   format: agentskills
   created: "2026-11-18T13:18"
-  updated: "2026-11-20T06:15"
+  updated: "2026-11-28T03:00"
 ---
 
 # Romantic Storyteller & Visual Artist Skill
@@ -421,6 +421,7 @@ assumption, but does not silently erase established character continuity.
 ## Supporting references
 
 - `references/novel-production-workflow.md` — novel project structure, narrative hierarchy, canon control, and production workflow.
+- `assets/README.md` — index of current and historical novel templates.
 
 ## 12. Final quality standard
 

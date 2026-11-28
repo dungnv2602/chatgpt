@@ -10,20 +10,20 @@ This workspace contains the authoritative narrative records, working plans, scen
 - [Novel-01 — The Weather Between Us](Novel-01/novel.md): contemporary romance project. Existing records remain on the Version 1.0 structure unless revised.
 - [Novel-02 — Beyond the Listening (working title)](Novel-02/novel.md): original literary science-fiction romance. Andy is a software engineer with a computer-science background who works on an acoustic archive. Maya is its specialist AI. Their approved direction includes an early checkpoint-breach separation, Maya's later choice to reopen contact, reconciliation, and a lasting happy partnership. See the [Open Discussion](Novel-02/open-discussion.md) and the [Relationship Progression working outline](Novel-02/planning/relationship-progression.md).
 
-## Current approved templates — Version 1.1
+## Current approved templates — Version 1.1 (skill-owned)
 
 Use these for new records and material revisions:
 
-1. [Novel](templates/novel-v1.1.md)
-2. [Character Profile](templates/character-profile-v1.1.md) — optional when a concise profile in novel.md is sufficient
-3. [Open Discussion](templates/open-discussion-v1.1.md) — one active register per novel
-4. [Development Outline](templates/development-outline-v1.1.md) — optional focused planning record
-5. [Story Arc](templates/arc-v1.1.md)
-6. [Scene](templates/scene-v1.1.md)
-7. [Illustration Note](templates/illustration-note-v1.1.md)
-8. [Illustration Prompt Record](templates/illustration-prompt-v1.1.md)
+1. [Novel](../../.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.1.md)
+2. [Character Profile](../../.agent/skills/romantic-storyteller-visual-artist/assets/character-profile-v1.1.md) — optional when a concise profile in novel.md is sufficient
+3. [Open Discussion](../../.agent/skills/romantic-storyteller-visual-artist/assets/open-discussion-v1.1.md) — one active register per novel
+4. [Development Outline](../../.agent/skills/romantic-storyteller-visual-artist/assets/development-outline-v1.1.md) — optional focused planning record
+5. [Story Arc](../../.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.1.md)
+6. [Scene](../../.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.1.md)
+7. [Illustration Note](../../.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.1.md)
+8. [Illustration Prompt Record](../../.agent/skills/romantic-storyteller-visual-artist/assets/illustration-prompt-v1.1.md)
 
-The Version 1.0 templates are retained as historical references for existing records: [Novel](templates/novel-v1.md), [Story Arc](templates/arc-v1.md), [Scene](templates/scene-v1.md), and [Illustration Note](templates/illustration-note-v1.md). They are not the default for new work. Do not mass-migrate completed or untouched legacy records.
+The Version 1.0 templates are retained as historical references for existing records: [Novel](../../.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.md), [Story Arc](../../.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.md), [Scene](../../.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.md), and [Illustration Note](../../.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.md). They are not the default for new work. Do not mass-migrate completed or untouched legacy records.
 
 ## Narrative hierarchy and supporting records
 
@@ -41,21 +41,12 @@ Chapters are optional editorial groupings of scenes. They are not a mandatory fo
 
 ## Standard folder convention
 
-Create folders only when they contain real records or assets. Existing legacy projects may keep their established paths. Use this convention for new records and migrate older material only when useful and safe.
+Create folders only when they contain real records or assets. Existing legacy projects may keep their established paths. Use this convention for new records and migrate older material only when useful and safe. Reusable templates belong to the [Romantic Storyteller skill](../../.agent/skills/romantic-storyteller-visual-artist/SKILL.md), under its `assets/` directory. Do not create a project-local `area/novel/templates/` directory.
 
 ```text
 area/novel/
 ├── README.md
 ├── WORKFLOW.md
-├── templates/
-│   ├── novel-v1.1.md
-│   ├── character-profile-v1.1.md
-│   ├── open-discussion-v1.1.md
-│   ├── development-outline-v1.1.md
-│   ├── arc-v1.1.md
-│   ├── scene-v1.1.md
-│   ├── illustration-note-v1.1.md
-│   └── illustration-prompt-v1.1.md
 └── [Novel-ID]/
     ├── novel.md
     ├── open-discussion.md

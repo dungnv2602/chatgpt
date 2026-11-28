@@ -30,11 +30,9 @@ on:
       - '!workspace/task_board.md'
       - '.github/**/*.md'
       - '*.md'
-      # Check project-level and shared workspace templates and their owner contracts.
-      - 'area/novel/templates/**'
+      # Check novel workspace contracts and indexes. Templates are skill-owned.
       - 'area/novel/README.md'
       - 'area/novel/WORKFLOW.md'
-      - 'workspace/TASK_TEMPLATE.md'
       - 'workspace/README.md'
       - '.github/workflows/**'
   workflow_dispatch: {}

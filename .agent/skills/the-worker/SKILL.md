@@ -235,6 +235,8 @@ The catalog defines purpose and document type, required and conditional fields, 
 
 Canonical copy-ready formats are in `.agent/skills/the-worker/assets/`. See its README for the asset index. The catalog and validator are Worker-owned assets in `references/` and `scripts/`. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
 
+When you create or materially revise a template, scan every template in the repository. Compare each template with current workflows, repository structure, and governing standards. Update confirmed stale templates and their owner references. Store every reusable template in its owning skill's `assets/` directory. Do not create project-local or workspace-level template copies. Reconcile the catalog, indexes, and inbound links.
+
 ## Worker-owned domain operations
 
 The Worker is the sole activation and governance entry point for document governance, GitHub Actions, CI Ledger operations, and decision governance.

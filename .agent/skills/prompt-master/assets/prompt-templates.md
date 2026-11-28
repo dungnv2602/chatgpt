@@ -19,7 +19,7 @@ Full template library for Prompt Master. Read the relevant template when the use
 | [K — ComfyUI](#template-k--comfyui) | ComfyUI node-based image workflows |
 | [L — Prompt Decompiler](#template-l--prompt-decompiler) | Breaking down, adapting, or splitting existing prompts |
 | [M — Current Claude Task Brief](#template-m--current-claude-task-brief) | Complex, multi-step, or agentic task on current Claude models |
-| [N — OpenAI Task Brief](#template-n--openai-task-brief) | Complex tasks on GPT-6, GPT-6.1 Sol, or explicitly selected GPT-5.6 models |
+| [N — OpenAI Task Brief](#template-n--openai-task-brief) | Complex tasks across OpenAI models, ChatGPT, Codex, and the API |
 
 ---
 
@@ -470,10 +470,9 @@ Output:
 ```
 
 **Adaptation heuristics — evaluate on representative tasks:**
-- Luna: narrow the task and make the output contract explicit.
-- Sol: emphasize implementation context and acceptance criteria.
-- Astra: include decision criteria and evidence requirements for difficult work.
-- Preserve an explicitly selected GPT-5.6 model and apply its compatibility guidance in SKILL.md.
+- Keep the goal and output contract explicit.
+- Include implementation context and acceptance criteria for code tasks.
+- Add decision drivers and evidence limits for difficult tasks.
 - Combine related tasks when they share one outcome. Split when dependencies, review checkpoints, or context limits justify separate runs.
 - Ask for conclusions, assumptions, concise rationale, evidence, and checks rather than hidden chain-of-thought.
 - For current facts, request retrieval and citations when the environment provides those capabilities. Disclose missing access rather than invent sources.

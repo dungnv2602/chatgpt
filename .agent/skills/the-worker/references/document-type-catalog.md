@@ -1,10 +1,10 @@
 # Document Type Catalog
 
-**Catalog version:** 1.24
-**Previous tree inventory:** The last recursive audit at commit `315615e944ed55925a6aa72c59fd6401bdcc912b` counted 297 Markdown files outside root `master/` and `workspace/archive/`. That historical count predates the ADR-0004 task-folder migration. This task did not run a new recursive inventory, catalog simulation, validator, or tests.
+**Catalog version:** 1.25
+**Repository template audit baseline:** Branch `gpt` at commit `a02713809b3b5fe403ab4085c28d163b3b1a70fc` contained 277 in-scope Markdown files and 30 template-named files. The recursive tree showed 18 template assets already under skills and 12 novel templates outside skill directories. This audit reviewed the full template path inventory and current owner contracts before relocation.
 **Source branch:** `gpt`
 
-This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Skill-owned copy-ready templates belong in the owning skill's `assets/` directory. Explanatory references belong in `references/`. Project-level templates may use the owning project's designated template directory.
+This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Every reusable template belongs in its owning skill's `assets/` directory. Explanatory references belong in `references/`. Project workspaces link to skill-owned templates and must not keep local template copies.
 
 Do not create a second template when an owning workflow already defines the required format.
 
@@ -23,14 +23,14 @@ Do not create a second template when an owning workflow already defines the requ
 
 | Document type | Class | Current canonical format | Inventory finding / next action |
 |---|---|---|---|
-| Novel foundation | Template required | `area/novel/templates/novel-v1.1.md` | Current Version 1.1 template exists. |
-| Novel open-discussion register | Template required | `area/novel/templates/open-discussion-v1.1.md` | One active register per novel. The Novel-02 example uses an approved-decision register and topic-grouped questions. Its relationship roadmap embeds proposal content. It has no separate deferred or resolved sections. |
-| Character profile | Template required when created | `area/novel/templates/character-profile-v1.1.md` | Optional record. The inspected project records `area/novel/Novel-01/novel.md` and `area/novel/Novel-02/novel.md` contain no current example. Do not create when the novel summary is sufficient. |
-| Development outline | Template required when created | `area/novel/templates/development-outline-v1.1.md` | Optional focused planning record. `area/novel/Novel-02/planning/relationship-progression.md` is a current Version 1.1 topic-specific outline. Its section layout differs from the generic template. Preserve it and use the template for new records or material revisions. |
-| Story arc | Template required when created | `area/novel/templates/arc-v1.1.md` | Current Version 1.1 template exists. |
-| Scene | Template required when created | `area/novel/templates/scene-v1.1.md` | Current Version 1.1 template exists. Scene prose remains creative content. |
-| Illustration note | Template required | `area/novel/templates/illustration-note-v1.1.md` | One record per retained or reviewed novel illustration. Six Version 1.0 examples exist across Novel-01 Scenes 002–005. Preserve them as legacy records. Use Version 1.1 for new notes or material revisions. |
-| Illustration prompt record | Template required before generation | `area/novel/templates/illustration-prompt-v1.1.md` | Preserve chronological attempts and exact authored prompts. Three legacy prompt records exist in Novel-01 Scenes 003–005. Scene-003 declares Version 1.0. Scene-004 and Scene-005 use earlier layouts without version frontmatter. Preserve them and use Version 1.1 for new records. Complete the repository handoff only after you upload an accepted output. |
+| Novel foundation | Template required | `.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.1.md` | Current Version 1.1 template exists. |
+| Novel open-discussion register | Template required | `.agent/skills/romantic-storyteller-visual-artist/assets/open-discussion-v1.1.md` | One active register per novel. The Novel-02 example uses an approved-decision register and topic-grouped questions. Its relationship roadmap embeds proposal content. It has no separate deferred or resolved sections. |
+| Character profile | Template required when created | `.agent/skills/romantic-storyteller-visual-artist/assets/character-profile-v1.1.md` | Optional record. The inspected project records `area/novel/Novel-01/novel.md` and `area/novel/Novel-02/novel.md` contain no current example. Do not create when the novel summary is sufficient. |
+| Development outline | Template required when created | `.agent/skills/romantic-storyteller-visual-artist/assets/development-outline-v1.1.md` | Optional focused planning record. `area/novel/Novel-02/planning/relationship-progression.md` is a current Version 1.1 topic-specific outline. Its section layout differs from the generic template. Preserve it and use the template for new records or material revisions. |
+| Story arc | Template required when created | `.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.1.md` | Current Version 1.1 template exists. |
+| Scene | Template required when created | `.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.1.md` | Current Version 1.1 template exists. Scene prose remains creative content. |
+| Illustration note | Template required | `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.1.md` | One record per retained or reviewed novel illustration. Six Version 1.0 examples exist across Novel-01 Scenes 002–005. Preserve them as legacy records. Use Version 1.1 for new notes or material revisions. |
+| Illustration prompt record | Template required before generation | `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-prompt-v1.1.md` | Preserve chronological attempts and exact authored prompts. Three legacy prompt records exist in Novel-01 Scenes 003–005. Scene-003 declares Version 1.0. Scene-004 and Scene-005 use earlier layouts without version frontmatter. Preserve them and use Version 1.1 for new records. Complete the repository handoff only after you upload an accepted output. |
 | Non-novel drawing attempt | Template required | `.agent/skills/drawing/assets/attempt-template.md` | Template version 1.1. Separates record, generation, and user-decision states. Includes required lineage, criteria, provenance, and per-output evidence. |
 | Drawing pattern entry | Template required | `.agent/skills/drawing/assets/pattern-entry-templates.md` | Template version 1.1. Separate success and failure formats record evidence, confidence, and explicit user approval. Current examples remain in `.agent/skills/drawing/references/patterns/successful-patterns.md` and `.agent/skills/drawing/references/patterns/failure-patterns.md`. The Drawing Skill requires approval before each index change. |
 | Historical drawing prompt indexes | Lightweight pattern | `area/drawing/history/successful-prompts.md` and `area/drawing/history/failed-prompts.md` | These are navigation indexes for historical attempts, not templates for new attempts. Keep the classification rules and source links. New attempts use the canonical drawing attempt template. |
@@ -46,7 +46,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Decision Draft | Template required | `.agent/skills/the-worker/assets/DRAFT_TEMPLATE.md` | Template version 1.2. One proposal per decision. Assess each materially viable option against explicit decision drivers. Include no-change when viable. For multiple viable options, use a qualitative comparative matrix and recommend one option against the strongest alternative. Record evidence provenance, source versions, dates, commits, confidence, and limitations. Distinguish facts, external claims, tests, inferences, and hypotheses. Do not invent scores or estimates. Require explicit user review and approval. After the Worker completes the completeness and read-back review for an accepted ADR, delete the source Draft. Keep its ID and revision as ADR provenance. Retain the source temporarily only when deletion fails, under Promotion Cleanup Pending. |
 | Accepted Decision Record | Template required | `.agent/skills/the-worker/assets/ADR_TEMPLATE.md` | MADR-inspired decision record. Use promotion-pending only for the provisional promotion transaction. It is not accepted, must not appear in the accepted-decision index, and cannot govern a task. Change it to accepted only after the full rationale review and read-back both pass. Track decision status separately from implementation status. |
 | Repository analysis | Template required | `.agent/skills/the-worker/assets/ANALYSIS_TEMPLATE.md` | Evidence-based repository health snapshots at a fixed branch commit. Analysis does not authorize implementation and does not duplicate the CI Ledger. |
-| Novel workspace index and workflow | Embedded contract | `area/novel/README.md` and `area/novel/WORKFLOW.md` | The README indexes projects and current templates. The workflow defines narrative hierarchy, status/canon, versioning, and template-first authoring. Do not create a separate template. |
+| Novel workspace index and workflow | Embedded contract | `area/novel/README.md` and `area/novel/WORKFLOW.md` | The README indexes projects and links to the skill-owned templates. The workflow defines narrative hierarchy, status/canon, versioning, and template-first authoring. Do not create a separate template. |
 | Task board | Template required | `.agent/skills/the-worker/assets/TASK_BOARD_TEMPLATE.md` | The live board is the current schedule. Create or revise it from the canonical asset template. |
 | Report navigation | Embedded contract | `.takeout/reports/README.md` | One guide defines the unified index, latest lint report, Ledger, history layout, and on-demand rendering. |
 | Workspace navigation index | Embedded contract | `workspace/README.md` and `.takeout/reports/README.md` | Workspace README points to task navigation and unified CI evidence. The single report guide owns navigation and review order. |
@@ -99,13 +99,12 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `.takeout/images/README.md` | Embedded contract | Active | `.takeout/images/README.md`, `.agent/skills/the-worker/SKILL.md`, and `.agent/skills/the-worker/scripts/process_takeout.py` | Image storage, original-master retention, WebP derivatives, intake and processing procedure. The processor owns the YAML/CSV field contract. |
 | `.takeout/images/history/**/*.md` | Generator-owned | Optional | `.agent/skills/the-worker/scripts/process_takeout.py` and `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py` | Generated per-attempt Takeout verification reports. History may remain empty until a batch runs. |
 | `area/novel/*.md` | Embedded contract | Active | `area/novel/README.md` and `area/novel/WORKFLOW.md` | Novel root navigation and project-wide narrative, canon, status, and versioning rules. |
-| `area/novel/templates/*.md` | Exempt | Active | `area/novel/templates/scene-v1.1.md` | Canonical template source files, not authored novel records. The catalog lists individual document types separately. |
-| `area/novel/*/novel.md` | Template required | Active | `area/novel/templates/novel-v1.1.md` | Novel foundation records. |
-| `area/novel/*/open-discussion.md` | Template required | Active | `area/novel/templates/open-discussion-v1.1.md` | Per-novel open-discussion and approved-decision register. |
-| `area/novel/*/planning/*.md` | Template required | Active | `area/novel/templates/development-outline-v1.1.md` | Focused novel planning and development outlines. Preserve existing topic-specific legacy structures until material revision. |
-| `area/novel/*/*/arc.md` | Template required | Active | `area/novel/templates/arc-v1.1.md` | Story arc records. |
-| `area/novel/*/*/Scene-*/scene.md` | Template required | Active | `area/novel/templates/scene-v1.1.md` | Scene records. Creative prose remains unconstrained by prose-style templates. |
-| `area/novel/*/*/Scene-*/illustrations/illustration-*.md` | Template required | Active | `area/novel/templates/illustration-note-v1.1.md` and `area/novel/templates/illustration-prompt-v1.1.md` | Novel illustration notes and scene-local prompt/attempt records. Choose the matching type-specific template. |
+| `area/novel/*/novel.md` | Template required | Active | `.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.1.md` | Novel foundation records. |
+| `area/novel/*/open-discussion.md` | Template required | Active | `.agent/skills/romantic-storyteller-visual-artist/assets/open-discussion-v1.1.md` | Per-novel open-discussion and approved-decision register. |
+| `area/novel/*/planning/*.md` | Template required | Active | `.agent/skills/romantic-storyteller-visual-artist/assets/development-outline-v1.1.md` | Focused novel planning and development outlines. Preserve existing topic-specific legacy structures until material revision. |
+| `area/novel/*/*/arc.md` | Template required | Active | `.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.1.md` | Story arc records. |
+| `area/novel/*/*/Scene-*/scene.md` | Template required | Active | `.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.1.md` | Scene records. Creative prose remains unconstrained by prose-style templates. |
+| `area/novel/*/*/Scene-*/illustrations/illustration-*.md` | Template required | Active | `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.1.md` and `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-prompt-v1.1.md` | Novel illustration notes and scene-local prompt/attempt records. Choose the matching type-specific template. |
 | `.takeout/reports/README.md` | Embedded contract | Active | `.takeout/reports/README.md` | Sole CI report navigation and operating guide. |
 
 | `.agent/skills/README.md` | Embedded contract | Active | `.agent/skills/README.md` and `.agent/SESSION_START.md` | Skill index and activation hierarchy. |
@@ -149,7 +148,7 @@ The processor and its tests remain the authority for the current YAML and CSV fo
 
 ## Existing versioned templates
 
-The novel workspace has Version 1.1 templates for eight document types. It retains Version 1.0 templates for historical compatibility.
+The Romantic Storyteller skill owns Version 1.1 templates for eight novel document types. It retains Version 1.0 templates as historical references.
 
 Do not mass-migrate untouched legacy novel records. Use the current template for new records and material revisions.
 
@@ -199,20 +198,22 @@ The following records predate the current templates. Preserve them as historical
 | Drawing session brief | `area/drawing/2026-11-20/session-01-brief.md` and `area/drawing/2026-11-21/session-01-brief.md` | The 2026-11-20 brief uses a reconstruction from earlier notes. The 2026-11-21 brief records a closed session. Both preserve legacy structure. | Preserve them. New briefs use the canonical template and status values Active, Paused, and Closed. |
 | Novel illustration notes | `area/novel/Novel-01/Arc-01/Scene-002/illustrations/illustration-01.md`, `area/novel/Novel-01/Arc-01/Scene-002/illustrations/illustration-02.md`, `area/novel/Novel-01/Arc-01/Scene-002/illustrations/illustration-03.md`, `area/novel/Novel-01/Arc-01/Scene-003/illustrations/illustration-01.md`, `area/novel/Novel-01/Arc-01/Scene-004/illustrations/illustration-01.md`, and `area/novel/Novel-01/Arc-01/Scene-005/illustrations/illustration-01.md` | All six records declare format Version 1.0 and predate the current Version 1.1 template. | Preserve the records. Use Version 1.1 for new notes and material revisions. |
 | Session integrity and summary | `area/drawing/history/2026-11-12-conversation-integrity.md`, `area/drawing/history/2026-11-13-conversation-integrity.md`, `area/drawing/history/2026-11-12-summary.md`, and `area/drawing/history/2026-11-13-summary.md` | These historical records predate the standalone templates and use project-specific chronological and handoff structures. | Preserve them. Use the canonical templates for new records. |
-| Historical novel templates | `area/novel/templates/novel-v1.md`, `area/novel/templates/arc-v1.md`, `area/novel/templates/scene-v1.md`, and `area/novel/templates/illustration-note-v1.md` | The current Version 1.1 templates replace these Version 1.0 templates. | Preserve as historical references. New documents and material revisions use the current templates. |
+| Historical novel templates | `.agent/skills/romantic-storyteller-visual-artist/assets/novel-v1.md`, `.agent/skills/romantic-storyteller-visual-artist/assets/arc-v1.md`, `.agent/skills/romantic-storyteller-visual-artist/assets/scene-v1.md`, and `.agent/skills/romantic-storyteller-visual-artist/assets/illustration-note-v1.md` | The current Version 1.1 templates replace these Version 1.0 templates. | Preserve as historical references. New documents and material revisions use the current templates. |
 | Early drawing attempt | `area/drawing/2026-11-19/attempt-01.md` | This record predates the Version 1.1 attempt template and uses an earlier free-form structure. | Preserve it. Use Version 1.1 for new attempts and material revisions. |
 | Historical image-prompt logs | `area/drawing/history/2026-11-12-image-prompts.md`, `area/drawing/history/2026-11-13-image-prompts.md`, and `area/drawing/history/2026-11-16-image-prompts.md` | These chronological logs predate the current drawing-attempt template and preserve historical prompts and outcomes. | Preserve them as historical records. New attempts use the canonical attempt template. |
 | Historical conversation indexes and transcript segments | `area/drawing/history/conversation-2026-11-12-intimacy-and-portrait.md`, `area/drawing/history/conversation-2026-11-12-starry-night-verbatim-available.md`, and `area/drawing/history/conversation-2026-11-12-verbatim-available-record.md` | These are legacy navigation/source records for past conversations, not a new recurring authoring type. | Preserve them. New conversation archive records use the conversation-integrity template and do not require separate index or transcript templates. |
 | Legacy standalone drawing prompt notes | `area/drawing/history/cozy-bedroom-painterly-attempt-27-2026-11-12.md` and `area/drawing/history/cozy-bedroom-cream-cardigan-navy-polo-2026-11-12.md` | These standalone prompt notes predate the one-record-per-attempt workflow. | Preserve them. New drawing attempts use the canonical attempt template. |
 | Novel illustration prompt records | `area/novel/Novel-01/Arc-01/Scene-003/illustrations/illustration-01-prompt.md`, `area/novel/Novel-01/Arc-01/Scene-004/illustrations/illustration-01-prompt.md`, and `area/novel/Novel-01/Arc-01/Scene-005/illustrations/illustration-01-prompt.md` | Scene-003 declares Version 1.0. Scene-004 and Scene-005 lack version frontmatter and use earlier custom layouts. | Preserve the historical records. Use the canonical Version 1.1 template for new prompt records and material revisions. |
-| Legacy workspace task record | No retained active flat record. The Worker deletes completed task records at closeout. | Active task records now use ID folders. The Worker deletes completed task records after closeout validation. | Do not restore or create active flat task notes. New active task records use `.agent/skills/the-worker/assets/TASK_TEMPLATE.md` Version 2.0. |
+| Legacy workspace task record | No retained active flat record. The Worker deletes completed task records at closeout. | Active task records now use ID folders. The Worker deletes completed task records after closeout validation. | Do not restore or create active flat task notes. New active task records use `.agent/skills/the-worker/assets/TASK_TEMPLATE.md` Version 2.7. |
 | Agent Skill definitions | Existing skill files under `.agent/skills/` | Many skills predate the reusable Agent Skill template. | Do not mass-convert existing skills. Use the canonical template for new skills and material rewrites. |
 
 This review did not require a new session summary or conversation-integrity record. Their templates remain available for future sessions.
 
 ## Audit outcome
 
-The full in-scope Markdown inventory has no recurring document family without a canonical template, schema, embedded contract, or generator-owned format. The review found no reason to add another standalone template. Existing canonical assets cover the recurring novel, drawing, session, conversation, task, skill, unified CI report and CI-ledger record types.
+The repository scan found no recurring document family without a canonical template, schema, embedded contract, or generator-owned format. No new template type was required. The 12 novel templates were relocated into the Romantic Storyteller skill's `assets/` directory. The existing Version 1.0 novel templates remain available as historical references.
+
+The template freshness review found two confirmed stale assets. The task-board template did not fully match the live board's scheduler and decision-collection contract. The Prompt Master OpenAI task brief still named retired model-family labels and obsolete model-specific guidance. Both were updated to match current repository and product context. The other 28 template assets were reviewed and retained without changes.
 
 Historical daily indexes, reconstructed session briefs, chronological prompt logs, transcript/index records, and standalone legacy prompt notes remain unchanged. They are not new document types and must not be mass-migrated. One-off creative direction notes remain exempt. Generated report files remain generator-owned.
 
@@ -220,12 +221,15 @@ The validator enforces path-family coverage for Markdown. Machine-readable JSON,
 
 ## Catalog maintenance
 
-When you add or change a recurring document type:
+When you add or change a recurring document type or template:
 
 1. Identify its owning skill or workflow.
-2. Define its canonical template, schema, or embedded contract.
-3. Add or update one document-type row and, for Markdown, one narrow path-coverage rule.
-4. Link the canonical format from its owner index.
-5. Define structural validation and migration rules.
-6. Read back all changed paths.
-7. Run the catalog validator and regression tests through the hosted Document Standards workflow. The validator enforces Markdown path coverage, Active/Reserved/Optional rule consistency, and basic table integrity. It does not prove semantic document conformance. Do not run repository scripts locally.
+2. Store reusable templates in the owning skill's `assets/` directory.
+3. Scan every repository template for drift against current workflows, repository structure, and governing standards.
+4. Update confirmed stale templates and their owner references.
+5. Define its canonical template, schema, or embedded contract.
+6. Add or update one document-type row and, for Markdown, one narrow path-coverage rule.
+7. Link the canonical format from its owner index.
+8. Define structural validation and migration rules.
+9. Read back all changed paths.
+10. Run the catalog validator and regression tests through the hosted Document Standards workflow. The validator enforces Markdown path coverage, Active/Reserved/Optional rule consistency, and basic table integrity. It does not prove semantic document conformance. Do not run repository scripts locally.
