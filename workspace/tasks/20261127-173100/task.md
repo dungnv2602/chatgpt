@@ -6,16 +6,16 @@
 
 - **ID:** 20261127-173100
 - **Created:** 2026-11-27 17:31 UTC
-- **Updated:** 2026-11-28
+- **Updated:** 2026-11-28 03:13 UTC
 - **Priority:** P1
-- **Status:** Ready
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create a task-board template; scan documents for missing templates and create any missing templates; audit and update stale templates against the current repository/workflow; relocate all templates currently outside skills into appropriate skill locations in accordance with the skill standard.
 - **Governing ADR(s):** None
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready; approved, no dependencies.
+- **Eligibility / deferral reason:** In Progress — user-selected current focus; child 02 is active.
 - **Related tasks:** None
 
 ## 1. Original Request
@@ -46,6 +46,13 @@ Improve template coverage, freshness, and canonical placement across the reposit
 
 ## 5. Progress
 
+### 2026-11-28 03:13 UTC — child 02 resumed
+
+- **Action:** Resumed the user-selected Template Fix workstream after `/start`. Completed the startup baseline and reviewed the task, child index, Worker procedures, report index, Ledger, and template catalog.
+- **Result:** Child 02 is the only open required child. The repository already contains the 12 novel templates under the Romantic Storyteller skill's `assets/templates/` directory. The project-local template directory is absent. The catalog records a 277-Markdown / 30-template audit baseline and reports no missing recurring document format.
+- **Next:** Independently verify template freshness, correct any remaining stale owner guidance, and complete placement/reference reconciliation.
+
+
 ### 2026-11-27 17:31 UTC
 
 - **Action:** Created the Template Fix parent with two children for task-board template creation and document template coverage audit/remediation.
@@ -62,7 +69,7 @@ Improve template coverage, freshness, and canonical placement across the reposit
 
 ## 6. Current State and Remaining Work
 
-Child 01 (canonical task-board template) is Done. Child 03 (duplicate P0 lint-report remediation) is complete and closed through shared commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Child 02 (repository template coverage audit, stale-template updates, and relocation of templates into appropriate skills) remains Ready. The repository-wide coverage/freshness/placement audit has not started.
+Child 01 (canonical task-board template) is Done. Child 03 (duplicate P0 lint-report remediation) is complete and closed through shared commit `1e697f0e5167e9c0778cadef69d7cf084249be27`. Child 02 (repository template coverage audit, stale-template updates, and relocation of templates into appropriate skills) is In Progress. The existing catalog records the prior inventory and relocation, but the task still requires independent verification and correction of any remaining stale guidance.
 
 ## 7. Verification and Evidence
 
