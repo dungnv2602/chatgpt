@@ -64,17 +64,29 @@ The user designated a persistent parent for future skills refactoring. Its recor
 
 ## Task hierarchy and CI attribution
 
-A user task is the genuine parent. Its follow-up requests and CI remediation are child subtasks. The Ledger must never create a synthetic parent for a file, rule, workflow, job, or CI finding.
+A user task is the genuine parent. Its follow-up requests and CI remediation are child subtasks. Never infer parentage from the current execution pointer, changed files, workflow names, branch, or timing.
 
 Every task-specific implementation commit must include one exact commit trailer:
 
-```text
+~~~text
 Task-ID: <active-task-or-subtask-id>
-```
+~~~
 
-The CI report must preserve this source task ID. If it names a subtask, resolve its Parent Task ID. Create CI remediation children only when the source ID resolves to an existing, active, genuine user parent. If it does not resolve, retain the finding in the Ledger as unassigned. Never infer attribution from the current board pointer, changed file, workflow name, branch, or timing.
+The task-validation publisher preserves the source Task-ID from the exact source commit. If it names a subtask, resolve that child's Parent Task ID. A valid, active, user-originated parent takes precedence. If the marker is missing, malformed, ambiguous, unsupported, or resolves to a missing, inactive, deleted, or non-user parent, use only the permanent fallback parent configured by worker_lifecycle.fallback_parent_id in the Worker-owned task-validation policy. Its current record is workspace/tasks/20261128-193800/task.md. Verify the policy ID and the fallback record's matching ID, Origin: System, Status: In Progress, Current execution: No, and subtasks index. If any check fails, fail closed; never infer a substitute or create another fallback. The fallback parent is permanent, never Current Execution, never Done/Cancelled, and never deleted.
 
-The CI Ledger owns finding identity, evidence, grouping, and child creation. It may update only the attributed parent’s finding summary, its child records, and its subtask index. It must not create parent tasks, change parent status/priority/current execution, or edit the task board.
+### Task-validation review queue
+
+The Worker is non-blocking while validation runs. After committing a task-specific change, continue with the next eligible task; do not poll, wait for, dispatch, rerun, or inspect hosted CI. The publisher and recovery workflow own result capture. When assigned to reconcile the review queue, read workspace/task-validation/status-index.json first.
+
+- Success: do not inspect logs or create feedback children. Reconcile the attempt after checking whether its exact source SHA is still the task's current commit. Only mark the task Done when the complete required check set succeeds for that exact current SHA and policy revision and no required subtasks remain.
+- Cancelled or superseded: no logs, review folders, feedback children, or task-state changes. These attempts are not feedback work.
+- check_failure, coverage_failure, infrastructure_failure, or capture_failure: inspect Actions logs only for the recorded actionable failure and only when hosted inspection is authorized. Diagnose root causes, not individual log lines.
+- Group related failed checks/jobs/steps into one stable root-cause group per parent. Create or reuse one active P0, Approved child per distinct root cause. Do not create one child per check, job, assertion, log line, or duplicate attempt. Use the canonical subtask template and stable Ledger group field for reuse.
+- Resolve the source Task-ID to its active genuine parent; otherwise route to the single permanent fallback parent. Never use the current board pointer as a substitute.
+- After review, mark the attempt's recovery.reconciled_at timestamp and remove its review folder. Keep the compact status record for three days after reconciliation. Unresolved records never expire and must stop checkpoint advancement.
+- The status index stores only the ADR-0008 compact attempt fields. Never add findings, root-cause signatures, logs, diagnostics, evidence, remediation state, or task history to it.
+
+The legacy CI Ledger owns only pre-migration report findings until every legacy producer and consumer has migrated. Do not create a second findings archive for task-validation attempts. The Worker owns task-validation diagnosis, grouping, attribution, child creation, and task lifecycle. The Ledger does not schedule.
 
 CI remediation children are P0, Approved, and Ready under the standing authorization. Use Proposed only when that remediation requires a specific unresolved decision. Routine implementation does not need a new ADR merely because it changes code. Keep a genuine decision gate narrow to the dependent work.
 
@@ -278,14 +290,16 @@ This procedure applies before task selection, status changes, blocker declaratio
 
 ## CI and Actions operational ownership
 
-The Worker owns both CI Ledger and GitHub Actions operations. Its references define policy and procedures. CI work is task-scoped and workspace-bound: handle CI only when a corresponding assigned task exists under `workspace/tasks/` and is selected within the user's authorized scope. A startup P0 batch does not create CI work or authorize CI baseline collection, report/index/history reads, Ledger reconciliation, or remediation. Do not access CI report-family paths for general session setup or unrelated tasks. Load CI references only for the assigned CI task that requires them. The report producer, composite action, workflow, report schema, report template, Ledger schema, shared eligibility module, report indexes, and immutable evidence remain in their report-family paths because existing workflows and scripts consume those paths. Treat those paths as Worker-governed implementation assets, not independent operational owners. Consolidation must preserve path contracts until a coordinated migration updates every consumer.
+The Worker owns GitHub Actions operations, the task-validation review queue, and the remaining legacy CI Ledger until its migration gates pass. CI work is task-scoped and workspace-bound: handle it only for an assigned task under workspace/tasks/ and within the user's authorized scope. A startup P0 batch does not authorize CI baseline collection, status-index/report-history reads, Ledger reconciliation, hosted inspection, or remediation. Load CI references only for the selected CI task that requires them.
 
+The task-validation status index under workspace/task-validation/ is the canonical compact status record for ADR-0008 coordinator attempts. It is not a findings archive. The legacy .takeout/reports/ family remains intact for pre-migration lint and non-task-validation workflow producers/consumers until every consumer is migrated and Confirmation permits retirement. Do not scan it during startup or unrelated work. Do not add task-validation findings or logs to either index.
 
 ## Canonical CI implementation
 
-- Scripts and regression tests: `.agent/skills/the-worker/scripts/`.
-- Schemas and templates: `.agent/skills/the-worker/assets/`.
-- Capture action: `.github/workflows/gh-actions-capture.yml`.
-- Report indexes, history, and Ledger state remain in `.takeout/reports/` as data outputs.
+- Worker-owned scripts and regression tests: .agent/skills/the-worker/scripts/.
+- Worker-owned schemas, policies and templates: .agent/skills/the-worker/assets/.
+- Workflow execution and reusable capture entry points: .github/workflows/.
+- ADR-0008 status index, checkpoint and review queue: workspace/task-validation/.
+- Legacy report outputs, history, and Ledger state pending staged migration: .takeout/reports/.
 
-Do not maintain duplicate implementations in report-family script directories. The capture workflow calls the Worker scripts.
+Do not maintain duplicate implementations in report-family script directories. Workflows consume Worker-owned scripts and assets; they do not own the policy, schemas, or task lifecycle.
