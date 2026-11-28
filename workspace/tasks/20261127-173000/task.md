@@ -607,13 +607,11 @@ The CI Ledger is canonical for diagnostic text, immutable report links, occurren
 
 ## 6. Current State and Remaining Work
 
-This is the persistent, open P0 Refactor Skills parent. The current authorized batch consists of children 65–67.
+This is the persistent, open P0 Refactor Skills parent.
 
-- Child 65 — template freshness gate strengthened and closed.
-- Child 66 — README ownership audit and pointer cleanup closed, with a documented full non-README scan limitation.
-- Child 67 — workflow optimization and cycle closure is In Progress.
-
-The task board and subtask index publish the current state. Completed child records are deleted under the lifecycle rules. The parent remains open.
+- Child IDs 64–73 are completed. Their records were deleted under lifecycle rules.
+- Child 74 — Prevent Worker skill-governance drift — is In Progress and is the current execution.
+- The task board and subtask index publish this state.
 
 ## 7. Verification and Evidence
 
