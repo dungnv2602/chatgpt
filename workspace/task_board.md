@@ -32,6 +32,8 @@ _None._
 
 ### Proposed — decision pending
 
+**DRAFT-0010 — CI Error Task Folders and Automatic Feedback Loop.** Revision 1, draft; exact report path confirmation and formal decision review pending.
+
 **DRAFT-0009 — Project, Task, and Knowledge Lifecycle.** Proposal in review; no implementation authorization.
 
 ### Paused
