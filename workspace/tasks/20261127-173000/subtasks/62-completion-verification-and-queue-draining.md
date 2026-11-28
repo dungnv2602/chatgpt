@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-62
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -60,9 +60,9 @@ Scope: Worker skill, task/subtask templates, board template, and GitHub Actions 
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Pending
-- **Changed paths:** Pending
-- **Readback:** Pending
+- **Commit SHA:** Readback commits: `68b00ab984e2c8eac2724247bca62525dbfd071f`, `fa9f8dfd52f8fd013306fd2db29533430c4f2d46`, `3b7f145e3b02c82aa7919cd1c0c2d0dca934faf2`, `2ae6f37f62e4c108c91aee5649283acc7347274a`, `575d27d953318175031f89284cad19b42eb0571a`
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`, `.agent/skills/the-worker/assets/TASK_TEMPLATE.md`, `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md`, `.agent/skills/the-worker/assets/TASK_BOARD_TEMPLATE.md`, `.agent/skills/the-worker/references/github-actions.md`
+- **Readback:** All five changed paths were fetched from `gpt` after commits and confirmed available.
 - **Checks:** Not performed. Local execution and hosted CI review remain restricted.
 - **Limitations:** Readback verifies repository content, not runtime behavior or hosted CI.
 
@@ -70,7 +70,7 @@ Scope: Worker skill, task/subtask templates, board template, and GitHub Actions 
 
 - **Status:** In Progress
 - **Completed at:** Not applicable
-- **Completion basis:** Pending
+- **Completion basis:** Criteria satisfied by implementation and readback. Validation execution remains unperformed by policy.
 
 ## 8. Hosted Validation
 
