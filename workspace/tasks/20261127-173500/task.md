@@ -6,16 +6,16 @@
 
 - **ID:** 20261127-173500
 - **Created:** 2026-11-27 17:40 UTC
-- **Updated:** 2026-11-27 17:40 UTC
+- **Updated:** 2026-11-28
 - **Priority:** P0
-- **Status:** Proposed
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit user instruction to delete `.takeout/reports/latest-lint-report.json`.
-- **Governing ADR(s):** Pending — DRAFT-0005
-- **Current execution:** No
-- **Dependencies:** User approval of DRAFT-0005 revision 1 and promotion to an accepted ADR.
-- **Eligibility / deferral reason:** Proposed — implementation would change accepted ADR-0003. Do not modify the report file, generator, workflows, or consumers until the new ADR reaches accepted status.
+- **Governing ADR(s):** ADR-0007
+- **Current execution:** Yes
+- **Dependencies:** ADR-0007 accepted; implementation underway.
+- **Eligibility / deferral reason:** Eligible and authorized; incomplete coordinated migration.
 - **Related tasks:** ADR-0003; Refactor Skills parent 20261127-173000 (subsequent workstream instruction only).
 
 ## 1. Original Request
@@ -54,26 +54,31 @@ Remove the standalone latest lint report JSON and use the unified `.takeout/repo
 
 ### 2026-11-27 17:40 UTC
 
-- **Action:** Created this independent parent after correcting its objective-based hierarchy.
-- **Result:** DRAFT-0005 revision 1 is in review. No implementation changes have been made.
-- **References:** [DRAFT-0005](../draft/DRAFT-0005-unified-index-without-latest-lint-copy.md); [ADR-0003](../adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md).
-- **Next:** Wait for approval of the exact Draft revision. Promote the decision before implementation.
+- Created this independent task.
+
+### 2026-11-28
+
+- ADR-0007 accepted and execution authorized.
+- Generator latest-copy output removed (commit `3975531703365e3b5c8dd4cd71f05abade021d7d`).
+- Regression assertions changed to index/history-based checks (commit `cc76ac95683ab6fbd9806ab2ef37979ada58465f`). Tests were not run.
+- Changed-document baseline selection migrated to index/history retrieval (commits `4939316a0e350d49432649410df93c1d5e332fae`, `e2e4ad93b5a3b3b90133c6473e4e3485473c0f78`). Not validated.
+- Report guide updated (commit `b287e7cba57027af90851252e44fbd56db5ce4b2`).
+- Full-docs workflow migration, final consumer audit, deletion of the empty reset-marker file, and readback verification remain outstanding. Task is not complete.
 
 ## 6. Current State and Remaining Work
 
-The accepted ADR-0003 requires one latest lint JSON file. DRAFT-0005 proposes to supersede that requirement. Implementation remains blocked until the user approves the Draft and the resulting ADR reaches accepted status.
+ADR-0007 supersedes the latest-copy requirement. Coordinated migration is incomplete. Finish full-docs workflow, verify consumers, remove the marker file, and read back all changes.
 
 ## 7. Verification and Evidence
 
-- **Commit SHA:** Not committed.
-- **Changed paths:** Task record and task index only.
-- **Readback:** Pending.
-- **Checks:** Not performed.
-- **Limitations:** No tests or hosted validation were performed.
+- **Commit SHA:** Multiple commits listed in Progress.
+- **Readback:** Remaining.
+- **Checks:** Not run, per scope.
+- **Limitations:** Hosted CI not inspected. Migration not complete.
 
 ## 8. Handoff
 
-Wait for the user's decision on DRAFT-0005 revision 1. Do not implement the proposal before the new ADR reaches accepted status.
+Complete the remaining coordinated migration and verify repository readback. Do not claim completion until every active producer and consumer is reconciled.
 
 ## 9. Subtasks
 
