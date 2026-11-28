@@ -90,7 +90,7 @@ Serve as the persistent, open parent task and coordination point for skills refa
 ### 2026-11-28 — implementation closeout and verification debt lifecycle
 
 - **Action:** Revised The Worker, task and subtask templates, board template, and GitHub Actions reference. Separates implementation closeout from runtime validation and mandates queue reconstruction/continuation after closeout.
-- **Result:** Readback confirmed all five paths on branch `gpt`. Child 62 closed and its record removed under the standing child lifecycle rule. The Refactor Skills child queue is at quiescence. Child 61 remains paused for future test-evidence review. Tests were not executed and hosted results remain unreviewed under existing restrictions.
+- **Result:** Readback confirmed all five paths on branch `gpt`. Child 62 closed and its record removed under the standing child lifecycle rule. The Refactor Skills child queue is at quiescence. Child 61 completed the structural-validator regression coverage follow-up and was removed after closeout. Tests were not executed and hosted results remain unreviewed under existing restrictions.
 - **Commit evidence:** `68b00ab984e2c8eac2724247bca62525dbfd071f`, `fa9f8dfd52f8fd013306fd2db29533430c4f2d46`, `3b7f145e3b02c82aa7919cd1c0c2d0dca934faf2`, `2ae6f37f62e4c108c91aee5649283acc7347274a`, `575d27d953318175031f89284cad19b42eb0571a`. Tracking reconciliation commits also read back.
 - **Validation:** Local scripts, tests, and lint not run. Hosted CI results not inspected.
 
@@ -616,4 +616,15 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 
 - User instructed: “Only allow for this substask, do not modify workflow policy.” Recorded this as authorization to review existing hosted validation for child 61 only. No canonical Worker/GitHub Actions policy or workflow file was changed. No local tests were run, and no workflow was dispatched or rerun.
 - Attempted read-only run discovery through the available GitHub connector. The unified `.takeout/reports/index.json` currently returns an empty `runs` array (count 151). Commit-status queries for the workflow-definition and validator commits returned no statuses. The commit-workflow-runs operation returned no results and only supports pull-request-triggered runs. No connector operation is available to enumerate push-triggered runs, so no run ID could be identified and no hosted run page, logs, job output, or artifacts were opened.
-- Child 61 remains Blocked pending a supported read-only run locator or an exact existing run ID. Board and child record reconciled. The persistent Refactor Skills parent remains open.
+- Child 61 was subsequently completed after the user authorized isolated test execution for that child. Hosted CI results remain unobserved because the connector cannot enumerate push-triggered runs. The persistent Refactor Skills parent remains open.
+
+
+### 2026-11-28 — child 61 structural validator verification closeout
+
+- **Authorization:** The user expanded the child-specific authorization: “Do whatever you need to finish this subtask, including upcoming requests related to this, approve. Fix and verify until successful. Only report when you're done by successful. Execute.” This permitted isolated test execution for child 61 only. No canonical Worker/GitHub Actions policy or workflow file was changed.
+- **Implementation:** Expanded `.agent/skills/the-worker/scripts/test_validate_structural_ownership.py` to cover missing required markers across all four canonical files (14 marker cases), each missing canonical file, unresolved Session Start pointer targets, and both forbidden Conversation Mode headings. Existing valid-fixture and extra-link tests remain.
+- **Commit:** `2ba66ca499b480388d73ab564b56abe5b3e2363f` with trailer `Task-ID: 20261127-173000-61`. Test-file blob SHA: `fbac3bd0702c981573e734e96edaf349747415ec`. The test source used for execution was independently hash-matched to this exact Git blob. Validator source SHA `e73f58fa87dc4f8efd1df73ebc7ca6a6dd4153f7` remained unchanged.
+- **Execution result:** The exact committed validator and test sources passed unittest discovery in an isolated temporary directory: 7 test methods, 0 failures, 0 errors. Temporary files were removed automatically.
+- **Workflow:** Readback of `.github/workflows/validate-document-standards.yml` at SHA `70937191e08eb5dea25d05e1485e22c058802029` confirms that it already runs the structural ownership unittest suite and then invokes the validator. No workflow change was needed.
+- **Hosted CI boundary:** No hosted result is claimed. The unified report index had no run entries, commit statuses were empty, and the available connector could not enumerate push-triggered runs or dispatch a workflow. Hosted outcome remains separate, unobserved metadata.
+- **Closeout:** Child 61 completed and was removed under the normal child lifecycle. Its index row and deferred board entry were removed. ADR-0006 and the persistent parent lifecycle remain unchanged.
