@@ -235,16 +235,16 @@ class LedgerAttributionTests(unittest.TestCase):
             self.ingest()
         self.assertFalse(path.exists())
 
-    def test_missing_task_marker_keeps_finding_unassigned(self):
+    def test_missing_task_marker_uses_permanent_fallback_parent(self):
         self.add_lint("100", source_task_id=None)
         result = self.ingest()
         finding = self.read_ledger()["findings"][0]
         self.assertEqual(result["findings_created"], 1)
-        self.assertEqual(result["subtasks_created"], 0)
-        self.assertEqual(finding["task_refs"], [])
-        self.assertEqual(finding["subtask_refs"], [])
-        self.assertEqual(finding["evidence"][-1]["attribution_status"], "missing_marker")
-        self.assertEqual(self.child_files(), [])
+        self.assertEqual(result["subtasks_created"], 1)
+        self.assertEqual(finding["task_refs"], [FALLBACK_ID])
+        self.assertEqual(finding["subtask_refs"], [FALLBACK_ID + "-01"])
+        self.assertEqual(finding["evidence"][-1]["attribution_status"], "fallback_missing_marker")
+        self.assertEqual(LEDGER.task_metadata(self.child_files()[0].read_text(encoding="utf-8"), "Parent Task ID"), FALLBACK_ID)
 
     def test_parent_task_marker_creates_ci_child_under_genuine_parent(self):
         board_before = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
@@ -260,7 +260,7 @@ class LedgerAttributionTests(unittest.TestCase):
         self.assertEqual(finding["subtask_refs"], [PARENT_ID + "-01"])
         self.assertIn(finding["finding_id"], parent_content)
         self.assertEqual(LEDGER.task_metadata(parent_content, "Priority"), "P1")
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 1)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 2)
         self.assertEqual(len(child_files), 1)
         child = child_files[0].read_text(encoding="utf-8")
         self.assertEqual(LEDGER.task_metadata(child, "ID"), PARENT_ID + "-01")
@@ -289,7 +289,7 @@ class LedgerAttributionTests(unittest.TestCase):
         self.assertEqual(finding["subtask_refs"], [PARENT_ID + "-02"])
         self.assertEqual(len(self.child_files()), 2)
 
-    def test_unknown_or_inactive_parent_never_creates_synthetic_task(self):
+    def test_unknown_or_inactive_parent_uses_permanent_fallback_without_synthetic_parent(self):
         self.add_lint("103", source_task_id="20261127-090001", findings=[{
             "file": "docs/a.md", "rule": "rule_a", "level": "hard", "message": "A",
             "fingerprint": "aaaaaaaa1111", "comparison": "new",
@@ -307,8 +307,10 @@ class LedgerAttributionTests(unittest.TestCase):
         self.ingest()
         findings = self.read_ledger()["findings"]
         self.assertEqual(len(findings), 3)
-        self.assertTrue(all(not item["task_refs"] and not item["subtask_refs"] for item in findings))
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 3)
+        self.assertTrue(all(item["task_refs"] == [FALLBACK_ID] and len(item["subtask_refs"]) == 1 for item in findings))
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 5)
+        self.assertEqual(len(self.child_files()), 3)
+        self.assertTrue(all(item["evidence"][-1]["attribution_status"].startswith("fallback_") for item in findings))
 
     def test_actions_commit_trailer_creates_child_under_originating_parent(self):
         message = "Implement task change.\n\nTask-ID: " + PARENT_ID + "\n"
@@ -320,7 +322,7 @@ class LedgerAttributionTests(unittest.TestCase):
         self.assertEqual(finding["evidence"][-1]["source_task_id"], PARENT_ID)
         self.assertEqual(finding["evidence"][-1]["source_commit_sha"], "b" * 40)
 
-    def test_ambiguous_actions_task_trailers_remain_unassigned(self):
+    def test_ambiguous_actions_task_trailers_use_permanent_fallback(self):
         message = (
             "Two unrelated task markers.\n\nTask-ID: " + PARENT_ID
             + "\nTask-ID: 20261127-090001\n"
@@ -328,9 +330,9 @@ class LedgerAttributionTests(unittest.TestCase):
         self.add_actions("201", task_message=message)
         self.ingest()
         finding = self.read_ledger()["findings"][0]
-        self.assertEqual(finding["task_refs"], [])
-        self.assertEqual(finding["evidence"][-1]["attribution_status"], "ambiguous_marker")
-        self.assertEqual(self.child_files(), [])
+        self.assertEqual(finding["task_refs"], [FALLBACK_ID])
+        self.assertEqual(finding["evidence"][-1]["attribution_status"], "fallback_ambiguous_marker")
+        self.assertEqual(len(self.child_files()), 1)
 
     def test_two_finding_groups_create_sibling_children_under_one_parent(self):
         findings = [
@@ -356,16 +358,16 @@ class LedgerAttributionTests(unittest.TestCase):
         self.assertEqual(finding["subtask_refs"], [PARENT_ID + "-01"])
         self.assertEqual(len(self.child_files()), 1)
 
-    def test_latest_unattributed_observation_does_not_reuse_old_parent(self):
+    def test_latest_unattributed_observation_uses_fallback_not_old_parent(self):
         self.ingest_after_lint("220", source_task_id=PARENT_ID)
         self.ingest_after_lint("221", source_task_id=None)
         finding = self.read_ledger()["findings"][0]
-        self.assertEqual(finding["task_refs"], [PARENT_ID])
-        self.assertEqual(finding["subtask_refs"], [PARENT_ID + "-01"])
-        self.assertEqual(finding["evidence"][-1]["attribution_status"], "missing_marker")
-        self.assertEqual(len(self.child_files()), 1)
+        self.assertEqual(set(finding["task_refs"]), {PARENT_ID, FALLBACK_ID})
+        self.assertEqual(set(finding["subtask_refs"]), {PARENT_ID + "-01", FALLBACK_ID + "-01"})
+        self.assertEqual(finding["evidence"][-1]["attribution_status"], "fallback_missing_marker")
+        self.assertEqual(len(self.child_files()), 2)
 
-    def test_lint_tooling_failure_is_a_finding_but_unattributed(self):
+    def test_lint_tooling_failure_routes_to_permanent_fallback(self):
         checks = [
             {"name": name, "status": ("Failed" if name == "Markdown links and heading anchors" else "Passed"),
              "exit_code": (1 if name == "Markdown links and heading anchors" else 0), "output": "check"}
@@ -376,8 +378,8 @@ class LedgerAttributionTests(unittest.TestCase):
         findings = self.read_ledger()["findings"]
         self.assertEqual(len(findings), 1)
         self.assertEqual(findings[0]["category"], "lint_tooling")
-        self.assertEqual(findings[0]["task_refs"], [])
-        self.assertEqual(self.child_files(), [])
+        self.assertEqual(findings[0]["task_refs"], [FALLBACK_ID])
+        self.assertEqual(len(self.child_files()), 1)
 
     def test_first_full_lint_report_seeds_baseline_without_findings(self):
         self.write_ledger(baselines={"on_changed": True, "on_repo": False})
@@ -505,24 +507,24 @@ class LedgerAttributionTests(unittest.TestCase):
         self.assertEqual(self.read_ledger()["findings"], [])
         self.assertEqual(self.child_files(), [])
 
-    def test_unknown_flat_task_record_does_not_become_parent(self):
+    def test_unknown_flat_task_record_routes_to_fallback_not_as_parent(self):
         flat_id = "20261127-080000"
         flat = self.root / "workspace" / "tasks" / (flat_id + ".md")
         flat.write_text("# Legacy flat task\n\n- **ID:** " + flat_id + "\n- **Origin:** User\n- **Status:** In Progress\n", encoding="utf-8")
         self.add_lint("292", source_task_id=flat_id)
         self.ingest()
         finding = self.read_ledger()["findings"][0]
-        self.assertEqual(finding["task_refs"], [])
-        self.assertEqual(finding["subtask_refs"], [])
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 1)
+        self.assertEqual(finding["task_refs"], [FALLBACK_ID])
+        self.assertEqual(finding["subtask_refs"], [FALLBACK_ID + "-01"])
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 2)
 
-    def test_scheduled_actions_run_is_unattributed(self):
+    def test_scheduled_actions_run_routes_to_fallback(self):
         self.add_actions("293", task_message="Task-ID: " + PARENT_ID, source_event="schedule")
         self.ingest()
         finding = self.read_ledger()["findings"][0]
-        self.assertEqual(finding["task_refs"], [])
-        self.assertEqual(finding["evidence"][-1]["attribution_status"], "unsupported_event")
-        self.assertEqual(self.child_files(), [])
+        self.assertEqual(finding["task_refs"], [FALLBACK_ID])
+        self.assertEqual(finding["evidence"][-1]["attribution_status"], "fallback_unsupported_event")
+        self.assertEqual(len(self.child_files()), 1)
 
     def test_malformed_report_remains_unprocessed(self):
         report = self.add_lint("294")
