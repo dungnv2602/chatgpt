@@ -1,5 +1,7 @@
 ## Current Step
 
+- **2026-11-28:** DRAFT-0007 Revision 1 prepared and indexed. The proposal recommends deterministic structural checks mapped to canonical owners. User review is pending; implementation remains unauthorized.
+
 - **2026-11-28:** DRAFT-0006 Revision 1 approved. ADR-0005 accepted and implementation underway. The refactor consolidates operational ownership in The Worker and reconciles associated templates. Readback verification is in progress.
 
 - **2026-11-28T06:50:00+07:00**: Updating The Worker, Conversation Mode, and Session Start to authorize autonomous task-material recovery and immediate cleanup of temporary artifacts, with preservation safeguards for canonical and retained evidence. Next: read back changed paths.
@@ -15,6 +17,8 @@
 - **2026-11-27T13:36:52Z**: Closed P0 child 24 after source readback and resolution of three passive-voice findings. Child 26 is now the current P0 execution. The full Ledger remains accessible through its Git blob SHA. Hosted CI results remain out of scope.
 
 ## Open Discussions
+
+- **2026-11-28:** [DRAFT-0007 — Automated Structural Validation for Canonical Ownership and Drift](draft/DRAFT-0007-automated-structural-ownership-validation.md), revision 1. Decision required: approve Option 2 (lightweight structural validator) and the defined bounded scope. Implementation is not authorized until the resulting ADR is accepted.
 
 - **2026-11-27:** [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](draft/DRAFT-0005-unified-index-without-latest-lint-copy.md), revision 1. Decision required: remove the standalone latest lint JSON and make the shared index the only latest-report locator. ADR-0003 currently requires the file. User approval of this exact Draft revision is pending. Implementation task: [20261127-173500](tasks/20261127-173500/task.md).
 
