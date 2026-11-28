@@ -92,3 +92,6 @@
 
 
 - **2026-11-28:** Reconstructed and reconciled the document-governance parent and nested child, restoring catalog validation under Worker ownership and readback-verifying the workflow/catalog/script changes. Child 01 and its descendant were completed and deleted under the task lifecycle. Refactor Skills is at quiescence with child 61 intentionally paused.
+
+
+- **2026-11-28:** Completed metadata-only reconciliation of ADR-0007's source-Draft reference from DRAFT-0005 to DRAFT-0008. The original approved scope remains unchanged. ADR-0004's source reference remains DRAFT-0005. No further open decision remains.
