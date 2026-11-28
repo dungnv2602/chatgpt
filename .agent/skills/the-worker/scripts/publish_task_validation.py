@@ -253,8 +253,8 @@ def validate_index(index: Any) -> dict[str, Any]:
                         raise ValueError("timezone is required")
                 except ValueError as exc:
                     raise PublisherError("Status-index recovery timestamp is malformed") from exc
-        if key <= (checkpoint["run_id"], checkpoint["attempt"]):
-            raise PublisherError("Status-index contains an attempt at or below its checkpoint")
+        if key <= (checkpoint["run_id"], checkpoint["attempt"]) and recovery["reconciled_at"] is None:
+            raise PublisherError("Checkpoint cannot pass an unresolved attempt")
     return index
 
 
