@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dungnv2602/chatgpt/blob/gpt/.agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json",
+  "title": "Task Validation Status Index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "closed_through",
+    "attempts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "closed_through": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "attempt"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_task_id",
+          "source_sha",
+          "coordinator_run_id",
+          "attempt",
+          "check_set_id",
+          "policy_revision",
+          "completed_at",
+          "outcome",
+          "actions_url",
+          "recovery"
+        ],
+        "properties": {
+          "source_task_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9]{8}-[0-9]{6}(?:-[0-9]{2,})?$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source_sha": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "coordinator_run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "check_set_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "policy_revision": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "outcome": {
+            "enum": [
+              "success",
+              "check_failure",
+              "coverage_failure",
+              "infrastructure_failure",
+              "capture_failure",
+              "cancelled",
+              "superseded"
+            ]
+          },
+          "actions_url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://github\\.com/dungnv2602/chatgpt/actions/runs/[0-9]+$"
+          },
+          "recovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reconciled_at",
+              "retry_count",
+              "last_retry_at"
+            ],
+            "properties": {
+              "reconciled_at": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "retry_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "last_retry_at": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
