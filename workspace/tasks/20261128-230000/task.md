@@ -140,6 +140,11 @@ Acceptance criteria are mapped to these required child tasks:
 - Although `main` contains the dispatcher and scheduled recovery entry points, its dispatcher and coordinator workflow blobs (`9959288f223ee613d0eaab0a0ba7315bfb4544a1` and `4f8255d6b5b896dc25a8542ff2b3858071e3e75e`) still contain the obsolete branch-protection prerequisite and lack the new metadata-only commit guard. Workflow presence is verified; implementation parity is not.
 - No write or merge to `main` is authorized. Keep implementation on `gpt`; do not treat the default-branch copies as updated.
 - The status index now contains 222 unresolved `capture_failure` attempts, all without check-set identity and with checkpoint zero. The current subtask source `c9ffdffd3c955af0ddb471f85557b32460315d8f` matches run `46165107595`, attempt 1; its lifecycle is `review_required`. Hosted logs were not inspected, so no root cause is asserted.
+### 2026-11-28 — metadata recursion remains an operationally unresolved defect
+
+- The status index has since reached 226 attempts, all `capture_failure`, all without check-set identity, all unreconciled, with checkpoint zero. It still records capture failures for metadata-only source commits created after the `gpt` commit-level guard was added.
+- The guard is present in `gpt`, but runtime suppression is not demonstrated. The stale `main` dispatcher/coordinator copies are a possible version-parity issue; no causal link is established without authorized run inspection.
+- Subtask 04 source `c9ffdffd3c955af0ddb471f85557b32460315d8f` remains `review_required` against run `46165107595`/attempt 1. Hosted logs were not inspected; no remediation cause is claimed.
 ## 6. Current State and Remaining Work
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
