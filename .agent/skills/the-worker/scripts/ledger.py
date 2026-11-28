@@ -395,7 +395,7 @@ def active_fallback_parent(root, parent_id):
         return None, "fallback_parent_unreadable"
     if (
         task_metadata(content, "ID") != parent_id
-        or task_metadata(content, "Origin") != "System"
+        or task_metadata(content, "Origin") != "Assistant"
         or task_metadata(content, "Status") != "In Progress"
         or task_metadata(content, "Current execution") != "No"
         or "permanent system-owned fallback parent" not in task_metadata(content, "Eligibility / deferral reason").lower()
