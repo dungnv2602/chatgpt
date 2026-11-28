@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-64
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
@@ -55,7 +55,7 @@ Correct Worker queue-draining and closeout behavior, recursively reconcile the R
 
 - **Commit SHA:** `3188b5c5a0b9057ad392b5db7ba16fb553be50d8`
 - **Changed paths:** `.agent/skills/the-worker/SKILL.md`
-- **Readback:** Pending
+- **Readback:** Verified on branch gpt. Worker commit `3188b5c5a0b9057ad392b5db7ba16fb553be50d8`; board/index reconciliation commits read back.
 - **Checks:** Not performed
 - **Limitations:** Hosted CI not inspected. Local tests prohibited.
 
@@ -63,7 +63,8 @@ Correct Worker queue-draining and closeout behavior, recursively reconcile the R
 
 - **Status:** Not Done
 - **Completed at:** Not applicable
-- **Completion basis:** Complete workflow and task-tree reconciliation and drain the eligible queue.
+- **Completed at:** 2026-11-28 UTC
+- **Completion basis:** Canonical Worker rules added for recursive hierarchy reconciliation, stale pause reassessment, consolidated blocker collection, and parent/workstream boundary. Board and parent index were reconciled and read back.
 
 ## 8. Hosted Validation
 
