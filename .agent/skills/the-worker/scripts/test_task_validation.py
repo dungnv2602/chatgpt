@@ -44,7 +44,7 @@ class TaskValidationTests(unittest.TestCase):
             "$defs": {
                 "check": {
                     "additionalProperties": False,
-                    "properties": {"adapter": {"enum": ["python-script"]}},
+                    "properties": {"adapter": {"enum": ["python-script", "python-module"]}},
                 }
             },
         }
@@ -54,7 +54,12 @@ class TaskValidationTests(unittest.TestCase):
                 "python-script": {
                     "accepts_shell": False,
                     "runtime": "python3",
-                }
+                },
+                "python-module": {
+                    "accepts_shell": False,
+                    "runtime": "python3",
+                    "allowed_modules": [],
+                },
             },
         }
         self.contract = {
@@ -120,6 +125,12 @@ class TaskValidationTests(unittest.TestCase):
 
     def test_rejects_unknown_adapter(self) -> None:
         self.contract["checks"][0]["adapter"] = "shell"
+        with self.assertRaises(verifier.ContractError):
+            self._validate()
+
+    def test_rejects_non_allowlisted_python_module(self) -> None:
+        self.contract["checks"][0]["adapter"] = "python-module"
+        self.contract["checks"][0]["entrypoint"] = "package.module"
         with self.assertRaises(verifier.ContractError):
             self._validate()
 
