@@ -8,7 +8,7 @@
 - **Created:** 2026-11-27 17:40 UTC
 - **Updated:** 2026-11-28 22:30 +07:00
 - **Priority:** P0
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit execution cue and task scope following accepted ADR-0007.
@@ -36,13 +36,13 @@ The Refactor Skills workstream continues under its own parent. This report-layou
 
 Remove the standalone latest lint report JSON and use the unified `.takeout/reports/index.json` as the only locator for the latest lint report.
 
-1. Obtain approval for DRAFT-0005 revision 1 and promote it to a new accepted ADR. Keep ADR-0003 immutable.
-2. Stop the lint generator from writing the standalone latest JSON file.
-3. Resolve the latest eligible lint baseline from the shared index and its `history_path`.
-4. Update both lint workflows, regression tests, and active report documentation.
-5. Delete `.takeout/reports/latest-lint-report.json`.
-6. Read back all changed paths and confirm no active producer or consumer depends on the deleted path.
-7. Do not inspect hosted CI results or run local tests.
+1. Promote the approved proposal to accepted ADR-0007. Keep ADR-0003 immutable. (Complete)
+2. Stop the lint generator from writing the standalone latest JSON file. (Complete)
+3. Resolve the latest eligible lint baseline from the shared index and its `history_path`. (Complete)
+4. Update both lint workflows, regression tests, and active report documentation. (Complete)
+5. Delete `.takeout/reports/latest-lint-report.json`. (Complete)
+6. Read back all changed paths and confirm no active producer or consumer depends on the deleted path. (Complete; repository search results pointing to older removed scope folders were confirmed stale by current-branch 404 readback)
+7. Do not inspect hosted CI results or run local tests. (Honored)
 
 ## 4. Decisions
 
@@ -64,22 +64,24 @@ Remove the standalone latest lint report JSON and use the unified `.takeout/repo
 - Report guide updated (commit `b287e7cba57027af90851252e44fbd56db5ce4b2`).
 - Full-docs workflow baseline retrieval and staging migrated (commit `a581ff4b24356ba234fd34d341c4ac104c5bf06c`).
 - Workflow autonomy/blocker discipline strengthened in canonical Worker instructions (commit `c87fa200c648e22e3d482d90f3cf92f475e750aa`).
-- A regression assertion for report index ordering requires correction before closeout. Final consumer audit, marker deletion, readback, and reconciliation remain outstanding.
+- Corrected the index-order assertion to reflect descending order (commit `147e8a35f94264b7853c1563be2df98a352b87c4`).
+- Deleted the reset-marker file (commit `683ded33ed88787771288d8da08407f5b6d19098`).
+- Reconciled board and discussion registers; readback confirmed updated active paths. No active current-branch producer or consumer references the deleted latest-copy artifact.
 
 ## 6. Current State and Remaining Work
 
-ADR-0007 supersedes the latest-copy requirement. Coordinated migration is incomplete. Correct the index-order regression assertion, verify active consumers and workflow references, remove the reset marker, reconcile the board/discussion and read back the committed changes.
+ADR-0007 supersedes the latest-copy requirement. Coordinated migration is complete. The standalone reset marker was deleted. Current workflows retrieve eligible baseline reports through the shared index and immutable history paths, and report documentation identifies the index as the locator.
 
 ## 7. Verification and Evidence
 
 - **Commit SHA:** Multiple commits listed in Progress.
-- **Readback:** Partial; final readback remains.
+- **Readback:** Confirmed on `gpt` for the generator, test file, both workflows, report README/index, task board, discussion register, and Worker skill. The deleted marker returns not found.
 - **Checks:** Not run, per scope.
-- **Limitations:** Hosted CI not inspected. Migration not complete.
+- **Limitations:** Tests were not run and hosted CI was not inspected, as required by scope. This is implementation closeout, not validation.
 
 ## 8. Handoff
 
-Complete the remaining coordinated migration and verify repository readback. Do not claim completion until every active producer and consumer is reconciled.
+Closeout complete. Readback evidence and limitations are recorded above.
 
 ## 9. Subtasks
 
