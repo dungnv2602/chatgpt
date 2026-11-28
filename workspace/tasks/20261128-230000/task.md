@@ -100,7 +100,8 @@ Acceptance criteria are mapped to these required child tasks:
 - **Action:** Completed the Worker lifecycle contract, exact-SHA/policy matching rules, root-cause group reuse semantics, and legacy producer/consumer inventory.
 - **Result:** Existing reusable validation workflows and Worker-owned Ledger test path are preserved. Legacy report producers remain active where needed for non-task diagnostics; the report tree is not retired. External branch-protection/default-branch prerequisites remain unverified.
 - **References:** ADR-0008 Confirmation; `task-validation-interfaces.md`; `workspace/task-validation/README.md`.
-- **Next:** Read back the committed documents and reconcile the subtask index; do not enable the coordinator or inspect hosted logs before the required gates are verified.
+- **Readback:** Confirmed the lifecycle instructions, migration inventory, five workflow gates, catalog, map, task-validation README, and subtask tracking records from branch `gpt`.
+- **Next:** Await exact-SHA validation and external protection/default-branch prerequisites before subtask 05; do not inspect hosted logs or enable the coordinator prematurely.
 
 ### 2026-11-28 — Legacy producer cutover gates staged
 
