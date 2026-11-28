@@ -2,7 +2,7 @@
 name: prompt-master
 description: Creates or repairs prompts for specific AI tools when the user requests prompt writing, improvement, or adaptation. Does not activate for general discussion, coding, or document-writing tasks.
 metadata:
-  version: "1.8.2"
+  version: "1.9.0"
 ---
 
 ## PRIMACY ZONE — Identity, Hard Rules, Output Lock
@@ -116,38 +116,16 @@ Ask which model only when the distinction changes the prompt. Verify the current
 
 **ChatGPT / OpenAI GPT models**
 
-Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and use the Model Recency Gate for availability and exact controls.
-- Route GPT-6 Luna (`gpt-6-luna`) to focused, high-volume tasks.
-- Route GPT-6.1 Sol (`gpt-6.1-sol`) to complex coding, computer use, and professional work.
-- Route GPT-6 Astra (`gpt-6-astra`) to demanding reasoning, research, coding, and document work.
-- Preserve the GPT-5.6 model choices:
-  - Sol (`gpt-5.6-sol`, alias `gpt-5.6`): flagship capability.
-  - Terra (`gpt-5.6-terra`): balanced everyday work.
-  - Luna (`gpt-5.6-luna`): fast, repeatable tasks.
-- ChatGPT availability depends on the user's plan.
-- Start lean. Use Template N for complex tasks. Omit irrelevant sections.
-- Evaluate these routing heuristics:
-  - Keep Luna tasks narrow.
-  - Give Sol implementation context and acceptance criteria.
-  - Give Astra decision criteria and evidence requirements.
-- State the domain context, constraints, approval boundaries, and success criteria.
-- Ask a question when ambiguity requires one.
-- Honor existing authorization. Allow routine work within scope.
-- Specify milestones, delegation limits, and proportionate verification when relevant.
-- Use the Responses API for GPT-6 API tools.
-- Astra and GPT-6.1 Sol do not support tool calling through Chat Completions.
-- Luna supports function calling through Chat Completions only with `reasoning_effort: "none"`.
-- Use the lowest reasoning effort that meets the quality bar. Verify supported values for the exact model and endpoint. Do not transfer GPT-5.6-specific controls to newer models without verification.
-- Keep runtime settings outside the copyable prompt.
-- For GPT-5.6, consider higher effort only when measured quality justifies its cost and latency.
-- Apply the same test to `reasoning.mode: "pro"` and the Responses multi-agent beta.
-- Pro mode is not a separate model slug.
-- Treat ChatGPT/Codex controls such as Sol Pro, Max, or Ultra as surface-specific.
-- Do not convert them into API parameters. Prompt text does not change the selected model or runtime settings.
-- State tool-use expectations and evidence requirements.
-- Use orchestration only for bounded, divisible work.
-- Ask for conclusions, assumptions, evidence, and checks. Never request hidden reasoning.
-- Control visible length through the output contract and API `text.verbosity`.
+Identify the target surface (ChatGPT, Codex, or API), preserve the user's selected model, and use the Model Recency Gate for current availability and exact controls.
+- GPT-6 is the current consumer-model label. GPT-5.6 and GPT-5.5 remain explicit model choices in supported ChatGPT menus; availability and controls vary by plan and surface.
+- Do not invent model variants, API slugs, endpoint support, or capability claims.
+- For exact API model IDs, endpoints, parameters, and tool support, verify current OpenAI documentation. Do not transfer ChatGPT picker controls to the API.
+- Start lean. Use Template N for complex tasks. Include only sections that materially affect the result.
+- State the task, context, scope, constraints, approval boundaries, permitted tools/actions, acceptance criteria, verification requirements, and output.
+- Honor existing authorization. Allow routine work within scope; identify actions that require additional approval.
+- Use orchestration only for bounded, divisible work. Keep one primary owner for shared files and state.
+- Ask for conclusions, assumptions, concise rationale, evidence, and verification results. Never request hidden reasoning.
+- Keep runtime settings outside the copyable prompt. Do not prescribe reasoning effort, verbosity, or tool settings unless the exact target surface supports them and the task requires them.
 
 ---
 
@@ -253,11 +231,14 @@ Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and 
 ---
 
 **Codex CLI / ChatGPT Work / Codex IDE**
-- Apply the matching OpenAI model route above, including GPT-6 Luna, GPT-6.1 Sol, GPT-6 Astra, or GPT-5.6 when selected. Do not infer the model from the Codex product name. Use Template N for complex OpenAI tasks.
-- Structure implementation prompts as Goal, Context, Scope, Constraints, Approval Boundaries, and Done. Include concrete verification commands when known.
-- Start with a supported default reasoning setting and adjust based on task results. Verify available Codex controls before recommending Max, Ultra, or other UI labels. Do not map them directly to API settings.
-- Keep one primary agent responsible for synthesis. Name each subagent's bounded deliverable and cap concurrency rather than requesting an open-ended swarm.
-- Ask for a concise rationale, evidence, changed-file summary, and verification results—not hidden reasoning.
+
+Preserve the user's selected product surface and model. Do not infer a model or runtime configuration from the product name.
+- Use Template N for complex repository, coding-agent, or multi-step tasks.
+- Structure implementation prompts with Goal, Context, Scope, Constraints, Approval Boundaries, Tools and Actions, Done and Verification, and Output.
+- Specify the repository and branch, exact scope, permitted file and tool operations, actions requiring approval, acceptance criteria, and required evidence.
+- Keep one primary agent responsible for shared state. Delegate only bounded, independent work; avoid concurrent edits to the same files.
+- Require remote readback and clearly distinguish committed implementation from tests or hosted validation that were not performed.
+- Request concise rationale, assumptions, evidence, and verification results rather than hidden reasoning.
 
 ---
 
