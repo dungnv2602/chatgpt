@@ -342,7 +342,7 @@ def main() -> int:
     except ContractError as exc:
         print(json.dumps({"outcome": "coverage_failure", "error": str(exc)}))
         return 2
-    except InfrastructureError as exc:
+    except (InfrastructureError, OSError) as exc:
         print(json.dumps({"outcome": "infrastructure_failure", "error": str(exc)}))
         return 3
 
