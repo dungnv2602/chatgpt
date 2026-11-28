@@ -54,7 +54,9 @@ Before answering or acting on a request with an identifiable outcome, find or cr
 
 Preserve every request with an identifiable outcome verbatim in its own parent task or follow-up subtask under Original Request/Original Prompt. Preserve non-deliverable clarifications, constraints, decisions, and approvals verbatim under Subsequent Instructions. Link the record from its parent index and keep the task board current. A request is not tracked solely because it appears in chat, a parent summary, or the discussion register.
 
-Before creating a record, inspect active task records and the board. Reuse a parent only when the objective is genuinely the same. A substantive follow-up still receives its own child record. Never place unrelated requests under one parent to reduce task count.
+Before creating a record, inspect active task records and the board. Before assigning a child ID, read the full parent task record and its subtask index. Include all Progress and closeout history. Treat every ID ever used in that parent as consumed, even after deletion. Choose the next unused sequential number. An empty index does not prove that an ID is available. Reuse a parent only when the objective is genuinely the same. A substantive follow-up still receives its own child record. Never place unrelated requests under one parent to reduce task count.
+
+Every task and subtask record must retain the JSON `Validation Contract` block from its current template. Set `contract_revision` and `checks`. Use `[]` when no task-specific checks are required. Each implementation commit must carry one exact `Task-ID` trailer that resolves to one record in that commit's tree. The coordinator binds the contract to that commit's exact SHA. Missing or ambiguous attribution or contract data fails closed. Use only registered typed adapters and repository-relative entrypoints. Never add shell strings, credentials, environment overrides, or permission settings. Read `references/task-validation-interfaces.md` for the complete interface.
 
 ## Persistent skills-refactoring parent exception
 
@@ -62,23 +64,37 @@ The user designated a persistent parent for future skills refactoring. Its recor
 
 ## Task hierarchy and CI attribution
 
-A user task is the genuine parent. Its follow-up requests and CI remediation are child subtasks. The Ledger must never create a synthetic parent for a file, rule, workflow, job, or CI finding.
+A user task is the genuine parent. Its follow-up requests and CI remediation are child subtasks. Never infer parentage from the current execution pointer, changed files, workflow names, branch, or timing.
 
 Every task-specific implementation commit must include one exact commit trailer:
 
-```text
+~~~text
 Task-ID: <active-task-or-subtask-id>
-```
+~~~
 
-The CI report must preserve this source task ID. If it names a subtask, resolve its Parent Task ID. Create CI remediation children only when the source ID resolves to an existing, active, genuine user parent. If it does not resolve, retain the finding in the Ledger as unassigned. Never infer attribution from the current board pointer, changed file, workflow name, branch, or timing.
+The task-validation publisher preserves the source Task-ID from the exact source commit. If it names a subtask, resolve that child's Parent Task ID. A valid, active, user-originated parent takes precedence. If the marker is missing, malformed, ambiguous, unsupported, or resolves to a missing, inactive, deleted, or non-user parent, use only the permanent fallback parent configured by worker_lifecycle.fallback_parent_id in the Worker-owned task-validation policy. Its current record is workspace/tasks/20261128-193800/task.md. Verify the policy ID and the fallback record's matching ID, Origin: Assistant, Status: In Progress, Current execution: No, and subtasks index. If any check fails, fail closed; never infer a substitute or create another fallback. The fallback parent is permanent, never Current Execution, never Done/Cancelled, and never deleted.
 
-The CI Ledger owns finding identity, evidence, grouping, and child creation. It may update only the attributed parent’s finding summary, its child records, and its subtask index. It must not create parent tasks, change parent status/priority/current execution, or edit the task board.
+### Task-validation review queue
+
+The Worker is non-blocking while validation runs. After committing a task-specific change, continue with the next eligible task; do not poll, wait for, dispatch, rerun, or inspect hosted CI. The publisher and recovery workflow own result capture. When assigned to reconcile the review queue, read workspace/task-validation/status-index.json first.
+
+After each task-specific source commit, update the task record's Validation Lifecycle JSON block with state `awaiting_ci`, the exact source SHA, and that commit's policy blob SHA. This is a metadata-only commit and must not trigger source validation. Do not put lifecycle data in the compact status index. The recovery sweep compares awaiting task records with indexed attempts and dispatcher runs. It starts a missing exact-SHA dispatch only when source and current policy activation, effective branch protection, and default-branch workflow availability are verified. Otherwise it leaves the task awaiting CI and reports the unmet gate. Cancelled and superseded attempts do not change task lifecycle state.
+
+- Success: do not inspect logs or create feedback children. Reconcile the attempt after checking whether its exact source SHA is still the task's current commit; when current, set lifecycle state `passed`, record run/attempt/outcome/reconciliation time, mark the index record reconciled, and remove its review folder. A stale result must not overwrite the current task lifecycle. Only mark the task Done when the complete required check set succeeds for that exact current SHA and policy revision and no required subtasks remain.
+- Cancelled or superseded: no logs, review folders, feedback children, or task-state changes. These attempts are not feedback work.
+- check_failure, coverage_failure, infrastructure_failure, or capture_failure: set lifecycle state `review_required` only when the result SHA is current. Inspect Actions logs only for the recorded actionable failure and only when hosted inspection is authorized. Diagnose root causes, not individual log lines. After recording/reusing remediation children, set lifecycle state `reviewed` when current, mark the index record reconciled, and remove its review folder.
+- Group related failed checks/jobs/steps by diagnosed root cause and genuine parent. Create or reuse one active P0, Approved child per distinct root cause. Do not create one child per check, job, assertion, log line, or duplicate attempt. Derive a stable `rc-<16 lowercase hex>` group ID from the normalized root-cause signature plus parent ID, store it in the child's `Root-cause group` field, and reuse only an active child with the same parent and group ID. Do not use the legacy Ledger group for new task-validation remediation.
+- Resolve the source Task-ID to its active genuine parent; otherwise route to the single permanent fallback parent. Never use the current board pointer as a substitute.
+- After review, mark the attempt's recovery.reconciled_at timestamp and remove its review folder. Keep the compact status record for three days after reconciliation. Unresolved records never expire and must stop checkpoint advancement.
+- The status index stores only the ADR-0008 compact attempt fields. Never add findings, root-cause signatures, logs, diagnostics, evidence, remediation state, or task history to it.
+
+The legacy CI Ledger owns only pre-migration report findings until every legacy producer and consumer has migrated. Do not create a second findings archive for task-validation attempts. The Worker owns task-validation diagnosis, grouping, attribution, child creation, and task lifecycle. The Ledger does not schedule.
 
 CI remediation children are P0, Approved, and Ready under the standing authorization. Use Proposed only when that remediation requires a specific unresolved decision. Routine implementation does not need a new ADR merely because it changes code. Keep a genuine decision gate narrow to the dependent work.
 
 ## Status, approval, and scheduling
 
-Approval records authority for a scope. It does not depend on status or priority. Record its source and scope. Never infer approval from status. **Approval is not execution authorization and never triggers execution.** The sole execution cue is the explicit standalone word `execute`, matched case-insensitively (for example, `Execute` or `EXECUTE`). Other words, instructions, approval, `Next`, `proceed`, quoted or discussed cue mentions, and implied intent do not trigger execution.
+Approval records authority for a scope. It does not depend on status or priority. Record its source and scope. Never infer approval from status. **Approval is not execution authorization and never triggers execution by itself.** The universal execution directive is `execute`, matched case-insensitively when clear directive intent is present; its semantics and persistence are defined in the canonical Execution cue and authorization lifecycle section. Quoted, discussed, hypothetical or negated mentions are not directives.
 
 Use these statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Ready requires satisfied dependencies and any real decision gate. Use Blocked for a genuine external or user-resolvable blocker. Use Paused for intentional suspension.
 
@@ -113,8 +129,10 @@ Before repository work, review the task's authority and current workflow. Confir
 2. The task and parentage are correct. The scope and approval are explicit.
 3. Dependencies, status, and execution eligibility are reconciled.
 4. No conflicting instruction or duplicate rule creates an ambiguous execution boundary.
-5. The user's decision collection phase is complete before executing newly unlocked work.
-6. The intended batch, verification, readback, and cleanup steps are defined.
+5. Each planned file has one registered canonical owner and an allowed path. A consumer path is not treated as its owner.
+6. The child ID is unused in the full parent history. Deleted child IDs remain consumed.
+7. Any required decision collection is reconciled in the written cue order before dependent work begins; approval alone never triggers execution.
+8. Applicable execution mechanisms, scope, recovery, verification, readback, and cleanup are defined; batch boundaries are scheduling details, not cue semantics.
 
 If any check fails, resolve it before the affected work. Do not silently bypass a gate.
 
@@ -124,7 +142,7 @@ Treat conflicting or stale instructions as a workflow fault. Inventory the confl
 
 ## Execution, recovery, queue draining and closeout
 
-Treat the user's authorized workstream or selected parent as the batch boundary. Execute its eligible children recursively to quiescence, then report once.
+Treat the user's authorized workstream or reconciled scope as the execution boundary. Batch is a scheduling mechanism only. Execute eligible work recursively to quiescence within scope, then report once.
 
 ### Protect the user's solitude — interruption and reporting gate
 
@@ -138,22 +156,40 @@ The user's explicit preference is to be left undisturbed while authorized reposi
 - **Authority remains bounded:** This interruption rule does not grant new scope, bypass approval/decision gates, permit restricted validation, or authorize irreversible actions. If a genuine authority boundary cannot be resolved safely, isolate it and continue unrelated work; report it only when intervention is necessary.
 
 
+### Mandatory operation-level worklist
 
-1. **Reconcile and select:** Read the board, parent/child indexes and records. Recursively check orphan records, missing indexes, stale paths, duplicate IDs, status/dependency mismatches, and pauses. Recover records from repository evidence and templates when possible. Do not declare quiescence from a shallow scan.
+A task-level queue or status snapshot is not sufficient to drive execution or prove quiescence. For every authorized execution directive, maintain a concrete, reconciled worklist of independently completable operations for the authorized scope. Persist the worklist in the active task/subtask Progress or Handoff record when repository work is underway; for non-repository actions, maintain it in the conversation's execution context and reconcile it before every scheduler transition.
+
+Each worklist item must identify:
+- the task/acceptance criterion or outcome it advances;
+- a bounded operation (not a vague task-level label);
+- state: eligible, executing, completed, blocked, deferred, or cancelled;
+- prerequisites and whether those prerequisites are local to this operation;
+- blocker or recovery condition, if any;
+- next action or reassessment trigger;
+- evidence/commit/readback when completed.
+
+**Decomposition is mandatory:** Before accepting a blocked task as blocked, enumerate its remaining acceptance criteria and split them into operations. Split further whenever an operation can proceed without the blocked prerequisite. A blocked parent or child must never hide eligible work within its own scope. A blocker applies only to the operations that require it.
+
+**Scheduler transition protocol:** After every operation outcome (completed, blocked, failed, interrupted, deferred, or prerequisite change), reconcile the worklist and immediately choose the next eligible operation. Rebuild eligibility based on current evidence rather than preserving a stale queue. Do not stop at assessment, reconciliation, readback, tracking, commit, or reporting while operations remain eligible. Completion of a task/child is itself a scheduler transition; continue to the next eligible item without a new cue.
+
+**Recovery:** Failed or interrupted operations first reconcile actual effects, source state, authorization, and duplicate risk. Resume or retry only remaining work; do not repeat completed effects. Routine recovery, task decomposition, record updates, commits, readback, and queue reselection remain covered by active authorization. Revisit a blocked item only when its stated trigger changes, unless source investigation reveals a safe recovery path.
+
+**Quiescence evidence:** The final stop-proof must reconcile (a) every in-scope task and acceptance criterion, (b) its decomposed operations and states, (c) all dependencies and blockers, (d) recovery/continuation options, and (e) that no eligible or directly necessary operation remains. A blocked task is not proof of quiescence if its residual work has not been decomposed. A status scan or closeout report alone is insufficient. Only genuine scope exhaustion or a boundary that prevents all remaining work may stop the batch.
+
+1. **Reconcile and select:** Read the board, parent/child indexes and records. Recursively check orphan records, missing indexes, stale paths, duplicate IDs, status/dependency mismatches, and pauses. Recover records from repository evidence and templates when possible. Then construct or reconcile the operation-level worklist. Do not declare quiescence from a shallow scan.
 2. **Check eligibility:** Confirm scope, approval, dependencies, decisions and authorization before priority and age. Detect dependency cycles. Resume only stale/dependency-based pauses when authority remains valid. Preserve intentional pauses.
-3. **Execute:** Complete eligible work autonomously. Recover source material, make routine decisions and correct errors within scope. Do not interrupt for isolated blockers or routine updates.
-4. **Record evidence:** Capture decisions, progress, paths, commits, readback, checks and limitations. Every task-specific implementation commit must carry the exact `Task-ID: <task-id>` trailer.
+3. **Execute and decompose:** Execute the next eligible bounded operation. Decompose residual task acceptance criteria around blockers; recover source material, make routine decisions and correct errors within scope. Do not interrupt for isolated blockers or routine updates.
+4. **Record evidence:** Capture decisions, progress, paths, commits, readback, checks and limitations in task records/worklist. Every task-specific implementation commit must carry the exact `Task-ID: <task-id>` trailer.
 5. **Close implementation:** Mark a task Done when its acceptance criteria are met and its intended-branch commit is read back. Runtime checks are not universal gates. Do not claim checks that were not performed. Record verification debt separately. A parent cannot be Done while required children remain open.
-6. **Rebuild:** Reconcile the board and indexes after each status or dependency change. Immediately select the next eligible task within the authorized focus. A completed child is a scheduler transition, not a reporting pause.
-7. **Skip blockers:** Exhaust repository recovery and source investigation first. Isolate a blocker, record its precise cause and requested input, remove it from the eligible queue and continue independent work. A failed tool call or recoverable uncertainty is not a blocker.
-8. **Reach quiescence:** Stop only when no eligible task remains within scope. Reconcile all user-resolvable blockers and present one consolidated decision brief. Do not ask about external blockers the user cannot resolve.
-9. **Collect decisions:** Log responses and reconcile them without executing newly unlocked work. `Next` is navigation only. A fresh standalone `execute` cue authorizes the prepared batch. If scope changes materially, require a fresh cue.
+6. **Rebuild and continue:** After every operation or status/dependency transition, reconcile the worklist and immediately select the next eligible operation within the authorized focus. A completed child or task is a scheduler transition, never a reporting pause.
+7. **Skip blockers locally:** Exhaust repository recovery and source investigation first. Isolate the operation, record its precise cause and reassessment trigger, and continue independent/remaining work. A failed tool call or recoverable uncertainty is not a blocker.
+8. **Reach quiescence:** Stop only after the operation-level stop-proof gate confirms no eligible or directly necessary recoverable operation remains within scope. Reconcile user-resolvable blockers and present one consolidated decision brief. Do not ask about external blockers the user cannot resolve.
+9. **Collect decisions and process cues:** Log decisions and reconcile cues in their written order. `Next` is navigation only. An execution directive applies universally to the eligible work within its reconciled scope; do not require another cue for routine continuation or already-authorized work. A genuinely new scope or authority boundary requires the appropriate authorization.
 10. **Close records:** Read back each deliverable and tracking record. Delete completed/cancelled child folders and board rows under the normal lifecycle. Preserve the persistent skills-refactoring parent when its exception applies. Do not archive or create retention copies. Preserve Ledger identity and history.
 11. **Cleanup:** Remove temporary recovery artifacts immediately after last use and verify cleanup when possible.
 
 Do not run local repository scripts, tests or lint. Do not inspect hosted CI results unless explicitly authorized. Commit/readback evidence does not prove runtime behavior.
-
-
 ## Workflow map maintenance and display cue
 
 - `.agent/WORKFLOW_MAP.md` is the canonical workflow overview. It routes to authoritative owners and references and does not replace them.
@@ -161,22 +197,44 @@ Do not run local repository scripts, tests or lint. Do not inspect hosted CI res
 - Whenever a workflow, cue, activation prerequisite, ownership boundary, or operational route changes, update the map in the same governed change cycle. Read back the map and changed owner documents before commit.
 - At `/start`, Session Start requires the Workflow Map to be read first for overview, before loading The Worker or any related skills/references. Then load The Worker.
 
-## Execution cue — sole gate
+## Execution cue and authorization lifecycle
 
-The sole execution cue is the explicit standalone word `execute`, matched case-insensitively. Accept `execute`, `Execute`, or `EXECUTE` as the cue, but only when the user is clearly issuing it as an instruction, not quoting, discussing, testing, or hypothetically mentioning the word.
+The explicit `execute` directive is **universal**: it authorizes execution of eligible, previously approved and in-scope work and applicable actions. The cue is not defined or limited by batch execution. Batch is one scheduling mechanism; the execution mechanism depends on context. A clear directive may initiate implementation, continue or resume work, perform necessary preparation/reconciliation and proceed, drain eligible queues, or carry out other authorized actions. Interpret the complete message and directive intent rather than requiring a standalone token or isolated message.
 
-- **`execute`:** authorizes the consolidated, previously approved and in-scope execution batch after decision collection and eligibility checks.
-- **`approve` / approval:** log the user's decision and scope. Never execute immediately.
-- **`Next`:** log decision-queue navigation. Keep the current blocker unanswered and unresolved, then present the next unresolved decision. It cannot approve, decline, execute, resume, or change status.
-- **Any other message or cue:** capture, interpret, or log it as required, but do not execute.
-- `/start` is a distinct session-initialization cue governed by Session Start and is not an execution cue.
+Recognize explicit workflow cues in their written order, within the complete message. Distinguish actual directive use from quoted, discussed, tested, hypothetical, or negated mentions. Parse surrounding instructions, constraints and scope. Do not manufacture retroactive authorization: an action must be authorized at the point it occurs.
 
-Do not infer or substitute execution authorization from phrasing, intent, status, approval, or an earlier cue. Before each execution batch, confirm that the latest explicit `execute` cue applies to the prepared batch and that its scope has not materially changed. If the scope changes, wait for a fresh cue.
+- **`execute`:** universal execution directive. After reconciling scope, approval, dependencies, and gates, execute applicable eligible work and continue through preparation, reconciliation, implementation, recovery, transitions and queue selection until genuine quiescence or a real boundary.
+- **`approve` / approval:** record the decision and scope; approval alone does not initiate execution. When cues are ordered together (e.g., Approve then Execute), reconcile approval first, then evaluate Execute against the newly eligible state. Do not require separate messages.
+- **`Next`:** decision-queue navigation only. Keep the current blocker unanswered and unresolved; present the next unresolved decision. It cannot approve or execute.
+- **Other instructions:** capture, interpret and record as governed; do not treat non-execution instructions or implied intent as execution authorization unless they clearly include an execution directive.
+- **`/start`:** distinct session initialization governed by Session Start; not an execution cue.
 
-At `/start`, follow `.agent/SESSION_START.md`. The mandatory P0 batch uses the rules above. Do not inspect hosted CI results. At batch completion, state readiness and remaining blockers.
+### Authorization persistence
 
+An issued execution authorization remains active for its applicable scope through routine preparation, decomposition, reconciliation, implementation choices, tracking updates, commits, readback, recovery, safe retries, task transitions and queue reselection. These procedural milestones do not consume, reset or interrupt authorization. Redundant cues do not narrow, restart or interrupt the active authorization. Reconcile actual effects before retrying; prevent duplicate work or records where practical.
 
+Routine execution work, corrective actions, evidence and tracking needed to fulfill the approved objective are within scope. Independently valuable objectives or genuine scope, safety, privacy, policy, permission or other authority boundaries are not automatically included. If a boundary requires additional approval or authorization, isolate that work, record the exact boundary and continue independent work. Do not use a boundary as a reason to stop unrelated authorized work.
 
+### Execution invariant and recovery
+
+### Blocker-locality invariant — mandatory scheduler enforcement
+
+A blocker, restriction, failure, unavailable evidence, or authority gate is local to the operation it actually prevents. It is **not** a terminal signal for the universal execution directive, authorization lifecycle, task, batch, or workstream.
+
+When an operation cannot proceed:
+1. Identify the exact blocked operation and the narrowest applicable restriction or missing prerequisite. Do not broaden its scope by implication.
+2. Isolate and record/defer that operation without consuming, suspending, resetting, or revoking authorization for unaffected work.
+3. Immediately re-evaluate the authorized scope and scheduler queue. Select and execute the next eligible independent operation; include directly necessary recoverable preparation, reconciliation, retries, and transitions.
+4. Revisit the blocked operation only when its prerequisite changes or an authorized recovery path becomes available. Avoid repeated futile retries or polling.
+5. Do not report, ask for input, or transfer control merely because a blocker was encountered. Aggregate intervention at quiescence unless the boundary is urgent or all remaining progress is genuinely prevented.
+
+**Stop-proof gate:** Before ending an active execution authorization, reconcile all remaining in-scope operations, their eligibility, dependencies, recoverability, and blocker scope. A stop is valid only when scope is exhausted, no eligible or directly necessary recoverable operation remains, or a genuine boundary prevents all remaining progress. A restriction on one operation cannot satisfy this stop condition while independent authorized work remains. A report is closeout, never a scheduler transition or substitute for execution.
+
+Before and during execution, reconcile the cue and its ordered operations, scope, authorization, eligible work, dependencies, actual changes and outstanding operations. A readback, status reconciliation, preparation, acknowledgment or report alone is not fulfillment when eligible work remains. Resume after interrupted or partially completed operations by reconciling evidence first; retry safely when recoverable, and isolate only genuinely unrecoverable blockers. Never infer quiescence from a shallow scan or a procedural checkpoint.
+
+Continue queue selection and execution until no eligible work or directly necessary recoverable operation remains within the active scope, the scope is exhausted, or a genuine boundary cannot be resolved. Stop at quiescence or a mandatory safety/authorization boundary, not merely because a task, commit, readback or reassessment finished. Collect and present unresolved user-resolvable blockers only at quiescence, one at a time as governed by decision collection. Do not ask the user to supervise routine execution.
+
+At `/start`, follow `.agent/SESSION_START.md`. Do not inspect hosted CI results.
 ## Parent selection — scope test and hierarchy correction
 
 Create a parent task for each distinct user objective. Do not treat the active parent, current execution pointer, repository, project, or general maintenance theme as sufficient grounds for parentage.
@@ -192,9 +250,9 @@ Before creating or updating a task, audit the proposed relationship. If the pare
 
 ## Document governance — mandatory template-first gate
 
-The Worker owns document governance. Apply this gate before creating, moving, renaming, materially revising, or validating a repository document or structured record.
+The Worker owns document governance. Apply this gate before creating, moving, renaming, materially revising, or validating any repository artifact, including non-Markdown files.
 
-1. Identify the target path, owner, and document type.
+1. Identify the target path, canonical owner, document type, and allowed location. Do not infer ownership from a consumer path.
 2. Read the current entry in `references/document-type-catalog.md`.
 3. Read the format source that matches the catalog class:
    - **Template required:** Read the complete canonical template.
@@ -211,10 +269,12 @@ The Worker owns document governance. Apply this gate before creating, moving, re
 9. Read the complete current canonical template or format source after any update and before modifying the target. Create or revise the target from that current format.
 10. Preserve required fields, provenance, chronology, approved content, and facts. Include conditional sections only when applicable. Delete unused placeholders. Do not invent approvals or values.
 11. Update indexes and links. Check the target against its format and writing or data standard. Read back every changed path and commit.
-12. Use Reserved for a verified Markdown family with no current record. Change Reserved to Active in the commit that creates its first record.
+12. Use Reserved for a verified Markdown or non-Markdown family with no current record. Change Reserved to Active in the commit that creates its first record.
 13. Do not mass-migrate untouched history. Do not create a template when an approved embedded contract, schema, or generator already defines the format.
 
 For a one-off note or creative document, follow an explicit Lightweight pattern or Exempt catalog entry. If no such entry exists, propose the format before editing. Source code, generated output, schemas, and machine-readable data follow their own contracts.
+
+The non-Markdown coverage table registers governed files under `.agent/skills/` and `.github/`. Each file must match exactly one family and its placement rule. A Worker-owned policy, schema, registry, or configuration belongs in the Worker skill's `assets/`. Explanatory guidance belongs in `references/`. Executable tools belong in `scripts/`. GitHub Actions workflow definitions belong in `.github/workflows/`. They consume Worker-owned contracts without owning them. Fail closed when the catalog has no matching family or the canonical location is unclear.
 
 ### Document-format classes
 
@@ -227,7 +287,7 @@ For a one-off note or creative document, follow an explicit Lightweight pattern 
 
 The catalog defines purpose and document type, required and conditional fields, formats, allowed values, status, approval, provenance, stable IDs, parent links, migration, validation, owner, and canonical path. Treat unmarked fields as required. Mark Optional and Conditional fields explicitly. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
-Canonical copy-ready formats are in `.agent/skills/the-worker/assets/`. See its README for the asset index. The catalog and validator are Worker-owned assets in `references/` and `scripts/`. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+Canonical copy-ready formats are in `.agent/skills/the-worker/assets/`. See its README for the asset index. The catalog and validator are Worker-owned assets in `references/` and `scripts/`. The catalog owns document-type, Markdown, and governed non-Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
 
 When you create or materially revise a template, scan every repository template. Compare each template with current workflows, repository structure, and governing standards. Update each confirmed stale template and its owner references. Store every reusable template in its owning skill's `assets/` directory. Do not create project-local or workspace-level template copies. Reconcile the catalog, indexes, and inbound links.
 
@@ -242,6 +302,7 @@ Load the relevant reference only when the task requires it:
 - `references/ci-ledger.md` only for an assigned, selected CI task in the workspace that requires report intake, finding attribution, grouping, lifecycle, or Ledger integrity.
 - `references/github-actions.md` only for an assigned, selected CI task in the workspace that requires workflow design, diagnostics, technical remediation, or validation procedures. Load it with the CI Ledger reference only when that task needs both.
 - `references/decision-governance.md` for Drafts, ADRs, repository analysis, implementation linkage, or Confirmation.
+- `references/task-validation-interfaces.md` for ADR-0008 policy, contract schema, adapter registry, or coordinator interface work.
 
 The Worker owns document governance in this file and its canonical document-type catalog. The Worker does not activate a separate document-governance skill.
 
@@ -271,14 +332,17 @@ This procedure applies before task selection, status changes, blocker declaratio
 
 ## CI and Actions operational ownership
 
-The Worker owns both CI Ledger and GitHub Actions operations. Its references define policy and procedures. CI work is task-scoped and workspace-bound: handle CI only when a corresponding assigned task exists under `workspace/tasks/` and is selected within the user's authorized scope. A startup P0 batch does not create CI work or authorize CI baseline collection, report/index/history reads, Ledger reconciliation, or remediation. Do not access CI report-family paths for general session setup or unrelated tasks. Load CI references only for the assigned CI task that requires them. The report producer, composite action, workflow, report schema, report template, Ledger schema, shared eligibility module, report indexes, and immutable evidence remain in their report-family paths because existing workflows and scripts consume those paths. Treat those paths as Worker-governed implementation assets, not independent operational owners. Consolidation must preserve path contracts until a coordinated migration updates every consumer.
+The Worker owns GitHub Actions operations, the task-validation review queue, and the remaining legacy CI Ledger until its migration gates pass. CI work is task-scoped and workspace-bound: handle it only for an assigned task under workspace/tasks/ and within the user's authorized scope. A startup P0 batch does not authorize CI baseline collection, status-index/report-history reads, Ledger reconciliation, hosted inspection, or remediation. Load CI references only for the selected CI task that requires them.
 
+The task-validation status index under workspace/task-validation/ is the canonical compact status record for ADR-0008 coordinator attempts. It is not a findings archive. The legacy .takeout/reports/ family remains intact for pre-migration lint and non-task-validation workflow producers/consumers until every consumer is migrated and Confirmation permits retirement. Do not scan it during startup or unrelated work. Do not add task-validation findings or logs to either index.
 
 ## Canonical CI implementation
 
-- Scripts and regression tests: `.agent/skills/the-worker/scripts/`.
-- Schemas and templates: `.agent/skills/the-worker/assets/`.
-- Capture action: `.github/workflows/gh-actions-capture.yml`.
-- Report indexes, history, and Ledger state remain in `.takeout/reports/` as data outputs.
+- Worker-owned scripts and regression tests: .agent/skills/the-worker/scripts/.
+- Worker-owned schemas, policies and templates: .agent/skills/the-worker/assets/.
+- Workflow execution and reusable capture entry points: .github/workflows/.
+- ADR-0008 status index, checkpoint and review queue: workspace/task-validation/.
+- Legacy report outputs, history, and Ledger state pending staged migration: .takeout/reports/.
+- Legacy lint report generator, schema, template, and tests under Worker ownership: .agent/skills/the-worker/scripts/generate_lint_report.py, test_generate_lint_report.py, and .agent/skills/the-worker/assets/lint-report-schema.json, lint-report-template.md. Coordinator mode retains regression coverage but skips legacy index lookup and report publication.
 
-Do not maintain duplicate implementations in report-family script directories. The capture workflow calls the Worker scripts.
+Do not maintain duplicate implementations in report-family script directories. Workflows consume Worker-owned scripts and assets; they do not own the policy, schemas, or task lifecycle.

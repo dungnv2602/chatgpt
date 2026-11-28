@@ -6,6 +6,7 @@ from pathlib import Path
 
 from validate_document_catalog import (
     find_external_templates,
+    find_misplaced_skill_templates,
     template_location_error,
     validate_catalog,
 )
@@ -29,6 +30,7 @@ class CatalogValidatorTests(unittest.TestCase):
         self.catalog.parent.mkdir(parents=True)
         self.write(".agent/skills/example/assets/template.md")
         self.write(".agent/skills/example/SKILL.md")
+        self.write(".agent/skills/the-worker/SKILL.md")
         self.write("workspace/example.md")
         self.write(".agent/skills/example/processor.py")
         self.write("images/example/README.md")
@@ -37,6 +39,7 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write(".agent/skills/example/test_generator.py")
         self.write(".agent/skills/the-worker/scripts/process_takeout.py")
         self.write(".agent/skills/the-worker/scripts/test_process_takeout_unittest.py")
+        self.write("workspace/task-validation/status-index.json")
         self.write("master/Example.md")
         self.write("area/novel/WORKFLOW.md")
         self.write(".agent/skills/drawing/SKILL.md")
@@ -50,7 +53,18 @@ class CatalogValidatorTests(unittest.TestCase):
         target.write_text("# fixture\n", encoding="utf-8")
         return target
 
-    def set_catalog(self, rows, extra_coverage=()):
+    def default_non_markdown_rows(self):
+        return [
+            "| `.agent/skills/example/*.py` | Python script | Active | "
+            "`.agent/skills/example/SKILL.md` | skill-root | Fixture skill code. |",
+            "| `.agent/skills/the-worker/scripts/*.py` | Python script | Active | "
+            "`.agent/skills/the-worker/SKILL.md` | skill-scripts | Worker scripts and tests. |",
+            "| `workspace/task-validation/*.json` | JSON data | Active | "
+            "`.agent/skills/the-worker/SKILL.md` | workspace-task-validation | "
+            "Worker-owned operational status index. |",
+        ]
+
+    def set_catalog(self, rows, extra_coverage=(), non_markdown_rows=None):
         coverage = (
             "\n## Markdown inventory coverage\n\n"
             "| Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |\n"
@@ -66,8 +80,20 @@ class CatalogValidatorTests(unittest.TestCase):
             + "\n".join(extra_coverage)
             + ("\n" if extra_coverage else "")
         )
+        artifact_rows = (
+            self.default_non_markdown_rows()
+            if non_markdown_rows is None else non_markdown_rows
+        )
+        non_markdown = (
+            "\n## Governed non-Markdown artifact coverage\n\n"
+            "| Path pattern | Artifact type | Coverage status | Canonical owner | Placement rule | Coverage rationale |\n"
+            "|---|---|---|---|---|---|\n"
+            + "\n".join(artifact_rows)
+            + "\n"
+        )
         self.catalog.write_text(
-            "## Initial inventory\n\n" + HEADER + "\n".join(rows) + coverage,
+            "## Initial inventory\n\n" + HEADER + "\n".join(rows)
+            + coverage + non_markdown,
             encoding="utf-8",
         )
 
@@ -187,32 +213,39 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("must reference a regression test" in error for error in errors))
 
-    def test_github_and_consolidated_report_roots_are_allowed(self):
-        self.write(".github/scripts/cleanup-archive.py")
-        self.write(".github/archive-retention-state.json")
+    def test_github_workflows_are_covered_but_unowned_config_is_rejected(self):
+        self.write(".github/task-validation-policy.json")
         self.write(".github/workflows/ste-lint-full-docs.yml")
         self.write(".takeout/reports/lint_reports/latest-lint-report.md")
         self.write(".takeout/reports/gh_ac_reports/README.md")
         self.write(".takeout/reports/triage/README.md")
         rows = [
-            "| Archive state | Embedded contract | "
-            "`.github/scripts/cleanup-archive.py` and `.github/archive-retention-state.json` | Script-owned state. |",
             "| Lint report | Embedded contract | "
-            "`.github/workflows/ste-lint-full-docs.yml` and `.takeout/reports/lint_reports/latest-lint-report.md` | Workflow-owned report. |",
+            "`.github/workflows/ste-lint-full-docs.yml` and "
+            "`.takeout/reports/lint_reports/latest-lint-report.md` | "
+            "Workflow-owned report. |",
             "| Workflow definition | Exempt | "
             "`.github/workflows/ste-lint-full-docs.yml` | External Actions schema. |",
         ]
-        self.set_catalog(rows, [
+        markdown_rows = [
             "| `.takeout/reports/lint_reports/*.md` | Lightweight pattern | Active |"
             "`.takeout/reports/lint_reports/latest-lint-report.md` | Lint fixture. |",
             "| `.takeout/reports/gh_ac_reports/*.md` | Lightweight pattern | Active |"
             "`.takeout/reports/gh_ac_reports/README.md` | Actions fixture. |",
             "| `.takeout/reports/triage/*.md` | Lightweight pattern | Active |"
             "`.takeout/reports/triage/README.md` | Ledger fixture. |",
-        ])
+        ]
+        non_markdown_rows = self.default_non_markdown_rows() + [
+            "| `.github/workflows/*.yml` | GitHub Actions workflow | Active | "
+            "external: GitHub Actions workflow syntax | github-workflows | "
+            "Workflow execution files. |",
+        ]
+        self.set_catalog(rows, markdown_rows, non_markdown_rows)
         errors, row_count, _ = validate_catalog(self.root, self.catalog)
-        self.assertEqual(errors, [])
-        self.assertEqual(row_count, 3)
+        self.assertEqual(row_count, 2)
+        self.assertEqual(len(errors), 1)
+        self.assertIn(".github/task-validation-policy.json", errors[0])
+        self.assertIn("not covered by the catalog", errors[0])
 
     def test_malformed_inventory_row_fails(self):
         self.set_catalog([
@@ -261,14 +294,33 @@ class CatalogValidatorTests(unittest.TestCase):
     def replace_coverage(self, rows):
         content = self.catalog.read_text(encoding="utf-8")
         prefix = content.split("## Markdown inventory coverage", 1)[0]
+        remainder = content.split("## Governed non-Markdown artifact coverage", 1)
+        if len(remainder) != 2:
+            raise AssertionError("non-Markdown coverage section is missing")
+        suffix = remainder[1]
         coverage = (
             "## Markdown inventory coverage\n\n"
             "| Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |\n"
             "|---|---|---|---|---|\n"
             + "\n".join(rows)
+            + "\n\n"
+        )
+        self.catalog.write_text(
+            prefix + coverage + "## Governed non-Markdown artifact coverage" + suffix,
+            encoding="utf-8",
+        )
+
+    def replace_non_markdown_coverage(self, rows):
+        content = self.catalog.read_text(encoding="utf-8")
+        prefix = content.split("## Governed non-Markdown artifact coverage", 1)[0]
+        section = (
+            "## Governed non-Markdown artifact coverage\n\n"
+            "| Path pattern | Artifact type | Coverage status | Canonical owner | Placement rule | Coverage rationale |\n"
+            "|---|---|---|---|---|---|\n"
+            + "\n".join(rows)
             + "\n"
         )
-        self.catalog.write_text(prefix + coverage, encoding="utf-8")
+        self.catalog.write_text(prefix + section, encoding="utf-8")
 
     def test_uncovered_markdown_document_fails(self):
         self.set_catalog(self.valid_rows())
@@ -446,6 +498,137 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("unsafe or out-of-scope path" in error for error in errors))
 
+
+    def test_worker_policy_in_skill_assets_is_accepted(self):
+        self.write(".agent/skills/the-worker/assets/task-validation/policy.json")
+        rows = self.default_non_markdown_rows() + [
+            "| `.agent/skills/the-worker/assets/task-validation/*.json` | "
+            "Worker policy and schema | Active | `.agent/skills/the-worker/SKILL.md` | "
+            "skill-assets | Canonical Worker policy assets. |",
+        ]
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_worker_policy_misplaced_in_github_fails_placement(self):
+        self.write(".github/task-validation-policy.json")
+        rows = self.default_non_markdown_rows() + [
+            "| `.github/task-validation-policy.json` | Worker policy and schema | "
+            "Active | `.agent/skills/the-worker/SKILL.md` | skill-assets | "
+            "Misplaced Worker policy. |",
+        ]
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("invalid placement" in error for error in errors))
+
+    def test_unregistered_non_markdown_artifact_fails_closed(self):
+        self.write(".agent/skills/example/assets/new-policy.toml")
+        self.set_catalog(self.valid_rows())
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any(
+            "new-policy.toml" in error and "not covered by the catalog" in error
+            for error in errors
+        ))
+
+    def test_duplicate_non_markdown_rules_fail(self):
+        rows = self.default_non_markdown_rows() + [
+            "| `.agent/skills/example/processor.py` | Python script | Active | "
+            "`.agent/skills/example/SKILL.md` | skill-root | Duplicate rule. |",
+        ]
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("duplicate canonical ownership" in error for error in errors))
+
+    def test_unknown_non_markdown_artifact_type_fails(self):
+        rows = self.default_non_markdown_rows()
+        rows[0] = rows[0].replace("Python script", "Unknown artifact")
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("unknown non-Markdown artifact type" in error for error in errors))
+
+    def test_non_markdown_artifact_type_must_match_file_suffix(self):
+        rows = self.default_non_markdown_rows()
+        rows[0] = rows[0].replace("Python script", "JSON schema")
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("file type does not match" in error for error in errors))
+
+    def test_stale_non_markdown_owner_fails(self):
+        rows = self.default_non_markdown_rows()
+        rows[0] = rows[0].replace(
+            ".agent/skills/example/SKILL.md",
+            ".agent/skills/example/missing-owner.md",
+        )
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("canonical owner does not match" in error for error in errors))
+
+    def test_active_non_markdown_rule_must_match_a_file(self):
+        rows = self.default_non_markdown_rows() + [
+            "| `.agent/skills/example/assets/*.json` | JSON schema | Active | "
+            "`.agent/skills/example/SKILL.md` | skill-assets | Stale family. |",
+        ]
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("Active non-Markdown pattern matches no file" in error for error in errors))
+
+    def test_non_markdown_path_traversal_is_rejected(self):
+        rows = self.default_non_markdown_rows() + [
+            "| `.agent/skills/../workspace/*.json` | JSON schema | Active | "
+            "`.agent/skills/example/SKILL.md` | skill-assets | Unsafe pattern. |",
+        ]
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("unsafe or out-of-scope non-Markdown pattern" in error for error in errors))
+
+    def test_workspace_status_index_uses_canonical_placement(self):
+        self.set_catalog(self.valid_rows())
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_misplaced_workspace_json_fails_placement(self):
+        self.write("workspace/misplaced-status.json")
+        rows = self.default_non_markdown_rows() + [
+            "| `workspace/*.json` | JSON data | Active | "
+            "`.agent/skills/the-worker/SKILL.md` | workspace-task-validation | "
+            "Misplaced operational state. |",
+        ]
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("invalid placement" in error for error in errors))
+
+    def test_unregistered_workspace_non_markdown_artifact_fails_closed(self):
+        self.write("workspace/unregistered.json")
+        self.set_catalog(self.valid_rows())
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any(
+            "workspace/unregistered.json" in error and "not covered by the catalog" in error
+            for error in errors
+        ))
+
+    def test_valid_github_workflow_uses_external_schema_exemption(self):
+        self.write(".github/workflows/validate.yml")
+        rows = self.default_non_markdown_rows() + [
+            "| `.github/workflows/*.yml` | GitHub Actions workflow | Active | "
+            "external: GitHub Actions workflow syntax | github-workflows | "
+            "Workflow definitions use GitHub's schema. |",
+        ]
+        self.set_catalog(self.valid_rows(), non_markdown_rows=rows)
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_missing_non_markdown_coverage_section_fails(self):
+        self.set_catalog(self.valid_rows())
+        content = self.catalog.read_text(encoding="utf-8")
+        self.catalog.write_text(
+            content.split("## Governed non-Markdown artifact coverage", 1)[0],
+            encoding="utf-8",
+        )
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any(
+            "no '## Governed non-Markdown artifact coverage' section" in error
+            for error in errors
+        ))
 
 if __name__ == "__main__":
     unittest.main()

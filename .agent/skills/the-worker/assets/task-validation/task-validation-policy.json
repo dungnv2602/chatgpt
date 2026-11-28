@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": 1,
+  "policy_id": "chatgpt-task-validation",
+  "policy_revision": 1,
+  "repository": "dungnv2602/chatgpt",
+  "protected_ref": "refs/heads/gpt",
+  "protection": {
+    "required": true,
+    "mechanism": "GitHub branch protection or ruleset",
+    "required_review_paths": [
+      ".agent/WORKFLOW_MAP.md",
+      ".agent/skills/agent-skill-authoring/SKILL.md",
+      ".agent/skills/the-worker/SKILL.md",
+      ".agent/skills/the-worker/assets/README.md",
+      ".agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md",
+      ".agent/skills/the-worker/assets/TASK_TEMPLATE.md",
+      ".agent/skills/the-worker/assets/actions-report-schema.json",
+      ".agent/skills/the-worker/assets/actions-report-template.md",
+      ".agent/skills/the-worker/assets/ledger-schema.json",
+      ".agent/skills/the-worker/assets/lint-report-schema.json",
+      ".agent/skills/the-worker/assets/lint-report-template.md",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-adapters.json",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-policy.json",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-review-template.md",
+      ".agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json",
+      ".agent/skills/the-worker/references/ci-ledger.md",
+      ".agent/skills/the-worker/references/document-type-catalog.md",
+      ".agent/skills/the-worker/references/github-actions.md",
+      ".agent/skills/the-worker/references/task-validation-interfaces.md",
+      ".agent/skills/the-worker/scripts/aggregate_task_validation.py",
+      ".agent/skills/the-worker/scripts/build_task_validation_contract.py",
+      ".agent/skills/the-worker/scripts/eligibility.py",
+      ".agent/skills/the-worker/scripts/generate_lint_report.py",
+      ".agent/skills/the-worker/scripts/ledger.py",
+      ".agent/skills/the-worker/scripts/publish_task_validation.py",
+      ".agent/skills/the-worker/scripts/recover_task_validation.py",
+      ".agent/skills/the-worker/scripts/task_validation.py",
+      ".agent/skills/the-worker/scripts/test_aggregate_task_validation.py",
+      ".agent/skills/the-worker/scripts/test_build_task_validation_contract.py",
+      ".agent/skills/the-worker/scripts/test_generate_lint_report.py",
+      ".agent/skills/the-worker/scripts/test_ledger.py",
+      ".agent/skills/the-worker/scripts/test_publish_task_validation.py",
+      ".agent/skills/the-worker/scripts/test_recover_task_validation.py",
+      ".agent/skills/the-worker/scripts/test_task_validation.py",
+      ".agent/skills/the-worker/scripts/test_validate_document_catalog.py",
+      ".agent/skills/the-worker/scripts/validate_document_catalog.py",
+      ".github/workflows/gh-actions-capture.yml",
+      ".github/workflows/gh-actions-diagnostics.yml",
+      ".github/workflows/ste-lint-changed.yml",
+      ".github/workflows/ste-lint-full-docs.yml",
+      ".github/workflows/task-validation-dispatch.yml",
+      ".github/workflows/task-validation-publisher.yml",
+      ".github/workflows/task-validation-recovery.yml",
+      ".github/workflows/task-validation-verifier.yml",
+      ".github/workflows/task-validation.yml",
+      ".github/workflows/validate-document-standards.yml",
+      ".takeout/reports/README.md",
+      "workspace/README.md",
+      "workspace/task-validation/README.md",
+      "workspace/task_board.md",
+      "workspace/tasks/20261128-193800/subtasks/README.md",
+      "workspace/tasks/20261128-193800/task.md"
+    ],
+    "enforcement_status": "external-prerequisite"
+  },
+  "coordinator": {
+    "workflow": ".github/workflows/task-validation.yml",
+    "source_event": "push",
+    "source_branches": [
+      "gpt"
+    ],
+    "one_run_per_source_commit": true,
+    "bind_source_sha": true,
+    "bind_policy_revision": true,
+    "activation_status": "staged-until-privileged-publisher-and-report-migration",
+    "dispatcher_workflow": ".github/workflows/task-validation-dispatch.yml"
+  },
+  "mandatory_checks": [
+    {
+      "id": "ste-lint-changed",
+      "workflow": ".github/workflows/ste-lint-changed.yml",
+      "coverage": "Changed-document technical lint, report-tooling regression checks, and incremental/full-audit fallback",
+      "coordinator_job": "lint_changed",
+      "result_mode": "job_result"
+    },
+    {
+      "id": "ste-lint-full-docs",
+      "workflow": ".github/workflows/ste-lint-full-docs.yml",
+      "coverage": "Full technical-document lint and report-tooling regression checks",
+      "coordinator_job": "lint_full",
+      "result_mode": "job_result"
+    },
+    {
+      "id": "validate-document-standards",
+      "workflow": ".github/workflows/validate-document-standards.yml",
+      "coverage": "Document catalog, structural ownership, and existing CI Ledger regression tests",
+      "coordinator_job": "document_standards",
+      "result_mode": "job_result"
+    },
+    {
+      "id": "generic-verifier",
+      "workflow": ".github/workflows/task-validation-verifier.yml",
+      "coverage": "Exact-SHA task contract validation, closed adapter enforcement, and additive task-specific checks",
+      "coordinator_job": "generic_verifier",
+      "result_mode": "workflow_output"
+    }
+  ],
+  "task_contract": {
+    "schema": ".agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json",
+    "source_sha_is_exact": true,
+    "task_checks_are_additive_only": true,
+    "task_contract_cannot_remove_or_override_mandatory_checks": true,
+    "uncovered_requirements_use_generic_verifier": true
+  },
+  "generic_verifier": {
+    "workflow": ".github/workflows/task-validation-verifier.yml",
+    "registered_adapters": ".agent/skills/the-worker/assets/task-validation/task-validation-adapters.json",
+    "accepts_shell_strings": false,
+    "receives_secrets": false,
+    "receives_write_token": false
+  },
+  "terminal_outcomes": [
+    "success",
+    "check_failure",
+    "coverage_failure",
+    "infrastructure_failure",
+    "capture_failure",
+    "cancelled",
+    "superseded"
+  ],
+  "publisher": {
+    "workflow": ".github/workflows/task-validation-publisher.yml",
+    "script": ".agent/skills/the-worker/scripts/publish_task_validation.py",
+    "status_index": "workspace/task-validation/status-index.json",
+    "status_index_schema": ".agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json",
+    "review_root": "workspace/task-validation/reviews",
+    "review_template": ".agent/skills/the-worker/assets/task-validation/task-validation-review-template.md",
+    "idempotency_key": [
+      "coordinator_run_id",
+      "attempt"
+    ],
+    "atomic_publication": true,
+    "max_push_retries": 5,
+    "permissions": [
+      "contents:write"
+    ],
+    "receives_secrets": false,
+    "executes_untrusted_task_code": false
+  },
+  "recovery": {
+    "workflow": ".github/workflows/task-validation-recovery.yml",
+    "script": ".agent/skills/the-worker/scripts/recover_task_validation.py",
+    "checkpoint": "workspace/task-validation/status-index.json#/closed_through",
+    "reconciled_retention_days": 3,
+    "unresolved_attempts_never_pruned": true,
+    "bounded_retries": 5,
+    "scheduled_cron": "*/15 * * * *",
+    "schedule_activation_status": "external-prerequisite-default-branch-must-contain-recovery",
+    "push_trigger_excludes_status_index_commits": true,
+    "reads_logs": false,
+    "validates_source_code": false,
+    "workflow_dispatch_activation_status": "external-prerequisite-default-branch-must-contain-dispatcher",
+    "dispatch_requires_verified_default_branch_workflow": true,
+    "permissions": [
+      "actions:write",
+      "contents:write"
+    ]
+  },
+  "worker_lifecycle": {
+    "fallback_parent_id": "20261128-193800",
+    "fallback_parent_path": "workspace/tasks/20261128-193800/task.md",
+    "source_task_attribution": "exact-task-id-trailer-only",
+    "unresolved_attribution": "permanent-fallback-parent",
+    "cancelled_superseded_create_feedback": false,
+    "child_grouping": "one-child-per-actionable-root-cause-per-parent",
+    "review_index": "workspace/task-validation/status-index.json",
+    "review_folder_root": "workspace/task-validation/reviews",
+    "reconcile_after_review": true,
+    "lifecycle_schema": ".agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json",
+    "awaiting_ci_state": "awaiting_ci",
+    "task_discovery": "Validation Lifecycle block in active task and subtask records",
+    "missing_dispatch_recovery": "dispatch exact source SHA only when source and current coordinator policies are enabled, protection is verified, and scheduled plus workflow_dispatch recovery are available on the default branch",
+    "root_cause_group_field": "Root-cause group",
+    "legacy_ledger_scope": ".takeout/reports/ledger.json"
+  }
+}

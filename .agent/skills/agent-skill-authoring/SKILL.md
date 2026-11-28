@@ -130,7 +130,7 @@ Keep the main `SKILL.md` under 500 lines where practical. The specification reco
 For each new skill or material revision:
 
 1. **Define scope.** State the capability, the user requests that activate it, its boundaries, and what it does not own.
-2. **Identify authority.** Determine which user instructions, project policies, canonical records, and other skills govern the task. Do not invent a new authority hierarchy.
+2. **Identify authority.** Determine which user instructions, project policies, canonical records, and other skills govern the task. Do not invent a new authority hierarchy. Before writing a skill-owned artifact, apply the Worker's document-governance gate. Confirm the cataloged owner and canonical location. A consumer's runtime path does not establish ownership.
 3. **Inspect existing material.** Read the exact current files and relevant links before changing them. Reuse established terminology and avoid creating a competing skill for an existing responsibility.
 4. **Choose the directory name.** Use a concise, descriptive, lowercase hyphenated name that satisfies the specification.
 5. **Read the template first.** Read the Worker document-type catalog entry and the complete `assets/SKILL_TEMPLATE.md` before creating or materially revising a skill. If the required template is missing, stop. Propose its purpose, structure, and use to the user. Wait for explicit approval before creating the template or editing the skill.
@@ -208,7 +208,7 @@ CI review is task-scoped. Inspect the relevant workflow only in these cases:
 - The skill-authoring task changes validation or workflow configuration.
 - A known result directly blocks the task.
 
-Use `.takeout/reports/` as the single CI evidence root. Read its `README.md`, `index.json`, and `ledger.json`; inspect canonical evidence under `history/`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
+Follow The Worker for task-scoped CI review. For ADR-0008 coordinator attempts, read `workspace/task-validation/status-index.json` first and follow its failure-only log-inspection rules. Use `.takeout/reports/` only for pre-migration legacy evidence when the Worker assigns that review. Do not treat the legacy Ledger as the task-validation queue. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
 
 The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 

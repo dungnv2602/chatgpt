@@ -21,9 +21,11 @@ Every task-specific implementation commit must include one exact trailer:
 Task-ID: <active-task-or-subtask-id>
 ```
 
-Report capture carries the source commit marker. The Ledger resolves a parent ID directly or resolves a child through its Parent Task ID. It creates CI remediation children only under a verified active user-originated parent. Missing, malformed, ambiguous, inactive, or deleted attribution remains unassigned. Never infer a parent from filenames, workflow identity, branch, timing, or Current Execution.
+Legacy report capture carries the source commit marker. The legacy Ledger resolves a parent ID directly or resolves a child through its Parent Task ID. It creates legacy remediation children only under a verified active user-originated parent. Missing, malformed, ambiguous, inactive, or deleted attribution remains unassigned. Never infer a parent from filenames, workflow identity, branch, timing, or Current Execution.
 
-The Ledger owns finding identity, evidence, and remediation-child publication. The Worker alone changes task status, approval, scheduling, Current Execution, and the board.
+For ADR-0008 coordinator attempts, the Worker reads the compact status index and review folders. The Worker resolves the exact source Task-ID, checks whether the source SHA is current, groups actionable failures by root cause, creates or reuses feedback children, and reconciles the attempt. The status index is not a findings archive. Do not send coordinator attempts through the legacy Ledger.
+
+The legacy Ledger owns only pre-migration report finding identity and evidence. The Worker owns task-validation lifecycle, approval, scheduling, Current Execution, and the board.
 
 ## 3. Technical remediation
 
@@ -36,7 +38,7 @@ The Ledger owns finding identity, evidence, and remediation-child publication. T
 
 ## 4. P0 coordination
 
-CI-generated remediation tasks feed the same Worker-owned eligible queue. The Ledger retains finding identity, evidence, grouping, and task creation. It does not schedule. After a remediation commit is read back and the task closes, the Worker immediately reconciles and continues with the next eligible task within the authorized focus. Hosted validation remains separate metadata and is not a universal completion gate.
+Legacy Ledger remediation children and ADR-0008 Worker feedback children feed the same Worker-owned eligible queue. The legacy Ledger retains only pre-migration finding identity and evidence. It does not schedule. After a remediation commit is read back and the task closes, the Worker immediately reconciles and continues with the next eligible task within the authorized focus. Hosted validation remains separate metadata and is not a universal completion gate.
 
 The Worker’s run-to-quiescence procedure is the only authority for task selection, sequencing, blockers, user-input timing, and closeout. CI remediation children are P0, Approved, and Ready under standing authorization. Use Proposed only for a specific unresolved decision. Do not create a competing queue, change parent status, or interrupt unrelated eligible work.
 
@@ -193,9 +195,9 @@ Use these questions when implementing an optimization:
 
 ## Worker ownership and retained implementation paths
 
-The Worker owns Actions diagnosis, workflow remediation, operational policy, and report review. The diagnostic workflow, capture workflow, report generator, schema, template, report index, and immutable history remain in `.github/workflows/` and `.takeout/reports/history/actions/`. The report generator and Ledger share eligibility logic in `.takeout/reports/shared/eligibility.py`. These are Worker-governed implementation assets with stable caller contracts, not separate skills or operational owners. Relocation requires coordinated changes to workflow callers, scripts, schemas, tests, and indexes.
+The Worker owns Actions diagnosis, workflow remediation, operational policy, and report review. The diagnostic and capture workflows remain in `.github/workflows/`. Legacy report outputs, index, Ledger state, and immutable history remain in `.takeout/reports/` while migration is staged. The capture composite action also remains there until cutover. Worker-owned report scripts (`actions-report.py`, `ledger.py`, `eligibility.py`, and `generate_lint_report.py`), schemas, and templates live in `.agent/skills/the-worker/scripts/` and `.agent/skills/the-worker/assets/`. These are Worker-governed implementation assets with stable caller contracts, not separate skills or operational owners. Coordinator calls use exact source-parent comparison and skip legacy index lookup/publication. Legacy producers are policy-gated off after coordinator activation; retain their code and report data until Confirmation permits retirement.
 
 
 ## Canonical implementation
 
-The Actions report producer, regression suite, shared eligibility policy, schema, and report template are maintained under `.agent/skills/the-worker/scripts/` and `.agent/skills/the-worker/assets/`. The capture workflow invokes these canonical scripts. Report indexes and immutable history remain in report-family paths.
+The Actions and lint report producers, regression suites, shared eligibility policy, schemas, and report templates are maintained under `.agent/skills/the-worker/scripts/` and `.agent/skills/the-worker/assets/`. The legacy capture workflow invokes the canonical scripts only while the migration gate is staged. Report indexes and immutable history remain in report-family paths until final retirement.

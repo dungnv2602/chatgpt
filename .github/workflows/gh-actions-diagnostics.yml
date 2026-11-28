@@ -22,6 +22,7 @@ on:
       - '.takeout/reports/requests/processed/**'
       - '.takeout/reports/ledger.json'
       - 'workspace/tasks/**'
+      - 'workspace/task-validation/**'
       - 'workspace/task_board.md'
       - 'workspace/discussion.md'
 
@@ -33,8 +34,61 @@ concurrency:
 permissions: {}
 
 jobs:
+  policy_gate:
+    name: Gate legacy diagnostics for coordinator-validated commits
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+    outputs:
+      proceed: ${{ steps.gate.outputs.proceed }}
+    steps:
+      - name: Check out trusted Worker policy
+        uses: actions/checkout@v4
+        with:
+          ref: gpt
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Select legacy diagnostics mode
+        id: gate
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          current_policy_json=$(cat .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
+          policy_ready='
+            .coordinator.activation_status == "enabled" and
+            .protection.enforcement_status == "verified" and
+            .recovery.schedule_activation_status == "verified" and
+            .recovery.workflow_dispatch_activation_status == "verified"
+          '
+          current_ready=false
+          if jq -e "$policy_ready" <<< "$current_policy_json" >/dev/null 2>&1; then
+            current_ready=true
+          fi
+          proceed=true
+          if [[ "$EVENT_NAME" == "workflow_run" ]]; then
+            source_policy_json=""
+            if [[ "$HEAD_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+              source_policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=$HEAD_SHA" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+            fi
+            if [[ "$current_ready" == "true" && -n "$source_policy_json" ]] &&
+               jq -e "$policy_ready" <<< "$source_policy_json" >/dev/null 2>&1; then
+              proceed=false
+            fi
+          elif [[ "$current_ready" == "true" ]]; then
+            proceed=false
+          fi
+          echo "proceed=$proceed" >> "$GITHUB_OUTPUT"
+
   sweep:
     name: Backfill completed workflow runs
+    needs: [policy_gate]
+    if: needs.policy_gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:

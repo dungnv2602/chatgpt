@@ -1,0 +1,16 @@
+# Task Validation Review
+
+- **Status:** Pending
+- **Source Task-ID:** {{source_task_id}}
+- **Source SHA:** {{source_sha}}
+- **Coordinator run:** {{coordinator_run_id}}
+- **Attempt:** {{attempt}}
+- **Check-set identity:** {{check_set_id}}
+- **Policy revision:** {{policy_revision}}
+- **Completed at:** {{completed_at}}
+- **Outcome:** {{outcome}}
+- **Actions:** {{actions_url}}
+
+## Worker handling
+
+Read the task-validation status index first. Compare the attempt's exact source SHA with the task's Validation Lifecycle block and current source commit. Do not let a stale result change current task state. Do not inspect logs for successful, cancelled, or superseded attempts. For recorded actionable failures, inspect only the relevant failed checks when hosted inspection is authorized. Group related failures by root cause. Create one remediation child per distinct actionable root cause under the correctly attributed parent. Do not rerun checks or override the aggregate result. Cancelled and superseded attempts do not change task lifecycle.

@@ -1,0 +1,107 @@
+name: ADR-0008 Task Validation Publisher
+
+on:
+  workflow_call:
+    inputs:
+      aggregate_json:
+        description: Compact structured aggregate from the coordinator.
+        required: true
+        type: string
+      source_sha:
+        description: Exact source commit SHA.
+        required: true
+        type: string
+      policy_blob_sha:
+        description: Exact policy blob SHA used by the coordinator.
+        required: true
+        type: string
+      coordinator_run_id:
+        description: GitHub Actions run ID.
+        required: true
+        type: number
+      attempt:
+        description: GitHub Actions run attempt.
+        required: true
+        type: number
+      actions_url:
+        description: Canonical URL for the coordinator run.
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  publish:
+    name: Atomically publish status and review record
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Check out trusted Worker publisher from gpt
+        uses: actions/checkout@v4
+        with:
+          ref: gpt
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Materialize structured aggregate input
+        env:
+          AGGREGATE_JSON: ${{ inputs.aggregate_json }}
+          AGGREGATE_PATH: ${{ runner.temp }}/task-validation-aggregate.json
+          SOURCE_SHA: ${{ inputs.source_sha }}
+          POLICY_BLOB_SHA: ${{ inputs.policy_blob_sha }}
+          COORDINATOR_RUN_ID: ${{ inputs.coordinator_run_id }}
+          ATTEMPT: ${{ inputs.attempt }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          raw = os.environ.get("AGGREGATE_JSON", "")
+          if raw:
+              value = json.loads(raw)
+          else:
+              value = {
+                  "outcome": "capture_failure",
+                  "expected_checks": [],
+                  "statuses": {},
+                  "check_set_id": None,
+                  "completed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+              }
+          value.setdefault("source_sha", os.environ["SOURCE_SHA"])
+          value.setdefault("policy_blob_sha", os.environ["POLICY_BLOB_SHA"])
+          value.setdefault("coordinator_run_id", int(os.environ["COORDINATOR_RUN_ID"]))
+          value.setdefault("attempt", int(os.environ["ATTEMPT"]))
+          value.setdefault("completed_at", datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"))
+          Path(os.environ["AGGREGATE_PATH"]).write_text(
+              json.dumps(value, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Publish status index and review folder
+        env:
+          AGGREGATE_PATH: ${{ runner.temp }}/task-validation-aggregate.json
+          SOURCE_SHA: ${{ inputs.source_sha }}
+          POLICY_BLOB_SHA: ${{ inputs.policy_blob_sha }}
+          COORDINATOR_RUN_ID: ${{ inputs.coordinator_run_id }}
+          ATTEMPT: ${{ inputs.attempt }}
+          ACTIONS_URL: ${{ inputs.actions_url }}
+        run: |
+          python3 .agent/skills/the-worker/scripts/publish_task_validation.py \
+            --root . \
+            --aggregate-json "$AGGREGATE_PATH" \
+            --source-sha "$SOURCE_SHA" \
+            --policy-blob-sha "$POLICY_BLOB_SHA" \
+            --coordinator-run-id "$COORDINATOR_RUN_ID" \
+            --attempt "$ATTEMPT" \
+            --actions-url "$ACTIONS_URL" \
+            --branch gpt

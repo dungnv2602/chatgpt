@@ -11,6 +11,7 @@ if str(SHARED_ELIGIBILITY_PATH) not in sys.path:
 from eligibility import actions_report_is_eligible, independent_actions_issues
 
 SCHEMA_VERSION = "1.8.0"
+TASK_VALIDATION_POLICY_PATH = ".agent/skills/the-worker/assets/task-validation/task-validation-policy.json"
 MAX_EVIDENCE_ROWS = 5
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
 LINT_BASELINE_CHECKS = (
@@ -369,10 +370,49 @@ def source_task_id_from_message(message):
     return task_id, "present"
 
 
+def configured_fallback_parent_id(root):
+    policy = read_json(root / TASK_VALIDATION_POLICY_PATH)
+    fallback_id = policy.get("worker_lifecycle", {}).get("fallback_parent_id")
+    fallback_path = policy.get("worker_lifecycle", {}).get("fallback_parent_path")
+    if (
+        not isinstance(fallback_id, str)
+        or not re.fullmatch(r"\d{8}-\d{6}(?:-\d{2})*", fallback_id)
+        or fallback_path != "workspace/tasks/" + fallback_id + "/task.md"
+    ):
+        raise LedgerError("Worker policy does not identify one safe permanent fallback parent")
+    return fallback_id
+
+
+def active_fallback_parent(root, parent_id):
+    if parent_id != configured_fallback_parent_id(root):
+        return None, "not_fallback_parent"
+    path = root / "workspace" / "tasks" / parent_id / "task.md"
+    if not path.is_file():
+        return None, "fallback_parent_missing"
+    try:
+        content = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return None, "fallback_parent_unreadable"
+    if (
+        task_metadata(content, "ID") != parent_id
+        or task_metadata(content, "Origin") != "Assistant"
+        or task_metadata(content, "Status") != "In Progress"
+        or task_metadata(content, "Current execution") != "No"
+        or "permanent system-owned fallback parent" not in task_metadata(content, "Eligibility / deferral reason").lower()
+    ):
+        return None, "fallback_parent_contract_mismatch"
+    index_path = path.parent / "subtasks" / "README.md"
+    if not index_path.is_file():
+        return None, "fallback_parent_index_missing"
+    return {"id": parent_id, "path": path, "content": content, "index_path": index_path}, "fallback_parent"
+
+
 def active_genuine_parent(root, parent_id):
-    """Return an active user-originated parent task. Never infer a substitute."""
+    """Return an active user-originated parent or the one policy-designated fallback."""
     if not isinstance(parent_id, str) or not re.fullmatch(r"\d{8}-\d{6}(?:-\d{2})*", parent_id):
         return None, "invalid_task_id"
+    if parent_id == configured_fallback_parent_id(root):
+        return active_fallback_parent(root, parent_id)
     path = root / "workspace" / "tasks" / parent_id / "task.md"
     if not path.is_file():
         return None, "parent_missing"
@@ -392,12 +432,28 @@ def active_genuine_parent(root, parent_id):
     return {"id": parent_id, "path": path, "content": content, "index_path": index_path}, "linked"
 
 
+def fallback_attribution(root, source_task_id, reason):
+    fallback_id = configured_fallback_parent_id(root)
+    parent, status = active_fallback_parent(root, fallback_id)
+    if parent:
+        return {
+            "source_task_id": source_task_id,
+            "parent_task_id": fallback_id,
+            "attribution_status": "fallback_" + str(reason),
+        }
+    return {
+        "source_task_id": source_task_id,
+        "parent_task_id": None,
+        "attribution_status": "fallback_unavailable_" + status,
+    }
+
+
 def resolve_task_attribution(root, source_task_id, marker_status="present"):
-    """Resolve a parent or child Task-ID to its genuine active user parent."""
+    """Resolve a parent/child Task-ID, falling back only to the configured permanent parent."""
     if marker_status != "present":
-        return {"source_task_id": source_task_id, "parent_task_id": None, "attribution_status": marker_status}
+        return fallback_attribution(root, source_task_id, marker_status)
     if not isinstance(source_task_id, str) or not re.fullmatch(r"\d{8}-\d{6}(?:-\d{2})*", source_task_id):
-        return {"source_task_id": source_task_id, "parent_task_id": None, "attribution_status": "invalid_task_id"}
+        return fallback_attribution(root, source_task_id, "invalid_task_id")
 
     parent, status = active_genuine_parent(root, source_task_id)
     if parent:
@@ -415,8 +471,10 @@ def resolve_task_attribution(root, source_task_id, marker_status="present"):
         parent, parent_status = active_genuine_parent(root, parent_id)
         if parent:
             return {"source_task_id": source_task_id, "parent_task_id": parent_id, "attribution_status": "linked"}
-        return {"source_task_id": source_task_id, "parent_task_id": None, "attribution_status": parent_status}
-    return {"source_task_id": source_task_id, "parent_task_id": None, "attribution_status": status if status != "parent_missing" else "task_not_found"}
+        return fallback_attribution(root, source_task_id, parent_status)
+
+    reason = "task_not_found" if status == "parent_missing" else status
+    return fallback_attribution(root, source_task_id, reason)
 
 
 def parent_group_for_finding(finding):
@@ -792,7 +850,7 @@ def parse_active_ledger_subtasks(root):
     return result
 
 def render_worker_ci_subtask(root, parent_id, subtask_id, title, group_id, findings, timestamp, task_path, legacy_task_ids=None):
-    template_path = root / "workspace" / "SUBTASK_TEMPLATE.md"
+    template_path = root / ".agent" / "skills" / "the-worker" / "assets" / "SUBTASK_TEMPLATE.md"
     try:
         content = template_path.read_text(encoding="utf-8")
     except OSError as exc:
@@ -953,7 +1011,7 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reo
         evidence = finding.get("evidence") or []
         latest = evidence[-1] if evidence and isinstance(evidence[-1], dict) else {}
         parent_id = latest.get("parent_task_id")
-        if latest.get("attribution_status") != "linked" or not parent_id:
+        if latest.get("attribution_status") != "linked" and not str(latest.get("attribution_status") or "").startswith("fallback_") or not parent_id:
             continue
         parent, _status = active_genuine_parent(root, parent_id)
         if not parent:

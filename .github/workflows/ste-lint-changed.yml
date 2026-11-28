@@ -1,6 +1,17 @@
 name: STE Lint Changed Documentation
 
 on:
+  workflow_call:
+    inputs:
+      coordinator_call:
+        description: "True when invoked by the ADR-0008 exact-SHA coordinator."
+        required: false
+        type: boolean
+        default: false
+      source_sha:
+        description: "Exact source commit to validate."
+        required: true
+        type: string
   push:
     branches:
       - gpt
@@ -8,6 +19,7 @@ on:
       - '**.md'
       - '!.takeout/reports/**'
       - '!workspace/tasks/**'
+      - '!workspace/task-validation/**'
       - '!workspace/task_board.md'
       - '!workspace/discussion.md'
       - '!area/novel/**'
@@ -41,9 +53,40 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
+          COORDINATOR_CALL: ${{ inputs.coordinator_call }}
+          SOURCE_SHA: ${{ inputs.source_sha || github.sha }}
         run: |
           set -euo pipefail
           echo "proceed=true" >> "$GITHUB_OUTPUT"
+          source_policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=$SOURCE_SHA" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+          current_policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=gpt" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+          policy_ready='
+            .coordinator.activation_status == "enabled" and
+            .protection.enforcement_status == "verified" and
+            .recovery.schedule_activation_status == "verified" and
+            .recovery.workflow_dispatch_activation_status == "verified"
+          '
+          coordinator_ready=false
+          if [[ -n "$source_policy_json" && -n "$current_policy_json" ]] &&
+             jq -e "$policy_ready" <<< "$source_policy_json" >/dev/null 2>&1 &&
+             jq -e "$policy_ready" <<< "$current_policy_json" >/dev/null 2>&1; then
+            coordinator_ready=true
+          fi
+          if [[ "$COORDINATOR_CALL" == "true" ]]; then
+            base_sha=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.parents[0].sha // empty')
+            if [[ "$base_sha" =~ ^[0-9a-f]{40}$ ]]; then
+              echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
+              echo "full_audit=false" >> "$GITHUB_OUTPUT"
+            else
+              echo "full_audit=true" >> "$GITHUB_OUTPUT"
+            fi
+            exit 0
+          fi
+          if [[ "$GITHUB_EVENT_NAME" == "push" && "$coordinator_ready" == "true" ]]; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "Legacy direct-push lint is disabled only after coordinator, protection, and recovery dispatch gates are verified."
+            exit 0
+          fi
           index_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/index.json?ref=$GITHUB_REF_NAME" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
           entry=$(jq -c '[.runs[]? | select(.family=="lint" and .scope=="on_changed" and (.status=="Passed" or .status=="Failed") and (.execution_mode=="incremental" or .execution_mode=="full-audit-fallback"))] | sort_by(.generated_at_utc) | reverse | .[0] // empty' <<< "$index_json" 2>/dev/null || true)
           history_path=$(jq -r '.history_path // empty' <<< "$entry" 2>/dev/null || true)
@@ -84,6 +127,7 @@ jobs:
       - name: Check out current commit
         uses: actions/checkout@v4
         with:
+          ref: ${{ inputs.source_sha || github.sha }}
           fetch-depth: 1
 
       - name: Fetch only the successful baseline commit
@@ -105,7 +149,7 @@ jobs:
 
       - name: Retrieve indexed baseline report
         id: report_baseline
-        if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true'
+        if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true' && inputs.coordinator_call != true
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -153,9 +197,9 @@ jobs:
           }
           run_check wrapper_syntax bash -n .agent/skills/asd-ste100/scripts/ste-lint-repository.sh
           run_check python_compile python3 -m py_compile \
-            .agent/skills/asd-ste100/scripts/generate_lint_report.py \
+            .agent/skills/the-worker/scripts/generate_lint_report.py \
             .agent/skills/asd-ste100/scripts/check_markdown_anchors.py
-          run_check report_tests python3 .agent/skills/asd-ste100/scripts/test_generate_lint_report.py
+          run_check report_tests python3 .agent/skills/the-worker/scripts/test_generate_lint_report.py
           run_check anchor_tests python3 .agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py
           run_check linter_selftest python3 .agent/skills/asd-ste100/scripts/ste-lint.py --selftest
           echo "failed=$failed" >> "$GITHUB_OUTPUT"
@@ -287,7 +331,7 @@ jobs:
           echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
       - name: Generate and publish changed-document lint evidence
-        if: ${{ !cancelled() && needs.preflight.outputs.proceed == 'true' }}
+        if: ${{ !cancelled() && needs.preflight.outputs.proceed == 'true' && inputs.coordinator_call != true }}
         shell: bash
         env:
           BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
@@ -368,7 +412,7 @@ jobs:
             task_id="$(git show -s --format=%B "$GITHUB_SHA" | sed -nE 's/^Task-ID:[[:space:]]*([0-9]{8}-[0-9]{6}(-[0-9]{2})*)[[:space:]]*$/\1/p' | paste -sd, -)"
           fi
           history_dir=".takeout/reports/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
-          python3 .agent/skills/asd-ste100/scripts/generate_lint_report.py \
+          python3 .agent/skills/the-worker/scripts/generate_lint_report.py \
             --scope on_changed --records-dir .lint-report-records \
             --output-dir "$history_dir" \
             --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \
@@ -426,7 +470,7 @@ jobs:
 
   diagnostics:
     name: Capture GH Actions diagnostics
-    if: ${{ always() }}
+    if: ${{ always() && inputs.coordinator_call != true && needs.preflight.outputs.proceed == 'true' }}
     needs: [preflight, ste-lint]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
@@ -448,4 +492,6 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./.github/workflows/gh-actions-capture
+        uses: ./.takeout/reports/gh_ac_reports/actions/capture
+        with:
+          run_id: ${{ github.run_id }}

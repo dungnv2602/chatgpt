@@ -9,7 +9,7 @@ flowchart TD
  A[Conversation] --> B{Cue or task activation}
  B -->|/start| C[Session Start guard] --> D[Read Workflow Map] --> E[The Worker] --> F[Conversation Mode: presentation only] --> G[Repository/task baseline and progressive loading] --> H[Workspace P0 and task reconciliation] --> I[Task / queue reconciliation] --> J[Authorized work to quiescence] --> K[Commit, readback and tracking] --> L[Closeout and queue continuation] --> M[Quiescence report]
  B -->|/map| N[Display map only]
- B -->|execute| O[Authorize prepared eligible batch]
+ B -->|execute| O[Universal execution directive within authorized scope]
  B -->|approve| P[Log decision only]
  B -->|Next| Q[Decision navigation only]
 ```
@@ -18,7 +18,7 @@ flowchart TD
 - Repository file reads default to the intended branch. Commit-specific reads require traceable SHA provenance; no unexplained or stale SHA is reused.
 - Presentation settings: `.agent/skills/the-worker/references/conversation-mode.md`.
 - `/map` displays this map only; it does not initialize or execute.
-- Standalone case-insensitive `execute` is the execution cue; approval and `Next` are log/navigation only.
+- `execute` is a universal execution directive, interpreted by The Worker in context; batch is a scheduling mechanism, not its definition. The Worker owns cue order, authorization persistence, recovery and quiescence semantics. Approval is log-only unless followed by an execution directive; `Next` is navigation only.
 
 ## Task lifecycle and scheduling
 
@@ -29,20 +29,22 @@ flowchart TD
  C --> D[Reconcile parentage, dependencies, indexes and board]
  D --> E{Eligible and authorized?}
  E -->|No| F[Proposed / blocked / paused / dependency-waiting]
- E -->|Yes| G[Worker schedules within focus]
- G --> H[Autonomous implementation]
+ E -->|Yes| G[Worker builds operation-level worklist]
+ G --> H[Decompose and execute; blockers local]
  H --> I[Commit with Task-ID trailer]
- I --> J[Readback and evidence]
- J --> K[Reconcile records and board]
- K --> L{Another eligible task?}
- L -->|Yes| G
- L -->|No| M[Quiescence and consolidated blocker brief]
+ I --> J[Resolve Validation Contract and bind exact SHA]
+ J --> K[Readback and evidence]
+ K --> L[Reconcile records and board]
+ L --> M{Another eligible operation?}
+ M -->|Yes| G
+ M -->|No| N[Quiescence and consolidated blocker brief]
 ```
 
 - Task templates, subtask templates and board template: `.agent/skills/the-worker/assets/`.
 - Board: `workspace/task_board.md`; records and indexes: `workspace/tasks/`.
 - Drafts, analyses, ADRs and discussion registers: `workspace/decisions/`, governed by Worker decision-governance reference.
-- Worker owns task capture, hierarchy, selection, blockers, commit evidence and closeout.
+- Worker owns task capture, hierarchy, selection, blockers, commit evidence and closeout. The execution controller persists and reconciles an operation-level worklist, decomposes around local blockers, and continues immediately after transitions; task-level status or reporting is not a stop proof.
+- Each task and subtask template includes a JSON Validation Contract and task-local Validation Lifecycle block. After an implementation commit, the Worker records the exact source SHA and policy blob SHA as `awaiting_ci`, then immediately continues with other eligible work. Terminal outcomes are reconciled against the status index by Task-ID, SHA, and policy revision.
 
 ## Document and skill governance
 
@@ -67,24 +69,31 @@ flowchart TD
 
 ## CI, reports and remediation
 
-```mermaid
+~~~mermaid
 flowchart TD
- A[Workflow or report producer] --> B[Worker scripts and capture workflow]
- B --> C[Unified report index]
- C --> D[Published report and diagnostics]
- D --> E[CI Ledger: evidence, identity, attribution, state]
- E --> F[Attributed genuine task]
- F --> G[Remediation child and eligibility]
- G --> H[Worker scheduling and closeout]
- C --> I[On-demand report navigation]
-```
+ A[Source commit on gpt] --> B[Dispatcher policy and duplicate-SHA gate]
+ B -->|Enabled| C[One exact-SHA coordinator]
+ B -->|Staged / duplicate| D[Legacy validation remains active]
+ C --> E[Reusable checks plus generic verifier]
+ E --> F[Exact-SHA aggregate]
+ F --> G[Isolated publisher]
+ G --> H[Compact status index and per-attempt review folder]
+ H --> I[Worker index-first review queue]
+ I --> J[Failure-only log diagnosis]
+ J --> K[Root-cause grouped remediation children]
+ H --> L[Recovery sweep: runs, artifacts, checkpoint and retention]
+~~~
 
-- Activation: CI work is handled only for an assigned, selected task under `workspace/tasks/` and within its authorized scope. It is not part of general session initialization.
-- Procedures: `.agent/skills/the-worker/references/ci-ledger.md` and `github-actions.md`, loaded only when the assigned CI task requires them.
-- Canonical implementation: `.agent/skills/the-worker/scripts/`; capture workflow: `.github/workflows/gh-actions-capture.yml`.
-- Report index and data: `.takeout/reports/`; navigation guide: `.takeout/reports/README.md`.
-- No automatic startup CI baseline, report scan, or Ledger reconciliation. Do not access `.takeout/reports/` for general setup or unrelated tasks.
-- Attribution is source-task-based, not guessed. The Ledger does not schedule or create parents.
+- Activation: relevant source pushes are routed by .github/workflows/task-validation-dispatch.yml. The dispatcher is currently policy-gated and staged; legacy validation workflows remain active until migration is complete.
+- ADR-0008 workflows: dispatcher .github/workflows/task-validation-dispatch.yml; reusable coordinator .github/workflows/task-validation.yml; generic verifier .github/workflows/task-validation-verifier.yml; isolated publisher .github/workflows/task-validation-publisher.yml; recovery .github/workflows/task-validation-recovery.yml.
+- Worker-owned contracts, schemas, adapters, publisher/recovery scripts and tests: .agent/skills/the-worker/assets/task-validation/ and .agent/skills/the-worker/scripts/. Interface and ownership guide: .agent/skills/the-worker/references/task-validation-interfaces.md.
+- Operational status index, checkpoint and review queue: workspace/task-validation/. The Worker reads the index first and opens logs only for recorded actionable failures. It does not rerun or override committed validation.
+- Recovery uses Actions run metadata and aggregate artifacts, not logs. Its push and post-publication paths are available on gpt. The scheduled trigger is not active because the repository default branch is main; scheduled workflows run only from the default branch. Activation requires changing the default branch or using an external scheduler.
+- Effective branch protection, default-branch availability for scheduled and workflow-dispatch recovery, and publisher write access remain external prerequisites. Coordinator activation stays staged until policy protection, workflow migration, publisher/recovery operation and report migration gates are satisfied.
+- .takeout/reports/ remains intact until ADR-0008 Confirmation proves every producer/consumer migrated and coverage preserved. Do not delete it early.
+- No automatic startup CI baseline, report scan, or recovery sweep. CI review is activated by its workflow or an explicitly assigned task, not general session initialization.
+- Source attribution comes only from the exact Task-ID commit trailer. If the source parent is unavailable, ADR-0008 routes remediation to one permanent fallback parent; never infer parentage. The Worker alone owns scheduling and task lifecycle; the publisher does not schedule.
+- The legacy CI Ledger remains only for pre-migration report findings until the approved migration is complete. ADR-0008 coordinator attempts are owned by the Worker review queue; do not create a parallel findings archive.
 - Historical backfill and hosted CI access remain governed; this map grants no permission.
 
 ## Image, drawing and takeout

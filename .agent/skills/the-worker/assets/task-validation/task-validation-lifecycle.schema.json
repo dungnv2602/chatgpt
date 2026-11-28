@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dungnv2602/chatgpt/blob/gpt/.agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json",
+  "title": "Task Validation Lifecycle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "state",
+    "source_sha",
+    "policy_revision",
+    "coordinator_run_id",
+    "attempt",
+    "outcome",
+    "reconciled_at"
+  ],
+  "properties": {
+    "state": {
+      "enum": [
+        "not_committed",
+        "awaiting_ci",
+        "review_required",
+        "reviewed",
+        "passed"
+      ]
+    },
+    "source_sha": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "policy_revision": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "coordinator_run_id": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "attempt": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "outcome": {
+      "oneOf": [
+        {
+          "enum": [
+            "success",
+            "check_failure",
+            "coverage_failure",
+            "infrastructure_failure",
+            "capture_failure",
+            "cancelled",
+            "superseded"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reconciled_at": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "not_committed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_sha": {
+            "type": "null"
+          },
+          "policy_revision": {
+            "type": "null"
+          },
+          "coordinator_run_id": {
+            "type": "null"
+          },
+          "attempt": {
+            "type": "null"
+          },
+          "outcome": {
+            "type": "null"
+          },
+          "reconciled_at": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "awaiting_ci"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_sha": {
+            "type": "string"
+          },
+          "policy_revision": {
+            "type": "string"
+          },
+          "coordinator_run_id": {
+            "type": "null"
+          },
+          "attempt": {
+            "type": "null"
+          },
+          "outcome": {
+            "type": "null"
+          },
+          "reconciled_at": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "review_required"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_sha": {
+            "type": "string"
+          },
+          "policy_revision": {
+            "type": "string"
+          },
+          "coordinator_run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "outcome": {
+            "enum": [
+              "check_failure",
+              "coverage_failure",
+              "infrastructure_failure",
+              "capture_failure"
+            ]
+          },
+          "reconciled_at": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "reviewed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_sha": {
+            "type": "string"
+          },
+          "policy_revision": {
+            "type": "string"
+          },
+          "coordinator_run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "outcome": {
+            "enum": [
+              "check_failure",
+              "coverage_failure",
+              "infrastructure_failure",
+              "capture_failure"
+            ]
+          },
+          "reconciled_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "passed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_sha": {
+            "type": "string"
+          },
+          "policy_revision": {
+            "type": "string"
+          },
+          "coordinator_run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "outcome": {
+            "const": "success"
+          },
+          "reconciled_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  ]
+}

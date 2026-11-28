@@ -66,6 +66,12 @@
 - **Action:** Created child 63 to enforce the explicit, case-insensitive standalone `execute` cue as the sole execution authorization. Approval only records decisions. `Next` only navigates the decision queue and leaves the blocker unresolved. Decision collection must finish before the batch begins.
 - **Authorization:** User supplied `Execute` after specifying the cue is case-insensitive.
 
+### 2026-11-28 — universal execution cue and lifecycle correction
+
+- **Approval:** User approved the consolidated correction package: universal cue semantics; directive-intent and ordered processing; combined cues; authorization persistence; scope boundaries; recovery and idempotency; execution audit; quiescence safeguards; canonical Worker ownership and map/reference alignment.
+- **Execution authorization:** User explicitly issued `Execute`.
+- **Action:** Created child 75 for this independently deliverable workflow hardening.
+
 ## 3. Objective and Acceptance Criteria
 
 Serve as the persistent, open parent task and coordination point for skills refactoring in the repository, including the current consolidation work and future refactoring initiatives. This is an explicitly authorized standing parent for skills-refactoring work; it is not a finite deliverable and must not be retired or closed merely because its current children are complete.
@@ -103,6 +109,12 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Closeout:** Child 63's record is removed under normal lifecycle rules. The persistent Refactor Skills parent remains open. Focus is at quiescence and decision collection resumes with blocked task 28.
 
 ## 5. Progress
+
+### 2026-11-28 — child 75 implementation
+
+- Created child 75 and updated the canonical Worker execution-cue section to universal, context-dependent execution, ordered cue processing, authorization persistence, recovery, idempotency, scope boundaries, and quiescence invariant. Updated the Workflow Map cue route and summary. Tracking reconciliation underway.
+- Commits: child record `faf729e5c0c5e911ec083f939269df0ed4f84f1b`; Worker `8fdc1ade2ecd8dc0b3812456700f88ce6b6a44d3`; map `8fbd7079815f4d9a4b19c032fb0c195049e59db2`; child index `b2c336d7d2593ed66777ee1adc61783c92250a31`.
+
 
 ### 2026-11-28 03:13 UTC — execution focus reconciled
 
@@ -607,13 +619,12 @@ The CI Ledger is canonical for diagnostic text, immutable report links, occurren
 
 ## 6. Current State and Remaining Work
 
-This is the persistent, open P0 Refactor Skills parent. The current authorized batch consists of children 65–67.
+This is the persistent, open P0 Refactor Skills parent.
 
-- Child 65 — template freshness gate strengthened and closed.
-- Child 66 — README ownership audit and pointer cleanup closed, with a documented full non-README scan limitation.
-- Child 67 — workflow optimization and cycle closure is In Progress.
-
-The task board and subtask index publish the current state. Completed child records are deleted under the lifecycle rules. The parent remains open.
+- Child IDs 64–74 are completed. Their records were deleted under lifecycle rules.
+- No active child is selected under this parent.
+- The task board has returned to the previously current ADR-0008 implementation parent.
+- Preserve this parent. Do not close or delete it unless the user explicitly changes this instruction.
 
 ## 7. Verification and Evidence
 
@@ -625,7 +636,7 @@ The task board and subtask index publish the current state. Completed child reco
 
 ## 8. Handoff
 
-Keep this persistent P0 Refactor Skills parent open. Finish child 67, reconcile the task board and indexes, and report at quiescence. Do not close or delete the parent unless the user explicitly changes this instruction.
+Keep this persistent P0 Refactor Skills parent open. Child 74 is complete and no active child is selected. Preserve the parent. Do not close or delete it unless the user explicitly changes this instruction.
 
 ## 9. Subtasks
 
@@ -710,3 +721,46 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Checks:** No local scripts/tests/lint and no hosted CI inspection. Remote readback verifies committed content, not runtime behavior.
 - **Process note:** The first three implementation commits did not include the required `Task-ID` trailer. Their SHAs are retained above; all subsequent task-tracking and closeout commits include `Task-ID: 20261127-173000-73`.
 - **Closeout:** Child 73 completed and removed under the persistent parent lifecycle. The Refactor Skills parent remains open at quiescence.
+
+### 2026-11-28 — child 74 closeout: Worker skill-governance prevention
+
+- **Outcome:** Completed child 74. Its child record was deleted under the persistent Refactor Skills lifecycle. This parent retains the completion summary.
+- **Ownership correction:** Moved task-validation policy, contract schema, and adapter registry to `.agent/skills/the-worker/assets/task-validation/`. Moved the explanatory interface guide to Worker references. Removed the four former `.github/task-validation*` files. GitHub workflow definitions remain under `.github/workflows/`.
+- **Procedural controls:** The Worker now requires canonical owner, artifact type, and allowed location before creating or moving any repository artifact. The Agent Skill Authoring skill explicitly invokes this gate. Consumer paths do not establish ownership.
+- **Task identity control:** The Worker now requires checking the complete parent history and subtask index before allocating a child ID. Deleted IDs remain consumed.
+- **Structural and automated controls:** The catalog and validator cover every non-Markdown file under `.agent/skills/` and `.github/`. The document-standards workflow triggers for both path families. It already runs the catalog regression suite and validator.
+- **Verification:** Remote JSON parsing succeeded for all three policy assets. A repository-tree audit matched 116/116 non-Markdown files to 21 rules, with zero uncovered files, overlaps, stale active rules, owner errors, placement errors, or type/suffix errors. All changed paths and removed paths were read back.
+- **Regression tests:** Added cases for correct and incorrect placement, unregistered files, duplicate ownership, unknown artifact types, stale owners, invalid suffixes, path traversal, and GitHub workflow exemptions. Tests, scripts, lint, and hosted CI were not run or inspected.
+- **External prerequisite:** Branch protection/ruleset enforcement remains unverified. No runtime behavior or hosted validation success is claimed.
+- **Task-ID tracking correction:** IDs 64–73 were already consumed in parent history. Child 74 was the next unused ID. Initial implementation commits used reused trailers 64; the first tracking correction commits used reused trailer 65. Git history is immutable. Subsequent commits used 74. This attribution error is recorded rather than hidden.
+- **Evidence:** Implementation readback branch head before closeout: `a3632caca3200d30cd3044a351b1bbef389053b5`. Child closeout commit: `00b0b8e7941639f559678256f7b7c483211543db`.
+- **Lifecycle reconciliation commits:** Parent closeout state `8569a6868e8f41e3478a9f98d7994c08b8665f51`; child index reset `caa0a306881866a7d636c2863884f60673beebfe`; board restored to ADR-0008 `5606abe15315093b53bedf00f3524e46f537d4d3`; child record deletion `ef230a2b91c7582d69f45c957e5d18a42fe3c28`; ADR-0008 subtask 01 canonical-path reconciliation `a64fbbb94b7c513c04634ca65f6a10a1bac71688`.
+- **Final readback before this parent-note commit:** Branch `gpt` head `a64fbbb94b7c513c04634ca65f6a10a1bac71688`. Child 74 is absent from the subtask index and tree. The board points to ADR-0008. The four former `.github/task-validation*` paths are absent.
+- **Current state:** Child 75 is implementation-complete and readback-verified but remains In Progress awaiting exact-SHA CI reconciliation; no CI result was inspected. The parent remains open.
+
+
+### 2026-11-28 — child 76 blocker-locality enforcement
+
+- **Approval and execution:** User approved tightening the scheduler's blocker-locality logic and explicitly issued Execute.
+- **Action:** Reinforced the canonical Worker with an operation-local blocker rule, immediate scheduler continuation, and stop-proof gate. Tracking under child 76 of the persistent Refactor Skills parent; ADR-0008 remains Current Execution.
+- **Implementation commit:** Worker rule committed; task tracking and final readback pending.
+- **Checks:** No local tests/scripts/lint or hosted CI inspection performed.
+
+
+### 2026-11-28 — child 76 closeout
+
+- **Action:** Completed blocker-locality enforcement and stop-proof gate in the canonical Worker. The scheduler now must isolate operation-local blockers, continue independent eligible work, and reconcile a stop proof before ending universal execution.
+- **Commit:** Worker rule `07bc7dadd34c166e26d20aa7c3757efffd2155e4`; implementation tracking commit `9c003854754dcebf370cafc236f978bfc7265ee6`; closeout commit `2b869e418f5058e6548e28dc09f241df36306f23`.
+- **Final branch readback:** Worker SHA `dd1d8d4da7c778614932128f5a9a9805b8cbbee8`; subtask index SHA `57fe10d456fdfb59d08641440400acf76ec23b8d`; parent SHA `ff44f2ab12cb0fcf7fa1559c3056bda58097464b`; board SHA `7ae03ef316358399444d23657c79a3d0e7bc0d97`. Confirmed child record absent and index entry removed. Closeout tracking commit `b3a343a8a7afac30325de52205376f418ff8aebb`.
+- **Checks:** No local tests/scripts/lint or hosted CI inspection performed.
+- **Closeout:** Child 76 completed and its record removed under normal child lifecycle. Child 75 remains open for validation metadata; ADR-0008 remains Current Execution.
+
+
+### 2026-11-28 — child 77: persistent eligible-operation worklist
+
+- **Root cause:** Task-level scheduling and stop-proof language did not require a concrete decomposed operation worklist, allowing assessment/status reconciliation to be treated as a practical stop.
+- **Correction:** The Worker now requires a persistent operation-level worklist for authorized execution, decomposition of residual acceptance criteria around blockers, immediate reselection after every operation transition, effect-aware recovery, and a worklist-based quiescence proof. Task-level blockers cannot conceal independently eligible operations. The Workflow Map now routes execution through operation-level scheduling.
+- **Implementation commits:** Worker `2202d365f75559e79a89dc481e29e76883447a64`; map `860dc1fe5d5f9d05756c0e25f82971b193fa00e`.
+- **Readback:** Worker operation-worklist procedure and Workflow Map reconciled from branch `gpt`; task record and index also read back. The implementation child is closed and removed under the normal lifecycle.
+- **Checks:** No local tests/scripts/lint or hosted CI inspection performed.
+- **Closeout:** Child 77 completed and deleted. Universal execution authorization continues to the ADR-0008 workstream; this correction does not reset or consume it.

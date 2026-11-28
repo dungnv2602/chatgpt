@@ -1,0 +1,2873 @@
+{
+  "schema_version": 1,
+  "closed_through": {
+    "run_id": 0,
+    "attempt": 0
+  },
+  "attempts": [
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "5ef340be7db6c2932cf55070b3fee80ff3cbb50a",
+      "coordinator_run_id": 46144146572,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a69d0e36b58700c201e1c7854d39ad5b687ad953",
+      "completed_at": "2026-11-28T12:20:15Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46144146572",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "4d06a12f412fe4f6a6ecd13fd26ffcceb7333b90",
+      "coordinator_run_id": 46144166111,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a69d0e36b58700c201e1c7854d39ad5b687ad953",
+      "completed_at": "2026-11-28T12:20:28Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46144166111",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "791b74ab75232d50dc838450a1910ecad855739a",
+      "coordinator_run_id": 46144178037,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a69d0e36b58700c201e1c7854d39ad5b687ad953",
+      "completed_at": "2026-11-28T12:20:36Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46144178037",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "7e8d99de0dfeeb681f4e2dc96af78b618fff4442",
+      "coordinator_run_id": 46144213338,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a69d0e36b58700c201e1c7854d39ad5b687ad953",
+      "completed_at": "2026-11-28T12:21:01Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46144213338",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "78454878be15e78b8a6340753f81c1a2a70d3566",
+      "coordinator_run_id": 46144242087,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a69d0e36b58700c201e1c7854d39ad5b687ad953",
+      "completed_at": "2026-11-28T12:21:21Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46144242087",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "c02ec4cb6468dd7c0361f2814a85c1ff939b7e61",
+      "coordinator_run_id": 46144286898,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:21:54Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46144286898",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "dd124168e69d41a48ceae7f33506ad91a65964b7",
+      "coordinator_run_id": 46144358510,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:22:46Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46144358510",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "11c56eb1d87993685883733977f10396999888d2",
+      "coordinator_run_id": 46145898030,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:41:14Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46145898030",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "a67c6e7f792c6183d72f8ac5b7d842218ef0e147",
+      "coordinator_run_id": 46145909686,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:41:23Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46145909686",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "c079e1a367f594e75fd275b6152e119519943bee",
+      "coordinator_run_id": 46145925104,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:41:35Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46145925104",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "2f9015338ca2dcabec7e40ac0702b8d203b12b33",
+      "coordinator_run_id": 46145937797,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:41:45Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46145937797",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "24982e0748826d6dc4b8f2f2650cd18b971b5667",
+      "coordinator_run_id": 46145957407,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:41:59Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46145957407",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "eb9b7f9d93b40d6664761b151f5193fe2bcaeea4",
+      "coordinator_run_id": 46146003051,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:42:33Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146003051",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "a3aef6194e565a001b7edc77e64c6081357b3bfa",
+      "coordinator_run_id": 46146095610,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:43:45Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146095610",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "e0e065b20c8ae13eb5c96f0dc2dbabef265c6d0f",
+      "coordinator_run_id": 46146108036,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:43:54Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146108036",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "8e796005ae951db781e329a82a5ca4ab3eb05410",
+      "coordinator_run_id": 46146117199,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:44:02Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146117199",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "ad6a4d5ab3e17b88c80d782e5edc9ccfd9fa9216",
+      "coordinator_run_id": 46146153377,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:44:30Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146153377",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "9a58951b03f71ae8251c48fdd7292fdfdf52c964",
+      "coordinator_run_id": 46146163150,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "7d5a44e181f4e02d259edf2395ff072e50c36e6c",
+      "completed_at": "2026-11-28T12:44:37Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146163150",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "49a7544e98b68169b8571728bc9d9dc84e2e2721",
+      "coordinator_run_id": 46146181989,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "ca75e7896f751275c7c3b370081aa0259a61990f",
+      "completed_at": "2026-11-28T12:44:52Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146181989",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "4abcdbe0078541181ef920b22aa2cc7c147f59f7",
+      "coordinator_run_id": 46146201700,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:45:07Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146201700",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "03e0d1235e29423cfb9f07140a20c873ecfc6301",
+      "coordinator_run_id": 46146214647,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:45:16Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146214647",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "66fc180fe3a9b7ab6db6a72ab0d24a4e4d071e10",
+      "coordinator_run_id": 46146235493,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:45:30Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146235493",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "c71687448fb582ca1325adee695a9498f4f1ac6d",
+      "coordinator_run_id": 46146496670,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:48:43Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146496670",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "7f31ef1e940e02feaa77ffb95a9e506528eccdee",
+      "coordinator_run_id": 46146507706,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:48:52Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146507706",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "45d16a1338aa9e00fd3ca84bc97d66f6b5ee207c",
+      "coordinator_run_id": 46146527626,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:49:08Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146527626",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-03",
+      "source_sha": "f599b87d4b31abf059c91c11ec30cf8649e14cf4",
+      "coordinator_run_id": 46146550148,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:49:24Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146550148",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-02",
+      "source_sha": "7f7d4c5e8d0ce626a8183bef2fcf517678831cc5",
+      "coordinator_run_id": 46146872521,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:53:20Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146872521",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-02",
+      "source_sha": "68b5b443176fe51d3ddd792dee35041e02930f8b",
+      "coordinator_run_id": 46146885060,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:53:31Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146885060",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-02",
+      "source_sha": "079363e7e996442c8dc5fe05d4a118e4e6dbbf62",
+      "coordinator_run_id": 46146948482,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:54:19Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146948482",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-02",
+      "source_sha": "b3d46fda9000acd859914887fa2c720326f2ba6a",
+      "coordinator_run_id": 46146967815,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:54:34Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146967815",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-02",
+      "source_sha": "7b56695abcc705ec3ab3e51831eeda170a759a07",
+      "coordinator_run_id": 46146976572,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:54:41Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146976572",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-02",
+      "source_sha": "abe7781de46cc964dd60d1e237c7b18ceb1f943b",
+      "coordinator_run_id": 46146993660,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:54:56Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46146993660",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-02",
+      "source_sha": "672d8882b6a4b4f36d7f6e6442c4a6ecbdda6da9",
+      "coordinator_run_id": 46147007778,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T12:55:06Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46147007778",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "f6c8615ef02744d29c8c6dc5b64f00d972edbc40",
+      "coordinator_run_id": 46147736803,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T13:03:59Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46147736803",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "1f9a2fb0fd0ea8f33a5d61d8da179b4cf5dc384a",
+      "coordinator_run_id": 46147739670,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "70e0702b08856fa134bf977c5a7c41690f289d08",
+      "completed_at": "2026-11-28T13:04:01Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46147739670",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "735f3c41d14859a000f0234f99044b41cf2aa243",
+      "coordinator_run_id": 46147764934,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "fc39bb40ec60d0d164972ae3ae313a45e5f92828",
+      "completed_at": "2026-11-28T13:04:20Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46147764934",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "f5c9f593a5825660a6da42054039bcaf710a1be0",
+      "coordinator_run_id": 46148025976,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "fc39bb40ec60d0d164972ae3ae313a45e5f92828",
+      "completed_at": "2026-11-28T13:07:23Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148025976",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "eb97997d6a23f2741f066f9fc30351e4934b70f3",
+      "coordinator_run_id": 46148067187,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "fc39bb40ec60d0d164972ae3ae313a45e5f92828",
+      "completed_at": "2026-11-28T13:07:54Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148067187",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "28b7d4279da7a41a743ea91320edc86f9909da71",
+      "coordinator_run_id": 46148103994,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "fc39bb40ec60d0d164972ae3ae313a45e5f92828",
+      "completed_at": "2026-11-28T13:08:21Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148103994",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "5a0222ae995ed46d656c5ea1006e81881ecaa8e4",
+      "coordinator_run_id": 46148169756,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "fc39bb40ec60d0d164972ae3ae313a45e5f92828",
+      "completed_at": "2026-11-28T13:09:09Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148169756",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "2c868a9f30e15c73ab23d8b8a4ee81dffe4160d4",
+      "coordinator_run_id": 46148217742,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "fc39bb40ec60d0d164972ae3ae313a45e5f92828",
+      "completed_at": "2026-11-28T13:09:44Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148217742",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "1522342504f5daf3d553ec9469e5a0d8bbab6e7d",
+      "coordinator_run_id": 46148365006,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "fc39bb40ec60d0d164972ae3ae313a45e5f92828",
+      "completed_at": "2026-11-28T13:11:24Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148365006",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "0a429dee8a4fb6af16d282c9251b284feeaec837",
+      "coordinator_run_id": 46148385110,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "fc39bb40ec60d0d164972ae3ae313a45e5f92828",
+      "completed_at": "2026-11-28T13:11:39Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148385110",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "b5ffeda74091688c6cf99745e76e48954b0365ef",
+      "coordinator_run_id": 46148423584,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:12:07Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148423584",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "46655cef4c1d8539e79c12d92e2b72c4934b20cb",
+      "coordinator_run_id": 46148444540,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:12:21Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148444540",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "3fb5d499376f97b0c9375726240e00e5023b3a53",
+      "coordinator_run_id": 46148496109,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:12:57Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148496109",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "1196f39f2be3f8a253e9a44b6149598dfbcce39c",
+      "coordinator_run_id": 46148502261,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:13:01Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148502261",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "1684fdadc2b72ed86d5fc19fee3bf4b650fde531",
+      "coordinator_run_id": 46148526750,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:13:17Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148526750",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "d6581e2a57961ced68f11d076f0da55692ed0dee",
+      "coordinator_run_id": 46148530974,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:13:20Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148530974",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "eca29d4c7358b219946a1717a34885b2fe33b29a",
+      "coordinator_run_id": 46148537112,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:13:25Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148537112",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "cac3f77df85b7975f53e1c4cfff76d397f6cf72e",
+      "coordinator_run_id": 46148570193,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:13:51Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148570193",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "614db6813db679863153dc3e967292a00e10bcc4",
+      "coordinator_run_id": 46148582407,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:14:00Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148582407",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "513d22d593778eb1cd0bd4c898bb6ff741daaba4",
+      "coordinator_run_id": 46148775068,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:16:15Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148775068",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "9a2057f6a1119560e7516c3f643676cd85bd0a9f",
+      "coordinator_run_id": 46148806534,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:16:40Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148806534",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "4dde45c739c793770ae8709580fb38816abc379e",
+      "coordinator_run_id": 46148811166,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:16:43Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148811166",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "53918029ccad555918281712a34a7203739314c5",
+      "coordinator_run_id": 46148815081,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:16:46Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148815081",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "ecc64a71623bfd9ecbdf0d5c9b39e4b15008771b",
+      "coordinator_run_id": 46148828901,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:16:56Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148828901",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "3113203de735e10567feff230add159154f79ca6",
+      "coordinator_run_id": 46148871912,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:17:26Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46148871912",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "93e0e5bac2a5b994cfa5011ad2691c1eb2fe0c33",
+      "coordinator_run_id": 46151828080,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:53:09Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46151828080",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "96214181c32b13bb0b57f1ce8f58dbbeda642feb",
+      "coordinator_run_id": 46151850131,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:53:25Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46151850131",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "8de6e384e42c32fb0914e1453900b23086771be1",
+      "coordinator_run_id": 46151853395,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:53:28Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46151853395",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "88ca33c7d46bc5721aaebaa9f46ad8f67549c917",
+      "coordinator_run_id": 46151883601,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:53:50Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46151883601",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "3ed4c621b52d503e59c0ed55db17c8b2e1238d72",
+      "coordinator_run_id": 46151889414,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "8c09516021f60f3e45db83e3cfb0a52014bdb916",
+      "completed_at": "2026-11-28T13:53:55Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46151889414",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "fc5ee320d1e2d591303791409260afff20f5d674",
+      "coordinator_run_id": 46151893815,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "33cef46778bc5d9cc8606bac1e8c773c097ab796",
+      "completed_at": "2026-11-28T13:53:58Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46151893815",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "13273c73792094c6062a0a484882625f0538800e",
+      "coordinator_run_id": 46152084431,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "33cef46778bc5d9cc8606bac1e8c773c097ab796",
+      "completed_at": "2026-11-28T13:56:19Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152084431",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "58964d0a638e90991f4de772d3e36a5bc2b0def7",
+      "coordinator_run_id": 46152131820,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "33cef46778bc5d9cc8606bac1e8c773c097ab796",
+      "completed_at": "2026-11-28T13:56:55Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152131820",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "855ec4e87a2fc1b51637bb33d462a45a75ffe769",
+      "coordinator_run_id": 46152162972,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "33cef46778bc5d9cc8606bac1e8c773c097ab796",
+      "completed_at": "2026-11-28T13:57:20Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152162972",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "c44ed990763132e239687e2df89228d452ab3d14",
+      "coordinator_run_id": 46152170931,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "33cef46778bc5d9cc8606bac1e8c773c097ab796",
+      "completed_at": "2026-11-28T13:57:26Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152170931",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "33cc3712d8e92bb31e7e821d4a9e9e7b336cf41f",
+      "coordinator_run_id": 46152228304,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "33cef46778bc5d9cc8606bac1e8c773c097ab796",
+      "completed_at": "2026-11-28T13:58:10Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152228304",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "8e85f102458c063e35056d4b22e2a7b7a241b753",
+      "coordinator_run_id": 46152252016,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "33cef46778bc5d9cc8606bac1e8c773c097ab796",
+      "completed_at": "2026-11-28T13:58:30Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152252016",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "69a6691e2867b522ab6a316c9ea8d317bb762b04",
+      "coordinator_run_id": 46152334423,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T13:59:34Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152334423",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "0be24fc186a3ba0d53aa22c727cd9456189fbeb1",
+      "coordinator_run_id": 46152347776,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T13:59:45Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152347776",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "42bbc8fc4061b817830a8712c6a00339eb951fe2",
+      "coordinator_run_id": 46152373404,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:00:03Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152373404",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "9c9612f633ef83442cff83c897121be9ad8c2d3b",
+      "coordinator_run_id": 46152420967,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:00:33Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152420967",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "d256865dc9c57838e33981050fa75292632bc22e",
+      "coordinator_run_id": 46152452236,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:00:51Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152452236",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "6e42e8da552ced78fc2d736fb07005ed4669a3f6",
+      "coordinator_run_id": 46152513647,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:01:30Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152513647",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "dfe8525815f36eae311950d076a11a88eea3d248",
+      "coordinator_run_id": 46152547906,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:01:54Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152547906",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "2b27f6257fb2f47ffdee251cbe39922234668bfc",
+      "coordinator_run_id": 46152551629,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:01:57Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152551629",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "86fc9937b8c33ec37c6b49aa27c54b558b3340e3",
+      "coordinator_run_id": 46152575765,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:02:14Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152575765",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "41cb269cbf62c6d40ba9525624d0c3f5115a41fc",
+      "coordinator_run_id": 46152579022,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:02:16Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152579022",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "8d997b2735c3dfa291c1ee8f7ebc5b6de61d10e5",
+      "coordinator_run_id": 46152583745,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:02:20Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152583745",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "498a53bed18059c180b05fbb3935550ff51cbfe0",
+      "coordinator_run_id": 46152643240,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:03:01Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152643240",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "a7582cc47a39e7accba06dcb8d4c424f09913277",
+      "coordinator_run_id": 46152657090,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "1cc04a8dad699c42534062ce2f9ed2c69b595365",
+      "completed_at": "2026-11-28T14:03:09Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152657090",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "3995af7d665c5e557e4a8b03b803f696aa9feaf0",
+      "coordinator_run_id": 46152671407,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:03:19Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152671407",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "5934d243561c024bd5e7395292afa221a13c8271",
+      "coordinator_run_id": 46152691439,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:03:33Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152691439",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "7d2d14dc6469aaf5452c889649cdc9383d4af13d",
+      "coordinator_run_id": 46152695251,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:03:36Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152695251",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "e6c290059edb5713d8ac15eaa97f166ba8234171",
+      "coordinator_run_id": 46152711918,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:03:48Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152711918",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "74f41a589d607125728be54bd635a4b7ca73d73d",
+      "coordinator_run_id": 46152992575,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:07:03Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46152992575",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "1fdbe1875f9a434257d1727a91b907b05aaf03c9",
+      "coordinator_run_id": 46153023725,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:07:24Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153023725",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "2b1a29017ad773504d6991e9d9e4c4217816872b",
+      "coordinator_run_id": 46153059274,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:07:49Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153059274",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "75d48e055d27c2316d7dbc581eeabe304a901dbc",
+      "coordinator_run_id": 46153079038,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:08:03Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153079038",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "c0027c6101e79af2347d9d617cbbe807608ec21a",
+      "coordinator_run_id": 46153091810,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:08:12Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153091810",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "e779e96fb8cbc40e95faf9f396c283979b8b90e5",
+      "coordinator_run_id": 46153136452,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:08:44Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153136452",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "42b65f188981d855a2aa233e4501ba145be2e73e",
+      "coordinator_run_id": 46153168833,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:09:07Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153168833",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "6a8e23fca0ca78b62a0966fb5a1858245c35ef0e",
+      "coordinator_run_id": 46153226360,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:09:48Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153226360",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "233d96b1517680d58e118cded5d65319b75de955",
+      "coordinator_run_id": 46153248574,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:10:04Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153248574",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "a76c2523f240f2f29a89fb03e002748ef6b6941d",
+      "coordinator_run_id": 46153320256,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:10:52Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153320256",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "3a921495464f9b83fd5e185a5a943290af540324",
+      "coordinator_run_id": 46153374493,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "5b0dcdc127e85ac3496e5444aaebe03658e1e435",
+      "completed_at": "2026-11-28T14:11:27Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153374493",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "55b47f47701a034480f9c61a728ccd95e414cf7e",
+      "coordinator_run_id": 46153419563,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:12:01Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153419563",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "85a179f2297e0818a25da10908a1ec14f1c0e3fe",
+      "coordinator_run_id": 46153437246,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:12:13Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153437246",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "ee036b15ebbc069a98d98e5e86fb4266e5cc8152",
+      "coordinator_run_id": 46153467541,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:12:34Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153467541",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "4f39ab5eac4afa10ea96dfcadfcd19a284835db9",
+      "coordinator_run_id": 46153516586,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:13:06Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153516586",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "93fcfcea6430964d91af23e323f20cb309772d31",
+      "coordinator_run_id": 46153537761,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:13:19Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153537761",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "146edc382863fbc247d0a3e8f0723718a0d4c82a",
+      "coordinator_run_id": 46153560752,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:13:36Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153560752",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "55c9b92630c0482d2a983ddfe23e6510a687be15",
+      "coordinator_run_id": 46153595648,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:14:02Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153595648",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "8dbd7af60872c7a6a0987faba05fe0d64ba347bb",
+      "coordinator_run_id": 46153598798,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:14:04Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153598798",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "e46cf725fc04398036cae7d07fb0d8cd33d88564",
+      "coordinator_run_id": 46153713717,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:15:21Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153713717",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "eb843538fc58e81b05e49e26a1ca4d38f3e28c87",
+      "coordinator_run_id": 46153763432,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:15:54Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153763432",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "113ee3d6391f870a6b1bfa7a5edb9475afe8867e",
+      "coordinator_run_id": 46153835951,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:16:47Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153835951",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "65ee637aba0cc4d7717681540edd2c8e1473fc19",
+      "coordinator_run_id": 46153839557,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:16:50Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153839557",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "6e9b6b80970d33943f553877aa60ffedb590b435",
+      "coordinator_run_id": 46153843217,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:16:52Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153843217",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "072031e94dd9c76d6ee4225aec5c82d568c35447",
+      "coordinator_run_id": 46153846666,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:16:55Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153846666",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "522430c94b5e44304f133355e1e0587af504c170",
+      "coordinator_run_id": 46153868912,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:17:10Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153868912",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "11ac45618b50e7460fcb0465542a2a609926834f",
+      "coordinator_run_id": 46153874112,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:17:13Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153874112",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "17cf4263561071cb4562685c677fbb229cb8a380",
+      "coordinator_run_id": 46153951085,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:18:08Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153951085",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "163ad8c0481a9456d5406ab1e291c2fd4681e41c",
+      "coordinator_run_id": 46153963098,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:18:17Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153963098",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "9f831ac1245569e5ac3d13519a868b050cb3d277",
+      "coordinator_run_id": 46153996182,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:18:41Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46153996182",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "099a357cbb78ba842fb3812d8b755c1c6fcc555e",
+      "coordinator_run_id": 46154029048,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "46cdbe5b85a9d0731b0a4810644aad3177a94ebc",
+      "completed_at": "2026-11-28T14:19:03Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154029048",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "e26da4e16049336efe5f30711dd5cae030ee9e9f",
+      "coordinator_run_id": 46154042562,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:19:12Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154042562",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "8ff87de0cc14b6da10ade88c14135f459cc14485",
+      "coordinator_run_id": 46154084889,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:19:43Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154084889",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "ff53870e6de5f9c6ad3bc769ad3c1260bdf8ec6a",
+      "coordinator_run_id": 46154089098,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:19:46Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154089098",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "c0a5f1fd6ed1e68383bbcb109643a353dadc49a8",
+      "coordinator_run_id": 46154092807,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:19:49Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154092807",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "6425889e903af502398436be1d3a78b5f1702e77",
+      "coordinator_run_id": 46154097900,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:19:53Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154097900",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "60ba63f005d454150578123f4f60b7cea3151e45",
+      "coordinator_run_id": 46154142613,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:20:22Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154142613",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "83f44a88004697df8d01d0aec0a428c3d74dd89a",
+      "coordinator_run_id": 46154171330,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:20:40Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154171330",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "8f0f332a2d67c5517baba3b822ce9e4b403d73bd",
+      "coordinator_run_id": 46154359302,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:22:49Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154359302",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "731cbce1cc75e11cf79132a42e073edef27717db",
+      "coordinator_run_id": 46154382048,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:23:04Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154382048",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "90d70efffa51ea01d84c0bd58d7eb3172bc0396e",
+      "coordinator_run_id": 46154472410,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:24:08Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154472410",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "bddda722792fa8d66f78a90bbf34f72ae187398d",
+      "coordinator_run_id": 46154576821,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:25:22Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154576821",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "c362482231e425125f642b84ceb642ba9a725856",
+      "coordinator_run_id": 46154587767,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "a0a8173b716675638e18a30ff037f98dc52d60f6",
+      "completed_at": "2026-11-28T14:25:30Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154587767",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "aeac41aa71d50b2eb6a6544bd20dc7917e786161",
+      "coordinator_run_id": 46154624825,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:25:58Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154624825",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "1a832717f6d6942d750f5a0e776ea2b384c8cb62",
+      "coordinator_run_id": 46154644844,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:26:12Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154644844",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "fa7ef96e820b5318b9b08e298e09a683f5ed18c2",
+      "coordinator_run_id": 46154660507,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:26:23Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154660507",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "37c80057415aed6cbd75049da99d1d26f7233b7d",
+      "coordinator_run_id": 46154674866,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:26:33Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154674866",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "11ab404e5a0bdda5f2d3201aca72e2af58105388",
+      "coordinator_run_id": 46154683552,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:26:40Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154683552",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "adb7fb403c082d1c642e34f710276107a6b62c38",
+      "coordinator_run_id": 46154738006,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:27:20Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154738006",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "e0c42cccf686add2f6daa9038e8667db5147ef1d",
+      "coordinator_run_id": 46154740599,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:27:21Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154740599",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "43beb17085301cc713160d09ae81344e9e50c4d7",
+      "coordinator_run_id": 46154742508,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:27:23Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154742508",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b",
+      "coordinator_run_id": 46154774421,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:27:46Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154774421",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "1b1f248c98ca5833d77064269db62bf90dce8bca",
+      "coordinator_run_id": 46154796828,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:28:02Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154796828",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "78d93516a037a0afaa802a7de994d04f220fe010",
+      "coordinator_run_id": 46154865950,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:28:54Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154865950",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "9f459afa29c1e02ddd56882b91ef810f0ba705a1",
+      "coordinator_run_id": 46154881347,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:29:05Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154881347",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "8219d22e16605910c23bbabbd18a825b5b7858db",
+      "coordinator_run_id": 46154895448,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:29:16Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154895448",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "d8ffe759ca943a37e87961697ab552e5e95c39b3",
+      "coordinator_run_id": 46154932699,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:29:43Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154932699",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "4f25692d318ab71766e6b0d3559213c58ba9c840",
+      "coordinator_run_id": 46154983289,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:30:16Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154983289",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261128-230000-04",
+      "source_sha": "f4028453e6a444b7b7a575db037b02a6b5b7c23b",
+      "coordinator_run_id": 46154998498,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:30:25Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46154998498",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "c573a89b319b29286795d00174d5c0da9894bc27",
+      "coordinator_run_id": 46155289466,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:33:37Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46155289466",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "62f06aa31edfe92837b8c9b79c552f0474565dfb",
+      "coordinator_run_id": 46155952238,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:41:29Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46155952238",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "905d90cb0b07c91daf5186b1cb4e3f80d78b5155",
+      "coordinator_run_id": 46155955114,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:41:31Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46155955114",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "1178a928a274187aa31036c4630d55bb4c1326bf",
+      "coordinator_run_id": 46155958170,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:41:34Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46155958170",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "38b30cc1bb980f882add31e7f146ccd111cd6da3",
+      "coordinator_run_id": 46155961294,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:41:36Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46155961294",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "07cc521eed0efa536ed7c27b700d77b92631b899",
+      "coordinator_run_id": 46155980025,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:41:49Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46155980025",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "623a96a56b73d7c4ea4aa281e1540eddf600df46",
+      "coordinator_run_id": 46155982783,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:41:51Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46155982783",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "3ea1db900a4ff0b4448bbfe9efbc0c2a0dfe66b3",
+      "coordinator_run_id": 46155986742,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:41:54Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46155986742",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "faf729e5c0c5e911ec083f939269df0ed4f84f1b",
+      "coordinator_run_id": 46157295713,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:57:23Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157295713",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "8fdc1ade2ecd8dc0b3812456700f88ce6b6a44d3",
+      "coordinator_run_id": 46157326879,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:57:47Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157326879",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "8fbd7079815f4d9a4b19c032fb0c195049e59db2",
+      "coordinator_run_id": 46157333690,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:57:52Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157333690",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "b2c336d7d2593ed66777ee1adc61783c92250a31",
+      "coordinator_run_id": 46157349359,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:58:03Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157349359",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "45df0211fe5cd32256957a803b883d478dca23f0",
+      "coordinator_run_id": 46157360306,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:58:12Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157360306",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "84bc41d143b8aad16f79cf2b5d2a126f1330cc0b",
+      "coordinator_run_id": 46157367295,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:58:17Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157367295",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "7eecebbf305112bff2c7eed7520ec8d61dc0c7d1",
+      "coordinator_run_id": 46157385534,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:58:31Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157385534",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "345f94048b94b8129c25fb46a77ee81f5a56ff22",
+      "coordinator_run_id": 46157421376,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:58:58Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157421376",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "0c105f2e49d6d75d1e8a3f3ba540032212a5369a",
+      "coordinator_run_id": 46157427654,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:59:03Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157427654",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "bac7881838c1c5598f5bf6ecd9905b881c9542e8",
+      "coordinator_run_id": 46157437430,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:59:10Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157437430",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "f41cc0536e02b8ffb1f758920a15f00ebae1ad01",
+      "coordinator_run_id": 46157486879,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:59:48Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157486879",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "984147453d5d183f2674578cb0c192c45ef2c473",
+      "coordinator_run_id": 46157496754,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T14:59:56Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157496754",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "f74f5b6d90e8bbadeda4071eaeca5e8cca3f192d",
+      "coordinator_run_id": 46157504772,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:00:02Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46157504772",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "07bc7dadd34c166e26d20aa7c3757efffd2155e4",
+      "coordinator_run_id": 46160912467,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:38:17Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46160912467",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": "20261127-173000-76",
+      "source_sha": "9c003854754dcebf370cafc236f978bfc7265ee6",
+      "coordinator_run_id": 46161008702,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:39:26Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161008702",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "b3a343a8a7afac30325de52205376f418ff8aebb",
+      "coordinator_run_id": 46161131173,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:40:49Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161131173",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "9d8889699f669b87899e7ce468c3832b7e12d51d",
+      "coordinator_run_id": 46161149766,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:41:02Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161149766",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "294851e69f229579c56fcbda7c3de686236c99cc",
+      "coordinator_run_id": 46161712968,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:47:29Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161712968",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "527d4fa75bad6d34f3f88b7f97b917a6ed2155d1",
+      "coordinator_run_id": 46161720712,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:47:34Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161720712",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "2202d365f75559e79a89dc481e29e76883447a64",
+      "coordinator_run_id": 46161745536,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:47:51Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161745536",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "860dc1fe5d5f9d05756c0e25f82971b193fa00e1",
+      "coordinator_run_id": 46161761953,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:48:03Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161761953",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "43becb13003d8aa5ffd132c9490d8698c0aa5e91",
+      "coordinator_run_id": 46161799714,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:48:30Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161799714",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "0316ea0e6ab482c97f01ebd675a992acaa2f469c",
+      "coordinator_run_id": 46161806544,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:48:34Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161806544",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "6900dddedf00268fe792f3d5abee541449ff8d54",
+      "coordinator_run_id": 46161813573,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:48:39Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161813573",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "08027fa21fb6f08e938cf98cac8cdbbde97a7d92",
+      "coordinator_run_id": 46161845017,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+      "completed_at": "2026-11-28T15:49:01Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46161845017",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
+    }
+  ]
+}

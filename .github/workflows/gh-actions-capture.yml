@@ -19,8 +19,53 @@ concurrency:
 permissions: {}
 
 jobs:
+  policy_gate:
+    name: Gate legacy capture for coordinator-validated commits
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+    outputs:
+      proceed: ${{ steps.gate.outputs.proceed }}
+    steps:
+      - name: Check out trusted Worker policy
+        uses: actions/checkout@v4
+        with:
+          ref: gpt
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Select legacy capture mode
+        id: gate
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          current_policy_json=$(cat .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
+          source_policy_json=""
+          if [[ "$HEAD_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            source_policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=$HEAD_SHA" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+          fi
+          policy_ready='
+            .coordinator.activation_status == "enabled" and
+            .protection.enforcement_status == "verified" and
+            .recovery.schedule_activation_status == "verified" and
+            .recovery.workflow_dispatch_activation_status == "verified"
+          '
+          proceed=true
+          if [[ -n "$source_policy_json" ]] &&
+             jq -e "$policy_ready" <<< "$current_policy_json" >/dev/null 2>&1 &&
+             jq -e "$policy_ready" <<< "$source_policy_json" >/dev/null 2>&1; then
+            proceed=false
+          fi
+          echo "proceed=$proceed" >> "$GITHUB_OUTPUT"
+
   capture:
     name: Capture completed workflow diagnostics
+    needs: [policy_gate]
+    if: needs.policy_gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -35,63 +80,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Capture source workflow diagnostics and reconcile the legacy Ledger
+        uses: ./.takeout/reports/gh_ac_reports/actions/capture
         with:
-          python-version: '3.x'
-
-      - name: Compile and test cancellation-safe diagnostic reporting
-        run: |
-          python3 -m py_compile .agent/skills/the-worker/scripts/actions-report.py .agent/skills/the-worker/scripts/ledger.py
-          python3 -m unittest discover \
-            -s .agent/skills/the-worker/scripts \
-            -p 'test_actions-report.py' \
-            -v
-          python3 -m unittest discover \
-            -s .agent/skills/the-worker/scripts \
-            -p 'test_ledger.py' \
-            -v
-
-      - name: Capture source workflow run
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GITHUB_TOKEN: ${{ github.token }}
-        run: python3 .agent/skills/the-worker/scripts/actions-report.py --mode current --repo "$GITHUB_REPOSITORY" --run-id "${{ github.event.workflow_run.id }}"
-
-      - name: Update central CI issue ledger
-        if: always()
-        run: python3 .agent/skills/the-worker/scripts/ledger.py --mode ingest
-
-      - name: Publish diagnostic evidence and Worker tasks
-        if: always()
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A --    .takeout/reports/ workspace/tasks/ workspace/task_board.md
-          if git diff --cached --quiet; then
-            echo "No new diagnostic evidence to publish."
-            exit 0
-          fi
-          git commit -m "Publish GitHub Actions diagnostics and CI issue ledger"
-          for attempt in 1 2 3 4 5; do
-            git fetch origin gpt
-            if ! git rebase origin/gpt; then
-              git rebase --abort || true
-              echo "::error::Could not rebase diagnostic evidence onto gpt."
-              exit 1
-            fi
-            if git push origin HEAD:refs/heads/gpt; then
-              echo "Diagnostic evidence published."
-              exit 0
-            fi
-            git fetch origin gpt
-            if git merge-base --is-ancestor origin/gpt HEAD; then
-              echo "::error::Push failed while origin/gpt was unchanged."
-              exit 1
-            fi
-          done
-          echo "::error::Could not publish diagnostic evidence after five attempts."
-          exit 1
-
+          run_id: ${{ github.event.workflow_run.id }}

@@ -1,0 +1,58 @@
+name: ADR-0008 Task Validation Recovery
+
+on:
+  workflow_call:
+  push:
+    branches:
+      - gpt
+    paths:
+      - ".agent/skills/the-worker/assets/task-validation/**"
+      - ".agent/skills/the-worker/assets/TASK_TEMPLATE.md"
+      - ".agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md"
+      - ".agent/skills/the-worker/SKILL.md"
+      - ".agent/skills/the-worker/references/task-validation-interfaces.md"
+      - ".agent/skills/the-worker/scripts/**"
+      - ".github/workflows/task-validation-dispatch.yml"
+      - ".github/workflows/task-validation.yml"
+      - ".github/workflows/task-validation-publisher.yml"
+      - ".github/workflows/task-validation-recovery.yml"
+      - "workspace/README.md"
+      - "workspace/task_board.md"
+      - "workspace/tasks/**"
+      - "workspace/task-validation/README.md"
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions: {}
+
+jobs:
+  recover:
+    name: Reconcile missed coordinator publications
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      actions: write
+      contents: write
+    steps:
+      - name: Check out trusted Worker recovery code from gpt
+        uses: actions/checkout@v4
+        with:
+          ref: gpt
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Reconcile completed attempts and checkpoint
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_API_URL: ${{ github.api_url }}
+        run: |
+          python3 .agent/skills/the-worker/scripts/recover_task_validation.py \
+            --root . \
+            --repository "$GITHUB_REPOSITORY" \
+            --api-url "$GITHUB_API_URL"
