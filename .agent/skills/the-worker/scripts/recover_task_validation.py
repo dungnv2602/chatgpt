@@ -298,12 +298,12 @@ def process_attempt(
     jobs = get_jobs(api, repository, run_id, attempt_number)
     aggregate = get_artifact_payload(api, repository, run_id, attempt_number)
     kind, _ = attempt_kind(jobs, artifact_present=aggregate is not None)
-    if (
-        kind == "ignored"
-        and details.get("status") == "completed"
-        and details.get("conclusion") in {"failure", "timed_out", "action_required"}
-    ):
-        kind = "policy_failure"
+    if kind == "ignored" and details.get("status") == "completed":
+        conclusion = details.get("conclusion")
+        if conclusion == "cancelled":
+            kind = "cancelled"
+        elif conclusion in {"failure", "timed_out", "action_required"}:
+            kind = "policy_failure"
     if kind in {"ignored", "pending"}:
         return kind, (run_id, attempt_number)
 
