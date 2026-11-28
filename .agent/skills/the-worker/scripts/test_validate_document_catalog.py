@@ -278,6 +278,15 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
+    def test_two_digit_task_subtask_pattern_covers_child_records(self):
+        self.write("workspace/tasks/example/subtasks/02-child.md")
+        self.set_catalog(self.valid_rows(), [
+            "| `workspace/tasks/*/subtasks/??-*.md` | Template required | Active | "
+            "`.agent/skills/example/assets/template.md` | Two-digit child IDs. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
     def test_coverage_pattern_must_match_a_current_document(self):
         self.set_catalog(self.valid_rows())
         self.replace_coverage([

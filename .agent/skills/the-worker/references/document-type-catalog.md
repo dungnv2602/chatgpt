@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.25
+**Catalog version:** 1.26
 **Repository template audit baseline:** Branch `gpt` at commit `a02713809b3b5fe403ab4085c28d163b3b1a70fc` contained 277 in-scope Markdown files and 30 template-named files. The recursive tree showed 18 template assets already under skills and 12 novel templates outside skill directories. This audit reviewed the full template path inventory and current owner contracts before relocation.
 **Source branch:** `gpt`
 
@@ -131,7 +131,7 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `.agent/skills/the-worker/assets/DRAFT_TEMPLATE.md` | Exempt | Active | `.agent/skills/the-worker/assets/DRAFT_TEMPLATE.md` | Canonical Draft template source, not a proposal record. |
 | `workspace/tasks/*/task.md` | Template required | Active | `.agent/skills/the-worker/assets/TASK_TEMPLATE.md` v2.7 | Authoritative parent record. Every task folder also contains `subtasks/README.md`. Parent Done requires every required child Done. |
 | `workspace/tasks/*/subtasks/README.md` | Embedded contract | Active | `workspace/tasks/*/subtasks/README.md` and `.agent/skills/the-worker/SKILL.md` | Required child index. Link the parent task and list every child subtask. |
-| `workspace/tasks/*/subtasks/[0-9][0-9]-*.md` | Template required | Active | `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md` v1.6 | Child subtask records. Each record has a stable ID, parent ID, type, status, acceptance criteria, evidence, and completion record. |
+| `workspace/tasks/*/subtasks/??-*.md` | Template required | Active | `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md` v1.6 | Child subtask records. Each record has a stable ID, parent ID, type, status, acceptance criteria, evidence, and completion record. |
 | `workspace/analysis/README.md` | Embedded contract | Active | `.agent/skills/the-worker/references/decision-governance.md` and `workspace/analysis/README.md` | Repository-analysis navigation, review cadence, evidence requirements, and boundaries. |
 | `workspace/analysis/ANALYSIS-20??Q?*.md` | Template required | Reserved | `.agent/skills/the-worker/assets/ANALYSIS_TEMPLATE.md` | Quarterly and event-triggered repository analysis snapshots. Activate this rule with the first real analysis record. |
 | `workspace/draft/README.md` | Embedded contract | Active | `.agent/skills/the-worker/references/decision-governance.md` and `workspace/draft/README.md` | Draft folder navigation, status transitions, and promotion rules. |
@@ -212,7 +212,9 @@ This review did not require a new session summary or conversation-integrity reco
 
 ## Audit outcome
 
-The repository scan found no recurring document family without a canonical template, schema, embedded contract, or generator-owned format. No new template type was required. The 12 novel templates were relocated into the Romantic Storyteller skill's `assets/` directory. The existing Version 1.0 novel templates remain available as historical references.
+The repository scan found no recurring document family without a canonical template, schema, embedded contract, or generator-owned format. No new template type was required. The 12 novel templates were relocated into the Romantic Storyteller skill's `assets/templates/` directory. The existing Version 1.0 novel templates remain available as historical references.
+
+The coverage audit also found an unsupported character-class glob for task child records. The validator supports `*`, `**`, and `?`, but not character classes. The child-record pattern now uses `??-*.md` and matches the two-digit child IDs.
 
 The template freshness review found two confirmed stale assets. The task-board template did not fully match the live board's scheduler and decision-collection contract. The Prompt Master OpenAI task brief still named retired model-family labels and obsolete model-specific guidance. Both were updated to match current repository and product context. The other 28 template assets were reviewed and retained without content changes.
 
