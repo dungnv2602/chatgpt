@@ -158,6 +158,36 @@ class TaskValidationTests(unittest.TestCase):
         with self.assertRaises(verifier.ContractError):
             self._validate()
 
+    def test_rejects_too_many_task_checks(self) -> None:
+        self.contract["checks"] = [
+            {
+                "id": f"task-check-{index}",
+                "adapter": "python-script",
+                "entrypoint": "checks/check.py",
+            }
+            for index in range(17)
+        ]
+        with self.assertRaises(verifier.ContractError):
+            self._validate()
+
+    def test_rejects_total_timeout_over_budget(self) -> None:
+        self.contract["checks"] = [
+            {
+                "id": "task-check-one",
+                "adapter": "python-script",
+                "entrypoint": "checks/check.py",
+                "timeout_minutes": 15,
+            },
+            {
+                "id": "task-check-two",
+                "adapter": "python-script",
+                "entrypoint": "checks/check.py",
+                "timeout_minutes": 15,
+            },
+        ]
+        with self.assertRaises(verifier.ContractError):
+            self._validate()
+
     def test_rejects_unknown_contract_property(self) -> None:
         self.contract["unexpected"] = True
         with self.assertRaises(verifier.ContractError):
