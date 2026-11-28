@@ -189,14 +189,15 @@ def source_sha_for_run(run: dict[str, Any]) -> str | None:
 
 
 def read_validation_lifecycle(content: str) -> dict[str, Any] | None:
-    heading = content.find("## Validation Lifecycle")
-    if heading < 0:
+    heading = "## Validation Lifecycle"
+    if heading not in content:
         return None
-    fence = chr(96) * 3 + "json"
-    start = content.find(fence, heading)
+    if content.count(heading) != 1:
+        raise RecoveryError("Task record contains duplicate Validation Lifecycle sections")
+    start = content.find(chr(96) * 3 + "json", content.find(heading))
     if start < 0:
         raise RecoveryError("Task Validation Lifecycle block has no JSON fence")
-    start += len(fence)
+    start += len(chr(96) * 3 + "json")
     end = content.find(chr(96) * 3, start)
     if end < 0:
         raise RecoveryError("Task Validation Lifecycle block has no closing fence")
@@ -204,11 +205,48 @@ def read_validation_lifecycle(content: str) -> dict[str, Any] | None:
         value = json.loads(content[start:end].strip(), object_pairs_hook=publisher.unique_object)
     except (json.JSONDecodeError, publisher.PublisherError) as exc:
         raise RecoveryError("Task Validation Lifecycle block is invalid JSON") from exc
-    if not isinstance(value, dict) or set(value) != {
+    fields = {
         "state", "source_sha", "policy_revision", "coordinator_run_id",
         "attempt", "outcome", "reconciled_at",
-    }:
+    }
+    if not isinstance(value, dict) or set(value) != fields:
         raise RecoveryError("Task Validation Lifecycle block has an invalid shape")
+    if value["state"] not in {"not_committed", "awaiting_ci", "review_required", "reviewed", "passed"}:
+        raise RecoveryError("Task Validation Lifecycle state is unsupported")
+    for field in ("source_sha", "policy_revision"):
+        item = value[field]
+        if item is not None and (
+            not isinstance(item, str) or not re.fullmatch(r"[0-9a-f]{40}", item)
+        ):
+            raise RecoveryError(f"Task Validation Lifecycle {field} is invalid")
+    for field in ("coordinator_run_id", "attempt"):
+        item = value[field]
+        if item is not None and (not isinstance(item, int) or isinstance(item, bool) or item < 1):
+            raise RecoveryError(f"Task Validation Lifecycle {field} is invalid")
+    allowed_outcomes = {
+        "success", "check_failure", "coverage_failure", "infrastructure_failure",
+        "capture_failure", "cancelled", "superseded",
+    }
+    if value["outcome"] is not None and value["outcome"] not in allowed_outcomes:
+        raise RecoveryError("Task Validation Lifecycle outcome is invalid")
+    if value["reconciled_at"] is not None:
+        utc_datetime(value["reconciled_at"])
+    if value["state"] == "not_committed" and any(value[field] is not None for field in fields - {"state"}):
+        raise RecoveryError("Uncommitted task lifecycle must not contain validation metadata")
+    if value["state"] == "awaiting_ci" and (
+        value["source_sha"] is None
+        or value["policy_revision"] is None
+        or any(value[field] is not None for field in ("coordinator_run_id", "attempt", "outcome", "reconciled_at"))
+    ):
+        raise RecoveryError("Awaiting-CI lifecycle must bind a source and policy SHA only")
+    if value["state"] in {"review_required", "reviewed", "passed"} and (
+        value["source_sha"] is None
+        or value["policy_revision"] is None
+        or value["coordinator_run_id"] is None
+        or value["attempt"] is None
+        or value["outcome"] is None
+    ):
+        raise RecoveryError("Terminal task lifecycle is missing coordinator result metadata")
     return value
 
 
