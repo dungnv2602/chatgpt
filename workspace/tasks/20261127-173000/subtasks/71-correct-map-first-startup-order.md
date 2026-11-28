@@ -50,17 +50,17 @@ Correction scope is the startup-order contradiction in Session Start and the map
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Pending
-- **Changed paths:** Pending
-- **Readback:** Pending
+- **Commit SHA:** 08a2977990dab8b1506fa1918ea774813767a33a; 86c5e01536a660317b2e7d89ca4571df62cc73af; a7598b0c865051cb9d38538347742da7d84ce4da
+- **Changed paths:** .agent/SESSION_START.md; .agent/WORKFLOW_MAP.md; .agent/skills/the-worker/SKILL.md; workspace/tasks/20261127-173000/subtasks/README.md; workspace/task_board.md; workspace/tasks/20261127-173000/task.md
+- **Readback:** Confirmed the map is sequenced between Session Start and The Worker in all three owner documents. Task tracking reconciled.
 - **Checks:** Not performed
 - **Limitations:** No local tests/scripts/lint or hosted CI inspection.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28
+- **Completion basis:** The Session Start, Workflow Map, and Worker startup sequence were corrected and read back from branch gpt.
 
 ## 8. Hosted Validation
 
@@ -73,7 +73,7 @@ Map-first scope approved by explicit execute cue. Remote repository work only. P
 
 ## 10. Handoff
 
-Correct order, reconcile map and owners, read back, and close this child under the persistent parent lifecycle.
+Implementation completed. Child record will be deleted after closeout and tracking reconciliation.
 
 ## 11. Ledger Findings
 
