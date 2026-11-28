@@ -35,7 +35,7 @@ Allowed statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, Cancelled
 
 ## 2. Subsequent Instructions
 
-[Preserve later clarifications, constraints, decisions, and approvals verbatim with UTC timestamps.]
+[Preserve later clarifications, constraints, decisions, and approvals verbatim with UTC timestamps. Approval is log-only until the explicit standalone execute cue (case-insensitive). Record Next as navigation only.]
 
 ## 3. Objective and Scope
 
@@ -77,7 +77,7 @@ Conditional: CI remediation only.
 
 ## 9. Execution self-check
 
-[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, decision-collection gate, conflict check, verification/readback, and cleanup. Record exceptions or blockers.]
+[Confirm canonical instruction owner, required references, scope/approval, parentage, dependencies, decision collection complete, explicit case-insensitive execute cue for the batch, conflict check, verification/readback, and cleanup. Approval and Next are not execution cues. Record exceptions or blockers.]
 
 ## 10. Handoff
 
