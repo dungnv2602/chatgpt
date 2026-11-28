@@ -6,7 +6,7 @@
 - **ID:** 20261128-230000-01
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -43,7 +43,20 @@ Design and implement exact-SHA coordination foundations, protected policy resolu
 
 - ADR-0008 governs this work.
 - Preserve existing validation coverage and legacy report system until migration gates are met.
-- **Next:** Implement and commit this subtask's deliverables, then readback as required by the task workflow.
+
+### 2026-11-28 — Initial implementation
+
+- Added `.github/task-validation-policy.json` with the initial mandatory-check manifest, exact-SHA/policy binding requirements, terminal outcomes, and explicit external branch-protection prerequisite.
+- Added `.github/task-validation-contract.schema.json` defining exact-SHA task contracts, closed adapter IDs, repository-relative entrypoints, structured arguments, and bounded timeouts; arbitrary shell strings and extra properties are excluded.
+- Added `.github/task-validation-adapters.json` as the initial closed typed-adapter registry.
+- Added `.github/task-validation/README.md` documenting policy semantics, current validation coverage, reusable workflow interface, and downstream security/migration gates.
+- Exposed `workflow_call` entry points and the optional `coordinator_call` boolean on the three existing validation workflows. The full-document workflow bypasses its direct-push supersession cancellation logic for coordinator calls.
+- Read back all new policy/schema/registry/interface files and all three modified workflow files from branch `gpt`.
+- **Not complete:** Existing reusable workflows still publish legacy reports with write permissions and some check out the branch name rather than the immutable caller SHA. They are deliberately not wired to a coordinator until subtask 02 removes those hazards.
+- **Not complete:** GitHub branch protection/ruleset enforcement for policy files is an external prerequisite and has not been established or verified. The policy explicitly records this rather than claiming protection.
+- **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed.
+
+- **Next:** Complete the protected-policy enforcement prerequisite and coordinate exact-SHA, read-only reusable workflow migration with subtask 02 before wiring coordinator execution.
 
 ## 6. State and Evidence
 
