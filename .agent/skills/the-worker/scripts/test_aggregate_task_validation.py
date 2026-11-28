@@ -89,6 +89,14 @@ class AggregateTaskValidationTests(unittest.TestCase):
     def test_superseded_attempt_is_terminal_superseded(self) -> None:
         self.assertEqual(self.classify(self.records({"lint": "superseded"}))["outcome"], "superseded")
 
+    def test_artifact_failure_does_not_reclassify_cancelled_or_superseded(self) -> None:
+        workflow = Path(__file__).resolve().parents[4] / ".github/workflows/task-validation.yml"
+        content = workflow.read_text(encoding="utf-8")
+        self.assertIn(
+            'and result.get("outcome") not in {"cancelled", "superseded"}',
+            content,
+        )
+
     def test_infrastructure_and_capture_failures_are_distinct(self) -> None:
         self.assertEqual(self.classify(self.records({"lint": "infrastructure_failure"}))["outcome"], "infrastructure_failure")
         self.assertEqual(self.classify(self.records({"lint": "capture_failure"}))["outcome"], "capture_failure")
