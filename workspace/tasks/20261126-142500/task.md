@@ -11,7 +11,7 @@
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation.
-- **Governing ADR(s):** [ADR-0008](../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — universal post-commit validation, coordinator/verifier, status index, review tasks, remediation folders, retention, and report-system migration.
+- **Governing ADR(s):** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — universal post-commit validation, coordinator/verifier, status index, review tasks, remediation folders, retention, and report-system migration.
 - **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
@@ -74,7 +74,7 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 
 ## Governing ADR linkage and acceptance criteria
 
-**Governing decision:** [ADR-0008 — CI Validation, Error Tasks, and Automatic Feedback Loop](../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md).
+**Governing decision:** [ADR-0008 — CI Validation, Error Tasks, and Automatic Feedback Loop](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md).
 
 This parent task implements the accepted decision. Its acceptance criteria must cover the applicable ADR-0008 Confirmation requirements:
 
@@ -195,7 +195,7 @@ Implementation must follow ADR-0008's staged migration and must not delete repor
 
 - **Action:** The user approved DRAFT-0010 revision 9 and instructed execution. Promoted it to accepted ADR-0008 after provisional creation, full readback, and scope comparison.
 - **Result:** ADR-0008 is accepted and governs this task. It supersedes ADR-0003 and ADR-0007, and the specified CI completion and findings/report clauses in ADR-0004. The parent task now links ADR-0008. The source Draft was retired after accepted ADR readback and active index references were migrated. Draft deletion commit: `1e5ef5c18e8d6a4cfb67382e5d73730bd29adc12`.
-- **References:** [ADR-0008](../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md); commits `ac87f45e84287eef610ce6979ff4e85963d27717`, `f46d125adb202b2ccf08430063588f19e6635317`, and task-link commit `2be94982d80df0de825134a362a11a303db26202`.
+- **References:** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md); commits `ac87f45e84287eef610ce6979ff4e85963d27717`, `f46d125adb202b2ccf08430063588f19e6635317`, and task-link commit `2be94982d80df0de825134a362a11a303db26202`.
 - **Validation limits:** Repository files were read back. No tests were run and no hosted CI results were inspected. Workflow runtime behavior remains unverified.
 - **Next:** Implement ADR-0008 under this parent task. Preserve the existing report pipeline until the replacement meets every applicable Confirmation criterion.
 
@@ -252,7 +252,7 @@ The parent remains the approved current-execution task for ADR-0008 implementati
 
 ## 12. Handoff Instructions
 
-Resume from the current parent task `20261126-142500`, governed by [ADR-0008](../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md). Do not recreate deleted child `02` or infer missing child records. Use remote GitHub operations on branch `gpt` only. Do not run repository scripts/tests locally, poll, dispatch, rerun, or wait for CI. For committed task validation, read the status index first and inspect linked logs only after a recorded failure, solely for diagnosis. Preserve the legacy report pipeline until ADR-0008 Confirmation proves the replacement operational. Read back every changed path and update the task and board. Delete the parent folder only at full closeout.
+Resume from the current parent task `20261126-142500`, governed by [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md). Do not recreate deleted child `02` or infer missing child records. Use remote GitHub operations on branch `gpt` only. Do not run repository scripts/tests locally, poll, dispatch, rerun, or wait for CI. For committed task validation, read the status index first and inspect linked logs only after a recorded failure, solely for diagnosis. Preserve the legacy report pipeline until ADR-0008 Confirmation proves the replacement operational. Read back every changed path and update the task and board. Delete the parent folder only at full closeout.
 
 ## 13. Ledger Findings
 
