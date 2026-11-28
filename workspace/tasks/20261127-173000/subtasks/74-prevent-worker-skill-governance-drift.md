@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-74
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -17,7 +17,7 @@
 - **Eligibility / deferral reason:** Eligible — In Progress, selected as Current Execution; dependencies and authorization satisfied
 - **Required:** Yes
 - **Created:** 2026-11-28 10:44 UTC
-- **Updated:** 2026-11-28 10:44 UTC
+- **Updated:** 2026-11-28 10:47 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
 
@@ -123,15 +123,15 @@ Out of scope:
   - `workspace/tasks/20261127-173000/subtasks/74-prevent-worker-skill-governance-drift.md`
   - `workspace/task_board.md`
   - Deleted the four former `.github/task-validation*` files and the temporary duplicate child records 64 and 65.
-- **Readback:** All implementation paths and deleted paths were read back or verified. The final task ID is 74. The parent history, subtask index, board pointer, and task record now agree. Final branch-head readback remains.
-- **Checks:** JSON syntax and repository-tree path, owner, type, and placement coverage were checked through remote reads. Repository tests, scripts, lint, and hosted workflow results were not run or inspected.
+- **Readback:** All implementation paths and deleted paths were read back. The final task ID is 74. The parent history, subtask index, board pointer, and task record agree. The branch head and all current paths were verified remotely.
+- **Checks:** All three JSON assets parse. An independent repository-tree audit matched 116/116 non-Markdown files under `.agent/skills/` and `.github/` to 21 rules, with zero uncovered files, overlaps, stale active rules, owner errors, placement errors, or type/suffix errors. The workflow path filter and its existing test/validator steps were read back. Repository tests, scripts, lint, and hosted workflow results were not run or inspected.
 - **Limitations:** Branch protection or ruleset enforcement remains an external prerequisite and has not been established. No runtime behavior or hosted validation success is claimed. Initial commits carry reused child-64 and child-65 trailers as documented above.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28 10:47 UTC
+- **Completion basis:** All source-level acceptance criteria are satisfied and all changed paths were read back. JSON syntax and catalog path/owner/type/placement coverage were independently checked through remote repository reads. Tests and hosted CI were not run or inspected. External branch protection remains unverified.
 
 ## 8. Hosted Validation
 
@@ -153,7 +153,7 @@ Out of scope:
 
 ## 10. Handoff
 
-Complete final reference and task-index reconciliation. Verify the branch head and all changed paths. Record the unperformed checks and external protection limitation. Close the child under the persistent Refactor Skills lifecycle after readback.
+Child 74 is complete. Remove its child record and index row under the persistent Refactor Skills lifecycle. Preserve the completion summary in the parent task. Restore the previously current ADR-0008 parent task pointer.
 
 ## 11. Ledger Findings
 
