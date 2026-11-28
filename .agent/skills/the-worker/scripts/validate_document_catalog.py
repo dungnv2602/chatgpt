@@ -473,7 +473,7 @@ def validate_non_markdown_coverage(root: Path, content: str) -> list[str]:
             pattern.startswith("/")
             or any(part in {"", ".", ".."} for part in parts)
             or len(parts) < 3
-            or parts[:2] not in ([".agent", "skills"], [".github", "workflows"])
+            or not (parts[:2] == [".agent", "skills"] or parts[0] == ".github")
         ):
             errors.append(
                 f"Line {line}: unsafe or out-of-scope non-Markdown pattern '{pattern}'."
