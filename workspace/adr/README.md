@@ -60,6 +60,8 @@ Keep all ADR files permanently in this folder after acceptance and confirmation.
 
 ## Current Accepted ADRs
 
+- [ADR-0005 — Lean Session Start and Conversation Mode](0005-lean-session-start-and-conversation-mode.md) — Accepted. Implementation is in progress under child 59.
+
 - [ADR-0004 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) — Accepted Option 3. Implementation remains in progress under the linked P0 task.
 - [ADR-0003 — Canonical GitHub Actions Diagnostic Report Artifact Layout](0003-canonical-github-actions-diagnostic-report-artifact-layout.md) — Accepted Option 3. Implementation remains outstanding under P0 task 20261126-090154.
 
