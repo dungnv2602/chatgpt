@@ -21,8 +21,9 @@ supersedes:
   - "ADR-0004"
   - "ADR-0007"
 superseded_by: null
-implementation_status: "not-started"
-implementation_tasks: []
+implementation_status: "in-progress"
+implementation_tasks:
+  - "20261126-142500"
 review_triggers:
   - "A required check is missing, skipped, cancelled, or evaluated against a different source SHA or policy revision."
   - "The coordinator, publisher, or recovery sweep loses or duplicates a terminal attempt."
@@ -244,7 +245,7 @@ The single coordinator is preferred because the repository needs one authoritati
 
 - **In scope:** Coordinator and reusable workflow interfaces; protected validation policy and task contract schema; registered adapters and repository-owned script interface; generic verifier; exact-SHA aggregate classification; isolated publisher; atomic/idempotent status and review-task publication; recovery sweep and checkpoint; Worker lifecycle and queue rules; grouped remediation folders and permanent fallback; migration of report producers/consumers, schemas, scripts, tests, navigation, documentation, templates, board, and active references; scoped reconciliation of ADR-0003, ADR-0004, and ADR-0007; retirement of `.takeout/reports/` after replacement proof.
 - **Out of scope:** Weakening required checks or baselines; unrestricted task-authored shell execution; granting secrets or publisher permissions to verification code; automatic CI reruns; Worker post-commit correctness checks; per-job/per-finding task floods; a parallel findings Ledger or diagnostic archive; deleting `.takeout/reports/` before replacement proof; changes to unrelated lint/test/workflow coverage.
-- **Tasks:** Implementation task linkage will be added after this ADR reaches accepted status. The current execution parent is `20261126-142500`.
+- **Tasks:** [20261126-142500 — Repair CI task generation and clear active reports](../tasks/20261126-142500/task.md). This approved current-execution task implements the decision. Its acceptance criteria map the applicable Confirmation requirements above.
 - **Dependencies:** ADR-0003, ADR-0004, ADR-0007 (scoped supersession); Decision Governance; current task-folder and subtask templates; GitHub Actions and Worker policy.
 - **Migration / rollback:** First map every current required check and baseline. Implement the coordinator and publisher alongside existing workflows without removing report producers. Demonstrate all confirmation scenarios. Migrate every consumer and reference. Only then retire the full report tree. Rollback before retirement by restoring the prior workflow triggers and report pipeline from the pre-migration commit. After retirement, rollback must restore the complete prior producers, consumers, schemas, and report data from the recorded migration commit; do not partially restore a parallel archive.
 
@@ -269,3 +270,4 @@ The single coordinator is preferred because the repository needs one authoritati
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-28 | Accepted | User approved DRAFT-0010 revision 9 and instructed promotion. The complete provisional ADR was read back and compared with the approved source. Decision scope and rationale are preserved. |
+| 2026-11-28 | Implementation in progress | Linked the approved current-execution parent task 20261126-142500 after acceptance. Task acceptance criteria map the applicable Confirmation requirements. |
