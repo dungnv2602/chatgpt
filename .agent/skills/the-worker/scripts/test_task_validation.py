@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import json
 import subprocess
+import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -209,6 +211,18 @@ class TaskValidationTests(unittest.TestCase):
             self.assertEqual(env["TMP"], home)
             self.assertNotIn("GITHUB_TOKEN", env)
             self.assertNotIn("ACTIONS_RUNTIME_TOKEN", env)
+
+
+    def test_task_check_timeout_is_a_check_failure(self) -> None:
+        checks = self._validate()
+        with patch.object(
+            verifier.subprocess,
+            "run",
+            side_effect=subprocess.TimeoutExpired(cmd=["python"], timeout=60),
+        ):
+            outcome, results = verifier.execute_checks(self.root, checks)
+        self.assertEqual(outcome, "check_failure")
+        self.assertEqual(results[0]["status"], "timeout")
 
 
 if __name__ == "__main__":
