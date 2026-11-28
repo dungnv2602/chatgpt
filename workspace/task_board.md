@@ -10,21 +10,21 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-_None._
+- **20261126-142500 — Repair CI task generation and clear active reports** — P1, In Progress, Approved. [Task](tasks/20261126-142500/task.md)
 
 ## Ordered Eligible Execution Queue
 
-_None._
+_None. Current execution is active.
 
 ## Next Task
 
-_None._
+_Current execution remains active._
 
 ## Deferred Work
 
 ### Current focus reconciliation
 
-Accepted [ADR-0008](adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) governs task 20261126-142500. The single-coordinator architecture and 3-day retention/checkpoint policy are approved. Implementation awaits the standalone `execute` cue. Preserve the current report pipeline until the replacement passes ADR-0008 Confirmation and every producer/consumer has migrated.
+Accepted [ADR-0008](adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) governs task 20261126-142500. The single-coordinator architecture and 3-day retention/checkpoint policy are approved. Implementation is execution-authorized and active. Preserve the current report pipeline until the replacement passes ADR-0008 Confirmation and every producer/consumer has migrated.
 
 ### Blocked
 
@@ -32,7 +32,7 @@ _None._
 
 ### Proposed — decision pending
 
-**20261126-142500 — Repair CI task generation and clear active reports.** Approved and governed by ADR-0008; implementation is execution-authorized. — [task](tasks/20261126-142500/task.md)
+~~20261126-142500 — Repair CI task generation and clear active reports.~~ Removed from Proposed after execution authorization. — [task](tasks/20261126-142500/task.md)
 
 **DRAFT-0009 — Project, Task, and Knowledge Lifecycle.** Proposal in review; no implementation authorization.
 
