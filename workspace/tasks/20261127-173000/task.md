@@ -13,7 +13,7 @@
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create the Refactor Skills task and place workspace/tasks/20261127-102301 beneath it.
 - **Governing ADR(s):** None
-- **Current execution:** 20261127-173000-66
+- **Current execution:** 20261127-173000-67
 - **Dependencies:** None
 - **Eligibility / deferral reason:** In Progress — user authorized the Refactor Skills batch with the standalone `Execute` cue. Children 65–67 are in scope.
 - **Related tasks:** None
@@ -665,3 +665,11 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Commit:** Worker `929169ef449eca88c21ae15f0e1bb7de034d3d73`; closeout record commit `857d671642581e1edb908a31e7cd8269719c6bd9`.
 - **Readback:** Confirmed remotely. No local tests or hosted CI inspection.
 - **Closeout:** Child 65 completed and deleted under the child lifecycle. Next eligible child is 66.
+
+
+### 2026-11-28 — child 66 closeout
+
+- **Action:** Audited the recursive README inventory (21 README files), targeted instruction content and canonical owner contracts. Trimmed redundant operational rules from Workspace, Drawing, Draft, ADR and Analysis README files. Updated the document catalog to clarify pointer-only ownership. Read back all modified paths.
+- **Result:** README operating rules now point to The Worker or the relevant canonical reference. Domain and navigation content remains. Full non-README content scan of all 685 tree entries was not performed; targeted content search/readback remains the limitation.
+- **Commits:** workspace README `97dc4bebf895c39cd59711f1306f8c8dab1297be`; Drawing README `1b73a480f8ab5c3e591a4207ec366e1ae4edd0ff`; Draft README `93d8f29dd8c28d598dca610cf937096fddde579e`; ADR README `1cfdffebb24ab00facea03ad5d84f1b253d89cd9`; Analysis README `b0a7d55682d5f9a04b28d1d098d10dde5dac9cf7`; catalog `78c26fd9d2490ffdd9655059433e12f2c0f0f249`; closeout record `4e2a326e7d8ea6c06e7cf74fde41e7dcd76a59ed`.
+- **Closeout:** Child 66 completed and deleted under lifecycle rules. Child 67 is active.
