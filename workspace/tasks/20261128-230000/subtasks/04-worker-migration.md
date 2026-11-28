@@ -6,14 +6,14 @@
 - **ID:** 20261128-230000-04
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
-- **Status:** Blocked
+- **Status:** In Progress
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Parent task 20261128-230000, explicitly authorized by user; execution cue provided.
 - **Governing ADR(s):** ADR-0008
 - **Dependencies:** 20261128-230000-02; 20261128-230000-03
-- **Eligibility / deferral reason:** Blocked — repository default branch is `main`, which lacks the task-validation dispatcher and recovery workflows; effective branch protection cannot be verified (branch-protection API 403; no repository rulesets returned).
+- **Eligibility / deferral reason:** Implementation continues on `gpt`; automated missing-dispatch recovery and coordinator activation remain gated pending default-branch workflow availability and verified protection.
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
@@ -70,7 +70,7 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 
 - ADR-0008 governs this work.
 - Preserve existing validation coverage and legacy report system until migration gates are met.
-- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. This commit completes the Worker lifecycle procedure, root-cause group reuse contract, migration inventory, catalog/navigation updates, and legacy Ledger ownership boundary. Added fail-closed direct-push cutover gates that require source/current policy activation, effective protection, and recovery dispatch availability; task-owned workflow-run diagnostics are suppressed while unrelated workflow-run diagnostics and push backfill remain available. Remaining: readback and Confirmation-dependent producer cutover.
+- **Progress:** Added task lifecycle schema and task-record metadata, exact-SHA missing-dispatch recovery, and staged cutover gates for legacy producers/consumers. This commit completes the Worker lifecycle procedure, root-cause group reuse contract, migration inventory, catalog/navigation updates, and legacy Ledger ownership boundary. Added fail-closed direct-push cutover gates that require source/current policy activation, effective protection, and recovery dispatch availability; task-owned workflow-run diagnostics are suppressed while unrelated workflow-run diagnostics and push backfill remain available. Remaining: reconcile exact-SHA validation when authorized, complete operational Confirmation, and gated producer cutover/retirement.
 
 ## 6. State and Evidence
 
