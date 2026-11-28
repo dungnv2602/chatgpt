@@ -155,6 +155,7 @@ jobs:
           REPORT_TEST_EXIT: ${{ steps.tooling.outputs.report_tests_exit }}
           ANCHOR_TEST_EXIT: ${{ steps.tooling.outputs.anchor_tests_exit }}
           SELFTEST_EXIT: ${{ steps.tooling.outputs.linter_selftest_exit }}
+          COORDINATOR_CALL: ${{ inputs.coordinator_call }}
         run: |
           set -euo pipefail
           mkdir -p .lint-report-records  .takeout/reports/history
@@ -251,6 +252,10 @@ jobs:
             failed=1
           else
             report_status="Passed"
+          fi
+          if [[ "$COORDINATOR_CALL" == "true" ]]; then
+            echo "failed=$failed" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
           task_id=""
           if [[ "$GITHUB_EVENT_NAME" == "push" ]]; then
