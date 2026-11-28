@@ -438,6 +438,21 @@ def attempt_kind(
             and job["name"].startswith("Run exact-SHA coordinator")
         )
     ]
+    coordinator_started = any(
+        job.get("status") in {"queued", "in_progress", "waiting", "pending"}
+        or job.get("conclusion") in {"success", "failure", "timed_out", "action_required", "cancelled"}
+        for job in coordinator_jobs
+    )
+    # A successful policy gate that declines to start the coordinator is not a
+    # validation attempt. Do not turn a later recovery-job failure into a
+    # task-validation capture failure for a gated/metadata-only push.
+    if (
+        policy_job is not None
+        and policy_job.get("conclusion") == "success"
+        and not coordinator_started
+        and not artifact_present
+    ):
+        return "ignored", policy_job
     if coordinator_jobs:
         if any(job.get("status") in {"queued", "in_progress", "waiting", "pending"} for job in coordinator_jobs):
             return "pending", coordinator_jobs[0]
