@@ -123,6 +123,8 @@ def validate_contract(
         raise ContractError("Unsupported task-contract schema")
     if schema.get("additionalProperties") is not False:
         raise ContractError("Task-contract schema must reject unknown top-level properties")
+    if not {"schema_version", "source_sha", "contract_revision", "checks"}.issubset(set(schema.get("required", []))):
+        raise ContractError("Task-contract schema must require every binding field")
     schema_properties = schema.get("properties", {})
     check_schema = schema.get("$defs", {}).get("check", {})
     if not isinstance(schema_properties, dict) or not isinstance(check_schema, dict):
@@ -144,8 +146,8 @@ def validate_contract(
     if contract.get("source_sha") != expected_source_sha:
         raise ContractError("Task contract source SHA does not match the exact checked-out commit")
     revision = contract.get("contract_revision")
-    if revision is not None and (not isinstance(revision, str) or not 1 <= len(revision) <= 128):
-        raise ContractError("Invalid contract_revision")
+    if not isinstance(revision, str) or not 1 <= len(revision) <= 128:
+        raise ContractError("Invalid or missing contract_revision")
     checks = contract.get("checks")
     if not isinstance(checks, list) or len(checks) > 32:
         raise ContractError("Task contract checks must be an array with at most 32 entries")
