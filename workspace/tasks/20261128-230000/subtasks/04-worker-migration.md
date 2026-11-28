@@ -100,6 +100,12 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Lifecycle:** Updated this subtask's Validation Lifecycle to `awaiting_ci` for source SHA `c9ffdffd3c955af0ddb471f85557b32460315d8f` and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b` in metadata commit `c37def8a8db65047ab2e6a93c67c17a78f943cc8`. The earlier failure for source SHA `7814758586f68b3226822f760b4cbf06e86e108e` remains unresolved in the index and cannot change the new source lifecycle.
 - **Limitations:** No local tests or hosted CI inspection performed. Coordinator activation remains staged; the new guard has repository readback but no runtime demonstration yet.
 
+### 2026-11-28 — default-branch parity and current capture failure
+
+- **Default branch:** `main` contains the required dispatcher and scheduled recovery workflow entry points, but its dispatcher blob `9959288f223ee613d0eaab0a0ba7315bfb4544a1` and coordinator blob `4f8255d6b5b896dc25a8542ff2b3858071e3e75e` still contain the obsolete branch-protection prerequisite and lack the new metadata-only commit guard. Only workflow presence is verified; implementation parity is not.
+- **Authority boundary:** No write or merge to `main` is authorized in this task. The `gpt` implementation remains the project source of truth; do not claim the default-branch copies have been updated.
+- **Current-source result:** The status index has 222 attempts, all `capture_failure`, all without check-set identity, all unresolved, with checkpoint zero. The exact current source SHA `c9ffdffd3c955af0ddb471f85557b32460315d8f` has run `46165107595`, attempt 1, `capture_failure`. Updated this subtask's lifecycle to `review_required` for that exact attempt in metadata commit `a2d5d529668953cd4bd2ee184bb3bea78742bf21`.
+- **Limitations:** No hosted logs or run metadata inspected; no cause is attributed to the stale `main` copies without runtime evidence. The current failure remains unreconciled. Coordinator activation stays staged, and `.takeout/reports/` remains intact.
 ## 6. State and Evidence
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
