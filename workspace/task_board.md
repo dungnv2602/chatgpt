@@ -19,10 +19,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Next Task
 
-Authorized execution focus: Refactor Skills. Remaining prepared children:
-
-- **P0** — [Instruction placement audit and stale-content prevention](tasks/20261127-173000/subtasks/66-instruction-placement-audit.md) — In Progress.
-- **P0** — [Workflow optimization, cycle closure and redundancy reduction](tasks/20261127-173000/subtasks/67-workflow-optimization-cycle-closure.md) — Ready.
+**67** — [Workflow optimization, cycle closure and redundancy reduction](tasks/20261127-173000/subtasks/67-workflow-optimization-cycle-closure.md) — Ready.
 
 ## Deferred Work
 
