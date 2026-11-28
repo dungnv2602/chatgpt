@@ -2,7 +2,7 @@
 record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0010"
-revision: 5
+revision: 6
 status: "draft"
 created: "2026-11-28"
 updated: "2026-11-28"
@@ -33,7 +33,7 @@ A task becomes **Done** only after the required automated checks have succeeded 
 
 This proposal also retains the approved folder-based CI error lifecycle: delete a completed error subtask folder; delete an ordinary parent task folder only when it is Done and has no outstanding subtasks. Retire the confirmed `.takeout/reports/` tree only after all producers and consumers have migrated to the replacement.
 
-This revision consolidates the user's approvals from 2026-11-28. It remains a Draft; implementation requires promotion through Decision Governance and an accepted superseding ADR.
+This revision consolidates the user's approvals from 2026-11-28, including approval of the lean CI-output model and the failure-only diagnostic boundary: the Worker may inspect the linked Actions run only after the status index records a check failure or infrastructure/capture failure, and solely to diagnose it. It remains a Draft; implementation requires promotion through Decision Governance and an accepted superseding ADR.
 
 ## Context and Problem Statement
 
@@ -326,7 +326,7 @@ All decisions below were approved by the user during discussion on 2026-11-28. T
 - **Universal validation:** After commit, GitHub Actions is the sole implementation-validation authority. The Worker may inspect changes before commit but must not independently validate after commit. This applies to all task types, including script tasks.
 - **Task status:** Add **Committed / Awaiting CI** to distinguish committed work awaiting automated validation from **In Progress** work that still needs implementation. **Done** requires successful required automated checks for the exact commit, result reconciliation, and no outstanding subtasks.
 - **Script validation:** Required scripts must be executed by an appropriate GitHub Actions workflow. Missing coverage or missing results cannot be treated as success.
-- **Event-driven review:** Every terminal aggregate validation event/attempt creates a system-generated CI-result review task. The Worker reads the workspace index first; it opens linked Actions logs only for diagnosis after a failed or infrastructure/capture-failed status. It never uses log inspection to override the aggregate status.
+- **Event-driven review and diagnostic boundary:** Every terminal aggregate validation event/attempt creates a system-generated CI-result review task. The Worker reads the workspace index first. It opens linked Actions logs only when the index records a check failure or infrastructure/capture failure, solely to diagnose the cause and create remediation work. It does not inspect logs after success, and log inspection never validates or overrides the aggregate status.
 - **Review-task content:** Store references to the source Task-ID, commit SHA, validation/run identity, index location, direct Actions run URL, and reconciliation instructions; do not duplicate CI diagnostics.
 - **Queue behavior:** As soon as a task is committed, the Worker immediately moves to another unblocked task. Continue until no unblocked task remains, then follow the existing blocked-task procedure and bring blocked tasks to the user. Incoming review tasks join the ordinary queue and do not interrupt current work.
 - **Active-parent routing:** If an error has a correctly identified active parent, create the error as its subtask; no placeholder is needed.
@@ -335,9 +335,9 @@ All decisions below were approved by the user during discussion on 2026-11-28. T
 
 ## Review and Approval
 
-- **Revision presented:** 5
-- **User decisions:** The revision 4 architecture decisions remain approved. The leaner CI-output proposal in revision 5 is a recommendation added for discussion and has not yet been approved.
-- **Consolidated Draft status:** Draft; revision 5 proposes eliminating CI-generated diagnostic/report documents while retaining the status index, run URL, and event-driven review task. The Worker would inspect failed runs for diagnosis only. Formal approval of the complete consolidated revision has not yet been requested or recorded.
+- **Revision presented:** 6
+- **User decisions:** The revision 4 architecture decisions remain approved. The lean CI-output model introduced in revision 5 is approved: CI retains only the run-status index and lightweight review-task event, with no CI-authored diagnostic/report/evidence documents. The Worker inspects the linked Actions run only after a recorded check failure or infrastructure/capture failure, solely for diagnosis.
+- **Consolidated Draft status:** Draft; the individual design decisions recorded here have been approved, including the lean CI-output model and failure-only diagnostic boundary. The complete consolidated Draft has not yet been formally accepted as a decision record.
 - **Implementation authorization:** Not granted by this Draft update. Implementation requires the user's explicit execution instruction after the decision is finalized and the required superseding ADR is accepted.
 - **Decision date:** 2026-11-28
 - **Resulting ADR:** Not created
@@ -350,7 +350,8 @@ All decisions below were approved by the user during discussion on 2026-11-28. T
 | 2026-11-28 | 2 | Confirmed `.takeout/reports/` as the exact retirement target and removed the unresolved-path question. | User confirmed the path. |
 | 2026-11-28 | 3 | Selected Option 3; narrowed the retained index to commit-specific CI run status only and relocated it under `workspace/`. | User approved the Option 3 architecture direction. |
 | 2026-11-28 | 4 | Consolidated universal GitHub Actions-only post-commit validation; Committed / Awaiting CI; exact-commit Done gate; event-driven review tasks; index-only Worker reconciliation; non-blocking queue scheduling; active-parent vs permanent fallback routing; and permanent fallback lifecycle. | User approved each of these decisions and asked to update the Draft for continued discussion. |
-| 2026-11-28 | 5 | Proposed lean CI output: retain only the run-status index (including a direct run URL) and lightweight review-task event; stop generating CI-authored finding/report/evidence documents. Worker opens failed Actions runs only for diagnosis and creates remediation task folders; successful outcomes are reconciled from the index without log inspection. | Assessment/recommendation added at user's request; this change is pending user decision. |
+| 2026-11-28 | 5 | Proposed lean CI output: retain only the run-status index (including a direct run URL) and lightweight review-task event; stop generating CI-authored finding/report/evidence documents. Worker opens failed Actions runs only for diagnosis and creates remediation task folders; successful outcomes are reconciled from the index without log inspection. | Recommendation presented for user decision. |
+| 2026-11-28 | 6 | Recorded approval of the lean CI-output model and failure-only diagnostic boundary: inspect the linked Actions run only after the index records check failure or infrastructure/capture failure, solely to diagnose the cause. Do not inspect logs after success; do not transfer validation authority to the Worker. | User approved. |
 
 ## References and Evidence Register
 
