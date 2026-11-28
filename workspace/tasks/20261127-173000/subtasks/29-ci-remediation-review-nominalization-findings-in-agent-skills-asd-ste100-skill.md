@@ -37,6 +37,12 @@ Automated remediation request from CI report ingestion for parent task 20261127-
 
 No later user clarification is recorded for this generated remediation child.
 
+### 2026-11-28 — decision-queue navigation
+
+> Next
+
+- **Action:** Logged `Next` as navigation. The evidence-access blocker remains unresolved and status remains Blocked. No approval or execution authorization was granted.
+
 ## 3. Objective and Scope
 
 Fix the linked CI finding group under parent task 20261127-173000. Inspect exact report evidence, diagnose the cause, implement only authorized changes, commit the fix to the intended branch, and record its SHA and summary.
