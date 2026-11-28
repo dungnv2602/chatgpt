@@ -18,15 +18,15 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P1** — [Template Fix](tasks/20261127-173100/task.md) → [Child 02 — Audit document template coverage](tasks/20261127-173100/subtasks/02-audit-document-template-coverage.md) — User-selected current focus. Child 02 is In Progress. The P0 Refactor Skills parent remains open at quiescence outside this execution batch.
+_None. Template Fix is complete and its task folder will be removed under normal lifecycle rules. No task is selected._
 
 ## Ordered Eligible Execution Queue
 
-_No additional eligible tasks under Template Fix while child 02 is In Progress._
+_No task is selected in this execution batch._
 
 ## Next Task
 
-No next child is selected within the Template Fix batch. Other open parents remain unselected:
+No task is selected. Other open parents remain unselected:
 
 - [Repair CI task generation and clear active reports](tasks/20261126-142500/task.md) — P1, In Progress. Its child 02 is active outside this batch.
 - [Refactor Skills](tasks/20261127-173000/task.md) — Persistent P0 parent at quiescence. No eligible child remains.
