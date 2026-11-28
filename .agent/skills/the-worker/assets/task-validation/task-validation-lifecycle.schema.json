@@ -159,6 +159,117 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "review_required"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_sha": {
+            "type": "string"
+          },
+          "policy_revision": {
+            "type": "string"
+          },
+          "coordinator_run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "outcome": {
+            "enum": [
+              "check_failure",
+              "coverage_failure",
+              "infrastructure_failure",
+              "capture_failure"
+            ]
+          },
+          "reconciled_at": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "reviewed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_sha": {
+            "type": "string"
+          },
+          "policy_revision": {
+            "type": "string"
+          },
+          "coordinator_run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "outcome": {
+            "enum": [
+              "check_failure",
+              "coverage_failure",
+              "infrastructure_failure",
+              "capture_failure"
+            ]
+          },
+          "reconciled_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "passed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_sha": {
+            "type": "string"
+          },
+          "policy_revision": {
+            "type": "string"
+          },
+          "coordinator_run_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "attempt": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "outcome": {
+            "const": "success"
+          },
+          "reconciled_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
     }
   ]
 }
