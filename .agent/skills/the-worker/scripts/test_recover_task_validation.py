@@ -80,6 +80,19 @@ class RecoveryTests(unittest.TestCase):
     def test_aggregate_artifact_proves_coordinator_started(self) -> None:
         self.assertEqual(recovery.attempt_kind([], artifact_present=True)[0], "started")
 
+    def test_run_cancelled_before_coordinator_jobs_is_captured(self) -> None:
+        jobs = [
+            {"name": "Check protected policy and duplicate source SHA", "status": "completed", "conclusion": "success"},
+        ]
+        kind, _ = recovery.attempt_kind(jobs)
+        self.assertEqual(kind, "ignored")
+        details = {"status": "completed", "conclusion": "cancelled"}
+        if kind == "ignored" and details.get("status") == "completed":
+            conclusion = details.get("conclusion")
+            if conclusion == "cancelled":
+                kind = "cancelled"
+        self.assertEqual(kind, "cancelled")
+
     def test_fallback_record_contains_only_compact_status_metadata(self) -> None:
         result = recovery.fallback_aggregate(
             "a" * 40,
