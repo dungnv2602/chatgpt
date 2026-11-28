@@ -202,6 +202,14 @@ class TaskValidationTests(unittest.TestCase):
             [sys.executable, "checks/check.py", "--safe"],
         )
 
+    def test_task_environment_uses_isolated_home_without_tokens(self) -> None:
+        with tempfile.TemporaryDirectory() as home:
+            env = verifier.safe_environment(Path(home))
+            self.assertEqual(env["HOME"], home)
+            self.assertEqual(env["TMP"], home)
+            self.assertNotIn("GITHUB_TOKEN", env)
+            self.assertNotIn("ACTIONS_RUNTIME_TOKEN", env)
+
 
 if __name__ == "__main__":
     unittest.main()
