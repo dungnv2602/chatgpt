@@ -85,6 +85,36 @@ The board publishes:
 
 Do not duplicate the queue in task records, README files, or skill references. The Ledger does not schedule.
 
+## Canonical instruction ownership and drift prevention
+
+The Worker is the sole operational authority. Session Start is only the cue guard and pointer. Conversation Mode defines presentation settings only. Initialization policy, skills indexes, catalogs, boards, templates, and discussion registers must not independently redefine operating procedures. Follow the owner and its references. Reconcile duplicate wording into pointers.
+
+### Initialization orchestration
+
+- The only foundational initialization cue is `/start`. Treat quoted, discussed, or hypothetical uses as non-cues.
+- Do not load repository instructions, skills, or references at conversation start unless an explicit cue or task-specific activation condition requires them.
+- On `/start`, follow Session Start to this Worker. Read the mandatory Conversation Mode settings reference. Use the current-conversation verified-load ledger.
+- Complete the startup notice, required baseline verification, progressive loading, startup P0 batch, and queue-draining procedure defined here and in the required references before accepting the substantive prompt.
+- Load novelist initialization instructions from `references/novelist-initialization.md` only after foundational initialization passes and the user explicitly requests the novelist role.
+- Load drawing-session instructions from `references/drawing-session-initialization.md` only after foundational initialization passes and the user explicitly requests a drawing session or the procedure requires it.
+- The Worker routes initialization. Session Start and Conversation Mode do not own operational procedures.
+
+### Mandatory pre-action self-check
+
+Before repository work, review the task's authority and current workflow. Confirm:
+1. The canonical instruction owner and required references are verified.
+2. The task and parentage are correct. The scope and approval are explicit.
+3. Dependencies, status, and execution eligibility are reconciled.
+4. No conflicting instruction or duplicate rule creates an ambiguous execution boundary.
+5. The user's decision collection phase is complete before executing newly unlocked work.
+6. The intended batch, verification, readback, and cleanup steps are defined.
+
+If any check fails, resolve it before the affected work. Do not silently bypass a gate.
+
+### Instruction conflict and drift control
+
+Treat conflicting or stale instructions as a workflow fault. Inventory the conflict, locate the canonical owner, reconcile secondary files to pointers, and verify the changes before continuing. Do not append duplicate rules as a quick fix. When a missing rule is identified, add it only to its canonical owner. When an existing rule was not followed, strengthen the gate or verification rather than copying the rule elsewhere. Review associated templates and indexes whenever their owner contract changes.
+
 ## Execution and closeout
 
 1. Read the selected task, its parent, dependencies, applicable decisions, and owner instructions.
