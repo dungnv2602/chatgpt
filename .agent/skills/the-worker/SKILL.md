@@ -179,22 +179,31 @@ Do not run local repository scripts, tests or lint. Do not inspect hosted CI res
 - Whenever a workflow, cue, activation prerequisite, ownership boundary, or operational route changes, update the map in the same governed change cycle. Read back the map and changed owner documents before commit.
 - At `/start`, Session Start requires the Workflow Map to be read first for overview, before loading The Worker or any related skills/references. Then load The Worker.
 
-## Execution cue — sole gate
+## Execution cue and authorization lifecycle
 
-The sole execution cue is the explicit standalone word `execute`, matched case-insensitively. Accept `execute`, `Execute`, or `EXECUTE` as the cue, but only when the user is clearly issuing it as an instruction, not quoting, discussing, testing, or hypothetically mentioning the word.
+The explicit `execute` directive is **universal**: it authorizes execution of eligible, previously approved and in-scope work and applicable actions. The cue is not defined or limited by batch execution. Batch is one scheduling mechanism; the execution mechanism depends on context. A clear directive may initiate implementation, continue or resume work, perform necessary preparation/reconciliation and proceed, drain eligible queues, or carry out other authorized actions. Interpret the complete message and directive intent rather than requiring a standalone token or isolated message.
 
-- **`execute`:** authorizes the consolidated, previously approved and in-scope execution batch after decision collection and eligibility checks.
-- **`approve` / approval:** log the user's decision and scope. Never execute immediately.
-- **`Next`:** log decision-queue navigation. Keep the current blocker unanswered and unresolved, then present the next unresolved decision. It cannot approve, decline, execute, resume, or change status.
-- **Any other message or cue:** capture, interpret, or log it as required, but do not execute.
-- `/start` is a distinct session-initialization cue governed by Session Start and is not an execution cue.
+Recognize explicit workflow cues in their written order, within the complete message. Distinguish actual directive use from quoted, discussed, tested, hypothetical, or negated mentions. Parse surrounding instructions, constraints and scope. Do not manufacture retroactive authorization: an action must be authorized at the point it occurs.
 
-Do not infer or substitute execution authorization from phrasing, intent, status, approval, or an earlier cue. Before each execution batch, confirm that the latest explicit `execute` cue applies to the prepared batch and that its scope has not materially changed. If the scope changes, wait for a fresh cue.
+- **`execute`:** universal execution directive. After reconciling scope, approval, dependencies, and gates, execute applicable eligible work and continue through preparation, reconciliation, implementation, recovery, transitions and queue selection until genuine quiescence or a real boundary.
+- **`approve` / approval:** record the decision and scope; approval alone does not initiate execution. When cues are ordered together (e.g., Approve then Execute), reconcile approval first, then evaluate Execute against the newly eligible state. Do not require separate messages.
+- **`Next`:** decision-queue navigation only. Keep the current blocker unanswered and unresolved; present the next unresolved decision. It cannot approve or execute.
+- **Other instructions:** capture, interpret and record as governed; do not treat non-execution instructions or implied intent as execution authorization unless they clearly include an execution directive.
+- **`/start`:** distinct session initialization governed by Session Start; not an execution cue.
 
-At `/start`, follow `.agent/SESSION_START.md`. The mandatory P0 batch uses the rules above. Do not inspect hosted CI results. At batch completion, state readiness and remaining blockers.
+### Authorization persistence
 
+An issued execution authorization remains active for its applicable scope through routine preparation, decomposition, reconciliation, implementation choices, tracking updates, commits, readback, recovery, safe retries, task transitions and queue reselection. These procedural milestones do not consume, reset or interrupt authorization. Redundant cues do not narrow, restart or interrupt the active authorization. Reconcile actual effects before retrying; prevent duplicate work or records where practical.
 
+Routine execution work, corrective actions, evidence and tracking needed to fulfill the approved objective are within scope. Independently valuable objectives or genuine scope, safety, privacy, policy, permission or other authority boundaries are not automatically included. If a boundary requires additional approval or authorization, isolate that work, record the exact boundary and continue independent work. Do not use a boundary as a reason to stop unrelated authorized work.
 
+### Execution invariant and recovery
+
+Before and during execution, reconcile the cue and its ordered operations, scope, authorization, eligible work, dependencies, actual changes and outstanding operations. A readback, status reconciliation, preparation, acknowledgment or report alone is not fulfillment when eligible work remains. Resume after interrupted or partially completed operations by reconciling evidence first; retry safely when recoverable, and isolate only genuinely unrecoverable blockers. Never infer quiescence from a shallow scan or a procedural checkpoint.
+
+Continue queue selection and execution until no eligible work or directly necessary recoverable operation remains within the active scope, the scope is exhausted, or a genuine boundary cannot be resolved. Stop at quiescence or a mandatory safety/authorization boundary, not merely because a task, commit, readback or reassessment finished. Collect and present unresolved user-resolvable blockers only at quiescence, one at a time as governed by decision collection. Do not ask the user to supervise routine execution.
+
+At `/start`, follow `.agent/SESSION_START.md`. Do not inspect hosted CI results.
 ## Parent selection — scope test and hierarchy correction
 
 Create a parent task for each distinct user objective. Do not treat the active parent, current execution pointer, repository, project, or general maintenance theme as sufficient grounds for parentage.
