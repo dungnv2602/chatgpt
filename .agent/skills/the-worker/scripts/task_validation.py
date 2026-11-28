@@ -163,8 +163,14 @@ def validate_contract(
             raise ContractError("Every mandatory check must be an object")
         check_id = item.get("id")
         job_id = item.get("coordinator_job")
-        if not isinstance(check_id, str) or not isinstance(job_id, str) or not job_id:
-            raise ContractError("Mandatory checks require stable IDs and coordinator job IDs")
+        result_mode = item.get("result_mode")
+        if (
+            not isinstance(check_id, str)
+            or not isinstance(job_id, str)
+            or not job_id
+            or result_mode not in {"job_result", "workflow_output"}
+        ):
+            raise ContractError("Mandatory checks require stable IDs, coordinator jobs, and result modes")
         if check_id in mandatory_ids or job_id in coordinator_jobs:
             raise ContractError("Mandatory check IDs and coordinator job IDs must be unique")
         mandatory_ids.add(check_id)
