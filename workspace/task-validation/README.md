@@ -1,6 +1,7 @@
 # Task Validation Operations
 
 The Worker owns this status index and review queue. The publisher and recovery workflows update them atomically.
+Operational authority and task lifecycle: .agent/skills/the-worker/SKILL.md.
 
 ## Canonical state
 
