@@ -229,7 +229,7 @@ jobs:
 
       - name: Find Markdown files changed since the last successful run
         id: changed
-        if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true'
+        if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true' && steps.report_baseline.outputs.full_audit != 'true'
         shell: bash
         env:
           BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
@@ -302,7 +302,6 @@ jobs:
           SELFTEST_EXIT: ${{ steps.tooling.outputs.linter_selftest_exit }}
           ANCHOR_OUTCOME: ${{ steps.anchors.outcome }}
           ANCHOR_EXIT: ${{ steps.anchors.outputs.exit_code }}
-          REPORT_FALLBACK: ${{ steps.report_baseline.outputs.full_audit }}
           FULL_FAILED: ${{ steps.full_audit.outputs.failed }}
           CHANGED_FAILED: ${{ steps.changed_lint.outputs.failed }}
         run: |
