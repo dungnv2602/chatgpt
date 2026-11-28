@@ -2,7 +2,6 @@
 """Validate the Markdown path-coverage contract in the Worker document catalog."""
 from __future__ import annotations
 import argparse
-import fnmatch
 import re
 import sys
 from pathlib import Path
@@ -16,7 +15,10 @@ def parse_rules(text: str) -> list[dict[str,str]]:
     section = text.split(SECTION,1)
     if len(section)!=2: return []
     rows=[]
+    in_table=False
     for line in section[1].splitlines():
+        if line.strip().startswith("|"): in_table=True
+        elif in_table and line.strip(): break
         if not line.strip().startswith("|"): continue
         cells=[x.strip() for x in line.strip().strip("|").split("|")]
         if len(cells)!=5 or cells[0]=="Path pattern" or all(re.fullmatch(r":?-+:?",x or "-") for x in cells): continue
@@ -33,6 +35,7 @@ def validate(root: Path) -> list[str]:
     rules=parse_rules(catalog.read_text(encoding="utf-8"))
     if not rules: return ["catalog: Markdown inventory coverage table is missing or empty"]
     seen=set()
+    rule_matches={}
     for row in rules:
         p=row["pattern"]
         if p in seen: errors.append(f"duplicate path rule: {p}")
@@ -41,6 +44,7 @@ def validate(root: Path) -> list[str]:
         if row["status"] not in VALID_STATUS: errors.append(f"{p}: invalid coverage status {row['status']}")
         if row["status"]=="Optional" and row["class"]!="Generator-owned": errors.append(f"{p}: Optional is only valid for Generator-owned")
         found=[x for x in matches(root,p) if not x.startswith("master/") and not x.startswith("workspace/archive/")]
+        rule_matches[p]=set(found)
         if row["status"]=="Active" and not found: errors.append(f"{p}: Active rule matches no in-scope Markdown file")
         if row["status"]=="Reserved" and found: errors.append(f"{p}: Reserved rule already matches: {found[:5]}")
     # Each in-scope Markdown file must be covered by at least one Active or Optional rule.
@@ -50,7 +54,7 @@ def validate(root: Path) -> list[str]:
         if rel.startswith("master/") or rel.startswith("workspace/archive/") or ".git/" in rel: continue
         inventory.append(rel)
     for rel in inventory:
-        covered=any(row["status"] in {"Active","Optional"} and fnmatch.fnmatchcase(rel,row["pattern"]) for row in rules)
+        covered=any(row["status"] in {"Active","Optional"} and rel in rule_matches.get(row["pattern"],set()) for row in rules)
         if not covered: errors.append(f"uncovered Markdown path: {rel}")
     return errors
 
