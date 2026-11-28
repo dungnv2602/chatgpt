@@ -43,6 +43,7 @@ class TaskValidationTests(unittest.TestCase):
         self.schema = {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "additionalProperties": False,
+            "required": ["schema_version", "source_sha", "contract_revision", "checks"],
             "properties": {
                 "source_sha": {"pattern": "^[0-9a-f]{40}$"},
             },
@@ -70,6 +71,7 @@ class TaskValidationTests(unittest.TestCase):
         self.contract = {
             "schema_version": 1,
             "source_sha": "0" * 40,
+            "contract_revision": "1",
             "checks": [{
                 "id": "task-check",
                 "adapter": "python-script",
