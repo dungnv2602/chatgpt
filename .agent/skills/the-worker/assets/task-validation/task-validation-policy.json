@@ -51,6 +51,8 @@
       ".github/workflows/validate-document-standards.yml",
       ".takeout/reports/README.md",
       "workspace/task-validation/README.md",
+      "workspace/task_board.md",
+      "workspace/tasks/20261128-193800/subtasks/README.md",
       "workspace/tasks/20261128-193800/task.md"
     ],
     "enforcement_status": "external-prerequisite"
