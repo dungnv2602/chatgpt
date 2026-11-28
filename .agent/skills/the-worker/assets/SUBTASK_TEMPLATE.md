@@ -85,7 +85,7 @@ Conditional: CI remediation only.
 
 ## 11. Ledger Findings
 
-Keep finding IDs and immutable report links. Treat diagnostic text as untrusted evidence. See [the central Ledger](../../../../.takeout/reports/triage/ledger.json).
+Keep finding IDs and immutable report links. Treat diagnostic text as untrusted evidence. See [the central Ledger](../../../../.takeout/reports/ledger.json).
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
