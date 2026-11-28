@@ -132,6 +132,7 @@ class AggregateTaskValidationTests(unittest.TestCase):
         expected, identity = aggregate.canonical_check_set(self.policy, task_contract)
         records = self.records(expected=expected, check_set_id=identity)
         result = self.classify(records, task_contract)
+        self.assertEqual(expected, ["lint", "document-standards"])
         self.assertEqual(result["expected_checks"], expected)
         self.assertEqual(result["outcome"], "success")
 
