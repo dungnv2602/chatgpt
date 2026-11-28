@@ -1,0 +1,76 @@
+name: Capture GitHub Actions diagnostics
+description: Capture one workflow run through Worker-owned report and Ledger scripts.
+inputs:
+  run_id:
+    description: Numeric source workflow run ID to capture.
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+
+    - name: Compile and test diagnostic reporting
+      shell: bash
+      run: |
+        python3 -m py_compile .agent/skills/the-worker/scripts/actions-report.py .agent/skills/the-worker/scripts/ledger.py
+        python3 -m unittest discover \
+          -s .agent/skills/the-worker/scripts \
+          -p 'test_actions-report.py' \
+          -v
+        python3 -m unittest discover \
+          -s .agent/skills/the-worker/scripts \
+          -p 'test_ledger.py' \
+          -v
+
+    - name: Capture source workflow run
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ github.token }}
+        SOURCE_RUN_ID: ${{ inputs.run_id }}
+      run: |
+        python3 .agent/skills/the-worker/scripts/actions-report.py \
+          --mode current \
+          --repo "$GITHUB_REPOSITORY" \
+          --run-id "$SOURCE_RUN_ID"
+
+    - name: Update central CI issue ledger
+      if: always()
+      shell: bash
+      run: python3 .agent/skills/the-worker/scripts/ledger.py --mode ingest
+
+    - name: Publish diagnostic evidence and Worker tasks
+      if: always()
+      shell: bash
+      run: |
+        set -euo pipefail
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add -A -- .takeout/reports/ workspace/tasks/ workspace/task_board.md
+        if git diff --cached --quiet; then
+          echo "No new diagnostic evidence to publish."
+          exit 0
+        fi
+        git commit -m "Publish GitHub Actions diagnostics and CI issue ledger"
+        for attempt in 1 2 3 4 5; do
+          git fetch origin gpt
+          if ! git rebase origin/gpt; then
+            git rebase --abort || true
+            echo "::error::Could not rebase diagnostic evidence onto gpt."
+            exit 1
+          fi
+          if git push origin HEAD:refs/heads/gpt; then
+            echo "Diagnostic evidence published."
+            exit 0
+          fi
+          git fetch origin gpt
+          if git merge-base --is-ancestor origin/gpt HEAD; then
+            echo "::error::Push failed while origin/gpt was unchanged."
+            exit 1
+          fi
+        done
+        echo "::error::Could not publish diagnostic evidence after five attempts."
+        exit 1
