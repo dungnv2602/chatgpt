@@ -97,11 +97,11 @@
     "unresolved_attempts_never_pruned": true,
     "bounded_retries": 5,
     "scheduled_cron": "*/15 * * * *",
-    "schedule_activation_status": "external-prerequisite-default-branch-must-contain-recovery",
+    "schedule_activation_status": "verified",
     "push_trigger_excludes_status_index_commits": true,
     "reads_logs": false,
     "validates_source_code": false,
-    "workflow_dispatch_activation_status": "external-prerequisite-default-branch-must-contain-dispatcher",
+    "workflow_dispatch_activation_status": "verified",
     "dispatch_requires_verified_default_branch_workflow": true,
     "permissions": [
       "actions:write",
