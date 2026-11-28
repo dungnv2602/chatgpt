@@ -1,6 +1,6 @@
 # Workspace
 
-Navigation for task records, decision records, analysis, and unified CI evidence. The Worker owns repository task operations and document governance.
+Navigation for task records, decisions, analysis, ADR-0008 validation state, and legacy CI evidence. The Worker owns repository task operations and document governance.
 
 ## Records and canonical formats
 
