@@ -115,58 +115,24 @@ If any check fails, resolve it before the affected work. Do not silently bypass 
 
 Treat conflicting or stale instructions as a workflow fault. Inventory the conflict, locate the canonical owner, reconcile secondary files to pointers, and verify the changes before continuing. Do not append duplicate rules as a quick fix. When a missing rule is identified, add it only to its canonical owner. When an existing rule was not followed, strengthen the gate or verification rather than copying the rule elsewhere. Review associated templates and indexes whenever their owner contract changes.
 
-## Execution and closeout
+## Execution, recovery, queue draining and closeout
 
-1. Read the selected task, its parent, dependencies, applicable decisions, and owner instructions.
-2. Execute approved work to quiescence. Do not interrupt for routine choices or a blocker isolated to one task.
-3. Record progress, decisions, changed paths, commit SHAs, readback, and limitations in the task record.
-4. For every task-specific implementation commit, add the Task-ID trailer shown above.
-5. **Implementation closeout and verification are separate.** Close an implementation task when its deliverable-specific acceptance criteria are met, its intended-branch commit exists, and readback confirms the committed content. Do not make unperformed runtime tests, lint, or hosted validation a universal completion gate. If an acceptance criterion explicitly requires a permitted check, treat that check as deliverable-specific evidence and do not claim it passed when unperformed. Record remaining verification debt, uncertainty, or follow-up clearly. When useful, create an authorized follow-up task for verification or evidence collection. CI remediation completion is commit-based. Hosted validation is separate metadata.
-6. A parent cannot be Done while a required child remains open.
-7. After closeout checks, delete the completed or cancelled task folder and its board row. Do not archive it, create a retention copy, or add a Historical row. Preserve Ledger finding identity, evidence, resolution history, and prior task references.
+Treat the user's authorized workstream or selected parent as the batch boundary. Execute its eligible children recursively to quiescence, then report once.
 
-Claim validation only when you observed it. Do not run repository scripts, tests, or lint locally. Use hosted workflows only when required. Do not inspect their results unless the user explicitly requests review.
+1. **Reconcile and select:** Read the board, parent/child indexes and records. Recursively check orphan records, missing indexes, stale paths, duplicate IDs, status/dependency mismatches, and pauses. Recover records from repository evidence and templates when possible. Do not declare quiescence from a shallow scan.
+2. **Check eligibility:** Confirm scope, approval, dependencies, decisions and authorization before priority and age. Detect dependency cycles. Resume only stale/dependency-based pauses when authority remains valid. Preserve intentional pauses.
+3. **Execute:** Complete eligible work autonomously. Recover source material, make routine decisions and correct errors within scope. Do not interrupt for isolated blockers or routine updates.
+4. **Record evidence:** Capture decisions, progress, paths, commits, readback, checks and limitations. Every task-specific implementation commit must carry the exact `Task-ID: <task-id>` trailer.
+5. **Close implementation:** Mark a task Done when its acceptance criteria are met and its intended-branch commit is read back. Runtime checks are not universal gates. Do not claim checks that were not performed. Record verification debt separately. A parent cannot be Done while required children remain open.
+6. **Rebuild:** Reconcile the board and indexes after each status or dependency change. Immediately select the next eligible task within the authorized focus. A completed child is a scheduler transition, not a reporting pause.
+7. **Skip blockers:** Exhaust repository recovery and source investigation first. Isolate a blocker, record its precise cause and requested input, remove it from the eligible queue and continue independent work. A failed tool call or recoverable uncertainty is not a blocker.
+8. **Reach quiescence:** Stop only when no eligible task remains within scope. Reconcile all user-resolvable blockers and present one consolidated decision brief. Do not ask about external blockers the user cannot resolve.
+9. **Collect decisions:** Log responses and reconcile them without executing newly unlocked work. `Next` is navigation only. A fresh standalone `execute` cue authorizes the prepared batch. If scope changes materially, require a fresh cue.
+10. **Close records:** Read back each deliverable and tracking record. Delete completed/cancelled child folders and board rows under the normal lifecycle. Preserve the persistent skills-refactoring parent when its exception applies. Do not archive or create retention copies. Preserve Ledger identity and history.
+11. **Cleanup:** Remove temporary recovery artifacts immediately after last use and verify cleanup when possible.
 
-## Autonomous execution and blocker discipline
+Do not run local repository scripts, tests or lint. Do not inspect hosted CI results unless explicitly authorized. Commit/readback evidence does not prove runtime behavior.
 
-Execution interruptions are exceptional, not a workflow default. Once the user authorizes an execution batch, autonomously complete the full deliverable within the approved scope, including routine recovery, source retrieval, file inspection, correction of implementation mistakes, and governance/board/task reconciliation.
-
-Before contacting the user or declaring a task Blocked, exhaust permitted internal and repository-based resolution paths: inspect authoritative instructions and task records, recover required evidence, correct stale task/board state, use safe fallbacks already authorized, and isolate the unresolved portion. A failed tool call, missing file that can be recovered, stale status, uncertainty resolved by reading canonical guidance, or ordinary implementation choice is not a user blocker.
-
-Only stop or seek input when the unresolved issue genuinely requires the user's authority, decision, preference, secret/credential, or indispensable information that cannot be safely or reasonably inferred or recovered within scope. Do not surface routine status, ask the user to diagnose workflow errors, or interrupt execution for a blocker that affects only a separable portion. Record the exact residual blocker and continue independent eligible work.
-
-Before declaring a task or batch complete, reconcile its task records, board, dependencies, and canonical workflow. Do not allow stale governance records or workflow inconsistencies to become reasons to ask the user to supervise reconciliation.
-
-
-
-## Recursive queue integrity and workstream closeout boundary
-
-Treat a user's authorized workstream or selected parent as the execution batch boundary, not an individual task or subtask. Completing or deleting a child is a scheduler transition only. Continue executing every eligible child and nested child within that authorized focus until quiescence, then report once.
-
-Before declaring quiescence, recursively traverse every active parent and descendant index, record, and referenced task-folder path. Reconcile all mismatches: missing indexes, orphan records, missing parent records, stale paths, duplicate IDs, inconsistent statuses, and stale dependency/deferral reasons. Recover missing records from repository evidence when possible. If a parent record is irrecoverable, preserve its children and evidence and repair the hierarchy using a transparent reconstruction based on authoritative child data and templates rather than treating the missing record as a blocker. Do not mark a task complete from a shallow board/index scan.
-
-Re-evaluate Paused tasks at every dependency/status change. Resume a task only when its pause was dependency-based or stale and its authorization remains valid. Preserve intentional suspensions that require explicit user resume. In particular, a batch cue does not override a record's intentional future pause or an approval/authority boundary.
-
-At quiescence, collect and reconcile every user-resolvable blocker across the authorized workstream. Present one consolidated decision brief containing all such blockers, evidence already examined, the precise input needed, and choices/consequences. Do not serialize user calls one at a time. External/access blockers the user cannot resolve remain recorded and deferred. Do not interrupt execution for isolated blockers.
-
-When the workstream is a persistent parent, close and delete completed child records under lifecycle rules, but preserve the persistent parent. Work unrelated to its objective remains outside the batch.
-
-## Run-to-quiescence and user input
-
-Treat every authorized execution batch as a queue-draining loop. Do not stop after one task. Implementation closeout is not the end of the batch.
-
-1. **Select:** Reconcile the board, parent indexes, child indexes, and task records. Build the full eligible queue within the user's authorized focus. Check dependencies and approval before priority and age. Select the next eligible task.
-2. **Execute:** Complete that task within its approved scope. Record progress and evidence in its task record. Do not send routine progress pings or per-task status messages.
-3. **Rebuild and continue immediately:** Once a task reaches implementation closeout (Done), reconcile its records and board, then immediately rebuild the full eligible queue. Treat this as a mandatory scheduler transition, not a reporting pause. Continue into the next eligible task within the user's authorized focus without waiting for a user message. After Blocked, Paused, Cancelled, approval, or dependency changes, also reconcile and rebuild. No task completion may terminate an authorized execution batch while an eligible task remains within that focus.
-4. **Skip isolated blockers:** Exhaust permitted repository evidence and source investigation before declaring Blocked. Record the exact missing evidence, access, or user action. Remove the blocked task from the eligible queue. Return to step 1. A blocked task never ends the batch while another independent eligible task remains.
-5. **Reach quiescence:** Declare quiescence only when no eligible task remains within the user's authorized focus. Keep blocked and dependency-waiting tasks in their deferred sections. Do not select unrelated work outside the user's focus.
-6. **Build the user-decision queue:** At quiescence, review every blocked task within the authorized focus and classify its blocker. Include tasks that require user authorization, a preference, a governance decision, or other input the user can provide. Do not ask about blockers that the user cannot resolve. Keep non-resolvable external/access blockers documented and deferred.
-7. **Collect and log decisions only:** Sort the user-decision queue by board order. Present only the first blocker as a concise decision brief: task ID and title, exact blocker and evidence already examined, the specific decision or input needed, and practical choices with their consequences. Include every user-resolvable blocker in one consolidated decision brief. Log the user's responses verbatim with timestamp and reconcile those decisions. **Do not execute work unlocked by the answer until the explicit standalone execute cue is received.** When the user says `Next` (case-insensitive), log that exact navigation instruction for the current decision, leave the blocker unanswered and unresolved, and present the next unresolved decision. `Next` is navigation only and cannot approve, decline, execute, resume, or change task status.
-8. **Await execution cue and prepare batch:** After decision collection is complete, reconcile all answers, task statuses, approvals, dependencies, scope, and priorities. Do not start execution until the user supplies the sole cue: `execute`, case-insensitive and explicit. Once cued, build one consolidated eligible queue, execute the authorized batch, drain it to quiescence, and repeat the decision-collection phase only if execution reveals new user-resolvable blockers. Approval, decision answers, and queue-navigation commands are logged only and do not authorize immediate execution.
-
-An isolated blocker does not justify interrupting the batch. Keep routine progress in task records. Contact the user before quiescence only when a higher-priority instruction requires it or when continuing would cross an authority, governance, safety, access, or privacy boundary.
-
-Ask only when proceeding would cross an authority, governance, safety, access, privacy, or materially outcome-changing boundary. Otherwise use the narrowest safe interpretation.
 
 ## Execution cue — sole gate
 
