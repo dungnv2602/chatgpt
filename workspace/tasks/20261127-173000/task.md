@@ -13,9 +13,9 @@
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create the Refactor Skills task and place workspace/tasks/20261127-102301 beneath it.
 - **Governing ADR(s):** None
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — Ready; approved, no dependencies. Selected as current execution by user's explicit priority instruction.
+- **Eligibility / deferral reason:** At quiescence — no eligible child remains. The user selected Template Fix as the current execution focus.
 - **Related tasks:** None
 
 ## 1. Original Request
@@ -103,6 +103,13 @@ Serve as the persistent, open parent task and coordination point for skills refa
 - **Closeout:** Child 63's record is removed under normal lifecycle rules. The persistent Refactor Skills parent remains open. Focus is at quiescence and decision collection resumes with blocked task 28.
 
 ## 5. Progress
+
+### 2026-11-28 03:13 UTC — execution focus reconciled
+
+- **Action:** Reconciled the current execution pointer after the user selected Template Fix as the active workstream.
+- **Result:** This persistent parent remains open at quiescence. Its child index contains no eligible child. The board now points to Template Fix.
+- **Next:** Resume only when a future user instruction selects skills-refactoring work.
+
 
 ### 2026-11-28T06:55:36+07:00 — DRAFT-0006 prepared
 
