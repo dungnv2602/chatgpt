@@ -177,7 +177,7 @@ class RecoveryTests(unittest.TestCase):
             with self.assertRaises(recovery.RecoveryError):
                 recovery.awaiting_ci_tasks(self.root)
 
-    def test_source_commit_policy_binds_validation_but_dispatch_gate_uses_current_policy(self) -> None:
+    def test_source_and_current_policy_must_both_enable_recovery_dispatch(self) -> None:
         source_policy = {
             "repository": "dungnv2602/chatgpt",
             "protected_ref": "refs/heads/gpt",
