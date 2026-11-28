@@ -130,7 +130,7 @@ Keep the main `SKILL.md` under 500 lines where practical. The specification reco
 For each new skill or material revision:
 
 1. **Define scope.** State the capability, the user requests that activate it, its boundaries, and what it does not own.
-2. **Identify authority.** Determine which user instructions, project policies, canonical records, and other skills govern the task. Do not invent a new authority hierarchy.
+2. **Identify authority.** Determine which user instructions, project policies, canonical records, and other skills govern the task. Do not invent a new authority hierarchy. Before writing a skill-owned artifact, apply the Worker's document-governance gate. Confirm the cataloged owner and canonical location. A consumer's runtime path does not establish ownership.
 3. **Inspect existing material.** Read the exact current files and relevant links before changing them. Reuse established terminology and avoid creating a competing skill for an existing responsibility.
 4. **Choose the directory name.** Use a concise, descriptive, lowercase hyphenated name that satisfies the specification.
 5. **Read the template first.** Read the Worker document-type catalog entry and the complete `assets/SKILL_TEMPLATE.md` before creating or materially revising a skill. If the required template is missing, stop. Propose its purpose, structure, and use to the user. Wait for explicit approval before creating the template or editing the skill.
