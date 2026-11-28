@@ -104,6 +104,10 @@ jobs:
             -s .agent/skills/the-worker/scripts \
             -p 'test_build_task_validation_contract.py' \
             -v
+          python -m unittest discover \
+            -s .agent/skills/the-worker/scripts \
+            -p 'test_publish_task_validation.py' \
+            -v
 
       - name: Run structural ownership validator tests
         run: python -m unittest discover -s .agent/skills/the-worker/scripts -p 'test_validate_structural_ownership.py' -v
