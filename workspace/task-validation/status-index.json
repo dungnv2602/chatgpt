@@ -3220,6 +3220,22 @@
         "retry_count": 0,
         "last_retry_at": null
       }
+    },
+    {
+      "source_task_id": null,
+      "source_sha": "236c69199d23d4caf8c90abe58b520a48abdaf33",
+      "coordinator_run_id": 46162846335,
+      "attempt": 1,
+      "check_set_id": null,
+      "policy_revision": "efa56c7e8e493908819ffc18bde0eb6ade3e8a0e",
+      "completed_at": "2026-11-28T16:00:46Z",
+      "outcome": "capture_failure",
+      "actions_url": "https://github.com/dungnv2602/chatgpt/actions/runs/46162846335",
+      "recovery": {
+        "reconciled_at": null,
+        "retry_count": 0,
+        "last_retry_at": null
+      }
     }
   ]
 }
