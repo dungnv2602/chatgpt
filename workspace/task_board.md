@@ -18,15 +18,17 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Standing user-selected focus. Focused child 63 completed and was removed under lifecycle rules. Refactor Skills is at quiescence. Child 62 completed and was removed. Child 61 remains paused.
+**P0** — [Remove the standalone latest lint report copy](tasks/20261127-173500/task.md) — Current authorized execution; coordinated migration is underway.
+
+**Deferred focus:** [Refactor Skills](tasks/20261127-173000/task.md) — Parent is at quiescence. Child 61 remains paused; child 63 and 62 completed and were removed under lifecycle rules.
 
 ## Ordered Eligible Execution Queue
 
-_No eligible child tasks under Refactor Skills._
+[20261127-173500](tasks/20261127-173500/task.md) — implementation reconciliation and closeout.
 
 ## Next Task
 
-No eligible child remains under Refactor Skills. Child 61 remains intentionally paused. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected because the user directed focus on Refactor Skills.
+Current task: 20261127-173500. Refactor Skills is deferred at quiescence; child 61 remains intentionally paused. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
 
 ## Deferred Work
 
@@ -43,11 +45,6 @@ No eligible child remains under Refactor Skills. Child 61 remains intentionally 
 | 20261127-173000-61 | Review structural validator test execution and validation loop | P1 | Paused | Approved | Future verification follow-up; intentionally deferred until explicitly resumed. | [subtask](tasks/20261127-173000/subtasks/61-review-structural-validator-test-execution-and-validation-loop.md) |
 
 
-### Proposed — decision pending
-
-| ID | Title | Priority | Status | Approval | Reason | Task record |
-|---|---|---:|---|---|---|---|
-| 20261127-173500 | Remove the standalone latest lint report copy | P0 | Proposed | Approved | DRAFT-0005 revision 1 must receive user approval and become an accepted ADR before implementation. | [task](tasks/20261127-173500/task.md) |
 
 
 ### Paused
