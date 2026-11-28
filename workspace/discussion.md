@@ -22,13 +22,16 @@
 
 
 
-- **2026-11-27:** [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](draft/DRAFT-0005-unified-index-without-latest-lint-copy.md), revision 1. Decision required: remove the standalone latest lint JSON and make the shared index the only latest-report locator. ADR-0003 currently requires the file. User approval of this exact Draft revision is pending. Implementation task: [20261127-173500](tasks/20261127-173500/task.md).
+- **2026-11-28:** [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](draft/DRAFT-0005-unified-index-without-latest-lint-copy.md), revision 1, Option 2 approved. Remove the standalone latest lint JSON and make the shared index the only latest-report locator. Approval is decision-only; implementation remains separately execution-gated. Implementation task: [20261127-173500](tasks/20261127-173500/task.md).
 
 - **2026-11-27:** Completed/cancelled task folders must be deleted directly after closeout. Do not create task or report archives, retention copies, cleanup schedules, or Historical board rows.
 - **2026-11-27:** Do not inspect, poll, dispatch, or rerun hosted CI. Commit/readback is the completion evidence; later failures flow through automatic report ingestion.
 - **2026-11-27:** User authorized direct execution of this task's full prompt-capture and CI lifecycle refactor.
 
 ## Reports
+
+- **2026-11-28:** User approved DRAFT-0005 revision 1, Option 2: index-only latest lint report locator, replacing the standalone latest JSON copy. Approval recorded in Draft and Open Discussions; implementation not executed.
+
 
 - **2026-11-28:** ADR-0006 implementation complete. Commit/readback evidence: validator `1b1fe08c579f02bb7b828001fe7eaafca27a6989`, tests `a7cc0d6cbd1ddd79d1c5af55ed22446bc5987ce8`, workflow integration `d5bac865a4dd83a1b40c91d5b6ff3444943f3378`. Tests were not executed; hosted CI was not inspected.
 
