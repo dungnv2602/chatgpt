@@ -126,6 +126,8 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/README.md` | Embedded contract | Active | `workspace/README.md` and `.agent/skills/the-worker/SKILL.md` | Workspace navigation and operating rules. |
 | `workspace/task_board.md` | Embedded contract | Active | `workspace/task_board.md` and `.agent/skills/the-worker/SKILL.md` | One live scheduler view: Current Execution, ranked eligible queue, Next Task, and deferred categories. Its ADR(s) column links implementation tasks to accepted decisions; the Worker remains sole scheduler. |
 | `workspace/discussion.md` | Embedded contract | Active | `workspace/discussion.md` and `.agent/skills/the-worker/references/conversation-mode.md` | Shared current-step, open-discussion, and verified-report register. |
+| `workspace/task-validation/README.md` | Embedded contract | Active | `workspace/task-validation/README.md` and `.agent/skills/the-worker/SKILL.md` | Canonical status-index, review-queue, and recovery operating rules. |
+| `workspace/task-validation/reviews/*/review.md` | Generator-owned | Reserved | `.agent/skills/the-worker/scripts/publish_task_validation.py` and `.agent/skills/the-worker/scripts/test_publish_task_validation.py` | Per-attempt review records generated from the Worker-owned review template. Activate on the first published review. |
 | `.agent/skills/the-worker/assets/TASK_TEMPLATE.md` | Exempt | Active | `.agent/skills/the-worker/assets/TASK_TEMPLATE.md` and `.agent/skills/the-worker/SKILL.md` | Canonical task template source, not a task instance. |
 | `.agent/skills/the-worker/assets/ADR_TEMPLATE.md` | Exempt | Active | `.agent/skills/the-worker/assets/ADR_TEMPLATE.md` | Canonical accepted decision template source, not a decision record. |
 | `.agent/skills/the-worker/assets/ANALYSIS_TEMPLATE.md` | Exempt | Active | `.agent/skills/the-worker/assets/ANALYSIS_TEMPLATE.md` | Canonical analysis template source, not an analysis record. |
@@ -142,7 +144,7 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 
 ## Governed non-Markdown artifact coverage
 
-This register covers every non-Markdown file under `.agent/skills/` and `.github/`. Each file must match exactly one Active rule. Add a narrow rule before creating a new artifact family. Do not use a catch-all rule to hide an unknown type or incorrect location. A skill-owned artifact must remain inside its owning skill and follow the placement rule.
+This register covers every non-Markdown file under `.agent/skills/`, `.github/`, and `workspace/` outside the archive. Each file must match exactly one Active rule. Add a narrow rule before creating a new artifact family. Do not use a catch-all rule to hide an unknown type or incorrect location. A skill-owned artifact must remain inside its owning skill and follow the placement rule.
 
 Coverage status has two values. Active rules must match at least one current file. Reserved rules must match no current file. Change a Reserved rule to Active when its first file is created. The validator rejects stale Active rules, used Reserved rules, overlapping rules, missing owners, and unregistered files.
 
@@ -155,6 +157,7 @@ Placement rules are enforced by the validator:
 - `skill-eval-viewer`: within Skill Creator's `eval-viewer/` directory.
 - `skill-vendored-schemas`: within XLSX's vendored schema directory.
 - `github-workflows`: within `.github/workflows/`. Workflow definitions follow GitHub's external schema.
+- `workspace-task-validation`: within `workspace/task-validation/`. Operational JSON state is Worker-owned and uses its registered schema.
 
 | Path pattern | Artifact type | Coverage status | Canonical owner | Placement rule | Coverage rationale |
 |---|---|---|---|---|---|
@@ -173,6 +176,7 @@ Placement rules are enforced by the validator:
 | `.agent/skills/skill-creator/scripts/*.py` | Python script | Active | `.agent/skills/skill-creator/SKILL.md` | skill-scripts | Skill Creator packaging, evaluation, and reporting tools. |
 | `.agent/skills/the-worker/assets/*.json` | Worker policy and schema | Active | `.agent/skills/the-worker/SKILL.md` | skill-assets | Worker-owned top-level schemas. |
 | `.agent/skills/the-worker/assets/task-validation/*.json` | Worker policy and schema | Active | `.agent/skills/the-worker/SKILL.md` | skill-assets | Worker-owned task-validation policy, schema, and registry. |
+| `workspace/task-validation/*.json` | JSON data | Active | `.agent/skills/the-worker/SKILL.md` | workspace-task-validation | Compact operational status index and monotonic checkpoint. |
 | `.agent/skills/the-worker/scripts/*.py` | Python script | Active | `.agent/skills/the-worker/SKILL.md` | skill-scripts | Worker-owned operational scripts and regression tests. |
 | `.agent/skills/theme-factory/theme-showcase.pdf` | Binary reference asset | Active | `.agent/skills/theme-factory/SKILL.md` | skill-root | Skill-owned visual reference asset. |
 | `.agent/skills/xlsx/scripts/*.py` | Python script | Active | `.agent/skills/xlsx/SKILL.md` | skill-scripts | XLSX top-level processing tools. |
