@@ -2,23 +2,34 @@
 
 ## Metadata
 
-- **Template version:** 1.6
+- **Template version:** 1.7
 - **ID:** 20261128-230000-03
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
-- **Status:** Ready
+- **Status:** In Progress
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Parent task 20261128-230000, explicitly authorized by user; execution cue provided.
 - **Governing ADR(s):** ADR-0008
 - **Dependencies:** 20261128-230000-01
-- **Eligibility / deferral reason:** Ready when dependency subtasks are completed
+- **Eligibility / deferral reason:** Dependency 20261128-230000-01 completed; implementation in progress
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** None
+
+## Validation Contract
+
+Declare task-specific checks in this JSON block. The coordinator binds the contract to the exact source commit SHA. Use an empty array when no additional checks are required. Repository policy checks remain mandatory and cannot be removed or overridden. Use only registered adapters and repository-relative entrypoints. Never add shell command strings, credentials, environment overrides, or permission settings.
+
+```json
+{
+  "contract_revision": "1",
+  "checks": []
+}
+```
 
 ## 1. Original Prompt
 
