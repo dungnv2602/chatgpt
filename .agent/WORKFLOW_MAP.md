@@ -9,7 +9,7 @@ flowchart TD
  A[Conversation] --> B{Cue or task activation}
  B -->|/start| C[Session Start guard] --> D[Read Workflow Map] --> E[The Worker] --> F[Conversation Mode: presentation only] --> G[Repository/task baseline and progressive loading] --> H[Workspace P0 and task reconciliation] --> I[Task / queue reconciliation] --> J[Authorized work to quiescence] --> K[Commit, readback and tracking] --> L[Closeout and queue continuation] --> M[Quiescence report]
  B -->|/map| N[Display map only]
- B -->|execute| O[Authorize prepared eligible batch]
+ B -->|execute| O[Universal execution directive within authorized scope]
  B -->|approve| P[Log decision only]
  B -->|Next| Q[Decision navigation only]
 ```
@@ -18,7 +18,7 @@ flowchart TD
 - Repository file reads default to the intended branch. Commit-specific reads require traceable SHA provenance; no unexplained or stale SHA is reused.
 - Presentation settings: `.agent/skills/the-worker/references/conversation-mode.md`.
 - `/map` displays this map only; it does not initialize or execute.
-- Standalone case-insensitive `execute` is the execution cue; approval and `Next` are log/navigation only.
+- `execute` is a universal execution directive, interpreted by The Worker in context; batch is a scheduling mechanism, not its definition. The Worker owns cue order, authorization persistence, recovery and quiescence semantics. Approval is log-only unless followed by an execution directive; `Next` is navigation only.
 
 ## Task lifecycle and scheduling
 
