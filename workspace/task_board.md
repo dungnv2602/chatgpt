@@ -10,18 +10,18 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-_None. Template Fix is complete and its task records were removed under the Worker lifecycle rules._
+_None. The Refactor Skills children 65 and 66 are prepared and await the explicit standalone execution cue._
 
 ## Ordered Eligible Execution Queue
 
-_No task is selected; no execution queue is active._
+_No execution batch is authorized yet._
 
 ## Next Task
 
-No task is selected. Other open parents remain unselected:
+No task selected. Refactor Skills remains the user's designated workstream. Prepared children:
 
-- **P1** — [Repair CI task generation and clear active reports](tasks/20261126-142500/task.md) — In Progress; not selected.
-- **P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent parent at quiescence; no eligible child; not selected.
+- **P0** — [Template-first document governance](tasks/20261127-173000/subtasks/65-template-first-document-governance.md) — Ready; execution cue pending.
+- **P0** — [Instruction placement audit and stale-content prevention](tasks/20261127-173000/subtasks/66-instruction-placement-audit.md) — Ready; execution cue pending.
 
 ## Deferred Work
 
