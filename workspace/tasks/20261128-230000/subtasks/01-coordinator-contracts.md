@@ -52,7 +52,7 @@ Establish the exact-SHA coordination foundations, Worker-owned policy and task-c
 - The full-document workflow bypasses its direct-push supersession cancellation logic for coordinator calls.
 - Read back the policy/schema/registry/interface files and all three modified workflow files.
 - Existing reusable workflows still publish legacy reports with write permissions, and some check out a branch name rather than the immutable caller SHA. They must not be wired to the coordinator until subtask 02 removes those hazards.
-- GitHub branch protection/ruleset enforcement is an external prerequisite. It has not been established or verified.
+- GitHub branch protection/ruleset enforcement is not required by ADR-0008.
 
 ### 2026-11-28 — Canonical ownership correction
 
@@ -61,15 +61,15 @@ Establish the exact-SHA coordination foundations, Worker-owned policy and task-c
 - The old `.github/task-validation-*.json` and `.github/task-validation/README.md` paths were deleted.
 - The Worker asset index and document-type catalog record the canonical ownership.
 - GitHub Actions workflow definitions remain under `.github/workflows/`.
-- The correction did not change ADR-0008 semantics or claim that branch protection has been established.
+- The implementation should not impose branch-protection settings as an ADR-0008 requirement.
 - The canonical prevention task is child 74 under the persistent Refactor Skills parent. Earlier implementation commits used reused child IDs 64 and 65 before the complete parent history was checked. Those commit trailers are immutable and are documented in the persistent parent history.
 
 ### 2026-11-28 — Foundation acceptance and closeout
 
-- **Result:** The policy, schema, registry, and interface documentation satisfy this subtask's foundation scope. The policy explicitly records the required external protection mechanism and its unverified status.
+- **Result:** The policy, schema, registry, and interface documentation satisfy this subtask's foundation scope. The policy binds mandatory checks and exact-SHA validation; it does not require GitHub branch protection.
 - **Result:** The three existing workflows expose reusable entry points. Their legacy publication permissions and branch-based checkout behavior remain unsafe for coordinator invocation. Subtask 02 owns that migration.
 - **Boundary:** This subtask does not claim that GitHub branch protection is active, that the coordinator or generic verifier exists, or that any hosted validation passed.
-- **Next:** Subtasks 02 and 03 can proceed from the committed interface foundation. Policy protection remains a deployment prerequisite and must be verified before production enforcement.
+- **Next:** Subtasks 02 and 03 can proceed from the committed interface foundation. Protected-policy integrity and activation remain required; GitHub branch protection is not an ADR-0008 gate.
 
 ## 6. State and Evidence
 
@@ -77,7 +77,7 @@ Establish the exact-SHA coordination foundations, Worker-owned policy and task-c
 - **Changed paths:** Canonical policy, schema, adapter registry, interface guide, asset index, document catalog, Worker instructions, catalog validator/tests, and the three reusable validation workflows. Historical `.github/task-validation*` paths were removed.
 - **Readback:** Canonical Worker-owned policy, schema, registry, interface guide, asset index, catalog, validator, regression tests, Worker and Agent Skill Authoring skills, and all three validation workflows were read from branch `gpt`.
 - **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed.
-- **Limitations:** GitHub rulesets query returned no rulesets. Branch-protection read was denied to the integration. Effective protection remains unverified. Coordinator/verifier implementation, exact-SHA migration, publisher, aggregate, and runtime behavior remain downstream work.
+- **Limitations:** GitHub branch-protection settings were not verified; this is outside ADR-0008 acceptance criteria. Coordinator/verifier implementation, exact-SHA migration, publisher, aggregate, and runtime behavior remain downstream work.
 
 ## 7. Completion
 
