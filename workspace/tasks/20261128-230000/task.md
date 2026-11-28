@@ -98,10 +98,10 @@ Acceptance criteria are mapped to these required child tasks:
 ### 2026-11-28 — Subtask 04 lifecycle and migration staging
 
 - **Action:** Completed the Worker lifecycle contract, exact-SHA/policy matching rules, root-cause group reuse semantics, and legacy producer/consumer inventory.
-- **Result:** Existing reusable validation workflows and Worker-owned Ledger test path are preserved. Legacy report producers remain active where needed for non-task diagnostics; the report tree is not retired. External branch-protection/default-branch prerequisites remain unverified.
+- **Result:** Existing reusable validation workflows and Worker-owned Ledger test path are preserved. Legacy report producers remain active where needed for non-task diagnostics; the report tree is not retired. Branch protection is not an ADR-0008 requirement; default-branch recovery availability is now confirmed on `main` after PR #10.
 - **References:** ADR-0008 Confirmation; `task-validation-interfaces.md`; `workspace/task-validation/README.md`.
 - **Readback:** Confirmed the lifecycle instructions, migration inventory, five workflow gates, catalog, map, task-validation README, and subtask tracking records from branch `gpt`.
-- **Next:** Await exact-SHA validation and policy activation and default-branch recovery availability before subtask 05; do not inspect hosted logs or enable the coordinator prematurely.
+- **Next:** Await exact-SHA validation and policy activation and operational readiness before subtask 05; do not inspect hosted logs or enable the coordinator prematurely.
 
 ### 2026-11-28 — Legacy producer cutover gates staged
 
@@ -122,7 +122,7 @@ Acceptance criteria are mapped to these required child tasks:
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
 
-The dispatcher has a push trigger, but policy-gates coordinator activation. The exact-SHA coordinator remains staged until publisher/report migration and publisher/report migration and operational readiness gates are verified. Effective branch protection/ruleset enforcement remains unverified and is an external prerequisite. The legacy report pipeline remains intact. Operational Confirmation and report-tree retirement remain incomplete.
+The dispatcher has a push trigger, but policy-gates coordinator activation. The exact-SHA coordinator remains staged until publisher/report migration and operational readiness gates are satisfied. GitHub branch protection is not an ADR-0008 prerequisite. The legacy report pipeline remains intact. Operational Confirmation and report-tree retirement remain incomplete.
 
 ## 7. Verification and Evidence
 
@@ -130,7 +130,7 @@ The dispatcher has a push trigger, but policy-gates coordinator activation. The 
 - **Changed paths:** Worker skill and Workflow Map; task/subtask templates; task-validation policy, schema, and adapter registry; document catalog and interface reference; contract builder, verifier, aggregate, and three regression suites; five GitHub Actions workflow files; parent task, subtask record, and index.
 - **Readback:** Subtasks 01, 02, and 03 have implementation readback from branch `gpt`; final parent readback and Confirmation remain pending.
 - **Checks:** No local scripts, tests, lint, workflow dispatch, or hosted-run inspection performed. Regression tests are registered in the document-standards workflow.
-- **Limitations:** Coordinator activation and external policy protection remain gated. Publisher/recovery and exact-SHA verifier/aggregate implementations are complete at repository level. Worker lifecycle and staged report migration are in progress; operational Confirmation remains incomplete.
+- **Limitations:** Coordinator activation remains staged pending publisher/report migration and operational readiness. Publisher/recovery and exact-SHA verifier/aggregate implementations are complete at repository level. Worker lifecycle and staged report migration are in progress; operational Confirmation remains incomplete.
 
 ## 8. Execution self-check
 
