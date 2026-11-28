@@ -298,6 +298,12 @@ def process_attempt(
     jobs = get_jobs(api, repository, run_id, attempt_number)
     aggregate = get_artifact_payload(api, repository, run_id, attempt_number)
     kind, _ = attempt_kind(jobs, artifact_present=aggregate is not None)
+    if (
+        kind == "ignored"
+        and details.get("status") == "completed"
+        and details.get("conclusion") in {"failure", "timed_out", "action_required"}
+    ):
+        kind = "policy_failure"
     if kind in {"ignored", "pending"}:
         return kind, (run_id, attempt_number)
 
@@ -321,7 +327,7 @@ def process_attempt(
     with tempfile.TemporaryDirectory(prefix="task-validation-recovery-") as temp_dir:
         aggregate_path = Path(temp_dir) / "aggregate.json"
         aggregate_path.write_text(
-            json.dumps(aggregate, separators=(",", ":")) + "\\n",
+            json.dumps(aggregate, separators=(",", ":")) + "\n",
             encoding="utf-8",
         )
         actions_url = f"https://github.com/{repository}/actions/runs/{run_id}"
@@ -411,6 +417,8 @@ def commit_checkpoint_with_retry(root: Path, known_attempts: list[tuple[int, int
 
 
 def run_recovery(root: Path, repository: str, api: GitHubAPI) -> dict[str, Any]:
+    if not re.fullmatch(r"[^/]+/[^/]+", repository):
+        raise RecoveryError("Repository must be owner/name")
     policy = json.loads((root / POLICY_PATH).read_text(encoding="utf-8"))
     dispatcher = policy.get("coordinator", {}).get("dispatcher_workflow")
     if not isinstance(dispatcher, str):
