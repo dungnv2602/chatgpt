@@ -2,7 +2,7 @@
 record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0010"
-revision: 1
+revision: 2
 status: "draft"
 created: "2026-11-28"
 updated: "2026-11-28"
@@ -40,7 +40,7 @@ The user has approved a different operating model:
 - No manual fix verification is performed. If the configured CI capture generates no new error subtasks after the fix cycle, the workflow treats the remediation loop as complete.
 - Delete the complete child folder when that error task is finished. Delete the parent CI task folder when no child work remains.
 
-The exact path named for retirement was .take/reports. Repository search found no such path. Current active contracts point to .takeout/reports/. This Draft does not assume those paths are interchangeable; the user must confirm the intended target before destructive retirement.
+The user confirmed on 2026-11-28 that the intended retirement target is the existing .takeout/reports/ directory (not .take/reports). Retire that exact directory and its contents after the replacement folder-based CI capture workflow is ready and all consumers have been migrated.
 
 ## Goals and Non-Goals
 
@@ -60,7 +60,7 @@ The exact path named for retirement was .take/reports. Repository search found n
 - Do not create synthetic parent tasks for files, jobs, workflows, or errors.
 - Do not retain a second central findings database or report archive.
 - Do not claim that no generated subtasks proves the absence of every possible defect; it means the configured CI capture produced no actionable error tasks for that cycle.
-- Do not delete .takeout/reports/ until the user confirms this is the intended path and replacement capture is ready.
+- Do not delete .takeout/reports/ until the replacement capture workflow is ready and all consumers have been migrated. The user has confirmed this is the intended directory.
 
 ## Decision Drivers
 
@@ -80,7 +80,7 @@ The exact path named for retirement was .take/reports. Repository search found n
 - **Assessment method:** Static inspection of current Worker, task/subtask templates, document catalog, Workflow Map, workspace README, and accepted ADRs on branch gpt on 2026-11-28.
 - **Evidence boundary:** Repository documents establish current written contracts, not runtime behavior. No local tests or hosted CI results were inspected.
 - **Key assumptions:** CI can reliably create task folders from actionable errors and trigger after every relevant fix commit.
-- **Unresolved evidence gaps:** Exact report directory to retire; current workflow's ability to write self-contained child folders without the Ledger; trigger/capture failure behavior; duplicate detection without persistent central identity state.
+- **Unresolved evidence gaps:** Current workflow's ability to write self-contained child folders without the Ledger; trigger/capture failure behavior; duplicate detection without persistent central identity state.
 
 ## Considered Options
 
@@ -143,7 +143,7 @@ Option 1 is easiest to retain but fails the approved lifecycle. Option 3 improve
 
 Adopt Option 2. Make CI create self-contained per-error task folders and use subsequent automatic CI task generation as the remediation feedback loop. Do not manually inspect or verify fixes. Keep only the minimal workflow behavior required to guarantee that a CI cycle actually triggers and task creation is not silently skipped; do not retain a central findings Ledger or report archive.
 
-Confirm whether the intended retirement target is .take/reports (not found) or .takeout/reports/ (the active repository path). If .takeout/reports/ is intended, migrate every consumer before deleting it.
+The user confirmed .takeout/reports/ as the intended retirement target. Migrate every consumer and make replacement capture operational before deleting that directory.
 
 ## Consequences and Trade-Offs
 
@@ -187,23 +187,24 @@ Confirm whether the intended retirement target is .take/reports (not found) or .
 9. Execute two workstreams: (a) folder-based CI generation and feedback loop; (b) report-system retirement and reference cleanup.
 10. At quiescence, delete completed child folders and then the entire parent CI task folder. No archive copies.
 
-## Questions for the User
+## User Clarification
 
-1. The repository contains .takeout/reports/, not .take/reports/. Did you intend the existing .takeout/reports/ directory to be retired?
+- **2026-11-28:** User confirmed that the intended retirement target is .takeout/reports/.
 
 ## Review and Approval
 
-- **Revision presented:** 1
-- **User decision:** Pending exact Draft review
-- **Approved scope:** Direction approved in conversation; formal approval of this Draft revision and exact path is pending.
-- **Decision date:** Pending
+- **Revision presented:** 2
+- **User decision:** Folder-per-error lifecycle and automatic feedback-loop direction approved in conversation; exact report target confirmed as .takeout/reports/. Formal approval of this consolidated Draft revision is pending.
+- **Approved scope:** Desired operating model and report retirement target confirmed; implementation still requires a superseding accepted ADR.
+- **Decision date:** 2026-11-28
 - **Resulting ADR:** Not created
 
 ## Discussion and Revision History
 
 | Date | Revision | Change | User feedback / decision |
 |---|---|---|---|
-| 2026-11-28 | 1 | Prepared a superseding CI folder/feedback-loop proposal based on the user's approved direction; recorded repository path discrepancy and required safeguards. | Pending exact Draft review |
+| 2026-11-28 | 1 | Prepared the superseding CI folder/feedback-loop proposal and documented the repository path discrepancy. | User approved the operating model; clarified the intended directory. |
+| 2026-11-28 | 2 | Confirmed .takeout/reports/ as the exact retirement target and removed the unresolved-path question. | Awaiting approval of this consolidated Draft revision. |
 
 ## References and Evidence Register
 
