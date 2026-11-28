@@ -194,7 +194,7 @@ Implementation must follow ADR-0008's staged migration and must not delete repor
 ### 2026-11-28 — DRAFT-0010 approval and ADR-0008 promotion
 
 - **Action:** The user approved DRAFT-0010 revision 9 and instructed execution. Promoted it to accepted ADR-0008 after provisional creation, full readback, and scope comparison.
-- **Result:** ADR-0008 is accepted and governs this task. It supersedes ADR-0003 and ADR-0007, and the specified CI completion and findings/report clauses in ADR-0004. The parent task now links ADR-0008. The source Draft was retired after accepted ADR readback and active index references were migrated.
+- **Result:** ADR-0008 is accepted and governs this task. It supersedes ADR-0003 and ADR-0007, and the specified CI completion and findings/report clauses in ADR-0004. The parent task now links ADR-0008. The source Draft was retired after accepted ADR readback and active index references were migrated. Draft deletion commit: `1e5ef5c18e8d6a4cfb67382e5d73730bd29adc12`.
 - **References:** [ADR-0008](../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md); commits `ac87f45e84287eef610ce6979ff4e85963d27717`, `f46d125adb202b2ccf08430063588f19e6635317`, and task-link commit `2be94982d80df0de825134a362a11a303db26202`.
 - **Validation limits:** Repository files were read back. No tests were run and no hosted CI results were inspected. Workflow runtime behavior remains unverified.
 - **Next:** Implement ADR-0008 under this parent task. Preserve the existing report pipeline until the replacement meets every applicable Confirmation criterion.
