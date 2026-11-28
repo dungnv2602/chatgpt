@@ -5,7 +5,6 @@ Parent: [task.md](../task.md)
 | ID | Title | Status | Record |
 |---|---|---|---|
 | 20261126-142500-01 | Audit universal prompt-to-task workflow rules | Done | [01-audit-prompt-capture-rules.md](01-audit-prompt-capture-rules.md) |
-| 20261126-142500-02 | Enforce prompt capture and refactor task/CI workflow | In Progress | [02-refactor-task-ci-lifecycle.md](02-refactor-task-ci-lifecycle.md) |
 | 20261126-142500-04 | CI remediation — Review semicolon findings in .agent/skills/github-actions/SKILL.md | Done | [04-ci-remediation-review-semicolon-findings-in-agent-skills-github-actions-skill-m.md](04-ci-remediation-review-semicolon-findings-in-agent-skills-github-actions-skill-m.md) |
 | 20261126-142500-05 | CI remediation — Review semicolon findings in .agent/skills/the-worker/SKILL.md | Done | [05-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md](05-ci-remediation-review-semicolon-findings-in-agent-skills-the-worker-skill-md.md) |
 | 20261126-142500-06 | CI remediation — Review passive-voice findings in .agent/skills/the-worker/SKILL.md | Done | [06-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md](06-ci-remediation-review-passive-voice-findings-in-agent-skills-the-worker-skill-m.md) |
