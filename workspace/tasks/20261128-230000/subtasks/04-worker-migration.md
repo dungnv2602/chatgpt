@@ -37,8 +37,8 @@ Declare task-specific checks in this JSON block. The coordinator binds the contr
 ```json
 {
   "state": "awaiting_ci",
-  "source_sha": "4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b",
-  "policy_revision": "e61129bf855ae3eacd59dc77b53e835ca45bf86f",
+  "source_sha": "7814758586f68b3226822f760b4cbf06e86e108e",
+  "policy_revision": "3e0efd87728646c0be2eb5854f95140151a3c44b",
   "coordinator_run_id": null,
   "attempt": null,
   "outcome": null,
