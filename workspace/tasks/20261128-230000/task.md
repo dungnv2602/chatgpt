@@ -125,6 +125,11 @@ Acceptance criteria are mapped to these required child tasks:
 - **Review queue:** The compact status index contains 211 attempts, all `capture_failure` with missing check-set identity and no reconciliation timestamp; checkpoint remains at zero. No hosted logs were inspected, no unproven root cause or remediation task was invented, and all unresolved records remain retained.
 - **Current subtask:** 04 remains In Progress. Continue the producer/consumer migration; preserve `.takeout/reports/` until every ADR-0008 migration and Confirmation criterion is demonstrated.
 
+### 2026-11-28 — exact-SHA review queue remains unresolved
+
+- The latest compact status-index readback contains 217 attempts, all `capture_failure` with `check_set_id: null`, no reconciliation timestamps, and a zero checkpoint.
+- Subtask 04 has one exact matching attempt for source SHA `7814758586f68b3226822f760b4cbf06e86e108e`, Task-ID `20261128-230000-04`, policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b`: run `46164069720`, attempt 1. Its lifecycle is now `review_required`, not reconciled.
+- Hosted logs remain uninspected under Worker restrictions. Do not invent a root cause or remediation child; preserve all unresolved records and do not advance the checkpoint.
 ## 6. Current State and Remaining Work
 
 Subtask 01 is Done. Subtask 02 is Done with the generic verifier, contract builder, aggregate, reusable exact-SHA interfaces, staged coordinator definition, and terminal cancellation handling committed on branch `gpt`. Subtask 03 is Done: the isolated publisher, idempotency, recovery sweep, checkpoint/retention, and metadata-recursion exclusions are implemented and read back. Subtask 04 is In Progress; dependencies 02 and 03 are complete. Subtask 05 remains dependency-waiting on 04.
