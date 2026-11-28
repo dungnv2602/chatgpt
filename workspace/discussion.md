@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-28:** DRAFT-0007 Revision 1 prepared and indexed. The proposal recommends deterministic structural checks mapped to canonical owners. User review is pending; implementation remains unauthorized.
+- **2026-11-28:** DRAFT-0007 Revision 1, Option 2 approved and promoted to accepted ADR-0006 after provisional readback. Source Draft retired. Structural validator implementation and focused tests/workflow integration are underway under Refactor Skills child 60. Plans parent created with Semantic Engine child paused by explicit deferral.
 
 - **2026-11-28:** DRAFT-0006 Revision 1 approved. ADR-0005 accepted and implementation underway. The refactor consolidates operational ownership in The Worker and reconciles associated templates. Readback verification is in progress.
 
@@ -18,7 +18,7 @@
 
 ## Open Discussions
 
-- **2026-11-28:** [DRAFT-0007 — Automated Structural Validation for Canonical Ownership and Drift](draft/DRAFT-0007-automated-structural-ownership-validation.md), revision 1. Decision required: approve Option 2 (lightweight structural validator) and the defined bounded scope. Implementation is not authorized until the resulting ADR is accepted.
+
 
 - **2026-11-27:** [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](draft/DRAFT-0005-unified-index-without-latest-lint-copy.md), revision 1. Decision required: remove the standalone latest lint JSON and make the shared index the only latest-report locator. ADR-0003 currently requires the file. User approval of this exact Draft revision is pending. Implementation task: [20261127-173500](tasks/20261127-173500/task.md).
 
@@ -27,6 +27,8 @@
 - **2026-11-27:** User authorized direct execution of this task's full prompt-capture and CI lifecycle refactor.
 
 ## Reports
+
+- **2026-11-28:** DRAFT-0007 Option 2 promoted to accepted ADR-0006. Validator, regression tests and workflow integration are being implemented. Plans task `20261128-221000` and paused child `20261128-221000-01` record deferred Semantic Engine exploration. Hosted CI and local execution remain out of scope.
 
 - **2026-11-28:** Approved and implemented DRAFT-0006 Option 3 under accepted ADR-0005. Updated entry files, Worker ownership gates, specialist initialization references, navigation, catalog, templates, board, and task evidence. Remote readback is being reconciled. Local tests, scripts, lint, and hosted CI review were not performed.
 
