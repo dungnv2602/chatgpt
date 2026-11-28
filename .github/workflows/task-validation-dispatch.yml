@@ -95,6 +95,7 @@ jobs:
     needs:
       - policy_gate
     permissions:
+      actions: read
       contents: write
     uses: ./.github/workflows/task-validation.yml
     with:
