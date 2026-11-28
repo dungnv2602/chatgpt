@@ -119,7 +119,6 @@ class RecoveryTests(unittest.TestCase):
 
     def test_retention_prunes_only_reconciled_attempts_after_three_days(self) -> None:
         old = "2026-11-20T12:00:00Z"
-        recent = "2026-11-28T12:00:00Z"
         records = [
             self.record(1, 1, old),
             self.record(2, 1, old),
