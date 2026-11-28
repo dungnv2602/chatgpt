@@ -111,9 +111,9 @@ jobs:
     permissions:
       contents: read
     outputs:
-      outcome: ${{ steps.aggregate.outputs.outcome || steps.fallback.outputs.outcome }}
-      check_set_id: ${{ steps.aggregate.outputs.check_set_id || steps.fallback.outputs.check_set_id }}
-      aggregate_json: ${{ steps.aggregate.outputs.aggregate_json || steps.fallback.outputs.aggregate_json }}
+      outcome: ${{ steps.final.outputs.outcome }}
+      check_set_id: ${{ steps.final.outputs.check_set_id }}
+      aggregate_json: ${{ steps.final.outputs.aggregate_json }}
     steps:
       - name: Check out the exact source commit
         uses: actions/checkout@v4
@@ -284,17 +284,88 @@ jobs:
         if: always()
         shell: bash
         env:
-          AGGREGATE_OUTCOME: ${{ steps.aggregate.outputs.outcome }}
+          AGGREGATE_JSON: ${{ steps.aggregate.outputs.aggregate_json }}
+          SOURCE_SHA: ${{ inputs.source_sha }}
+          POLICY_BLOB_SHA: ${{ needs.policy.outputs.policy_blob_sha }}
+          CHECK_SET_ID: ${{ steps.normalize.outputs.check_set_id }}
+          COORDINATOR_RUN_ID: ${{ github.run_id }}
+          COORDINATOR_ATTEMPT: ${{ github.run_attempt }}
         run: |
-          if [[ -z "$AGGREGATE_OUTCOME" ]]; then
-            echo "outcome=capture_failure" >> "$GITHUB_OUTPUT"
+          if [[ -z "$AGGREGATE_JSON" ]]; then
+            python3 - <<'PY' >> "$GITHUB_OUTPUT"
+            import json
+            import os
+            from datetime import datetime, timezone
+            from pathlib import Path
+
+            result = {
+                "source_sha": os.environ["SOURCE_SHA"],
+                "policy_blob_sha": os.environ.get("POLICY_BLOB_SHA", ""),
+                "check_set_id": os.environ.get("CHECK_SET_ID") or None,
+                "coordinator_run_id": int(os.environ["COORDINATOR_RUN_ID"]),
+                "attempt": int(os.environ["COORDINATOR_ATTEMPT"]),
+                "expected_checks": [],
+                "statuses": {},
+                "outcome": "capture_failure",
+                "completed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+            }
+            compact = json.dumps(result, separators=(",", ":"))
+            Path(".task-validation-aggregate.json").write_text(compact + "\n", encoding="utf-8")
+            print("outcome=capture_failure")
+            print(f"check_set_id={result['check_set_id'] or ''}")
+            print(f"aggregate_json={compact}")
+            PY
           fi
 
-      - name: Fail the coordinator unless every check passed
+      - name: Upload attempt aggregate for recovery
+        id: aggregate_artifact
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: task-validation-aggregate-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .task-validation-aggregate.json
+          if-no-files-found: error
+          retention-days: 3
+
+      - name: Finalize publisher payload
+        id: final
         if: always()
         shell: bash
         env:
-          OUTCOME: ${{ steps.aggregate.outputs.outcome || steps.fallback.outputs.outcome }}
+          ARTIFACT_OUTCOME: ${{ steps.aggregate_artifact.outcome }}
+          CHECK_SET_ID: ${{ steps.normalize.outputs.check_set_id }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          path = Path(".task-validation-aggregate.json")
+          if path.exists():
+              result = json.loads(path.read_text(encoding="utf-8"))
+          else:
+              result = {
+                  "outcome": "capture_failure",
+                  "check_set_id": os.environ.get("CHECK_SET_ID") or None,
+              }
+          if os.environ.get("ARTIFACT_OUTCOME") != "success":
+              result["outcome"] = "capture_failure"
+              result["check_set_id"] = result.get("check_set_id") or os.environ.get("CHECK_SET_ID") or None
+              result["completed_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+          path.write_text(json.dumps(result, separators=(",", ":")) + "\n", encoding="utf-8")
+          compact = json.dumps(result, separators=(",", ":"))
+          print(f"outcome={result.get('outcome', 'capture_failure')}")
+          print(f"check_set_id={result.get('check_set_id') or ''}")
+          print(f"aggregate_json={compact}")
+          PY
+
+      - name: Fail the coordinator unless every check and capture passed
+        if: always()
+        shell: bash
+        env:
+          OUTCOME: ${{ steps.final.outputs.outcome }}
         run: |
           if [[ "$OUTCOME" != "success" ]]; then
             echo "::error::ADR-0008 aggregate outcome: ${OUTCOME:-capture_failure}"
