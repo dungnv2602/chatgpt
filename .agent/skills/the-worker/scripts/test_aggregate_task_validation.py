@@ -111,6 +111,8 @@ class AggregateTaskValidationTests(unittest.TestCase):
     def test_task_checks_extend_the_expected_set(self) -> None:
         expected, identity = aggregate.canonical_check_set(self.policy, ["task-extra"])
         records = self.records()
+        for record in records:
+            record["check_set_id"] = identity
         records.append({
             "check_id": "task-extra",
             "status": "success",
