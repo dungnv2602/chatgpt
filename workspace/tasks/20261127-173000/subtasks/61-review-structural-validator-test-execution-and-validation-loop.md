@@ -10,7 +10,7 @@
 - **Status:** Blocked
 - **Origin:** User
 - **Approval:** Approved
-- **Approval scope/source:** User requested a future follow-up to verify tests/validation for the completed structural validator and create a Worker-driven loop that reports remaining verification gaps. Paused until explicitly resumed.
+- **Approval scope/source:** User requested a future follow-up to verify tests/validation for the completed structural validator and create a Worker-driven loop that reports remaining verification gaps. Resumed by the user on 2026-11-28.
 - **Dependencies:** None
 - **Eligibility / deferral reason:** Blocked — static review is complete, but actual test execution evidence cannot be obtained under current Worker restrictions. A policy-level authorization change is required before any test execution or hosted-result review.
 
@@ -58,8 +58,8 @@ Out of scope: changing ADR-0006's approved semantic or auto-repair boundaries wi
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Intended subtask record, subtask index, parent record, task board
+- **Commit SHA:** `733dc275cc3d5c059436166ad815edafbfa94c85` (task findings/status); `2222bd94ce045ae64a9d64bad299daca7d067515` (subtask index); `d3bb79cb0ef2d4ad72c783e83a95347bfe0b70c0` and `e7f0715008ad9aa85a460304588cd37a56258baf` (task board reconciliation)
+- **Changed paths:** This subtask record, `workspace/tasks/20261127-173000/subtasks/README.md`, `workspace/task_board.md`
 - **Readback:** Source files and task record read back from branch `gpt`.
 - **Checks:** Static inspection only. Workflow file readback confirms test invocation and validator invocation. No tests executed.
 - **Limitations / blocker:** Actual test execution evidence remains unavailable. Local test execution is prohibited by The Worker. Hosted run pages/results are prohibited by the GitHub Actions reference. The subtask requires a narrow canonical policy amendment or explicit authorized alternative before execution evidence can be collected. No hosted CI data was accessed.
