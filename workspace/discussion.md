@@ -1,6 +1,8 @@
-- **2026-11-28 08:26 +07:00:** `/start` initialization completed on `gpt`. Read Session Start and The Worker, Conversation Mode, CI Ledger, GitHub Actions, Document Type Catalog, board, discussion register, report README/index, and decision governance. Report index has no runs and `latest-lint-report.json` is an empty-reset marker. No hosted CI results were inspected. DRAFT-0005 revision 1 approval is recorded in its draft, but the implementation task remains Proposed pending ADR promotion. No execution authorization was issued.
+- **2026-11-28 08:26 +07:00:** `/start` initialization completed on `gpt`. Read Session Start and The Worker, Conversation Mode, CI Ledger, GitHub Actions, Document Type Catalog, board, discussion register, report README/index, and decision governance. No hosted CI results were inspected. DRAFT-0005 later became accepted ADR-0007; execution is separately authorized.
 
 ## Current Step
+
+- **2026-11-28 22:30 +07:00:** Continued ADR-0007 implementation after updating The Worker to prevent routine execution interruptions and require autonomous recovery/reconciliation. Full-docs workflow, changed-doc baseline fallback, test ordering assertion, board, and task records are being reconciled. Hosted CI and tests remain uninspected/unrun.
 
 - **2026-11-28 22:00 +07:00:** `/start` initialization on `main` and `gpt` after merge. Verified Session Start, The Worker, Conversation Mode, CI Ledger, GitHub Actions, document catalog, task board, and discussion register. Startup P0 baseline review is underway. Hosted CI results remain out of scope.
 
@@ -24,7 +26,7 @@
 
 
 
-- **2026-11-28:** [DRAFT-0005 — Use the unified CI report index without a standalone latest lint copy](draft/DRAFT-0005-unified-index-without-latest-lint-copy.md), revision 1, Option 2 approved. Remove the standalone latest lint JSON and make the shared index the only latest-report locator. Approval is decision-only; implementation remains separately execution-gated. Implementation task: [20261127-173500](tasks/20261127-173500/task.md).
+- **2026-11-28:** DRAFT-0005 revision 1, Option 2 accepted as ADR-0007. The standalone latest lint report is to be removed and the unified report index used as the locator. Implementation task: [20261127-173500](tasks/20261127-173500/task.md), currently executing.
 
 - **2026-11-27:** Completed/cancelled task folders must be deleted directly after closeout. Do not create task or report archives, retention copies, cleanup schedules, or Historical board rows.
 - **2026-11-27:** Do not inspect, poll, dispatch, or rerun hosted CI. Commit/readback is the completion evidence; later failures flow through automatic report ingestion.
@@ -32,7 +34,7 @@
 
 ## Reports
 
-- **2026-11-28:** User approved DRAFT-0005 revision 1, Option 2: index-only latest lint report locator, replacing the standalone latest JSON copy. Approval recorded in Draft and Open Discussions; implementation not executed.
+
 
 
 - **2026-11-28:** ADR-0006 implementation complete. Commit/readback evidence: validator `1b1fe08c579f02bb7b828001fe7eaafca27a6989`, tests `a7cc0d6cbd1ddd79d1c5af55ed22446bc5987ce8`, workflow integration `d5bac865a4dd83a1b40c91d5b6ff3444943f3378`. Tests were not executed; hosted CI was not inspected.
