@@ -429,7 +429,7 @@ def publish_with_retry(
         f"{source_sha}:.agent/skills/the-worker/assets/task-validation/task-validation-policy.json",
     ).stdout.encode("utf-8")
     actual_policy_blob_sha = hashlib.sha1(
-        f"blob {len(policy_content)}\\0".encode("ascii") + policy_content
+        f"blob {len(policy_content)}\0".encode("ascii") + policy_content
     ).hexdigest()
     if actual_policy_blob_sha != policy_blob_sha:
         raise PublisherError("Source commit policy blob does not match the aggregate policy revision")
