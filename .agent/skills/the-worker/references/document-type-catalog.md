@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.31
+**Catalog version:** 1.32
 **Repository template audit baseline:** Branch `gpt` at commit `a02713809b3b5fe403ab4085c28d163b3b1a70fc` contained 277 in-scope Markdown files and 30 template-named files. The recursive tree showed 18 template assets already under skills and 12 novel templates outside skill directories. This audit reviewed the full template path inventory and current owner contracts before relocation.
 **Source branch:** `gpt`
 
@@ -132,7 +132,7 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `.agent/skills/the-worker/assets/ADR_TEMPLATE.md` | Exempt | Active | `.agent/skills/the-worker/assets/ADR_TEMPLATE.md` | Canonical accepted decision template source, not a decision record. |
 | `.agent/skills/the-worker/assets/ANALYSIS_TEMPLATE.md` | Exempt | Active | `.agent/skills/the-worker/assets/ANALYSIS_TEMPLATE.md` | Canonical analysis template source, not an analysis record. |
 | `.agent/skills/the-worker/assets/DRAFT_TEMPLATE.md` | Exempt | Active | `.agent/skills/the-worker/assets/DRAFT_TEMPLATE.md` | Canonical Draft template source, not a proposal record. |
-| `workspace/tasks/*/task.md` | Template required | Active | `.agent/skills/the-worker/assets/TASK_TEMPLATE.md` v2.8 | Authoritative parent record. Every task folder also contains `subtasks/README.md`. Parent Done requires every required child Done. |
+| `workspace/tasks/*/task.md` | Template required | Active | `.agent/skills/the-worker/assets/TASK_TEMPLATE.md` v2.8 | Authoritative parent record. Every task folder also contains `subtasks/README.md`. Parent Done requires every required child Done. The policy-designated permanent CI fallback parent is Assistant-origin, never Current Execution, and is exempt from Done/deletion cleanup. |
 | `workspace/tasks/*/subtasks/README.md` | Embedded contract | Active | `workspace/tasks/*/subtasks/README.md` and `.agent/skills/the-worker/SKILL.md` | Required child index. Link the parent task and list every child subtask. |
 | `workspace/tasks/*/subtasks/??-*.md` | Template required | Active | `.agent/skills/the-worker/assets/SUBTASK_TEMPLATE.md` v1.7 | Child subtask records. Each record has a stable ID, parent ID, type, status, acceptance criteria, evidence, completion record, and machine-readable Validation Contract. |
 | `workspace/analysis/README.md` | Embedded contract | Active | `.agent/skills/the-worker/references/decision-governance.md` and `workspace/analysis/README.md` | Navigation and canonical format pointer. Decision Governance owns review cadence and procedures. |
