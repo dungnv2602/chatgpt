@@ -254,9 +254,11 @@ def source_policy_allows_dispatch(root: Path, source_sha: str, expected_policy_s
     policy = json.loads(raw)
     coordinator = policy.get("coordinator", {})
     protection = policy.get("protection", {})
+    recovery = policy.get("recovery", {})
     return (
         coordinator.get("activation_status") == "enabled"
         and protection.get("enforcement_status") == "verified"
+        and recovery.get("workflow_dispatch_activation_status") == "verified"
     )
 
 
