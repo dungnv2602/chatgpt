@@ -10,21 +10,21 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-**20261127-173000-75 — Universal execution cue and authorization lifecycle hardening**
+**20261128-230000 — ADR 8 implementation**
 
 ## Ordered Eligible Execution Queue
 
-_Authorized current task: child 75, approved execution-cue lifecycle hardening._
+_Authorized current task: subtask 04, ADR-0008 implementation._
 
 ## Next Task
 
-Child 75 — Universal execution cue and authorization lifecycle hardening.
+Subtask 04 — Worker queue, review/remediation lifecycle, attribution, grouping, and report migration.
 
 ## Deferred Work
 
 ### Current focus reconciliation
 
-The Worker skill-governance prevention correction completed under child 74. Child 75 is the current focused workflow correction under the persistent Refactor Skills parent. ADR-0008 implementation under **20261128-230000** is temporarily unselected; resume after child 75 closeout. Operational activation gates remain separate from implementation availability. Preserve `.takeout/reports/` until migration and Confirmation gates are satisfied. The permanent system-owned CI fallback parent is [20261128-193800](tasks/20261128-193800/task.md); it is never selected as Current Execution and must never be deleted.
+The Worker skill-governance prevention correction completed under child 74. Child 75's implementation is readback-verified and awaiting exact-SHA CI reconciliation; no permitted CI review was performed. ADR-0008 implementation under **20261128-230000** is restored as Current Execution. Child 75 remains tracked under the persistent Refactor Skills parent, pending validation lifecycle reconciliation. Operational activation gates remain separate from implementation availability. Preserve `.takeout/reports/` until migration and Confirmation gates are satisfied. The permanent system-owned CI fallback parent is [20261128-193800](tasks/20261128-193800/task.md); it is never selected as Current Execution and must never be deleted.
 
 ### Blocked
 
