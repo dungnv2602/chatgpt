@@ -12,6 +12,8 @@ Canonical copy-ready templates and supporting static formats owned by The Worker
 | [DRAFT_TEMPLATE.md](DRAFT_TEMPLATE.md) | Proposed decision record | `workspace/draft/` |
 | [ANALYSIS_TEMPLATE.md](ANALYSIS_TEMPLATE.md) | Repository analysis snapshot | `workspace/analysis/` |
 | [actions-report-template.md](actions-report-template.md) | Diagnostic report | Generated report family |
+| [lint-report-schema.json](lint-report-schema.json) | Legacy detailed lint report schema | Staged legacy lint report generator |
+| [lint-report-template.md](lint-report-template.md) | Legacy detailed lint report renderer | Staged legacy lint report generator |
 | [session-brief-template.md](session-brief-template.md) | Session brief | Drawing session records |
 | [session-summary-template.md](session-summary-template.md) | Session closeout summary | Drawing session closeout |
 | [conversation-integrity-template.md](conversation-integrity-template.md) | Conversation integrity record | Conversation archive |
