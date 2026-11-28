@@ -14,7 +14,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Ordered Eligible Execution Queue
 
-1. **20261128-150000 — Correct branch-read and commit-SHA provenance in The Worker** — P1, Ready, Approved. [Task](tasks/20261128-150000/task.md)
+_None. Current execution is active._
 
 ## Next Task
 
