@@ -2,7 +2,7 @@
 record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0010"
-revision: 6
+revision: 7
 status: "draft"
 created: "2026-11-28"
 updated: "2026-11-28"
@@ -62,6 +62,7 @@ The existing accepted ADRs and Worker references contain conflicting rules, espe
 - Allow pre-commit inspection, but prohibit Worker-led post-commit verification of implementation correctness.
 - Introduce **Committed / Awaiting CI** as a distinct task status.
 - Require automated validation coverage for every task's declared validation requirements; do not treat absent coverage or absent results as success.
+- Reuse established workflows where they provide full coverage; otherwise delegate declared verification contracts to one generic reusable workflow through a thin dispatcher, without cloning orchestration for every task type.
 - Record commit-specific aggregate validation status in a minimal index under `workspace/`.
 - Create one CI-result review task for every terminal validation event/attempt so the Worker is nudged to reconcile the index.
 - Keep review tasks administrative and index-driven; do not copy diagnostic payloads into them.
@@ -105,8 +106,43 @@ The existing accepted ADRs and Worker references contain conflicting rules, espe
 - **Assessment method:** Static inspection of current Worker, GitHub Actions references, task/subtask templates, document catalog, Workflow Map, workspace README, and accepted ADRs on branch `gpt` on 2026-11-28.
 - **Evidence boundary:** Repository documents establish current written contracts, not runtime behavior. No local tests or hosted CI results were inspected for this Draft update.
 - **Key assumptions:** GitHub Actions can execute the declared required validation set for every task type, aggregate terminal results for an exact commit, write the run-status index, and create review/error task folders with appropriate permissions.
-- **Unresolved implementation questions:** Exact workflow orchestration, aggregate required-check definition, event identity and idempotency mechanism, permissions, task queue discovery/ordering, and how the existing board represents the new status and system-generated review tasks. These must be resolved during implementation design without weakening the approved lifecycle.
+- **Unresolved implementation questions:** Exact workflow orchestration, aggregate required-check definition, event identity and idempotency mechanism, permissions, task queue discovery/ordering, and how the existing board represents the new status and system-generated review tasks. The proposed generic verifier also needs a contract schema, adapter interface, dispatcher/coverage-selection rule, trusted ownership boundary, and policy for tasks requiring secrets or elevated permissions. These must be resolved during implementation design without weakening the approved lifecycle.
 - **Script-task requirement:** A task requiring script execution must declare that script as part of its validation contract and have a GitHub Actions workflow execute it. If coverage is absent, the task cannot become Done; workflow coverage must be added before successful validation can be claimed.
+
+### Proposed generic reusable verification workflow
+
+For a task whose declared verification requirements are not covered by an established GitHub Actions workflow, use a generic reusable verification workflow as the default fallback. This is a proposed addition for discussion in revision 7; it is not yet a separately approved policy decision.
+
+**Operating model**
+
+- Keep established, task-specific workflows as the preferred verification path whenever they already cover the task's declared requirements. Do not route a task through the generic verifier merely to duplicate checks already owned by an established workflow.
+- Provide one repository-owned reusable workflow, invoked through GitHub Actions `workflow_call`, that can execute different task verification contracts without requiring a new workflow definition for every task type.
+- Provide a thin dispatcher/caller workflow that detects or receives a committed task with no established workflow coverage and invokes the reusable verifier. A reusable workflow cannot trigger itself; it must be called by another workflow. The dispatcher is orchestration, not a second validation authority.
+- The task declares a machine-readable verification contract, stored in the repository and associated with the task/commit. The contract identifies the required checks, their order or dependencies where relevant, execution environment, working directory, timeout, and expected success conditions. The dispatcher passes the contract locator, source Task-ID, exact commit SHA, and validation-attempt identity to the reusable workflow.
+- The reusable workflow checks out and verifies the exact commit SHA under test, resolves the contract from that commit, executes every required check, and returns a terminal result to the same aggregate validation coordinator used by established workflows. Its result is subject to the same index publication, review-task creation, and exact-commit completion gate.
+- Support both reusable built-in verification adapters (for common test, lint, build, schema, and policy checks) and repository-owned task scripts for novel checks. A new task type should normally require only a new contract or adapter/script, not a new copy of the orchestration workflow.
+- A task may declare multiple independent checks. The verifier must preserve each check's result and allow the aggregate coordinator to determine the final outcome; a partial pass must never be reported as aggregate success.
+- If a task's contract is missing, malformed, unsupported, incomplete, or cannot be executed, report a non-success infrastructure/coverage outcome. Do not silently skip the unsupported requirement or treat the absence of a check as success.
+
+**Safety and integrity boundaries**
+
+- Do not accept arbitrary shell command strings from task metadata as executable input. Use structured contract fields and named adapters; where a repository-owned script is needed, reference a validated repository-relative path and pass arguments as discrete values rather than interpolating an unrestricted command string.
+- Validate contract schema, script paths, working directories, and input types. Reject path traversal and references outside the checked-out repository unless a separately approved adapter explicitly supports them.
+- Execute against the exact commit being validated, not the branch's moving HEAD or the dispatcher's latest checkout.
+- Use least-privilege permissions, no secrets by default, pinned third-party actions, bounded execution time/resources, and explicit handling of fork/untrusted contribution contexts. Any elevated permission or secret requirement must use an explicitly approved workflow path rather than being inferred from a task contract.
+- Treat the verification contract and scripts as code under review. A task must not be able to weaken its own required checks merely by editing its contract; required-check policy and permitted adapters need trusted ownership or protected governance.
+- The generic verifier must not redefine required-check policy, write diagnostic reports, or independently declare the task Done. It supplies check outcomes to the existing aggregate coordinator and run-status index only.
+
+**Coverage selection and fallback**
+
+- Before dispatch, determine whether an established workflow fully covers the task's declared verification contract. Partial coverage is not full coverage; uncovered requirements must be delegated to the generic verifier or explicitly classified as unsupported/non-success.
+- Avoid running the same required check twice unless duplication is intentionally declared as a separate requirement.
+- The aggregate required-check identity must record which established workflows and/or generic contract checks formed the validation set for that exact commit and attempt.
+- If no safe generic adapter or permitted script can satisfy a requirement, fail closed and create an infrastructure/coverage remediation task. Do not manufacture a green result.
+
+**Design boundary**
+
+The generic workflow is an execution mechanism, not an unrestricted arbitrary-command runner. Its versatility comes from a stable contract schema, reusable adapters, and repository-owned verification scripts. New verification needs can be added without cloning workflow orchestration, while permissions, exact-commit integrity, and aggregate-result authority remain centralized.
 
 ## Considered Options
 
@@ -305,17 +341,18 @@ The user confirmed `.takeout/reports/` as the exact retirement target. Migrate e
 ## Proposed Implementation Outline
 
 1. Approve this consolidated Draft and promote it to a superseding ADR for ADR-0003, ADR-0004, and ADR-0007 where rules conflict.
-2. Define task validation contracts: required workflow/check set for each task type, including scripts and other executable acceptance criteria.
-3. Define the task status lifecycle and board representation, including **Committed / Awaiting CI** and **Done** gates.
-4. Define the aggregate validation event and status-index schema, exact SHA/attempt identity, event idempotency, and failure/recovery semantics.
-5. Implement CI automation that records each terminal aggregate result and direct run URL, then creates one lightweight review task per validation attempt; do not generate separate CI finding/report/evidence documents.
-6. Implement Worker review-task instructions: read the workspace index first; reconcile success from the index; for failure/infrastructure failure, inspect the linked run only for diagnosis, create necessary remediation tasks, and never rerun or independently re-score validation.
-7. Implement the non-blocking task queue rule: after commit, immediately select the next unblocked task; continue until none remain, then use the existing blocked-task escalation. Review tasks join the ordinary queue and do not interrupt current work.
-8. Define and implement self-contained error-subtask folders, active-parent routing, stable active-child deduplication, and the permanent orphan/late-error fallback parent.
-9. Update Worker, templates, catalog, board, Workflow Map, workspace README, and all related references; reconcile accepted ADR conflicts.
-10. Execute two parent-level workstreams: (a) folder-based CI generation, validation status, event-driven review, and automatic feedback loop; (b) report-system retirement and reference cleanup.
-11. Migrate consumers and make replacement capture/status publication operational. Only then delete the confirmed `.takeout/reports/` tree.
-12. At quiescence, delete completed error child folders and Done ordinary parent task folders. Never delete the permanent fallback parent. Do not retain archive copies of completed findings.
+2. Define task validation contracts: required workflow/check set for each task type, including scripts and other executable acceptance criteria. Establish a machine-readable contract schema, trusted policy boundary, and named adapter interface.
+4. Retain established workflows when they fully cover a task's contract. Design a thin dispatcher and one generic reusable verifier for uncovered contracts; pin execution to the exact commit, enforce least privilege, and fail closed on unsupported or unsafe requirements.
+4. Define the task status lifecycle and board representation, including **Committed / Awaiting CI** and **Done** gates.
+5. Define the aggregate validation event and status-index schema, exact SHA/attempt identity, event idempotency, and failure/recovery semantics.
+6. Implement CI automation that records each terminal aggregate result and direct run URL, then creates one lightweight review task per validation attempt; do not generate separate CI finding/report/evidence documents.
+7. Implement Worker review-task instructions: read the workspace index first; reconcile success from the index; for failure/infrastructure failure, inspect the linked run only for diagnosis, create necessary remediation tasks, and never rerun or independently re-score validation.
+8. Implement the non-blocking task queue rule: after commit, immediately select the next unblocked task; continue until none remain, then use the existing blocked-task escalation. Review tasks join the ordinary queue and do not interrupt current work.
+9. Define and implement self-contained error-subtask folders, active-parent routing, stable active-child deduplication, and the permanent orphan/late-error fallback parent.
+10. Update Worker, templates, catalog, board, Workflow Map, workspace README, and all related references; reconcile accepted ADR conflicts.
+11. Execute two parent-level workstreams: (a) folder-based CI generation, validation status, event-driven review, and automatic feedback loop; (b) report-system retirement and reference cleanup.
+12. Migrate consumers and make replacement capture/status publication operational. Only then delete the confirmed `.takeout/reports/` tree.
+13. At quiescence, delete completed error child folders and Done ordinary parent task folders. Never delete the permanent fallback parent. Do not retain archive copies of completed findings.
 
 ## User Clarifications and Approved Decisions
 
@@ -335,9 +372,9 @@ All decisions below were approved by the user during discussion on 2026-11-28. T
 
 ## Review and Approval
 
-- **Revision presented:** 6
+- **Revision presented:** 7
 - **User decisions:** The revision 4 architecture decisions remain approved. The lean CI-output model introduced in revision 5 is approved: CI retains only the run-status index and lightweight review-task event, with no CI-authored diagnostic/report/evidence documents. The Worker inspects the linked Actions run only after a recorded check failure or infrastructure/capture failure, solely for diagnosis.
-- **Consolidated Draft status:** Draft; the individual design decisions recorded here have been approved, including the lean CI-output model and failure-only diagnostic boundary. The complete consolidated Draft has not yet been formally accepted as a decision record.
+- **Consolidated Draft status:** Draft; the individual design decisions recorded here have been approved, including the lean CI-output model and failure-only diagnostic boundary. Revision 7 adds a proposed generic reusable verification workflow; this addition is awaiting user review and approval. The complete consolidated Draft has not yet been formally accepted as a decision record.
 - **Implementation authorization:** Not granted by this Draft update. Implementation requires the user's explicit execution instruction after the decision is finalized and the required superseding ADR is accepted.
 - **Decision date:** 2026-11-28
 - **Resulting ADR:** Not created
@@ -352,6 +389,7 @@ All decisions below were approved by the user during discussion on 2026-11-28. T
 | 2026-11-28 | 4 | Consolidated universal GitHub Actions-only post-commit validation; Committed / Awaiting CI; exact-commit Done gate; event-driven review tasks; index-only Worker reconciliation; non-blocking queue scheduling; active-parent vs permanent fallback routing; and permanent fallback lifecycle. | User approved each of these decisions and asked to update the Draft for continued discussion. |
 | 2026-11-28 | 5 | Proposed lean CI output: retain only the run-status index (including a direct run URL) and lightweight review-task event; stop generating CI-authored finding/report/evidence documents. Worker opens failed Actions runs only for diagnosis and creates remediation task folders; successful outcomes are reconciled from the index without log inspection. | Recommendation presented for user decision. |
 | 2026-11-28 | 6 | Recorded approval of the lean CI-output model and failure-only diagnostic boundary: inspect the linked Actions run only after the index records check failure or infrastructure/capture failure, solely to diagnose the cause. Do not inspect logs after success; do not transfer validation authority to the Worker. | User approved. |
+| 2026-11-28 | 7 | Proposed a generic reusable verification workflow for tasks without established workflow coverage, invoked by a thin dispatcher and driven by a structured task verification contract. Added exact-commit, least-privilege, contract-validation, and fail-closed boundaries. | User requested assessment and continuation of the Draft; proposal awaiting discussion and approval. |
 
 ## References and Evidence Register
 
