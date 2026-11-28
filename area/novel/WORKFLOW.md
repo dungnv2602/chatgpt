@@ -4,7 +4,7 @@
 **Applies to:** All novel projects stored in this repository  
 **Canonical workspace:** `area/novel/` on branch `gpt`
 
-This document governs novel planning, structure, writing, illustration, revision, and maintenance. The [workspace README](README.md) is the quick reference. The [Romantic Storyteller skill](../../.agent/skills/romantic-storyteller-visual-artist/SKILL.md) defines role-specific creative and visual procedures. Reusable templates live in that skill's `assets/` directory. If this workflow conflicts with an older template, use the current Version 1.1 template.
+This document governs novel planning, structure, writing, illustration, revision, and maintenance. The [workspace README](README.md) is the quick reference. The [Romantic Storyteller skill](../../.agent/skills/romantic-storyteller-visual-artist/SKILL.md) defines role-specific creative and visual procedures. That skill owns reusable templates in its `assets/templates/` directory. If this workflow conflicts with an older template, use the current Version 1.1 template.
 
 ## 1. Governing principles
 

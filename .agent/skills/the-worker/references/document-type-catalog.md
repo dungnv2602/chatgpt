@@ -214,7 +214,7 @@ This review did not require a new session summary or conversation-integrity reco
 
 The repository scan found no recurring document family without a canonical template, schema, embedded contract, or generator-owned format. No new template type was required. The 12 novel templates were relocated into the Romantic Storyteller skill's `assets/` directory. The existing Version 1.0 novel templates remain available as historical references.
 
-The template freshness review found two confirmed stale assets. The task-board template did not fully match the live board's scheduler and decision-collection contract. The Prompt Master OpenAI task brief still named retired model-family labels and obsolete model-specific guidance. Both were updated to match current repository and product context. The other 28 template assets were reviewed and retained without changes.
+The template freshness review found two confirmed stale assets. The task-board template did not fully match the live board's scheduler and decision-collection contract. The Prompt Master OpenAI task brief still named retired model-family labels and obsolete model-specific guidance. Both were updated to match current repository and product context. The other 28 template assets were reviewed and retained without content changes.
 
 Historical daily indexes, reconstructed session briefs, chronological prompt logs, transcript/index records, and standalone legacy prompt notes remain unchanged. They are not new document types and must not be mass-migrated. One-off creative direction notes remain exempt. Generated report files remain generator-owned.
 

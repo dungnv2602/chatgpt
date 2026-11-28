@@ -336,8 +336,8 @@ def find_external_templates(root: Path) -> list[str]:
         relative = candidate.relative_to(root)
         parts = relative.parts
         if (
-            parts[:1] in {(".git",), ("master",)}
-            or parts[:2] in {("workspace", "tasks"), ("workspace", "archive")}
+            parts[:1] == (".git",)
+            or parts[:2] == ("workspace", "tasks")
             or parts[:2] == (".agent", "skills")
         ):
             continue

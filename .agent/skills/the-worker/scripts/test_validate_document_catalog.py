@@ -4,7 +4,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from validate_document_catalog import find_external_templates, template_location_error, validate_catalog
+from validate_document_catalog import (
+    find_external_templates,
+    template_location_error,
+    validate_catalog,
+)
 
 
 HEADER = (
@@ -108,6 +112,9 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_templates_must_live_in_owning_skill_assets(self):
         self.assertIsNone(
             template_location_error(".agent/skills/example/assets/template.md")
+        self.assertIsNone(
+            template_location_error(".agent/skills/example/assets/templates/novel.md")
+        )
         )
         for path in (
             "area/novel/templates/scene-template.md",

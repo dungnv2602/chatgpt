@@ -41,7 +41,9 @@ Chapters are optional editorial groupings of scenes. They are not a mandatory fo
 
 ## Standard folder convention
 
-Create folders only when they contain real records or assets. Existing legacy projects may keep their established paths. Use this convention for new records and migrate older material only when useful and safe. Reusable templates belong to the [Romantic Storyteller skill](../../.agent/skills/romantic-storyteller-visual-artist/SKILL.md), under its `assets/` directory. Do not create a project-local `area/novel/templates/` directory.
+Create folders only when they contain real records or assets. Existing legacy projects may keep their established paths. Use this convention for new records. Migrate older material only when useful and safe.
+
+The [Romantic Storyteller skill](../../.agent/skills/romantic-storyteller-visual-artist/SKILL.md) owns reusable novel templates. Find them in its `assets/templates/` directory. Do not create `area/novel/templates/`.
 
 ```text
 area/novel/

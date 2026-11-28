@@ -23,11 +23,11 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Ordered Eligible Execution Queue
 
-[Ordered list of all eligible Ready, approved tasks with dependencies satisfied, or _No eligible tasks._]
+[Ordered list of all eligible Ready, approved tasks with dependencies satisfied within the current authorized focus, or _No eligible tasks._]
 
 ## Next Task
 
-[Next task when execution is occupied or selection is deferred; otherwise _None._]
+[Next task within the current focus, or other open parents that remain unselected; otherwise _None._]
 
 ## Deferred Work
 
