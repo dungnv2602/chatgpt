@@ -28,7 +28,7 @@ Every task-specific source commit must include one trailer:
 - A child ID resolves through that child's `Parent Task ID`.
 - A genuine attributed parent must exist, match its recorded ID, carry `Origin: User`, and remain active. Never infer a parent from the current board pointer, changed files, workflow name, branch, or timing.
 - If the marker is absent, malformed, ambiguous, or unsupported, or the task/parent is missing, inactive, or not user-originated, route the actionable finding to the single policy-designated permanent fallback parent at `workspace/tasks/20261128-193800/task.md`.
-- Verify the fallback ID against `worker_lifecycle.fallback_parent_id` in the Worker-owned task-validation policy, then verify its exact path, matching ID, `Origin: System`, `Status: In Progress`, `Current execution: No`, and subtasks index. If any check fails, fail closed and leave the finding unassigned; never create a replacement fallback or guess.
+- Verify the fallback ID against `worker_lifecycle.fallback_parent_id` in the Worker-owned task-validation policy, then verify its exact path, matching ID, `Origin: Assistant`, `Status: In Progress`, `Current execution: No`, and subtasks index. If any check fails, fail closed and leave the finding unassigned; never create a replacement fallback or guess.
 - The fallback parent is a permanent system container, not a user task or an execution target. Never mark it Done/Cancelled, delete it, or select it as Current Execution.
 - A finding's latest observation controls attribution for that ingestion. Never reuse an older observation's parent for a new, unattributed run.
 
