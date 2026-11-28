@@ -129,12 +129,13 @@ Identify the target surface (ChatGPT, Codex, or API), preserve the user's select
 
 ---
 
-**OpenAI reasoning models (o3, o4-mini, and successors)**
-- SHORT clean instructions ONLY — these models reason across thousands of internal tokens
-- NEVER add CoT, "think step by step", or reasoning scaffolding — it actively degrades output
-- Prefer zero-shot first — add few-shot only if strictly needed and tightly aligned
-- State what you want and what done looks like. Nothing more.
-- Keep instructions concise while preserving necessary context, constraints, examples, and verification. Do not impose an arbitrary word limit.
+**Reasoning-capable OpenAI models**
+
+- Give the model the relevant goal, context, scope, constraints, success criteria, and verification requirements. Do not impose an arbitrary word limit or omit material context.
+- Do not request hidden chain-of-thought, private reasoning, or a verbatim reasoning trace. Ask for concise rationale, assumptions, evidence, and results.
+- Use zero-shot instructions when they are sufficient. Add examples when they materially improve format, style, or task consistency.
+- Keep prompts concise but complete. Avoid ritual reasoning scaffolds and unsupported claims about how a model reasons internally.
+- Verify current model-specific reasoning controls for the exact ChatGPT, Codex, or API surface before recommending them.
 
 ---
 
