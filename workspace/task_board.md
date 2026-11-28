@@ -10,7 +10,7 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-**20261127-173000-65 — Template-first document governance** (In Progress)
+**20261127-173000-66 — Instruction placement audit and stale-content prevention** (In Progress)
 
 ## Ordered Eligible Execution Queue
 
@@ -20,9 +20,8 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 Authorized execution focus: Refactor Skills. Remaining prepared children after current child:
 
-- **P0** — [Template-first document governance](tasks/20261127-173000/subtasks/65-template-first-document-governance.md) — Ready; eligible within authorized batch.
-- **P0** — [Instruction placement audit and stale-content prevention](tasks/20261127-173000/subtasks/66-instruction-placement-audit.md) — Ready; execution cue pending.
-- **P0** — [Workflow optimization, cycle closure and redundancy reduction](tasks/20261127-173000/subtasks/67-workflow-optimization-cycle-closure.md) — Ready; execution cue pending.
+- **P0** — [Instruction placement audit and stale-content prevention](tasks/20261127-173000/subtasks/66-instruction-placement-audit.md) — In Progress.
+- **P0** — [Workflow optimization, cycle closure and redundancy reduction](tasks/20261127-173000/subtasks/67-workflow-optimization-cycle-closure.md) — Ready.
 
 ## Deferred Work
 
