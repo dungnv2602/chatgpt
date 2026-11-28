@@ -293,14 +293,13 @@ def source_policy_allows_dispatch(root: Path, source_sha: str, expected_policy_s
     for policy in (source_policy, current_policy):
         coordinator = policy.get("coordinator", {})
         protection = policy.get("protection", {})
-        recovery = policy.get("recovery", {})
         if not (
             coordinator.get("activation_status") == "enabled"
             and protection.get("enforcement_status") == "verified"
-            and recovery.get("workflow_dispatch_activation_status") == "verified"
         ):
             return False
-    return True
+    current_recovery = current_policy.get("recovery", {})
+    return current_recovery.get("workflow_dispatch_activation_status") == "verified"
 
 
 def dispatch_missing_attempts(
