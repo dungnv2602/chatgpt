@@ -303,5 +303,6 @@ The task-validation status index under workspace/task-validation/ is the canonic
 - Workflow execution and reusable capture entry points: .github/workflows/.
 - ADR-0008 status index, checkpoint and review queue: workspace/task-validation/.
 - Legacy report outputs, history, and Ledger state pending staged migration: .takeout/reports/.
+- Legacy lint report generator, schema, template, and tests under Worker ownership: .agent/skills/the-worker/scripts/generate_lint_report.py, test_generate_lint_report.py, and .agent/skills/the-worker/assets/lint-report-schema.json, lint-report-template.md. Coordinator mode retains regression coverage but skips legacy index lookup and report publication.
 
 Do not maintain duplicate implementations in report-family script directories. Workflows consume Worker-owned scripts and assets; they do not own the policy, schemas, or task lifecycle.
