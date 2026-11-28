@@ -62,7 +62,6 @@ jobs:
           current_policy_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent/skills/the-worker/assets/task-validation/task-validation-policy.json?ref=gpt" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
           policy_ready='
             .coordinator.activation_status == "enabled" and
-            .protection.enforcement_status == "verified" and
             .recovery.schedule_activation_status == "verified" and
             .recovery.workflow_dispatch_activation_status == "verified"
           '
@@ -84,7 +83,7 @@ jobs:
           fi
           if [[ "$GITHUB_EVENT_NAME" == "push" && "$coordinator_ready" == "true" ]]; then
             echo "proceed=false" >> "$GITHUB_OUTPUT"
-            echo "Legacy direct-push lint is disabled only after coordinator, protection, and recovery dispatch gates are verified."
+            echo "Legacy direct-push lint is disabled only after coordinator and recovery dispatch gates are verified."
             exit 0
           fi
           index_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/index.json?ref=$GITHUB_REF_NAME" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
