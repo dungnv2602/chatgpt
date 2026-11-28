@@ -164,6 +164,16 @@ class TaskValidationTests(unittest.TestCase):
         with self.assertRaises(verifier.ContractError):
             self._validate()
 
+    def test_rejects_unverified_policy_protection(self) -> None:
+        self.policy["protection"]["enforcement_status"] = "external-prerequisite"
+        with self.assertRaises(verifier.ContractError):
+            self._validate()
+
+    def test_rejects_staged_coordinator_activation(self) -> None:
+        self.policy["coordinator"]["activation_status"] = "staged"
+        with self.assertRaises(verifier.ContractError):
+            self._validate()
+
     def test_rejects_wrong_policy_blob_sha(self) -> None:
         with self.assertRaises(verifier.ContractError):
             verifier.validate_contract(
