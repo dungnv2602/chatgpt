@@ -4,7 +4,6 @@ Parent: [task.md](../task.md)
 
 | ID | Title | Status | Record |
 |---|---|---|---|
-| 20261127-173000-63 | Enforce execution-cue and decision-logging gates | In Progress | [63-execution-cue-and-decision-gate-workflow.md](63-execution-cue-and-decision-gate-workflow.md) |
 | 20261127-173000-03 | Correct objective-based task parent selection | Paused | [03-correct-objective-based-task-parent-selection.md](03-correct-objective-based-task-parent-selection.md) |
 | 20261127-173000-28 | CI remediation — Review marketing-adjective findings in .agent/skills/asd-ste100/SKILL.md | Blocked | [28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md](28-ci-remediation-review-marketing-adjective-findings-in-agent-skills-asd-ste100-s.md) |
 | 20261127-173000-29 | CI remediation — Review nominalization findings in .agent/skills/asd-ste100/SKILL.md | Blocked | [29-ci-remediation-review-nominalization-findings-in-agent-skills-asd-ste100-skill.md](29-ci-remediation-review-nominalization-findings-in-agent-skills-asd-ste100-skill.md) |
