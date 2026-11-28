@@ -14,9 +14,6 @@ on:
       # Validate changes to catalog authorities, generators, schemas, and tests.
       - '.github/scripts/**'
       - '.github/archive-retention-*.json'
-      - '.takeout/reports/gh_ac_reports/scripts/**'
-      - '.takeout/reports/gh_ac_reports/assets/**'
-      - '.takeout/reports/gh_ac_reports/actions/**'
       # Enforce catalog coverage whenever any active document family changes.
       # master/ and workspace/archive/ remain outside this inventory scan.
       - 'area/drawing/**/*.md'
@@ -26,12 +23,6 @@ on:
       - '.takeout/reports/triage/scripts/**'
       - '.takeout/reports/triage/ledger-schema.json'
       # Exclude generator-owned output so report publication cannot retrigger this workflow.
-      - '!.takeout/reports/gh_ac_reports/history/**'
-      - '!.takeout/reports/gh_ac_reports/by_workflow/**'
-      - '!.takeout/reports/gh_ac_reports/latest-gh-ac-report.md'
-      - '!.takeout/reports/lint_reports/latest-lint-report.md'
-      - '!.takeout/reports/lint_reports/on_*/history/**'
-      - '!.takeout/reports/lint_reports/on_*/latest-lint-report.md'
       - 'workspace/**/*.md'
       - '!workspace/archive/**'
       - '!workspace/discussion.md'
@@ -84,7 +75,7 @@ jobs:
       - name: Run catalog validator regression tests
         run: |
           python -m unittest discover \
-            -s .agent/skills/document-standards/scripts \
+            -s .agent/skills/the-worker/scripts \
             -p 'test_validate_catalog.py' \
             -v
 
@@ -96,7 +87,7 @@ jobs:
 
       - name: Validate the document type catalog
         run: |
-          python .agent/skills/document-standards/scripts/validate_catalog.py --root .
+          python .agent/skills/the-worker/scripts/validate_catalog.py --root .
 
   diagnostics:
     name: Capture GH Actions diagnostics
