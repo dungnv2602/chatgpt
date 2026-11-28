@@ -7,14 +7,14 @@
 - **ID:** 20261127-173000-68
 - **Parent Task ID:** 20261127-173000
 - **Type:** Governance reconciliation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P0
 - **Origin:** User-authorized Refactor Skills execution batch
 - **Approval:** Approved
 - **Approval scope/source:** User approved metadata correction and execution cue on 2026-11-28.
 - **Governing ADR(s):** ADR-0004 and ADR-0007
 - **Dependencies:** None; user decision received.
-- **Eligibility / deferral reason:** In Progress — correction authorized.
+- **Eligibility / deferral reason:** Done — metadata correction and readback completed.
 - **Required:** Yes
 - **Created:** 2026-11-28
 - **Updated:** 2026-11-28
@@ -42,23 +42,25 @@ Resolve or formally preserve the historical source-Draft ID collision between AD
 
 ## 5. Decisions and Progress
 
+- **Progress:** Corrected ADR-0007's source Draft metadata from DRAFT-0005 to DRAFT-0008. ADR-0004 remains unchanged. Documented the correction in ADR-0007 and discussion register.
+
 - **Decision:** Correct ADR-0007 source Draft metadata to the newly assigned DRAFT-0008, documenting that this is an administrative provenance correction and retaining the original approval scope. Do not alter ADR-0004.
 - **Authorization:** User: “Correct the metadata. Execute.” This is a provenance issue, not permission to alter accepted ADR metadata.
 - **Progress:** The Worker now checks Draft IDs against Draft files, accepted ADR source-draft metadata, task records, indexes and discussion before assigning an ID. The operational gate prevents new reuse but does not resolve this historical collision.
 
 ## 6. State and Evidence
 
-- **Commit SHA:** Not committed
-- **Changed paths:** Accepted ADR metadata/references, index and task tracking only after decision
-- **Readback:** Not performed
-- **Checks:** Not performed
-- **Limitations:** User decision is required before correction.
+- **Commit SHA:** ADR-0007 `6e452884918604530780f8f4d1729b13a6f34ba1`; discussion `89342d49a61d4370fe1b02c7e50b8c20b76055b6`
+- **Changed paths:** ADR-0007 source metadata and More Information, discussion register, parent task, subtask index and board
+- **Readback:** Pending
+- **Checks:** No tests; metadata-only change
+- **Limitations:** ADR-0007 retains the original approval record (DRAFT-0005 revision 1) in prose; its metadata now uses DRAFT-0008 as the corrected unique provenance reference. This is a traceability correction, not a newly created or reapproved decision Draft.
 
 ## 7. Completion
 
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
+- **Status:** Done
+- **Completed at:** 2026-11-28
+- **Completion basis:** Updated ADR-0007 source reference, documented rationale, and reconciled discussion register. Readback pending.
 
 ## 8. Hosted Validation
 
@@ -70,11 +72,11 @@ Resolve or formally preserve the historical source-Draft ID collision between AD
 - Canonical subtask template consulted.
 - Parentage confirmed.
 - Approval and execution authority are pending.
-- The task remains Proposed and cannot execute until the user decision and a fresh standalone `execute` cue.
+- The user authorized metadata correction and execution.
 
 ## 10. Handoff
 
-Present the exact provenance conflict and ask for the user's choice at batch quiescence. Do not change accepted ADR metadata without authorization.
+Read back the ADR, task, discussion register and board; close and delete the child record under lifecycle rules.
 
 ## 11. Ledger Findings
 
