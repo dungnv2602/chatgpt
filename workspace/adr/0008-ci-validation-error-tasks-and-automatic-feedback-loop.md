@@ -11,7 +11,7 @@ consulted: []
 informed: []
 source_draft: "DRAFT-0010"
 source_draft_revision: 9
-approved_scope: "DRAFT-0010 revision 9: universal exact-commit GitHub Actions post-commit validation; one coordinator invoking established reusable workflows and a generic verifier; protected structured contracts; complete aggregate outcomes; isolated, atomic, idempotent status/review publication and recovery; non-blocking Worker queue; folder-based grouped remediation; 14-day post-reconciliation index retention with unresolved-record protection and a verified checkpoint; and retirement of .takeout/reports only after complete migration and operational proof."
+approved_scope: "DRAFT-0010 revision 9: universal exact-commit GitHub Actions post-commit validation; one coordinator invoking established reusable workflows and a generic verifier; protected structured contracts; complete aggregate outcomes; isolated, atomic, idempotent status/review publication and recovery; non-blocking Worker queue; folder-based grouped remediation; 3-day post-reconciliation index retention with unresolved-record protection and a verified checkpoint; cancelled and superseded attempts are excluded from the feedback loop; and retirement of .takeout/reports only after complete migration and operational proof."
 related_adrs:
   - "ADR-0003"
   - "ADR-0004"
@@ -105,20 +105,20 @@ Keep the existing push-triggered checks and report/Ledger pipeline without intro
 
 ### Run-status retention
 
-#### Option 1 — Retain reconciled records for 14 days, then compact behind a verified checkpoint (chosen)
+#### Option 1 — Retain reconciled records for 3 days, then compact behind a verified checkpoint (chosen)
 
-Keep each attempt record for 14 days after successful reconciliation. Never prune unresolved or partially reconciled attempts. After expiry, remove the individual record and rely on one small monotonic checkpoint that advances only after every earlier attempt is accounted for and reconciled.
+Keep each attempt record for 3 days after successful reconciliation. Never prune unresolved or partially reconciled attempts. After expiry, remove the individual record and rely on one small monotonic checkpoint that advances only after every earlier attempt is accounted for and reconciled.
 
-- **Good:** Recent attempt details remain available for diagnosis and traceability, while old completed records do not accumulate indefinitely. The checkpoint preserves duplicate/delayed-event suppression after compaction.
-- **Neutral:** Recovery correctness depends on checkpoint discipline. The 14-day period is a policy window, not proof that every possible external event delay is impossible.
-- **Bad:** The system must implement safe compaction and prove that no unresolved gap exists before advancing the checkpoint.
+- **Good:** Keeps the operational index lean while retaining a short recovery window. GitHub Actions retains its own run history independently.
+- **Neutral:** The 3-day period is an operational index policy, not GitHub Actions log retention. Recovery depends on checkpoint discipline.
+- **Bad:** The system must implement safe compaction and prove no unresolved gap exists before advancing the checkpoint.
 - **Dependencies and burden:** Requires reconciliation state, ordered/paginated recovery, and a durable closed-through watermark.
 - **Risks and safeguards:** An incorrectly advanced checkpoint could suppress an unaccounted event. Advance only after a complete sweep confirms no gaps or outstanding attempts. Never expire unresolved records.
-- **Evidence and confidence:** The 14-day period is the user's explicit decision. The bounded-index and checkpoint behavior is a design safeguard; no production measurement exists yet.
+- **Evidence and confidence:** The 3-day period is the user's explicit decision. No production measurement exists yet.
 
 #### Option 2 — Retain every attempt record indefinitely
 
-- **Good:** Preserves the simplest complete per-attempt history and duplicate-event lookup.
+- **Good:** Preserves complete per-attempt history and duplicate-event lookup.
 - **Neutral:** Requires little compaction logic.
 - **Bad:** The index grows continuously, contrary to the user's requirement to keep operational state lean.
 - **Decision:** Rejected because indefinite growth is not acceptable.
@@ -127,8 +127,8 @@ Keep each attempt record for 14 days after successful reconciliation. Never prun
 
 - **Good:** Minimizes the live index.
 - **Neutral:** Requires a durable checkpoint to distinguish already reconciled events from missing events.
-- **Bad:** Removes recent attempt detail immediately and makes delayed-event investigation less convenient.
-- **Decision:** Rejected in favor of a bounded 14-day diagnostic window.
+- **Bad:** Removes recent attempt detail immediately.
+- **Decision:** Rejected in favor of a short 3-day operational window.
 
 ## Comparative Assessment
 
@@ -139,20 +139,20 @@ Keep each attempt record for 14 days after successful reconciliation. Never prun
 | Missing/late event handling | Explicit coordinator and recovery | Requires expected manifest, grace period, and recovery | Not adequately addressed |
 | Long-term operational burden | Centralized orchestration | Distributed workflow and aggregator coordination | Retains existing report/Ledger coupling |
 
-| Retention driver | 14-day plus checkpoint | Indefinite | Immediate pruning |
+| Retention driver | 3-day plus checkpoint | Indefinite | Immediate pruning |
 |---|---|---|---|
 | Index growth | Bounded recent/unresolved records | Unbounded | Minimal |
-| Recent traceability | Strong for 14 days | Strong indefinitely | Weak |
+| Recent traceability | Strong for 3 days | Strong indefinitely | Weak |
 | Duplicate suppression after pruning | Checkpoint-based | Per-record history | Checkpoint-based |
 | Recovery complexity | Higher than indefinite; guarded by sweep | Lower | Higher and loses recent detail |
 
-The single coordinator is preferred because the repository needs one authoritative expected-check set and terminal outcome. The independent aggregator remains technically viable but adds event-correlation and timeout states. For retention, 14 days balances recent traceability with bounded growth. Indefinite retention conflicts with the user's explicit concern about index growth. Immediate pruning removes useful recent context.
+The single coordinator is preferred because the repository needs one authoritative expected-check set and terminal outcome. The independent aggregator remains technically viable but adds event-correlation and timeout states. For retention, 3 days balances recent traceability with bounded growth. Indefinite retention conflicts with the user's explicit concern about index growth. Immediate pruning removes useful recent context.
 
 ## Decision Outcome
 
 **Chosen coordinator:** Option 1 — one coordinator per source commit invoking established reusable workflows and the generic verifier.
 
-**Chosen retention:** Option 1 — retain reconciled per-attempt records for 14 days, then compact/prune behind a verified monotonic checkpoint. Never prune an unreconciled attempt.
+**Chosen retention:** Option 1 — retain reconciled per-attempt records for 3 days, then compact/prune behind a verified monotonic checkpoint. Never prune an unreconciled attempt.
 
 ### Normative decision
 
@@ -174,14 +174,15 @@ The single coordinator is preferred because the repository needs one authoritati
 16. Delete completed child folders and Done ordinary parent folders under the approved lifecycle. Never automatically delete the permanent fallback parent.
 17. A task becomes **Done** only when the complete required check set succeeds for its exact current commit and policy revision, the result is reconciled, and no required subtasks remain.
 18. Keep one compact run-status index under `workspace/`. Store only source Task-ID when valid, exact SHA, coordinator run ID/attempt, check-set identity, policy revision, completion timestamp, outcome, Actions URL, and recovery metadata. Do not store findings, signatures, logs, diagnostics, evidence, remediation state, or task history.
-19. Retain individual attempt records for 14 days after successful reconciliation. Never prune unresolved or partially reconciled attempts, regardless of age. After expiry, remove individual records and advance a small monotonic closed-through checkpoint only after the recovery sweep proves that all earlier attempts are accounted for. Duplicate/delayed events at or below the verified checkpoint are no-ops.
+19. Retain individual attempt records for 3 days after successful reconciliation. Never prune unresolved or partially reconciled attempts, regardless of age. After expiry, remove individual records and advance a small monotonic closed-through checkpoint only after the recovery sweep proves that all earlier attempts are accounted for. Duplicate/delayed events at or below the verified checkpoint are no-ops. GitHub Actions independently manages its run and log retention.
+20. Cancelled and superseded attempts are ignored by the feedback loop. They create no review task, remediation subtask, log inspection, retry, or task-state change. They cannot satisfy required validation. A cancelled validation remains pending unless a qualifying result exists. A superseded SHA is obsolete and must not change current task state.
 20. Retire the complete `.takeout/reports/` tree only after every producer, consumer, schema, script, test, navigation entry, and document has migrated; the replacement is operational; existing validation coverage and baselines are preserved; and GitHub Actions has demonstrated success, failure, missing-event, duplicate-event, and publication-recovery behavior.
 21. Do not preserve a parallel findings Ledger, diagnostic archive, or permanent attempt archive. Preserve unrelated lint/test/workflow coverage.
 
 ### Consequences
 
 - **Good:** Exact-commit completion becomes deterministic. Missing coverage cannot be mistaken for success. One coordinator removes cross-workflow aggregation races. Remediation is grouped and attributable. Index growth is bounded without discarding unresolved work.
-- **Neutral:** Established workflows need reusable entry points. The publisher, recovery sweep, and checkpoint add operational components. Recent reconciled attempt history is available for 14 days rather than indefinitely.
+- **Neutral:** Established workflows need reusable entry points. The publisher, recovery sweep, and checkpoint add operational components. Recent reconciled attempt history is available for 3 days rather than indefinitely.
 - **Bad:** The migration is broad and must preserve current validation coverage. A coordinator, contract, publisher, or checkpoint defect can block task completion until recovery. The permanent fallback parent requires ongoing queue hygiene.
 
 ### Confirmation
@@ -197,7 +198,7 @@ The single coordinator is preferred because the repository needs one authoritati
 - [ ] Worker queue handling is non-blocking and review tasks do not interrupt active work.
 - [ ] Worker reads the index first and opens logs only for diagnosis after recorded failure. It never independently validates or overrides CI.
 - [ ] Root-cause grouping, active-child reuse, parent attribution, fallback routing, and direct folder deletion meet the approved lifecycle.
-- [ ] The index contains only allowed operational metadata. Reconciled records expire after 14 days. Unresolved records never expire. Checkpoint advancement and duplicate suppression are covered by regression tests and recovery demonstrations.
+- [ ] The index contains only allowed operational metadata. Reconciled records expire after 3 days. Unresolved records never expire. Checkpoint advancement and duplicate suppression are covered by regression tests and recovery demonstrations.
 - [ ] Existing required lint, test, build, schema, and workflow coverage and baselines are preserved.
 - [ ] GitHub Actions demonstrates success, check failure, missing/skipped check, cancellation/supersession, duplicate delivery, concurrent publication, missed trigger, publisher failure, stale result, and recursion prevention.
 - [ ] All `.takeout/reports/` producers and consumers have migrated. The replacement is operational before the complete directory and obsolete Ledger/report paths are retired.
@@ -223,11 +224,11 @@ The single coordinator is preferred because the repository needs one authoritati
 - **Neutral:** Current independent checks continue to run.
 - **Bad:** Does not deliver one complete aggregate authority or the approved exact-commit completion gate.
 
-### 14-day retention plus checkpoint
+### 3-day retention plus checkpoint
 
 - **Good:** Bounded index growth with a recent operational trace and safe duplicate suppression after compaction.
 - **Neutral:** Requires checkpoint correctness and recovery verification.
-- **Bad:** Removes per-attempt detail after 14 days, and checkpoint errors can suppress delayed events if safeguards fail.
+- **Bad:** Removes per-attempt detail after 3 days, and checkpoint errors can suppress delayed events if safeguards fail.
 
 ### Indefinite per-attempt retention
 
@@ -258,12 +259,12 @@ The single coordinator is preferred because the repository needs one authoritati
   - **ADR-0004:** Supersede only the clauses that treat CI remediation completion as commit/readback-only with separate optional hosted validation, and clauses requiring the old findings Ledger identity/history/archive lifecycle. Preserve the general task-folder/subtask model, genuine parent attribution, Worker ownership, direct deletion, task governance, and unrelated safeguards.
   - **ADR-0007:** Supersede its `.takeout/reports/index.json` latest-lint-report locator decision when the report tree is retired. Preserve no unrelated requirement from that report locator.
 - **Evidence:**
-  - User approval of DRAFT-0010 revision 9 and explicit coordinator and 14-day retention decisions, 2026-11-28.
+  - User approval of DRAFT-0010 revision 9 and explicit coordinator and 3-day retention decisions, 2026-11-28.
   - Repository branch `gpt`, commit `94f8bf2ec2c923f40df135b872eaa4a5327750b`: current workflow sources listed in Context and Problem Statement.
   - DRAFT-0010 revision 9, deleted after promotion; provenance is recorded in the `source_draft` metadata.
   - `workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md`, `0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md`, and `0007-unified-index-as-latest-lint-report-locator.md`.
   - No tests, prototypes, or hosted CI runs were executed or inspected during this decision promotion. Confirmation requires later implementation evidence.
-- **Review trigger:** Any failed Confirmation criterion, material platform change, repeated publication/recovery failure, validation coverage change, or evidence that 14-day retention/checkpoint behavior loses required operational traceability.
+- **Review trigger:** Any failed Confirmation criterion, material platform change, repeated publication/recovery failure, validation coverage change, or evidence that 3-day retention/checkpoint behavior loses required operational traceability.
 
 ## Decision Lifecycle History
 
