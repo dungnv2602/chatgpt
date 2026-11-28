@@ -104,3 +104,12 @@ Blocked pending repository settings: make `gpt` the default branch (the policy p
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
 | None | — | None yet | — |
+
+
+### 2026-11-28 — execution worklist reconciliation
+
+- **Operation 1 — reconcile staged migration and lifecycle procedure:** Completed. Read back the canonical Worker, migration interface, and task records; existing index-first, grouped-root-cause, exact-source attribution, fallback, cancellation/supersession, and nonblocking lifecycle rules remain intact.
+- **Operation 2 — verify producer gate and migration scope:** Completed. Reviewed the three validation workflows and the two diagnostic/capture workflows. Exact-SHA reusable calls and gated legacy suppression are staged; coordinator-owned diagnostics suppression is conditional on source/current policy activation, effective protection, and recovery dispatch availability. Unrelated workflow diagnostics and push backfill remain available.
+- **Operation 3 — reconcile external prerequisites:** Blocked locally to this operation. Default branch `main` lacks the dispatcher/recovery workflows and effective protection cannot be verified through available repository metadata. No setting change or `main` write is authorized. No hosted CI inspection was authorized for ADR-0008.
+- **Operation 4 — operational Confirmation and retirement:** Dependency-waiting in child 05. Preserve `.takeout/reports/` and all legacy producers/consumers. No retirement or coverage weakening.
+- **Stop-proof:** Remaining work is confined to the external activation/protection prerequisite and operational Confirmation; independent repository-side staging and readback operations in this scope are reconciled. Do not retry the unavailable settings verification until access/prerequisites change.
