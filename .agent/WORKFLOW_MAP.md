@@ -7,7 +7,7 @@
 ```mermaid
 flowchart TD
  A[Conversation] --> B{Cue or task activation}
- B -->|/start| C[Session Start guard] --> D[The Worker] --> E[Read Workflow Map] --> F[Conversation Mode: presentation only] --> G[Baseline and progressive loading] --> H[Startup P0 and Ledger reconciliation] --> I[Task / queue reconciliation] --> J[Authorized work to quiescence] --> K[Commit, readback and tracking] --> L[Closeout and queue continuation] --> M[Quiescence report]
+ B -->|/start| C[Session Start guard] --> D[Read Workflow Map] --> E[The Worker] --> F[Conversation Mode: presentation only] --> G[Baseline and progressive loading] --> H[Startup P0 and Ledger reconciliation] --> I[Task / queue reconciliation] --> J[Authorized work to quiescence] --> K[Commit, readback and tracking] --> L[Closeout and queue continuation] --> M[Quiescence report]
  B -->|/map| N[Display map only]
  B -->|execute| O[Authorize prepared eligible batch]
  B -->|approve| P[Log decision only]
