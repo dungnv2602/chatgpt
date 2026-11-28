@@ -87,6 +87,12 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Lint producers/consumers:** `ste-lint-changed.yml` and `ste-lint-full-docs.yml` still read `.takeout/reports/index.json` for baseline reports and publish report history; `.agent/skills/the-worker/scripts/generate_lint_report.py` enforces the legacy history layout and updates the index. The changed-lint workflow has a full-audit fallback when baseline data is unavailable.
 - **Actions diagnostics:** `gh-actions-capture.yml` invokes the legacy composite capture action. `gh-actions-diagnostics.yml` invokes `actions-report.py` and `ledger.py`, runs their regression tests, and can publish `.takeout/reports/`, task folders, and the task board. `validate-document-standards.yml` still runs `test_ledger.py` and the composite capture action.
 - **Decision:** These producers and consumers remain live. Do not delete the Ledger, report scripts/tests, workflows, or tree while coordinator activation is staged and operational Confirmation is incomplete. The migration must replace or retire each dependency without weakening the existing lint/standards checks; the full report-tree retirement remains reserved for subtask 05.
+### 2026-11-28 — current source attempt requires review
+
+- **Index readback:** The status index now contains 217 attempts; all are `capture_failure`, all lack `check_set_id`, all remain unreconciled, and the checkpoint remains `{run_id: 0, attempt: 0}`.
+- **Current-source match:** Exactly one attempt matches this subtask's source SHA `7814758586f68b3226822f760b4cbf06e86e`, Task-ID `20261128-230000-04`, and policy blob `3e0efd87728646c0be2eb5854f95140151a3c44b`: run `46164069720`, attempt 1, `capture_failure`, no check-set identity.
+- **Lifecycle:** Updated this task's Validation Lifecycle to `review_required` with that exact run/attempt/outcome in commit `82620a2b9cec788534e7a2f16086663d4aacf3c8`. It remains unreconciled. Hosted logs were not inspected; no root cause or remediation child is asserted.
+
 ## 6. State and Evidence
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
