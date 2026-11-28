@@ -13,7 +13,7 @@
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create the Refactor Skills task and place workspace/tasks/20261127-102301 beneath it.
 - **Governing ADR(s):** None
-- **Current execution:** 20261127-173000-65
+- **Current execution:** 20261127-173000-66
 - **Dependencies:** None
 - **Eligibility / deferral reason:** In Progress — user authorized the Refactor Skills batch with the standalone `Execute` cue. Children 65–67 are in scope.
 - **Related tasks:** None
@@ -656,3 +656,12 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Instruction:** Current task is Refactor Skills. Execute.
 - **Action:** Reconciled the task board to the authorized batch. Started child 65, then continue 66 and 67 until quiescence.
 - **Result:** Execution authorization confirmed. No unrelated work will be selected.
+
+
+### 2026-11-28 — child 65 closeout
+
+- **Action:** Strengthened The Worker document governance with a mandatory per-target template freshness assessment against the current document, repository state, workflow, standards, and source evidence. If the canonical format needs correction, update/read back the format first, then edit the target using the current format. Added an explicit no-churn path when the template remains current.
+- **Result:** Readback confirmed the revised Worker section. The existing gate already required template consultation but lacked a specific freshness-assessment/update-first step before every document edit.
+- **Commit:** Worker `929169ef449eca88c21ae15f0e1bb7de034d3d73`; closeout record commit `857d671642581e1edb908a31e7cd8269719c6bd9`.
+- **Readback:** Confirmed remotely. No local tests or hosted CI inspection.
+- **Closeout:** Child 65 completed and deleted under the child lifecycle. Next eligible child is 66.
