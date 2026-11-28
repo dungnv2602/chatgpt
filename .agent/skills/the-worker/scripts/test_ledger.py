@@ -82,7 +82,7 @@ class LedgerAttributionTests(unittest.TestCase):
             "# Task: Permanent CI remediation fallback parent\n\n## Metadata\n\n"
             "- **ID:** " + FALLBACK_ID + "\n"
             "- **Status:** In Progress\n"
-            "- **Origin:** System\n"
+            "- **Origin:** Assistant\n"
             "- **Priority:** P1\n"
             "- **Current execution:** No\n"
             "- **Eligibility / deferral reason:** Permanent system-owned fallback parent; never selected for execution.\n"
