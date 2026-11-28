@@ -6,13 +6,13 @@
 
 - **ID:** 20261127-173000-59
 - **Parent Task ID:** 20261127-173000
-- **Type:** Decision preparation
+- **Type:** Implementation
 - **Status:** In Progress
 - **Priority:** P0
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** The user's explicit request to make Session Start pointer-only, limit Conversation Mode to settings, relocate duplicated operating rules to their proper Worker or specialist owners, and reassess and reconcile the workflow.
-- **Governing ADR(s):** None — this task prepares a decision Draft only. Implementation requires a separately accepted ADR.
+- **Governing ADR(s):** ADR-0005 — Lean Session Start and Conversation Mode
 - **Dependencies:** None
 - **Eligibility / deferral reason:** In Progress — preparing the decision Draft under the user's direct instruction.
 - **Required:** Yes
@@ -35,7 +35,17 @@ This child belongs under the standing Refactor Skills parent because it directly
 
 ## 2. Subsequent Instructions
 
-None.
+### 2026-11-28
+
+> Approve
+
+> You also need to update associated templates
+
+> Approve
+
+> Execute
+
+- **Decision:** Approved DRAFT-0006 Revision 1 and ADR-0005. Execution scope includes associated templates and the drift-prevention self-check.
 
 ## 3. Objective and Scope
 
@@ -43,7 +53,7 @@ Prepare one decision Draft for the requested workflow architecture. The proposal
 
 The review must reconcile the recently added recovery-cleanup and sequential decision-collection rules with existing task, startup, skill-loading, and CI instructions. It must remove contradictory or duplicated live instructions rather than copy the same rule into another file.
 
-This task authorizes Draft preparation and presentation only. It does not authorize implementation before the user approves the exact Draft revision and its accepted ADR.
+This task implements the approved architecture and associated template reconciliation under ADR-0005.
 
 ## 4. Acceptance Criteria
 
@@ -52,7 +62,22 @@ This task authorizes Draft preparation and presentation only. It does not author
 3. The Draft identifies all affected canonical files and explains their proposed roles.
 4. The Draft preserves cue-controlled initialization, progressive skill loading, the startup P0 batch, user-decision collection before batch execution, immediate temporary-material cleanup, and the existing restrictions on local validation and hosted CI review.
 5. The Draft states exact non-goals, implementation order, verification limits, and confirmation criteria.
-6. The exact Draft revision is read back and presented for user approval. No operational implementation occurs in this child.
+6. The accepted ADR governs implementation.
+7. Session Start and Conversation Mode have the approved lean boundaries.
+8. Operational instructions, specialist references, indexes, templates, and board are reconciled without duplicated authority.
+9. The changed paths pass remote readback.
+
+## 5. Decisions and Progress
+
+### 2026-11-28 — approval and implementation
+
+- The user approved DRAFT-0006 Revision 1 and added template reconciliation to scope, then explicitly instructed execution.
+- ADR-0005 was provisionally created, read back, accepted, and verified. ADR commit: `142b6ccdc82a5f3a66e77d395f587eeb92c0d5e6`.
+- Refactored Session Start to a cue guard and Worker pointer. Conversation Mode now contains presentation settings only.
+- Added Worker canonical ownership, initialization routing, pre-action self-check, and drift/contradiction gate.
+- Preserved novelist and drawing-session instructions in focused Worker references.
+- Updated initialization policy, skills index, catalog, task/subtask/discussion/task-board templates, live task board, and ADR index.
+- Hosted CI results were not inspected. Local scripts, tests, and lint were not run.
 
 ## 5. Decisions and Progress
 
