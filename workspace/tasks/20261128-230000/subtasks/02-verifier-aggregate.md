@@ -97,25 +97,6 @@ Implement the generic verifier and aggregate outcome logic, migrate existing req
 ## 10. Handoff
 
 Subtasks 02 and 03 are complete. Subtask 04 is now dependency-eligible for Worker lifecycle and report migration. Subtask 05 remains dependency-waiting on subtask 04. Keep coordinator activation staged and preserve .takeout/reports/.
-## 7. Completion
-
-- **Status:** Not Done
-- **Completed at:** Not applicable
-- **Completion basis:** Not applicable
-
-## 8. Hosted Validation
-
-- **Status:** Not reviewed
-- **Run URL:** Not reviewed
-
-## 9. Execution self-check
-
-Scope and parent are confirmed. Required, approved, and executed under the authorized parent batch. Preserve evidence and verification boundaries.
-
-## 10. Handoff
-
-Implement deliverables, commit, and update status/evidence. Do not close the parent until every required child and ADR confirmation gate is satisfied.
-
 ## 11. Ledger Findings
 
 | Finding ID | Severity | Diagnostic | Evidence |
