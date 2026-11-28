@@ -29,13 +29,13 @@ flowchart TD
  C --> D[Reconcile parentage, dependencies, indexes and board]
  D --> E{Eligible and authorized?}
  E -->|No| F[Proposed / blocked / paused / dependency-waiting]
- E -->|Yes| G[Worker schedules within focus]
- G --> H[Autonomous implementation]
+ E -->|Yes| G[Worker builds operation-level worklist]
+ G --> H[Decompose and execute; blockers local]
  H --> I[Commit with Task-ID trailer]
  I --> J[Resolve Validation Contract and bind exact SHA]
  J --> K[Readback and evidence]
  K --> L[Reconcile records and board]
- L --> M{Another eligible task?}
+ L --> M{Another eligible operation?}
  M -->|Yes| G
  M -->|No| N[Quiescence and consolidated blocker brief]
 ```
@@ -43,7 +43,7 @@ flowchart TD
 - Task templates, subtask templates and board template: `.agent/skills/the-worker/assets/`.
 - Board: `workspace/task_board.md`; records and indexes: `workspace/tasks/`.
 - Drafts, analyses, ADRs and discussion registers: `workspace/decisions/`, governed by Worker decision-governance reference.
-- Worker owns task capture, hierarchy, selection, blockers, commit evidence and closeout.
+- Worker owns task capture, hierarchy, selection, blockers, commit evidence and closeout. The execution controller persists and reconciles an operation-level worklist, decomposes around local blockers, and continues immediately after transitions; task-level status or reporting is not a stop proof.
 - Each task and subtask template includes a JSON Validation Contract and task-local Validation Lifecycle block. After an implementation commit, the Worker records the exact source SHA and policy blob SHA as `awaiting_ci`, then immediately continues with other eligible work. Terminal outcomes are reconciled against the status index by Task-ID, SHA, and policy revision.
 
 ## Document and skill governance
