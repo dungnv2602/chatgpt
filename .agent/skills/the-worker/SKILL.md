@@ -54,7 +54,7 @@ Before answering or acting on a request with an identifiable outcome, find or cr
 
 Preserve every request with an identifiable outcome verbatim in its own parent task or follow-up subtask under Original Request/Original Prompt. Preserve non-deliverable clarifications, constraints, decisions, and approvals verbatim under Subsequent Instructions. Link the record from its parent index and keep the task board current. A request is not tracked solely because it appears in chat, a parent summary, or the discussion register.
 
-Before creating a record, inspect active task records and the board. Reuse a parent only when the objective is genuinely the same. A substantive follow-up still receives its own child record. Never place unrelated requests under one parent to reduce task count.
+Before creating a record, inspect active task records and the board. Before assigning a child ID, read the full parent task record and its subtask index. Include all Progress and closeout history. Treat every ID ever used in that parent as consumed, even after deletion. Choose the next unused sequential number. An empty index does not prove that an ID is available. Reuse a parent only when the objective is genuinely the same. A substantive follow-up still receives its own child record. Never place unrelated requests under one parent to reduce task count.
 
 ## Persistent skills-refactoring parent exception
 
@@ -114,8 +114,9 @@ Before repository work, review the task's authority and current workflow. Confir
 3. Dependencies, status, and execution eligibility are reconciled.
 4. No conflicting instruction or duplicate rule creates an ambiguous execution boundary.
 5. Each planned file has one registered canonical owner and an allowed path. A consumer path is not treated as its owner.
-6. The user's decision collection phase is complete before executing newly unlocked work.
-7. The intended batch, verification, readback, and cleanup steps are defined.
+6. The child ID is unused in the full parent history. Deleted child IDs remain consumed.
+7. The user's decision collection phase is complete before executing newly unlocked work.
+8. The intended batch, verification, readback, and cleanup steps are defined.
 
 If any check fails, resolve it before the affected work. Do not silently bypass a gate.
 
