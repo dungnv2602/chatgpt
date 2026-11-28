@@ -250,16 +250,19 @@ def source_policy_allows_dispatch(root: Path, source_sha: str, expected_policy_s
     actual_policy_sha = policy_blob_sha(root, source_sha)
     if actual_policy_sha != expected_policy_sha:
         raise RecoveryError(f"Task lifecycle policy revision does not match source commit {source_sha}")
-    raw = git(root, "show", f"{source_sha}:{POLICY_PATH}").stdout
-    policy = json.loads(raw)
-    coordinator = policy.get("coordinator", {})
-    protection = policy.get("protection", {})
-    recovery = policy.get("recovery", {})
-    return (
-        coordinator.get("activation_status") == "enabled"
-        and protection.get("enforcement_status") == "verified"
-        and recovery.get("workflow_dispatch_activation_status") == "verified"
-    )
+    source_policy = json.loads(git(root, "show", f"{source_sha}:{POLICY_PATH}").stdout)
+    current_policy = json.loads((root / POLICY_PATH).read_text(encoding="utf-8"))
+    for policy in (source_policy, current_policy):
+        coordinator = policy.get("coordinator", {})
+        protection = policy.get("protection", {})
+        recovery = policy.get("recovery", {})
+        if not (
+            coordinator.get("activation_status") == "enabled"
+            and protection.get("enforcement_status") == "verified"
+            and recovery.get("workflow_dispatch_activation_status") == "verified"
+        ):
+            return False
+    return True
 
 
 def dispatch_missing_attempts(
