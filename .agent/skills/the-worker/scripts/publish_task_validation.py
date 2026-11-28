@@ -126,7 +126,9 @@ def validate_aggregate(
         not isinstance(check_set_id, str) or not re.fullmatch(r"[0-9a-f]{64}", check_set_id)
     ):
         raise PublisherError("Aggregate check-set identity is malformed")
-    if check_set_id is None and outcome not in {"capture_failure", "infrastructure_failure"}:
+    if check_set_id is None and outcome not in {
+        "capture_failure", "infrastructure_failure", "cancelled", "superseded"
+    }:
         raise PublisherError("A terminal result requires a check-set identity")
     completed_at = aggregate.get("completed_at")
     if not isinstance(completed_at, str):
@@ -219,7 +221,9 @@ def validate_index(index: Any) -> dict[str, Any]:
             raise PublisherError("Status-index check-set identity is malformed")
         if not isinstance(record.get("outcome"), str) or record["outcome"] not in OUTCOMES:
             raise PublisherError("Status-index outcome is invalid")
-        if check_set_id is None and record["outcome"] not in {"capture_failure", "infrastructure_failure"}:
+        if check_set_id is None and record["outcome"] not in {
+            "capture_failure", "infrastructure_failure", "cancelled", "superseded"
+        }:
             raise PublisherError("Status-index outcome requires a check-set identity")
         try:
             completed_at = record.get("completed_at")
