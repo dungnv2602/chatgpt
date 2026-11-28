@@ -32,17 +32,19 @@ flowchart TD
  E -->|Yes| G[Worker schedules within focus]
  G --> H[Autonomous implementation]
  H --> I[Commit with Task-ID trailer]
- I --> J[Readback and evidence]
- J --> K[Reconcile records and board]
- K --> L{Another eligible task?}
- L -->|Yes| G
- L -->|No| M[Quiescence and consolidated blocker brief]
+ I --> J[Resolve Validation Contract and bind exact SHA]
+ J --> K[Readback and evidence]
+ K --> L[Reconcile records and board]
+ L --> M{Another eligible task?}
+ M -->|Yes| G
+ M -->|No| N[Quiescence and consolidated blocker brief]
 ```
 
 - Task templates, subtask templates and board template: `.agent/skills/the-worker/assets/`.
 - Board: `workspace/task_board.md`; records and indexes: `workspace/tasks/`.
 - Drafts, analyses, ADRs and discussion registers: `workspace/decisions/`, governed by Worker decision-governance reference.
 - Worker owns task capture, hierarchy, selection, blockers, commit evidence and closeout.
+- Each task and subtask template includes a JSON Validation Contract. The coordinator resolves it from the commit's Task-ID trailer and binds it to the exact source SHA.
 
 ## Document and skill governance
 
@@ -82,6 +84,7 @@ flowchart TD
 - Activation: CI work is handled only for an assigned, selected task under `workspace/tasks/` and within its authorized scope. It is not part of general session initialization.
 - Procedures: `.agent/skills/the-worker/references/ci-ledger.md` and `github-actions.md`, loaded only when the assigned CI task requires them.
 - Canonical implementation: `.agent/skills/the-worker/scripts/`; capture workflow: `.github/workflows/gh-actions-capture.yml`.
+- ADR-0008 coordinator and generic verifier: `.github/workflows/task-validation.yml` and `task-validation-verifier.yml`. They remain staged until publisher/report migration is complete and external policy protection is verified.
 - Report index and data: `.takeout/reports/`; navigation guide: `.takeout/reports/README.md`.
 - No automatic startup CI baseline, report scan, or Ledger reconciliation. Do not access `.takeout/reports/` for general setup or unrelated tasks.
 - Attribution is source-task-based, not guessed. The Ledger does not schedule or create parents.
