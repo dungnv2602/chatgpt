@@ -93,10 +93,18 @@ Out of scope:
 - **Workflow:** Expanded the document-standards push path filter to include all of `.github/**`. The workflow already runs the catalog regression suite and validator.
 - **Tracking:** Updated ADR-0008 subtask 01 with the current canonical locations. The prior paths remain historical provenance.
 
+
+
+### 2026-11-28 — task-ID allocation gate hardened
+
+- **Finding:** The full parent history showed that child IDs 64 through 73 were already used and closed. The empty subtask index did not make those IDs available.
+- **Correction:** The active record, index, and board now use the next unused ID, 74. The Worker now requires a full parent-history and index check before assigning a child ID. Deleted IDs remain consumed.
+- **Tracking limitation:** Initial implementation commits used reused ID 64. The first correction commits used reused ID 65. These immutable commits cannot be retagged. All subsequent commits use ID 74.
+
 ## 6. State and Evidence
 
-- **Commit SHA:** Latest task-specific commit pending final readback.
-- **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/agent-skill-authoring/SKILL.md`; `.agent/skills/the-worker/references/document-type-catalog.md`; `.agent/skills/the-worker/references/task-validation-interfaces.md`; `.agent/skills/the-worker/scripts/validate_document_catalog.py`; `.agent/skills/the-worker/scripts/test_validate_document_catalog.py`; `.agent/skills/the-worker/assets/README.md`; three JSON files under `.agent/skills/the-worker/assets/task-validation/`; `.github/workflows/validate-document-standards.yml`; `workspace/tasks/20261128-230000/subtasks/01-coordinator-contracts.md`; this child record, its parent index, and the task board. Deleted the four former `.github/task-validation*` files.
+- **Commit SHA:** Latest task-specific commit: `df45634fe77957a0abf41bb96228974eec784572` (Worker ID-allocation gate); final closeout commit pending.
+- **Changed paths:** `.agent/skills/the-worker/SKILL.md`; `.agent/skills/agent-skill-authoring/SKILL.md`; `.agent/skills/the-worker/references/document-type-catalog.md`; `.agent/skills/the-worker/references/task-validation-interfaces.md`; `.agent/skills/the-worker/scripts/validate_document_catalog.py`; `.agent/skills/the-worker/scripts/test_validate_document_catalog.py`; `.agent/skills/the-worker/assets/README.md`; `.agent/skills/the-worker/assets/task-validation/task-validation-policy.json`; `.agent/skills/the-worker/assets/task-validation/task-validation-contract.schema.json`; `.agent/skills/the-worker/assets/task-validation/task-validation-adapters.json`; `.github/workflows/validate-document-standards.yml`; `workspace/tasks/20261128-230000/subtasks/01-coordinator-contracts.md`; `workspace/tasks/20261127-173000/subtasks/README.md`; `workspace/task_board.md`; this child record. Deleted `.github/task-validation-policy.json`, `.github/task-validation-contract.schema.json`, `.github/task-validation-adapters.json`, and `.github/task-validation/README.md`.
 - **Readback:** All implementation paths and deleted paths were read back or verified. Final branch-head and task-tracking readback remain.
 - **Checks:** JSON syntax and repository-tree path, owner, type, and placement coverage were checked through remote reads. Repository tests, scripts, lint, and hosted workflow results were not run or inspected.
 - **Limitations:** Branch protection or ruleset enforcement remains an external prerequisite and has not been established. No runtime behavior or hosted validation success is claimed. Initial commits carry reused child-64 and child-65 trailers as documented above.
