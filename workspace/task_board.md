@@ -24,7 +24,7 @@ _None._
 
 ### Current focus reconciliation
 
-The current authorized focus is CI task lifecycle repair under 20261126-142500. Implementation of the newly approved folder-based CI lifecycle is pending the required superseding decision and canonical subtask-folder format update. The report-directory deletion target also requires path clarification.
+The current authorized focus is implementation of accepted [ADR-0008](adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) under task 20261126-142500. The single-coordinator architecture and 14-day retention/checkpoint policy are approved. Preserve the current report pipeline until the replacement passes ADR-0008 Confirmation and every producer/consumer has migrated.
 
 ### Blocked
 
@@ -32,9 +32,7 @@ _None._
 
 ### Proposed — decision pending
 
-**DRAFT-0010 — CI Error Task Folders and Automatic Feedback Loop.** Revision 1, draft; exact report path confirmation and formal decision review pending.
-
-**DRAFT-0009 — Project, Task, and Knowledge Lifecycle.** Proposal in review; no implementation authorization.
+ **DRAFT-0009 — Project, Task, and Knowledge Lifecycle.** Proposal in review; no implementation authorization.
 
 ### Paused
 
