@@ -13,6 +13,7 @@ The Worker owns the task-validation policy and contract interfaces. GitHub Actio
 - `.agent/skills/the-worker/scripts/publish_task_validation.py` atomically publishes one status record and review folder per eligible terminal attempt.
 - `.agent/skills/the-worker/scripts/recover_task_validation.py` performs paginated Actions-run recovery, artifact recovery, checkpoint advancement, and three-day pruning.
 - `.agent/skills/the-worker/assets/task-validation/task-validation-status-index.schema.json` defines the compact status index and checkpoint.
+- `.agent/skills/the-worker/assets/task-validation/task-validation-lifecycle.schema.json` defines the per-task Validation Lifecycle block. The task templates include this block; legacy records without it are not backfilled.
 - `.agent/skills/the-worker/assets/task-validation/task-validation-review-template.md` defines generated per-attempt review records.
 
 The policy file's Git blob SHA is the immutable policy revision for a coordinator attempt. The numeric `policy_revision` is a human-managed schema revision and is not a substitute for binding the blob SHA.
@@ -51,10 +52,12 @@ The coordinator is defined as a reusable workflow in `.github/workflows/task-val
 - The publisher uses `(coordinator_run_id, attempt)` as its idempotency key. It checks the source commit's policy blob SHA, then writes the status record and the review folder in one metadata-only commit. Concurrent push conflicts are retried with a bounded retry count.
 - Review records live at `workspace/task-validation/reviews/<run-id>-<attempt>/review.md`. Cancelled and superseded attempts have status records but no review folder or feedback task.
 - The index contains only source Task-ID when valid, source SHA, run ID/attempt, check-set identity, policy revision, completion time, outcome, Actions URL, and recovery metadata. Do not add findings, logs, diagnostics, evidence, remediation state, or task history.
+- The task's Validation Lifecycle block stores only its latest source SHA, policy blob SHA, coordinator run/attempt, outcome, and reconciliation state. It is not an attempt history or findings store. Cancelled and superseded attempts do not mutate it.
 - Worker attribution and lifecycle use the policy's `worker_lifecycle.fallback_parent_id`; the current permanent fallback parent is `workspace/tasks/20261128-193800/task.md`. This ID is not written into the status index when source attribution is absent.
 - The coordinator uploads a compact aggregate artifact for recovery. The publisher workflow is `.github/workflows/task-validation-publisher.yml`; it checks out trusted branch `gpt`, executes only the Worker-owned publisher script, receives no secrets, and has contents-write permission only in its isolated publish job. It never checks out or executes task source code.
 - The recovery workflow is `.github/workflows/task-validation-recovery.yml`. It runs from gpt push events, can be called after publication, and defines a 15-minute schedule. It uses paginated Actions-run metadata and aggregate artifacts only. It does not inspect logs or validate source code. Reconciled records expire three days after reconciliation; unresolved records never expire.
-- The recovery script currently reconciles dispatcher attempts and publication gaps. Comparing committed tasks awaiting CI requires the Worker lifecycle metadata being added by subtask `20261128-230000-04` and remains outstanding.
+- The Worker writes `awaiting_ci` plus the exact source SHA and policy blob SHA into the task's Validation Lifecycle block after the source commit. Recovery compares those records with the compact index and dispatcher runs. If an attempt is missing, recovery can request an exact-SHA `workflow_dispatch` only after the source and current policies confirm coordinator activation, verified protection, and verified default-branch workflow availability.
+- The repository default branch is currently `main`, while the project branch is `gpt`. GitHub requires a workflow-dispatch workflow to exist on the default branch. The recovery dispatch gate is therefore external-prerequisite and remains disabled until the dispatcher workflow is available there. The scheduled trigger has the same default-branch constraint.
 
 ## Recovery scheduling constraint
 
