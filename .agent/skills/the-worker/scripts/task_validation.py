@@ -150,8 +150,8 @@ def validate_contract(
     if not isinstance(revision, str) or not 1 <= len(revision) <= 128:
         raise ContractError("Invalid or missing contract_revision")
     checks = contract.get("checks")
-    if not isinstance(checks, list) or len(checks) > 32:
-        raise ContractError("Task contract checks must be an array with at most 32 entries")
+    if not isinstance(checks, list) or len(checks) > 16:
+        raise ContractError("Task contract checks must be an array with at most 16 entries")
 
     mandatory = policy.get("mandatory_checks")
     if not isinstance(mandatory, list) or not mandatory:
@@ -178,6 +178,7 @@ def validate_contract(
     adapters = registry["adapters"]
     seen: set[str] = set()
     validated: list[dict[str, Any]] = []
+    total_timeout_minutes = 0
 
     for index, item in enumerate(checks):
         if not isinstance(item, dict):
@@ -188,7 +189,7 @@ def validate_contract(
         adapter = item.get("adapter")
         entrypoint = item.get("entrypoint")
         args = item.get("args", [])
-        timeout = item.get("timeout_minutes", 10)
+        timeout = item.get("timeout_minutes", 5)
         if not isinstance(check_id, str) or not re.fullmatch(r"[a-z][a-z0-9-]{0,62}", check_id):
             raise ContractError(f"Check {index} has an invalid id")
         if check_id in seen or check_id in mandatory_ids:
@@ -202,8 +203,11 @@ def validate_contract(
             raise ContractError(f"Check {check_id} has invalid arguments")
         if any(not isinstance(arg, str) or len(arg) > 256 or not re.fullmatch(r"[A-Za-z0-9_./:=,@+-]*", arg) for arg in args):
             raise ContractError(f"Check {check_id} contains an unsafe argument")
-        if not isinstance(timeout, int) or isinstance(timeout, bool) or not 1 <= timeout <= 30:
-            raise ContractError(f"Check {check_id} timeout must be between 1 and 30 minutes")
+        if not isinstance(timeout, int) or isinstance(timeout, bool) or not 1 <= timeout <= 15:
+            raise ContractError(f"Check {check_id} timeout must be between 1 and 15 minutes")
+        total_timeout_minutes += timeout
+        if total_timeout_minutes > 25:
+            raise ContractError("Task checks exceed the 25-minute aggregate execution budget")
 
         adapter_config = adapters[adapter]
         if not isinstance(adapter_config, dict) or adapter_config.get("accepts_shell") is not False:
