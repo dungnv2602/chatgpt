@@ -19,6 +19,7 @@ on:
       - '**.md'
       - '!.takeout/reports/**'
       - '!workspace/tasks/**'
+      - '!workspace/task-validation/**'
       - '!workspace/task_board.md'
       - '!workspace/discussion.md'
       - '!area/novel/**'
