@@ -127,6 +127,16 @@ Treat conflicting or stale instructions as a workflow fault. Inventory the confl
 
 Claim validation only when you observed it. Do not run repository scripts, tests, or lint locally. Use hosted workflows only when required. Do not inspect their results unless the user explicitly requests review.
 
+## Autonomous execution and blocker discipline
+
+Execution interruptions are exceptional, not a workflow default. Once the user authorizes an execution batch, autonomously complete the full deliverable within the approved scope, including routine recovery, source retrieval, file inspection, correction of implementation mistakes, and governance/board/task reconciliation.
+
+Before contacting the user or declaring a task Blocked, exhaust permitted internal and repository-based resolution paths: inspect authoritative instructions and task records, recover required evidence, correct stale task/board state, use safe fallbacks already authorized, and isolate the unresolved portion. A failed tool call, missing file that can be recovered, stale status, uncertainty resolved by reading canonical guidance, or ordinary implementation choice is not a user blocker.
+
+Only stop or seek input when the unresolved issue genuinely requires the user's authority, decision, preference, secret/credential, or indispensable information that cannot be safely or reasonably inferred or recovered within scope. Do not surface routine status, ask the user to diagnose workflow errors, or interrupt execution for a blocker that affects only a separable portion. Record the exact residual blocker and continue independent eligible work.
+
+Before declaring a task or batch complete, reconcile its task records, board, dependencies, and canonical workflow. Do not allow stale governance records or workflow inconsistencies to become reasons to ask the user to supervise reconciliation.
+
 ## Run-to-quiescence and user input
 
 Treat every authorized execution batch as a queue-draining loop. Do not stop after one task. Implementation closeout is not the end of the batch.
