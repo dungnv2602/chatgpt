@@ -113,8 +113,9 @@ Before repository work, review the task's authority and current workflow. Confir
 2. The task and parentage are correct. The scope and approval are explicit.
 3. Dependencies, status, and execution eligibility are reconciled.
 4. No conflicting instruction or duplicate rule creates an ambiguous execution boundary.
-5. The user's decision collection phase is complete before executing newly unlocked work.
-6. The intended batch, verification, readback, and cleanup steps are defined.
+5. Each planned file has one registered canonical owner and an allowed path. A consumer path is not treated as its owner.
+6. The user's decision collection phase is complete before executing newly unlocked work.
+7. The intended batch, verification, readback, and cleanup steps are defined.
 
 If any check fails, resolve it before the affected work. Do not silently bypass a gate.
 
@@ -194,7 +195,7 @@ Before creating or updating a task, audit the proposed relationship. If the pare
 
 The Worker owns document governance. Apply this gate before creating, moving, renaming, materially revising, or validating a repository document or structured record.
 
-1. Identify the target path, owner, and document type.
+1. Identify the target path, canonical owner, document type, and allowed location. Do not infer ownership from a consumer path.
 2. Read the current entry in `references/document-type-catalog.md`.
 3. Read the format source that matches the catalog class:
    - **Template required:** Read the complete canonical template.
@@ -216,6 +217,8 @@ The Worker owns document governance. Apply this gate before creating, moving, re
 
 For a one-off note or creative document, follow an explicit Lightweight pattern or Exempt catalog entry. If no such entry exists, propose the format before editing. Source code, generated output, schemas, and machine-readable data follow their own contracts.
 
+The non-Markdown coverage table registers governed files under `.agent/skills/` and `.github/`. Each file must match exactly one family and its placement rule. A Worker-owned policy, schema, registry, or configuration belongs in the Worker skill's `assets/`. Explanatory guidance belongs in `references/`. Executable tools belong in `scripts/`. GitHub Actions workflow definitions belong in `.github/workflows/`. They consume Worker-owned contracts without owning them. Fail closed when the catalog has no matching family or the canonical location is unclear.
+
 ### Document-format classes
 
 - **Template required:** Read and copy the canonical template for each new record.
@@ -227,7 +230,7 @@ For a one-off note or creative document, follow an explicit Lightweight pattern 
 
 The catalog defines purpose and document type, required and conditional fields, formats, allowed values, status, approval, provenance, stable IDs, parent links, migration, validation, owner, and canonical path. Treat unmarked fields as required. Mark Optional and Conditional fields explicitly. Use Unknown or Not applicable when appropriate. Keep workflow metadata out of creative prompts and user-facing fields.
 
-Canonical copy-ready formats are in `.agent/skills/the-worker/assets/`. See its README for the asset index. The catalog and validator are Worker-owned assets in `references/` and `scripts/`. The catalog owns document-type and Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
+Canonical copy-ready formats are in `.agent/skills/the-worker/assets/`. See its README for the asset index. The catalog and validator are Worker-owned assets in `references/` and `scripts/`. The catalog owns document-type, Markdown, and governed non-Markdown coverage integrity. The validator checks catalog structure, references, placement, and coverage. It does not certify semantic conformity. Do not weaken validation. Keep the catalog and owner indexes aligned.
 
 When you create or materially revise a template, scan every repository template. Compare each template with current workflows, repository structure, and governing standards. Update each confirmed stale template and its owner references. Store every reusable template in its owning skill's `assets/` directory. Do not create project-local or workspace-level template copies. Reconcile the catalog, indexes, and inbound links.
 
