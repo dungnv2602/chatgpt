@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "registry_id": "chatgpt-task-validation-adapters",
+  "adapters": {
+    "python-script": {
+      "runtime": "python3",
+      "entrypoint_kind": "repository-relative-script",
+      "accepts_shell": false,
+      "requires_repository_checkout": true,
+      "default_timeout_minutes": 10,
+      "maximum_timeout_minutes": 30
+    },
+    "python-module": {
+      "runtime": "python3",
+      "entrypoint_kind": "allowlisted-python-module",
+      "accepts_shell": false,
+      "requires_repository_checkout": true,
+      "default_timeout_minutes": 10,
+      "maximum_timeout_minutes": 30
+    },
+    "pytest": {
+      "runtime": "python3",
+      "entrypoint_kind": "repository-relative-test-path",
+      "accepts_shell": false,
+      "requires_repository_checkout": true,
+      "default_timeout_minutes": 10,
+      "maximum_timeout_minutes": 30
+    },
+    "unittest": {
+      "runtime": "python3",
+      "entrypoint_kind": "repository-relative-test-path",
+      "accepts_shell": false,
+      "requires_repository_checkout": true,
+      "default_timeout_minutes": 10,
+      "maximum_timeout_minutes": 30
+    }
+  },
+  "security": {
+    "task_values_are_data_not_commands": true,
+    "reject_unknown_adapters": true,
+    "reject_absolute_paths": true,
+    "reject_parent_directory_traversal": true,
+    "reject_environment_overrides": true,
+    "reject_unregistered_executable": true,
+    "verification_jobs_receive_secrets": false,
+    "verification_jobs_receive_write_tokens": false
+  }
+}
