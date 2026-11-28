@@ -271,3 +271,12 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** Children 04–20 are Done based on committed edits and remote readback. No lint or regression tests were executed. Hosted CI results were not inspected.
 - **References:** GitHub Actions skill `bc4e07a382024a3edc7aadf42d22f395425e58b0`; Worker skill `433c5d91eb2729091e39d29f0b37b0b274dcf7cb`; conversation-mode reference `6dfd4d5b81cf0b6288fe7219fd98f8c9c5a30157`; task board `7b844f5b03b3724c06295b83e673c4f141ddda77`; CI Ledger skill `32c44fd8c2ed0b7f2b8a7540ae1bafd63842fb0a`.
 - **Next:** Two P0 blockers remain. Child 03 needs immutable report evidence, and child 23 needs the regression-test failure details. Hosted CI review remains prohibited. Current Execution is clear.
+
+
+### 2026-11-28 — lifecycle implementation readback closeout
+
+- **Action:** Completed static readback of the canonical Ledger implementation, regression suite, Ledger schema, lint generator and regression suite, lint schema/template, changed/full lint workflows, Actions capture workflow, task/subtask templates, workspace README, and report data layout. Confirmed the formerly referenced triage paths are retired and the canonical implementation is under `.agent/skills/the-worker/scripts/` and assets.
+- **Result:** Closed implementation subtask `20261126-142500-02` after readback. The unified report index is empty (`runs: []`, `latest_report: null`), while the Ledger retains 258 open findings. These finding records were not fabricated, bulk-reassigned, or erased. Open findings without valid attribution remain unassigned. The parent remains In Progress because the original report-remediation objective is not fully satisfied.
+- **Evidence:** Readback commit `2afe481d8a25770e46fc558cc2b5f703ea52ad93` updated the subtask index. Canonical readback was performed on 2026-11-28.
+- **Validation limits:** No local scripts, tests, or lint were run. No hosted CI results were inspected. Readback confirms committed source content only.
+- **Next:** Reconcile remaining report-remediation scope and the missing task records referenced by historical blocker notes. Do not invent attribution or claim the Ledger is empty.
