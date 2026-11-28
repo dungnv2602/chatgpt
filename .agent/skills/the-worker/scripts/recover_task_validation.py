@@ -303,6 +303,15 @@ def source_policy_allows_dispatch(root: Path, source_sha: str, expected_policy_s
         raise RecoveryError(f"Task lifecycle policy revision does not match source commit {source_sha}")
     source_policy = json.loads(git(root, "show", f"{source_sha}:{POLICY_PATH}").stdout)
     current_policy = json.loads((root / POLICY_PATH).read_text(encoding="utf-8"))
+    source_coordinator = source_policy.get("coordinator", {})
+    current_coordinator = current_policy.get("coordinator", {})
+    if (
+        source_policy.get("repository") != current_policy.get("repository")
+        or source_policy.get("protected_ref") != "refs/heads/gpt"
+        or current_policy.get("protected_ref") != "refs/heads/gpt"
+        or source_coordinator.get("dispatcher_workflow") != current_coordinator.get("dispatcher_workflow")
+    ):
+        return False
     for policy in (source_policy, current_policy):
         coordinator = policy.get("coordinator", {})
         protection = policy.get("protection", {})
