@@ -18,7 +18,7 @@ This is the sole index of active task parents. Each parent folder contains `task
 
 ## Current Execution
 
-**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent selected focus. Persistent Refactor Skills parent is at quiescence. Child 61 is Blocked pending a narrow policy decision on permitted test execution/validation evidence.
+**P0** — [Refactor Skills](tasks/20261127-173000/task.md) — Persistent selected focus. Persistent Refactor Skills parent is at quiescence. Child 61 is Blocked pending a supported read-only locator for its existing push-triggered validation run. The user authorized review for child 61 only and prohibited workflow-policy changes.
 
 ## Ordered Eligible Execution Queue
 
@@ -26,7 +26,7 @@ _No eligible child tasks under Refactor Skills._
 
 ## Next Task
 
-No eligible child remains under Refactor Skills. Child 61 is blocked by current Worker restrictions on local test execution and hosted CI result inspection. Completed child 64, 03, and 01 were removed under lifecycle rules. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
+No eligible child remains under Refactor Skills. Child 61 has child-specific authorization for existing hosted-result review, but the available GitHub connector cannot enumerate push-triggered workflow runs and the unified report index has no run entries. Completed child 64, 03, and 01 were removed under lifecycle rules. Blocked subtasks 28–49 were deleted at the user's direction. The global document-template audit is not selected.
 
 ## Deferred Work
 
@@ -34,7 +34,7 @@ No eligible child remains under Refactor Skills. Child 61 is blocked by current 
 
 | ID | Title | Priority | Status | Approval | Reason | Task record |
 |---|---|---:|---|---|---|---|
-| 20261127-173000-61 | Review structural validator test execution and validation loop | P1 | Blocked | Approved | Static review complete. Actual test execution evidence requires a narrow policy amendment because local test execution and hosted result inspection are currently prohibited. | [subtask](tasks/20261127-173000/subtasks/61-review-structural-validator-test-execution-and-validation-loop.md) |
+| 20261127-173000-61 | Review structural validator test execution and validation loop | P1 | Blocked | Approved | Static review complete. User authorized read-only hosted-result review for child 61 only. No local tests or workflow reruns are authorized. The available connector cannot enumerate push-triggered runs, and no run ID is available from the unified report index/status queries. | [subtask](tasks/20261127-173000/subtasks/61-review-structural-validator-test-execution-and-validation-loop.md) |
 
 ### Paused
 
