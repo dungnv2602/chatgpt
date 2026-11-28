@@ -745,3 +745,12 @@ Canonical index: [subtasks/README.md](subtasks/README.md).
 - **Action:** Reinforced the canonical Worker with an operation-local blocker rule, immediate scheduler continuation, and stop-proof gate. Tracking under child 76 of the persistent Refactor Skills parent; ADR-0008 remains Current Execution.
 - **Implementation commit:** Worker rule committed; task tracking and final readback pending.
 - **Checks:** No local tests/scripts/lint or hosted CI inspection performed.
+
+
+### 2026-11-28 — child 76 closeout
+
+- **Action:** Completed blocker-locality enforcement and stop-proof gate in the canonical Worker. The scheduler now must isolate operation-local blockers, continue independent eligible work, and reconcile a stop proof before ending universal execution.
+- **Commit:** Worker rule `07bc7dadd34c166e26d20aa7c3757efffd2155e4`; implementation tracking commit `9c003854754dcebf370cafc236f978bfc7265ee6`; closeout commit `2b869e418f5058e6548e28dc09f241df36306f23`.
+- **Readback:** Verified Worker implementation and closeout record state at the closeout commit. Final branch reconciliation pending.
+- **Checks:** No local tests/scripts/lint or hosted CI inspection performed.
+- **Closeout:** Child 76 completed and its record removed under normal child lifecycle. Child 75 remains open for validation metadata; ADR-0008 remains Current Execution.
