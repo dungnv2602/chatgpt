@@ -13,9 +13,9 @@
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to create the Refactor Skills task and place workspace/tasks/20261127-102301 beneath it.
 - **Governing ADR(s):** None
-- **Current execution:** 20261127-173000-67
+- **Current execution:** No
 - **Dependencies:** None
-- **Eligibility / deferral reason:** In Progress — user authorized the Refactor Skills batch with the standalone `Execute` cue. Children 65–67 are in scope.
+- **Eligibility / deferral reason:** At quiescence — children 65–67 closed. Child 68 is Proposed pending a user decision on historical ADR source-Draft provenance.
 - **Related tasks:** None
 
 ## 1. Original Request
@@ -637,3 +637,14 @@ Keep this persistent P0 Refactor Skills parent open. Finish child 67, reconcile 
 
 Canonical index: [subtasks/README.md](subtasks/README.md).
 
+
+
+### 2026-11-28 — child 67 closeout and quiescence
+
+- **Action:** Consolidated duplicated Worker execution, blocker and closeout rules into a single run-to-quiescence loop. Added a mandatory cross-record Draft ID collision check to Decision Governance. Corrected task/subtask template pointers to the canonical Ledger path. Trimmed duplicated Ledger report evidence from this parent to a 64-ID severity summary while preserving canonical diagnostic/report evidence in the Ledger; restored misplaced progress logs under Progress.
+- **Result:** Parent task record reduced from roughly 100 KB to roughly 57 KB without deleting finding IDs or the historical progress entries. The board and subtask index are reconciled. Children 65, 66 and 67 completed and deleted under lifecycle rules. Child 68 is Proposed for user-resolvable provenance conflict.
+- **Workflow commits:** Worker `82c0b2c9a8e9981403a54bf2c6c90f146564e2e4`; ID gate `4664ebd5334c22bc6447a787f473f8a1d15f131b`; task template `a38ae0f3b983fc6bc5882b67aba74b23ecc65c9a`; subtask template `be167f4dea66b3414a4d27268d052b54fd3f5514`; parent Ledger summary `ad364cd4f740639ff10cadf2ba0e41ab848998eca`; progress recovery `5b9d92f828db6b445af4f0799cbf762cdb`.
+- **README/catalog commits:** workspace `97dc4bebf895c39cd59711f1306f8c8dab1297be`; Drawing `1b73a480f8ab5c3e591a4207ec366e1ae4edd0ff`; Draft `93d8f29dd8c28d598dca610cf937096fddde579e`; ADR `1cfdffebb24ab00facea03ad5d84f1b253d89cd9`; Analysis `b0a7d55682d5f9a04b28d1d098d10dde5dac9cf7`; catalog `78c26fd9d2490ffdd9655059433e12f2c0f0f249`; ADR index `377202958450df9ff5ad3cdcd60c662c97ff39e1`.
+- **Recovery correction:** The report-layout task and source Draft were briefly reconstructed under stale evidence, then removed after readback confirmed accepted ADR-0007 and normal task deletion. No report-layout implementation was performed. A historical DRAFT-0005 source-ID collision remains between accepted ADR-0004 and ADR-0007; child 68 records the required user decision. The new ID allocation gate prevents future reuse.
+- **Checks:** No local scripts/tests/lint performed. Hosted CI results not inspected. Readback confirms committed content, not runtime behavior.
+- **Closeout:** Child 67 completed and deleted. The batch is at quiescence with child 68 Proposed.
