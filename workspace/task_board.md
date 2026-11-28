@@ -32,6 +32,8 @@ _None._
 
 ### Proposed — decision pending
 
+**20261126-142500 — Repair CI task generation and clear active reports.** Approved and governed by ADR-0008; implementation awaits the standalone `execute` cue. — [task](tasks/20261126-142500/task.md)
+
 **DRAFT-0009 — Project, Task, and Knowledge Lifecycle.** Proposal in review; no implementation authorization.
 
 ### Paused
