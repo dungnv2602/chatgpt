@@ -76,7 +76,7 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 
 - **Commit SHA:** 4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b
 - **Changed paths:** Worker skill, task-validation interfaces, CI Ledger reference, document-type catalog, Workflow Map, task-validation README, task tracking records, and five validation/diagnostic workflows.
-- **Readback:** Pending final readback
+- **Readback:** Confirmed from branch `gpt`; all nine owner, interface, workflow, and tracking paths were fetched after commit `4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b` and metadata commit `1b1f248c98ca5833d77064269db62bf90dce8bca`.
 - **Checks:** Not performed
 - **Limitations:** No local tests or hosted validation performed. Effective branch protection and default-branch recovery workflow availability remain external prerequisites; existing capture-failure attempts were not inspected or reconciled.
 
