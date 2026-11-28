@@ -35,7 +35,7 @@ permissions: {}
 
 jobs:
   policy_gate:
-    name: Gate legacy push backfill after coordinator activation
+    name: Gate legacy diagnostics after coordinator activation
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -49,7 +49,7 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
 
-      - name: Disable push backfill after coordinator activation
+      - name: Disable legacy diagnostics after coordinator activation
         id: gate
         shell: bash
         env:
@@ -60,7 +60,7 @@ jobs:
           from pathlib import Path
           policy = json.loads(Path(".agent/skills/the-worker/assets/task-validation/task-validation-policy.json").read_text(encoding="utf-8"))
           enabled = policy.get("coordinator", {}).get("activation_status") == "enabled"
-          proceed = not (os.environ["EVENT_NAME"] == "push" and enabled)
+          proceed = not enabled
           print("proceed=" + ("true" if proceed else "false"))
           PY
 
