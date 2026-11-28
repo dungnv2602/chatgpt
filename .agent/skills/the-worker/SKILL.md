@@ -93,8 +93,8 @@ The Worker is the sole operational authority. Session Start is only the cue guar
 
 - The only foundational initialization cue is `/start`. Treat quoted, discussed, or hypothetical uses as non-cues.
 - Do not load repository instructions, skills, or references at conversation start unless an explicit cue or task-specific activation condition requires them.
-- On `/start`, follow Session Start to this Worker. Read the mandatory Conversation Mode settings reference. Use the current-conversation verified-load ledger.
-- Complete the startup notice, required baseline verification, progressive loading, startup P0 batch, and queue-draining procedure defined here and in the required references before accepting the substantive prompt.
+- On `/start`, follow Session Start to this Worker. Read `.agent/WORKFLOW_MAP.md` for an overview before loading task-related skills or references. Read the mandatory Conversation Mode settings reference. Use the current-conversation verified-load ledger.
+- Complete the startup notice, required baseline verification, progressive loading, startup P0 batch, and queue-draining procedure defined here and in the required references before accepting the substantive prompt. An explicit user instruction may supersede a particular startup gate for a scoped task; record the exact override in its task record, bypass only the named gate and scope, and do not imply skipped verification passed.
 - Load novelist initialization instructions from `references/novelist-initialization.md` only after foundational initialization passes and the user explicitly requests the novelist role.
 - Load drawing-session instructions from `references/drawing-session-initialization.md` only after foundational initialization passes and the user explicitly requests a drawing session or the procedure requires it.
 - The Worker routes initialization. Session Start and Conversation Mode do not own operational procedures.
@@ -133,6 +133,13 @@ Treat the user's authorized workstream or selected parent as the batch boundary.
 
 Do not run local repository scripts, tests or lint. Do not inspect hosted CI results unless explicitly authorized. Commit/readback evidence does not prove runtime behavior.
 
+
+## Workflow map maintenance and display cue
+
+- `.agent/WORKFLOW_MAP.md` is the canonical workflow overview. It routes to authoritative owners and references and does not replace them.
+- The `/map` cue displays the current map only. It does not initialize, load additional skills, reconcile startup, or execute.
+- Whenever a workflow, cue, activation prerequisite, ownership boundary, or operational route changes, update the map in the same governed change cycle. Read back the map and changed owner documents before commit.
+- At `/start`, Session Start requires map-first reading before related skill/reference loading.
 
 ## Execution cue — sole gate
 

@@ -10,15 +10,15 @@ Follow [The Worker](../.agent/skills/the-worker/SKILL.md) for task selection, el
 
 ## Current Execution
 
-_None._
+[20261127-173000-69 — Workflow Map and Cue Registry](tasks/20261127-173000/subtasks/69-workflow-map-and-cue-registry.md)
 
 ## Ordered Eligible Execution Queue
 
-_None._
+1. [20261127-173000-69 — Workflow Map and Cue Registry](tasks/20261127-173000/subtasks/69-workflow-map-and-cue-registry.md) — P0, approved, in progress.
 
 ## Next Task
 
-_None._
+[20261127-173000-69 — Workflow Map and Cue Registry](tasks/20261127-173000/subtasks/69-workflow-map-and-cue-registry.md)
 
 ## Deferred Work
 
