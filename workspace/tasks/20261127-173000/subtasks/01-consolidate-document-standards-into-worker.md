@@ -7,7 +7,7 @@
 - **ID:** 20261127-173000-01
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Done
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
@@ -47,13 +47,13 @@ Finish catalog, index, coverage and workflow reconciliation for document standar
 
 - **Action:** Reconstructed this parent record from surviving approved descendant record and index data.
 - **Result:** Parentage and objective restored without changing original authorization.
-- **Next:** Execute descendant reconciliation and close out.
+- **Next:** Remove completed child and nested indexes after parent reconciliation.
 
 ## 6. State and Evidence
 
 - **Commit SHA:** Not committed
 - **Changed paths:** Reconstructed task record, index reconciliation pending
-- **Readback:** Pending
+- **Readback:** Verified the catalog, validator and tests, document-standards workflow caller, and Worker ownership on branch `gpt`.
 - **Checks:** Not performed
 - **Limitations:** No hosted CI review.
 
@@ -61,7 +61,8 @@ Finish catalog, index, coverage and workflow reconciliation for document standar
 
 - **Status:** Not Done
 - **Completed at:** Not applicable
-- **Completion basis:** Descendant execution and reconciliation.
+- **Completed at:** 2026-11-28 UTC
+- **Completion basis:** Standalone Document Standards activation was reconciled to Worker-owned procedures. Catalog validation scripts and regression tests were restored under Worker scripts, workflow references updated, catalog ownership registered. Readback verified. Tests and hosted workflow results not inspected.
 
 ## 8. Hosted Validation
 
