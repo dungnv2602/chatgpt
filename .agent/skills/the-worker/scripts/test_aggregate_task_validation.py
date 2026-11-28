@@ -18,8 +18,8 @@ class AggregateTaskValidationTests(unittest.TestCase):
             "coordinator": {"activation_status": "enabled"},
             "protection": {"enforcement_status": "verified"},
             "mandatory_checks": [
-                {"id": "lint"},
-                {"id": "document-standards"},
+                {"id": "lint", "coordinator_job": "lint"},
+                {"id": "document-standards", "coordinator_job": "document-standards"},
             ],
         }
         self.source_sha = "a" * 40
