@@ -74,7 +74,7 @@ jobs:
         run: |
           python -m unittest discover \
             -s .agent/skills/the-worker/scripts \
-            -p 'test_validate_catalog.py' \
+            -p 'test_validate_document_catalog.py' \
             -v
 
       - name: Run structural ownership validator tests
@@ -85,7 +85,7 @@ jobs:
 
       - name: Validate the document type catalog
         run: |
-          python .agent/skills/the-worker/scripts/validate_catalog.py --root .
+          python .agent/skills/the-worker/scripts/validate_document_catalog.py --root .
 
   diagnostics:
     name: Capture GH Actions diagnostics
