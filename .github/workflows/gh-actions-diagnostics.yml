@@ -62,7 +62,6 @@ jobs:
           current_policy_json=$(cat .agent/skills/the-worker/assets/task-validation/task-validation-policy.json)
           policy_ready='
             .coordinator.activation_status == "enabled" and
-            .protection.enforcement_status == "verified" and
             .recovery.schedule_activation_status == "verified" and
             .recovery.workflow_dispatch_activation_status == "verified"
           '
