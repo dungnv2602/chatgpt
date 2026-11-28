@@ -7,17 +7,17 @@
 - **ID:** 20261127-173000-03
 - **Parent Task ID:** 20261127-173000
 - **Type:** Implementation
-- **Status:** Paused
+- **Status:** Ready
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Explicit request to move workspace/tasks/20261127-102300/task.md under Refactor Skills.
 - **Governing ADR(s):** None
-- **Dependencies:** Mandatory P0 queue
-- **Eligibility / deferral reason:** Paused behind mandatory P0 queue
+- **Dependencies:** None
+- **Eligibility / deferral reason:** Eligible — previous P0 dependency cleared
 - **Required:** Yes
 - **Created:** 2026-11-27 10:23 UTC
-- **Updated:** 2026-11-27 18:10 UTC
+- **Updated:** 2026-11-28 UTC
 - **Ledger group:** None
 - **Legacy Task IDs:** 20261127-102300
 
@@ -50,7 +50,7 @@ Add an objective-based parent-selection test, prevent active-parent bias, and de
 - Active parent status is not a parent-selection criterion.
 - CI finding attribution is a specific exception and does not imply blanket parent reuse.
 - Earlier implementation and evidence remain preserved in the legacy record below.
-- **Next:** reconcile parentage and remaining index references after the P0 batch.
+- **Next:** Complete the remaining parentage/index audit and readback.
 
 ## 6. State and Evidence
 
