@@ -210,6 +210,8 @@ def get_artifact_payload(
 def attempt_kind(
     jobs: list[dict[str, Any]],
     artifact_present: bool = False,
+    run_status: str | None = None,
+    run_conclusion: str | None = None,
 ) -> tuple[str, dict[str, Any] | None]:
     policy_job = next(
         (job for job in jobs if job.get("name") == "Check protected policy and duplicate source SHA"),
@@ -241,6 +243,10 @@ def attempt_kind(
             return "started", coordinator_jobs[0]
     if policy_job is not None and policy_job.get("conclusion") == "failure":
         return "policy_failure", policy_job
+    if run_status == "completed" and run_conclusion == "cancelled":
+        return "cancelled", None
+    if run_status == "completed" and run_conclusion in {"failure", "timed_out", "action_required"}:
+        return "policy_failure", None
     if artifact_present:
         return "started", None
     return "ignored", None
@@ -297,13 +303,12 @@ def process_attempt(
 
     jobs = get_jobs(api, repository, run_id, attempt_number)
     aggregate = get_artifact_payload(api, repository, run_id, attempt_number)
-    kind, _ = attempt_kind(jobs, artifact_present=aggregate is not None)
-    if kind == "ignored" and details.get("status") == "completed":
-        conclusion = details.get("conclusion")
-        if conclusion == "cancelled":
-            kind = "cancelled"
-        elif conclusion in {"failure", "timed_out", "action_required"}:
-            kind = "policy_failure"
+    kind, _ = attempt_kind(
+        jobs,
+        artifact_present=aggregate is not None,
+        run_status=details.get("status"),
+        run_conclusion=details.get("conclusion"),
+    )
     if kind in {"ignored", "pending"}:
         return kind, (run_id, attempt_number)
 
