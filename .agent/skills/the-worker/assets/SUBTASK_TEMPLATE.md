@@ -52,6 +52,8 @@ Allowed statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, Cancelled
 
 ## 6. State and Evidence
 
+Distinguish deliverable completion evidence from validation evidence. Readback confirms committed content, not runtime behavior. List unperformed checks and verification follow-ups separately.
+
 - **Commit SHA:** [Full SHA or Not committed]
 - **Changed paths:** [Exact paths]
 - **Readback:** [Exact result]
@@ -64,7 +66,7 @@ Allowed statuses: Proposed, Ready, In Progress, Blocked, Paused, Done, Cancelled
 - **Completed at:** Not applicable
 - **Completion basis:** Not applicable
 
-The Worker marks the child Done only after its acceptance criteria pass and the intended-branch commit is read back. For CI remediation, commit-based completion is separate from hosted validation.
+The Worker marks the child Done after deliverable-specific acceptance criteria pass, the intended-branch commit is read back, and the completion basis is recorded. Unperformed runtime checks or hosted validation do not universally block implementation closeout. Record verification gaps as limitations or follow-up tasks. If an acceptance criterion specifically requires a permitted check, do not claim it passed when unperformed. For CI remediation, commit-based completion is separate from hosted validation.
 
 ## 8. Hosted Validation
 
