@@ -61,6 +61,17 @@ class RecoveryTests(unittest.TestCase):
         ]
         self.assertEqual(recovery.attempt_kind(jobs)[0], "ignored")
 
+    def test_attempt_kind_ignores_recovery_failure_when_policy_gate_skips_coordinator(self) -> None:
+        jobs = [
+            {"name": "Check protected policy and duplicate source SHA", "status": "completed", "conclusion": "success"},
+            {"name": "Run exact-SHA coordinator", "status": "completed", "conclusion": "skipped"},
+            {"name": "Reconcile this coordinator attempt and prior gaps", "status": "completed", "conclusion": "failure"},
+        ]
+        self.assertEqual(
+            recovery.attempt_kind(jobs, run_status="completed", run_conclusion="failure")[0],
+            "ignored",
+        )
+
     def test_attempt_kind_captures_policy_gate_failure(self) -> None:
         jobs = [
             {"name": "Check protected policy and duplicate source SHA", "status": "completed", "conclusion": "failure"},
