@@ -7,12 +7,12 @@
 - **Created:** 2026-11-26 14:25 UTC
 - **Updated:** 2026-11-28 15:20 UTC
 - **Priority:** P1
-- **Status:** Proposed
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Original user request and explicit follow-up authorization in this conversation. DRAFT-0010 revision 9 and ADR-0008 are approved. The new implementation scope still requires the repository's explicit standalone `execute` cue.
 - **Governing ADR(s):** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md) — universal post-commit validation, coordinator/verifier, status index, review tasks, remediation folders, retention, and report-system migration.
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
 
@@ -55,7 +55,7 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 4. Require an exact `Task-ID:` commit trailer. Resolve child IDs through Parent Task ID. Keep missing, malformed, ambiguous, inactive, or deleted parent attribution unassigned.
 5. Keep the Worker as the sole owner of task status, approval, dependencies, scheduling, Current Execution, board publication, and closeout. The Ledger owns findings and CI child publication only.
 6. Generate CI remediation children as P0, Approved, Ready under standing authorization; Proposed is reserved for a specific genuine decision gate.
-7. Make aggregate publication and recovery idempotent. Retain reconciled attempt records for 14 days after reconciliation, never prune unresolved attempts, and compact behind a verified monotonic checkpoint. Prevent duplicate review and remediation tasks.
+7. Make aggregate publication and recovery idempotent. Retain reconciled attempt records for 3 days after reconciliation, never prune unresolved attempts, and compact behind a verified monotonic checkpoint. Ignore cancelled and superseded attempts completely in feedback-loop task generation, diagnosis, retries, and task-state transitions. They cannot satisfy validation. Cancelled leaves validation pending absent a qualifying result. Superseded SHA is obsolete. Prevent duplicate review and remediation tasks.
 8. Preserve report and workflow coverage. Do not weaken tests or validation to suppress errors.
 9. Do not run repository scripts/tests locally or poll, dispatch, rerun, or wait for hosted CI. Read the status index first and inspect logs only after recorded failure, solely for diagnosis.
 10. Mark work Done only after aggregate success for the exact current commit and policy revision, reconciliation, and completion of required subtasks. Delete completed/cancelled task folders directly and do not create archives or retention copies.
@@ -83,7 +83,8 @@ This parent task implements the accepted decision. Its acceptance criteria must 
 - Implement the protected task contract, registered adapters, repository-owned script interface, generic verifier, exact-SHA aggregation, and isolated publisher.
 - Publish one atomic/idempotent status record and review task per terminal attempt. Implement recovery, bounded retries, safe concurrency, and recursive-trigger prevention.
 - Implement the non-blocking Worker lifecycle, index-first review, failure-only log diagnosis, root-cause grouping, active-child reuse, parent attribution, and permanent fallback.
-- Enforce the 14-day post-reconciliation retention period, never prune unresolved attempts, and advance the checkpoint only after complete reconciliation.
+- Enforce the 3-day post-reconciliation retention period, never prune unresolved attempts, and advance the checkpoint only after complete reconciliation.
+- Treat cancelled and superseded outcomes as non-actionable feedback-loop events, without task creation, logs, retries, or state mutation. They do not satisfy validation.
 - Demonstrate all required aggregate and recovery scenarios through GitHub Actions before retiring any report producer or consumer.
 - Retire the complete `.takeout/reports/` tree only after migration and operational proof. Preserve unrelated lint/test/workflow coverage.
 
@@ -218,7 +219,7 @@ The parent is approved and linked to ADR-0008, but its materially changed implem
 - Refactor established validation workflows to reusable `workflow_call` entry points and implement the single coordinator plus generic verifier for uncovered requirements.
 - Define the protected contract schema, adapter allowlist, repository-owned script interface, exact-SHA execution, and trust/permission boundary.
 - Implement the isolated publisher, atomic/idempotent status-index and review-task publication, concurrency-safe recovery, and durable checkpoint.
-- Implement the 14-day post-reconciliation retention rule. Never prune unresolved attempts. Advance the checkpoint only after a complete reconciliation sweep.
+- Implement the 3-day post-reconciliation retention rule. Never prune unresolved attempts. Advance the checkpoint only after a complete reconciliation sweep.
 - Update Worker policy, GitHub Actions guidance, task/subtask templates, schemas, document catalog, board, Workflow Map, workspace README, and active references.
 - Migrate every `.takeout/reports/` producer and consumer. Demonstrate the required success, failure, missing-event, duplicate-event, and publication-recovery scenarios through GitHub Actions.
 - Only after replacement proof, retire the complete `.takeout/reports/` tree and obsolete Ledger/report paths. Preserve unrelated lint/test/workflow coverage.
