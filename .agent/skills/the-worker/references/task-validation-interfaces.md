@@ -23,12 +23,12 @@ Store GitHub Actions workflow definitions in `.github/workflows/`. A workflow's 
 
 The initial manifest preserves the three existing required validation families:
 
-| Policy ID | Existing workflow | Existing job ID | Coverage |
+| Policy ID | Existing workflow | Coordinator job ID | Coverage |
 |---|---|---|---|
-| `ste-lint-changed` | `ste-lint-changed.yml` | `ste-lint` | Changed-document lint, report tooling tests, and incremental/full-audit fallback |
-| `ste-lint-full-docs` | `ste-lint-full-docs.yml` | `ste-lint` | Full technical-document audit and report tooling tests |
-| `validate-document-standards` | `validate-document-standards.yml` | `validate-document-standards` | Document catalog, structural ownership, and existing Ledger regression tests |
-| `generic-verifier` | `task-validation-verifier.yml` | `verify` | Exact-SHA task contract validation, closed adapter enforcement, and additive task-specific checks |
+| `ste-lint-changed` | `ste-lint-changed.yml` | `lint_changed` | Changed-document lint, report tooling tests, and incremental/full-audit fallback |
+| `ste-lint-full-docs` | `ste-lint-full-docs.yml` | `lint_full` | Full technical-document audit and report tooling tests |
+| `validate-document-standards` | `validate-document-standards.yml` | `document_standards` | Document catalog, structural ownership, and existing Ledger regression tests |
+| `generic-verifier` | `task-validation-verifier.yml` | `generic_verifier` | Exact-SHA task contract validation, closed adapter enforcement, and additive task-specific checks |
 
 This is an initial mapping, not a claim that the workflows have already been migrated or that the job identifiers are confirmed as stable aggregate check names. The downstream workflow migration must preserve the existing scripts, test cases, path coverage, and baseline behavior, then establish stable names for aggregation.
 
