@@ -69,25 +69,31 @@ flowchart TD
 
 ## CI, reports and remediation
 
-```mermaid
+~~~mermaid
 flowchart TD
- A[Workflow or report producer] --> B[Worker scripts and capture workflow]
- B --> C[Unified report index]
- C --> D[Published report and diagnostics]
- D --> E[CI Ledger: evidence, identity, attribution, state]
- E --> F[Attributed genuine task]
- F --> G[Remediation child and eligibility]
- G --> H[Worker scheduling and closeout]
- C --> I[On-demand report navigation]
-```
+ A[Source commit on gpt] --> B[Dispatcher policy and duplicate-SHA gate]
+ B -->|Enabled| C[One exact-SHA coordinator]
+ B -->|Staged / duplicate| D[Legacy validation remains active]
+ C --> E[Reusable checks plus generic verifier]
+ E --> F[Exact-SHA aggregate]
+ F --> G[Isolated publisher]
+ G --> H[Compact status index and per-attempt review folder]
+ H --> I[Worker index-first review queue]
+ I --> J[Failure-only log diagnosis]
+ J --> K[Root-cause grouped remediation children]
+ H --> L[Recovery sweep: runs, artifacts, checkpoint and retention]
+~~~
 
-- Activation: CI work is handled only for an assigned, selected task under `workspace/tasks/` and within its authorized scope. It is not part of general session initialization.
-- Procedures: `.agent/skills/the-worker/references/ci-ledger.md` and `github-actions.md`, loaded only when the assigned CI task requires them.
-- Canonical implementation: `.agent/skills/the-worker/scripts/`; capture workflow: `.github/workflows/gh-actions-capture.yml`.
-- ADR-0008 coordinator and generic verifier: `.github/workflows/task-validation.yml` and `task-validation-verifier.yml`. They remain staged until publisher/report migration is complete and external policy protection is verified.
-- Report index and data: `.takeout/reports/`; navigation guide: `.takeout/reports/README.md`.
-- No automatic startup CI baseline, report scan, or Ledger reconciliation. Do not access `.takeout/reports/` for general setup or unrelated tasks.
-- Attribution is source-task-based, not guessed. The Ledger does not schedule or create parents.
+- Activation: relevant source pushes are routed by .github/workflows/task-validation-dispatch.yml. The dispatcher is currently policy-gated and staged; legacy validation workflows remain active until migration is complete.
+- ADR-0008 workflows: dispatcher .github/workflows/task-validation-dispatch.yml; reusable coordinator .github/workflows/task-validation.yml; generic verifier .github/workflows/task-validation-verifier.yml; isolated publisher .github/workflows/task-validation-publisher.yml; recovery .github/workflows/task-validation-recovery.yml.
+- Worker-owned contracts, schemas, adapters, publisher/recovery scripts and tests: .agent/skills/the-worker/assets/task-validation/ and .agent/skills/the-worker/scripts/. Interface and ownership guide: .agent/skills/the-worker/references/task-validation-interfaces.md.
+- Operational status index, checkpoint and review queue: workspace/task-validation/. The Worker reads the index first and opens logs only for recorded actionable failures. It does not rerun or override committed validation.
+- Recovery uses Actions run metadata and aggregate artifacts, not logs. Its push and post-publication paths are available on gpt. The scheduled trigger is not active because the repository default branch is main; scheduled workflows run only from the default branch. Activation requires changing the default branch or using an external scheduler.
+- Branch protection and publisher write access remain external prerequisites. Coordinator activation stays staged until policy protection, workflow migration, publisher/recovery operation and report migration gates are satisfied.
+- .takeout/reports/ remains intact until ADR-0008 Confirmation proves every producer/consumer migrated and coverage preserved. Do not delete it early.
+- No automatic startup CI baseline, report scan, or recovery sweep. CI review is activated by its workflow or an explicitly assigned task, not general session initialization.
+- Source attribution comes only from the exact Task-ID commit trailer. If the source parent is unavailable, ADR-0008 routes remediation to one permanent fallback parent; never infer parentage. The Worker alone owns scheduling and task lifecycle; the publisher does not schedule.
+- The legacy CI Ledger remains until the approved migration is complete. ADR-0008 retires its findings identity/history/archive lifecycle; do not create a parallel findings archive.
 - Historical backfill and hosted CI access remain governed; this map grants no permission.
 
 ## Image, drawing and takeout
