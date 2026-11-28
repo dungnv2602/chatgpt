@@ -114,6 +114,25 @@ jobs:
           run_check linter_selftest python3 .agent/skills/asd-ste100/scripts/ste-lint.py --selftest
           echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
+      - name: Retrieve previous indexed full-audit report
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          index_json=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/index.json?ref=$GITHUB_REF_NAME" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+          history_path=$(jq -r '[.runs[]? | select(.family=="lint" and .scope=="on_repo" and (.status=="Passed" or .status=="Failed"))] | sort_by(.generated_at_utc) | reverse | .[0].history_path // empty' <<< "$index_json" 2>/dev/null || true)
+          if [[ -z "$history_path" || "$history_path" != history/* || "$history_path" == *..* || "$history_path" == /* ]]; then
+            echo "No valid indexed full-audit baseline available."
+            exit 0
+          fi
+          report=$(gh api "repos/$GITHUB_REPOSITORY/contents/.takeout/reports/$history_path/report.json?ref=$GITHUB_REF_NAME" --jq '.content' 2>/dev/null | base64 --decode 2>/dev/null || true)
+          if ! jq -e '.scope=="on_repo" and (.status=="Passed" or .status=="Failed") and (.findings|type=="array")' <<< "$report" >/dev/null 2>&1; then
+            echo "Indexed full-audit report invalid or unavailable; proceeding without comparison baseline."
+            exit 0
+          fi
+          printf '%s\n' "$report" > .lint-baseline-report.json
+
       - name: Run full repository-wide audit and generate structured reports
         id: audit
         shell: bash
@@ -236,7 +255,7 @@ jobs:
             --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
             --mode repository-wide --status "$report_status" \
             --checks-file .lint-report-checks.json \
-            --previous-report  .takeout/reports/latest-lint-report.json \
+            --previous-report .lint-baseline-report.json \
             --linter-source-sha "$(git rev-parse HEAD)" --task-id "$task_id" || generator_status=$?
           if [[ "$generator_status" -ne 0 ]]; then
             echo "::error::The shared lint report generator failed with exit $generator_status."
@@ -245,7 +264,7 @@ jobs:
             
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add .takeout/reports/history/ .takeout/reports/index.json .takeout/reports/latest-lint-report.json
+            git add .takeout/reports/history/ .takeout/reports/index.json
             if ! git diff --cached --quiet; then
               git commit -m "Publish repository-wide lint evidence"
               git pull --rebase origin gpt
