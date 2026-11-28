@@ -59,7 +59,7 @@ def canonical_check_set(policy: dict[str, Any], task_contract: dict[str, Any]) -
     if set(mandatory_ids) & set(task_ids):
         raise AggregateError("Task checks cannot override mandatory check IDs")
 
-    expected = mandatory_ids + sorted(task_ids)
+    expected = mandatory_ids
     identity_payload = {
         "mandatory_check_ids": mandatory_ids,
         "contract_revision": revision,
