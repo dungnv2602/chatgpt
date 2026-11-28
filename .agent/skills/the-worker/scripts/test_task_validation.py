@@ -38,6 +38,15 @@ class TaskValidationTests(unittest.TestCase):
         self.schema = {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "additionalProperties": False,
+            "properties": {
+                "source_sha": {"pattern": "^[0-9a-f]{40}$"},
+            },
+            "$defs": {
+                "check": {
+                    "additionalProperties": False,
+                    "properties": {"adapter": {"enum": ["python-script"]}},
+                }
+            },
         }
         self.registry = {
             "schema_version": 1,
