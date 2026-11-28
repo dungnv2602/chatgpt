@@ -2,7 +2,7 @@
 record_type: decision-record
 template_version: "1.1"
 id: "ADR-0005"
-status: "promotion-pending"
+status: "accepted"
 decision_date: "2026-11-28"
 decision_makers:
   - "User"
