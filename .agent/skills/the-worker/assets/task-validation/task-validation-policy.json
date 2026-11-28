@@ -32,6 +32,7 @@
       ".agent/skills/the-worker/scripts/test_task_validation.py",
       ".agent/skills/the-worker/scripts/test_validate_document_catalog.py",
       ".agent/skills/the-worker/scripts/validate_document_catalog.py",
+      ".github/workflows/gh-actions-capture.yml",
       ".github/workflows/gh-actions-diagnostics.yml",
       ".github/workflows/ste-lint-changed.yml",
       ".github/workflows/ste-lint-full-docs.yml",
