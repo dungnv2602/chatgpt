@@ -7,14 +7,14 @@
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Blocked
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** User explicitly requested a new task titled “ADR 8 implementation”, sufficient implementation subtasks, and made it Current; execution cue “Execute” provided in this conversation.
 - **Governing ADR(s):** [ADR-0008](../../adr/0008-ci-validation-error-tasks-and-automatic-feedback-loop.md)
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
-- **Eligibility / deferral reason:** Eligible — user authorization and execution cue satisfied
+- **Eligibility / deferral reason:** Blocked — repository default branch is `main` and lacks the dispatcher/recovery workflows required for recovery dispatch; effective branch protection is unverified.
 - **Related tasks:** 20261126-142500 (superseded administrative task; deleted after closeout)
 
 ## Validation Contract
@@ -109,6 +109,14 @@ Acceptance criteria are mapped to these required child tasks:
 - **Result:** Manual audits remain available. Legacy workflow-run capture is suppressed only for exact Task-ID coordinator-owned validation attempts; unrelated workflow-run diagnostics and push backfill remain active. This preserves non-task coverage while preventing duplicate task feedback.
 - **References:** `.github/workflows/ste-lint-changed.yml`; `.github/workflows/ste-lint-full-docs.yml`; `.github/workflows/validate-document-standards.yml`; `.github/workflows/gh-actions-capture.yml`; `.github/workflows/gh-actions-diagnostics.yml`.
 - **Next:** Read back the workflow changes, update the task lifecycle source SHA, and leave operational activation/Confirmation gated on external protection/default-branch prerequisites.
+
+### 2026-11-28 — External activation prerequisites block Confirmation
+
+- **Action:** Checked repository metadata, default-branch workflow availability, and accessible protection/ruleset metadata.
+- **Result:** Default branch is `main`; `.github/workflows/task-validation-dispatch.yml`, `.github/workflows/task-validation-recovery.yml`, and the Worker policy are absent there. The branch-protection API returned 403 and the repository rulesets endpoint returned an empty list, so effective branch protection cannot be verified. The policy remains staged and the new legacy gates fail open to preserve coverage.
+- **Limitations:** No hosted CI runs or logs were inspected. Existing capture-failure attempts remain unresolved.
+- **Required external action:** Set the repository default branch to `gpt` as required by the current policy and configure effective branch protection/ruleset for the protected ref. Once verified, resume exact-SHA recovery and Confirmation.
+- **Next:** Hold subtask 05 in dependency-waiting; do not enable the coordinator or retire the legacy report tree.
 
 ## 6. Current State and Remaining Work
 

@@ -6,14 +6,14 @@
 - **ID:** 20261128-230000-04
 - **Parent Task ID:** 20261128-230000
 - **Type:** Implementation
-- **Status:** In Progress
+- **Status:** Blocked
 - **Priority:** P1
 - **Origin:** User
 - **Approval:** Approved
 - **Approval scope/source:** Parent task 20261128-230000, explicitly authorized by user; execution cue provided.
 - **Governing ADR(s):** ADR-0008
 - **Dependencies:** 20261128-230000-02; 20261128-230000-03
-- **Eligibility / deferral reason:** In Progress — dependencies 02 and 03 are Done and parent execution is active
+- **Eligibility / deferral reason:** Blocked — repository default branch is `main`, which lacks the task-validation dispatcher and recovery workflows; effective branch protection cannot be verified (branch-protection API 403; no repository rulesets returned).
 - **Required:** Yes
 - **Created:** 2026-11-28 23:00 UTC
 - **Updated:** 2026-11-28 23:00 UTC
@@ -78,7 +78,7 @@ Integrate non-blocking Worker lifecycle, index-first review, failure-only diagno
 - **Changed paths:** Worker skill, task-validation interfaces, CI Ledger reference, document-type catalog, Workflow Map, task-validation README, task tracking records, and five validation/diagnostic workflows.
 - **Readback:** Confirmed from branch `gpt`; all nine owner, interface, workflow, and tracking paths were fetched after commit `4ff2d0799ea1a0e980407d504f7a1ddaff9ca72b` and metadata commit `1b1f248c98ca5833d77064269db62bf90dce8bca`.
 - **Checks:** Not performed
-- **Limitations:** No local tests or hosted validation performed. Effective branch protection and default-branch recovery workflow availability remain external prerequisites; existing capture-failure attempts were not inspected or reconciled.
+- **Limitations:** No local tests or hosted validation performed. Default branch `main` does not contain `.github/workflows/task-validation-dispatch.yml` or `.github/workflows/task-validation-recovery.yml`; effective branch protection is unverified because the API returned 403 and no rulesets were returned. Existing capture-failure attempts were not inspected or reconciled.
 
 ## 7. Completion
 
@@ -97,7 +97,7 @@ Scope and parent are confirmed. Required, approved, and executed under the autho
 
 ## 10. Handoff
 
-Implement deliverables, commit, and update status/evidence. Do not close the parent until every required child and ADR confirmation gate is satisfied.
+Blocked pending repository settings: make `gpt` the default branch (the policy prerequisite), ensure dispatcher/recovery workflows are available there, and configure effective branch protection. Then resume exact-SHA validation and subtask 05. Do not inspect hosted logs or retire `.takeout/reports/` before authorization and Confirmation.
 
 ## 11. Ledger Findings
 
